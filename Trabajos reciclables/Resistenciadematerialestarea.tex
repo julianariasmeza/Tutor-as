@@ -1,0 +1,985 @@
+\documentclass[11pt,a4paper]{article}
+
+% Paquetes básicos y compatibles con conversores a Word
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+
+\title{Tarea: Deformaciones en barras y alambres}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Ejercicio 1}
+
+La barra rígida \(AD\) está soportada por dos alambres de acero de
+diámetro \(d = \tfrac{1}{16}\,\text{in}\) \((E = 29\times 10^{6}\,\text{psi})\),
+además de un pasador y una ménsula en \(A\).
+Los alambres estaban originalmente tensos.
+Se desea determinar:
+
+\begin{itemize}
+  \item[(a)] La tensión adicional en cada alambre cuando se aplica una carga
+    \(P = 220\,\text{lb}\) en \(D\).
+  \item[(b)] La deflexión correspondiente del punto \(D\).
+\end{itemize}
+
+Las distancias horizontales son
+\[
+AB = BC = CD = 12\,\text{in},
+\]
+y las longitudes de los alambres son
+\[
+L_{BE} = 10\,\text{in}, \qquad L_{CF} = 18\,\text{in}.
+\]
+
+%-------------------------------------------------
+\subsection*{Datos}
+
+\begin{itemize}
+  \item Módulo de elasticidad del acero:
+    \[
+      E = 29\times 10^{6}\,\text{psi}.
+    \]
+  \item Diámetro de cada alambre:
+    \[
+      d = \frac{1}{16}\,\text{in}.
+    \]
+  \item Área de la sección transversal de cada alambre:
+    \[
+      A = \frac{\pi d^{2}}{4}
+        = \frac{\pi}{4}\left(\frac{1}{16}\right)^{2}\text{in}^{2}.
+    \]
+  \item Longitudes de los alambres:
+    \[
+      L_{BE} = 10\,\text{in}, \qquad L_{CF} = 18\,\text{in}.
+    \]
+  \item Carga aplicada en el extremo:
+    \[
+      P = 220\,\text{lb}.
+    \]
+  \item Distancias a lo largo de la barra rígida:
+    \[
+      AB = 12\,\text{in},\quad AC = 24\,\text{in},\quad AD = 36\,\text{in}.
+    \]
+\end{itemize}
+
+%-------------------------------------------------
+\subsection*{Desarrollo}
+
+\subsubsection*{1. Relación geométrica: giro de la barra}
+
+Sea \(\theta\) la rotación (en radianes) de la barra rígida \(ABCD\) respecto al
+pivote en \(A\).
+
+Las deflexiones verticales de los puntos \(B\), \(C\) y \(D\) son
+proporcionales a sus distancias a \(A\):
+\begin{align*}
+  \delta_B &= AB\,\theta = 12\,\theta,\\
+  \delta_C &= AC\,\theta = 24\,\theta,\\
+  \delta_D &= AD\,\theta = 36\,\theta.
+\end{align*}
+
+Como los extremos superiores de los alambres están fijos en \(E\) y \(F\),
+las elongaciones de los alambres coinciden con las deflexiones de los
+puntos \(B\) y \(C\):
+\[
+  \delta_{BE} = \delta_B = 12\,\theta, 
+  \qquad
+  \delta_{CF} = \delta_C = 24\,\theta.
+\]
+
+\subsubsection*{2. Ley de Hooke en los alambres}
+
+Para cada alambre se cumple
+\[
+  \delta = \frac{PL}{AE}
+  \qquad\Longrightarrow\qquad
+  P = \frac{EA}{L}\,\delta.
+\]
+
+\paragraph{Alambre \(BE\).}
+
+\begin{align*}
+  P_{BE}
+    &= \frac{EA}{L_{BE}}\,\delta_{BE} \\
+    &= \frac{E A}{L_{BE}}\,(12\,\theta) \\
+    &= \left(29\times 10^{6}\right)
+       \left(\frac{\pi}{4}\left(\frac{1}{16}\right)^{2}\right)
+       \frac{12}{10}\,\theta \\
+    &\approx 106{,}765\times 10^{3}\,\theta\ \text{lb}.
+\end{align*}
+
+\paragraph{Alambre \(CF\).}
+
+\begin{align*}
+  P_{CF}
+    &= \frac{EA}{L_{CF}}\,\delta_{CF} \\
+    &= \frac{E A}{L_{CF}}\,(24\,\theta) \\
+    &= \left(29\times 10^{6}\right)
+       \left(\frac{\pi}{4}\left(\frac{1}{16}\right)^{2}\right)
+       \frac{24}{18}\,\theta \\
+    &\approx 118{,}628\times 10^{3}\,\theta\ \text{lb}.
+\end{align*}
+
+\subsubsection*{3. Ecuación de equilibrio de momentos}
+
+Se toma momento respecto al punto \(A\) sobre el cuerpo libre de la barra
+\(ABCD\) (sentido antihorario positivo):
+
+\begin{itemize}
+  \item la fuerza \(P_{BE}\) actúa en \(B\), a \(12\,\text{in}\) de \(A\);
+  \item la fuerza \(P_{CF}\) actúa en \(C\), a \(24\,\text{in}\) de \(A\);
+  \item la carga \(P\) actúa en \(D\), a \(36\,\text{in}\) de \(A\) (sentido
+        hacia abajo).
+\end{itemize}
+
+Entonces:
+\begin{align*}
+  \sum M_A &= 0 \\
+  12\,P_{BE} + 24\,P_{CF} - 36\,P &= 0.
+\end{align*}
+
+Sustituyendo las expresiones de \(P_{BE}\) y \(P_{CF}\) en función de
+\(\theta\):
+\begin{align*}
+  12\left(106{,}765\times 10^{3}\theta\right)
+  + 24\left(118{,}628\times 10^{3}\theta\right)
+  - 36(220) &= 0.
+\end{align*}
+
+Se agrupa el término en \(\theta\):
+\begin{align*}
+  \left[12(106{,}765\times 10^{3}) + 24(118{,}628\times 10^{3})\right]\theta
+  &= 36(220),\\
+  4{,}1283\times 10^{6}\,\theta &\approx 7{,}920.
+\end{align*}
+
+\subsubsection*{4. Cálculo de la rotación \(\theta\)}
+
+\begin{align*}
+  \theta
+    &= \frac{36\cdot 220}{4{,}1283\times 10^{6}} \\
+    &\approx 1{,}9185\times 10^{-3}\ \text{rad}.
+\end{align*}
+
+\subsubsection*{5. Tensiones adicionales en los alambres (inciso a)}
+
+\paragraph{Alambre \(BE\).}
+
+\begin{align*}
+  P_{BE}
+    &= 106{,}765\times 10^{3}\,\theta \\
+    &\approx 106{,}765\times 10^{3}
+      \left(1{,}9185\times 10^{-3}\right) \\
+    &\approx 204{,}8\ \text{lb}
+      \;\approx\; 205\ \text{lb}.
+\end{align*}
+
+\paragraph{Alambre \(CF\).}
+
+\begin{align*}
+  P_{CF}
+    &= 118{,}628\times 10^{3}\,\theta \\
+    &\approx 118{,}628\times 10^{3}
+      \left(1{,}9185\times 10^{-3}\right) \\
+    &\approx 227{,}6\ \text{lb}
+      \;\approx\; 228\ \text{lb}.
+\end{align*}
+
+\subsubsection*{6. Deflexión del punto \(D\) (inciso b)}
+
+\begin{align*}
+  \delta_D &= AD\,\theta = 36\,\theta,\\
+           &= 36\left(1{,}9185\times 10^{-3}\right)\ \text{in},\\
+           &\approx 0{,}0691\ \text{in}.
+\end{align*}
+
+\bigskip
+Por lo tanto:
+\[
+  P_{BE} \approx 205\ \text{lb},\qquad
+  P_{CF} \approx 228\ \text{lb},\qquad
+  \delta_D \approx 0{,}069\ \text{in}.
+\]
+\newpage
+\section*{Ejercicio 2}
+
+Sabiendo que cada uno de los ejes \(AB\), \(BC\) y \(CD\) consta de una varilla circular
+sólida, determine:
+\begin{itemize}
+    \item[(a)] el eje en el que ocurre el máximo esfuerzo cortante,
+    \item[(b)] la magnitud de dicho esfuerzo.
+\end{itemize}
+
+Los momentos aplicados y los diámetros son:
+\[
+T_1 = 400\ \text{lb·in}, \qquad
+T_2 = 1200\ \text{lb·in}, \qquad
+T_3 = 500\ \text{lb·in},
+\]
+\[
+d_{AB} = 0.60\ \text{in}, \qquad
+d_{BC} = 0.75\ \text{in}, \qquad
+d_{CD} = 0.90\ \text{in}.
+\]
+
+%-------------------------------------------------------
+\subsection*{Datos}
+
+\[
+T_{1} = 400\ \text{lb·in}, \qquad
+T_{2} = 1200\ \text{lb·in}, \qquad
+T_{3} = 500\ \text{lb·in}
+\]
+
+\[
+d_{AB} = 0.60\ \text{in}, \qquad
+d_{BC} = 0.75\ \text{in}, \qquad
+d_{CD} = 0.90\ \text{in}
+\]
+
+Radio:
+\[
+c = \frac{d}{2}
+\]
+
+Momento polar para barra circular sólida:
+\[
+J = \frac{\pi d^{4}}{32} = \frac{\pi}{2}c^{4}
+\]
+
+Esfuerzo cortante máximo:
+\[
+\tau_{\max} = \frac{Tc}{J} = \frac{2T}{\pi c^{3}}
+\]
+
+%-------------------------------------------------------
+\subsection*{Desarrollo}
+
+\subsubsection*{1. Torques internos}
+
+Tramo \(AB\):
+\[
+T_{AB} = 400\ \text{lb·in}
+\]
+
+Tramo \(BC\):
+\[
+T_{BC} = -400 + 1200 = 800\ \text{lb·in}
+\]
+
+Tramo \(CD\):
+\[
+T_{CD} = -400 + 1200 + 500 = 1300\ \text{lb·in}
+\]
+
+%-------------------------------------------------------
+\subsubsection*{2. Esfuerzos cortantes}
+
+\paragraph{Eje \(AB\).}
+
+\[
+d_{AB} = 0.60\ \text{in},
+\qquad
+c_{AB} = 0.30\ \text{in}
+\]
+
+\[
+\tau_{\max,AB}
+= \frac{2T_{AB}}{\pi c_{AB}^{3}}
+= \frac{2(400)}{\pi(0.30)^{3}}
+\]
+
+\[
+\tau_{\max,AB} \approx 9431\ \text{psi}
+\]
+
+\paragraph{Eje \(BC\).}
+
+\[
+d_{BC} = 0.75\ \text{in},
+\qquad
+c_{BC} = 0.375\ \text{in}
+\]
+
+\[
+\tau_{\max,BC}
+= \frac{2T_{BC}}{\pi c_{BC}^{3}}
+= \frac{2(800)}{\pi(0.375)^{3}}
+\]
+
+\[
+\tau_{\max,BC} \approx 9658\ \text{psi}
+\]
+
+\paragraph{Eje \(CD\).}
+
+\[
+d_{CD} = 0.90\ \text{in},
+\qquad
+c_{CD} = 0.45\ \text{in}
+\]
+
+\[
+\tau_{\max,CD}
+= \frac{2T_{CD}}{\pi c_{CD}^{3}}
+= \frac{2(1300)}{\pi(0.45)^{3}}
+\]
+
+\[
+\tau_{\max,CD} \approx 9082\ \text{psi}
+\]
+
+%-------------------------------------------------------
+\subsection*{Conclusiones}
+
+El esfuerzo cortante máximo ocurre en:
+\[
+\boxed{\text{Eje } BC}
+\]
+
+Valor del esfuerzo máximo:
+\[
+\boxed{\tau_{\max} \approx 9658\ \text{psi} \approx 9.66\ \text{ksi}}
+\]
+\newpage
+\section*{Ejercicio 3}
+
+Los pares mostrados en la figura se ejercen sobre las poleas A y B.
+Sabiendo que los ejes son sólidos y de aluminio \((G = 77\times 10^{9}\ \text{Pa})\),
+determine:
+\begin{itemize}
+    \item[(a)] el ángulo entre A y B,
+    \item[(b)] el ángulo entre A y C.
+\end{itemize}
+
+Los datos geométricos y de carga son:
+\[
+T_A = 300\ \text{N·m}, \qquad
+T_B = 400\ \text{N·m},
+\]
+\[
+L_{AB} = 0.90\ \text{m}, \qquad
+L_{BC} = 0.75\ \text{m},
+\]
+\[
+d_{AB} = 30\ \text{mm} = 0.030\ \text{m}, \qquad
+d_{BC} = 46\ \text{mm} = 0.046\ \text{m}.
+\]
+
+%-------------------------------------------------
+\subsection*{Datos}
+
+\[
+G = 77\times 10^{9}\ \text{Pa}
+\]
+
+\[
+T_A = 300\ \text{N·m}, \qquad
+T_B = 400\ \text{N·m}
+\]
+
+\[
+L_{AB} = 0.90\ \text{m}, \qquad
+L_{BC} = 0.75\ \text{m}
+\]
+
+\[
+d_{AB} = 0.030\ \text{m}, \qquad
+d_{BC} = 0.046\ \text{m}
+\]
+
+Para un eje circular sólido:
+\[
+J = \frac{\pi d^{4}}{32}
+\]
+
+Ángulo de giro:
+\[
+\varphi = \frac{T L}{J G}
+\]
+
+%-------------------------------------------------
+\subsection*{Desarrollo}
+
+\subsubsection*{1. Torques internos}
+
+Tramo \(AB\):
+\[
+T_{AB} = T_A = 300\ \text{N·m}
+\]
+
+Tramo \(BC\):
+\[
+T_{BC} = T_A + T_B = 300 + 400 = 700\ \text{N·m}
+\]
+
+%-------------------------------------------------
+\subsubsection*{2. Momento polar de inercia}
+
+\paragraph{Eje AB.}
+\[
+J_{AB} = \frac{\pi (0.030)^{4}}{32}
+        = 7.96\times 10^{-8}\ \text{m}^{4}
+\]
+
+\paragraph{Eje BC.}
+\[
+J_{BC} = \frac{\pi (0.046)^{4}}{32}
+        = 1.39\times 10^{-7}\ \text{m}^{4}
+\]
+
+%-------------------------------------------------
+\subsubsection*{3. Ángulos de giro}
+
+\paragraph{Ángulo entre A y B (tramo AB).}
+
+\[
+\varphi_{AB}
+= \frac{T_{AB} L_{AB}}{J_{AB} G}
+= \frac{300(0.90)}{(7.96\times 10^{-8})(77\times 10^{9})}
+\]
+
+\[
+\varphi_{AB} = 4.41\times 10^{-2}\ \text{rad}
+\]
+
+\paragraph{Ángulo en el tramo BC.}
+
+\[
+\varphi_{BC}
+= \frac{T_{BC} L_{BC}}{J_{BC} G}
+= \frac{700(0.75)}{(1.39\times 10^{-7})(77\times 10^{9})}
+\]
+
+\[
+\varphi_{BC} = 1.55\times 10^{-2}\ \text{rad}
+\]
+
+\paragraph{Ángulo entre A y C.}
+
+\[
+\varphi_{AC}
+= \varphi_{AB} + \varphi_{BC}
+= 0.0441 + 0.0155
+= 5.96\times 10^{-2}\ \text{rad}
+\]
+
+%-------------------------------------------------
+
+
+\[
+\boxed{\varphi_{AB} \approx 4.41\times 10^{-2}\ \text{rad}
+\quad (\approx 2.53^\circ)}
+\]
+
+\[
+\boxed{\varphi_{AC} \approx 5.96\times 10^{-2}\ \text{rad}
+\quad (\approx 3.42^\circ)}
+\]
+\newpage
+\section*{Ejercicio 4}
+
+Dos ejes sólidos de acero \((G = 77\times 10^{9}\ \text{Pa})\) están conectados por los
+engranes que muestra la figura. Sabiendo que el radio del engrane B es
+\(r_B = 20\ \text{mm}\), determine el ángulo que gira el extremo A cuando
+\(T_A = 75\ \text{N·m}\).
+
+Los datos geométricos son:
+\[
+r_B = 20\ \text{mm} = 0.020\ \text{m}, \qquad
+r_C = 60\ \text{mm} = 0.060\ \text{m},
+\]
+\[
+L_{AB} = 500\ \text{mm} = 0.50\ \text{m}, \qquad
+L_{CD} = 400\ \text{mm} = 0.40\ \text{m},
+\]
+\[
+d_{AB} = 20\ \text{mm} = 0.020\ \text{m}, \qquad
+d_{CD} = 24\ \text{mm} = 0.024\ \text{m}.
+\]
+
+%-------------------------------------------------
+\subsection*{Datos}
+
+\[
+G = 77\times 10^{9}\ \text{Pa}
+\]
+
+\[
+T_A = 75\ \text{N·m}
+\]
+
+\[
+r_B = 0.020\ \text{m}, \qquad
+r_C = 0.060\ \text{m}
+\]
+
+\[
+L_{AB} = 0.50\ \text{m}, \qquad
+L_{CD} = 0.40\ \text{m}
+\]
+
+\[
+d_{AB} = 0.020\ \text{m}, \qquad
+d_{CD} = 0.024\ \text{m}
+\]
+
+Momento polar de inercia para un eje circular sólido:
+\[
+J = \frac{\pi d^{4}}{32}
+\]
+
+Ángulo de giro de un eje en torsión:
+\[
+\varphi = \frac{T L}{J G}
+\]
+
+%-------------------------------------------------
+\subsection*{Desarrollo}
+
+\subsubsection*{1. Relación de torques entre los engranes}
+
+La fuerza tangencial de contacto entre los engranes B y C es la misma en ambos:
+\[
+F = \frac{T_{AB}}{r_B} = \frac{T_{CD}}{r_C}
+\]
+
+De aquí:
+\[
+T_{CD} = \frac{r_C}{r_B}\,T_{AB}
+       = \frac{0.060}{0.020}(75)
+       = 225\ \text{N·m}
+\]
+
+Por tanto:
+\[
+T_{AB} = 75\ \text{N·m}, \qquad
+T_{CD} = 225\ \text{N·m}
+\]
+
+%-------------------------------------------------
+\subsubsection*{2. Momento polar de inercia de cada eje}
+
+\paragraph{Eje CD.}
+\[
+J_{CD} = \frac{\pi (0.024)^{4}}{32}
+       = 3.26\times 10^{-8}\ \text{m}^{4}
+\]
+
+\paragraph{Eje AB.}
+\[
+J_{AB} = \frac{\pi (0.020)^{4}}{32}
+       = 1.57\times 10^{-8}\ \text{m}^{4}
+\]
+
+%-------------------------------------------------
+\subsubsection*{3. Giro en el eje CD y rotación en C y B}
+
+\paragraph{Torsión en el eje CD.}
+\[
+\varphi_{CD}
+= \frac{T_{CD} L_{CD}}{J_{CD} G}
+= \frac{225(0.40)}{(3.26\times 10^{-8})(77\times 10^{9})}
+\]
+
+\[
+\varphi_{CD} = 3.59\times 10^{-2}\ \text{rad}
+\]
+
+Como el extremo D está fijo, el ángulo en C es:
+\[
+\varphi_C = \varphi_{CD} = 3.59\times 10^{-2}\ \text{rad}
+\]
+
+\paragraph{Relación de giros entre los engranes.}
+
+La deformación circunferencial en el punto de contacto es la misma:
+\[
+\delta = r_C \varphi_C = r_B \varphi_B
+\]
+
+De donde:
+\[
+\varphi_B = \frac{r_C}{r_B}\,\varphi_C
+          = \frac{0.060}{0.020}(3.59\times 10^{-2})
+          = 1.08\times 10^{-1}\ \text{rad}
+\]
+
+%-------------------------------------------------
+\subsubsection*{4. Giro en el eje AB y rotación en A}
+
+\paragraph{Torsión en el eje AB.}
+\[
+\varphi_{AB}
+= \frac{T_{AB} L_{AB}}{J_{AB} G}
+= \frac{75(0.50)}{(1.57\times 10^{-8})(77\times 10^{9})}
+\]
+
+\[
+\varphi_{AB} = 3.10\times 10^{-2}\ \text{rad}
+\]
+
+\paragraph{Ángulo total en el extremo A.}
+
+El extremo A gira la suma del giro propio del eje AB más la rotación que ya tiene B:
+\[
+\varphi_A = \varphi_B + \varphi_{AB}
+          = 1.08\times 10^{-1} + 3.10\times 10^{-2}
+          = 1.39\times 10^{-1}\ \text{rad}
+\]
+
+En grados:
+\[
+\varphi_A \approx 7.94^\circ
+\]
+
+%-------------------------------------------------
+\subsection*{Conclusión}
+
+\[
+\boxed{\varphi_A \approx 1.39\times 10^{-1}\ \text{rad}
+\quad (\approx 7.9^\circ)}
+\]
+\newpage
+\section*{Ejercicio 5}
+
+Un eje que consta de un tubo de acero de \(50\ \text{mm}\) de diámetro exterior
+debe transmitir \(100\ \text{kW}\) de potencia mientras gira a una frecuencia de
+\(20\ \text{Hz}\).
+Determine el espesor del tubo que deberá utilizarse si el esfuerzo cortante
+no debe exceder \(60\ \text{MPa}\).
+
+%-------------------------------------------------
+\subsection*{Datos}
+
+\[
+P = 100\ \text{kW} = 100\times 10^{3}\ \text{W}
+\]
+
+\[
+f = 20\ \text{Hz}
+\]
+
+\[
+d_{\text{ext}} = 50\ \text{mm} = 0.050\ \text{m},
+\qquad
+c_2 = \frac{d_{\text{ext}}}{2} = 25\ \text{mm} = 0.025\ \text{m}
+\]
+
+\[
+\tau_{\text{adm}} = 60\ \text{MPa} = 60\times 10^{6}\ \text{Pa}
+\]
+
+Se desea hallar el espesor:
+\[
+t = c_2 - c_1,
+\]
+donde \(c_1\) es el radio interior del tubo.
+
+Para un eje circular hueco:
+\[
+J = \frac{\pi}{2}\left(c_2^{4} - c_1^{4}\right)
+\]
+
+Esfuerzo cortante máximo en la superficie externa:
+\[
+\tau_{\max} = \frac{T c_2}{J}
+\]
+
+Potencia transmitida por un eje en rotación:
+\[
+P = T \omega, \qquad \omega = 2\pi f
+\]
+
+%-------------------------------------------------
+\subsection*{Desarrollo}
+
+\subsubsection*{1. Cálculo del torque transmitido}
+
+\[
+\omega = 2\pi f = 2\pi(20)\ \text{rad/s}
+\]
+
+\[
+T = \frac{P}{\omega}
+  = \frac{100\times 10^{3}}{2\pi(20)}
+  = 7.96\times 10^{2}\ \text{N·m}
+\]
+
+\[
+T \approx 7.96\times 10^{2}\ \text{N·m}
+\]
+
+%-------------------------------------------------
+\subsubsection*{2. Relación entre el esfuerzo y los radios}
+
+Se impone \(\tau_{\max} = \tau_{\text{adm}}\):
+
+\[
+\tau_{\text{adm}}
+= \frac{T c_2}{J}
+= \frac{T c_2}{\frac{\pi}{2}(c_2^{4} - c_1^{4})}
+= \frac{2 T c_2}{\pi (c_2^{4} - c_1^{4})}
+\]
+
+Despejando \(c_1^{4}\):
+
+\[
+\tau_{\text{adm}}\,\pi\,(c_2^{4} - c_1^{4}) = 2 T c_2
+\]
+
+\[
+c_2^{4} - c_1^{4}
+= \frac{2 T c_2}{\pi \tau_{\text{adm}}}
+\]
+
+\[
+c_1^{4} = c_2^{4} - \frac{2 T c_2}{\pi \tau_{\text{adm}}}
+\]
+
+Sustituyendo valores numéricos (en unidades SI):
+
+\[
+c_2^{4} = (0.025)^{4} = 3.90625\times 10^{-7}\ \text{m}^{4}
+\]
+
+\[
+\frac{2 T c_2}{\pi \tau_{\text{adm}}}
+= \frac{2(7.96\times 10^{2})(0.025)}{\pi(60\times 10^{6})}
+= 2.11\times 10^{-7}\ \text{m}^{4}
+\]
+
+\[
+c_1^{4}
+= 3.90625\times 10^{-7} - 2.11\times 10^{-7}
+= 1.80\times 10^{-7}\ \text{m}^{4}
+\]
+
+\[
+c_1 = (1.80\times 10^{-7})^{1/4}
+    = 2.06\times 10^{-2}\ \text{m}
+    \approx 0.0206\ \text{m}
+\]
+
+En milímetros:
+
+\[
+c_1 \approx 20.6\ \text{mm}
+\]
+
+%-------------------------------------------------
+\subsubsection*{3. Espesor del tubo}
+
+\[
+t = c_2 - c_1
+  = 25\ \text{mm} - 20.6\ \text{mm}
+  = 4.4\ \text{mm}\ (\text{aprox.})
+\]
+
+%-------------------------------------------------
+\subsection*{Conclusión}
+
+El espesor requerido del tubo es, aproximadamente,
+\[
+\boxed{t \approx 4.4\ \text{mm}}
+\]
+para que el esfuerzo cortante no exceda los \(60\ \text{MPa}\).
+\newpage
+\section*{Ejercicio 6}
+
+Dos fuerzas verticales de \(15\ \text{kips}\) se aplican a una viga con la sección
+transversal en T mostrada. Se pide determinar los esfuerzos máximos de tensión
+y de compresión en la porción \(BC\) de la viga.
+
+%-------------------------------------------------
+\subsection*{Datos}
+
+\begin{itemize}
+  \item Cargas: \(P = 15\ \text{kips}\) aplicadas en los puntos \(B\) y \(C\).
+  \item Geometría de la viga:
+  \[
+    AB = 40\ \text{in},\quad BC = 60\ \text{in},\quad CD = 40\ \text{in}.
+  \]
+  \item Sección transversal en T:
+  \begin{itemize}
+    \item Alma: \(3\ \text{in}\) de ancho por \(6\ \text{in}\) de altura.
+    \item Ala: \(9\ \text{in}\) de ancho por \(2\ \text{in}\) de espesor.
+  \end{itemize}
+\end{itemize}
+
+Tomamos como eje de referencia \(x_0\) la base de la sección (cara inferior del ala)
+y medimos las coordenadas \(y_0\) hacia arriba.
+
+%-------------------------------------------------
+\subsection*{Centroide de la sección}
+
+Se divide la sección en dos rectángulos:
+
+\begin{itemize}
+  \item[1)] Alma: \(b_1 = 3\ \text{in}\), \(h_1 = 6\ \text{in}\).
+        \[
+          A_1 = b_1 h_1 = 3\cdot 6 = 18\ \text{in}^2.
+        \]
+        El centroide del alma está a
+        \[
+          \bar y_{01} = 2 + \frac{6}{2} = 5\ \text{in}
+        \]
+        sobre la base (se suman los \(2\ \text{in}\) del ala más la mitad del alma).
+  \item[2)] Ala: \(b_2 = 9\ \text{in}\), \(h_2 = 2\ \text{in}\).
+        \[
+          A_2 = b_2 h_2 = 9\cdot 2 = 18\ \text{in}^2.
+        \]
+        El centroide del ala está a
+        \[
+          \bar y_{02} = \frac{2}{2} = 1\ \text{in}
+        \]
+        sobre la base.
+\end{itemize}
+
+\noindent
+La tabla de cálculo del centroide queda:
+
+\begin{center}
+\begin{tabular}{c c c c}
+\hline
+Elemento & \(A\) (\(\text{in}^2\)) & \(\bar y_0\) (\(\text{in}\)) & \(A\,\bar y_0\) (\(\text{in}^3\)) \\
+\hline
+1 (alma) & 18 & 5 & 90 \\
+2 (ala)  & 18 & 1 & 18 \\
+\hline
+$\Sigma$ & 36 &     & 108 \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent
+Área total:
+\[
+A = A_1 + A_2 = 36\ \text{in}^2.
+\]
+
+Coordenada del centroide global respecto a la base:
+\[
+\bar y_0 = \frac{\sum A_i \bar y_{0i}}{\sum A_i}
+         = \frac{108}{36}
+         = 3\ \text{in}.
+\]
+
+Por tanto, el **eje neutro** está a \(3\ \text{in}\) por encima de la base.
+
+\[
+y_{\text{top}} = 8 - 3 = 5\ \text{in}, \qquad
+y_{\text{bot}} = 0 - 3 = -3\ \text{in}.
+\]
+
+%-------------------------------------------------
+\subsection*{Momento de inercia respecto al eje neutro}
+
+Se aplica el teorema de ejes paralelos para cada rectángulo.
+
+\paragraph{Elemento 1 (alma).}
+
+\[
+d_1 = \bar y_{01} - \bar y_0 = 5 - 3 = 2\ \text{in}.
+\]
+
+\[
+I_1 = \frac{1}{12} b_1 h_1^{3} + A_1 d_1^{2}
+    = \frac{1}{12}(3)(6^{3}) + 18(2^{2})
+    = \frac{1}{12}(3)(216) + 18(4)
+    = 54 + 72
+    = 126\ \text{in}^4.
+\]
+
+\paragraph{Elemento 2 (ala).}
+
+\[
+d_2 = \bar y_0 - \bar y_{02} = 3 - 1 = 2\ \text{in}.
+\]
+
+\[
+I_2 = \frac{1}{12} b_2 h_2^{3} + A_2 d_2^{2}
+    = \frac{1}{12}(9)(2^{3}) + 18(2^{2})
+    = \frac{1}{12}(9)(8) + 18(4)
+    = 6 + 72
+    = 78\ \text{in}^4.
+\]
+
+\noindent
+Momento de inercia total respecto al eje neutro:
+
+\[
+I = I_1 + I_2 = 126 + 78 = 204\ \text{in}^4.
+\]
+
+%-------------------------------------------------
+\subsection*{Diagrama de momento en la parte \(BC\)}
+
+Por simetría de cargas y geometría:
+
+\[
+R_A = R_D = 15\ \text{kips}.
+\]
+
+En el tramo \(BC\) (entre las cargas) el esfuerzo cortante es cero y, por tanto,
+el momento flector es constante. Cortando entre \(B\) y \(C\) y haciendo suma de
+momentos respecto al corte:
+
+\[
+M - P a = 0,
+\qquad a = 40\ \text{in}.
+\]
+
+\[
+M = P a = 15(40) = 600\ \text{kip·in}.
+\]
+
+Este es el momento que actúa en cualquier sección de la porción \(BC\).
+
+%-------------------------------------------------
+\subsection*{Esfuerzos de flexión}
+
+La fórmula de flexión es:
+\[
+\sigma = -\,\frac{M y}{I},
+\]
+donde \(y\) se mide desde el eje neutro (positivo hacia arriba).
+
+\paragraph{Fibra superior (compresión).}
+
+\[
+\sigma_{\text{top}}
+= -\,\frac{M y_{\text{top}}}{I}
+= -\,\frac{600(5)}{204}
+= -14.71\ \text{ksi}.
+\]
+
+\paragraph{Fibra inferior (tensión).}
+
+\[
+\sigma_{\text{bot}}
+= -\,\frac{M y_{\text{bot}}}{I}
+= -\,\frac{600(-3)}{204}
+= 8.82\ \text{ksi}.
+\]
+
+%-------------------------------------------------
+\subsection*{Conclusiones}
+
+\[
+\boxed{\sigma_{\max,\ \text{compresión}} \approx -14.71\ \text{ksi}}
+\]
+
+\[
+\boxed{\sigma_{\max,\ \text{tensión}} \approx 8.82\ \text{ksi}}
+\]
+
+En la porción \(BC\) de la viga, la fibra superior de la sección está sometida a
+compresión y la fibra inferior a tensión.
+
+\end{document}

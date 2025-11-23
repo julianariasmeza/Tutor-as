@@ -1,0 +1,404 @@
+% === Folleto COVAO - Mini banco de práctica ===
+\documentclass[12pt]{article}
+
+% ===== Paquetes =====
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{siunitx}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage[most]{tcolorbox}
+\usepackage{hyperref}
+
+\geometry{letterpaper, margin=2.5cm}
+\sisetup{output-decimal-marker = {,}}
+
+% ===== Estilos de cajas =====
+\tcbset{
+  colback=white,
+  colframe=black!70,
+  boxrule=0.6pt,
+  arc=2mm,
+  left=6pt,right=6pt,top=6pt,bottom=6pt
+}
+
+\newtcolorbox{ejercicio}[1][]{title=Ejercicio, #1}
+\newtcolorbox{solucion}[1][]{title=Solución, colframe=green!60!black, #1}
+\newtcolorbox{nota}[1][]{title=Nota, colframe=blue!60!black, #1}
+
+% ===== Encabezado simple =====
+\newcommand{\titulo}{
+  \begin{center}
+  {\Large \textbf{Folleto de preparación — Examen de admisión COVAO}}\\[2pt]
+  {\small Álgebra y razonamiento cuantitativo}\\[6pt]
+  \end{center}\vspace{-0.3em}\hrule\vspace{0.8em}
+}
+
+\begin{document}
+\titulo
+
+\begin{nota}
+Este mini banco incluye \textbf{enunciados} primero y \textbf{soluciones} al final. 
+Usá cada ejercicio para modelar y practicar: identificá datos, aplicá propiedades y justificá el paso clave.
+\end{nota}
+
+% ==================== ENUNCIADOS ====================
+\section*{Enunciados}
+
+\begin{ejercicio}
+\textbf{Ejercicio 1.} Analice las proposiciones (I) y (II) y determine cuáles son verdaderas:
+
+\[
+\text{I.}\quad (2^{m}-2^{-m})^{2}=4^{m}-2+\frac{1}{4^{m}}
+\qquad\qquad
+\text{II.}\quad (2^{m}-2^{-m})^{2}=2^{2m}-2+2^{-2m}.
+\]
+
+Marque: \textit{a)} Ambas \quad \textit{b)} Ninguna \quad \textit{c)} Solo II \quad \textit{d)} Solo I.
+\end{ejercicio}
+
+\begin{ejercicio}
+\textbf{Ejercicio 2.} Considere la sucesión
+\[
+2,\ 3,\ 5,\ 8,\ 13,\ p,\ q.
+\]
+Calcule \(p+q\). \\
+Opciones: \textit{a)} \(34\) \quad \textit{b)} \(144\) \quad \textit{c)} \(89\) \quad \textit{d)} \(55\).
+\end{ejercicio}
+
+\begin{ejercicio}
+\textbf{Ejercicio 3.} Cuando José Daniel nació, Mary Paz tenía \(9\) años. Actualmente, la edad de José Daniel es \(\tfrac{2}{5}\) de la edad de Mary Paz. ¿Qué edad tiene Mary Paz?\\
+Opciones: \textit{a)} \(6\) \quad \textit{b)} \(18\) \quad \textit{c)} \(15\) \quad \textit{d)} \(12\).
+\end{ejercicio}
+
+\begin{ejercicio}
+\textbf{Ejercicio 4.} Simplifique al máximo:
+\[
+(-3x^{4}y^{3})^{-4}\cdot(-3x^{3}y^{2})^{6}.
+\]
+Opciones: \textit{a)} \(6x^{2}\) \quad \textit{b)} \(9x^{2}\) \quad \textit{c)} \(12x^{2}\) \quad \textit{d)} \(15x^{2}\).
+\end{ejercicio}
+% ——— Trigonometría: altura del edificio ———
+\begin{ejercicio}
+\textbf{Ejercicio 5.} El Hospicio de Huérfanos de Cartago construye un edificio dentro del COVAO. Desde un punto a \(\,40\,\) m de la base se observa la parte superior con un ángulo de \(\,32^\circ\) respecto a la horizontal, formando un triángulo rectángulo con altura \(x\). Use las aproximaciones:
+\[
+\begin{aligned}
+&\sen 32^\circ \approx 0{,}5299,\quad \cos 32^\circ \approx 0{,}8480,\quad \tan 32^\circ \approx 0{,}6248,\\
+&\sen 58^\circ \approx 0{,}8480,\quad \cos 58^\circ \approx 0{,}5299,\quad \tan 58^\circ \approx 1{,}6003.
+\end{aligned}
+\]
+¿Cuál es la altura aproximada del edificio?
+\[
+\text{a) }25\qquad\text{b) }32\qquad\text{c) }16\qquad\text{d) }64
+\]
+\end{ejercicio}
+
+% ——— Porcentajes: huevos ———
+\begin{ejercicio}
+\textbf{Ejercicio 6.} Un comerciante tiene \(2000\) huevos, de los cuales el \(20\%\) están podridos. Luego vende el \(60\%\) de los que no están podridos. ¿Cuántos huevos \emph{no podridos} vendió?
+\[
+\text{a) }1040\qquad\text{b) }1200\qquad\text{c) }720\qquad\text{d) }960
+\]
+\end{ejercicio}
+
+% ——— Sistemas lineales: 10A y 10B ———
+\begin{ejercicio}
+\textbf{Ejercicio 7.} En el COVAO, en la sección 10A hay \(7\) mujeres más que en la 10B. Si una mujer pasa de 10B a 10A, en 10A habrá el doble de mujeres que en 10B. ¿Cuántas mujeres hay entre las secciones 10A y 10B? 
+\[
+\text{a) }5\qquad\text{b) }17\qquad\text{c) }12\qquad\text{d) }10
+\]
+\end{ejercicio}
+
+% ——— Edades: Julio y Julián ———
+\begin{ejercicio}
+\textbf{Ejercicio 8.} Hace 8 años Julio era tres veces más viejo que su hijo Julián. Ahora, él es el doble de la edad de su hijo. Si solamente tiene un hijo, ¿cuál es la suma de las edades actuales de Julio y Julián?
+\[
+\text{a) }16\qquad\text{b) }32\qquad\text{c) }48\qquad\text{d) }8
+\]
+\end{ejercicio}
+
+% ——— Enteros consecutivos ———
+\begin{ejercicio}
+\textbf{Ejercicio 9.} La suma de cuatro números enteros consecutivos es \(154\). La suma de los dígitos del número mayor es:
+\[
+\text{a) }37\qquad\text{b) }40\qquad\text{c) }4\qquad\text{d) }10
+\]
+\end{ejercicio}
+% ——— Álgebra: expandir y simplificar ———
+\begin{ejercicio}
+\textbf{Ejercicio 10.} Determine el resultado al simplificar al máximo la expresión
+\[
+2x - 3(1 - x)^{2} - \bigl[x(3 - x) + 4x\bigr].
+\]
+Opciones:
+\[
+\text{a) }-2x^{2}+x-3 \qquad
+\text{b) }-x^{2}+10x+4 \qquad
+\text{c) }2x^{2}+7x-14 \qquad
+\text{d) }2x^{2}+3x+1
+\]
+\end{ejercicio}
+
+% ——— Operación definida ———
+\begin{ejercicio}
+\textbf{Ejercicio 11.} Si \(a*b*c=2a-(b-c)^{2}\), ¿cuál es el valor de \(3*5*(-2)\)?
+\[
+\text{a) }3 \qquad
+\text{b) }-3 \qquad
+\text{c) }43 \qquad
+\text{d) }-43
+\]
+\end{ejercicio}
+
+% ——— Primos divisores de 54 ———
+\begin{ejercicio}
+\textbf{Ejercicio 12.} Si \(p\) y \(q\) son números primos divisores de \(54\) y \(p>q\), entonces con certeza:
+\[
+\text{I. } p+q=5 \qquad
+\text{II. } pq=6 \qquad
+\text{III. } q-p=2
+\]
+De las proposiciones anteriores, ¿cuáles son con certeza verdaderas?
+\[
+\text{a) Solo la II y la III} \qquad
+\text{b) Solo la I} \qquad
+\text{c) Solo la I y la II} \qquad
+\text{d) Solo la I y la III}
+\]
+\end{ejercicio}
+
+% ——— Expresiones algebraicas con parámetros ———
+\begin{ejercicio}
+\textbf{Ejercicio 13.} Si \(A=-2x+2(x+1)\) y \(B=3x+1\), calcule el valor de
+\[
+4(A-B)+12.
+\]
+Opciones:
+\[
+\text{a) }-12x \qquad
+\text{b) }4-12x \qquad
+\text{c) }12-2x \qquad
+\text{d) }16-12x
+\]
+\end{ejercicio}
+% ——— Relojes: atraso por hora ———
+\begin{ejercicio}
+\textbf{Ejercicio 14.} Un reloj atrasa \(3\) minutos por hora. Se pone a funcionar con la hora exacta y, \(6\) horas después, marca las \(8{:}47\,\mathrm{am}\). ¿Cuál es la hora exacta en ese momento?
+\[
+\text{a) }3{:}47\,\mathrm{pm}\qquad
+\text{b) }9{:}05\,\mathrm{am}\qquad
+\text{c) }9{:}47\,\mathrm{am}\qquad
+\text{d) }2{:}05\,\mathrm{pm}
+\]
+\end{ejercicio}
+
+% ——— Mínimo común múltiplo de periodos ———
+\begin{ejercicio}
+\textbf{Ejercicio 15.} En una fábrica del Parque Industrial de Cartago hay tres timbres: uno suena cada \(75\) minutos, otro cada \(80\) minutos y el tercero cada \(90\) minutos. Si los tres suenan simultáneamente a las \(10{:}00\,\mathrm{am}\) del domingo, ¿cuándo es la próxima vez que volverá a suceder?
+\[
+\text{a)  }10{:}00\,\mathrm{pm}\text{ del martes}\quad
+\text{b)  }10{:}00\,\mathrm{am}\text{ del lunes}\quad
+\text{c)  }10{:}00\,\mathrm{am}\text{ del martes}\quad
+\text{d)  }10{:}00\,\mathrm{pm}\text{ del lunes}
+\]
+\end{ejercicio}
+
+\vspace{0.5em}
+\begin{nota}
+Sugerencia didáctica: antes de mirar las soluciones, escribí \emph{propiedades} que vas a usar (por ejemplo,
+\(a^{r}a^{s}=a^{r+s}\), \((a^{r})^{s}=a^{rs}\), etc.). Eso te obliga a justificar y reduce errores.
+\end{nota}
+
+% ==================== SOLUCIONES ====================
+\section*{Soluciones}
+
+\begin{solucion}
+\textbf{Ejercicio 1.} Desarrollamos:
+\[
+(2^{m}-2^{-m})^{2}
+=(2^{m})^{2}-2\cdot 2^{m}\cdot 2^{-m}+(2^{-m})^{2}
+=2^{2m}-2\cdot 2^{0}+2^{-2m}
+=2^{2m}-2+2^{-2m}.
+\]
+Como \(4^{m}=2^{2m}\) y \(\dfrac{1}{4^{m}}=2^{-2m}\), las dos expresiones son \textbf{idénticas}. \\
+\(\Rightarrow\) Respuesta: \(\boxed{\text{a) Ambas}}\).
+\end{solucion}
+
+\begin{solucion}
+\textbf{Ejercicio 2.} Es una sucesión tipo Fibonacci: cada término es la suma de los dos anteriores. \\
+Datos: \(8+13=21=p\), \(13+21=34=q\). \\
+Entonces \(p+q=21+34= \boxed{55}\). \\
+Respuesta: \(\boxed{\text{d)}}\).
+\end{solucion}
+
+\begin{solucion}
+\textbf{Ejercicio 3.} Llamemos \(M\) a la edad actual de Mary y \(J\) a la de José. \\
+Datos: diferencia fija \(M-J=9\). Además \(J=\tfrac{2}{5}M\). \\
+Sustitución: \(M-\tfrac{2}{5}M=9 \Rightarrow \tfrac{3}{5}M=9 \Rightarrow M=15\). \\
+Respuesta: \(\boxed{15}\) (\(\boxed{\text{c)}}\)).
+\end{solucion}
+
+\begin{solucion}
+\textbf{Ejercicio 4.} Aplicamos leyes de exponentes:
+\[
+(-3)^{-4}x^{-16}y^{-12}\cdot(-3)^{6}x^{18}y^{12}
+=(-3)^{-4+6}\,x^{-16+18}\,y^{-12+12}
+=(-3)^{2}x^{2}= \boxed{9x^{2}}.
+\]
+Respuesta: \(\boxed{\text{b)}}\).
+\end{solucion}
+% ==================== SOLUCIONES ====================
+
+\begin{solucion}
+\textbf{Ejercicio 5.}
+En el triángulo rectángulo, \(\tan 32^\circ=\dfrac{\text{opuesto}}{\text{adyacente}}=\dfrac{x}{40}\).
+\[
+x=40\cdot\tan 32^\circ \approx 40\cdot 0{,}6248=24{,}992\ \text{m}\approx \boxed{25\ \text{m}}.
+\]
+Respuesta: \textbf{a) 25}.
+\end{solucion}
+
+\begin{solucion}
+\textbf{Ejercicio 6.}
+\[
+\text{Podridos}=20\,\text{\%}\cdot 2000=400,\qquad
+\text{No podridos}=2000-400=1600.
+\]
+Vende el \(60\,\text{\%}\) de los no podridos:
+\[
+0{,}60\cdot 1600= \boxed{960}.
+\]
+Respuesta: \textbf{d) 960}.
+\end{solucion}
+
+\begin{solucion}
+\textbf{Ejercicio 7.}
+Sea \(A\) mujeres en 10A y \(B\) en 10B.
+\[
+A=B+7,\qquad A+1=2(B-1).
+\]
+Sustituyendo:
+\[
+(B+7)+1=2B-2 \;\Rightarrow\; B=10,\qquad A=B+7=17.
+\]
+Según lo que se pida:
+\[
+\boxed{10B: 10\ \text{mujeres (opción d)}},\quad
+\boxed{10A: 17\ \text{mujeres (opción b)}},\quad
+\boxed{\text{Total}: 27}.
+\]
+\end{solucion}
+
+\begin{solucion}
+\textbf{Ejercicio 8.}
+Sea \(J\) la edad actual de Julio y \(S\) la de su hijo.
+\[
+\text{Hace 8 años: } J-8=3(S-8),\qquad \text{Ahora: } J=2S.
+\]
+Sustituyendo \(J=2S\) en la primera:
+\[
+2S-8=3S-24 \;\Rightarrow\; S=16,\quad J=32.
+\]
+Suma actual:
+\[
+J+S=32+16=\boxed{48}.
+\]
+Respuesta: \textbf{c) 48}.
+\end{solucion}
+
+\begin{solucion}
+\textbf{Ejercicio 9.}
+Sea \(n,n+1,n+2,n+3\) la terna.
+\[
+n+(n+1)+(n+2)+(n+3)=4n+6=154 \;\Rightarrow\; n=37.
+\]
+El mayor es \(n+3=40\) y la suma de sus dígitos es \(\boxed{4}\).
+Respuesta: \textbf{c) 4}.
+\end{solucion}
+\begin{solucion}
+\textbf{Ejercicio 10.}
+\[
+\begin{aligned}
+&2x - 3(1-x)^2 - \bigl[x(3-x)+4x\bigr] \\
+&= 2x - 3(1-2x+x^2) - (3x - x^2 + 4x) \\
+&= 2x + (-3+6x-3x^2) - (7x - x^2) \\
+&= 2x+6x-7x \;-\;3 \;+\;(-3x^2+x^2) \\
+&= \boxed{-2x^2 + x - 3}.
+\end{aligned}
+\]
+Respuesta: \textbf{a)}.
+\end{solucion}
+
+\begin{solucion}
+\textbf{Ejercicio 11.} \; Si \(a*b*c=2a-(b-c)^2\), entonces
+\[
+3*5*(-2)=2(3)-(5-(-2))^2=6-7^2=6-49=\boxed{-43}.
+\]
+Respuesta: \textbf{d)}.
+\end{solucion}
+
+\begin{solucion}
+\textbf{Ejercicio 12.} \; Los primos divisores de \(54\) son \(\{2,3\}\).
+Como \(p>q\), tomamos \(p=3,\ q=2\).
+\[
+\text{I: }p+q=3+2=5\;\ (\text{verdadera}),\qquad
+\text{II: }pq=3\cdot2=6\;\ (\text{verdadera}),\qquad
+\text{III: }q-p=2-3=-1\;\ (\text{falsa}).
+\]
+Con certeza verdaderas: \(\boxed{\text{I y II}}\).
+Respuesta: \textbf{c)}.
+\end{solucion}
+
+\begin{solucion}
+\textbf{Ejercicio 13.}
+\[
+A=-2x+2(x+1)=-2x+2x+2=2,\qquad B=3x+1.
+\]
+\[
+4(A-B)+12=4\bigl(2-(3x+1)\bigr)+12=4(1-3x)+12=4-12x+12=\boxed{16-12x}.
+\]
+Respuesta: \textbf{d)}.
+\end{solucion}
+\begin{solucion}
+\textbf{Ejercicio 14.}
+\begin{itemize}
+\item \textbf{Datos:} El reloj atrasa \(3\) min/h. Tras \(6\) h marca \(8{:}47\,\mathrm{am}\).
+\item \textbf{Fórmula:} Atraso total \(=\) (atraso por hora)\(\times\)(tiempo real).
+\item \textbf{Sustitución:} \(3\,\text{min/h}\times 6\,\text{h}=18\,\text{min}\).
+\item \textbf{Cálculo:} Si el reloj está atrasado, la \emph{hora exacta} es la que marca \(\,+\,\)el atraso. \\
+\(8{:}47\,\mathrm{am}+18\,\text{min}=9{:}05\,\mathrm{am}\).
+\item \textbf{Interpretación:} \(\boxed{9{:}05\,\mathrm{am}}\). \textbf{Respuesta: b)}.
+\end{itemize}
+\end{solucion}
+
+\begin{solucion}
+\textbf{Ejercicio 15.}
+\begin{itemize}
+\item \textbf{Datos:} Periodos \(75,\ 80,\ 90\) min. Coincidieron el domingo a las \(10{:}00\,\mathrm{am}\).
+\item \textbf{Fórmula:} La próxima coincidencia ocurre cada \(\mathrm{MCM}(75,80,90)\) minutos.
+\item \textbf{Cálculo del MCM:}
+\[
+75=3\cdot 5^{2},\quad 80=2^{4}\cdot 5,\quad 90=2\cdot 3^{2}\cdot 5
+\]
+\[
+\mathrm{MCM}=2^{4}\cdot 3^{2}\cdot 5^{2}=16\cdot 9\cdot 25=3600\ \text{min}=60\ \text{h}.
+\]
+\item \textbf{Sustitución:} Domingo \(10{:}00\,\mathrm{am} + 60\ \text{h}=\) Martes \(10{:}00\,\mathrm{pm}\).
+\item \textbf{Interpretación:} \(\boxed{\text{A las }10{:}00\,\mathrm{pm}\ \text{del martes}}\). \textbf{Respuesta: a)}.
+\end{itemize}
+\end{solucion}
+
+% ===== Cierre =====
+\begin{nota}
+\textbf{Checklist de propiedades útiles}
+\begin{itemize}[leftmargin=1.2em,itemsep=0.2em]
+  \item \(a^{r}a^{s}=a^{r+s}\), \(\dfrac{a^{r}}{a^{s}}=a^{r-s}\), \((a^{r})^{s}=a^{rs}\).
+  \item \(a^{-r}=\dfrac{1}{a^{r}}\) (con \(a\neq 0\)).
+  \item Fibonacci: si \(a_1=a\), \(a_2=b\), entonces \(a_{n}=a_{n-1}+a_{n-2}\).
+  \item Diferencias de edad se mantienen constantes en el tiempo.
+\end{itemize}
+\end{nota}
+
+\end{document}

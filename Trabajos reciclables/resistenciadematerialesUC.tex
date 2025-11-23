@@ -1,0 +1,398 @@
+% ==========================================================
+% TAREA — MECÁNICA DE SÓLIDOS II
+% Barras cilíndricas soldadas en B (Problemas 1 y 2)
+% ==========================================================
+\documentclass[11pt,letterpaper]{article}
+
+% --- Codificación, idioma y márgenes ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, es-nodecimaldot]{babel}
+\usepackage{geometry}
+\geometry{margin=2.2cm}
+
+% --- Matemática y unidades ---
+\usepackage{amsmath, amssymb}
+\usepackage{siunitx}
+\sisetup{
+  locale = DE,
+  output-decimal-marker = {,},
+  per-mode = symbol
+}
+
+% --- Utilidades ---
+\usepackage{booktabs}
+\usepackage{graphicx}
+
+\begin{document}
+
+\section*{Problema 1}
+\textbf{Dos varillas cilíndricas sólidas \(AB\) y \(BC\) soldadas en \(B\).}  
+Datos geométricos de la figura: \(d_{1}= \SI{1,25}{in}\), \(d_{2}= \SI{0,75}{in}\).  
+Cargas: flecha interna en \(BC\) de \SI{12}{kips} y carga aplicada en el extremo \(C\) de \(P=\SI{10}{kips}\).
+
+\subsection*{(a) Esfuerzo normal promedio en la sección media de la varilla \(AB\)}
+\textbf{Datos}
+\[
+d_{AB}= \SI{1,25}{in},\qquad P_{AB}= \SI{12}{kips}+P=\SI{22}{kips}.
+\]
+
+\textbf{Fórmula}
+\[
+A=\frac{\pi d^{2}}{4},\qquad
+\sigma=\frac{P}{A}.
+\]
+
+\textbf{Sustitución}
+\[
+A_{AB}=\frac{\pi}{4}(1{,}25)^{2}=\SI{1,22718}{in^{2}}.
+\]
+
+\textbf{Cálculo}
+\[
+\sigma_{AB}=\frac{22}{1{,}22718}=\SI{17,927}{ksi}.
+\]
+
+
+
+\textbf{Respuesta}
+\[
+\boxed{\sigma_{AB}=\SI{17,93}{ksi}\ }
+\]
+
+\subsection*{(b) Esfuerzo normal promedio en la sección media de la varilla \(BC\)}
+\textbf{Datos}
+\[
+d_{BC}= \SI{0,75}{in},\qquad P_{BC}=P=\SI{10}{kips}.
+\]
+
+\textbf{Fórmula}
+\[
+A=\frac{\pi d^{2}}{4},\qquad
+\sigma=\frac{P}{A}.
+\]
+
+\textbf{Sustitución}
+\[
+A_{BC}=\frac{\pi}{4}(0{,}75)^{2}=\SI{0,44179}{in^{2}}.
+\]
+
+\textbf{Cálculo}
+\[
+\sigma_{BC}=\frac{10}{0{,}44179}=\SI{22,635}{ksi}.
+\]
+
+
+\textbf{Respuesta}
+\[
+\boxed{\sigma_{BC}=\SI{22,64}{ksi}}
+\]
+
+% ----------------------------------------------------------
+\newpage
+\section*{Problema 2}
+ El esfuerzo normal no debe exceder \(\sigma_{\max}=\SI{25}{ksi}\) en ninguna varilla.  
+Determinar los \textbf{diámetros mínimos permisibles} \(d_{1}\) (en \(AB\)) y \(d_{2}\) (en \(BC\)).
+
+\subsection*{(a) Diámetro mínimo en \(AB\)}
+\textbf{Datos}
+\[
+P_{AB}=\SI{22}{kips}, \qquad \sigma_{\max}=\SI{25}{ksi}.
+\]
+
+\textbf{Fórmula y \emph{despeje} de \(d\)}
+\[
+\sigma=\frac{P}{A},\qquad A=\frac{\pi d^{2}}{4}
+\]
+\[
+\sigma=\frac{P}{\tfrac{\pi d^{2}}{4}}
+=\frac{4P}{\pi d^{2}}
+\]
+\[
+\sigma\,\pi d^{2}=4P
+\]
+\[
+d^{2}=\frac{4P}{\pi\,\sigma}
+\quad\Rightarrow\quad
+\boxed{\,d=\sqrt{\frac{4P}{\pi\,\sigma}}\,}
+\]
+
+\textbf{Sustitución}
+\[
+d_{1,\min}=\sqrt{\frac{4(\,22\,)}{\pi(\,25\,)}}=\SI{1,0585}{in}.
+\]
+
+\textbf{Conclusión}
+\[
+\boxed{d_{1,\min}\approx \SI{1,06}{in}}
+\]
+
+\subsection*{(b) Diámetro mínimo en \(BC\)}
+\textbf{Datos}
+\[
+P_{BC}=\SI{10}{kips}, \qquad \sigma_{\max}=\SI{25}{ksi}.
+\]
+
+\textbf{Fórmula y \emph{despeje} de \(d\)} \hfill (mismo procedimiento)
+\[
+\boxed{\,d=\sqrt{\frac{4P}{\pi\,\sigma}}\,}
+\]
+
+\textbf{Sustitución}
+\[
+d_{2,\min}=\sqrt{\frac{4(\,10\,)}{\pi(\,25\,)}}=\SI{0,7136}{in}.
+\]
+
+\textbf{Conclusión}
+\[
+\boxed{d_{2,\min}\approx \SI{0,714}{in}}
+\]
+\newpage
+\section*{Problema 3}
+Cada eslabón vertical: sección rectangular \(8\times36\ \si{mm}\).  
+Cada pasador: \(\varnothing\,\SI{16}{mm}\).  
+Barra \(ABC\): sección rectangular \(10\times50\ \si{mm}\).  
+Carga aplicada: \(\SI{20}{kN}\) en \(A\).  
+Geometría: \(AB=\SI{0,25}{m}\), \(BC=\SI{0,40}{m}\) (horizontal).
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.82\textwidth]{imagenes/Captura de Pantalla 2025-10-13 a la(s) 10.02.54.png} % <-- reemplazá la ruta
+  \caption{Diagrama de Cuerpo Libre (DCL) de la barra \(ABC\). 
+  Se muestran: la carga aplicada \(P=\SI{20}{kN}\) en \(A\), 
+  la fuerza transmitida por el conjunto de eslabones en \(B\), \(F_{BD}\) (hacia abajo), 
+  y la fuerza en \(C\) debida a los eslabones \(CE\), \(F_{CE}\) (hacia abajo). 
+  Distancias: \(AB=\SI{0,25}{m}\), \(BC=\SI{0,40}{m}\).}
+  \label{fig:DCL-ABC}
+\end{figure}
+\subsection*{Paso 1 — Fuerza transmitida en \(B\) (equilibrio de la barra \(ABC\))}
+\textbf{Datos}
+\[
+AB=\SI{0,25}{m},\quad BC=\SI{0,40}{m},\quad P=\SI{20}{kN}.
+\]
+
+\textbf{Fórmula}
+\[
+\sum M_{C}=0:\qquad (BC)\,F_{BD}-(AB+BC)\,P=0.
+\]
+
+\textbf{Sustitución}
+\[
+(\,0{,}40\,)F_{BD}-(\,0{,}25+0{,}40\,)\,(20\times10^{3})=0.
+\]
+
+\textbf{Cálculo}
+\[
+F_{BD}=\frac{(0{,}65)(20\times10^{3})}{0{,}40}
+=\SI{32\,500}{N}=\SI{32,5}{kN}.
+\]
+
+\textbf{Conclusión}
+\[
+\boxed{F_{BD}=\SI{32,5}{kN}\ \text{(total en la unión B)}}
+\]
+(El conjunto en \(BD\) tiene dos eslabones en paralelo; cada uno lleva \(\SI{16,25}{kN}\).)
+
+% ----------------------------------------------------------
+
+\subsection*{(a) Esfuerzo cortante promedio en el pasador en \(B\)}
+\textbf{Datos}
+\[
+d=\SI{16}{mm},\qquad V=F_{BD}=\SI{32\,500}{N},\qquad
+\text{doble corte }(n=2).
+\]
+
+\textbf{Fórmula}
+\[
+A_{\text{corte}}=n\,\frac{\pi d^{2}}{4},\qquad
+\tau_{\text{prom}}=\frac{V}{A_{\text{corte}}}.
+\]
+
+\textbf{Sustitución}
+\[
+A_{\text{corte}}=2\cdot\frac{\pi(16)^{2}}{4}
+=2\cdot\pi\cdot64=128\pi\ \si{mm^{2}}.
+\]
+
+\textbf{Cálculo}
+\[
+\tau_{B,\text{pas}}=\frac{32\,500}{128\pi}
+=\SI{80,8}{MPa}.
+\]
+
+\textbf{Conclusión}
+\[
+\boxed{\tau_{B,\text{pas}} \approx \SI{80,8}{MPa}}
+\]
+
+% ----------------------------------------------------------
+
+\subsection*{(b) Esfuerzo de soporte en \(B\) del eslabón \(BD\)}
+\textbf{Datos}
+\[
+t_{\!BD}=\SI{8}{mm},\qquad d=\SI{16}{mm},\qquad
+F_{\text{por eslabón}}=\frac{F_{BD}}{2}=\SI{16\,250}{N}.
+\]
+
+\textbf{Fórmula}
+\[
+\sigma_{\text{soporte}}=\frac{F}{A_{\text{proy}}},\qquad
+A_{\text{proy}}=t\,d.
+\]
+
+\textbf{Sustitución}
+\[
+A_{\text{proy}}=(8)(16)=\SI{128}{mm^{2}}.
+\]
+
+\textbf{Cálculo}
+\[
+\sigma_{B,\;BD}=\frac{16\,250}{128}
+=\SI{126,95}{MPa}.
+\]
+
+\textbf{Conclusión}
+\[
+\boxed{\sigma_{B,\;BD}\approx \SI{127}{MPa}\ \text{(compresión de soporte)}}
+\]
+
+% ----------------------------------------------------------
+
+\subsection*{(c) Esfuerzo de soporte en \(B\) del miembro \(ABC\)}
+\textbf{Datos}
+\[
+t_{ABC}=\SI{10}{mm},\qquad d=\SI{16}{mm},\qquad
+F=F_{BD}=\SI{32\,500}{N}.
+\]
+
+\textbf{Fórmula}
+\[
+\sigma_{\text{soporte}}=\frac{F}{t\,d}.
+\]
+
+\textbf{Sustitución}
+\[
+A_{\text{proy}}=(10)(16)=\SI{160}{mm^{2}}.
+\]
+
+\textbf{Cálculo}
+\[
+\sigma_{B,\;ABC}=\frac{32\,500}{160}
+=\SI{203,13}{MPa}.
+\]
+
+\textbf{Conclusión}
+\[
+\boxed{\sigma_{B,\;ABC}\approx \SI{203}{MPa}\ \text{(compresión de soporte)}}
+\]
+\newpage
+\section*{Problema 4}
+Una varilla de acero de \(\,L=\SI{2,2}{m}\,\) no debe estirarse más de \(\delta_{\max}=\SI{1,2}{mm}\) cuando se le aplica una carga axial de \(P=\SI{8,5}{kN}\).
+Con \(E=\SI{200}{GPa}\), determinar:
+(a) el \textbf{diámetro mínimo} requerido; (b) el \textbf{esfuerzo normal} correspondiente.
+
+\subsection*{(a) Diámetro mínimo}
+\textbf{Datos}
+\[
+L=\SI{2,2}{m},\quad \delta_{\max}=\SI{1,2e-3}{m},\quad
+P=\SI{8,5e3}{N},\quad E=\SI{200e9}{Pa}.
+\]
+
+\textbf{Fórmula y despeje}
+\[
+\delta=\frac{PL}{AE}\quad\Rightarrow\quad
+A_{\min}=\frac{PL}{E\,\delta_{\max}},\qquad
+A=\frac{\pi d^{2}}{4}\ \Rightarrow\ 
+d=\sqrt{\frac{4A_{\min}}{\pi}}.
+\]
+
+\textbf{Sustitución}
+\[
+A_{\min}=\frac{(8{,}5\times10^{3})(2{,}2)}{(200\times10^{9})(1{,}2\times10^{-3})}
+=7{,}7917\times10^{-5}\ \si{m^{2}}
+= \SI{77,92}{mm^{2}}.
+\]
+\[
+d_{\min}=\sqrt{\frac{4(7{,}7917\times10^{-5})}{\pi}}
+=9{,}960\times10^{-3}\ \si{m}
+=\SI{9,96}{mm}.
+\]
+
+\textbf{Conclusión}
+\[
+\boxed{\,d_{\min}\approx \SI{9,96}{mm}\,}
+\]
+
+\subsection*{(b) Esfuerzo normal correspondiente}
+\textbf{Datos}
+\[
+A=A_{\min}=7{,}7917\times10^{-5}\ \si{m^{2}}.
+\]
+
+\textbf{Fórmula}
+\[
+\sigma=\frac{P}{A}.
+\]
+
+\textbf{Sustitución y cálculo}
+\[
+\sigma=\frac{8{,}5\times10^{3}}{7{,}7917\times10^{-5}}
+=1{,}0909\times10^{8}\ \si{Pa}
+=\SI{109,1}{MPa}.
+\]
+
+\textbf{Conclusión}
+\[
+\boxed{\,\sigma\approx \SI{109,1}{MPa}\,}
+\]
+\newpage
+\section*{Problema 5}
+Un alambre de acero de diámetro \(d=\tfrac{1}{4}\,\si{in}\) y longitud \(L=\SI{4,8}{ft}\) se somete a una carga de tracción \(P=\SI{750}{lb}\).  
+Módulo de elasticidad \(E=\SI{29e6}{psi}\).  
+Determinar: (a) el \textbf{alargamiento} \(\delta\), (b) el \textbf{esfuerzo normal} \(\sigma\).
+
+% ---------------- (a)
+\subsection*{(a) Alargamiento del alambre}
+\textbf{Datos}
+\[
+d=\tfrac{1}{4}\ \si{in},\quad
+L=\SI{4.8}{ft}=\SI{57.6}{in},\quad
+P=\SI{750}{lb},\quad
+E=\SI{2.9e7}{psi}.
+\]
+
+\textbf{Fórmula}
+\[
+A=\frac{\pi d^{2}}{4},\qquad
+\delta=\frac{P\,L}{A\,E}.
+\]
+
+\textbf{Sustitución}
+\[
+A=\frac{\pi(0{,}25)^2}{4}
+=\SI{4.9087e-2}{in^{2}}
+\]
+\[
+\delta=\frac{(750)(57{,}6)}{(4{,}9087\times10^{-2})(29\times10^{6})}\ \si{in}.
+\]
+
+\textbf{Cálculo}
+\[
+\delta= \SI{3.0347e-2}{in}
+=\boxed{\,\SI{0,0303}{in}\,}.
+\]
+
+% ---------------- (b)
+\subsection*{(b) Esfuerzo normal correspondiente}
+\textbf{Fórmula}
+\[
+\sigma=\frac{P}{A}.
+\]
+
+\textbf{Sustitución y cálculo}
+\[
+\sigma=\frac{750}{4{,}9087\times10^{-2}}
+=\SI{1.5279e4}{psi}
+=\boxed{\,\SI{15,28}{ksi}\,}.
+\]
+
+\end{document}

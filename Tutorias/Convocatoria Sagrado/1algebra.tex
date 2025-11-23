@@ -1,0 +1,139 @@
+\documentclass[11pt]{article}
+
+% ============================================================
+% PAQUETES BÁSICOS
+% ============================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage{siunitx}
+\usepackage{enumitem}
+
+\sisetup{
+  locale = DE,                  % coma decimal
+  output-decimal-marker = {,},  % separador decimal coma
+  per-mode = symbol,
+  exponent-product = \cdot,
+  group-minimum-digits = 4
+}
+
+% ============================================================
+% DOCUMENTO
+% ============================================================
+\begin{document}
+
+\begin{center}
+  {\Large \textbf{Práctica de Álgebra — Factorización, Fracciones y Ecuaciones Cuadráticas}}\\[4pt]
+  
+\end{center}
+
+\vspace{1em}
+
+% ============================================================
+\section*{I. Factorización}
+
+\subsection*{1. Casos notables}
+
+\begin{enumerate}[label=\arabic*)]
+  \item Factorice: \(x^2 - 12x + 36\)
+  \item Factorice: \(m^2 + 18m + 81\)
+  \item Factorice: \(y^2 - 49\)
+  \item Factorice: \(9a^2 - 25b^2\)
+  \item Factorice: \(25x^2 + 30x + 9\)
+\end{enumerate}
+
+\subsection*{2. Factor común y agrupación}
+
+\begin{enumerate}[label=\arabic*)]
+  \item Factorice: \(7m^3 + 10m^4 - 5m^2\)
+  \item Factorice: \(ax + bx + aw + bw\)
+  \item Factorice: \(a(b+c) + x(b+c)\)
+  \item Factorice: \(6x^2y - 9xy^2\)
+  \item Factorice: \(8a^3b^2 - 4a^2b + 2ab\)
+\end{enumerate}
+
+\subsection*{3. Expresiones mixtas}
+
+\begin{enumerate}[label=\arabic*)]
+  \item Factorice: \(x^3 - 3x^2 - 4x\)
+  \item Factorice: \(4x^2 - 20x + 25\)
+  \item Factorice: \(9p^2 - 6p + 1\)
+\end{enumerate}
+
+% ============================================================
+\section*{II. Simplificación de expresiones algebraicas}
+
+\begin{enumerate}[label=\arabic*)]
+  \item Simplifique: \(\dfrac{2x - 8}{x^2 - 16}\)
+  \item Simplifique: \(\dfrac{x + 2}{x^2 - 4}\)
+  \item Simplifique: \(\dfrac{x^2 - 1}{x + 1}\)
+  \item Simplifique: \(\dfrac{x^2 - 9x + 18}{x^2 - 6x + 9}\)
+  \item Simplifique: \(\dfrac{a^2 - 9b^2}{a^2 - 6ab + 9b^2}\)
+\end{enumerate}
+
+% ============================================================
+\section*{III. Operaciones con fracciones algebraicas}
+
+\subsection*{1. Suma y resta con denominadores iguales}
+
+\begin{enumerate}[label=\arabic*)]
+  \item \(\dfrac{3x}{5y} + \dfrac{2x}{5y}\)
+  \item \(\dfrac{4a}{7b} - \dfrac{a}{7b}\)
+  \item \(\dfrac{5m}{2n} + \dfrac{3m}{2n}\)
+\end{enumerate}
+
+\subsection*{2. Suma y resta con denominadores distintos}
+
+\begin{enumerate}[label=\arabic*)]
+  \item \(\dfrac{x}{x+2} + \dfrac{3}{x+2}\)
+  \item \(\dfrac{2}{x} - \dfrac{1}{x+1}\)
+  \item \(\dfrac{3}{y+1} + \dfrac{5}{y-1}\)
+  \item \(\dfrac{x}{x^2 - 9} + \dfrac{3}{x+3}\)
+\end{enumerate}
+
+\subsection*{3. Multiplicación y división de fracciones algebraicas}
+
+\begin{enumerate}[label=\arabic*)]
+  \item \(\dfrac{2x}{3y} \cdot \dfrac{9y}{4x}\)
+  \item \(\dfrac{3a^2}{4b} \div \dfrac{6a}{b^2}\)
+  \item \(\dfrac{x^2 - 9}{x^2 - x - 6} \cdot \dfrac{x - 3}{x + 2}\)
+\end{enumerate}
+
+% ============================================================
+\section*{IV. Ecuaciones cuadráticas}
+
+\subsection*{1. Identificación de coeficientes}
+
+\begin{enumerate}[label=\arabic*)]
+  \item En la ecuación \( -15 - x^2 - 9x = 0 \), indique los valores de \(a\), \(b\) y \(c\).
+  \item En la ecuación \( 3x^2 + 5x - 2 = 0 \), indique los valores de \(a\), \(b\) y \(c\).
+\end{enumerate}
+
+\subsection*{2. Cálculo e interpretación del discriminante}
+
+\begin{enumerate}[label=\arabic*)]
+  \item Calcule el discriminante de \( x^2 - 6x + 9 = 0 \) y describa el tipo de soluciones.
+  \item Calcule el discriminante de \( 2x^2 + 3x + 5 = 0 \).
+  \item Complete: Si el discriminante es menor que cero, el conjunto solución es \underline{\hspace{3cm}}.
+\end{enumerate}
+
+\subsection*{3. Aplicación de la fórmula general}
+
+\begin{enumerate}[label=\arabic*)]
+  \item Resuelva: \( x^2 - 7x + 12 = 0 \)
+  \item Resuelva: \( 2x^2 + 5x - 3 = 0 \)
+  \item Resuelva: \( 3x^2 - 4x - 1 = 0 \)
+\end{enumerate}
+
+\subsection*{4. Análisis del conjunto solución}
+
+\begin{enumerate}[label=\arabic*)]
+  \item Si el discriminante es positivo, ¿qué se puede afirmar sobre las raíces?
+  \item Si el discriminante es cero, ¿qué tipo de raíces tiene la ecuación?
+  \item Si el discriminante es negativo, ¿qué se puede afirmar del conjunto solución?
+\end{enumerate}
+
+% ============================================================
+\end{document}

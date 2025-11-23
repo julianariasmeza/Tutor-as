@@ -1,0 +1,174 @@
+\documentclass[11pt,a4paper]{article}
+
+%------------------------------------------------
+% PAQUETES
+%------------------------------------------------
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+
+\sisetup{
+  locale = DE,
+  output-decimal-marker = {,},
+  per-mode = symbol,
+  exponent-product = \cdot,
+  group-minimum-digits = 4
+}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problema 11.49 – Equilibrio de la viga y el letrero}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{Datos}
+
+\begin{itemize}
+    \item Masa de la viga: \(m_b = \SI{16,0}{kg}\)
+    \item Longitud de la viga: \(L_b = \SI{1,50}{m}\)
+    \item Masa del letrero: \(m_L = \SI{28,0}{kg}\)
+    \item Longitud del letrero: \(\SI{1,20}{m}\)
+    \item Distancia entre alambres: \(\SI{0,90}{m}\)
+    \item Longitud de cada alambre: \(\SI{0,32}{m}\)
+    \item Longitud del cable: \(L_c = \SI{2,00}{m}\)
+    \item Ángulo del cable: \(\theta = 41,4^\circ\)
+    \item Peso soportado por cada alambre:
+    \[
+    T_w = \frac{m_L g}{2} = \SI{137}{N}
+    \]
+\end{itemize}
+
+\subsection*{Fórmulas}
+
+\[
+\sum \tau = 0,\qquad
+\sum F_x = 0,\qquad
+\sum F_y = 0
+\]
+
+\[
+T_c \sin\theta,\qquad
+T_c \cos\theta
+\]
+
+\subsection*{Sustitución}
+
+\[
+T_c (\sin\theta)(1,50)
+- w_b(0,750)
+- T_w(1,50)
+- T_w(0,60)
+= 0
+\]
+
+\subsection*{Cálculo}
+
+\[
+T_c =
+\dfrac{(16,0)(9,80)(0,750) + 137(1,50+0,60)}
+{1,50\sin41,4^\circ}
+\]
+
+\[
+T_c = \SI{408,6}{N} \approx \SI{409}{N}
+\]
+
+\subsection*{Conclusión (a)}
+
+\[
+\boxed{T_c = \SI{409}{N}}
+\]
+
+%------------------------------------------
+\subsection*{Fuerza vertical en la bisagra}
+
+\[
+\sum F_y = 0
+\]
+
+\[
+F_v + T_c\sin\theta - w_b - 2T_w = 0
+\]
+
+\[
+F_v = 2(137) + (16,0)(9,80) - (408,6)\sin41,4^\circ
+\]
+
+\[
+F_v = \SI{161}{N}
+\]
+
+\subsection*{Conclusión (b)}
+
+\[
+\boxed{F_v = \SI{161}{N}}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section*{Problema 11.67 – Fuerzas al cargar una caja en escaleras}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{Datos}
+
+\begin{itemize}
+    \item Masa de la caja: \(m = \SI{200}{kg}\)
+    \item Peso: \(w = mg = \SI{1960}{N}\)
+    \item Longitud: \(\SI{1,25}{m}\)
+    \item Altura: \(\SI{0,500}{m}\)
+    \item Ángulo de inclinación: \(45^\circ\)
+    \item Distancias:
+    \[
+    l_w = 0,375\cos45^\circ,
+    \qquad
+    l_2 = 1,25\cos45^\circ
+    \]
+\end{itemize}
+
+\subsection*{Fórmulas}
+
+\[
+\sum F_y = 0 \quad\Rightarrow\quad F_1 + F_2 = w
+\]
+
+\[
+\sum \tau_A = 0 \quad\Rightarrow\quad F_2 l_2 - w l_w = 0
+\]
+
+\subsection*{Sustitución}
+
+\[
+F_2 = w\left(\frac{l_w}{l_2}\right)
+\]
+
+\[
+F_2 =
+1960\left(
+\frac{0,375\cos45^\circ}{1,25\cos45^\circ}
+\right)
+\]
+
+\subsection*{Cálculo}
+
+\[
+F_2 = \SI{590}{N}
+\]
+
+\[
+F_1 = w - F_2 = 1960 - 590 = \SI{1370}{N}
+\]
+
+\subsection*{Conclusión}
+
+\[
+\boxed{F_1 = \SI{1370}{N}}
+\qquad
+\boxed{F_2 = \SI{590}{N}}
+\]
+
+La persona inferior aplica más fuerza; es mejor ser la persona de arriba.
+
+\end{document}

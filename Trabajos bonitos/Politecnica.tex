@@ -1,0 +1,359 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{enumitem}
+\usepackage[table]{xcolor}
+\usepackage{colortbl}
+\usepackage{geometry}
+
+
+\title{Respuestas - Examen de Probabilidad y Estadística}
+\author{Sharling Montoya Muñoz - Cédula:
+112820975}
+\date{Primer Cuatrimestre 2025}
+
+\begin{document}
+
+\maketitle
+
+\section*{Parte I - Selección única}
+
+\begin{enumerate}
+
+\item \textbf{Pregunta 1:} \\
+Sea 
+\[
+\Omega = \{2, 4, 2, 1, 3, 4, 5, 4, 7, 7, 2, 1, 4, 5, 4, 2, 3, 1, 3, 3\}
+\]
+La probabilidad de obtener un 4 es:
+\[
+P(4) = \frac{\text{número de veces que aparece el 4}}{\text{tamaño de } \Omega} = \frac{5}{20} = \boxed{0{,}25}
+\]
+\textbf{Respuesta correcta: a)}
+
+\vspace{0.4cm}
+
+\item \textbf{Pregunta 2:} \\
+“La proporción entre el total de casos favorables y el total de casos posibles de un evento” es la definición de la \textbf{probabilidad clásica} o de \textbf{Laplace}.\\
+\textbf{Respuesta correcta: d)}
+
+\vspace{0.4cm}
+
+\item \textbf{Pregunta 3:} \\
+Conjunto de datos: \{24, 16, 40, 12, 8, 8, 33\} \\
+Ordenando: \{8, 8, 12, 16, 24, 33, 40\} \\
+Mediana = valor central = \boxed{16} \\
+\textbf{Respuesta correcta: d)}
+
+\vspace{0.4cm}
+
+\item \textbf{Pregunta 4:} \\
+Conjunto: \{16, 46, 16, 51, 51, 51, 16, 9\} \\
+Frecuencias: 16 (3 veces), 51 (3 veces) \\
+Moda: ambos valores, pero si solo se acepta uno:
+\[
+\boxed{51}
+\]
+\textbf{Respuesta correcta: c)}
+
+\vspace{0.4cm}
+
+\item \textbf{Pregunta 5:} \\
+Datos: \{92, 77, 55, 34, 66, 32\} \\
+Ordenado: \{32, 34, 55, 66, 77, 92\} \\
+Mediana:
+\[
+\frac{55 + 66}{2} = \frac{121}{2} = \boxed{60{,}5}
+\]
+\textbf{Respuesta correcta: b)}
+
+
+\item \textbf{Pregunta 6:} \\
+Esferas: 4 azules, 3 negras, 2 blancas. Total: 9 esferas. \\
+La probabilidad de sacar al menos una negra es:
+\[
+P(\text{negra}) = \frac{3}{9} = \boxed{0{,}33}
+\]
+\textbf{Respuesta correcta: b)}
+
+\vspace{0.4cm}
+
+\item \textbf{Pregunta 7:} \\
+Si \( A \) es un evento seguro, entonces \( P(A) = 1 \), por lo tanto: \\
+\[
+P(A^c) = 1 - P(A) = 1 - 1 = \boxed{0}
+\]
+\textbf{Respuesta correcta: a)}
+
+\vspace{0.4cm}
+
+\item \textbf{Pregunta 8:} \\
+Azules: 6 bolas, rojas: \(x\) bolas. Se cumple:
+\[
+\frac{x}{x + 6} = \frac{2}{3} \Rightarrow 3x = 2(x + 6) \Rightarrow x = \boxed{12}
+\]
+\textbf{Respuesta correcta: a)}
+
+\vspace{0.4cm}
+
+\item \textbf{Pregunta 9:} \\
+Conjunto: \{2, 3, 2, 4, 3, 4, 5, 6, 7, 7, 2, 1, 4, 5, 4, 2, 4, 1, 3, 3\} \\
+Total: 20 elementos. Ocurrencias del 0: \textbf{0} \\
+\[
+P(0) = \frac{0}{20} = \boxed{0}
+\]
+\textbf{Respuesta correcta: d)}
+
+\vspace{0.4cm}
+
+\item \textbf{Pregunta 10:} \\
+De 1000 nacimientos: 487 varones, entonces 513 mujeres. \\
+\[
+P(\text{mujer}) = \frac{513}{1000} = \boxed{0{,}513}
+\]
+\textbf{Respuesta correcta: c)}
+
+
+\item \textbf{Pregunta 11:} \\
+Se extraen dos bolas de una urna con bolas blancas (B), azules (A) y rojas (R).  
+El evento \(M\): “que sean del mismo color”  
+Entonces, el complemento \(M^c\): “que sean de distinto color”  
+\[
+M^c = \{AB, AR, BA, BR, RA, RB\}
+\]
+\textbf{Respuesta correcta: A)}
+
+\vspace{0.4cm}
+
+\item \textbf{Pregunta 12:} \\
+
+\section*{Tabla de sumas al lanzar dos dados}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\rowcolors{2}{}{white}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\rowcolor{gray!30}
++ & 1 & 2 & 3 & 4 & 5 & 6 \\
+\hline
+1 & 2 & \cellcolor{yellow!50}3 & 4 & \cellcolor{yellow!50}5 & 6 & \cellcolor{yellow!50}7 \\
+\hline
+2 & \cellcolor{yellow!50}3 & 4 & \cellcolor{yellow!50}5 & 6 & \cellcolor{yellow!50}7 & 8 \\
+\hline
+3 & 4 & \cellcolor{yellow!50}5 & 6 & \cellcolor{yellow!50}7 & 8 & \cellcolor{yellow!50}9 \\
+\hline
+4 & \cellcolor{yellow!50}5 & 6 & \cellcolor{yellow!50}7 & 8 & \cellcolor{yellow!50}9 & 10 \\
+\hline
+5 & 6 & \cellcolor{yellow!50}7 & 8 & \cellcolor{yellow!50}9 & 10 & \cellcolor{yellow!50}11 \\
+\hline
+6 & \cellcolor{yellow!50}7 & 8 & \cellcolor{yellow!50}9 & 10 & \cellcolor{yellow!50}11 & 12 \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{0.5cm}
+
+En la tabla anterior se muestran las sumas posibles al lanzar dos dados.  
+Los valores resaltados en amarillo representan las sumas impares.  
+Se puede observar que hay \(18\) sumas impares de un total de \(36\) posibles combinaciones.
+
+\[
+P(\text{suma impar}) = \frac{18}{36} = \boxed{0{,}5}
+\]
+
+\vspace{0.4cm}
+
+\item \textbf{Pregunta 13:} \\
+Total cartas: 52  
+Cantidad de Reyes: 4  
+Cantidad de no Reyes: \(52 - 4 = 48\)  
+\[
+P(\text{no Rey}) = \frac{48}{52} = \boxed{0{,}923}
+\]
+
+\end{enumerate}
+\newpage
+
+
+
+
+
+\maketitle
+
+\section*{II PARTE. \textnormal{Respuesta Corta. (Valor 11 puntos.)}}
+
+\textbf{A.} Considere la situación descrita y responda lo que se le solicita. (Valor 11 Pts.)
+
+La directora de un Centro desea conocer la materia favorita de los estudiantes de dicha institución y obtiene la siguiente información.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|l|c|c|c|}
+\hline
+\rowcolor{gray!20}
+\textbf{Materia favorita} & \( f_i \) & \( f_r \) & \% \\
+\hline
+Matemática        & 350 & \textcolor{blue}{0,50} & \textcolor{blue}{50 \%} \\
+Inglés            & 110 & \textcolor{blue}{0,16} & \textcolor{blue}{15,71 \%} \\
+Francés           & 120 & \textcolor{blue}{0,17} & \textcolor{blue}{17,14 \%} \\
+Estudios Sociales & 82  & \textcolor{blue}{0,12} & \textcolor{blue}{11,71 \%} \\
+Ciencias          & 33  & \textcolor{blue}{0,0471} & \textcolor{blue}{4,71 \%} \\
+Español           & 5   & \textcolor{blue}{0,00711} & \textcolor{blue}{0,71 \%} \\
+\hline
+\textbf{TOTAL}    & 700 & \textcolor{blue}{1,00} & \textcolor{blue}{100 \%} \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{0.5cm}
+
+\begin{itemize}
+    \item[\textbf{a)}] Completar la tabla con las frecuencias relativas (dos decimales). \hfill (3 Pts.)\\
+    \textcolor{blue}{Hecho en la tabla anterior.}
+
+    \item[\textbf{b)}] Completar la tabla con los porcentajes. \hfill (3 Pts.)\\
+    \textcolor{blue}{Hecho en la tabla anterior.}
+
+    \item[\textbf{c)}] Determine la población: \hfill (1 Pt.)\\
+    \textcolor{blue}{Todos los estudiantes encuestados del centro educativo de Guadalupe.}
+
+    \item[\textbf{d)}] Determine una posible muestra: \hfill (1 Pt.)\\
+    \textcolor{blue}{Un grupo aleatorio de 50 estudiantes del mismo centro.}
+
+    \item[\textbf{e)}] Determine una unidad estadística: \hfill (1 Pt.)\\
+    \textcolor{blue}{Cada estudiante encuestado.}
+
+    \item[\textbf{f)}] Determine la variable: \hfill (1 Pt.)\\
+    \textcolor{blue}{La materia favorita de cada estudiante.}
+
+    \item[\textbf{g)}] Determine el tipo de variable: \hfill (1 Pt.)\\
+    \textcolor{blue}{Cualitativa nominal.}
+\end{itemize}
+\newpage
+\section*{III PARTE. \textnormal{Respuesta Restringida. Valor 19 puntos.}}
+
+\textbf{A.} Wilberth es dueño de la academia de karate "El Luchador de Paz" ubicada en Alejandría. Él desea conocer la edad de las personas que están matriculadas en su academia el presente año. Para ello, se dispuso a preguntarles a los matriculados y consiguió los siguientes datos que representan la edad en años cumplidos de ellos.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\setlength{\arrayrulewidth}{1pt} % grosor de líneas
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+28 & 32 & 26 & 28 & 26 & 38 & 36 \\
+\hline
+56 & 22 & 33 & 38 & 50 & 53 & 42 \\
+\hline
+26 & 33 & 40 & 47 & 54 & 55 & 56 \\
+\hline
+26 & 32 & 38 & 44 & 50 & 56 & 55 \\
+\hline
+35 & 34 & 27 & 31 & 37 & 43 & 47 \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection*{a) Construir una tabla para datos agrupados con 5 clases. \hfill (5 Pts.)}
+
+\renewcommand{\arraystretch}{1.3}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\rowcolor{gray!20}
+\textbf{Clase (años)} & \textbf{Frecuencia} & \textbf{Marca (x)} & \textbf{$f \cdot x$} \\
+\hline
+\textcolor{blue}{21.5--28.5} & 8 & 25.0 & 200.0 \\
+\textcolor{blue}{28.5--35.5} & 7 & 32.0 & 224.0 \\
+\textcolor{blue}{35.5--42.5} & 7 & 39.0 & 273.0 \\
+\textcolor{blue}{42.5--49.5} & 4 & 46.0 & 184.0 \\
+\textcolor{blue}{49.5--56.5} & 9 & 53.0 & 477.0 \\
+\hline
+\textbf{Total} & 35 & -- & 1358.0 \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\subsection*{b) Hallar la media aritmética. \hfill (2 Pts.)}
+
+\[
+\bar{x} = \frac{\sum f \cdot x}{\sum f} = \frac{1358.0}{35} = \textcolor{blue}{38.8}
+\]
+
+
+\subsection*{c) Hallar la moda. \hfill (2 Pts.)}
+
+Clase modal: \textcolor{blue}{49.5--56.5}
+
+\[
+\text{Moda} = L + \left( \frac{f_m - f_{m-1}}{2f_m - f_{m-1} - f_{m+1}} \right) h
+= 49.5 + \left( \frac{9 - 4}{18 - 4} \right) \cdot 7
+= 49.5 + \frac{5}{14} \cdot 7 = \textcolor{blue}{52.0}
+\]
+
+\newpage
+\subsection*{d) Hallar la mediana. \hfill (2 Pts.)}
+
+Datos:
+\begin{itemize}
+  \item Clase mediana: \textcolor{blue}{35.5--42.5}
+  \item Límite inferior: \( L = 35.5 \)
+  \item Frecuencia acumulada anterior: \( F = 15 \)
+  \item Frecuencia de la clase: \( f = 7 \)
+  \item Amplitud de clase: \( h = 7 \)
+\end{itemize}
+
+\[
+\text{Mediana} = L + \left( \frac{n/2 - F}{f} \right) h = 35.5 + \left( \frac{17.5 - 15}{7} \right) \cdot 7 = \textcolor{blue}{38.0}
+\]
+
+
+\subsection*{e) Clasificar, si es posible, la variable. \hfill (2 Pts.)}
+
+\textcolor{blue}{Cuantitativa discreta (edad en años cumplidos)}
+
+\subsection*{f) Hallar la varianza. \hfill (2 Pts.)}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\rowcolor{gray!20}
+Clase & \(f\) & \(x\) & \(x - \bar{x}\) & \((x - \bar{x})^2\) & \(f(x - \bar{x})^2\) \\
+\hline
+21.5--28.5 & 8 & 25.0 & -13.8 & 190.44 & 1523.52 \\
+28.5--35.5 & 7 & 32.0 & -6.8 & 46.24 & 323.68 \\
+35.5--42.5 & 7 & 39.0 & 0.2 & 0.04 & 0.28 \\
+42.5--49.5 & 4 & 46.0 & 7.2 & 51.84 & 207.36 \\
+49.5--56.5 & 9 & 53.0 & 14.2 & 201.64 & 1814.76 \\
+\hline
+\textbf{Total} & 35 & -- & -- & -- & \textbf{3869.6} \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{0.2cm}
+
+\[
+\sigma^2 = \frac{\sum f(x - \bar{x})^2}{n} = \frac{3869.6}{35} = \textcolor{blue}{110.56}
+\]
+
+
+\subsection*{g) Hallar la desviación estándar. \hfill (2 Pts.)}
+
+\[
+\sigma = \sqrt{\sigma^2} = \sqrt{110.56} = \textcolor{blue}{10.51}
+\]
+
+\subsection*{h) Hallar el coeficiente de variación. \hfill (2 Pts.)}
+
+\[
+CV = \frac{\sigma}{\bar{x}} \cdot 100 = \frac{10.51}{38.8} \cdot 100 = \textcolor{blue}{27.08\%}
+\]
+
+
+
+\end{document}

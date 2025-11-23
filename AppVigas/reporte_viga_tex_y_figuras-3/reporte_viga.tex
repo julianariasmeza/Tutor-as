@@ -1,0 +1,85 @@
+
+\documentclass[11pt]{article}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{siunitx}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{letterpaper, margin=2.3cm}
+\sisetup{output-decimal-marker={,}}
+\DeclareSIUnit{\inch}{in}
+\DeclareSIUnit{\pound}{lb}
+\DeclareSIUnit{\foot}{ft}
+
+\begin{document}
+
+\section*{Análisis de viga}
+
+\subsection*{Datos}
+Longitud: \(\SI{6.000}{\metre}\).
+
+\begin{center}
+\begin{tabular}{l c}
+\multicolumn{2}{l}{\textbf{Apoyos}} \\\hline
+Tipo & Posición \\\hline
+pinned & \SI{0.000}{\metre} \\
+roller & \SI{6.000}{\metre} \\
+\end{tabular}
+\end{center}
+
+\medskip
+\begin{center}
+\begin{tabular}{l c}
+\multicolumn{2}{l}{\textbf{Reacciones}} \\\hline
+Posición & Valor \\\hline
+\(\mathrm{R}(x=\SI{0.000}{\metre})\) & \SI{11.8333}{\kilo\newton} \\
+\(\mathrm{R}(x=\SI{6.000}{\metre})\) & \SI{4.1667}{\kilo\newton} \\
+\end{tabular}
+\end{center}
+
+\medskip
+
+\subsection*{Modelo y ecuaciones}
+\[
+\frac{dV}{dx} = w(x), \qquad \frac{dM}{dx} = V(x).
+\]
+Saltos: una fuerza puntual \(P\) o reacción \(R\) produce un salto en \(V\); un momento aplicado \(M_0\) (o de empotramiento) produce un salto en \(M\).
+
+\subsection*{Chequeo de equilibrio}
+\[
+\Sigma F_y = \SI{0.000000}{\kilo\newton}, \qquad
+\Sigma M_{(x=0)} = \SI{0.000000}{\kilo\newton\metre}.
+\]
+
+\subsection*{Extremos numéricos}
+\begin{tabular}{lccc}
+ & \textbf{máx (+)} & \textbf{mín (–)} & \(\lvert\cdot\rvert\) \textbf{máx} \\\hline
+\(V\) & \(\SI{11.8333}{\kilo\newton}\) en \(x=\SI{0.000}{\metre}\) &
+\(\SI{-9.5201}{\kilo\newton}\) en \(x=\SI{4.000}{\metre}\) &
+\(\SI{11.8333}{\kilo\newton}\) en \(x=\SI{0.000}{\metre}\) \\
+\(M\) & \(\SI{19.9090}{\kilo\newton\metre}\) en \(x=\SI{2.000}{\metre}\) &
+\(\SI{0.0000}{\kilo\newton\metre}\) en \(x=\SI{0.000}{\metre}\) &
+\(\SI{19.9090}{\kilo\newton\metre}\) en \(x=\SI{2.000}{\metre}\) \\
+\end{tabular}
+\newpage
+%\subsection*{Diagramas}
+Los diagramas \(V(x)\) y \(M(x)\) se adjuntan a continuación.
+
+
+\section*{Diagramas}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{\detokenize{V_09d5b72f962e43dc9304ab8adb90b75b.png}}
+  \caption{Diagrama de cortante \(V(x)\) en \(\SI{}{kN}\).}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{\detokenize{M_ef8bcdae66304349bf8be904b38d2034.png}}
+  \caption{Diagrama de momento \(M(x)\) en \(\SI{}{kN.m}\).}
+\end{figure}
+
+\end{document}

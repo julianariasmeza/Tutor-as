@@ -1,0 +1,123 @@
+% ==========================================================
+% Ejercicio — Subespacio en R3 y coordenadas en una base
+% ==========================================================
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, es-nodecimaldot]{babel}
+\usepackage{amsmath, amssymb, siunitx}
+\usepackage[a4paper,margin=2.4cm]{geometry}
+
+\sisetup{
+  locale=DE,
+  output-decimal-marker={,},
+  per-mode=symbol,
+  exponent-product=\cdot,
+  group-minimum-digits=4
+}
+
+\begin{document}
+
+\begin{center}
+  {\Large \textbf{Ejercicio — Subespacio vectorial y coordenadas en una base}}\\[2mm]
+\end{center}
+
+\[
+S = \{(x,y,z)\in\mathbb{R}^3 : x+y+z=0\}.
+\]
+
+% ----------------------------------------------------------
+\section*{(a) Verificar que $S$ es subespacio de $\mathbb{R}^3$}
+
+\textbf{1. Vector cero:}
+\[
+(0,0,0)\in S \text{ porque } 0+0+0=0.
+\]
+
+\textbf{2. Cierre bajo suma:}
+\[
+(x_1+y_1+z_1=0,\; x_2+y_2+z_2=0)
+\Rightarrow
+(x_1+x_2)+(y_1+y_2)+(z_1+z_2)=0.
+\]
+
+\textbf{3. Cierre bajo producto escalar:}
+\[
+x+y+z=0 \Rightarrow kx+ky+kz=k(x+y+z)=0.
+\]
+
+\[
+\boxed{S \text{ es subespacio de } \mathbb{R}^3.}
+\]
+
+% ----------------------------------------------------------
+\section*{(b) Verificar que $\mathcal{B}=\{(-1,1,0),(-1,0,1)\}$ es base de $S$}
+
+\textbf{Pertenencia:}
+\[
+(-1)+1+0=0,\quad (-1)+0+1=0 \Rightarrow \text{ambos pertenecen a }S.
+\]
+
+\textbf{Independencia lineal:}
+\[
+a(-1,1,0)+b(-1,0,1)=(0,0,0).
+\]
+\[
+(-a-b,\; a,\; b)=(0,0,0)
+\Rightarrow
+\begin{cases}
+-a-b=0,\\
+a=0,\\
+b=0.
+\end{cases}
+\Rightarrow a=b=0.
+\]
+
+\textbf{Conclusión:} Son linealmente independientes y $S$ tiene dimensión $2$,
+por tanto
+\[
+\boxed{\mathcal{B}\text{ es base de }S.}
+\]
+
+% ----------------------------------------------------------
+\section*{(c) Coordenadas de $(0,1,-1)$ en la base $\mathcal{B}$}
+
+Buscamos $a,b$ tales que:
+\[
+(0,1,-1)=a(-1,1,0)+b(-1,0,1).
+\]
+
+Desarrollamos:
+\[
+(-a-b,\; a,\; b)=(0,1,-1).
+\]
+\[
+\begin{cases}
+-a-b=0,\\
+a=1,\\
+b=-1.
+\end{cases}
+\]
+
+\[
+\boxed{
+[(0,1,-1)]_{\mathcal{B}}=
+\begin{pmatrix}
+1\\
+-1
+\end{pmatrix}
+}
+\]
+
+% ----------------------------------------------------------
+\section*{Resumen final}
+\[
+\begin{aligned}
+S &= \{(x,y,z)\in\mathbb{R}^3:x+y+z=0\}\text{ subespacio de }\mathbb{R}^3,\\[4pt]
+\mathcal{B} &= \{(-1,1,0),(-1,0,1)\}\text{ base de }S,\\[4pt]
+[(0,1,-1)]_{\mathcal{B}} &= (1,-1)^T.
+\end{aligned}
+\]
+
+\end{document}

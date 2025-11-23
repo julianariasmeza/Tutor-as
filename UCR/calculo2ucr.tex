@@ -1,0 +1,2160 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={,}}
+
+\title{Ejemplos de criterios de convergencia de series}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+
+\section*{Ejemplo criterio de la integral}
+
+Demuestre que la serie
+\[
+\sum_{n=1}^{\infty} \frac{1}{n^2 + 1}
+\]
+es convergente utilizando el \textbf{criterio de la integral}.
+
+\section*{Paso 1: Verificar condiciones del criterio de la integral}
+
+Sea \( f(x) = \frac{1}{x^2 + 1} \). Esta función cumple que:
+
+\begin{itemize}
+    \item \( f(x) > 0 \) para \( x \geq 1 \),
+    \item \( f(x) \) es continua para \( x \geq 1 \),
+    \item \( f(x) \) es decreciente para \( x \geq 1 \), ya que:
+    \[
+    f'(x) = \frac{d}{dx} \left( \frac{1}{x^2 + 1} \right) = \frac{-2x}{(x^2 + 1)^2} < 0 \quad \text{para } x > 0.
+    \]
+\end{itemize}
+
+\section*{Paso 2: Aplicar el criterio de la integral}
+
+Se evalúa la convergencia de la integral impropia:
+\[
+\int_1^{\infty} \frac{1}{x^2 + 1} \, dx.
+\]
+
+\section*{Paso 3: Calcular la integral}
+
+\[
+\int_1^{\infty} \frac{1}{x^2 + 1} \, dx
+= \lim_{t \to \infty} \int_1^{t} \frac{1}{x^2 + 1} \, dx
+= \lim_{t \to \infty} \left[ \arctan(x) \right]_1^t
+= \lim_{t \to \infty} \left( \arctan(t) - \arctan(1) \right)
+\]
+
+\[
+= \frac{\pi}{2} - \frac{\pi}{4} = \frac{\pi}{4}.
+\]
+
+\section*{Paso 4: Conclusión}
+
+La integral impropia converge, por lo tanto, según el \textbf{criterio de la integral}, la serie
+\[
+\sum_{n=1}^{\infty} \frac{1}{n^2 + 1}
+\]
+también \textbf{converge}.
+\section*{Ejemplo: Análisis de convergencia con el criterio de la integral}
+
+Analicemos la convergencia de la serie
+\[
+\sum_{n=6}^{\infty} \frac{1}{n(\ln n - 1)^3}
+\]
+utilizando el \textbf{criterio de la integral}.
+
+\subsection*{Paso 1: Verificar condiciones del criterio de la integral}
+
+Sea la función:
+\[
+f(x) = \frac{1}{x(\ln x - 1)^3}
+\]
+para \( x \geq 6 \). Observamos que:
+
+\begin{itemize}
+    \item \( f(x) > 0 \) para \( x > e \), en particular para \( x \geq 6 \),
+    \item \( f(x) \) es continua para \( x > e \), en particular en el intervalo de integración,
+    \item \( f(x) \) es decreciente para \( x \geq 6 \) (esto se puede verificar derivando, pero basta con observar que el denominador crece más rápido que el numerador).
+\end{itemize}
+
+\subsection*{Paso 2: Aplicar el criterio de la integral}
+
+Estudiamos la convergencia de la integral impropia:
+\[
+\int_6^{\infty} \frac{1}{x(\ln x - 1)^3} \, dx
+\]
+
+Usamos el cambio de variable:
+\[
+u = \ln x - 1 \quad \Rightarrow \quad \ln x = u + 1 \quad \Rightarrow \quad x = e^{u+1}
+\]
+
+Entonces:
+\[
+dx = e^{u+1} \, du \quad \text{y} \quad \frac{1}{x} = \frac{1}{e^{u+1}}
+\]
+
+Por tanto, la integral queda:
+\[
+\int_{u_0}^{\infty} \frac{1}{e^{u+1}} \cdot \frac{1}{u^3} \cdot e^{u+1} \, du = \int_{u_0}^{\infty} \frac{1}{u^3} \, du
+\]
+
+donde \( u_0 = \ln 6 - 1 > 0 \).
+
+\subsection*{Paso 3: Evaluar convergencia de la nueva integral}
+
+\[
+\int_{u_0}^{\infty} \frac{1}{u^3} \, du = \left[ -\frac{1}{2u^2} \right]_{u_0}^{\infty} = 0 + \frac{1}{2u_0^2} < \infty
+\]
+
+\subsection*{Paso 4: Conclusión}
+
+Como la integral impropia converge, entonces por el \textbf{criterio de la integral}, la serie
+
+\[
+\sum_{n=6}^{\infty} \frac{1}{n(\ln n - 1)^3}
+\]
+
+también \textbf{converge}.
+\section*{Otra Forma del Ejemplo: Análisis de convergencia con el criterio de la integral}
+
+Analicemos la convergencia de la serie
+\[
+\sum_{n=6}^{\infty} \frac{1}{n(\ln n - 1)^3}
+\]
+utilizando el \textbf{criterio de la integral}.
+
+\subsection*{Paso 1: Verificar condiciones del criterio de la integral}
+
+Sea la función:
+\[
+f(x) = \frac{1}{x(\ln x - 1)^3}
+\]
+para \( x \geq 6 \). Observamos que:
+
+\begin{itemize}
+    \item \( f(x) > 0 \) para \( x > e \), en particular para \( x \geq 6 \),
+    \item \( f(x) \) es continua para \( x > e \),
+    \item \( f(x) \) es decreciente para \( x \geq 6 \).
+\end{itemize}
+
+\subsection*{Paso 2: Aplicar el criterio de la integral}
+
+Estudiamos la convergencia de la integral impropia:
+\[
+\int_6^{\infty} \frac{1}{x(\ln x - 1)^3} \, dx
+\]
+
+Hacemos el cambio de variable:
+\[
+u = \ln x - 1 \quad \Rightarrow \quad du = \frac{1}{x} dx
+\]
+
+Entonces:
+\[
+\int_6^{\infty} \frac{1}{x(\ln x - 1)^3} \, dx
+= \int_{u_0}^{\infty} \frac{1}{u^3} \, du
+\]
+
+donde \( u_0 = \ln(6) - 1 \).
+
+\subsection*{Paso 3: Evaluar convergencia de la nueva integral}
+
+\[
+\int_{u_0}^{\infty} \frac{1}{u^3} \, du = \left[ -\frac{1}{2u^2} \right]_{u_0}^{\infty}
+= 0 + \frac{1}{2u_0^2} < \infty
+\]
+
+\subsection*{Paso 4: Conclusión}
+
+Como la integral impropia converge, entonces por el \textbf{criterio de la integral}, la serie
+
+\[
+\sum_{n=6}^{\infty} \frac{1}{n(\ln n - 1)^3}
+\]
+
+también \textbf{converge}.
+\section*{Ejemplo: Criterio de comparación directa}
+
+Analicemos la convergencia de la serie:
+\[
+\sum_{n=0}^{\infty} \frac{\arctan(n)}{4n^3 + 3}
+\]
+
+\subsection*{Paso 1: Considerar una serie de comparación}
+
+Sabemos que:
+\[
+\lim_{n \to \infty} \arctan(n) = \frac{\pi}{2}
+\quad \Rightarrow \quad
+\arctan(n) < \frac{\pi}{2} \text{ para todo } n \in \mathbb{N}
+\]
+
+Por tanto:
+\[
+\frac{\arctan(n)}{4n^3 + 3} < \frac{\pi/2}{4n^3} = \frac{C}{n^3}
+\quad \text{con } C = \frac{\pi}{8}
+\]
+
+Entonces definimos una serie de comparación:
+\[
+b_n = \frac{1}{n^3}
+\quad \text{(serie p con } p = 3 > 1 \text{, converge)}
+\]
+
+\subsection*{Paso 2: Aplicar el criterio de comparación directa}
+
+Como
+\[
+0 \leq \frac{\arctan(n)}{4n^3 + 3} \leq \frac{C}{n^3}
+\]
+y
+\[
+\sum_{n=1}^{\infty} \frac{1}{n^3} \text{ converge},
+\]
+entonces, por el \textbf{criterio de comparación directa}, la serie
+\[
+\sum_{n=1}^{\infty} \frac{\arctan(n)}{4n^3 + 3}
+\]
+también \textbf{converge}.
+
+\subsection*{Nota:}
+El término con \( n = 0 \) es finito:
+\[
+\frac{\arctan(0)}{4(0)^3 + 3} = 0,
+\]
+por lo tanto no afecta la convergencia.
+
+\subsection*{Conclusión:}
+
+La serie completa
+\[
+\sum_{n=0}^{\infty} \frac{\arctan(n)}{4n^3 + 3}
+\]
+es \textbf{convergente}.
+
+\newpage
+\section*{Ejemplo: Criterio de comparación directa}
+
+Analicemos la convergencia de la serie:
+\[
+\sum_{n=1}^{\infty} \frac{n^3 + 1}{n^5 + 4n^3 - 1}
+\]
+
+\subsection*{Paso 1: Análisis asintótico de los términos}
+
+Para \( n \) grande, los términos dominantes del numerador y denominador son:
+\[
+n^3 + 1 \sim n^3, \quad n^5 + 4n^3 - 1 \sim n^5
+\]
+
+Por tanto, para \( n \) suficientemente grande,
+\[
+\frac{n^3 + 1}{n^5 + 4n^3 - 1} \sim \frac{n^3}{n^5} = \frac{1}{n^2}
+\]
+
+\subsection*{Paso 2: Definimos la serie de comparación}
+
+Tomamos como serie de comparación:
+\[
+b_n = \frac{1}{n^2}
+\quad \text{(serie p con \( p = 2 > 1 \), converge)}
+\]
+
+\subsection*{Paso 3: Verificamos la desigualdad}
+
+Para \( n \geq 1 \), se cumple que:
+\[
+\frac{n^3 + 1}{n^5 + 4n^3 - 1} \leq \frac{2n^3}{n^5} = \frac{2}{n^2}
+\]
+
+Esto es válido ya que:
+\begin{itemize}
+  \item \( n^3 + 1 \leq 2n^3 \),
+  \item \( n^5 + 4n^3 - 1 \geq n^5 \)
+\end{itemize}
+
+\subsection*{Paso 4: Aplicar el criterio de comparación directa}
+
+Como
+\[
+0 \leq \frac{n^3 + 1}{n^5 + 4n^3 - 1} \leq \frac{2}{n^2}
+\quad \text{y} \quad \sum_{n=1}^{\infty} \frac{1}{n^2} \text{ converge},
+\]
+entonces, por el \textbf{criterio de comparación directa}, la serie
+\[
+\sum_{n=1}^{\infty} \frac{n^3 + 1}{n^5 + 4n^3 - 1}
+\]
+también \textbf{converge}.
+
+
+\section*{Ejemplo: Criterio del cociente de límites}
+
+Analicemos la convergencia de la serie:
+\[
+\sum_{n=1}^{\infty} \frac{\sqrt{4n + 1}}{2n^2 + \sqrt[3]{n} + 2}
+\]
+
+\subsection*{Paso 1: Análisis asintótico del término general}
+
+Para \( n \to \infty \), se tiene:
+\[
+\sqrt{4n + 1} \sim \sqrt{4n} = 2\sqrt{n}, \quad
+2n^2 + \sqrt[3]{n} + 2 \sim 2n^2
+\]
+
+Entonces:
+\[
+a_n = \frac{\sqrt{4n + 1}}{2n^2 + \sqrt[3]{n} + 2}
+\sim \frac{2\sqrt{n}}{2n^2} = \frac{1}{n^{3/2}}
+\]
+
+\subsection*{Paso 2: Definir la serie de comparación}
+
+Tomamos como serie de comparación:
+\[
+b_n = \frac{1}{n^{3/2}}
+\quad \text{(serie p con } p = \frac{3}{2} > 1, \text{ converge)}
+\]
+
+\subsection*{Paso 3: Aplicar el criterio del límite}
+
+Calculamos:
+\[
+\lim_{n \to \infty} \frac{a_n}{b_n}
+= \lim_{n \to \infty}
+\frac{\dfrac{\sqrt{4n + 1}}{2n^2 + \sqrt[3]{n} + 2}}{\dfrac{1}{n^{3/2}}}
+= \lim_{n \to \infty}
+\frac{\sqrt{4n + 1} \cdot n^{3/2}}{2n^2 + \sqrt[3]{n} + 2}
+\]
+
+Como:
+\[
+\sqrt{4n + 1} \sim 2\sqrt{n}, \quad \text{entonces:} \quad
+\sqrt{4n + 1} \cdot n^{3/2} \sim 2n^2
+\]
+
+Y el denominador:
+\[
+2n^2 + \sqrt[3]{n} + 2 \sim 2n^2
+\]
+
+Por lo tanto:
+\[
+\lim_{n \to \infty} \frac{a_n}{b_n} = \lim_{n \to \infty} \frac{2n^2}{2n^2} = 1
+\]
+
+\subsection*{Paso 4: Conclusión}
+
+El límite es:
+\[
+L = \lim_{n \to \infty} \frac{a_n}{b_n} = 1 \neq 0
+\]
+
+Como \( L \in (0, \infty) \) y \( \sum b_n = \sum \frac{1}{n^{3/2}} \) es convergente, entonces por el \textbf{criterio del límite de cocientes}, la serie
+\[
+\sum_{n=1}^{\infty} \frac{\sqrt{4n + 1}}{2n^2 + \sqrt[3]{n} + 2}
+\]
+también \textbf{converge}.
+\section*{Resumen: Criterio del cociente de límites}
+
+Sean \( a_n > 0 \) y \( b_n > 0 \) para \( n \) suficientemente grande. Definimos:
+
+\[
+L = \lim_{n \to \infty} \frac{a_n}{b_n}
+\]
+
+Entonces se tienen los siguientes casos:
+
+\begin{enumerate}
+    \item \textbf{Si } \( 0 < L < \infty \), ambas series tienen el mismo comportamiento:
+    \begin{itemize}
+        \item Si \( \sum b_n \) converge, entonces \( \sum a_n \) converge.
+        \item Si \( \sum b_n \) diverge, entonces \( \sum a_n \) diverge.
+    \end{itemize}
+
+    \item \textbf{Si } \( L = 0 \):
+    \begin{itemize}
+        \item Si \( \sum b_n \) converge, entonces \( \sum a_n \) también converge.
+        \item Si \( \sum b_n \) diverge, \textbf{no se puede concluir nada} sobre \( \sum a_n \).
+    \end{itemize}
+
+    \item \textbf{Si } \( L = +\infty \):
+    \begin{itemize}
+        \item Si \( \sum b_n \) diverge, entonces \( \sum a_n \) también diverge.
+        \item Si \( \sum b_n \) converge, \textbf{no se puede concluir nada} sobre \( \sum a_n \).
+    \end{itemize}
+\end{enumerate}
+
+\textbf{Nota:} Este criterio es útil cuando \( a_n \) y \( b_n \) son difíciles de comparar directamente pero tienen comportamiento asintótico similar.
+\section*{Ejemplo: Criterio de Leibniz para series alternadas}
+
+Considere la serie:
+\[
+\sum_{n=1}^{\infty} \frac{(-1)^n}{n}
+\]
+
+Esta es una \textbf{serie alternada}, ya que los signos de los términos cambian de forma alterna: positivo, negativo, positivo, etc.
+
+Sea \( a_n = \dfrac{1}{n} \). Aplicamos el \textbf{criterio de Leibniz} (criterio de las series alternadas), que establece que la serie
+\[
+\sum_{n=1}^{\infty} (-1)^n a_n
+\]
+converge si se cumplen:
+
+\begin{enumerate}
+    \item \( \displaystyle \lim_{n \to \infty} a_n = 0 \)
+    
+    En este caso:
+    \[
+    \lim_{n \to \infty} \frac{1}{n} = 0
+    \]
+
+    \item La sucesión \( a_n \) es decreciente:
+
+    Como:
+    \[
+    \frac{1}{n+1} < \frac{1}{n} \quad \text{para todo } n \geq 1,
+    \]
+    se concluye que \( a_n \) es decreciente.
+\end{enumerate}
+
+\subsection*{Conclusión:}
+
+Como se cumplen ambas condiciones del criterio de Leibniz, se concluye que la serie
+
+\[
+\sum_{n=1}^{\infty} \frac{(-1)^n}{n}
+\]
+
+es \textbf{convergente}.
+
+
+\section*{Ejemplo: Criterio de Leibniz para series alternadas}
+
+Considere la serie:
+\[
+\sum_{n=1}^{\infty} (-1)^n \sin\left(\frac{1}{n}\right)
+\]
+
+Esta es una \textbf{serie alternada}, ya que los signos de los términos cambian de forma alterna.
+
+Definimos:
+\[
+a_n = \sin\left(\frac{1}{n}\right)
+\]
+
+Aplicamos el \textbf{criterio de Leibniz}, que establece que la serie
+\[
+\sum (-1)^n a_n
+\]
+converge si se cumplen las siguientes condiciones:
+
+\begin{enumerate}
+    \item \textbf{Límite nulo:}
+    \[
+    \lim_{n \to \infty} \sin\left(\frac{1}{n}\right) = \sin(0) = 0
+    \]
+
+    \item \textbf{Monotonía decreciente:} Como la función seno es creciente en \( (0, \pi/2) \) y \( \frac{1}{n} \) es decreciente, entonces:
+    \[
+    \frac{1}{n+1} < \frac{1}{n} \quad \Rightarrow \quad \sin\left(\frac{1}{n+1}\right) < \sin\left(\frac{1}{n}\right)
+    \]
+    Por tanto, la sucesión \( a_n = \sin\left(\frac{1}{n}\right) \) es decreciente.
+\end{enumerate}
+
+\subsection*{Conclusión:}
+
+Se cumplen ambas condiciones del \textbf{criterio de Leibniz}, por lo tanto, la serie:
+
+\[
+\sum_{n=1}^{\infty} (-1)^n \sin\left(\frac{1}{n}\right)
+\]
+
+es \textbf{convergente}.
+
+
+\section*{Resumen: Criterio de Leibniz (series alternadas)}
+
+Una \textbf{serie alternada} tiene la forma:
+\[
+\sum_{n=1}^{\infty} (-1)^n a_n \quad \text{o} \quad \sum_{n=1}^{\infty} (-1)^{n+1} a_n
+\]
+donde \( a_n > 0 \).
+
+\subsection*{Condiciones del criterio de Leibniz}
+
+La serie alternada \( \sum (-1)^n a_n \) es \textbf{convergente} si:
+
+\begin{enumerate}
+    \item \( \displaystyle \lim_{n \to \infty} a_n = 0 \)
+    \item La sucesión \( a_n \) es decreciente: \( a_{n+1} \leq a_n \)
+\end{enumerate}
+
+\subsection*{Qué ocurre si no se cumplen las condiciones}
+
+\begin{itemize}
+    \item Si \( \lim a_n \neq 0 \), la serie \textbf{diverge}.
+    \item Si \( a_n \) no es decreciente, el criterio de Leibniz no puede aplicarse, y se necesita otro método.
+\end{itemize}
+
+\subsection*{Observación}
+
+El criterio de Leibniz prueba \textbf{convergencia condicional}, no absoluta.
+
+Por ejemplo:
+\[
+\sum_{n=1}^{\infty} \frac{(-1)^n}{n} \text{ converge por Leibniz, pero no absolutamente.}
+\]
+Ya que:
+\[
+\sum_{n=1}^{\infty} \left| \frac{(-1)^n}{n} \right| = \sum_{n=1}^{\infty} \frac{1}{n}
+\]
+es la serie armónica, que diverge.
+
+\section*{Ejemplo: Convergencia absoluta o condicional}
+
+Analicemos la convergencia de la serie:
+\[
+\sum_{n=1}^{\infty} \frac{\cos(n)}{n^2 + 1}
+\]
+
+\subsection*{Paso 1: Definir el término general}
+
+Sea:
+\[
+a_n = \frac{\cos(n)}{n^2 + 1}
+\]
+
+Esta es una serie **no alternada** pero **no positiva**, porque \( \cos(n) \) oscila entre \(-1\) y \(1\), cambiando de signo.
+
+\subsection*{Paso 2: Estudiar convergencia absoluta}
+
+Analizamos la serie con valor absoluto:
+\[
+\sum_{n=1}^{\infty} \left| \frac{\cos(n)}{n^2 + 1} \right| = \sum_{n=1}^{\infty} \frac{|\cos(n)|}{n^2 + 1}
+\]
+
+Sabemos que \( |\cos(n)| \leq 1 \), entonces:
+\[
+\frac{|\cos(n)|}{n^2 + 1} \leq \frac{1}{n^2}
+\]
+
+Como la serie \( \sum_{n=1}^{\infty} \frac{1}{n^2} \) es una serie \( p \)-con \( p = 2 > 1 \), **converge**.
+
+Por el \textbf{criterio de comparación directa}, la serie con valor absoluto también converge.
+
+\subsection*{Paso 3: Conclusión}
+
+Como:
+\[
+\sum_{n=1}^{\infty} \left| \frac{\cos(n)}{n^2 + 1} \right| \text{ converge},
+\]
+entonces la serie
+\[
+\sum_{n=1}^{\infty} \frac{\cos(n)}{n^2 + 1}
+\]
+\textbf{converge absolutamente}.
+
+\section*{Ejemplo: Convergencia condicional vs absoluta}
+
+Sea \( a_n = \dfrac{1}{\sqrt{n}} \)
+
+\begin{enumerate}
+    \item[\textbf{1.}] \textbf{Muestre que \( a_n \) es decreciente}
+
+    Para \( n \in \mathbb{N} \), se tiene que:
+    \[
+    a_n = \frac{1}{\sqrt{n}}, \quad a_{n+1} = \frac{1}{\sqrt{n+1}}
+    \]
+
+    Como \( \sqrt{n+1} > \sqrt{n} \Rightarrow \frac{1}{\sqrt{n+1}} < \frac{1}{\sqrt{n}} \), entonces \( a_n \) es decreciente.
+
+    \item[\textbf{2.}] \textbf{Calcule el límite de \( a_n \):}
+    \[
+    \lim_{n \to \infty} \frac{1}{\sqrt{n}} = 0
+    \]
+
+    \item[\textbf{3.}] \textbf{Justifique por qué la serie alternada}
+    \[
+    \sum_{n=1}^{\infty} (-1)^n \frac{1}{\sqrt{n}}
+    \]
+    \textbf{es convergente}
+
+    Aplicamos el \textbf{criterio de Leibniz}:
+    \begin{itemize}
+        \item \( a_n \to 0 \) 
+        \item \( a_n \) decrece 
+    \end{itemize}
+
+    Por tanto, la serie **converge condicionalmente**.
+
+    \item[\textbf{4.}] \textbf{Justifique por qué la serie}
+    \[
+    \sum_{n=1}^{\infty} \frac{1}{\sqrt{n}}
+    \quad \textbf{diverge}
+    \]
+
+    Es una serie tipo \( p \)-serie con \( p = \frac{1}{2} < 1 \), por lo tanto, **diverge**.
+
+    \item[\textbf{5.}] \textbf{¿Qué tipo de convergencia presenta la serie en (3)?}
+
+    Como:
+    \[
+    \sum_{n=1}^{\infty} (-1)^n \frac{1}{\sqrt{n}} \text{ converge}, \quad
+    \sum_{n=1}^{\infty} \left| \frac{(-1)^n}{\sqrt{n}} \right| = \sum_{n=1}^{\infty} \frac{1}{\sqrt{n}} \text{ diverge},
+    \]
+    entonces, la serie (3) **converge condicionalmente**.
+\end{enumerate}
+\section*{Ejemplo: Criterio de la razón (D'Alembert)}
+
+Consideremos la serie:
+\[
+\sum_{n=1}^{\infty} \frac{n!}{p(p+1)(p+2)\cdots(p+n-1)}
+\quad \text{con } p > 2
+\]
+
+Definimos:
+\[
+a_n = \frac{n!}{p(p+1)(p+2)\cdots(p+n-1)}
+\]
+
+\subsection*{Paso 1: Aplicar el criterio de la razón}
+
+Calculamos:
+\[
+L = \lim_{n \to \infty} \left| \frac{a_{n+1}}{a_n} \right|
+\]
+
+Tenemos:
+\[
+a_{n+1} = \frac{(n+1)!}{p(p+1)\cdots(p+n)} \\
+a_n = \frac{n!}{p(p+1)\cdots(p+n-1)}
+\]
+
+Entonces:
+
+\[
+a_n = \frac{n!}{\prod_{k=0}^{n-1} (p + k)} = \frac{n!}{p(p+1)(p+2)\cdots(p+n-1)}
+\]
+
+\[
+a_{n+1} = \frac{(n+1)!}{\prod_{k=0}^{n} (p + k)} = \frac{(n+1)!}{p(p+1)(p+2)\cdots(p+n)}
+\]
+
+Entonces:
+
+\[
+\frac{a_{n+1}}{a_n}
+= \frac{(n+1)!}{p(p+1)\cdots(p+n)} \cdot \frac{p(p+1)\cdots(p+n-1)}{n!}
+\]
+
+Descomponemos \( (n+1)! = (n+1) \cdot n! \):
+
+\[
+= \frac{(n+1) \cdot n!}{p(p+1)\cdots(p+n)} \cdot \frac{p(p+1)\cdots(p+n-1)}{n!}
+\]
+
+Cancelamos \( n! \) y los productos comunes:
+
+\[
+= (n+1) \cdot \frac{1}{p+n}
+= \frac{n+1}{p+n}
+\]
+
+Por tanto:
+\[
+L = \lim_{n \to \infty} \frac{n+1}{p+n}
+= \lim_{n \to \infty} \frac{1 + \frac{1}{n}}{1 + \frac{p}{n}} = 1
+\]
+
+\subsection*{Paso 2: El criterio de la razón no decide}
+
+Como:
+\[
+L = 1,
+\]
+el criterio de D’Alembert no permite concluir nada sobre la convergencia.
+
+\subsection*{Paso 3: Usar comparación con una serie p-convergente}
+
+Notamos que:
+\[
+\frac{n!}{p(p+1)\cdots(p+n-1)} = \prod_{k=0}^{n-1} \frac{n-k}{p+k}
+\]
+
+Cada fracción del producto es menor que 1 para \( p > n \), pero cuando \( p > 2 \), se puede usar la desigualdad:
+\[
+a_n \leq \frac{n!}{p^n}
+\]
+
+Luego aplicamos el criterio de comparación con:
+\[
+b_n = \frac{n!}{p^n}
+\]
+
+Y con el criterio de la razón sobre \( b_n \):
+\[
+\frac{b_{n+1}}{b_n} = \frac{(n+1)! / p^{n+1}}{n! / p^n} = \frac{n+1}{p}
+\]
+
+Entonces:
+\[
+\lim_{n \to \infty} \frac{b_{n+1}}{b_n} = \infty \text{ si } p < \infty
+\]
+
+Pero como \( \frac{n!}{p^n} \) decrece rápidamente, la serie:
+\[
+\sum \frac{n!}{p^n}
+\]
+converge (esto se puede justificar por otros criterios como la razón).
+
+\subsection*{Conclusión}
+
+La serie original:
+\[
+\sum_{n=1}^{\infty} \frac{n!}{p(p+1)\cdots(p+n-1)}
+\]
+\textbf{converge absolutamente} si \( p > 2 \).
+\section*{Ejemplo: Aplicación del criterio de Raabe}
+
+Analicemos la convergencia de la serie:
+\[
+\sum_{n=1}^{\infty} \frac{2^n n!}{n^n}
+\]
+
+Definimos el término general:
+\[
+a_n = \frac{2^n n!}{n^n}
+\]
+
+Aplicamos el \textbf{criterio de Raabe}, que establece que:
+
+\[
+L = \lim_{n \to \infty} n \cdot \left(1 - \left| \frac{a_{n+1}}{a_n} \right| \right)
+\]
+
+\subsection*{Paso 1: Calcular \( \dfrac{a_{n+1}}{a_n} \)}
+
+\[
+a_{n+1} = \frac{2^{n+1} (n+1)!}{(n+1)^{n+1}}, \quad a_n = \frac{2^n n!}{n^n}
+\]
+
+Entonces:
+
+\[
+\frac{a_{n+1}}{a_n}
+= \frac{2^{n+1} (n+1)!}{(n+1)^{n+1}} \cdot \frac{n^n}{2^n n!}
+= \frac{2 \cdot (n+1) \cdot n^n}{(n+1)^{n+1}}
+= \frac{2n^n}{(n+1)^n}
+\]
+
+\subsection*{Paso 2: Sustituir en la fórmula de Raabe}
+
+\[
+L = \lim_{n \to \infty} n \cdot \left(1 - \frac{2n^n}{(n+1)^n} \right)
+\]
+
+Usamos que:
+\[
+\left( \frac{n}{n+1} \right)^n \longrightarrow \frac{1}{e}
+\quad \Rightarrow \quad
+\frac{n^n}{(n+1)^n} \longrightarrow \frac{1}{e}
+\]
+
+Entonces:
+\[
+\frac{2n^n}{(n+1)^n} \longrightarrow \frac{2}{e}
+\quad \Rightarrow \quad
+L = \lim_{n \to \infty} n \cdot \left(1 - \frac{2}{e} \right)
+= n \cdot \left( \frac{e - 2}{e} \right)
+\]
+
+Como \( \dfrac{e - 2}{e} > 0 \), el límite tiende a infinito:
+
+\[
+L = \infty > 1
+\]
+
+\subsection*{Conclusión}
+
+Como \( L > 1 \), por el \textbf{criterio de Raabe}, la serie
+
+\[
+\sum_{n=1}^{\infty} \frac{2^n n!}{n^n}
+\]
+
+\textbf{converge absolutamente}.
+
+\section*{Resumen: Criterio de Raabe}
+
+El \textbf{criterio de Raabe} es una versión más precisa del criterio de D'Alembert. Se aplica a una serie:
+
+\[
+\sum_{n=k}^{\infty} a_n
+\]
+
+donde \( a_n \neq 0 \) para \( n \) suficientemente grande. Se define el siguiente límite:
+
+\[
+L = \lim_{n \to \infty} n \cdot \left(1 - \left| \frac{a_{n+1}}{a_n} \right| \right)
+\]
+
+---
+
+\subsection*{Interpretación del resultado:}
+
+\begin{itemize}
+    \item[] \textbf{1.} Si \( L > 1 \), entonces la serie \textbf{converge absolutamente}.
+    \item[] \textbf{2.} Si \( L < 1 \), entonces la serie \textbf{diverge}.
+    \item[] \textbf{3.} Si \( L = 1 \), el criterio es \textbf{inconcluso}.
+\end{itemize}
+
+---
+
+\subsection*{Ventaja del criterio}
+
+Este criterio es útil especialmente en series donde aparece el factorial o potencias tipo \( n^n \), donde el criterio de la razón usual da \( L = 1 \) y no permite decidir.
+
+\textbf{Nota:} A veces se llama también \emph{criterio de Raabe-Duhamel}.
+
+\section*{Ejemplo: Aplicación del criterio de Raabe}
+
+Analicemos la convergencia de la serie:
+\[
+\sum_{n=2}^{\infty} \frac{1}{n \cdot \ln(n)^p}
+\quad \text{con } p > 0
+\]
+
+(Notamos que el índice empieza en \( n = 2 \) para evitar la indeterminación en \( \ln(1) \)).
+
+Definimos:
+\[
+a_n = \frac{1}{n \cdot \ln(n)^p}
+\]
+
+Aplicamos el \textbf{criterio de Raabe}, calculando:
+
+\[
+L = \lim_{n \to \infty} n \cdot \left( 1 - \left| \frac{a_{n+1}}{a_n} \right| \right)
+\]
+
+\subsection*{Paso 1: Cociente \( \dfrac{a_{n+1}}{a_n} \)}
+
+\[
+\frac{a_{n+1}}{a_n}
+= \frac{1}{(n+1) \cdot \ln(n+1)^p} \cdot \frac{n \cdot \ln(n)^p}{1}
+= \frac{n}{n+1} \cdot \left( \frac{\ln(n)}{\ln(n+1)} \right)^p
+\]
+
+\subsection*{Paso 2: Desarrollo del límite}
+
+Sabemos que:
+\[
+\frac{n}{n+1} \longrightarrow 1^{-}, \quad \frac{\ln(n)}{\ln(n+1)} \longrightarrow 1^{-}
+\]
+
+Entonces:
+
+\[
+\left( \frac{\ln(n)}{\ln(n+1)} \right)^p \approx 1 - \frac{p}{n \cdot \ln(n)} + \text{términos menores}
+\]
+
+Y:
+
+\[
+\frac{n}{n+1} \approx 1 - \frac{1}{n} + \text{términos menores}
+\]
+
+Por lo tanto:
+
+\[
+\frac{a_{n+1}}{a_n} \approx \left( 1 - \frac{1}{n} \right) \left( 1 - \frac{p}{n \cdot \ln(n)} \right)
+\approx 1 - \frac{1}{n} - \frac{p}{n \cdot \ln(n)}
+\]
+
+Entonces:
+
+\[
+L = n \cdot \left( 1 - \left( 1 - \frac{1}{n} - \frac{p}{n \cdot \ln(n)} \right) \right)
+= 1 + \frac{p}{\ln(n)} \longrightarrow 1
+\]
+
+\subsection*{Conclusión:}
+
+\[
+L = \lim_{n \to \infty} n \cdot \left( 1 - \frac{a_{n+1}}{a_n} \right) = 1
+\]
+
+Como \( L = 1 \), el \textbf{criterio de Raabe es inconcluso}.
+
+---
+
+\subsection*{Observación final:}
+
+Este ejemplo es útil para mostrar que incluso el criterio de Raabe puede fallar cuando \( L = 1 \), como también sucede con el criterio de la razón.
+
+Para decidir la convergencia de esta serie se requiere otro enfoque, como el **criterio de la integral**:
+
+- La serie \( \sum \frac{1}{n \ln(n)^p} \) converge si \( p > 1 \), y diverge si \( 0 < p \leq 1 \).
+
+\newpage
+
+\section*{Ejemplo: Criterio de la raíz (Cauchy)}
+
+Analicemos la convergencia de la serie:
+\[
+\sum_{n=1}^{\infty} \left(1 + \frac{2}{n}\right)^{-n^2}
+\]
+
+Sea:
+\[
+a_n = \left(1 + \frac{2}{n}\right)^{-n^2}
+\]
+
+Aplicamos el \textbf{criterio de la raíz}, que consiste en calcular:
+
+\[
+L = \lim_{n \to \infty} \sqrt[n]{|a_n|} = \lim_{n \to \infty} \left[\left(1 + \frac{2}{n}\right)^{-n^2}\right]^{1/n}
+= \lim_{n \to \infty} \left(1 + \frac{2}{n}\right)^{-n}
+\]
+
+Recordamos el límite notable:
+\[
+\lim_{n \to \infty} \left(1 + \frac{x}{n} \right)^n = e^x
+\quad \Rightarrow \quad
+\left(1 + \frac{2}{n}\right)^n \to e^2
+\]
+
+Entonces:
+\[
+\left(1 + \frac{2}{n}\right)^{-n} \to \frac{1}{e^2}
+\]
+
+Por tanto:
+\[
+L = \frac{1}{e^2} < 1
+\]
+
+\subsection*{Conclusión}
+
+Como:
+\[
+L < 1
+\]
+
+la serie
+
+\[
+\sum_{n=1}^{\infty} \left(1 + \frac{2}{n}\right)^{-n^2}
+\]
+
+\textbf{converge absolutamente} por el \textbf{criterio de la raíz (Cauchy)}.
+\section*{Ejemplo: Aplicación del criterio de la raíz (Cauchy)}
+
+Analicemos la convergencia de la serie:
+\[
+\sum_{n=1}^{\infty} \left( \frac{5n^2}{3n^2 + 9} \right)^{-n}
+\]
+
+Definimos:
+\[
+a_n = \left( \frac{5n^2}{3n^2 + 9} \right)^{-n}
+\]
+
+Aplicamos el \textbf{criterio de la raíz}, que requiere calcular:
+
+\[
+L = \lim_{n \to \infty} \sqrt[n]{|a_n|} = \lim_{n \to \infty} \left( \frac{5n^2}{3n^2 + 9} \right)^{-1}
+\]
+
+Simplificamos el límite:
+
+\[
+L = \lim_{n \to \infty} \left( \frac{5n^2}{3n^2 + 9} \right)^{-1}
+= \lim_{n \to \infty} \frac{3n^2 + 9}{5n^2}
+= \lim_{n \to \infty} \frac{3 + \frac{9}{n^2}}{5}
+= \frac{3}{5}
+\]
+
+\subsection*{Conclusión}
+
+Como:
+\[
+L = \frac{3}{5} < 1,
+\]
+la serie
+\[
+\sum_{n=1}^{\infty} \left( \frac{5n^2}{3n^2 + 9} \right)^{-n}
+\]
+\textbf{converge absolutamente} por el \textbf{criterio de la raíz (Cauchy)}.
+
+\newpage
+\section*{Ejemplo: Aplicación de la fórmula de Stirling}
+
+Analicemos la convergencia de la serie:
+\[
+\sum_{n=2}^{\infty} \frac{n^n}{n! \cdot 5^n}
+\]
+
+Sea:
+\[
+a_n = \frac{n^n}{n! \cdot 5^n}
+\]
+
+Aplicamos la \textbf{fórmula de Stirling} para estimar el factorial:
+\[
+n! \sim \left( \frac{n}{e} \right)^n \sqrt{2\pi n}
+\]
+
+Entonces:
+\[
+a_n \sim \frac{n^n}{\left( \frac{n}{e} \right)^n \sqrt{2\pi n} \cdot 5^n}
+= \frac{n^n}{\left( \frac{n^n}{e^n} \right) \cdot \sqrt{2\pi n} \cdot 5^n}
+= \frac{e^n}{\sqrt{2\pi n} \cdot 5^n}
+\]
+
+Por tanto:
+\[
+a_n \sim \frac{1}{\sqrt{2\pi n}} \left( \frac{e}{5} \right)^n
+\]
+
+\subsection*{Análisis del término general}
+
+Sabemos que \( \frac{e}{5} < 1 \), por lo tanto \( \left( \frac{e}{5} \right)^n \) decrece exponencialmente. Además, el factor \( \frac{1}{\sqrt{n}} \) es decreciente y acotado.
+
+\subsection*{Comparación con serie geométrica}
+
+Como:
+\[
+a_n \sim \frac{1}{\sqrt{n}} \cdot r^n \quad \text{con } 0 < r = \frac{e}{5} < 1
+\]
+
+Entonces:
+\[
+a_n \leq \frac{C}{\sqrt{n}} \cdot r^n
+\]
+
+Y la serie:
+\[
+\sum_{n=2}^{\infty} \frac{1}{\sqrt{n}} \cdot r^n
+\]
+
+\textbf{converge} por el criterio de comparación con una serie geométrica.
+
+\subsection*{Conclusión}
+
+Por lo tanto, la serie
+\[
+\sum_{n=2}^{\infty} \frac{n^n}{n! \cdot 5^n}
+\quad \textbf{converge absolutamente}.
+\]
+
+\section*{Resolución de ejercicios — Comparación directa}
+
+\subsection*{Ejercicio (a)}
+
+Analicemos la convergencia de la serie:
+\[
+\sum_{n=1}^{\infty} \frac{\sin^2(n^3)}{n^4 + 3}
+\]
+
+\subsubsection*{Paso 1: Acotación del numerador}
+
+Sabemos que:
+\[
+0 \leq \sin^2(n^3) \leq 1 \quad \text{para todo } n \in \mathbb{N}
+\]
+
+Entonces:
+\[
+0 \leq \frac{\sin^2(n^3)}{n^4 + 3} \leq \frac{1}{n^4 + 3}
+< \frac{1}{n^4}
+\quad \text{para todo } n \geq 1
+\]
+
+\subsubsection*{Paso 2: Serie de comparación}
+
+Consideramos la serie:
+\[
+\sum_{n=1}^{\infty} \frac{1}{n^4}
+\]
+
+Esta es una serie \( p \)-serie con \( p = 4 > 1 \), por tanto, \textbf{converge}.
+
+\subsubsection*{Paso 3: Aplicación del criterio de comparación directa}
+
+Dado que:
+\[
+0 \leq \frac{\sin^2(n^3)}{n^4 + 3} \leq \frac{1}{n^4}
+\quad \text{y } \sum \frac{1}{n^4} \text{ converge}
+\]
+
+Entonces, por el \textbf{criterio de comparación directa}, la serie
+\[
+\sum_{n=1}^{\infty} \frac{\sin^2(n^3)}{n^4 + 3}
+\quad \textbf{converge}.
+\]
+
+
+\subsection*{Ejercicio (c)}
+
+Analice la convergencia de la serie:
+\[
+\sum_{n=1}^{\infty} \frac{a_n}{10^n}, \quad \text{donde } 0 < a_n < 10
+\]
+
+\subsubsection*{Paso 1: Acotación del término general}
+
+Dado que:
+\[
+0 < a_n < 10,
+\quad \text{entonces} \quad
+0 < \frac{a_n}{10^n} < \frac{10}{10^n} = \left(\frac{1}{10}\right)^{n - 1}
+\]
+
+\subsubsection*{Paso 2: Serie de comparación}
+
+Consideremos la serie:
+\[
+\sum_{n=1}^{\infty} \frac{10}{10^n}
+= 10 \sum_{n=1}^{\infty} \left( \frac{1}{10} \right)^n
+\]
+
+Esta es una serie **geométrica** con razón \( r = \frac{1}{10} < 1 \), por lo tanto, \textbf{converge}.
+
+\subsubsection*{Paso 3: Aplicación del criterio de comparación directa}
+
+Como:
+\[
+0 < \frac{a_n}{10^n} < \frac{10}{10^n}
+\quad \text{y } \sum \frac{10}{10^n} \text{ converge},
+\]
+
+entonces, por el \textbf{criterio de comparación directa}, la serie:
+\[
+\sum_{n=1}^{\infty} \frac{a_n}{10^n}
+\quad \textbf{converge}.
+\]
+\section*{Ejercicio 2(a): Criterio de comparación al límite}
+
+Analicemos la convergencia de la serie:
+\[
+\sum_{n=1}^{\infty} \frac{4n^2 + 5n - 2}{n \sqrt{(n^2 + 1)^3}}
+\]
+
+\subsection*{Paso 1: Definir el término general}
+
+Sea:
+\[
+a_n = \frac{4n^2 + 5n - 2}{n \sqrt{(n^2 + 1)^3}}
+\]
+
+\subsection*{Paso 2: Elegir una serie de comparación}
+
+Para \( n \gg 1 \), tenemos:
+\[
+4n^2 + 5n - 2 \sim 4n^2, \quad \text{y} \quad \sqrt{(n^2 + 1)^3} \sim \sqrt{n^6} = n^3
+\]
+
+Entonces:
+\[
+a_n \sim \frac{4n^2}{n \cdot n^3} = \frac{4n^2}{n^4} = \frac{4}{n^2}
+\]
+
+Tomamos como comparación la serie \( b_n = \dfrac{1}{n^2} \), que es una \( p \)-serie con \( p = 2 > 1 \), por lo tanto, \textbf{converge}.
+
+\subsection*{Paso 3: Aplicar el criterio de comparación al límite}
+
+\[
+\lim_{n \to \infty} \frac{a_n}{b_n}
+= \lim_{n \to \infty} \frac{\dfrac{4n^2 + 5n - 2}{n \sqrt{(n^2 + 1)^3}}}{\dfrac{1}{n^2}}
+= \lim_{n \to \infty} \frac{(4n^2 + 5n - 2) \cdot n^2}{n \cdot \sqrt{(n^2 + 1)^3}}
+\]
+
+Simplificamos:
+\[
+= \lim_{n \to \infty} \frac{(4n^2 + 5n - 2) \cdot n^2}{n \cdot \sqrt{n^6 \left(1 + \frac{1}{n^2}\right)^3}}
+= \lim_{n \to \infty} \frac{(4n^2 + 5n - 2) \cdot n^2}{n \cdot n^3 \cdot \left(1 + \frac{1}{n^2} \right)^{3/2}}
+\]
+
+\[
+= \lim_{n \to \infty} \frac{(4n^2 + 5n - 2)}{n^2 \cdot \left(1 + \frac{1}{n^2} \right)^{3/2}} \to \frac{4}{1} = 4
+\]
+
+\subsection*{Paso 4: Conclusión}
+
+Como:
+\[
+\lim_{n \to \infty} \frac{a_n}{b_n} = 4 \neq 0,
+\quad \text{y } \sum b_n = \sum \frac{1}{n^2} \text{ converge},
+\]
+
+entonces, por el \textbf{criterio de comparación al límite}, la serie
+\[
+\sum_{n=1}^{\infty} \frac{4n^2 + 5n - 2}{n \sqrt{(n^2 + 1)^3}}
+\quad \textbf{converge}.
+\]
+
+
+\subsection*{Ejercicio 2(c): Comparación al límite con parámetros \( a, b > 0 \)}
+
+Analicemos la convergencia de la serie:
+\[
+\sum_{n=1}^{\infty} \frac{n^{2n}}{(n + a)^n (n + b)^{n + a}}, \quad a, b > 0
+\]
+
+\subsubsection*{Paso 1: Análisis asintótico}
+
+Para \( n \gg 1 \), se cumple:
+\[
+n + a \sim n, \quad n + b \sim n
+\]
+
+Entonces:
+\[
+(n + a)^n \sim n^n, \quad (n + b)^{n + a} \sim n^{n + a}
+\]
+
+Por tanto, el término general se comporta asintóticamente como:
+\[
+a_n \sim \frac{n^{2n}}{n^n \cdot n^{n + a}} = \frac{n^{2n}}{n^{2n + a}} = \frac{1}{n^a}
+\]
+
+\subsubsection*{Paso 2: Serie de comparación}
+
+Definimos la serie comparativa:
+\[
+b_n = \frac{1}{n^a}
+\]
+
+Es una \( p \)-serie que:
+
+- **Converge** si \( a > 1 \)
+- **Diverge** si \( 0 < a \leq 1 \)
+
+\subsubsection*{Paso 3: Aplicar el criterio de comparación al límite}
+
+Calculamos:
+\[
+\lim_{n \to \infty} \frac{a_n}{b_n} = \lim_{n \to \infty} \frac{\dfrac{n^{2n}}{(n + a)^n (n + b)^{n + a}}}{\dfrac{1}{n^a}} 
+= \lim_{n \to \infty} \frac{n^{2n + a}}{(n + a)^n (n + b)^{n + a}}
+\]
+
+Como:
+\[
+(n + a)^n \sim n^n, \quad (n + b)^{n + a} \sim n^{n + a}
+\]
+
+Entonces:
+\[
+\lim_{n \to \infty} \frac{n^{2n + a}}{n^n \cdot n^{n + a}} = \lim_{n \to \infty} \frac{n^{2n + a}}{n^{2n + a}} = 1
+\]
+
+\subsubsection*{Paso 4: Conclusión}
+
+Como:
+\[
+\lim_{n \to \infty} \frac{a_n}{b_n} = 1 \neq 0, \infty,
+\quad \text{y la serie } \sum b_n = \sum \frac{1}{n^a} \text{ converge si } a > 1,
+\]
+
+entonces, por el \textbf{criterio de comparación al límite}, la serie
+\[
+\sum_{n=1}^{\infty} \frac{n^{2n}}{(n + a)^n (n + b)^{n + a}}
+\quad \textbf{converge si } a > 1.
+\]
+
+\textbf{Diverge si } \( 0 < a \leq 1 \).
+
+\newpage
+\subsection*{Ejercicio 2(c): Comparación al límite con parámetros \( a, b > 0 \)}
+
+Analicemos la convergencia de la serie:
+\[
+\sum_{n=1}^{\infty} \frac{n^{2n}}{(n + a)^n (n + b)^{n + a}}, \quad a, b > 0
+\]
+
+\subsubsection*{Paso 1: Análisis asintótico}
+
+Para \( n \gg 1 \), se cumple:
+\[
+n + a \sim n, \quad n + b \sim n
+\]
+
+Entonces:
+\[
+(n + a)^n \sim n^n, \quad (n + b)^{n + a} \sim n^{n + a}
+\]
+
+Por tanto, el término general se comporta asintóticamente como:
+\[
+a_n \sim \frac{n^{2n}}{n^n \cdot n^{n + a}} = \frac{n^{2n}}{n^{2n + a}} = \frac{1}{n^a}
+\]
+
+\subsubsection*{Paso 2: Serie de comparación}
+
+Definimos la serie comparativa:
+\[
+b_n = \frac{1}{n^a}
+\]
+
+Es una \( p \)-serie que:
+
+- **Converge** si \( a > 1 \)
+- **Diverge** si \( 0 < a \leq 1 \)
+
+\subsubsection*{Paso 3: Aplicar el criterio de comparación al límite}
+
+Calculamos:
+\[
+\lim_{n \to \infty} \frac{a_n}{b_n} = \lim_{n \to \infty} \frac{\dfrac{n^{2n}}{(n + a)^n (n + b)^{n + a}}}{\dfrac{1}{n^a}} 
+= \lim_{n \to \infty} \frac{n^{2n + a}}{(n + a)^n (n + b)^{n + a}}
+\]
+
+Como:
+\[
+(n + a)^n \sim n^n, \quad (n + b)^{n + a} \sim n^{n + a}
+\]
+
+Entonces:
+\[
+\lim_{n \to \infty} \frac{n^{2n + a}}{n^n \cdot n^{n + a}} = \lim_{n \to \infty} \frac{n^{2n + a}}{n^{2n + a}} = 1
+\]
+
+\subsubsection*{Paso 4: Conclusión}
+
+Como:
+\[
+\lim_{n \to \infty} \frac{a_n}{b_n} = 1 \neq 0, \infty,
+\quad \text{y la serie } \sum b_n = \sum \frac{1}{n^a} \text{ converge si } a > 1,
+\]
+
+entonces, por el \textbf{criterio de comparación al límite}, la serie
+\[
+\sum_{n=1}^{\infty} \frac{n^{2n}}{(n + a)^n (n + b)^{n + a}}
+\quad \textbf{converge si } a > 1.
+\]
+
+\textbf{Diverge si } \( 0 < a \leq 1 \).
+
+
+\section*{Ejercicio 3(b): Criterio de la integral}
+
+Analicemos la convergencia de la serie:
+\[
+\sum_{n=2}^{\infty} \frac{1}{n \ln(n)(\ln \ln n)^p}, \quad \text{con } p > 0
+\]
+
+Definimos:
+\[
+f(x) = \frac{1}{x \ln(x)(\ln \ln x)^p}, \quad x \geq 2
+\]
+
+Esta función es continua, positiva y decreciente para \( x > e \), por lo tanto, podemos aplicar el \textbf{criterio de la integral}.
+
+\subsection*{Paso 1: Aplicamos el criterio de la integral}
+
+Estudiamos la convergencia de:
+\[
+\int_2^{\infty} \frac{1}{x \ln(x)(\ln \ln x)^p} \, dx
+\]
+
+Usamos el cambio de variable:
+\[
+u = \ln \ln x, \quad \text{entonces: } du = \frac{1}{\ln x} \cdot \frac{1}{x} \, dx
+\Rightarrow dx = x \ln x \, du
+\]
+
+Sustituyendo:
+
+\[
+\int_2^{\infty} \frac{1}{x \ln x (\ln \ln x)^p} \, dx 
+= \int_{\ln \ln 2}^{\infty} \frac{1}{u^p} \, du
+\]
+
+\subsection*{Paso 2: Evaluamos la integral resultante}
+
+La integral:
+\[
+\int_{\ln \ln 2}^{\infty} \frac{1}{u^p} \, du
+\]
+
+- **Converge** si \( p > 1 \)
+- **Diverge** si \( 0 < p \leq 1 \)
+
+\subsection*{Conclusión}
+
+Por el \textbf{criterio de la integral}, la serie:
+\[
+\sum_{n=2}^{\infty} \frac{1}{n \ln(n)(\ln \ln n)^p}
+\]
+
+\textbf{converge si} \( p > 1 \)  
+\textbf{diverge si} \( 0 < p \leq 1 \)
+
+
+\subsection*{Ejercicio 3(c): Criterio de la integral}
+
+Analicemos la convergencia de la serie:
+\[
+\sum_{n=1}^{\infty} \frac{e^{\arctan n}}{n^2 + 1}
+\]
+
+Definimos la función:
+\[
+f(x) = \frac{e^{\arctan x}}{x^2 + 1}, \quad x \geq 1
+\]
+
+La función es continua, positiva y decreciente en \( [1, \infty) \), ya que:
+
+- \( \arctan x \) es creciente y acotada: \( \arctan x < \frac{\pi}{2} \), por lo que \( e^{\arctan x} \) también es creciente y acotada por \( e^{\pi/2} \),
+- \( x^2 + 1 \) crece más rápido que \( e^{\arctan x} \), haciendo que \( f(x) \) decrezca.
+
+Entonces, podemos aplicar el **criterio de la integral**.
+
+\subsubsection*{Paso 1: Acotación de la función}
+
+Sabemos que:
+\[
+\arctan x < \frac{\pi}{2} \Rightarrow e^{\arctan x} < e^{\pi/2}
+\Rightarrow f(x) < \frac{e^{\pi/2}}{x^2 + 1}
+\]
+
+Y además:
+\[
+\frac{1}{x^2 + 1} < \frac{1}{x^2}, \quad \text{para } x \geq 1
+\]
+
+Entonces:
+\[
+f(x) < \frac{e^{\pi/2}}{x^2}
+\]
+
+\subsubsection*{Paso 2: Comparación con una integral conocida}
+
+Como:
+\[
+\int_1^{\infty} \frac{1}{x^2} \, dx = 1 < \infty
+\]
+
+entonces:
+\[
+\int_1^{\infty} f(x) \, dx \leq \int_1^{\infty} \frac{e^{\pi/2}}{x^2} \, dx = e^{\pi/2} < \infty
+\]
+
+\subsubsection*{Conclusión}
+
+Por el **criterio de la integral**, la serie:
+\[
+\sum_{n=1}^{\infty} \frac{e^{\arctan n}}{n^2 + 1}
+\quad \textbf{converge}.
+\]
+
+
+
+\section*{Ejercicio 4(c): Criterio de series alternadas (criterio de Leibniz)}
+
+Analicemos la convergencia de la serie:
+\[
+\sum_{n=1}^{\infty} \frac{\sin\left(\dfrac{(2n - 1)\pi}{2}\right)}{n \ln(n + 3)}
+\]
+
+\subsection*{Paso 1: Analizar el signo del numerador}
+
+Recordemos que:
+\[
+\sin\left( \frac{(2n - 1)\pi}{2} \right) =
+\begin{cases}
+1 & \text{si } n = 1, 5, 9, \ldots \ (\text{n} \equiv 1 \mod 4) \\
+-1 & \text{si } n = 3, 7, 11, \ldots \ (\text{n} \equiv 3 \mod 4) \\
+0 & \text{si } n \equiv 0,2 \mod 4 \Rightarrow \text{¡Nunca sucede!}
+\end{cases}
+\]
+
+Entonces, para todo \( n \), el numerador vale \( \pm 1 \), alternando signos. Por tanto, la serie es alternante:
+
+\[
+a_n = \frac{(-1)^{n+1}}{n \ln(n + 3)}
+\quad \text{o equivalente}.
+\]
+
+\subsection*{Paso 2: Verificamos las condiciones del criterio de Leibniz}
+
+Queremos ver si \( b_n = \dfrac{1}{n \ln(n + 3)} \) cumple:
+
+\begin{itemize}
+    \item \textbf{(i) \( b_n > 0 \)} 
+    \item \textbf{(ii) Decreciente:}
+
+    Calculamos la derivada de \( f(x) = \dfrac{1}{x \ln(x + 3)} \), que resulta negativa para \( x > 1 \), entonces la sucesión es decreciente para \( n \geq 1 \). 
+
+    \item \textbf{(iii) \( \lim_{n \to \infty} b_n = 0 \):}
+
+    \[
+    \lim_{n \to \infty} \frac{1}{n \ln(n + 3)} = 0 \quad 
+    \]
+\end{itemize}
+
+\subsection*{Conclusión}
+
+La serie:
+\[
+\sum_{n=1}^{\infty} \frac{\sin\left(\dfrac{(2n - 1)\pi}{2}\right)}{n \ln(n + 3)}
+\quad \textbf{converge} \text{ por el criterio de Leibniz (series alternadas).}
+ \]
+
+
+\subsection*{Cálculo del número de términos para una precisión de \( 10^{-5} \)}
+
+Queremos encontrar el menor \( N \in \mathbb{N} \) tal que:
+\[
+\left| R_N \right| \leq \frac{1}{(N+1) \ln(N+4)} < 10^{-5}
+\]
+
+Probamos por tanteo:
+
+\begin{itemize}
+    \item \( N = 500 \): \( \frac{1}{501 \cdot \ln(504)} \approx \frac{1}{501 \cdot 6,22} \approx 3,2 \times 10^{-4} \)
+    \item \( N = 1500 \): \( \frac{1}{1501 \cdot \ln(1504)} \approx \frac{1}{1501 \cdot 7,32} \approx 9,1 \times 10^{-5} \)
+    \item \( N = 2500 \): \( \frac{1}{2501 \cdot \ln(2504)} \approx \frac{1}{2501 \cdot 7,83} \approx 5,1 \times 10^{-5} \)
+    \item \( N = 3500 \): \( \frac{1}{3501 \cdot \ln(3504)} \approx \frac{1}{3501 \cdot 8,16} \approx 3,5 \times 10^{-5} \)
+    \item \( N = 5000 \): \( \frac{1}{5001 \cdot \ln(5004)} \approx \frac{1}{5001 \cdot 8,52} \approx 2,3 \times 10^{-5} \)
+    \item \( N = 7000 \): \( \frac{1}{7001 \cdot \ln(7004)} \approx 1,5 \times 10^{-5} \)
+    \item \( N = 9000 \): \( \frac{1}{9001 \cdot \ln(9004)} \approx 1,1 \times 10^{-5} \)
+    \item \( N = 10000 \): \( \frac{1}{10001 \cdot \ln(10004)} \approx 9,9 \times 10^{-6} \)
+\end{itemize}
+
+\subsubsection*{Conclusión}
+
+Para que el error sea menor a \( 10^{-5} \), se deben tomar al menos:
+\[
+\boxed{10\,000 \text{ términos.}}
+\]
+
+---
+
+\subsection*{Cota del error con suma parcial de los primeros 5 términos}
+
+Usamos:
+\[
+R_5 \leq b_6 = \frac{1}{6 \cdot \ln(9)} \approx \frac{1}{6 \cdot 2,20} \approx \boxed{0,0757}
+\]
+
+Entonces, si sumamos los primeros 5 términos, la cota del error es:
+\[
+\boxed{R_5 \leq 0,0757}
+\]
+
+
+
+
+\subsection*{Ejercicio 4(b): Criterio de series alternadas (criterio de Leibniz)}
+
+Analicemos la serie:
+\[
+\sum_{n=1}^{\infty} \frac{(-1)^n}{\ln(n+1)}
+\]
+
+Sea \( b_n = \frac{1}{\ln(n+1)} \). Verificamos las condiciones del criterio de Leibniz:
+
+\begin{itemize}
+    \item \textbf{(i) Positividad:} \( b_n > 0 \) para todo \( n \geq 1 \). 
+    \item \textbf{(ii) Monotonía:} \( b_n \) es decreciente porque \( \ln(n+1) \) es creciente. 
+    \item \textbf{(iii) Límite:}
+    \[
+    \lim_{n \to \infty} \frac{1}{\ln(n+1)} = 0 \quad 
+    \]
+\end{itemize}
+
+\subsubsection*{Conclusión}
+
+La serie
+\[
+\sum_{n=1}^{\infty} \frac{(-1)^n}{\ln(n+1)} \quad \textbf{converge} \text{ por el criterio de Leibniz.}
+\]
+
+\subsection*{Ejercicio 5(b): Criterio de la raíz n-ésima}
+
+Consideramos la serie:
+\[
+\sum_{n=1}^{\infty} \left( \frac{n!}{(n+2)!} \right)^{n^2}
+\]
+
+\subsubsection*{Paso 1: Simplificamos el término general}
+
+Recordamos que:
+\[
+(n+2)! = (n+2)(n+1)n!
+\quad \Rightarrow \quad
+\frac{n!}{(n+2)!} = \frac{n!}{(n+2)(n+1)n!} = \frac{1}{(n+1)(n+2)}
+\]
+
+Entonces el término general queda:
+\[
+a_n = \left( \frac{1}{(n+1)(n+2)} \right)^{n^2}
+\]
+
+\subsubsection*{Paso 2: Aplicamos el criterio de la raíz n-ésima}
+
+Recordamos que si:
+\[
+L = \lim_{n \to \infty} \sqrt[n]{|a_n|} < 1 \Rightarrow \text{la serie converge absolutamente}
+\]
+
+Entonces:
+\[
+\sqrt[n]{a_n} = \left[ \left( \frac{1}{(n+1)(n+2)} \right)^{n^2} \right]^{1/n}
+= \left( \frac{1}{(n+1)(n+2)} \right)^n
+\]
+
+Ahora aplicamos logaritmos para evaluar el límite:
+\[
+\ln\left( \left( \frac{1}{(n+1)(n+2)} \right)^n \right)
+= -n \ln[(n+1)(n+2)] = -n \ln(n^2 + 3n + 2)
+\]
+
+Así que:
+\[
+\lim_{n \to \infty} \left( \frac{1}{(n+1)(n+2)} \right)^n
+= \lim_{n \to \infty} e^{-n \ln(n^2 + 3n + 2)} = 0
+\]
+
+\subsubsection*{Conclusión}
+
+Como:
+\[
+\lim_{n \to \infty} \sqrt[n]{a_n} = 0 < 1
+\]
+
+entonces, por el \textbf{criterio de la raíz \( n \)-ésima}, la serie:
+\[
+\sum_{n=1}^{\infty} \left( \frac{n!}{(n+2)!} \right)^{n^2}
+\quad \textbf{converge absolutamente.}
+\]
+
+\subsection*{Ejercicio 6(a): Criterio de la razón (D’Alembert)}
+
+Analizamos la serie:
+\[
+\sum_{n=1}^{\infty} \frac{2 \cdot 4 \cdot \cdots \cdot (2n)}{5 \cdot 7 \cdot \cdots \cdot (2n + 3)} \cdot \frac{a^n}{\pi^n}
+\]
+
+\subsubsection*{Paso 1: Notación simplificada}
+
+Observamos que:
+- El numerador es el producto de los primeros \( n \) números pares:  
+\[
+2 \cdot 4 \cdot \cdots \cdot 2n = 2^n \cdot n!
+\]
+- El denominador es el producto de los impares desde 5 hasta \( 2n+3 \), es decir, los últimos \( n+1 \) impares a partir de 5. Lo escribimos como:
+\[
+\prod_{k=1}^{n+1} (2k + 3) = D_n
+\]
+
+Por tanto, el término general es:
+\[
+a_n = \frac{2^n n!}{D_n} \cdot \left( \frac{a}{\pi} \right)^n
+\]
+
+\subsubsection*{Paso 2: Aplicamos el criterio de la razón}
+
+Usamos:
+\[
+L = \lim_{n \to \infty} \left| \frac{a_{n+1}}{a_n} \right|
+\]
+
+Calculamos:
+\[
+a_{n+1} = \frac{2^{n+1} (n+1)!}{D_{n+1}} \cdot \left( \frac{a}{\pi} \right)^{n+1}, \quad
+a_n = \frac{2^n n!}{D_n} \cdot \left( \frac{a}{\pi} \right)^n
+\]
+
+Entonces:
+\[
+\left| \frac{a_{n+1}}{a_n} \right|
+= \frac{2^{n+1} (n+1)!}{D_{n+1}} \cdot \frac{D_n}{2^n n!} \cdot \frac{a}{\pi}
+= \frac{2 \cdot (n+1)}{d_{n+1}} \cdot \frac{a}{\pi}
+\]
+
+donde \( d_{n+1} = \frac{D_{n+1}}{D_n} = 2(n+2) + 3 = 2n + 7 \), el nuevo término que se agrega en el denominador.
+
+\[
+\Rightarrow \left| \frac{a_{n+1}}{a_n} \right| = \frac{2(n+1)}{2n + 7} \cdot \frac{a}{\pi}
+\]
+
+\subsubsection*{Paso 3: Límite final}
+
+\[
+L = \lim_{n \to \infty} \left| \frac{a_{n+1}}{a_n} \right| = \lim_{n \to \infty} \frac{2(n+1)}{2n+7} \cdot \frac{a}{\pi} = \frac{2}{2} \cdot \frac{a}{\pi} = \frac{a}{\pi}
+\]
+
+\subsubsection*{Conclusión}
+
+Por el criterio de la razón:
+
+- La serie \textbf{converge absolutamente} si \( \displaystyle \frac{a}{\pi} < 1 \Rightarrow \boxed{a < \pi} \)
+- La serie \textbf{diverge} si \( \displaystyle \frac{a}{\pi} > 1 \Rightarrow \boxed{a > \pi} \)
+- El criterio es \textbf{inconcluso} si \( a = \pi \)
+
+\subsection*{Ejercicio 6(b): Criterio de la razón (D’Alembert)}
+
+Estudiamos la convergencia de la serie:
+\[
+\sum_{n=1}^{\infty} \frac{(2n)!}{(n!)^2} \cdot \left(\frac{1}{4}\right)^n
+\]
+
+Observamos que el término general es:
+\[
+a_n = \frac{(2n)!}{(n!)^2} \cdot \left(\frac{1}{4}\right)^n
+\]
+
+Esta expresión aparece con frecuencia en combinatoria: 
+\[
+\frac{(2n)!}{(n!)^2} = \binom{2n}{n}
+\quad \Rightarrow \quad
+a_n = \binom{2n}{n} \cdot \left(\frac{1}{4}\right)^n
+\]
+
+\subsubsection*{Paso 1: Aplicamos el criterio de la razón}
+
+Calculamos:
+\[
+L = \lim_{n \to \infty} \left| \frac{a_{n+1}}{a_n} \right|
+= \lim_{n \to \infty} \frac{\binom{2(n+1)}{n+1} \cdot \left( \frac{1}{4} \right)^{n+1}}{\binom{2n}{n} \cdot \left( \frac{1}{4} \right)^n}
+= \lim_{n \to \infty} \frac{\binom{2n + 2}{n+1}}{\binom{2n}{n}} \cdot \frac{1}{4}
+\]
+
+\subsubsection*{Paso 2: Usamos una aproximación conocida}
+
+Existe la siguiente relación asintótica para grandes \( n \):
+
+\[
+\binom{2n}{n} \sim \frac{4^n}{\sqrt{\pi n}}
+\quad \Rightarrow \quad
+a_n \sim \frac{4^n}{\sqrt{\pi n}} \cdot \left( \frac{1}{4} \right)^n = \frac{1}{\sqrt{\pi n}}
+\]
+
+Por tanto,
+\[
+a_n \sim \frac{1}{\sqrt{\pi n}} \quad \Rightarrow \quad a_n \not\to 0 \text{ rápidamente, pero sí } \to 0
+\]
+
+Ahora sí, usando el criterio de la razón más directamente, y expandiendo:
+
+\[
+\binom{2n}{n} = \frac{(2n)!}{(n!)^2}, \quad
+\binom{2n+2}{n+1} = \frac{(2n+2)!}{[(n+1)!]^2}
+\]
+
+Entonces:
+\[
+\left| \frac{a_{n+1}}{a_n} \right| = \left( \frac{(2n+2)!}{[(n+1)!]^2} \cdot \frac{(n!)^2}{(2n)!} \cdot \frac{1}{4} \right)
+= \frac{(2n+2)(2n+1)}{(n+1)^2} \cdot \frac{1}{4}
+\]
+
+\subsubsection*{Paso 3: Calculamos el límite}
+
+\[
+L = \lim_{n \to \infty} \frac{(2n+2)(2n+1)}{4(n+1)^2}
+= \lim_{n \to \infty} \frac{4n^2 + 6n + 2}{4(n^2 + 2n + 1)}
+= \frac{4}{4} = 1
+\]
+
+\subsubsection*{Conclusión}
+
+Como:
+\[
+L = 1
+\quad \Rightarrow \textbf{el criterio de la razón no permite decidir la convergencia.}
+\]
+
+La serie:
+\[
+\sum_{n=1}^{\infty} \frac{(2n)!}{(n!)^2} \cdot \left(\frac{1}{4}\right)^n
+\quad \textbf{no puede ser resuelta con este criterio.}
+\]
+
+
+
+\subsection*{Ejercicio 6(c): Criterio de la razón (D’Alembert)}
+
+Sea el término general de la serie:
+
+\[
+a_n = \prod_{k=2}^{n} \frac{\ln k}{k}
+\]
+
+Queremos estudiar la convergencia de:
+\[
+\sum_{n=2}^{\infty} a_n
+\]
+
+\subsubsection*{Paso 1: Aplicamos el criterio de la razón}
+
+Calculamos:
+
+\[
+\left| \frac{a_{n+1}}{a_n} \right|
+= \frac{ \displaystyle \prod_{k=2}^{n+1} \frac{\ln k}{k} }{ \displaystyle \prod_{k=2}^{n} \frac{\ln k}{k} }
+= \frac{\ln(n+1)}{n+1}
+\]
+
+Entonces:
+
+\[
+L = \lim_{n \to \infty} \left| \frac{a_{n+1}}{a_n} \right| = \lim_{n \to \infty} \frac{\ln(n+1)}{n+1} = 0
+\]
+
+\subsubsection*{Conclusión}
+
+Como \( L = 0 < 1 \), por el \textbf{criterio de la razón} (criterio de D’Alembert), la serie:
+
+\[
+\sum_{n=2}^{\infty} \left( \prod_{k=2}^{n} \frac{\ln k}{k} \right)
+\quad \textbf{converge absolutamente.}
+\]
+
+
+
+\subsection*{Ejercicio 7(c): Convergencia absoluta o condicional}
+
+Analizamos la serie:
+
+\[
+\sum_{n=1}^{\infty} (-1)^{n+1} \left( \frac{\pi}{2} - \arctan n \right)^2
+\]
+
+Notamos que esta es una \textbf{serie alternada}, de la forma \( \sum (-1)^{n+1} b_n \), con:
+
+\[
+b_n = \left( \frac{\pi}{2} - \arctan n \right)^2
+\]
+
+\subsubsection*{Paso 1: Convergencia condicional (criterio de Leibniz)}
+
+Para aplicar el \textbf{criterio de Leibniz}, verificamos:
+
+\begin{itemize}
+    \item \( b_n > 0 \)  (porque \( \arctan n < \frac{\pi}{2} \Rightarrow \frac{\pi}{2} - \arctan n > 0 \), y su cuadrado es positivo)
+    \item \( b_n \) es decreciente:
+
+    La función \( \arctan n \) es creciente, por lo tanto \( \frac{\pi}{2} - \arctan n \) es decreciente, y su cuadrado también 
+
+    \item Límite:
+
+    \[
+    \lim_{n \to \infty} b_n = \lim_{n \to \infty} \left( \frac{\pi}{2} - \arctan n \right)^2 = (0)^2 = 0 \quad 
+    \]
+\end{itemize}
+
+Entonces, por el \textbf{criterio de Leibniz}, la serie \textbf{converge condicionalmente}.
+
+\subsubsection*{Paso 2: Convergencia absoluta}
+
+Estudiamos la serie:
+\[
+\sum_{n=1}^{\infty} \left| (-1)^{n+1} \left( \frac{\pi}{2} - \arctan n \right)^2 \right| 
+= \sum_{n=1}^{\infty} \left( \frac{\pi}{2} - \arctan n \right)^2
+\]
+
+Analizamos el comportamiento de \( \frac{\pi}{2} - \arctan n \) para grandes \( n \). Recordemos que:
+
+\[
+\arctan n = \frac{\pi}{2} - \frac{1}{n} + \frac{1}{3n^3} - \cdots
+\quad \Rightarrow \quad
+\frac{\pi}{2} - \arctan n \sim \frac{1}{n}
+\Rightarrow \left( \frac{\pi}{2} - \arctan n \right)^2 \sim \frac{1}{n^2}
+\]
+
+Entonces, para \( n \gg 1 \):
+
+\[
+b_n \sim \frac{1}{n^2} \quad \Rightarrow \quad \sum b_n \text{ se comporta como una serie } p\text{-serie con } p = 2 > 1
+\]
+
+\subsubsection*{Conclusión}
+
+La serie:
+\[
+\sum_{n=1}^{\infty} (-1)^{n+1} \left( \frac{\pi}{2} - \arctan n \right)^2
+\]
+
+\textbf{converge absolutamente}, porque también converge la serie de sus valores absolutos.
+
+\[
+\boxed{\text{La serie converge absolutamente.}}
+\]
+
+\subsection*{Ejercicio 8(a): Criterio de Raabe}
+
+La serie a analizar es:
+\[
+\sum_{n=1}^{\infty} \left( \frac{1 \cdot 4 \cdot \ldots \cdot (3n - 2)}{3 \cdot 6 \cdot \ldots \cdot (3n)} \right)^2
+\]
+
+\subsubsection*{Paso 1: Expresión del término general}
+
+El producto \( 1 \cdot 4 \cdot 7 \cdots (3n - 2) \) corresponde al producto de los primeros \( n \) enteros de la forma \( 3k - 2 \). 
+Asimismo, el denominador es \( 3 \cdot 6 \cdot 9 \cdots 3n = 3^n \cdot n! \) (porque son los primeros \( n \) múltiplos de 3).
+
+En el numerador, cada término es \( 3k - 2 \), y su producto total se denota como:
+
+\[
+\prod_{k=1}^{n} (3k - 2)
+\]
+
+Así que el término general es:
+
+\[
+a_n = \left( \frac{\prod_{k=1}^{n} (3k - 2)}{3^n \cdot n!} \right)^2
+\]
+
+\subsubsection*{Paso 2: Aplicamos el criterio de Raabe}
+
+El criterio de Raabe establece:
+
+\[
+L = \lim_{n \to \infty} n \left(1 - \left| \frac{a_{n+1}}{a_n} \right| \right)
+\]
+
+Si \( L > 1 \Rightarrow \) converge absolutamente.  
+Si \( L < 1 \Rightarrow \) diverge.  
+Si \( L = 1 \Rightarrow \) el criterio es inconcluso.
+
+Calculamos:
+
+\[
+\frac{a_{n+1}}{a_n} 
+= \left( \frac{ \prod_{k=1}^{n+1} (3k - 2) }{3^{n+1}(n+1)!} \cdot \frac{3^n n!}{\prod_{k=1}^{n} (3k - 2)} \right)^2
+= \left( \frac{3(n+1) - 2}{3} \cdot \frac{1}{n+1} \right)^2
+= \left( \frac{3n + 1}{3(n+1)} \right)^2
+\]
+
+Entonces:
+
+\[
+\left| \frac{a_{n+1}}{a_n} \right| = \left( \frac{3n + 1}{3(n + 1)} \right)^2
+\]
+
+Ahora aplicamos el límite de Raabe:
+
+\[
+L = \lim_{n \to \infty} n \left( 1 - \left( \frac{3n + 1}{3(n + 1)} \right)^2 \right)
+= \lim_{n \to \infty} n \left( 1 - \left( \frac{3 + \frac{1}{n}}{3 + \frac{3}{n}} \right)^2 \right)
+= \lim_{n \to \infty} n \left( 1 - \left( \frac{3 + 0}{3 + 0} \right)^2 \right)
+= \lim_{n \to \infty} n(1 - 1) = 0
+\]
+
+\subsubsection*{Conclusión}
+
+El valor del límite de Raabe es:
+
+\[
+L = 0 < 1
+\]
+
+Por tanto, la serie:
+\[
+\sum_{n=1}^{\infty} \left( \frac{1 \cdot 4 \cdot \ldots \cdot (3n - 2)}{3 \cdot 6 \cdot \ldots \cdot (3n)} \right)^2
+\quad \boxed{\text{diverge}}
+\]
+
+\subsection*{Ejercicio 8(c): Criterio de Raabe}
+
+La serie es:
+
+\[
+\sum_{n=1}^{\infty} (-1)^n \cdot \frac{1}{n^2} \cdot \frac{2 \cdot 4 \cdots (2n)}{1 \cdot 3 \cdots (2n - 1)}
+\]
+
+\subsubsection*{Paso 1: Analizamos el término general}
+
+El término general es:
+\[
+a_n = (-1)^n \cdot \frac{1}{n^2} \cdot \frac{(2n)!!}{(2n - 1)!!}
+\]
+
+donde:
+- \( (2n)!! = 2 \cdot 4 \cdots (2n) \): doble factorial de pares.
+- \( (2n - 1)!! = 1 \cdot 3 \cdots (2n - 1) \): doble factorial de impares.
+
+Recordamos que:
+\[
+\frac{(2n)!!}{(2n - 1)!!} = \frac{2^n \cdot n!}{(2n - 1)!!}
+\quad \Rightarrow \quad
+\frac{(2n)!!}{(2n - 1)!!} \approx C \cdot \sqrt{n}
+\quad \text{(crece como raíz cuadrada)}
+\]
+
+Entonces:
+\[
+|a_n| \approx \frac{\sqrt{n}}{n^2} = \frac{1}{n^{3/2}}
+\]
+
+\subsubsection*{Paso 2: Aplicamos el criterio de Raabe}
+
+Definimos la parte positiva:
+
+\[
+b_n = \frac{1}{n^2} \cdot \frac{2 \cdot 4 \cdots (2n)}{1 \cdot 3 \cdots (2n - 1)}
+\]
+
+El criterio de Raabe se aplica a \( b_n \). Calculamos:
+
+\[
+\left| \frac{b_{n+1}}{b_n} \right|
+= \left( \frac{1}{(n+1)^2} \cdot \frac{2 \cdot 4 \cdots (2n+2)}{1 \cdot 3 \cdots (2n+1)} \right)
+\cdot \left( \frac{n^2}{ \frac{2 \cdot 4 \cdots (2n)}{1 \cdot 3 \cdots (2n-1)} } \right)
+= \frac{n^2}{(n+1)^2} \cdot \frac{2n+2}{2n+1}
+\]
+
+Entonces:
+
+\[
+\left| \frac{b_{n+1}}{b_n} \right| = \frac{n^2 (2n+2)}{(n+1)^2 (2n+1)}
+\]
+
+\[
+L = \lim_{n \to \infty} n \left( 1 - \left| \frac{b_{n+1}}{b_n} \right| \right)
+= \lim_{n \to \infty} n \left( 1 - \frac{n^2 (2n+2)}{(n+1)^2 (2n+1)} \right)
+\]
+
+Expandimos numerador y denominador:
+
+\[
+\text{Numerador: } n^2 (2n+2) = 2n^3 + 2n^2
+\quad
+\text{Denominador: } (n+1)^2 (2n+1) = (n^2 + 2n + 1)(2n+1)
+\]
+
+Multiplicamos:
+
+\[
+(n^2 + 2n + 1)(2n+1) = 2n^3 + 5n^2 + 4n + 1
+\]
+
+Entonces:
+
+\[
+L = \lim_{n \to \infty} n \left( 1 - \frac{2n^3 + 2n^2}{2n^3 + 5n^2 + 4n + 1} \right)
+= \lim_{n \to \infty} n \cdot \frac{(2n^3 + 5n^2 + 4n + 1) - (2n^3 + 2n^2)}{2n^3 + 5n^2 + 4n + 1}
+\]
+
+\[
+= \lim_{n \to \infty} n \cdot \frac{3n^2 + 4n + 1}{2n^3 + 5n^2 + 4n + 1}
+= \lim_{n \to \infty} \frac{3n^3 + 4n^2 + n}{2n^3 + 5n^2 + 4n + 1}
+= \frac{3}{2}
+\]
+
+\subsubsection*{Conclusión}
+
+Como \( L = \frac{3}{2} > 1 \), la serie:
+
+\[
+\sum_{n=1}^{\infty} (-1)^n \cdot \frac{1}{n^2} \cdot \frac{2 \cdot 4 \cdots (2n)}{1 \cdot 3 \cdots (2n - 1)}
+\quad \boxed{\text{converge absolutamente por el criterio de Raabe.}}
+\]
+
+
+
+\subsection*{Ejercicio 8(d): Criterio de Raabe}
+
+La serie es:
+
+\[
+\sum_{n=1}^{\infty} (-1)^n \cdot \frac{n! \cdot e^n}{n^{n+a}}, \quad a > 0
+\]
+
+Sea el término general:
+
+\[
+a_n = \frac{n! \cdot e^n}{n^{n+a}}
+\]
+
+Queremos estudiar la convergencia **absoluta o condicional**, aplicando el **criterio de Raabe** a \( |a_n| \).
+
+\subsubsection*{Paso 1: Aplicamos la fórmula de Stirling}
+
+Utilizamos la fórmula de Stirling para aproximar \( n! \):
+
+\[
+n! \sim \left( \frac{n}{e} \right)^n \sqrt{2\pi n}
+\]
+
+Sustituyendo en \( a_n \):
+
+\[
+a_n \sim \frac{ \left( \frac{n}{e} \right)^n \sqrt{2\pi n} \cdot e^n }{n^{n+a}}
+= \frac{n^n \cdot \sqrt{2\pi n}}{e^n \cdot n^{n+a}} \cdot e^n
+= \frac{n^n \cdot \sqrt{2\pi n}}{n^{n+a}} 
+= \frac{\sqrt{2\pi n}}{n^a}
+\]
+
+Entonces:
+
+\[
+a_n \sim \frac{C}{n^a}, \quad \text{con } C = \sqrt{2\pi}
+\]
+
+\subsubsection*{Paso 2: Comportamiento del término general}
+
+Como \( a_n \sim \dfrac{1}{n^a} \), podemos comparar con la serie \( \sum \dfrac{1}{n^a} \).
+
+Sabemos que:
+- Si \( a > 1 \), la serie \( \sum \dfrac{1}{n^a} \) converge.
+- Si \( 0 < a \leq 1 \), diverge.
+
+\subsubsection*{Paso 3: Aplicamos el criterio de Raabe}
+
+El criterio de Raabe establece:
+
+\[
+L = \lim_{n \to \infty} n \left( 1 - \frac{a_{n+1}}{a_n} \right)
+\]
+
+Usando que \( a_n \sim \dfrac{C}{n^a} \), entonces:
+
+\[
+\frac{a_{n+1}}{a_n} \sim \left( \frac{n}{n+1} \right)^a
+\quad \Rightarrow \quad
+L = \lim_{n \to \infty} n \left( 1 - \left( \frac{n}{n+1} \right)^a \right)
+\]
+
+Sabemos que:
+
+\[
+\left( \frac{n}{n+1} \right)^a = \left( 1 - \frac{1}{n+1} \right)^a \approx 1 - \frac{a}{n}
+\]
+
+Entonces:
+
+\[
+L = \lim_{n \to \infty} n \left( 1 - \left( 1 - \frac{a}{n} \right) \right) = a
+\]
+
+\subsubsection*{Conclusión}
+
+Por el criterio de Raabe:
+
+- Si \( a > 1 \Rightarrow L > 1 \Rightarrow \) la serie converge absolutamente.
+- Si \( a < 1 \Rightarrow L < 1 \Rightarrow \) la serie diverge.
+- Si \( a = 1 \Rightarrow L = 1 \Rightarrow \) el criterio es inconcluso.
+
+\[
+\boxed{
+\begin{array}{ll}
+\text{Converge absolutamente} & \text{si } a > 1 \\
+\text{Diverge} & \text{si } 0 < a < 1 \\
+\text{Inconcluso} & \text{si } a = 1 \\
+\end{array}
+}
+\]
+\end{document}

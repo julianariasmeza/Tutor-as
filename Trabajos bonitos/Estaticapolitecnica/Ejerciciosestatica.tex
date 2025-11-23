@@ -1,0 +1,304 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amssymb, siunitx}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{caption}
+\captionsetup{labelsep=period}
+
+\title{Ejercicios sobre la Resultante de dos Fuerzas\vspace{-0.3cm}}
+\author{Curso de Estática}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Ejercicio 2.1}
+Dos fuerzas \( \vec{P} \) y \( \vec{Q} \) se aplican en el punto \( A \) del gancho que se muestra en la Figura~\ref{fig:gancho}. Se sabe que:
+\begin{itemize}
+    \item \( P = \SI{75}{N} \)
+    \item \( Q = \SI{125}{N} \)
+    \item Ángulo entre fuerzas: \( 55^\circ \) (suma de \( 20^\circ \) y \( 35^\circ \))
+\end{itemize}
+
+Se pide determinar la magnitud y dirección de la fuerza resultante \( \vec{R} \) usando métodos gráficos y analíticos:
+
+\subsection*{a) Ley del paralelogramo}
+Este método consiste en construir un paralelogramo tomando los vectores \( \vec{P} \) y \( \vec{Q} \) como lados adyacentes. La diagonal que parte del punto de aplicación representa la fuerza resultante \( \vec{R} \).
+
+\textbf{Paso 1: Calcular la magnitud de la resultante}
+\[
+R = \sqrt{P^2 + Q^2 + 2PQ\cos\theta}
+\]
+\[
+R = \sqrt{75^2 + 125^2 + 2(75)(125)\cos(55^\circ)}
+\]
+\[
+R = \sqrt{5625 + 15625 + 18750\cos(55^\circ)}
+\]
+\[
+R = \sqrt{21250 + 10749,2} = \sqrt{31999,2} \approx \SI{179}{N}
+\]
+
+\textbf{Paso 2: Calcular la dirección de la resultante respecto a \( \vec{P} \)}
+\[
+\alpha = \tan^{-1}\left(\frac{Q\sin\theta}{P + Q\cos\theta}\right)
+\]
+\[
+\alpha = \tan^{-1}\left(\frac{125\sin(55^\circ)}{75 + 125\cos(55^\circ)}\right)
+\]
+\[
+\alpha = \tan^{-1}\left(\frac{102,5}{146,2}\right) \approx 75{,}1^\circ
+\]
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imagenes/Captura de Pantalla 2025-06-24 a la(s) 10.33.06.png}
+    \caption{Ley del paralelogramo.}
+    \label{fig:gancho}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imagenes/Captura de Pantalla 2025-06-24 a la(s) 10.33.31.png}
+    \caption{Solución gráfica usando Regla del triángulo}
+\end{figure}
+
+\subsection*{b) Regla del triángulo}
+Este método consiste en colocar los vectores \( \vec{P} \) y \( \vec{Q} \) de manera consecutiva, es decir, el extremo de \( \vec{P} \) conecta con el inicio de \( \vec{Q} \). La resultante \( \vec{R} \) se representa como el lado que cierra el triángulo, desde el inicio de \( \vec{P} \) hasta el extremo de \( \vec{Q} \).
+
+Se utiliza la ley del coseno para la magnitud:
+\[
+R = \sqrt{P^2 + Q^2 - 2PQ\cos(180^\circ - \theta)}
+\]
+\[
+R = \sqrt{75^2 + 125^2 - 2(75)(125)\cos(125^\circ)}
+\]
+\[
+\cos(125^\circ) = -\cos(55^\circ) \Rightarrow
+\]
+\[
+R = \sqrt{5625 + 15625 + 2(75)(125)\cos(55^\circ)} = \SI{179}{N}
+\]
+
+Y la ley del seno para el ángulo \( \alpha \):
+\[
+\frac{\sin(\alpha)}{Q} = \frac{\sin(\theta)}{R} \Rightarrow
+\]
+\[
+\alpha = \sin^{-1}\left(\frac{Q\sin(\theta)}{R}\right) = \sin^{-1}\left(\frac{125\sin(55^\circ)}{179}\right) \approx 75{,}1^\circ
+\]
+\newpage
+\section*{Ejercicio 2.2}
+Dos fuerzas \( \vec{P} \) y \( \vec{Q} \) se aplican también en el punto \( A \) del gancho. Datos:
+\begin{itemize}
+    \item \( P = \SI{60}{lb} \)
+    \item \( Q = \SI{25}{lb} \)
+    \item \( \theta = 55^\circ \)
+\end{itemize}
+
+\subsection*{a) Ley del paralelogramo}
+Este método consiste en construir un paralelogramo tomando los vectores \( \vec{P} \) y \( \vec{Q} \) como lados adyacentes. La diagonal representa la fuerza resultante.
+
+\textbf{Paso 1: Calcular la magnitud de la resultante}
+\[
+R = \sqrt{P^2 + Q^2 + 2PQ\cos\theta} = \sqrt{60^2 + 25^2 + 2(60)(25)\cos(55^\circ)}
+\]
+\[
+R = \sqrt{3600 + 625 + 3000\cos(55^\circ)} = \sqrt{4225 + 1721,6} = \sqrt{5946,6} \approx \SI{77,1}{lb}
+\]
+
+\textbf{Paso 2: Dirección de la resultante}
+\[
+\alpha = \tan^{-1}\left(\frac{Q\sin\theta}{P + Q\cos\theta}\right) = \tan^{-1}\left(\frac{25\sin(55^\circ)}{60 + 25\cos(55^\circ)}\right)
+\]
+\[
+= \tan^{-1}\left(\frac{20,5}{84,7}\right) \approx 85{,}4^\circ
+\]
+
+\subsection*{b) Regla del triángulo}
+Aplicamos ley del coseno:
+\[
+R = \sqrt{P^2 + Q^2 - 2PQ\cos(180^\circ - \theta)} = \sqrt{60^2 + 25^2 - 2(60)(25)\cos(125^\circ)}
+\]
+\[
+= \sqrt{3600 + 625 + 2(60)(25)\cos(55^\circ)} = \SI{77,1}{lb}
+\]
+
+Dirección por ley del seno:
+\[
+\alpha = \sin^{-1}\left(\frac{Q\sin(\theta)}{R}\right) = \sin^{-1}\left(\frac{25\sin(55^\circ)}{77,1}\right) \approx 85{,}4^\circ
+\]
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imagenes/Captura de Pantalla 2025-06-24 a la(s) 10.44.14.png}
+    \caption{Ley del paralelogramo}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imagenes/Captura de Pantalla 2025-06-24 a la(s) 10.45.25.png}
+    \caption{Solución gráfica Regla del triángulo}
+\end{figure}
+
+
+
+
+\section*{Ejercicio 2.7}
+Se aplican dos fuerzas en el gancho de apoyo que se muestra en la Figura~\ref{fig:gancho27}. Se sabe que:
+\begin{itemize}
+    \item \( P = \SI{35}{N} \)
+    \item \( Q = \SI{50}{N} \)
+    \item El ángulo entre las dos fuerzas es \( \alpha + 25^\circ \)
+    \item La resultante \( \vec{R} \) debe ser horizontal.
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imagenes/Captura de Pantalla 2025-06-24 a la(s) 10.58.48.png}
+    \caption{Fuerzas aplicadas sobre el gancho en el Ejercicio 2.7.}
+    \label{fig:gancho27}
+\end{figure}
+Se pide determinar por trigonometría:
+\begin{enumerate}
+    \item[a)] El ángulo \( \alpha \) requerido.
+    \item[b)] La magnitud correspondiente de \( \vec{R} \).
+\end{enumerate}
+
+\subsection*{a) Cálculo del ángulo \( \alpha \)}
+Aplicamos la ley de senos en el triángulo formado por las fuerzas:
+\[
+\frac{\sin(\alpha)}{50} = \frac{\sin(25^\circ)}{35}
+\]
+\[
+\sin(\alpha) = \frac{50\sin(25^\circ)}{35} \approx 0{,}60374
+\]
+\[
+\alpha = \sin^{-1}(0{,}60374) \approx 37{,}14^\circ
+\]
+
+\subsection*{b) Cálculo de la magnitud de \( \vec{R} \)}
+Primero calculamos el ángulo opuesto a \( \vec{R} \) en el triángulo:
+\[
+\beta = 180^\circ - 25^\circ - \alpha = 180^\circ - 25^\circ - 37{,}14^\circ = 117{,}86^\circ
+\]
+
+Ahora aplicamos la ley de senos:
+\[
+\frac{R}{\sin(117{,}86^\circ)} = \frac{35}{\sin(25^\circ)}
+\Rightarrow
+R = \frac{35\sin(117{,}86^\circ)}{\sin(25^\circ)} \approx \SI{73{,}2}{N}
+\]
+
+
+\newpage
+\section*{Ejercicio 2.9}
+Un carrito que se mueve a lo largo de una viga horizontal está sometido a dos fuerzas como se muestra en la Figura~\ref{fig:gancho29}. Se sabe que:
+\begin{itemize}
+    \item Una fuerza es de \SI{1600}{N} con dirección inclinada \(15^\circ\) a la vertical.
+    \item El ángulo \( \alpha = 25^\circ \) es el que forma la fuerza \( \vec{P} \) con la horizontal.
+    \item La resultante \( \vec{R} \) debe ser vertical.
+\end{itemize}
+
+Se solicita:
+\begin{enumerate}
+    \item[a)] Determinar por trigonometría la magnitud de \( \vec{P} \).
+    \item[b)] Determinar la magnitud de la resultante \( \vec{R} \).
+\end{enumerate}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{imagenes/Captura de Pantalla 2025-06-24 a la(s) 11.07.21.png}
+    \caption{Solución gráfica del Ejercicio 2.9.}
+\end{figure}
+\subsection*{a) Cálculo de la magnitud de \( P \)}
+Aplicamos la ley de senos en el triángulo formado por las fuerzas:
+\[
+\frac{1600}{\sin(25^\circ)} = \frac{P}{\sin(75^\circ)}
+\Rightarrow
+P = \frac{1600 \cdot \sin(75^\circ)}{\sin(25^\circ)} \approx \SI{3660}{N}
+\]
+
+\subsection*{b) Cálculo de la magnitud de \( R \)}
+Primero determinamos el ángulo opuesto a \( \vec{R} \):
+\[
+25^\circ + \beta + 75^\circ = 180^\circ \Rightarrow \beta = 80^\circ
+\]
+
+Ahora aplicamos nuevamente la ley de senos:
+\[
+\frac{1600}{\sin(25^\circ)} = \frac{R}{\sin(80^\circ)}
+\Rightarrow
+R = \frac{1600 \cdot \sin(80^\circ)}{\sin(25^\circ)} \approx \SI{3730}{N}
+\]
+
+
+\newpage
+\section*{Ejercicio 2.23}
+Determine las componentes \( x \) y \( y \) de cada una de las fuerzas que se muestran en la Figura~\ref{fig:gancho223}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.55\textwidth]{imagenes/Captura de Pantalla 2025-06-24 a la(s) 11.21.42.png}
+    \caption{Diagrama del ejercicio 2.23.}
+    \label{fig:gancho223}
+\end{figure}
+\subsection*{Descomposición de fuerzas}
+Se tienen tres fuerzas aplicadas en diferentes direcciones, y se desea conocer sus componentes en los ejes cartesianos.
+
+\textbf{1) Fuerza de \( \SI{40}{lb} \)} con ángulo de \(60^\circ\) hacia abajo respecto al eje positivo \( x \):
+\begin{align*}
+F_x &= 40 \cos(60^\circ) = 20{,}0 \ \text{lb} \\
+F_y &= -40 \sin(60^\circ) = -34{,}6 \ \text{lb}
+\end{align*}
+
+\textbf{2) Fuerza de \( \SI{50}{lb} \)} con ángulo de \(50^\circ\) hacia abajo respecto al eje negativo \( x \):
+\begin{align*}
+F_x &= -50 \sin(50^\circ) = -38{,}3 \ \text{lb} \\
+F_y &= -50 \cos(50^\circ) = -32{,}1 \ \text{lb}
+\end{align*}
+
+\textbf{3) Fuerza de \( \SI{60}{lb} \)} con ángulo de \(25^\circ\) sobre el eje positivo \( x \):
+\begin{align*}
+F_x &= 60 \cos(25^\circ) = 54{,}4 \ \text{lb} \\
+F_y &= 60 \sin(25^\circ) = 25{,}4 \ \text{lb}
+\end{align*}
+\newpage
+
+\section*{Ejercicio 2.24}
+Determine las componentes \( x \) y \( y \) de cada una de las fuerzas mostradas en la Figura~\ref{fig:gancho224}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imagenes/Captura de Pantalla 2025-06-24 a la(s) 11.34.58.png}
+    \caption{Fuerzas aplicadas sobre el soporte en el ejercicio 2.24.}
+    \label{fig:gancho224}
+\end{figure}
+
+\subsection*{Descomposición de fuerzas}
+
+\textbf{1) Fuerza de \( \SI{80}{N} \)} con ángulo de \(40^\circ\) sobre el eje positivo \( x \):
+\begin{align*}
+F_x &= 80 \cos(40^\circ) = 61{,}3 \ \text{N} \\
+F_y &= 80 \sin(40^\circ) = 51{,}4 \ \text{N}
+\end{align*}
+
+\textbf{2) Fuerza de \( \SI{120}{N} \)} con ángulo de \(30^\circ\) sobre el eje positivo \( y \), o bien \(70^\circ\) respecto al eje \( x \):
+\begin{align*}
+F_x &= 120 \cos(70^\circ) = 41{,}0 \ \text{N} \\
+F_y &= 120 \sin(70^\circ) = 112{,}8 \ \text{N}
+\end{align*}
+
+\textbf{3) Fuerza de \( \SI{150}{N} \)} con ángulo de \(35^\circ\) respecto al eje negativo \( x \):
+\begin{align*}
+F_x &= -150 \cos(35^\circ) = -122{,}9 \ \text{N} \\
+F_y &= 150 \sin(35^\circ) = 86{,}0 \ \text{N}
+\end{align*}
+
+
+
+
+
+
+\end{document}

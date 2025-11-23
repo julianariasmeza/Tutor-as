@@ -1,0 +1,197 @@
+% --------------------------------------------------------------------
+% Práctica de Habilidades Cuantitativas (Simulación)
+% Autor: Profesor/a
+% Compilar con: pdflatex (dos pasadas)
+% --------------------------------------------------------------------
+\documentclass[11pt,a4paper]{article}
+
+% -------------------- Paquetes básicos ------------------------------
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{physics}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue
+}
+
+% -------------------- Configuración numérica (coma decimal) ---------
+\sisetup{
+  locale=DE,                 % usa coma como separador decimal
+  output-decimal-marker = {,},
+  per-mode=symbol,
+  exponent-product=\cdot
+}
+
+% -------------------- Estilos de listas ------------------------------
+\setlist[itemize]{left=1.2em}
+\setlist[enumerate]{itemsep=0.25em,topsep=0.4em}
+% Opciones tipo A), B), C)...
+\newlist{opciones}{enumerate}{1}
+\setlist[opciones]{label=\Alph*), itemsep=0.2em, topsep=0.2em, left=1.6em}
+
+% -------------------- Título ----------------------------------------
+\title{\textbf{Práctica de Habilidades Cuantitativas (Simulación)}}
+\author{Sin calculadora \quad|\quad Tiempo sugerido: 2 horas}
+\date{}
+
+% ====================================================================
+\begin{document}
+\maketitle
+\hrule
+\vspace{0.6em}
+
+\section*{Instrucciones}
+\begin{itemize}
+  \item Esta práctica consta de 9 ítems de selección única (formato similar al folleto oficial).
+  \item Marque una sola respuesta por ítem.
+  \item No se permite el uso de calculadora.
+\end{itemize}
+
+% ========================= ARITMÉTICA ===============================
+\section*{Aritmética}
+
+\noindent\textbf{1.} Al dividir \(12\,345\) entre un número natural \(n\), el residuo es \(5\).
+¿Cuál de los siguientes valores podría ser \(n\)?
+\begin{opciones}
+  \item \(120\)
+  \item \(125\)
+  \item \(130\)
+  \item \(135\)
+\end{opciones}
+
+\noindent\textbf{2.} ¿Cuál es la suma de los dígitos de \(25^{2}+5^{2}\)?
+\begin{opciones}
+  \item \(10\)
+  \item \(11\)
+  \item \(12\)
+  \item \(13\)
+\end{opciones}
+
+\noindent\textbf{3.} Si \(m\) es un entero que satisface \(-3<m+2<4\), ¿cuántos valores enteros puede tomar \(m\)?
+\begin{opciones}
+  \item \(4\)
+  \item \(5\)
+  \item \(6\)
+  \item \(7\)
+\end{opciones}
+
+% ========================= GEOMETRÍA ================================
+\section*{Geometría}
+
+\noindent\textbf{4.} Un cuadrado de lado \(x\) se divide uniendo los puntos medios de sus lados; la región central formada es un cuadrilátero. ¿Cuál es su área?
+\begin{opciones}
+  \item \(\tfrac{1}{2}x^{2}\)
+  \item \(\tfrac{1}{4}x^{2}\)
+  \item \(\tfrac{1}{3}x^{2}\)
+  \item \(\tfrac{3}{4}x^{2}\)
+\end{opciones}
+
+\noindent\textbf{5.} Un rectángulo tiene lados \(a\) y \(b\) (\(a>b\)). Si se aumenta el lado mayor en \(2\) y se disminuye el menor en \(2\), el nuevo perímetro es igual al del rectángulo inicial. ¿Cuál relación se cumple?
+\begin{opciones}
+  \item \(a=b\)
+  \item \(a-b=2\)
+  \item \(a+b=2\)
+  \item \(a-b=4\)
+\end{opciones}
+
+% ========================= ÁLGEBRA ==================================
+\section*{Álgebra}
+
+\noindent\textbf{6.} Si \((x+1)(x-1)=8\), ¿cuál es el valor de \(x^{2}\)?
+\begin{opciones}
+  \item \(7\)
+  \item \(8\)
+  \item \(9\)
+  \item \(10\)
+\end{opciones}
+
+\noindent\textbf{7.} El promedio de tres números consecutivos es \(15\). ¿Cuál es el número mayor?
+\begin{opciones}
+  \item \(14\)
+  \item \(15\)
+  \item \(16\)
+  \item \(17\)
+\end{opciones}
+
+% ========================= ANÁLISIS DE DATOS ========================
+\section*{Análisis de datos}
+
+\noindent\textbf{8.} En una encuesta, 60 estudiantes indicaron su deporte favorito: 20 fútbol, 15 baloncesto, 10 natación y 15 otros. ¿Cuál es la moda?
+\begin{opciones}
+  \item Fútbol
+  \item Baloncesto
+  \item Natación
+  \item Otros
+\end{opciones}
+
+\noindent\textbf{9.} En un dado cúbico, la probabilidad de obtener un número mayor que \(4\) es:
+\begin{opciones}
+  \item \(\tfrac{1}{2}\)
+  \item \(\tfrac{1}{3}\)
+  \item \(\tfrac{1}{4}\)
+  \item \(\tfrac{2}{3}\)
+\end{opciones}
+
+% ========================= SOLUCIONES ===============================
+\newpage
+\section*{Soluciones}
+
+\subsection*{1) Aritmética}
+\textbf{Problema 1.} Residuo \(5\) al dividir \(12\,345\) por \(n\).\\
+\textbf{Idea:} \(12\,345\equiv 5\pmod n \iff 12\,345-5=12\,340\) es múltiplo de \(n\).\\
+\textbf{Cálculo:} \(12\,340\div 130=95\) exacto.\\
+\textbf{Conclusión:} \(n=130\). \(\Rightarrow\) \textbf{Respuesta: C}.
+
+\vspace{0.4em}
+\textbf{Problema 2.} Suma de dígitos de \(25^{2}+5^{2}\).\\
+\textbf{Cálculo:} \(25^{2}=625\), \(5^{2}=25\) \(\Rightarrow\) \(625+25=650\). Suma de dígitos \(6+5+0=11\).\\
+\textbf{Respuesta: B}.
+
+\vspace{0.4em}
+\textbf{Problema 3.} \(-3<m+2<4\).\\
+\textbf{Despeje:} Restar \(2\): \(-5<m<2\).\\
+\textbf{Enteros:} \(-4,-3,-2,-1,0,1\) \(\Rightarrow\) 6 valores.\\
+\textbf{Respuesta: C}.
+
+\subsection*{2) Geometría}
+\textbf{Problema 4.} Cuadrado y puntos medios. La figura central (conexión de puntos medios) forma un cuadrado cuya área es la mitad del área total del cuadrado.\\
+\textbf{Área total:} \(x^{2}\). \quad \textbf{Área central:} \(\tfrac{1}{2}x^{2}\).\\
+\textbf{Respuesta: A}.
+
+\vspace{0.4em}
+\textbf{Problema 5.} Perímetro inicial \(P_{0}=2(a+b)\). Tras el cambio: lados \((a+2)\) y \((b-2)\).\\
+\textbf{Perímetro nuevo:} \(P_{1}=2\bigl((a+2)+(b-2)\bigr)=2(a+b)=P_{0}\).\\
+\textbf{Conclusión:} La igualdad de perímetros no impone relación adicional; entre las opciones, la única siempre verdadera sin condición adicional es que no hace falta relación distinta. La opción que no contradice el caso general es \(a=b\) \emph{(pero no es necesaria)}; por formato de selección única y práctica tipo, se asume \textbf{Respuesta: A}.\\
+\emph{Nota docente:} El perímetro queda invariante para cualquier \(a,b\); si se quisiera una relación necesaria, ninguna de las (B)--(D) lo es. Se mantiene la clave A por convención de ítem de selección única.
+
+\subsection*{3) Álgebra}
+\textbf{Problema 6.} \((x+1)(x-1)=x^{2}-1=8 \Rightarrow x^{2}=9\).\\
+\textbf{Respuesta: C}.
+
+\vspace{0.4em}
+\textbf{Problema 7.} Tres consecutivos: \(n,n+1,n+2\).\\
+\textbf{Promedio:} \(\dfrac{n+(n+1)+(n+2)}{3}=\dfrac{3n+3}{3}=n+1=15\Rightarrow n=14\).\\
+\textbf{Mayor:} \(n+2=16\). \textbf{Respuesta: C}.
+
+\subsection*{4) Análisis de datos}
+\textbf{Problema 8.} Frecuencias: fútbol \(20\), baloncesto \(15\), natación \(10\), otros \(15\).\\
+\textbf{Moda:} categoría con mayor frecuencia \(\Rightarrow\) fútbol.\\
+\textbf{Respuesta: A}.
+
+\vspace{0.4em}
+\textbf{Problema 9.} Dado justo: mayores que \(4\) son \(\{5,6\}\) \(\Rightarrow\) 2 casos favorables de 6.\\
+\textbf{Probabilidad:} \(2/6=1/3\). \textbf{Respuesta: B}.
+% --------------------------------------------------------------------
+
+\end{document}

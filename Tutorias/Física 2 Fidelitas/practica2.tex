@@ -1,0 +1,654 @@
+% ==========================================================
+% Tutoría de Física - Temperatura, equilibrio térmico y dilatación
+% Formato con soluciones clickeables
+% ==========================================================
+
+\documentclass[11pt,letterpaper]{article}
+
+% ---------------- Paquetes básicos ----------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, es-nodecimaldot]{babel}
+
+% Matemática y SI
+\usepackage{amsmath, amssymb, bm}
+\usepackage{siunitx}
+\sisetup{
+  locale = DE,                 % coma decimal
+  output-decimal-marker = {,}, % coma decimal
+  per-mode = symbol,
+  exponent-product = \cdot,
+  group-minimum-digits = 4
+}
+
+% Diseño de página
+\usepackage[a4paper,margin=2.4cm]{geometry}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% Listas
+\usepackage{enumitem}
+
+% Cajas bonitas
+\usepackage[most]{tcolorbox}
+\tcbset{
+  colback=white,
+  colframe=black!70,
+  boxrule=0.6pt,
+  arc=2mm,
+  left=6pt,right=6pt,top=6pt,bottom=6pt
+}
+
+% Encabezado y pie
+\usepackage{fancyhdr}
+\setlength{\headheight}{14.5pt}
+
+% Botones / símbolos
+\usepackage{pifont}
+
+% Capas visibles/ocultas en PDF
+\usepackage{ocgx2}
+
+% Para símbolos unicode como ⇒
+\usepackage{newunicodechar}
+\newunicodechar{⇒}{\Rightarrow}
+
+% Hipervínculos
+\usepackage{hyperref}
+
+% ---------------- Estilo de cajas ----------------
+\newtcolorbox{ejercicio}[1][]{title=Ejercicio, #1}
+\newtcolorbox{solucionbox}[1][]{title=Solución, colframe=green!60!black, #1}
+\newtcolorbox{nota}[1][]{title=Nota, colframe=blue!60!black, #1}
+
+% ---------------- Encabezado y pie ----------------
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Tutoría Física — Temperatura y Dilatación térmica}
+\rhead{Julián Arias Meza — 2025}
+\cfoot{\thepage}
+
+% ---------------- Entorno de solución clickeable ----------------
+\newcounter{solnum}
+\newcommand{\solbtn}{\fcolorbox{black}{gray!10}{\footnotesize Mostrar / ocultar solución}}
+\newenvironment{solucionclick}{%
+  \refstepcounter{solnum}%
+  \par\noindent\textbf{Solución \#\thesolnum}\;
+  \switchocg{sol:\thesolnum}{\solbtn}\\[2pt]%
+  \begin{ocg}{Solución \#\thesolnum}{sol:\thesolnum}{0}%
+  \begin{solucionbox}%
+}{%
+  \end{solucionbox}%
+  \end{ocg}\par\medskip
+}
+
+% ---------------- Título reutilizable ----------------
+\newcommand{\titulo}{
+  \begin{center}
+  {\Large \textbf{Tutoría de Física: Temperatura, Calor y Dilatación}}\\[4pt]
+  {\large \textbf{Ley cero, escalas de temperatura, expansión térmica lineal y volumétrica}}\\[6pt]
+  {\small Ejercicios tipo examen con soluciones ocultables}\\[6pt]
+  \end{center}
+  \vspace{-0.3em}\hrule\vspace{0.8em}
+}
+
+% ==========================================================
+% ===================== DOCUMENTO ==========================
+% ==========================================================
+\begin{document}
+
+\titulo
+
+\begin{nota}
+En este resumen trabajamos:
+\begin{itemize}
+  \item Qué es temperatura y qué significa equilibrio térmico.
+  \item La ley cero de la termodinámica.
+  \item Conversión entre escalas de temperatura: Celsius, Kelvin y Fahrenheit.
+  \item Dilatación lineal de sólidos: \(\Delta L = \alpha L_0 \Delta T\).
+  \item Dilatación volumétrica: \(\Delta V = \beta V_0 \Delta T\).
+\end{itemize}
+
+Cada ejercicio viene acompañado de una solución detallada paso a paso.  
+Para mostrar / ocultar la solución: hacé clic en el recuadro gris.
+\end{nota}
+
+% ==========================================================
+% 1. TEMPERATURA Y EQUILIBRIO TÉRMICO
+% ==========================================================
+
+\section*{1. Temperatura y equilibrio térmico}
+
+\textbf{Idea clave:}  
+La \textbf{temperatura} es una magnitud física que está relacionada con ``qué tan caliente'' o ``qué tan frío'' está un sistema \emph{y} determina la dirección del intercambio de energía térmica (calor).  
+Cuando dos sistemas están en \textbf{equilibrio térmico}, ya no hay intercambio neto de energía por calor entre ellos.
+
+\textbf{Ley cero de la termodinámica (forma práctica para laboratorio):}
+
+Si el sistema A está en equilibrio térmico con el sistema C,  
+y el sistema B está en equilibrio térmico con el mismo sistema C,  
+entonces A y B están en equilibrio térmico entre sí.  
+
+Conclusión útil: ¡Podemos usar el “sistema C’’ como \textbf{termómetro}! Si C no cambia al tocar A ni al tocar B, es que A y B tienen la misma temperatura.
+
+% ---------- EJERCICIO 1 ----------
+\begin{ejercicio}
+Un termómetro se coloca primero en contacto con un bloque metálico caliente y se deja hasta que ambos alcanzan equilibrio térmico común a \(\SI{65,0}{^\circ C}\).  
+Luego, el mismo termómetro se coloca en una taza de agua y, después de un rato, marca \(\SI{32,0}{^\circ C}\).
+
+a) ¿Qué significa físicamente “alcanzar equilibrio térmico’’ entre el termómetro y el agua? \\
+b) Según la ley cero de la termodinámica, ¿por qué confiamos en que la lectura del termómetro es la temperatura real del agua?
+\end{ejercicio}
+
+\begin{solucionclick}
+\textbf{a) Equilibrio térmico}
+
+Definición operativa: dos sistemas están en equilibrio térmico cuando \textbf{ya no hay intercambio neto de energía en forma de calor entre ellos}.  
+Traducción al caso: el termómetro y el agua llegaron a la \textbf{misma} temperatura, \(\SI{32,0}{^\circ C}\).  
+Antes de eso, hubo flujo de calor: el agua enfrió o calentó el termómetro hasta igualarlos.
+
+\textbf{b) Ley cero}
+
+La ley cero dice que si dos sistemas (termómetro y agua) alcanzan una misma temperatura común y dejan de intercambiar calor, entonces \textbf{esa} es la temperatura de ambos.  
+Por eso podemos usar el termómetro como referencia externa: cuando deja de cambiar su lectura, esa lectura \(\SI{32,0}{^\circ C}\) es también la temperatura del agua.
+
+\textbf{Interpretación:}  
+La ley cero justifica la existencia de “temperatura’’ como magnitud física mensurable y permite construir escalas de temperatura con termómetros.
+\end{solucionclick}
+
+% ==========================================================
+% 2. ESCALAS DE TEMPERATURA (°C, K, °F)
+% ==========================================================
+
+\section*{2. Escalas de temperatura}
+
+Recordemos:
+
+\[
+T(\si{K}) = T(^{\circ}\text{C}) + 273{,}15
+\]
+
+\[
+T(^{\circ}\text{F}) = \frac{9}{5} T(^{\circ}\text{C}) + 32
+\qquad\Longleftrightarrow\qquad
+T(^{\circ}\text{C}) = \frac{5}{9}\,\bigl[T(^{\circ}\text{F}) - 32\bigr]
+\]
+
+Importante: en Física usamos mucho la escala Kelvin porque es absoluta (0 K corresponde al “cero absoluto”: mínima energía térmica posible).
+
+% ---------- EJERCICIO 2 ----------
+\begin{ejercicio}
+Convierta las siguientes temperaturas:
+
+a) La temperatura más baja registrada en cierto laboratorio criogénico fue \(-120{,}0\,^{\circ}\text{C}\).  
+Exprese ese valor en kelvin (K) y en grados Fahrenheit.
+
+b) La fiebre de una paciente es \(\SI{39,5}{^\circ C}\).  
+Exprese esa temperatura en kelvin y en grados Fahrenheit.
+
+c) Una incubadora biomédica está ajustada a \(\SI{310}{K}\).  
+¿Cuál es esa temperatura en \({^\circ}\text{C}\) y \({^\circ}\text{F}\)?
+\end{ejercicio}
+
+\begin{solucionclick}
+\textbf{a) \(-120{,}0\,^{\circ}\text{C}\)}
+
+Primero a kelvin:
+\[
+T(\si{K}) = T(^{\circ}\text{C}) + 273{,}15
+= -120{,}0 + 273{,}15
+= 153{,}15\ \si{K}.
+\]
+
+Ahora a Fahrenheit:
+\[
+T(^{\circ}\text{F})
+= \frac{9}{5}(-120{,}0) + 32
+= (-216{,}0) + 32
+= -184{,}0\ ^{\circ}\text{F}.
+\]
+
+\textbf{b) \(\SI{39,5}{^\circ C}\)}
+
+A kelvin:
+\[
+T(\si{K}) = 39{,}5 + 273{,}15
+= 312{,}65\ \si{K}.
+\]
+
+A Fahrenheit:
+\[
+T(^{\circ}\text{F})
+= \frac{9}{5}(39{,}5) + 32
+= (71{,}1) + 32
+= 103{,}1\ ^{\circ}\text{F}\ (\text{aprox.}).
+\]
+
+\textbf{c) \(\SI{310}{K}\)}
+
+Primero a Celsius:
+\[
+T(^{\circ}\text{C})
+= T(\si{K}) - 273{,}15
+= 310 - 273{,}15
+= 36{,}85\ ^{\circ}\text{C}
+\approx 36{,}9\ ^{\circ}\text{C}.
+\]
+
+Ahora a Fahrenheit:
+\[
+T(^{\circ}\text{F})
+= \frac{9}{5}(36{,}85) + 32
+\approx 66{,}33 + 32
+\approx 98{,}3\ ^{\circ}\text{F}.
+\]
+
+\textbf{Interpretación:}  
+\(\sim 37{,}0\,^{\circ}\text{C}\) es temperatura corporal normal. Kelvin es muy usado en física; Fahrenheit es común en contexto biomédico en EEUU.
+\end{solucionclick}
+
+% ==========================================================
+% 3. DILATACIÓN LINEAL
+% ==========================================================
+
+\section*{3. Dilatación lineal de sólidos}
+
+Cuando aumenta la temperatura, la mayoría de los sólidos se expanden.  
+Para cambios de temperatura moderados (digamos menos de \(\sim 100\,^{\circ}\text{C}\)) la \textbf{elongación} aproximada es:
+
+\[
+\Delta L = \alpha L_0 \,\Delta T
+\]
+
+donde:
+\begin{itemize}
+  \item \(L_0\): longitud inicial,
+  \item \(\Delta L\): cambio de longitud,
+  \item \(\alpha\): coeficiente de dilatación lineal \([\si{K^{-1}}]\),
+  \item \(\Delta T = T_f - T_0\): cambio de temperatura.
+\end{itemize}
+
+También podemos escribir la longitud final:
+\[
+L_f = L_0 + \Delta L
+= L_0 + \alpha L_0 \Delta T
+= L_0 (1 + \alpha \Delta T).
+\]
+
+Valores típicos:  
+aluminio \(\alpha \sim 2{,}4\times10^{-5}\ \si{K^{-1}}\),  
+acero \(\alpha \sim 1{,}2\times10^{-5}\ \si{K^{-1}}\).
+
+% ---------- EJERCICIO 3 ----------
+\begin{ejercicio}
+Una cinta métrica de acero mide exactamente \(\SI{50,000}{m}\) a \(\SI{20,0}{^\circ C}\).  
+El coeficiente de dilatación lineal del acero es \(\alpha = 1{,}2\times10^{-5}\ \si{K^{-1}}\).
+
+a) ¿Cuál será la longitud de la cinta a \(\SI{35,0}{^\circ C}\)?  
+b) Explique por qué esto es importante en topografía / construcción.
+\end{ejercicio}
+
+\begin{solucionclick}
+\textbf{Paso 1. Datos}
+
+\[
+L_0 = \SI{50,000}{m}, \quad
+T_0 = \SI{20,0}{^\circ C}, \quad
+T_f = \SI{35,0}{^\circ C},
+\]
+\[
+\alpha = 1{,}2\times10^{-5}\ \si{K^{-1}}.
+\]
+
+Cambio de temperatura:
+\[
+\Delta T = T_f - T_0
+= 35{,}0 - 20{,}0
+= \SI{15,0}{K}.
+\]
+
+(Ojo: un cambio de \(\SI{15,0}{^\circ C}\) es también \(\SI{15,0}{K}\) en magnitud.)
+
+\textbf{Paso 2. Longitud final usando } \(L_f = L_0(1+\alpha\Delta T)\)
+
+\[
+L_f
+= (50{,}000\ \si{m})
+\left[1 + (1{,}2\times10^{-5}\ \si{K^{-1}})(15{,}0\ \si{K})\right].
+\]
+
+Primero el producto:
+\[
+(1{,}2\times10^{-5})(15{,}0)
+= 1{,}8\times10^{-4}.
+\]
+
+Entonces:
+\[
+L_f
+= 50{,}000\ \si{m}
+\left(1 + 1{,}8\times10^{-4}\right)
+= 50{,}000\ \si{m}
+\left(1{,}00018\right).
+\]
+
+\[
+L_f \approx 50{,}009\ \si{m}.
+\]
+
+El aumento:
+\[
+\Delta L = L_f - L_0
+\approx 50{,}009\ \si{m} - 50{,}000\ \si{m}
+= 0{,}009\ \si{m}
+= \SI{9,0}{mm}.
+\]
+
+\textbf{b) Interpretación física:}  
+Si el topógrafo usa la cinta “a ojo” como si siguiera midiendo exactamente \(\SI{50,000}{m}\), en realidad está introduciendo un error de casi \(\SI{1}{cm}\).  
+En ingeniería civil y puentes largos, ese error importa muchísimo.
+\end{solucionclick}
+
+% ==========================================================
+% 4. APLICACIÓN: REMACHES EN AVIONES
+% ==========================================================
+
+\section*{4. Ajuste por contracción térmica (remaches)}
+
+\begin{ejercicio}
+En la fabricación de aviones se usan remaches de aluminio ligeramente más grandes que el orificio donde deben entrar, para que al calentarse en vuelo queden firmes.
+
+Un remache debe ajustarse en un agujero de diámetro \(\SI{0,3500}{cm}\) en el fuselaje.  
+A temperatura ambiente \(\SI{23}{^\circ C}\), el remache es \textbf{demasiado grande} para entrar.  
+Se enfría el remache con “hielo seco’’ hasta \(\SI{-78}{^\circ C}\) para que se contraiga.
+
+Suponga que el aluminio tiene \(\alpha = 2{,}4\times10^{-5}\ \si{K^{-1}}\).
+
+Pregunta:  
+¿Qué \textbf{diámetro máximo} puede tener el remache a \(\SI{23}{^\circ C}\) para que, al enfriarlo a \(\SI{-78}{^\circ C}\), su diámetro baje justo a \(\SI{0,3500}{cm}\) y pueda entrar?
+\end{ejercicio}
+
+\begin{solucionclick}
+\textbf{Paso 1. Modelo físico}
+
+El diámetro del remache se comporta igual que una longitud lineal \(L\).  
+Usamos:
+\[
+L_f = L_0 (1 + \alpha \Delta T),
+\]
+donde:
+\[
+L_0 = \text{diámetro inicial a } T_0=23{^\circ}\text{C},
+\quad
+L_f = \text{diámetro final a } T_f=-78{^\circ}\text{C}.
+\]
+
+Queremos que \(L_f = \SI{0,3500}{cm}\).
+
+\textbf{Paso 2. Calculamos \(\Delta T\)}
+
+\[
+\Delta T = T_f - T_0
+= (-78) - 23
+= -101\ ^{\circ}\text{C}
+= -101\ \si{K}.
+\]
+
+\textbf{Paso 3. Planteo con números}
+
+\[
+L_f = L_0 (1 + \alpha \Delta T)
+\quad\Longrightarrow\quad
+L_0 = \frac{L_f}{1 + \alpha \Delta T}.
+\]
+
+Sustituimos:
+\[
+L_0
+= \frac{0{,}3500\ \si{cm}}
+       {1 + (2{,}4\times10^{-5}\ \si{K^{-1}})(-101\ \si{K}) }.
+\]
+
+Multiplicamos \(\alpha \Delta T\):
+\[
+(2{,}4\times10^{-5})(-101)
+\approx -2{,}424\times10^{-3}
+= -0{,}002424.
+\]
+
+Entonces:
+\[
+1 + \alpha\Delta T
+\approx 1 - 0{,}002424
+= 0{,}997576.
+\]
+
+\[
+L_0
+= \frac{0{,}3500\ \si{cm}}{0{,}997576}
+\approx 0{,}3509\ \si{cm}.
+\]
+
+\textbf{Resultado:}  
+El remache a \(\SI{23}{^\circ C}\) puede tener hasta \(\boxed{0{,}3509\ \text{ cm} \text{ de diámetro}}\).
+
+\textbf{Interpretación física:}  
+A temperatura ambiente es un poquito más ancho que el agujero (\(0{,}3509\ \text{ cm} > 0{,}3500\ \text{ cm}\)).  
+Pero al enfriarlo \(\sim 100\,^{\circ}\text{C}\) se contrae lo suficiente para caber.  
+Luego al calentarse otra vez en el avión vuelve a expandirse y queda ajustado.
+\end{solucionclick}
+
+% ==========================================================
+% 5. DILATACIÓN VOLUMÉTRICA
+% ==========================================================
+
+\section*{5. Dilatación volumétrica (líquidos y sólidos)}
+
+Para volúmenes (tanques, líquidos, bloques 3D) usamos:
+\[
+\Delta V = \beta V_0 \Delta T
+\qquad\Longrightarrow\qquad
+V_f = V_0 (1 + \beta \Delta T),
+\]
+donde \(\beta\) es el coeficiente de dilatación volumétrica \([\si{K^{-1}}]\).
+
+Para muchos sólidos aproximadamente \(\beta \approx 3\alpha\), pero los líquidos suelen tener \(\beta\) mucho mayor.
+
+% ---------- EJERCICIO 5 ----------
+\begin{ejercicio}
+Un recipiente de vidrio tiene volumen interno \(\,V_0 = \SI{1,000}{L}\) a \(\SI{20,0}{^\circ C}\).  
+El coeficiente de dilatación volumétrica del vidrio es \(\beta_{\text{vidrio}} = 1{,}2\times10^{-5}\ \si{K^{-1}}\).  
+Está lleno completamente de un aceite cuyo coeficiente volumétrico es \(\beta_{\text{aceite}} = 7{,}5\times10^{-4}\ \si{K^{-1}}\).
+
+Si ambos se calientan uniformemente hasta \(\SI{50,0}{^\circ C}\):
+
+a) ¿Cuál es el nuevo volumen del recipiente? \\
+b) ¿Cuál sería el nuevo volumen del aceite si pudiera expandirse libremente? \\
+c) ¿Se derrama aceite? Si sí, ¿cuánto?
+\end{ejercicio}
+
+\begin{solucionclick}
+\textbf{Paso 1. Datos iniciales}
+
+\[
+V_0 = \SI{1,000}{L} = 1{,}000\ \text{L},
+\quad
+T_0 = \SI{20,0}{^\circ C},
+\quad
+T_f = \SI{50,0}{^\circ C}.
+\]
+
+\[
+\Delta T = T_f - T_0 = 50,0 - 20,0 = \SI{30,0}{K}.
+\]
+
+Coeficientes:
+\[
+\beta_{\text{vidrio}} = 1{,}2\times10^{-5}\ \si{K^{-1}},
+\quad
+\beta_{\text{aceite}} = 7{,}5\times10^{-4}\ \si{K^{-1}}.
+\]
+
+\textbf{Paso 2. Volumen del recipiente (vidrio)}
+
+\[
+V_{\text{recip},f}
+= V_0 \bigl(1 + \beta_{\text{vidrio}} \Delta T \bigr)
+= 1{,}000\ \text{L}\,
+\Bigl[1 + (1{,}2\times10^{-5})(30,0)\Bigr].
+\]
+
+Calculamos:
+\[
+(1{,}2\times10^{-5})(30,0)
+= 3{,}6\times10^{-4}
+= 0{,}00036.
+\]
+
+\[
+V_{\text{recip},f}
+= 1{,}000\ \text{L} \cdot (1{,}00036)
+\approx 1{,}00036\ \text{L}.
+\]
+
+\textbf{Paso 3. Volumen del aceite libre}
+
+\[
+V_{\text{aceite},f}
+= V_0 \bigl(1 + \beta_{\text{aceite}} \Delta T \bigr)
+= 1{,}000\ \text{L}\,
+\Bigl[1 + (7{,}5\times10^{-4})(30,0)\Bigr].
+\]
+
+\[
+(7{,}5\times10^{-4})(30,0)
+= 2{,}25\times10^{-2}
+= 0{,}0225.
+\]
+
+\[
+V_{\text{aceite},f}
+= 1{,}000\ \text{L} \cdot (1{,}0225)
+= 1{,}0225\ \text{L}.
+\]
+
+\textbf{Paso 4. ¿Se derrama?}
+
+El recipiente “ahora’’ sólo tiene \(\approx 1{,}00036\ \text{L}\) de espacio,  
+pero el aceite “quiere’’ ocupar \(\approx 1{,}0225\ \text{L}\).
+
+Exceso:
+\[
+V_{\text{exceso}}
+= 1{,}0225\ \text{L} - 1{,}00036\ \text{L}
+\approx 0{,}02214\ \text{L}.
+\]
+
+Eso es \(\approx \SI{22,1}{mL}\).
+
+\textbf{Interpretación física:}  
+Los líquidos suelen expandirse MUCHO más que el sólido que los contiene.  
+Por eso, al calentar un líquido en un recipiente lleno “hasta el tope”, se derrama.
+\end{solucionclick}
+% ==========================================================
+% 6. CALOR Y CAMBIOS DE TEMPERATURA (LEY DE ENERGÍA TÉRMICA)
+% ==========================================================
+
+\section*{6. Calor y energía transferida}
+
+Cuando un cuerpo recibe o cede calor sin cambio de fase, su temperatura varía según:
+
+\[
+Q = m\,c\,\Delta T
+\]
+
+donde:
+\begin{itemize}
+  \item \(Q\): cantidad de calor (energía térmica transferida) \([\si{J}]\),
+  \item \(m\): masa del cuerpo \([\si{kg}]\),
+  \item \(c\): calor específico del material \([\si{J/(kg\cdot K)}]\),
+  \item \(\Delta T = T_f - T_0\): variación de temperatura.
+\end{itemize}
+
+Convenciones:
+\[
+Q>0 \text{ si el cuerpo gana calor,} \qquad Q<0 \text{ si lo pierde.}
+\]
+
+% ---------- EJERCICIO 6 ----------
+\begin{ejercicio}
+Se mezclan \(\SI{200}{g}\) de agua a \(\SI{80,0}{^\circ C}\) con \(\SI{300}{g}\) de agua a \(\SI{20,0}{^\circ C}\) en un recipiente aislado térmicamente.  
+Suponiendo que no hay pérdidas de calor al ambiente, determine la \textbf{temperatura final de equilibrio} del sistema.  
+Use \(c_{\text{agua}} = \SI{4186}{J/(kg\cdot K)}.\)
+\end{ejercicio}
+
+\begin{solucionclick}
+\textbf{Paso 1. Datos y planteo físico}
+
+\[
+m_1 = 0{,}200\ \si{kg}, \quad T_1 = 80{,}0\,^{\circ}\text{C},
+\]
+\[
+m_2 = 0{,}300\ \si{kg}, \quad T_2 = 20{,}0\,^{\circ}\text{C}.
+\]
+
+El recipiente es adiabático \(\Rightarrow\)el calor cedido por el agua caliente = calor absorbido por el agua fría:
+
+\[
+Q_{\text{perdido}} + Q_{\text{ganado}} = 0.
+\]
+
+\[
+m_1 c (T_f - T_1) + m_2 c (T_f - T_2) = 0.
+\]
+
+\textbf{Paso 2. Simplificamos (el mismo $c$ se cancela):}
+
+\[
+m_1(T_f - T_1) + m_2(T_f - T_2) = 0.
+\]
+
+\[
+m_1 T_f - m_1 T_1 + m_2 T_f - m_2 T_2 = 0.
+\]
+
+\[
+T_f (m_1 + m_2) = m_1 T_1 + m_2 T_2.
+\]
+
+\textbf{Paso 3. Sustituimos valores numéricos:}
+
+\[
+T_f = \frac{m_1 T_1 + m_2 T_2}{m_1 + m_2}
+= \frac{(0{,}200)(80{,}0) + (0{,}300)(20{,}0)}{0{,}200 + 0{,}300}.
+\]
+
+\[
+T_f = \frac{16{,}0 + 6{,}0}{0{,}500}
+= \frac{22{,}0}{0{,}500}
+= 44{,}0\ ^{\circ}\text{C}.
+\]
+
+\textbf{Resultado:}  
+\[
+\boxed{T_f = 44{,}0\ ^{\circ}\text{C}}.
+\]
+
+\textbf{Interpretación física:}  
+El equilibrio térmico se alcanza cuando el agua caliente cede tanto calor como el agua fría gana.  
+La temperatura final cae entre ambas, más cercana a la de la masa mayor (\(\SI{300}{g}\) de agua fría \(\Rightarrow\) el resultado se inclina hacia los \(20^{\circ}\text{C}\)).
+\end{solucionclick}
+
+% =================== FIN DE LA PRÁCTICA ===================
+
+\noindent\fbox{%
+\parbox{\linewidth}{%
+Esta práctica combina fundamentos de termodinámica temprana
+(temperatura, ley cero) con modelos de ingeniería térmica
+(dilatación lineal y volumétrica).  
+Listo para PDF o para exportar a Word / plataforma virtual.
+
+\medskip
+\textbf{Contacto (WhatsApp):} \texttt{7076-9371}
+}}
+\end{document}

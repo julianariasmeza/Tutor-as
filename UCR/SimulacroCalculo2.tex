@@ -1,0 +1,593 @@
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{amsmath}
+% --- Idioma y formato numérico ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, es-nodecimaldot]{babel}
+
+% --- Matemática y SI ---
+\usepackage{amsmath, amssymb, bm}
+\usepackage{siunitx}
+\sisetup{
+  locale = DE,                 % coma decimal
+  output-decimal-marker = {,}, % coma decimal
+  per-mode = symbol,
+  exponent-product = \cdot,
+  group-minimum-digits = 4
+}
+
+% --- Página y figuras ---
+\usepackage[a4paper,margin=2.4cm]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc, decorations.markings}
+
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Cuadro}
+
+\begin{document}
+
+\begin{center}
+  {\Large \textbf{Simulacro segundo examen parcial }}\\[1ex]
+  \textit{Sección cónica \(x^{2}+12x+9y^{2}=0\)}
+\end{center}
+
+% ==========================================================
+\section*{ Pregunta 1}
+
+\subsection*{Datos}
+Ecuación general:
+\[
+x^{2}+12x+9y^{2}=0.
+\]
+
+\subsection*{Fórmula (completar cuadrado)}
+\[
+x^{2}+12x=(x+6)^{2}-36.
+\]
+
+\subsection*{Sustitución}
+\[
+x^{2}+12x+9y^{2}=0
+\;\Longrightarrow\;
+(x+6)^{2}-36+9y^{2}=0
+\;\Longrightarrow\;
+(x+6)^{2}+9y^{2}=36.
+\]
+
+\subsection*{Cálculo (forma canónica)}
+Dividiendo entre \(36\):
+\[
+\boxed{\;\frac{(x+6)^{2}}{36}+\frac{y^{2}}{4}=1\;}
+\]
+que es una \textbf{elipse} de eje mayor horizontal con:
+\[
+\text{centro } C=(-6,\,0),\qquad a=6,\qquad b=2.
+\]
+
+\subsection*{Parámetros notables}
+\[
+c=\sqrt{a^{2}-b^{2}}=\sqrt{36-4}=4\sqrt{2},\qquad
+e=\frac{c}{a}=\frac{4\sqrt{2}}{6}=\frac{2\sqrt{2}}{3}.
+\]
+
+\subsection*{Focos, vértices y covértices}
+Eje mayor horizontal (\(x\)):
+\[
+F_{1,2}=(-6\mp 4\sqrt{2},\,0),\qquad
+V_{1,2}=(-6\mp 6,\,0)=(-12,\,0)\ \text{y}\ (0,\,0).
+\]
+Eje menor (sobre \(y\)):
+\[
+\text{Covértices: }\;(-6,\,\pm 2).
+\]
+
+\subsection*{Intersecciones con los ejes}
+\begin{itemize}
+  \item Con el eje \(x\) (\(y=0\)): \(x^{2}+12x=0\Rightarrow x=0,-12\).\\
+        Puntos: \((0,\,0)\) y \((-12,\,0)\) (coinciden con los vértices).
+  \item Con el eje \(y\) (\(x=0\)): \(9y^{2}=0\Rightarrow y=0\).\\
+        Punto: \((0,\,0)\) (tangencia en el vértice derecho).
+\end{itemize}
+
+\subsection*{Directrices}
+Para el eje mayor horizontal:
+\[
+x = h \pm \frac{a}{e}
+= -6 \pm \frac{6}{\tfrac{2\sqrt{2}}{3}}
+= -6 \pm \frac{18}{2\sqrt{2}}
+= -6 \pm \frac{9\sqrt{2}}{2}.
+\]
+
+\subsection*{Conclusión}
+La curva es una \textbf{elipse} centrada en \((-6,\,0)\), con eje mayor horizontal de longitud \(2a=12\) (de \((-12,0)\) a \((0,0)\)) y eje menor de longitud \(2b=4\) (de \((-6,-2)\) a \((-6,2)\)). Los focos se ubican en \((-6\pm 4\sqrt{2},\,0)\).
+
+% ==========================================================
+\section*{Bosquejo (centro, ejes, vértices, focos e intersecciones)}
+
+\begin{figure}[h!]
+\centering
+\shorthandoff{>}
+
+\begin{tikzpicture}[scale=0.5,>=Stealth]
+  % Ejes
+  \draw[->,thin] (-16,0)--(4,0) node[below] {$x$};
+  \draw[->,thin] (-6,-4)--(-6,4) node[left] {$y$};
+
+  % Elipse (a=6, b=2, centro (-6,0))
+  \draw[line width=1pt,blue]
+    plot[domain=0:360,samples=200]
+    ({-6 + 6*cos(\x)}, {2*sin(\x)});
+
+  % Centro
+  \filldraw[black] (-6,0) circle (2pt) node[below right] {$C(-6,0)$};
+
+  % Vértices
+  \filldraw[black] (-12,0) circle (2pt) node[below left] {$V_1(-12,0)$};
+  \filldraw[black] (0,0)   circle (2pt) node[below right] {$V_2(0,0)$};
+
+  % Covértices
+  \filldraw[black] (-6,2)  circle (2pt) node[above right] {$(-6,2)$};
+  \filldraw[black] (-6,-2) circle (2pt) node[below right] {$(-6,-2)$};
+
+  % Focos (c = 4*sqrt(2) ≈ 5,657)
+  \def\c{5.657}
+  \filldraw[red] ({-6-\c},0) circle (2.2pt) node[above left] {$F_1(-6-4\sqrt{2},0)$};
+  \filldraw[red] ({-6+\c},0) circle (2.2pt) node[above right] {$F_2(-6+4\sqrt{2},0)$};
+
+
+\end{tikzpicture}
+\caption{Elipse $\dfrac{(x+6)^{2}}{36}+\dfrac{y^{2}}{4}=1$.}
+\end{figure}
+
+% ==========================================================
+% Pregunta 2. Coordenadas polares: r = cos(2θ),  r = sen^2(θ)
+% Incisos (a) asociación y (b) a cartesianas
+% ==========================================================
+\newpage
+\section*{2) Ecuaciones en coordenadas polares}
+\[
+r=\cos(2\theta),\qquad r=\sen^{2}\theta.
+\]
+
+% ------------------- (a) Asociación con las figuras -------------------
+\subsection*{(a) Asociación con las figuras y argumento}
+\textbf{Figura (b)} $\longleftrightarrow$ $r=\cos(2\theta)$.
+\begin{itemize}
+  \item $r=\cos(2\theta)$ genera una \emph{rosa} de 4 pétalos (par de $2$).
+  \item Para $0\le\theta\le\pi$ se observan tres lóbulos: derecho ($\theta\approx 0$),
+        izquierdo ($\theta\approx \pi$) y el inferior, que aparece porque $r<0$
+        cerca de $\theta=\pi/2$ (el punto se dibuja en dirección opuesta).
+\end{itemize}
+
+\textbf{Figura (a)} $\longleftrightarrow$ $r=\sen^{2}\theta$.
+\begin{itemize}
+  \item $r=\sen^{2}\theta\ge 0$ para todo $\theta$, con máximo $r=1$ en $\theta=\pi/2$
+        y $r=0$ en $\theta=0,\pi$.
+  \item El trazo forma un lazo tipo “gota” \emph{sobre} el eje $x$ y es simétrico
+        respecto del eje $y$, cerrando en el origen.
+\end{itemize}
+
+% ------------------- (b) Paso a cartesianas -------------------
+\subsection*{(b) Expresión en coordenadas cartesianas}
+
+\paragraph{Caso 1: $r=\cos(2\theta)$.}
+\textbf{Datos.}
+\[
+x=r\cos\theta,\quad y=r\sen\theta,\quad r=\sqrt{x^{2}+y^{2}},\quad
+\cos(2\theta)=\cos^{2}\theta-\sen^{2}\theta=\frac{x^{2}-y^{2}}{r^{2}}.
+\]
+
+\textbf{Sustitución.}
+\[
+r=\cos(2\theta)=\frac{x^{2}-y^{2}}{r^{2}}
+\quad\Rightarrow\quad r^{3}=x^{2}-y^{2}.
+\]
+
+\textbf{Cálculo.} Reemplazando $r=\sqrt{x^{2}+y^{2}}$ y elevando al cuadrado para
+eliminar la raíz:
+\[
+\bigl(\sqrt{x^{2}+y^{2}}\bigr)^{3}=x^{2}-y^{2}
+\ \Longrightarrow\
+\boxed{(x^{2}+y^{2})^{3}=(x^{2}-y^{2})^{2}}.
+\]
+
+\textbf{Conclusión.} Ecuación cartesiana implícita (grado 6) de la rosa de 4 pétalos.
+
+\medskip
+
+\paragraph{Caso 2: $r=\sen^{2}\theta$.}
+\textbf{Datos.}
+\[
+\sen\theta=\frac{y}{r}\ \Rightarrow\ \sen^{2}\theta=\frac{y^{2}}{r^{2}},\qquad
+r=\sqrt{x^{2}+y^{2}}.
+\]
+
+\textbf{Sustitución.}
+\[
+r=\frac{y^{2}}{r^{2}}
+\quad\Rightarrow\quad r^{3}=y^{2}.
+\]
+
+\textbf{Cálculo.} Con $r=\sqrt{x^{2}+y^{2}}$ y cuadrando:
+\[
+\bigl(\sqrt{x^{2}+y^{2}}\bigr)^{3}=y^{2}
+\ \Longrightarrow\
+\boxed{(x^{2}+y^{2})^{3}=y^{4}}.
+\]
+
+\textbf{Conclusión.} Ecuación cartesiana implícita del lazo (“gota”) superior,
+simétrica respecto del eje $y$.
+
+% ------------------- Nota técnica opcional -------------------
+\paragraph{Nota.}
+Las formas sin cuadrar son
+$(x^{2}+y^{2})^{3/2}=x^{2}-y^{2}$ y $(x^{2}+y^{2})^{3/2}=y^{2}$.
+Para describir \emph{toda} la curva sin restricciones de signo en el miembro derecho,
+se prefiere la versión \emph{cuadrada} mostrada en los recuadros.
+
+% ==========================================================
+% Pregunta 3. Sucesión: x_{1}=7,\; x_{n+1}=\sqrt{3x_{n}+4}
+% Inducción: decreciente y acotada; convergencia y límite
+% ==========================================================
+
+\section*{3) Sucesión \(x_{1}=7,\; x_{n+1}=\sqrt{3x_{n}+4}\) para \(n\ge 1\)}
+
+\subsection*{(a) Demostrar por inducción que es decreciente y que \(x_n\ge 3\) para todo \(n\)}
+
+\paragraph{Paso 0 — Observación clave.}
+Definimos \(f(x)=\sqrt{3x+4}\).
+\[
+f'(x)=\frac{3}{2\sqrt{3x+4}}>0 \quad(\text{$f$ es estrictamente creciente}).
+\]
+Además,
+\[
+f(x)\le x
+\ \Longleftrightarrow\
+\sqrt{3x+4}\le x
+\ \Longleftrightarrow\
+3x+4\le x^{2}
+\ \Longleftrightarrow\
+x^{2}-3x-4\ge 0
+\ \Longleftrightarrow\
+(x-4)(x+1)\ge 0.
+\]
+Como \(x>0\), si \(x\ge 4\) entonces \(f(x)\le x\).
+
+\medskip
+Demostraremos por inducción dos hechos:
+\[
+\boxed{\,\text{(i) }x_n\ge 4\ \Rightarrow\ x_n\ge 3\,}\qquad\text{y}\qquad
+\boxed{\,\text{(ii) }x_{n+1}\le x_n\ (\text{decreciente}).\,}
+\]
+
+\paragraph{1. Inducción para la cota \(x_n\ge 4\).}
+\textbf{Base:} \(x_1=7\ge 4\).
+
+\textbf{Hipótesis de inducción:} Suponga \(x_n\ge 4\).
+
+\textbf{Paso inductivo:}
+Como \(f\) es creciente,
+\[
+x_{n+1}=f(x_n)\ \ge\ f(4)=\sqrt{3\cdot 4+4}=\sqrt{16}=4.
+\]
+Concluimos \(\boxed{x_{n}\ge 4\ \ \forall n}\). (En particular, \(x_n\ge 3\) para todo \(n\).)
+
+\paragraph{2. Inducción para la monotonía decreciente.}
+\textbf{Base:} 
+\[
+x_2=\sqrt{3x_1+4}=\sqrt{21+4}=\sqrt{25}=5\le 7=x_1.
+\]
+
+\textbf{Hipótesis de inducción:} Suponga \(x_n\ge 4\) (ya probado) y que \(x_n\ge x_{n-1}\) no es necesario; usaremos directamente \(x_n\ge 4\).
+
+\textbf{Paso inductivo:}
+Con \(x_n\ge 4\) tenemos \(f(x_n)\le x_n\) (por el análisis del Paso 0). Luego
+\[
+x_{n+1}=f(x_n)\le x_n.
+\]
+Concluimos \(\boxed{x_{n+1}\le x_n\ \ \forall n}\); es decir, \((x_n)\) es \textbf{decreciente}.
+
+\paragraph{Conclusión del (a).}
+Por inducción:
+\[
+\boxed{x_n\ge 4\ (\Rightarrow x_n\ge 3)\quad \text{y}\quad x_{n+1}\le x_n\ \text{ para todo }n.}
+\]
+
+% ----------------------------------------------------------
+
+\subsection*{(b) Convergencia y cálculo del límite}
+
+\paragraph{Monotonía + cota inferior.}
+La sucesión es \textbf{decreciente} y está \textbf{acotada inferiormente} por \(4\).
+Por el \emph{Teorema de convergencia monótona}, \((x_n)\) \textbf{converge}.
+
+\paragraph{Cálculo del límite.}
+Sea \(\displaystyle \lim_{n\to\infty} x_n = L\). Pasando a límite en la recurrencia:
+\[
+L=\sqrt{3L+4}
+\ \Longrightarrow\
+L^{2}=3L+4
+\ \Longrightarrow\
+L^{2}-3L-4=0
+\ \Longrightarrow\
+(L-4)(L+1)=0.
+\]
+Como \(x_n>0\), el único límite admisible es
+\[
+\boxed{L=4}.
+\]
+
+\paragraph{Interpretación.}
+El punto fijo de \(f(x)=\sqrt{3x+4}\) en \((0,\infty)\) es \(x=4\).
+Iniciando en \(x_1=7\), la iteración desciende monótonamente y queda atrapada por abajo en \(4\), por lo que converge exactamente a ese punto fijo.
+% ==========================================================
+% Pregunta 4. Sucesión a_n = (n/(n+1)) cos(nπ+1)
+% Convergencia, monotonía y acotación
+% ==========================================================
+\newpage
+\section*{4) Sea \(a_n=\dfrac{n}{n+1}\cos(n\pi+1)\). Analice convergencia, monotonía y acotación.}
+
+\subsection*{Datos}
+\[
+a_n=\frac{n}{n+1}\cos(n\pi+1),\qquad n\in\mathbb{N}.
+\]
+
+\subsection*{Fórmula (descomposición trigonométrica)}
+\[
+\cos(n\pi+1)=\cos(n\pi)\cos 1-\sin(n\pi)\sin 1
+= (-1)^n\cos 1.
+\]
+
+\subsection*{Sustitución}
+\[
+\boxed{\ a_n=(-1)^n\cos 1\cdot\frac{n}{n+1}\ }.
+\]
+
+\subsection*{Cálculo de propiedades}
+
+\paragraph{Acotación.}
+\[
+|a_n|=|\cos 1|\cdot\frac{n}{n+1}<|\cos 1|<1.
+\]
+Luego \(\exists M=|\cos 1|\) tal que \(|a_n|\le M\) para todo \(n\).  
+\[
+\boxed{\text{La sucesión es acotada.}}
+\]
+
+\paragraph{Convergencia.}
+Como \(\dfrac{n}{n+1}\to 1\) y el factor \((-1)^n\) alterna de signo,
+\[
+a_{2k}= \cos 1\cdot \frac{2k}{2k+1}\xrightarrow[k\to\infty]{}\cos 1,
+\qquad
+a_{2k+1}= -\cos 1\cdot \frac{2k+1}{2k+2}\xrightarrow[k\to\infty]{}-\cos 1.
+\]
+Las subsucesiones par e impar tienen \emph{límites distintos}. Por lo tanto,
+\[
+\boxed{\text{la sucesión } (a_n)\ \text{no converge}.}
+\]
+
+\paragraph{Monotonía.}
+Debido al factor \((-1)^n\), los términos cambian de signo; en consecuencia,
+\[
+\boxed{\text{(a\_n) no es monótona en } \mathbb{N}.}
+\]
+Sin embargo, las \emph{subsucesiones} sí lo son:
+\[
+a_{2k}=\cos 1\cdot\frac{2k}{2k+1}\ \nearrow\ \cos 1,
+\qquad
+a_{2k+1}=-\cos 1\cdot\frac{2k+1}{2k+2}\ \searrow\ -\cos 1.
+\]
+
+\subsection*{Conclusión}
+\[
+\boxed{\text{Acotada: sí}} \quad
+\boxed{\text{Monótona: no}} \quad
+\boxed{\text{Convergente: no}}.
+\]
+% ==========================================================
+% Pregunta 5. Series: resolver ambas y justificar el método
+% ==========================================================
+
+\section*{5) Series}
+
+\subsection*{Serie (I): \(\displaystyle \sum_{n=0}^{\infty}(-1)^{n}\,\frac{2^{n}}{(1+\sqrt{2})^{n}}\)}
+
+\textbf{Datos.}
+\[
+a_n=(-1)^n\left(\frac{2}{1+\sqrt{2}}\right)^{n}.
+\]
+
+\textbf{Razón geométrica.}
+\[
+r=-\,\frac{2}{1+\sqrt{2}}
+=-\,\frac{2(1-\sqrt{2})}{(1+\sqrt{2})(1-\sqrt{2})}
+=-\,2(\sqrt{2}-1),
+\qquad |r|=2(\sqrt{2}-1)<1.
+\]
+
+\textbf{Criterio y suma.}
+Como \(|r|<1\), la serie es geométrica convergente y
+\[
+S=\sum_{n=0}^{\infty}r^{n}=\frac{1}{1-r}
+=\frac{1}{1+2(\sqrt{2}-1)}
+=\frac{1}{2\sqrt{2}-1}
+=\frac{2\sqrt{2}+1}{(2\sqrt{2})^{2}-1}
+=\boxed{\frac{2\sqrt{2}+1}{7}}.
+\]
+\subsection*{Serie \(\displaystyle \sum_{n=0}^{\infty}(-1)^{n}\,\frac{2^{n}}{(1+\sqrt{2})^{n}}\)}
+Razón geométrica:
+\[
+r=-\frac{2}{1+\sqrt{2}},\qquad |r|=\frac{2}{1+\sqrt{2}}<1 \Rightarrow \text{converge (geométrica, incluso absolutamente)}.
+\]
+Suma:
+\[
+S=\frac{1}{1-r}
+=\frac{1}{1+\frac{2}{1+\sqrt{2}}}
+=\frac{1+\sqrt{2}}{3+\sqrt{2}}
+=\frac{(1+\sqrt{2})(3-\sqrt{2})}{9-2}
+=\boxed{\frac{1+2\sqrt{2}}{7}}.
+\]
+
+% ----------------------------------------------------------
+
+\subsection*{(II)\quad \(\displaystyle \sum_{n=3}^{\infty}\frac{1}{(2n+1)(2n+3)}\)}
+
+\textbf{Datos.} Términos positivos y decrecientes. El patrón sugiere \emph{telescopía} vía fracciones parciales.
+
+\textbf{Método.} Descomposición en fracciones parciales para obtener una diferencia de términos consecutivos
+que cancele en la suma (serie telescópica). Además, esto también muestra convergencia por comparación con una \(p\)-serie.
+
+\textbf{Fracciones parciales.}
+\[
+\frac{1}{(2n+1)(2n+3)}=\frac{A}{2n+1}+\frac{B}{2n+3}
+\ \Longrightarrow\
+A=\frac{1}{2},\; B=-\frac{1}{2}.
+\]
+\[
+\Rightarrow\quad 
+\frac{1}{(2n+1)(2n+3)}
+=\frac{1}{2}\!\left(\frac{1}{2n+1}-\frac{1}{2n+3}\right).
+\]
+
+\textbf{Telescopía.} Suma parcial \(S_N=\displaystyle\sum_{n=3}^{N}\frac{1}{(2n+1)(2n+3)}\):
+\[
+S_N=\frac{1}{2}\Bigl(\tfrac{1}{7}-\tfrac{1}{9}+\tfrac{1}{9}-\tfrac{1}{11}+\cdots+\tfrac{1}{2N+1}-\tfrac{1}{2N+3}\Bigr)
+=\frac{1}{2}\left(\frac{1}{7}-\frac{1}{2N+3}\right).
+\]
+
+\textbf{Límite de las sumas parciales.}
+\[
+\lim_{N\to\infty}S_N=\frac{1}{2}\cdot\frac{1}{7}
+=\boxed{\frac{1}{14}}.
+\]
+
+\textbf{Justificación de convergencia (adicional).} Para \(n\ge 3\),
+\[
+\frac{1}{(2n+1)(2n+3)}<\frac{1}{(2n)^{2}}=\frac{1}{4n^{2}},
+\]
+y como \(\sum \dfrac{1}{n^{2}}\) converge, por comparación directa la serie dada también converge.
+La telescopía, además, entrega la \emph{suma exacta}.
+% ==========================================================
+% Pregunta 6. Convergencia/divergencia con criterios estudiados
+% ==========================================================
+
+\section*{6) Determine la convergencia o divergencia usando criterios}
+
+\subsection*{(i)\quad \(\displaystyle \sum_{n=1}^{\infty}\frac{n}{n^{2}+\cos(n)}\)}
+
+\textbf{Datos.} Términos positivos; \(-1\le \cos n \le 1\).
+
+\textbf{Criterio elegido:} \emph{Comparación por el límite} con \(b_n=\dfrac{1}{n}\) (serie armónica).
+
+\textbf{Cálculo del cociente límite.}
+\[
+\lim_{n\to\infty}\frac{a_n}{b_n}
+=\lim_{n\to\infty}\frac{\dfrac{n}{n^{2}+\cos n}}{\dfrac{1}{n}}
+=\lim_{n\to\infty}\frac{n^{2}}{n^{2}+\cos n}
+=1\in(0,\infty).
+\]
+
+\textbf{Conclusión.} Como \(\sum \frac{1}{n}\) \textbf{diverge} y el cociente límite es \(1\),
+por el criterio de comparación límite:
+\[
+\boxed{\displaystyle \sum_{n=1}^{\infty}\frac{n}{n^{2}+\cos(n)} \text{ diverge}.}
+\]
+
+\medskip
+\textit{(Observación alternativa)} Para \(n\ge 2\):
+\[
+\frac{n}{n^{2}+\cos n}\ge \frac{n}{n^{2}+1}\sim \frac{1}{n},
+\]
+lo que también da divergencia por comparación directa con la armónica.
+
+% ----------------------------------------------------------
+
+\subsection*{(ii)\quad \(\displaystyle \sum_{n=2}^{\infty}\frac{e^{-\sqrt{n}}}{\sqrt{n}}\)}
+
+\textbf{Datos.} Términos positivos y decrecientes para \(n\ge 2\).
+
+\textbf{Criterio elegido (opción A):} \emph{Criterio integral}.
+Sea \(f(x)=\dfrac{e^{-\sqrt{x}}}{\sqrt{x}}\) continua, positiva y decreciente en \([2,\infty)\).
+
+\textbf{Sustitución.} \(t=\sqrt{x}\Rightarrow x=t^{2},\; dx=2t\,dt\).
+
+\subsection*{Serie \(\displaystyle \sum_{n=2}^{\infty}\frac{e^{-\sqrt{n}}}{\sqrt{n}}\)}
+
+\[
+a_n=\frac{e^{-\sqrt{n}}}{\sqrt{n}}, \quad n\ge2
+\]
+
+\[
+f(x)=\frac{e^{-\sqrt{x}}}{\sqrt{x}}
+\]
+
+\begin{itemize}
+  \item Positiva
+  \item Continua
+  \item Decreciente
+\end{itemize}
+
+\[
+\int_{2}^{\infty}\frac{e^{-\sqrt{x}}}{\sqrt{x}}\,dx
+=\lim_{b\to\infty}\int_{2}^{b}\frac{e^{-\sqrt{x}}}{\sqrt{x}}\,dx
+\]
+
+Sea \(u=\sqrt{x}\), entonces \(du=\dfrac{1}{2\sqrt{x}}dx\Rightarrow dx=2\sqrt{x}\,du\).
+
+\[
+\int_{2}^{b}\frac{e^{-\sqrt{x}}}{\sqrt{x}}\,dx
+=\int_{\sqrt{2}}^{\sqrt{b}}\frac{e^{-u}}{u}\,(2u)\,du
+=2\int_{\sqrt{2}}^{\sqrt{b}}e^{-u}\,du
+\]
+
+\[
+\int e^{-u}\,du=-e^{-u}+C
+\Rightarrow
+\int_{\sqrt{2}}^{\sqrt{b}} 2e^{-u}\,du
+=\left[-2e^{-u}\right]_{\sqrt{2}}^{\sqrt{b}}
+=-2e^{-\sqrt{b}}+2e^{-\sqrt{2}}
+\]
+
+\[
+\lim_{b\to\infty}\left(-2e^{-\sqrt{b}}+2e^{-\sqrt{2}}\right)
+=2e^{-\sqrt{2}}
+\]
+
+\[
+\boxed{\displaystyle \int_{2}^{\infty}\frac{e^{-\sqrt{x}}}{\sqrt{x}}\,dx
+=2e^{-\sqrt{2}}<\infty}
+\]
+
+Por tanto, según el \textbf{criterio integral}:
+\[
+\boxed{\displaystyle \sum_{n=2}^{\infty}\frac{e^{-\sqrt{n}}}{\sqrt{n}} \text{ converge.}}
+\]
+
+
+\textbf{Conclusión.} La integral converge \(\Rightarrow\) por el criterio integral,
+\[
+\boxed{\displaystyle \sum_{n=2}^{\infty}\frac{e^{-\sqrt{n}}}{\sqrt{n}} \text{ converge}.}
+\]
+
+\medskip
+\textbf{Criterio elegido (opción B, equivalente):} \emph{Comparación por bloques} con geométrica.  
+Para \(m\in\mathbb{N}\), si \(n\in[m^{2},(m+1)^{2}-1]\) entonces \(\sqrt{n}\ge m\) y
+\[
+\sum_{n=m^{2}}^{(m+1)^{2}-1}\frac{e^{-\sqrt{n}}}{\sqrt{n}}
+\le \sum_{n=m^{2}}^{(m+1)^{2}-1}\frac{e^{-m}}{m}
+\le \frac{2m\,e^{-m}}{m}=2e^{-m}.
+\]
+Sumando en \(m\):
+\[
+\sum_{n=2}^{\infty}\frac{e^{-\sqrt{n}}}{\sqrt{n}}
+\le \sum_{m=1}^{\infty}2e^{-m}
+=\frac{2}{e-1}<\infty,
+\]
+luego converge por comparación con una geométrica.
+
+\end{document}

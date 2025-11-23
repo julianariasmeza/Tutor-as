@@ -1,0 +1,131 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{hyperref}
+%------------------------------------------------
+% PAQUETES
+%------------------------------------------------
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+
+% Configuración SI y siunitx
+\sisetup{
+  locale = DE,                      % coma decimal
+  output-decimal-marker = {,},      % separador decimal coma
+  per-mode=symbol,
+  exponent-product=\cdot,
+  group-minimum-digits=4
+}
+
+\begin{document}
+
+\section*{Cálculo del pH de una disolución amortiguadora HCOOH/HCOOK}
+
+\subsection*{Datos}
+
+\begin{itemize}
+  \item Concentración del ácido fórmico: 
+  \[
+    [\mathrm{HCOOH}] = \SI{0,30}{mol/L}
+  \]
+  \item Concentración del formiato de potasio:
+  \[
+    [\mathrm{HCOO^-}] = [\mathrm{HCOOK}] = \SI{0,52}{mol/L}
+  \]
+  \item Constante de acidez del ácido fórmico (dato de tablas):
+  \[
+    K_a = 1{,}8 \cdot 10^{-4}
+  \]
+\end{itemize}
+
+\subsection*{Ecuación del equilibrio ácido--base}
+
+El equilibrio del par ácido--base es:
+\[
+\mathrm{HCOOH_{(ac)} \rightleftharpoons H^+_{(ac)} + HCOO^-_{(ac)}} 
+\]
+
+\subsection*{Cálculo de \texorpdfstring{$\mathrm{p}K_a$}{pKa}}
+
+\[
+  \mathrm{p}K_a = -\log_{10}(K_a)
+\]
+
+\[
+  \mathrm{p}K_a = -\log_{10}\bigl(1{,}8 \cdot 10^{-4}\bigr)
+\]
+
+\[
+  \mathrm{p}K_a \approx 3{,}74
+\]
+
+\subsection*{Fórmula para el pH de un amortiguador}
+
+Para una disolución amortiguadora ácido débil / base conjugada se utiliza
+la ecuación de Henderson--Hasselbalch:
+\[
+  \mathrm{pH} = \mathrm{p}K_a + \log_{10}\!\left(
+    \frac{[\text{base conjugada}]}{[\text{ácido débil}]}
+  \right)
+\]
+
+En este caso:
+\[
+  \text{base conjugada} \equiv \mathrm{HCOO^-},
+  \qquad
+  \text{ácido débil} \equiv \mathrm{HCOOH}
+\]
+
+\subsection*{Sustitución de valores}
+
+\[
+  \mathrm{pH} = 3{,}74 + \log_{10}\!\left(
+    \frac{[\mathrm{HCOO^-}]}{[\mathrm{HCOOH}]}
+  \right)
+\]
+
+\[
+  \mathrm{pH} = 3{,}74 + \log_{10}\!\left(
+    \frac{0{,}52}{0{,}30}
+  \right)
+\]
+
+\subsection*{Cálculo numérico}
+
+Primero se calcula el cociente de concentraciones:
+\[
+  \frac{0{,}52}{0{,}30} \approx 1{,}73
+\]
+
+Luego se evalúa el logaritmo decimal:
+\[
+  \log_{10}(1{,}73) \approx 0{,}24
+\]
+
+Sustituyendo en la expresión del pH:
+\[
+  \mathrm{pH} = 3{,}74 + 0{,}24
+\]
+
+\[
+  \boxed{\mathrm{pH} \approx 3{,}98}
+\]
+
+\subsection*{Interpretación}
+
+La disolución formada por ácido fórmico (\(\mathrm{HCOOH}\)) y formiato
+de potasio (\(\mathrm{HCOO^-}\)) actúa como un \emph{amortiguador ácido}.
+El valor de \(\mathrm{pH} \approx 4\) indica que la disolución es
+ligeramente ácida, como se espera para un sistema ácido débil / base
+conjugada donde la concentración de la base es algo mayor que la del ácido.
+\vspace{0.5cm}
+
+\noindent
+Por tanto, el pH de la disolución es aproximadamente:
+\[
+  \boxed{\mathrm{pH} \approx 4{,}0}
+\]
+
+\end{document}

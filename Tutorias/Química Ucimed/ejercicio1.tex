@@ -1,0 +1,173 @@
+\documentclass[11pt,a4paper]{article}
+
+%------------------------------------------------
+% PAQUETES
+%------------------------------------------------
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+
+\sisetup{
+  locale = DE,
+  output-decimal-marker = {,},
+  per-mode = symbol,
+  exponent-product = \cdot,
+  group-minimum-digits = 4
+}
+
+\begin{document}
+
+\section*{pH del buffer NH\(_3\)/NH\(_4^+\) después de agregar NaOH}
+
+\subsection*{Datos iniciales del buffer}
+
+\begin{itemize}
+  \item Concentración de la base débil:
+  \[
+    [\mathrm{NH_3}] = \SI{0,30}{mol/L}
+  \]
+  \item Concentración del ácido conjugado:
+  \[
+    [\mathrm{NH_4^+}] = \SI{0,36}{mol/L}
+  \]
+  \item Volumen de disolución buffer:
+  \[
+    V_{\text{buffer}} = \SI{80,0}{mL} = \SI{0,0800}{L}
+  \]
+  \item Volumen y concentración de la base fuerte añadida:
+  \[
+    V_{\text{NaOH}} = \SI{20,0}{mL} = \SI{0,0200}{L},
+    \quad
+    C_{\text{NaOH}} = \SI{0,050}{mol/L}
+  \]
+  \item Constante de acidez del par NH\(_4^+\)/NH\(_3\):
+  \[
+    pK_a = 9{,}25
+  \]
+\end{itemize}
+
+\subsection*{Reacción entre el buffer y la base fuerte}
+
+La base fuerte reacciona con el ácido del buffer:
+\[
+  \mathrm{{NH_4^+}_{(ac)} + OH^-_{(ac)} \rightarrow H_2O_{(l)} + NH_3{}_{(ac)}}
+\]
+
+\subsection*{Cálculo de moles iniciales}
+
+\paragraph{Moles en el buffer}
+
+\[
+  n(\mathrm{NH_3})_{\text{inicial}} =
+  [\mathrm{NH_3}] \cdot V_{\text{buffer}}
+  = 0{,}30 \cdot 0{,}0800
+  = \SI{0,0240}{mol}
+\]
+
+\[
+  n(\mathrm{NH_4^+})_{\text{inicial}} =
+  [\mathrm{NH_4^+}] \cdot V_{\text{buffer}}
+  = 0{,}36 \cdot 0{,}0800
+  = \SI{0,0288}{mol}
+\]
+
+\paragraph{Moles de NaOH añadidos}
+
+\[
+  n(\mathrm{OH^-}) =
+  C_{\text{NaOH}} \cdot V_{\text{NaOH}}
+  = 0{,}050 \cdot 0{,}0200
+  = \SI{0,00100}{mol}
+\]
+
+\subsection*{Cambio de moles por la reacción}
+
+El ion \(\mathrm{OH^-}\) es el reactivo limitante, por lo que:
+\[
+  \Delta n = \SI{0,00100}{mol}
+\]
+
+\[
+  n(\mathrm{NH_4^+})_{\text{final}} =
+  0{,}0288 - 0{,}00100
+  = \SI{0,0278}{mol}
+\]
+
+\[
+  n(\mathrm{NH_3})_{\text{final}} =
+  0{,}0240 + 0{,}00100
+  = \SI{0,0250}{mol}
+\]
+
+\subsection*{Concentraciones después de la mezcla}
+
+El volumen total final es:
+\[
+  V_{\text{total}} =
+  V_{\text{buffer}} + V_{\text{NaOH}}
+  = 0{,}0800 + 0{,}0200
+  = \SI{0,1000}{L}
+\]
+
+\[
+  [\mathrm{NH_3}]_{\text{final}} =
+  \frac{n(\mathrm{NH_3})_{\text{final}}}{V_{\text{total}}}
+  = \frac{0{,}0250}{0{,}1000}
+  = \SI{0,250}{mol/L}
+\]
+
+\[
+  [\mathrm{NH_4^+}]_{\text{final}} =
+  \frac{n(\mathrm{NH_4^+})_{\text{final}}}{V_{\text{total}}}
+  = \frac{0{,}0278}{0{,}1000}
+  = \SI{0,278}{mol/L}
+\]
+
+\subsection*{Cálculo del pH con Henderson--Hasselbalch}
+
+Se aplica la ecuación de Henderson--Hasselbalch para el par
+\(\mathrm{NH_4^+/NH_3}\):
+
+\[
+  \mathrm{pH} = pK_a +
+  \log_{10}\!\left(
+    \frac{[\text{base}]}{[\text{ácido}]}
+  \right)
+\]
+
+\[
+  \mathrm{pH} =
+  9{,}25 +
+  \log_{10}\!\left(
+    \frac{[\mathrm{NH_3}]_{\text{final}}}{[\mathrm{NH_4^+}]_{\text{final}}}
+  \right)
+  =
+  9{,}25 +
+  \log_{10}\!\left(
+    \frac{0{,}250}{0{,}278}
+  \right)
+\]
+
+Primero el cociente:
+\[
+  \frac{0{,}250}{0{,}278} \approx 0{,}90
+\]
+
+Luego el logaritmo:
+\[
+  \log_{10}(0{,}90) \approx -0{,}05
+\]
+
+Por tanto:
+\[
+  \mathrm{pH} \approx 9{,}25 - 0{,}05 = 9{,}20
+\]
+
+\[
+  \boxed{\mathrm{pH}_{\text{después de agregar NaOH}} \approx 9{,}20}
+\]
+
+\end{document}

@@ -1,0 +1,274 @@
+\documentclass[11pt]{article}
+
+% ============================================================
+% PAQUETES BÁSICOS
+% ============================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+
+% ============================================================
+% CONFIGURACIÓN DE UNIDADES Y DECIMALES
+% ============================================================
+\sisetup{
+  locale = DE,
+  output-decimal-marker = {,}, % coma decimal
+  per-mode = symbol,
+  exponent-product = \cdot,
+  group-minimum-digits = 4
+}
+
+% ============================================================
+% DOCUMENTO
+% ============================================================
+\begin{document}
+
+\begin{center}
+{\Large \textbf{Ejemplos de equilibrio térmico}}\\[4pt]
+\textit{Transferencia de calor y temperatura de equilibrio}\\[6pt]
+\end{center}
+
+% ============================================================
+\section*{Ejemplo 1}
+
+\textbf{Enunciado:}  
+Determinar la temperatura final de equilibrio cuando \SI{10}{g} de leche a \SI{10}{\celsius} se mezclan con \SI{160}{g} de café a \SI{90}{\celsius}, suponiendo que ambos líquidos tienen el mismo calor específico del agua 
+(\(c = \SI{4186}{J/(kg·°C)}\)) y se desprecia el calor del recipiente.
+
+% ------------------------------------------------------------
+\subsection*{Datos}
+\begin{align*}
+m_\text{leche} &= \SI{10}{g} = \SI{0,010}{kg},\\
+m_\text{café} &= \SI{160}{g} = \SI{0,160}{kg},\\
+T_{i,\text{leche}} &= \SI{10}{\celsius}, &
+T_{i,\text{café}} &= \SI{90}{\celsius},\\
+c_\text{agua} &= \SI{4186}{\joule\per\kilogram\per\celsius}.
+\end{align*}
+
+% ------------------------------------------------------------
+\subsection*{Fórmula}
+Como el calor cedido por el café es igual al calor absorbido por la leche:
+\[
+m_\text{café}\,c\,(T_{i,\text{café}} - T_f) = m_\text{leche}\,c\,(T_f - T_{i,\text{leche}}).
+\]
+
+Simplificando (se cancela \(c\)):
+\[
+m_\text{café}(T_{i,\text{café}} - T_f) = m_\text{leche}(T_f - T_{i,\text{leche}}).
+\]
+
+% ------------------------------------------------------------
+\subsection*{Sustitución}
+\[
+0,160(90 - T_f) = 0,010(T_f - 10).
+\]
+
+% ------------------------------------------------------------
+\subsection*{Cálculo}
+\[
+14,4 - 0,160T_f = 0,010T_f - 0,1,
+\]
+\[
+14,5 = 0,170T_f,
+\]
+\[
+T_f = \frac{14,5}{0,170} = \SI{85,3}{\celsius}.
+\]
+
+% ------------------------------------------------------------
+\subsection*{Conclusión}
+La temperatura final de equilibrio del sistema leche–café es:
+\[
+\boxed{T_f = \SI{85,3}{\celsius}}.
+\]
+\newpage
+% ============================================================
+\section*{Ejemplo 2}
+
+\textbf{Enunciado:}  
+Si \SI{100}{g} de agua a \SI{100}{\celsius} se vierten dentro de una taza de aluminio de \SI{20}{g} que contiene \SI{50}{g} de agua a \SI{20}{\celsius}, determinar la temperatura de equilibrio del sistema.
+
+% ------------------------------------------------------------
+\subsection*{Datos}
+\begin{align*}
+m_1 &= \SI{100}{g} = \SI{0,100}{kg} \quad \text{(agua caliente)},\\
+m_2 &= \SI{50}{g} = \SI{0,050}{kg} \quad \text{(agua fría)},\\
+m_\text{taza} &= \SI{20}{g} = \SI{0,020}{kg},\\
+T_{i,1} &= \SI{100}{\celsius}, &
+T_{i,2} &= \SI{20}{\celsius}, &
+T_{i,\text{taza}} &= \SI{20}{\celsius},\\
+c_\text{agua} &= \SI{4186}{\joule\per\kilogram\per\celsius}, &
+c_\text{Al} &= \SI{900}{\joule\per\kilogram\per\celsius}.
+\end{align*}
+
+% ------------------------------------------------------------
+\subsection*{Fórmula}
+El calor perdido por el agua caliente es ganado por el agua fría y la taza:
+\[
+m_1c_\text{agua}(T_{i,1} - T_f)
+= m_2c_\text{agua}(T_f - T_{i,2}) + m_\text{taza}c_\text{Al}(T_f - T_{i,\text{taza}}).
+\]
+
+% ------------------------------------------------------------
+\subsection*{Sustitución}
+\[
+(0,100)(4186)(100 - T_f) =
+(0,050)(4186)(T_f - 20) + (0,020)(900)(T_f - 20).
+\]
+
+% ------------------------------------------------------------
+\subsection*{Cálculo}
+\[
+418,6(100 - T_f) = 209,3(T_f - 20) + 18(T_f - 20),
+\]
+\[
+41860 - 418,6T_f = 227,3T_f - 4546,
+\]
+\[
+41860 + 4546 = 645,9T_f,
+\]
+\[
+T_f = \frac{46406}{645,9} = \SI{71,9}{\celsius}.
+\]
+
+% ------------------------------------------------------------
+\subsection*{Conclusión}
+La temperatura final de equilibrio del sistema agua–taza de aluminio es:
+\[
+\boxed{T_f = \SI{71,9}{\celsius}}.
+\]
+\newpage
+% ============================================================
+\section*{Ejemplo 3}
+
+\textbf{Enunciado:}  
+Un técnico de laboratorio pone una muestra de \SI{0,0850}{kg} de un material desconocido, que está a \SI{100,0}{\celsius}, en un calorímetro cuyo recipiente, inicialmente a \SI{19,0}{\celsius}, está hecho con \SI{0,150}{kg} de cobre y contiene \SI{0,200}{kg} de agua.  
+La temperatura final del calorímetro y su contenido es de \SI{26,1}{\celsius}.  
+Calcular el calor específico de la muestra.
+
+\subsection*{Datos}
+\begin{align*}
+m_\text{muestra} &= \SI{0,0850}{kg}, &
+T_{i,\text{muestra}} &= \SI{100,0}{\celsius},\\
+m_\text{agua} &= \SI{0,200}{kg}, &
+T_{i,\text{agua}} &= \SI{19,0}{\celsius},\\
+m_\text{Cu} &= \SI{0,150}{kg}, &
+T_{i,\text{Cu}} &= \SI{19,0}{\celsius},\\
+T_f &= \SI{26,1}{\celsius},\\
+c_\text{agua} &= \SI{4186}{\joule\per\kilogram\per\celsius},\\
+c_\text{Cu} &= \SI{387}{\joule\per\kilogram\per\celsius}.
+\end{align*}
+
+\subsection*{Fórmula}
+El calor perdido por la muestra es igual al calor ganado por el agua y por el cobre:
+\[
+m_\text{muestra}\,c_\text{muestra}(T_{i,\text{muestra}} - T_f)
+= m_\text{agua}\,c_\text{agua}(T_f - T_{i,\text{agua}})
++ m_\text{Cu}\,c_\text{Cu}(T_f - T_{i,\text{Cu}}).
+\]
+Despejando:
+\[
+c_\text{muestra} =
+\frac{m_\text{agua}\,c_\text{agua}(T_f - T_{i,\text{agua}})
++ m_\text{Cu}\,c_\text{Cu}(T_f - T_{i,\text{Cu}})}
+{m_\text{muestra}(T_{i,\text{muestra}} - T_f)}.
+\]
+
+\subsection*{Sustitución}
+\[
+c_\text{muestra} =
+\frac{(0,200)(4186)(26,1 - 19,0)
++ (0,150)(387)(26,1 - 19,0)}
+{(0,0850)(100,0 - 26,1)}.
+\]
+
+\subsection*{Cálculo}
+\[
+\begin{aligned}
+Q_\text{agua} &= (0,200)(4186)(7,1) = \SI{5944,1}{\joule},\\[2pt]
+Q_\text{Cu}   &= (0,150)(387)(7,1) = \SI{412,2}{\joule},\\[2pt]
+Q_\text{ganado} &= Q_\text{agua} + Q_\text{Cu}
+= \SI{6356,3}{\joule}.
+\end{aligned}
+\]
+Entonces:
+\[
+c_\text{muestra} =
+\frac{6356,3}{(0,0850)(73,9)}
+= \SI{1,01e3}{\joule\per\kilogram\per\celsius}.
+\]
+
+\subsection*{Conclusión}
+El calor específico de la muestra es, aproximadamente,
+\[
+\boxed{c_\text{muestra} \approx \SI{1,0e3}{\joule\per\kilogram\per\celsius}}.
+\]
+
+% ============================================================
+\section*{Ejercicio 4}
+
+\textbf{Enunciado:}  
+Un vaso aislado con masa despreciable contiene \SI{0,250}{kg} de agua a \SI{75,0}{\celsius}.  
+¿Cuántos kilogramos de hielo a \SI{-20,0}{\celsius} deben ponerse en el agua para que la temperatura final del sistema sea \SI{40,0}{\celsius}?
+
+\subsection*{Datos}
+\begin{align*}
+m_\text{agua} &= \SI{0,250}{kg}, &
+T_{i,\text{agua}} &= \SI{75,0}{\celsius},\\
+m_\text{hielo} &= m \quad \text{(incógnita)}, &
+T_{i,\text{hielo}} &= \SI{-20,0}{\celsius},\\
+T_f &= \SI{40,0}{\celsius},\\
+c_\text{agua} &= \SI{4186}{\joule\per\kilogram\per\celsius},\\
+c_\text{hielo} &= \SI{2090}{\joule\per\kilogram\per\celsius},\\
+L_f &= \SI{3,34e5}{\joule\per\kilogram}
+\quad \text{(calor latente de fusión del agua)}.
+\end{align*}
+
+\subsection*{Fórmula}
+El agua caliente pierde calor y el hielo lo gana en tres etapas:
+\begin{itemize}
+  \item Calentamiento del hielo de \SI{-20}{\celsius} a \SI{0}{\celsius}.
+  \item Fusión del hielo a \SI{0}{\celsius}.
+  \item Calentamiento del agua procedente del hielo de \SI{0}{\celsius} a \SI{40}{\celsius}.
+\end{itemize}
+Balance de energía:
+\[
+m_\text{agua}c_\text{agua}(T_{i,\text{agua}} - T_f)
+= m\big[c_\text{hielo}(0 - T_{i,\text{hielo}})
++ L_f
++ c_\text{agua}(T_f - 0)\big].
+\]
+
+\subsection*{Sustitución}
+\[
+(0,250)(4186)(75,0 - 40,0)
+= m\big[2090(20) + 3,34\cdot10^{5} + 4186(40)\big].
+\]
+
+\subsection*{Cálculo}
+\[
+\begin{aligned}
+Q_\text{perdido} &= (0,250)(4186)(35)
+= \SI{36627,5}{\joule},\\[4pt]
+\text{término entre corchetes} &= 2090(20) + 3,34\cdot10^{5} + 4186(40)\\
+&= 41800 + 334000 + 167440\\
+&= \SI{5,4324e5}{\joule\per\kilogram}.
+\end{aligned}
+\]
+Entonces,
+\[
+m = \frac{36627,5}{5,4324\cdot10^{5}}
+= \SI{6,74e-2}{\kilogram}.
+\]
+
+\subsection*{Conclusión}
+Se deben agregar aproximadamente
+\[
+\boxed{m_\text{hielo} \approx \SI{6,7e-2}{\kilogram} \approx \SI{0,067}{\kilogram}}
+\]
+de hielo, es decir, alrededor de \SI{67}{g}.
+\end{document}

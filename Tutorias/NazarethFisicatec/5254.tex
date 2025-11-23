@@ -1,0 +1,175 @@
+\documentclass[11pt,a4paper]{article}
+
+%------------------------------------------------
+% PAQUETES
+%------------------------------------------------
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+
+\sisetup{
+  locale = DE,
+  output-decimal-marker = {,},
+  per-mode = symbol,
+  exponent-product = \cdot,
+  group-minimum-digits = 4
+}
+
+\begin{document}
+
+%=================================================
+\section*{Problema 8.52 – Centro de masa Sol–Júpiter}
+
+\subsection*{Datos}
+
+\begin{itemize}
+  \item Masa del Sol:
+  \[
+    m_S = 1,99\times 10^{30}\ \text{kg}
+  \]
+  \item Masa de Júpiter:
+  \[
+    m_J = 1,90\times 10^{27}\ \text{kg}
+  \]
+  \item Distancia Sol–Júpiter:
+  \[
+    x_J = 7,78\times 10^{11}\ \text{m}
+  \]
+  \item Tomamos el origen en el centro del Sol:
+  \[
+    x_S = 0
+  \]
+\end{itemize}
+
+\subsection*{Fórmula}
+
+\[
+x_{cm} = \frac{m_S x_S + m_J x_J}{m_S + m_J}
+\]
+
+\subsection*{Sustitución}
+
+\[
+x_{cm} = 
+\frac{(1,90\times 10^{27})(7,78\times 10^{11})}
+{1,99\times 10^{30} + 1,90\times 10^{27}}
+\]
+
+\subsection*{Cálculo}
+
+\[
+x_{cm} = \frac{1,478\times 10^{39}}
+{1,9919\times 10^{30}}
+= 7,42\times 10^{8}\ \text{m}
+\]
+
+\subsection*{Conclusión}
+
+\[
+\boxed{x_{cm} = 7,42\times 10^{8}\ \text{m}}
+\]
+
+El radio del Sol es:
+\[
+R_S = 6,96\times 10^{8}\ \text{m}
+\]
+
+Por lo tanto:
+\[
+x_{cm} > R_S
+\]
+
+El centro de masa del sistema Sol–Júpiter está \textbf{ligeramente fuera del Sol}.
+
+%=================================================
+\newpage
+
+\section*{Problema 8.54 – Sistema de dos vehículos}
+
+\subsection*{Datos}
+
+\begin{itemize}
+  \item Camioneta (A):
+  \[
+    m_A = 1200\ \text{kg},\quad v_A = 12,0\ \text{m/s},\quad x_A = 0
+  \]
+  \item Automóvil (B):
+  \[
+    m_B = 1800\ \text{kg},\quad v_B = 20,0\ \text{m/s},\quad x_B = 40,0\ \text{m}
+  \]
+  \item Masa total:
+  \[
+    M = m_A + m_B = 3000\ \text{kg}
+  \]
+\end{itemize}
+
+\subsection*{(a) Posición del centro de masa}
+
+\[
+x_{cm} = \frac{m_A x_A + m_B x_B}{m_A + m_B}
+\]
+
+\[
+x_{cm} = 
+\frac{0 + (1800)(40)}
+{1200 + 1800}
+\]
+
+\[
+x_{cm} = \frac{72000}{3000} = 24,0\ \text{m}
+\]
+
+\[
+\boxed{x_{cm} = 24,0\ \text{m}}
+\]
+
+El centro de masa está entre los vehículos.
+
+\subsection*{(b) Cantidad de movimiento total}
+
+\[
+P_x = m_A v_A + m_B v_B
+\]
+
+\[
+P_x = (1200)(12,0) + (1800)(20,0)
+\]
+
+\[
+P_x = 14400 + 36000 = 50400\ \text{kg·m/s}
+\]
+
+\[
+\boxed{P_x = 5,04\times 10^{4}\ \text{kg·m/s}}
+\]
+
+\subsection*{(c) Velocidad del centro de masa}
+
+\[
+v_{cm} = \frac{P_x}{M}
+\]
+
+\[
+v_{cm} = \frac{50400}{3000}
+\]
+
+\[
+\boxed{v_{cm} = 16,8\ \text{m/s}}
+\]
+
+\subsection*{(d) Verificación con \(P_x = M v_{cm}\)}
+
+\[
+P_x = (3000)(16,8)
+\]
+
+\[
+P_x = 50400\ \text{kg·m/s}
+\]
+
+Coincide con el inciso (b).
+
+\end{document}

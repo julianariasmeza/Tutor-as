@@ -1,0 +1,100 @@
+\documentclass[11pt]{article}
+
+% ============================================================
+% PAQUETES BÁSICOS
+% ============================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+
+% ============================================================
+% CONFIGURACIÓN DE UNIDADES Y DECIMALES
+% ============================================================
+\sisetup{
+  locale = DE,                  % para usar coma decimal
+  output-decimal-marker = {,},  % separador decimal coma
+  per-mode = symbol,            % estilo de unidades por símbolo
+  exponent-product = \cdot,     % usa el punto centrado en potencias
+  group-minimum-digits = 4
+}
+
+% ============================================================
+% DOCUMENTO
+% ============================================================
+\begin{document}
+
+\begin{center}
+{\Large \textbf{Ejercicio 4. Determinación del calor específico de un cilindro}}\\[4pt]
+\textit{Laboratorio de Física — Mezcla térmica}\\[6pt]
+\end{center}
+
+Se desea determinar el calor específico de un cilindro metálico mediante un experimento de mezcla térmica. 
+Se desprecia el calor absorbido por el calorímetro.
+
+% ------------------------------------------------------------
+\subsection*{Datos}
+\begin{align*}
+m_\text{calorímetro} &= \SI{50}{g},\\
+m_\text{cilindro} &= \SI{318}{g} = \SI{0,318}{kg},\\
+m_\text{calorímetro + agua} &= \SI{222}{g} \Rightarrow 
+m_\text{agua} = 222 - 50 = \SI{172}{g} = \SI{0,172}{kg},\\
+T_{i,\text{cil}} &= \SI{95,6}{\celsius}, &
+T_{f,\text{cil}} &= \SI{27,2}{\celsius},\\
+T_{i,\text{agua}} &= \SI{23,3}{\celsius}, &
+T_{f,\text{agua}} &= \SI{27,2}{\celsius},\\
+c_\text{agua} &= \SI{4186}{\joule\per\kilogram\per\celsius}.
+\end{align*}
+
+% ------------------------------------------------------------
+\subsection*{Fórmula}
+El calor perdido por el cilindro es igual al calor ganado por el agua:
+\[
+m_\text{cil}\,c_\text{cil}\,(T_{i,\text{cil}} - T_{f,\text{cil}}) = 
+m_\text{agua}\,c_\text{agua}\,(T_{f,\text{agua}} - T_{i,\text{agua}}).
+\]
+Despejando el calor específico del cilindro:
+\[
+c_\text{cil} =
+\frac{m_\text{agua}\,c_\text{agua}\,(T_{f,\text{agua}} - T_{i,\text{agua}})}
+{m_\text{cil}\,(T_{i,\text{cil}} - T_{f,\text{cil}})}.
+\]
+
+% ------------------------------------------------------------
+\subsection*{Sustitución}
+\[
+c_\text{cil} =
+\frac{(0,172)(4186)(27,2 - 23,3)}
+{(0,318)(95,6 - 27,2)}.
+\]
+
+% ------------------------------------------------------------
+\subsection*{Cálculo}
+\[
+\begin{aligned}
+c_\text{cil} &=
+\frac{(0,172)(4186)(3,9)}
+{(0,318)(68,4)}\\[4pt]
+&= \frac{(0,172)(16325,4)}{21,7512}\\[4pt]
+&= \frac{2807,0}{21,7512}\\[4pt]
+&= \SI{128,99}{\joule\per\kilogram\per\celsius}.
+\end{aligned}
+\]
+
+% ------------------------------------------------------------
+\subsection*{Interpretación}
+El valor obtenido del calor específico es:
+\[
+\boxed{c_\text{cil} = \SI{129}{\joule\per\kilogram\per\celsius}}.
+\]
+
+Este resultado coincide estrechamente con el valor tabulado del \textbf{plomo} 
+\[
+(c_\text{Pb} \approx \SI{128}{\joule\per\kilogram\per\celsius}).
+\]
+Por tanto, la muestra desconocida corresponde probablemente a un cilindro de plomo.
+
+\end{document}

@@ -1,0 +1,1098 @@
+\documentclass{article}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{fancyhdr}
+
+% Encabezado con tu nombre
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\small Desarrollada por Julián Arias Meza}
+\fancyfoot[C]{\thepage}
+
+\begin{document}
+
+\begin{center}
+\Large \textbf{Práctica de Examen – CTP Dulce Nombre}
+\end{center}
+
+\vspace{0.5cm}
+
+\section*{Enunciados}
+
+\begin{enumerate}
+  \item[1.] Un prisma rectangular tiene largo \(\SI{10,0}{cm}\), ancho \(\SI{6,0}{cm}\) y altura \(\SI{4,0}{cm}\). Calcule el \textbf{área total}.
+
+  \item[2.] Halle el \textbf{área lateral} de un prisma cuadrangular recto de altura \(\SI{18}{cm}\) y base cuadrada de lado \(\SI{5,0}{cm}\).
+
+  \item[3.] Un prisma triangular recto tiene por base un \textbf{triángulo equilátero} de lado \(\SI{8,0}{cm}\) y altura del prisma \(\SI{12,0}{cm}\). Calcule el \textbf{área total}.
+
+  \item[4.] Un prisma cuadrangular recto tiene altura de \(\SI{25}{cm}\) y la diagonal del cuadrado de su base mide \(8\sqrt{2}\ \text{cm}\). ¿Cuál es el \textbf{área total} del prisma?
+
+  \item[5.] Averigüe el \textbf{área lateral} de un prisma rectangular cuya base mide \(\SI{6,2}{cm}\) por \(\SI{4,0}{cm}\) y cuya altura es \(\SI{5,8}{cm}\).
+
+  \item[6.] Halle el \textbf{área lateral} de un prisma cuadrangular recto de \(\SI{14}{cm}\) de altura, cuya base es un cuadrado de lado \(\SI{4,0}{cm}\).
+
+  \item[7.] Un almacén tiene forma de \textbf{prisma rectangular} con longitud \(\SI{20}{m}\), ancho \(\SI{5}{m}\) y altura \(\SI{7}{m}\). Calcule el \textbf{área de sus paredes} (solo superficies laterales).
+
+  \item[8.] La \textbf{superficie total} de un prisma con base cuadrada es \(\SI{360}{cm^2}\) y su altura es el doble de la longitud de la arista de la base. Halle las \textbf{dimensiones del prisma} (lado de la base y altura).
+
+  \item[9.] Un \textbf{prisma triangular recto} tiene perímetro de la base \(\SI{22}{cm}\) y altura \(\SI{9}{cm}\). Determine el \textbf{área lateral}.
+
+  \item[10.] Una \textbf{piscina} mide \(\SI{12}{m}\) de largo, \(\SI{8}{m}\) de ancho y \(\SI{1,5}{m}\) de profundidad. Se va a pintar el \textbf{piso y las paredes interiores} a razón de \(\text{₡}\,1\,500\) por \(\si{m^2}\). ¿Cuánto costará pintarla?
+
+  \item[11.] Determine el \textbf{área total} de los \textbf{prismas mostrados en la figura} (use los datos dados en cada caso).
+\end{enumerate}
+
+\newpage
+\section*{Soluciones}
+
+\begin{enumerate}
+  \item[1.] \textbf{Prisma rectangular (área total)}
+  \[
+  A_T = 2(lw + lh + wh)
+  \]
+  \[
+  lw = 10,0\cdot 6,0 = \SI{60,0}{cm^2},\quad
+  lh = 10,0\cdot 4,0 = \SI{40,0}{cm^2},\quad
+  wh = 6,0\cdot 4,0 = \SI{24,0}{cm^2}
+  \]
+  \[
+  lw+lh+wh = 60,0+40,0+24,0 = \SI{124,0}{cm^2}
+  \]
+  \[
+  A_T = 2\cdot 124,0 = \boxed{\SI{248,0}{cm^2}}
+  \]
+
+  \item[2.] \textbf{Prisma cuadrangular (área lateral)}
+  \[
+  P_{\text{base}} = 4a = 4\cdot 5,0 = \SI{20,0}{cm}
+  \]
+  \[
+  A_L = P_{\text{base}}\cdot h = 20,0\cdot 18 = \boxed{\SI{360,0}{cm^2}}
+  \]
+
+  \item[3.] \textbf{Prisma triangular recto (área total), base equilátera}
+  \[
+  P_{\text{base}} = 3a = 3\cdot 8,0 = \SI{24,0}{cm},\qquad
+  A_{\text{base}} = \frac{\sqrt{3}}{4}a^2 = \frac{\sqrt{3}}{4}\cdot 64 = 16\sqrt{3}\ \si{cm^2}
+  \]
+  \[
+  A_L = P_{\text{base}}\cdot h = 24,0\cdot 12,0 = \SI{288,0}{cm^2}
+  \]
+  \[
+  A_T = A_L + 2A_{\text{base}} = 288,0 + 32\sqrt{3}\ \si{cm^2}
+  \]
+  \[
+  \text{Aprox.: } \sqrt{3}\approx 1,732 \Rightarrow A_T \approx 288,0 + 55,424 = \boxed{\SI{343,424}{cm^2}}
+  \]
+
+  \item[4.] \textbf{Prisma cuadrangular (área total) con diagonal de base}
+  \[
+  d = a\sqrt{2}\ \Rightarrow\ a = \frac{8\sqrt{2}}{\sqrt{2}} = \SI{8}{cm}
+  \]
+  \[
+  A_{\text{base}} = a^2 = 8^2 = \SI{64}{cm^2},\qquad
+  A_L = (4a)\cdot h = (32)\cdot 25 = \SI{800}{cm^2}
+  \]
+  \[
+  A_T = A_L + 2A_{\text{base}} = 800 + 128 = \boxed{\SI{928}{cm^2}}
+  \]
+
+  \item[5.] \textbf{Prisma rectangular (área lateral)}
+  \[
+  A_L = 2(b\cdot h) + 2(c\cdot h)
+  \]
+  \[
+  2(6,2\cdot 5,8) = \SI{71,92}{cm^2},\quad
+  2(4,0\cdot 5,8) = \SI{46,4}{cm^2}
+  \]
+  \[
+  A_L = 71,92 + 46,4 = \boxed{\SI{118,32}{cm^2}}
+  \]
+  (Si se requiere el área total: \(A_T = A_L + 2\cdot 6,2\cdot 4,0 = 118,32 + 49,6 = \SI{167,92}{cm^2}\).)
+
+  \item[6.] \textbf{Prisma cuadrangular (área lateral)}
+  \[
+  P_{\text{base}} = 4\cdot 4,0 = \SI{16}{cm}
+  \]
+  \[
+  A_L = P_{\text{base}}\cdot h = 16\cdot 14 = \boxed{\SI{224}{cm^2}}
+  \]
+
+  \item[7.] \textbf{Almacén (área de paredes)}
+  \[
+  A_L = 2(l\cdot h) + 2(w\cdot h) = 2(20\cdot 7) + 2(5\cdot 7)
+  \]
+  \[
+  = 280 + 70 = \boxed{\SI{350}{m^2}}
+  \]
+
+  \item[8.] \textbf{Prisma con \(A_T\) conocida (base cuadrada)}
+  \[
+  \text{Sea } x=\text{lado de la base},\quad h=2x
+  \]
+  \[
+  A_T = 2x^2 + (\text{perímetro})\cdot h = 2x^2 + 4x\cdot (2x) = 2x^2 + 8x^2 = 10x^2
+  \]
+  \[
+  10x^2 = 360 \Rightarrow x^2 = 36 \Rightarrow x = \SI{6}{cm},\quad h=2x=\boxed{\SI{12}{cm}}
+  \]
+
+  \item[9.] \textbf{Prisma triangular (área lateral) con perímetro}
+  \[
+  A_L = P_{\text{base}}\cdot h = 22\cdot 9 = \boxed{\SI{198}{cm^2}}
+  \]
+
+  \item[10.] \textbf{Piscina (costo de pintura)}
+  \[
+  A_{\text{piso}} = 12\cdot 8 = \SI{96}{m^2},\qquad
+  A_{\text{paredes}} = 2(12\cdot 1,5) + 2(8\cdot 1,5) = 36 + 24 = \SI{60}{m^2}
+  \]
+  \[
+  A_T = 96 + 60 = \SI{156}{m^2}
+  \]
+  \[
+  \text{Costo} = 156\times 1500 = \boxed{\SI{234000}{colones}}
+  \]
+
+  \item[11.] \textbf{Prismas de la figura (procedimiento general)}
+  \[
+  A_L = P_{\text{base}}\cdot h,\qquad A_T = A_L + 2A_{\text{base}}
+  \]
+  \[
+  \text{Calcular } P_{\text{base}} \text{ y } A_{\text{base}} \text{ con la geometría dada (cuadrado, rectángulo, triángulo, etc.)}
+  \]
+  \[
+  \text{Sustituir los datos de cada figura para obtener } A_L \text{ y } A_T.
+  \]
+\end{enumerate}
+
+\section*{Factorización por factor común}
+
+\subsection*{Ejercicios}
+
+\begin{enumerate}
+  \item \(a^{2} + ab + ax + bx\)
+  \item \(ab + 3a + 2b + 6\)
+  \item \(ab - 2a - 5b + 10\)
+  \item \(2ab + 2a - b - 1\)
+  \item \(am - bm + an - bn\)
+  \item \(3x^{3} - 9ax^{2} - x + 3a\)
+  \item \(3x^{2} - 3bx + xy - by\)
+  \item \(6ab + 4a - 15b - 10\)
+  \item \(3a - b^{2} + 2b^{2}x - 6ax\)
+  \item \(a^{3} + a^{2} + a + 1\)
+  \item \(ac - a - bc + b + c^{2} - c\)
+  \item \(6ac - 4ad - 9bc + 6bd + 15c^{2} - 10cd\)
+\end{enumerate}
+
+\newpage
+\subsection*{Soluciones}
+
+\begin{enumerate}
+  \item 
+  \[
+  a^{2} + ab + ax + bx 
+  \]
+  \[
+  = a(a+b) + x(a+b)
+  \]
+  \[
+  = (a+b)(a+x)
+  \]
+
+  \item 
+  \[
+  ab + 3a + 2b + 6
+  \]
+  \[
+  = a(b+3) + 2(b+3)
+  \]
+  \[
+  = (a+2)(b+3)
+  \]
+
+  \item 
+  \[
+  ab - 2a - 5b + 10
+  \]
+  \[
+  = a(b-2) - 5(b-2)
+  \]
+  \[
+  = (a-5)(b-2)
+  \]
+
+  \item 
+  \[
+  2ab + 2a - b - 1
+  \]
+  \[
+  = 2a(b+1) - (b+1)
+  \]
+  \[
+  = (2a-1)(b+1)
+  \]
+
+  \item 
+  \[
+  am - bm + an - bn
+  \]
+  \[
+  = m(a-b) + n(a-b)
+  \]
+  \[
+  = (a-b)(m+n)
+  \]
+
+  \item 
+  \[
+  3x^{3} - 9ax^{2} - x + 3a
+  \]
+  \[
+  = 3x^{2}(x-3a) - (x-3a)
+  \]
+  \[
+  = (3x^{2}-1)(x-3a)
+  \]
+
+  \item 
+  \[
+  3x^{2} - 3bx + xy - by
+  \]
+  \[
+  = 3x(x-b) + y(x-b)
+  \]
+  \[
+  = (3x+y)(x-b)
+  \]
+
+  \item 
+  \[
+  6ab + 4a - 15b - 10
+  \]
+  \[
+  = 2a(3b+2) - 5(3b+2)
+  \]
+  \[
+  = (2a-5)(3b+2)
+  \]
+
+  \item 
+  \[
+  3a - b^{2} + 2b^{2}x - 6ax
+  \]
+  \[
+  = 3a(1-2x) - b^{2}(1-2x)
+  \]
+  \[
+  = (3a-b^{2})(1-2x)
+  \]
+
+  \item 
+  \[
+  a^{3} + a^{2} + a + 1
+  \]
+  \[
+  = a^{2}(a+1) + 1(a+1)
+  \]
+  \[
+  = (a^{2}+1)(a+1)
+  \]
+
+  \item 
+  \[
+  ac - a - bc + b + c^{2} - c
+  \]
+  \[
+  = (a-b)(c-1) + c(c-1)
+  \]
+  \[
+  = (a-b+c)(c-1)
+  \]
+
+  \item 
+  \[
+  6ac - 4ad - 9bc + 6bd + 15c^{2} - 10cd
+  \]
+  \[
+  = 2a(3c-2d) - 3b(3c-2d) + 5c(3c-2d)
+  \]
+  \[
+  = (3c-2d)(2a-3b+5c)
+  \]
+\end{enumerate}
+\section*{Factorización por diferencia de cuadrados}
+
+\subsection*{Ejercicios}
+
+\begin{enumerate}
+  \item \(x^{2} - y^{2}\)
+  \item \(4x^{2} - 36\)
+  \item \(1 - \dfrac{m^{2}}{25}\)
+  \item \(n^{4} - 9n^{2}\)
+  \item \(81x^{2} - (x+y)^{2}\)
+  \item \((x-2y)^{2} - (x+y)^{2}\)
+  \item \(\dfrac{1}{25}x^{6} - \dfrac{6}{5}x^{2} + 9\)   % forma especial tipo cuadrado
+  \item \(a^{4} - 2a^{2}b^{2} + b^{4}\)                % cuadrado perfecto disfrazado
+\end{enumerate}
+
+\newpage
+\subsection*{Soluciones}
+
+\begin{enumerate}
+  \item 
+  \[
+  x^{2} - y^{2}
+  \]
+  \[
+  = (x-y)(x+y)
+  \]
+
+  \item 
+  \[
+  4x^{2} - 36
+  \]
+  \[
+  = (2x)^{2} - 6^{2}
+  \]
+  \[
+  = (2x-6)(2x+6)
+  \]
+
+  \item 
+  \[
+  1 - \frac{m^{2}}{25}
+  \]
+  \[
+  = 1^{2} - \left(\frac{m}{5}\right)^{2}
+  \]
+  \[
+  = \left(1-\frac{m}{5}\right)\left(1+\frac{m}{5}\right)
+  \]
+
+  \item 
+  \[
+  n^{4} - 9n^{2}
+  \]
+  \[
+  = n^{2}(n^{2}-9)
+  \]
+  \[
+  = n^{2}(n-3)(n+3)
+  \]
+
+  \item 
+  \[
+  81x^{2} - (x+y)^{2}
+  \]
+  \[
+  = (9x)^{2} - (x+y)^{2}
+  \]
+  \[
+  = (9x-(x+y))(9x+(x+y))
+  \]
+  \[
+  = (8x-y)(10x+y)
+  \]
+
+  \item 
+  \[
+  (x-2y)^{2} - (x+y)^{2}
+  \]
+  \[
+  = \big[(x-2y)-(x+y)\big]\big[(x-2y)+(x+y)\big]
+  \]
+  \[
+  = (-3y)(2x-y)
+  \]
+
+  \item 
+  \[
+  \frac{1}{25}x^{6} - \frac{6}{5}x^{2} + 9
+  \]
+  \[
+  = \left(\frac{1}{5}x^{3}\right)^{2} - 2\left(\frac{1}{5}x^{3}\right)(3) + 3^{2}
+  \]
+  \[
+  = \left(\frac{1}{5}x^{3} - 3\right)^{2}
+  \]
+
+  \item 
+  \[
+  a^{4} - 2a^{2}b^{2} + b^{4}
+  \]
+  \[
+  = (a^{2})^{2} - 2a^{2}b^{2} + (b^{2})^{2}
+  \]
+  \[
+  = (a^{2}-b^{2})^{2}
+  \]
+  \[
+  = (a-b)^{2}(a+b)^{2}
+  \]
+\end{enumerate}
+\section*{Factorización por trinomio cuadrado perfecto }
+
+\subsection*{Ejercicios}
+
+\begin{enumerate}
+  \item \(x^{2} - 10x + 25\)
+  \item \(x^{2} + 14x + 49\)
+  \item \(a^{2} - 8a + 16\)
+  \item \(9y^{2} - 12y + 4\)
+  \item \(16m^{2} + 40m + 25\)
+  \item \(25p^{2} - 30p + 9\)
+  \item \(4x^{2} + 4x + 1\)
+  \item \(49r^{2} - 14r + 1\)
+  \item \(x^{2} - \dfrac{3}{2}x + \dfrac{9}{16}\)
+  \item \(x^{2} + \dfrac{5}{3}x + \dfrac{25}{36}\)
+  \item \(\dfrac{1}{4}x^{2} - x + 1\)
+  \item \(9x^{2} + 30xy + 25y^{2}\)
+  \item \(m^{2} - 6mn + 9n^{2}\)
+  \item \(4x^{2} - 20xy + 25y^{2}\)
+  \item \(81a^{2} - 18ab + b^{2}\)
+\end{enumerate}
+
+\newpage
+\subsection*{Soluciones}
+
+\begin{enumerate}
+  \item 
+  \[
+  x^{2} - 10x + 25
+  \]
+  \[
+  = x^{2} - 2\cdot x \cdot 5 + 5^{2}
+  \]
+  \[
+  = (x - 5)^{2}
+  \]
+
+  \item 
+  \[
+  x^{2} + 14x + 49
+  \]
+  \[
+  = x^{2} + 2\cdot x \cdot 7 + 7^{2}
+  \]
+  \[
+  = (x + 7)^{2}
+  \]
+
+  \item 
+  \[
+  a^{2} - 8a + 16
+  \]
+  \[
+  = a^{2} - 2\cdot a \cdot 4 + 4^{2}
+  \]
+  \[
+  = (a - 4)^{2}
+  \]
+
+  \item 
+  \[
+  9y^{2} - 12y + 4
+  \]
+  \[
+  = (3y)^{2} - 2\cdot (3y)\cdot 2 + 2^{2}
+  \]
+  \[
+  = (3y - 2)^{2}
+  \]
+
+  \item 
+  \[
+  16m^{2} + 40m + 25
+  \]
+  \[
+  = (4m)^{2} + 2\cdot (4m)\cdot 5 + 5^{2}
+  \]
+  \[
+  = (4m + 5)^{2}
+  \]
+
+  \item 
+  \[
+  25p^{2} - 30p + 9
+  \]
+  \[
+  = (5p)^{2} - 2\cdot (5p)\cdot 3 + 3^{2}
+  \]
+  \[
+  = (5p - 3)^{2}
+  \]
+
+  \item 
+  \[
+  4x^{2} + 4x + 1
+  \]
+  \[
+  = (2x)^{2} + 2\cdot (2x)\cdot 1 + 1^{2}
+  \]
+  \[
+  = (2x + 1)^{2}
+  \]
+
+  \item 
+  \[
+  49r^{2} - 14r + 1
+  \]
+  \[
+  = (7r)^{2} - 2\cdot (7r)\cdot 1 + 1^{2}
+  \]
+  \[
+  = (7r - 1)^{2}
+  \]
+
+  \item 
+  \[
+  x^{2} - \frac{3}{2}x + \frac{9}{16}
+  \]
+  \[
+  = x^{2} - 2\cdot x \cdot \frac{3}{4} + \left(\frac{3}{4}\right)^{2}
+  \]
+  \[
+  = \left(x - \frac{3}{4}\right)^{2}
+  \]
+
+  \item 
+  \[
+  x^{2} + \frac{5}{3}x + \frac{25}{36}
+  \]
+  \[
+  = x^{2} + 2\cdot x \cdot \frac{5}{6} + \left(\frac{5}{6}\right)^{2}
+  \]
+  \[
+  = \left(x + \frac{5}{6}\right)^{2}
+  \]
+
+  \item 
+  \[
+  \frac{1}{4}x^{2} - x + 1
+  \]
+  \[
+  = \left(\frac{1}{2}x\right)^{2} - 2\cdot \left(\frac{1}{2}x\right)\cdot 1 + 1^{2}
+  \]
+  \[
+  = \left(\frac{1}{2}x - 1\right)^{2}
+  \]
+
+  \item 
+  \[
+  9x^{2} + 30xy + 25y^{2}
+  \]
+  \[
+  = (3x)^{2} + 2\cdot (3x)\cdot (5y) + (5y)^{2}
+  \]
+  \[
+  = (3x + 5y)^{2}
+  \]
+
+  \item 
+  \[
+  m^{2} - 6mn + 9n^{2}
+  \]
+  \[
+  = m^{2} - 2\cdot m \cdot (3n) + (3n)^{2}
+  \]
+  \[
+  = (m - 3n)^{2}
+  \]
+
+  \item 
+  \[
+  4x^{2} - 20xy + 25y^{2}
+  \]
+  \[
+  = (2x)^{2} - 2\cdot (2x)\cdot (5y) + (5y)^{2}
+  \]
+  \[
+  = (2x - 5y)^{2}
+  \]
+
+  \item 
+  \[
+  81a^{2} - 18ab + b^{2}
+  \]
+  \[
+  = (9a)^{2} - 2\cdot (9a)\cdot b + b^{2}
+  \]
+  \[
+  = (9a - b)^{2}
+  \]
+\end{enumerate}
+\section*{Factorización por agrupación}
+
+\subsection*{Ejercicios}
+
+\begin{enumerate}
+  \item \(ax + ay + bx + by\)
+  \item \(m^{2} + mn + pm + pn\)
+  \item \(x^{3} + 2x^{2} + 3x + 6\)
+  \item \(ab - ac + db - dc\)
+  \item \(2ax + 3ay - 4bx - 6by\)
+  \item \(x^{2}y + xy^{2} + x + y\)
+  \item \(pq + pr + 2sq + 2sr\)
+  \item \(a^{3} + a^{2}b + 2ac + 2bc\)
+  \item \(5mn - 10m + 2n - 4\)
+  \item \(x^{2} - 3x + 2y - 6\)
+\end{enumerate}
+
+\newpage
+\subsection*{Soluciones}
+
+\begin{enumerate}
+  \item 
+  \[
+  ax + ay + bx + by
+  \]
+  \[
+  = a(x+y) + b(x+y)
+  \]
+  \[
+  = (a+b)(x+y)
+  \]
+
+  \item 
+  \[
+  m^{2} + mn + pm + pn
+  \]
+  \[
+  = m(m+n) + p(m+n)
+  \]
+  \[
+  = (m+p)(m+n)
+  \]
+
+  \item 
+  \[
+  x^{3} + 2x^{2} + 3x + 6
+  \]
+  \[
+  = x^{2}(x+2) + 3(x+2)
+  \]
+  \[
+  = (x^{2}+3)(x+2)
+  \]
+
+  \item 
+  \[
+  ab - ac + db - dc
+  \]
+  \[
+  = a(b-c) + d(b-c)
+  \]
+  \[
+  = (a+d)(b-c)
+  \]
+
+  \item 
+  \[
+  2ax + 3ay - 4bx - 6by
+  \]
+  \[
+  = a(2x+3y) - 2b(2x+3y)
+  \]
+  \[
+  = (a-2b)(2x+3y)
+  \]
+
+  \item 
+  \[
+  x^{2}y + xy^{2} + x + y
+  \]
+  \[
+  = xy(x+y) + 1(x+y)
+  \]
+  \[
+  = (xy+1)(x+y)
+  \]
+
+  \item 
+  \[
+  pq + pr + 2sq + 2sr
+  \]
+  \[
+  = p(q+r) + 2s(q+r)
+  \]
+  \[
+  = (p+2s)(q+r)
+  \]
+
+  \item 
+  \[
+  a^{3} + a^{2}b + 2ac + 2bc
+  \]
+  \[
+  = a^{2}(a+b) + 2c(a+b)
+  \]
+  \[
+  = (a^{2}+2c)(a+b)
+  \]
+
+  \item 
+  \[
+  5mn - 10m + 2n - 4
+  \]
+  \[
+  = 5m(n-2) + 2(n-2)
+  \]
+  \[
+  = (5m+2)(n-2)
+  \]
+
+  \item 
+  \[
+  x^{2} - 3x + 2y - 6
+  \]
+  \[
+  = x(x-3) + 2(y-3)
+  \]
+  \[
+  = (x+2)(x-3)
+  \]
+\end{enumerate}
+
+
+\section*{Análisis de funciones cuadráticas}
+
+\subsection*{Ejercicios}
+
+Analice cada función cuadrática determinando: concavidad, discriminante, intersecciones con los ejes, vértice, intervalos de monotonía y ámbito.
+
+\begin{enumerate}
+  \item \(f(x) = x^{2} - 4x + 3\)
+  \item \(f(x) = -2x^{2} + 8x - 6\)
+  \item \(f(x) = x^{2} + 2x + 5\)
+  \item \(f(x) = 3x^{2} - 12x\)
+  \item \(f(x) = -x^{2} + 2x + 3\)
+\end{enumerate}
+
+\newpage
+\subsection*{Soluciones}
+
+\begin{enumerate}
+  \item 
+  \[
+  f(x) = x^{2} - 4x + 3
+  \]
+  \textbf{Concavidad:} \(a=1>0\), parábola cóncava hacia arriba.  
+  \[
+  \Delta = b^{2} - 4ac = (-4)^{2} - 4(1)(3) = 16 - 12 = 4
+  \]  
+  \textbf{Discriminante:} \(\Delta = 4 > 0\), dos raíces reales.  
+  \[
+  x_{1,2} = \frac{-b \pm \sqrt{\Delta}}{2a} = \frac{4 \pm 2}{2} \Rightarrow x_{1}=1,\ x_{2}=3
+  \]  
+  \textbf{Intersecciones:}  
+  Con el eje \(x\): \((1,0)\) y \((3,0)\).  
+  Con el eje \(y\): \(f(0)=3 \Rightarrow (0,3)\).  
+  \[
+  V\!:\ (h,k) = \left(-\frac{b}{2a}, f\left(-\frac{b}{2a}\right)\right) = (2, -1)
+  \]  
+  \textbf{Vértice:} \((2,-1)\).  
+  \textbf{Monotonía:} decrece en \((-\infty, 2)\), crece en \((2, \infty)\).  
+  \textbf{Ámbito:} \([-1, \infty)\).  
+
+  \item 
+  \[
+  f(x) = -2x^{2} + 8x - 6
+  \]
+  \textbf{Concavidad:} \(a=-2<0\), parábola cóncava hacia abajo.  
+  \[
+  \Delta = 8^{2} - 4(-2)(-6) = 64 - 48 = 16
+  \]  
+  Dos raíces reales:  
+  \[
+  x_{1,2} = \frac{-8 \pm 4}{-4} \Rightarrow x_{1}=1,\ x_{2}=3
+  \]  
+  Intersecciones:  
+  Con \(x\): \((1,0)\), \((3,0)\).  
+  Con \(y\): \(f(0)=-6 \Rightarrow (0,-6)\).  
+  Vértice:  
+  \[
+  h=-\frac{b}{2a} = -\frac{8}{-4}=2,\quad k=f(2)=-2(4)+16-6=2
+  \]  
+  Vértice: \((2,2)\).  
+  Monotonía: crece en \((-\infty,2)\), decrece en \((2,\infty)\).  
+  Ámbito: \((-\infty,2]\).  
+
+  \item 
+  \[
+  f(x) = x^{2} + 2x + 5
+  \]
+  Concavidad: cóncava hacia arriba.  
+  \[
+  \Delta = 2^{2} - 4(1)(5) = 4 - 20 = -16 < 0
+  \]  
+  No tiene raíces reales.  
+  Intersección con \(y\): \(f(0)=5 \Rightarrow (0,5)\).  
+  Vértice:  
+  \[
+  h=-\frac{2}{2}= -1,\quad k=f(-1)=1-2+5=4
+  \]  
+  Vértice: \((-1,4)\).  
+  Monotonía: decrece en \((-\infty,-1)\), crece en \((-1,\infty)\).  
+  Ámbito: \([4,\infty)\).  
+
+  \item 
+  \[
+  f(x) = 3x^{2} - 12x
+  \]
+  Concavidad: \(a=3>0\), cóncava hacia arriba.  
+  \[
+  \Delta = (-12)^{2} - 4(3)(0) = 144
+  \]  
+  Raíces:  
+  \[
+  x_{1,2} = \frac{12 \pm 12}{6} \Rightarrow x_{1}=0,\ x_{2}=4
+  \]  
+  Intersecciones: \((0,0)\), \((4,0)\).  
+  Con \(y\): \(f(0)=0\).  
+  Vértice:  
+  \[
+  h = \frac{12}{6}=2,\quad k=f(2) = 12-24= -12
+  \]  
+  Vértice: \((2,-12)\).  
+  Monotonía: decrece en \((-\infty,2)\), crece en \((2,\infty)\).  
+  Ámbito: \([-12,\infty)\).  
+
+  \item 
+  \[
+  f(x) = -x^{2} + 2x + 3
+  \]
+  Concavidad: \(a=-1<0\), cóncava hacia abajo.  
+  \[
+  \Delta = 2^{2} - 4(-1)(3) = 4+12=16
+  \]  
+  Raíces:  
+  \[
+  x_{1,2} = \frac{-2 \pm 4}{-2} \Rightarrow x_{1}=-1,\ x_{2}=3
+  \]  
+  Intersecciones: \((-1,0)\), \((3,0)\).  
+  Con \(y\): \(f(0)=3 \Rightarrow (0,3)\).  
+  Vértice:  
+  \[
+  h = -\frac{2}{-2}=1,\quad k=f(1)=-1+2+3=4
+  \]  
+  Vértice: \((1,4)\).  
+  Monotonía: crece en \((-\infty,1)\), decrece en \((1,\infty)\).  
+  Ámbito: \((-\infty,4]\).  
+\end{enumerate}
+\newpage
+
+\section*{Práctica General de Examen}
+
+Resuelva los siguientes ejercicios aplicando la técnica de factorización o el análisis correspondiente según el caso.
+
+\subsection*{Ejercicios}
+
+\begin{enumerate}
+  % === Factor común ===
+  \item Factorice: \quad \(2ax + 4bx + ay + 2by\)
+  \item Factorice: \quad \(6m^{2}n - 9mn^{2} + 12mp - 18np\)
+
+  % === Diferencia de cuadrados ===
+  \item Factorice: \quad \(49x^{2} - 25y^{2}\)
+  \item Factorice: \quad \((2a+3b)^{2} - (a-b)^{2}\)
+
+  % === TCP ===
+  \item Factorice: \quad \(x^{2} - 12x + 36\)
+  \item Factorice: \quad \(9y^{2} + 24y + 16\)
+
+  % === Agrupación ===
+  \item Factorice: \quad \(ax + ay - bx - by\)
+  \item Factorice: \quad \(2pq + 4pr + 3sq + 6sr\)
+
+  % === Cuadráticas (análisis completo) ===
+  \item Analice: \quad \(f(x) = x^{2} - 6x + 8\)
+  
+  Determine: concavidad, discriminante, intersecciones, vértice, monotonía y ámbito.  
+
+  \item Analice: \quad \(f(x) = -2x^{2} + 4x + 5\)  
+  
+  Determine: concavidad, discriminante, intersecciones, vértice, monotonía y ámbito.
+\end{enumerate}
+
+\subsection*{Soluciones — Práctica General de Examen}
+
+\begin{enumerate}
+  % ===== Factor común =====
+  \item 
+  \[
+  2ax + 4bx + ay + 2by
+  \]
+  \[
+  = (2ax + 4bx) + (ay + 2by)
+  \]
+  \[
+  = 2x(a + 2b) + y(a + 2b)
+  \]
+  \[
+  = (a + 2b)(2x + y)
+  \]
+
+  \item 
+  \[
+  6m^{2}n - 9mn^{2} + 12mp - 18np
+  \]
+  \[
+  = 3mn(2m - 3n) + 6p(2m - 3n)
+  \]
+  \[
+  = (2m - 3n)(3mn + 6p)
+  \]
+  \[
+  = 3(2m - 3n)(mn + 2p)
+  \]
+
+  % ===== Diferencia de cuadrados =====
+  \item 
+  \[
+  49x^{2} - 25y^{2}
+  \]
+  \[
+  = (7x)^{2} - (5y)^{2}
+  \]
+  \[
+  = (7x - 5y)(7x + 5y)
+  \]
+
+  \item 
+  \[
+  (2a + 3b)^{2} - (a - b)^{2}
+  \]
+  \[
+  = \big[(2a+3b) - (a-b)\big]\big[(2a+3b) + (a-b)\big]
+  \]
+  \[
+  = (a + 4b)(3a + 2b)
+  \]
+
+  % ===== TCP =====
+  \item 
+  \[
+  x^{2} - 12x + 36
+  \]
+  \[
+  = x^{2} - 2\cdot x \cdot 6 + 6^{2}
+  \]
+  \[
+  = (x - 6)^{2}
+  \]
+
+  \item 
+  \[
+  9y^{2} + 24y + 16
+  \]
+  \[
+  = (3y)^{2} + 2\cdot (3y)\cdot 4 + 4^{2}
+  \]
+  \[
+  = (3y + 4)^{2}
+  \]
+
+  % ===== Agrupación =====
+  \item 
+  \[
+  ax + ay - bx - by
+  \]
+  \[
+  = a(x+y) - b(x+y)
+  \]
+  \[
+  = (a - b)(x + y)
+  \]
+
+  \item 
+  \[
+  2pq + 4pr + 3sq + 6sr
+  \]
+  \[
+  = 2p(q + 2r) + 3s(q + 2r)
+  \]
+  \[
+  = (2p + 3s)(q + 2r)
+  \]
+
+  % ===== Cuadráticas (análisis completo) =====
+  \item 
+  \[
+  f(x) = x^{2} - 6x + 8
+  \]
+  \textbf{Concavidad: } \(a = 1 > 0 \Rightarrow\) cóncava hacia arriba.\\
+  \[
+  \Delta = b^{2} - 4ac = (-6)^{2} - 4(1)(8) = 36 - 32 = 4
+  \]
+  \textbf{Discriminante: } \(\Delta = 4 > 0\) \(\Rightarrow\) dos raíces reales.\\
+  \[
+  x_{1,2} = \frac{-b \pm \sqrt{\Delta}}{2a}
+           = \frac{6 \pm 2}{2}
+           \Rightarrow x_{1} = 2,\ x_{2} = 4
+  \]
+  \textbf{Intersecciones: } con \(x\): \((2,0)\) y \((4,0)\);\quad con \(y\): \(f(0)=8 \Rightarrow (0,8)\).\\
+  \[
+  h = -\frac{b}{2a} = \frac{6}{2} = 3,\qquad
+  k = f(3) = 9 - 18 + 8 = -1
+  \]
+  \textbf{Vértice: } \((3,-1)\).\\
+  \textbf{Monotonía: } decrece en \((-\infty, 3)\), crece en \((3, \infty)\).\\
+  \textbf{Ámbito: } \([-1,\ \infty)\).
+
+  \item 
+  \[
+  f(x) = -2x^{2} + 4x + 5
+  \]
+  \textbf{Concavidad: } \(a = -2 < 0 \Rightarrow\) cóncava hacia abajo.\\
+  \[
+  \Delta = b^{2} - 4ac = 4^{2} - 4(-2)(5) = 16 + 40 = 56
+  \]
+  \textbf{Discriminante: } \(\Delta = 56 > 0\) \(\Rightarrow\) dos raíces reales.\\
+  \[
+  x_{1,2} = \frac{-b \pm \sqrt{\Delta}}{2a}
+           = \frac{-4 \pm \sqrt{56}}{-4}
+           = \frac{-4 \pm 2\sqrt{14}}{-4}
+           = 1 \mp \frac{\sqrt{14}}{2}
+  \]
+  \textbf{Intersecciones: } con \(x\): \(\big(1 - \frac{\sqrt{14}}{2},\,0\big)\) y \(\big(1 + \frac{\sqrt{14}}{2},\,0\big)\);\quad con \(y\): \(f(0)=5 \Rightarrow (0,5)\).\\
+  \[
+  h = -\frac{b}{2a} = -\frac{4}{-4} = 1,\qquad
+  k = f(1) = -2 + 4 + 5 = 7
+  \]
+  \textbf{Vértice: } \((1,7)\).\\
+  \textbf{Monotonía: } crece en \((-\infty, 1)\), decrece en \((1, \infty)\).\\
+  \textbf{Ámbito: } \((-\infty,\ 7]\).
+\end{enumerate}
+\noindent\fbox{%
+\parbox{\linewidth}{%
+%\textbf{Julián Arias Meza} es profesor de Matemática graduado de la Universidad de Costa Rica. 
+%Cursó la carrera de Física en la misma universidad y actualmente cursa la licenciatura en 
+%Ingeniería Física en el Tecnológico de Costa Rica (TEC). 
+Integración  del uso de herramientas digitales y de inteligencia artificial (IA), 
+enfocadas en la mejora de las capacidades pedagógicas: 
+diseño de materiales adaptativos, retroalimentación automática y 
+optimización de la evaluación formativa.
+
+\medskip
+\textbf{Áreas}
+\begin{itemize}
+  \item \textbf{Matemática:} aritmética, álgebra, trigonometría, geometría analítica, cálculo (diferencial e integral), probabilidad y estadística.
+  \item \textbf{Física:} mecánica, ondas, electricidad y magnetismo, termodinámica y óptica; con resolución de problemas, interpretación física y uso riguroso del SI.
+  \item \textbf{Química:} nomenclatura con sistema Stock y sistema estequiométrico, óxidos, hidruros, hidróxidos, hidrácidos, sales binarias, tipos de reacciones, balanceo y estequiometría.
+  \item \textbf{Admisión (universidades y colegios):} preparación integral para exámenes de ingreso (UCR, TEC, UNA, Colegios Científicos, COVAO, entre otros): diagnóstico inicial, plan de estudio, técnicas de resolución, simulacros cronometrados y análisis de errores.
+  \item \textbf{Formatos:} guías teóricas, bancos de ejercicios, prácticas con soluciones paso a paso, simulacros, rúbricas, presentaciones y resúmenes ejecutivos.
+\end{itemize}
+
+\text{Se entrega en:} formato PDF listo para imprimir, o \texttt{.docx} (Word).
+
+\medskip
+\textbf{Contacto (WhatsApp):} \texttt{7076-9371}
+
+}}
+\end{document}

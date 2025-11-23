@@ -1,0 +1,163 @@
+% ==========================================================
+% PRÁCTICA — FUNCIONES TRIGONOMÉTRICAS BÁSICAS
+% (características, valores en puntos clave, crecimiento/decrecimiento)
+% ==========================================================
+\documentclass[11pt,letterpaper]{article}
+
+% --- Codificación e idioma ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, es-nodecimaldot]{babel}
+
+% --- Matemática y unidades ---
+\usepackage{amsmath, amssymb}
+\usepackage{siunitx}
+\sisetup{
+  locale = DE,
+  output-decimal-marker = {,}
+}
+
+% --- Diseño de página y tablas ---
+\usepackage{geometry}
+\geometry{margin=2.2cm}
+\usepackage{booktabs, array}
+\renewcommand{\arraystretch}{1.2}
+
+% --- Estética opcional ---
+\usepackage{microtype}
+
+\begin{document}
+
+\begin{center}
+  {\Large \textbf{Práctica — Funciones trigonométricas básicas}}\\[4pt]
+  \small (Características, valores de la imagen y crecimiento/decrecimiento)
+\end{center}
+
+\hrule
+\vspace{0.6em}
+
+\section*{Parte A — Características principales}
+\noindent
+Complete la tabla con \textbf{dominio}, \textbf{recorrido}, \textbf{amplitud}, \textbf{período} y si la función es \textbf{par}, \textbf{impar} o \textbf{ninguna}.
+\[
+\text{Considere solo: } \sin x,\; \cos x,\; 2\sin x,\; -3\cos x \quad (\text{sin desplazamientos de fase})
+\]
+
+\begin{center}
+\small
+\begin{tabular}{@{}>{\centering}m{3cm} >{\centering}m{3.2cm} >{\centering}m{3.2cm} >{\centering}m{2.1cm} >{\centering}m{2.1cm} >{\centering\arraybackslash}m{2.2cm}@{}}
+\toprule
+\textbf{Función} & \textbf{Dominio} & \textbf{Recorrido} & \textbf{Amplitud} & \textbf{Período} & \textbf{Par/Impar} \\
+\midrule
+$y=\sin x$    & \rule{3.0cm}{0.4pt} & \rule{3.0cm}{0.4pt} & \rule{1.8cm}{0.4pt} & \rule{1.8cm}{0.4pt} & \rule{2.0cm}{0.4pt} \\
+$y=\cos x$    & \rule{3.0cm}{0.4pt} & \rule{3.0cm}{0.4pt} & \rule{1.8cm}{0.4pt} & \rule{1.8cm}{0.4pt} & \rule{2.0cm}{0.4pt} \\
+$y=2\sin x$   & \rule{3.0cm}{0.4pt} & \rule{3.0cm}{0.4pt} & \rule{1.8cm}{0.4pt} & \rule{1.8cm}{0.4pt} & \rule{2.0cm}{0.4pt} \\
+$y=-3\cos x$  & \rule{3.0cm}{0.4pt} & \rule{3.0cm}{0.4pt} & \rule{1.8cm}{0.4pt} & \rule{1.8cm}{0.4pt} & \rule{2.0cm}{0.4pt} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{0.8em}
+\noindent\textbf{Indicaciones rápidas (para recordar):}
+\begin{itemize}
+  \item Dominio típico de $\sin x$ y $\cos x$: todos los reales.
+  \item Período básico de $\sin x$ y $\cos x$: $2\pi$.
+  \item Amplitud: valor absoluto del coeficiente que multiplica a $\sin$ o $\cos$.
+\end{itemize}
+
+\bigskip
+
+\section*{Parte B — Valores de la imagen}
+\noindent
+Calcule los valores numéricos con \textbf{tres cifras decimales}. Use $\pi$ en radianes.
+
+\subsection*{2(a) \; $y=\sin x$}
+\[
+x \in \left\{\, 0,\; \tfrac{\pi}{6},\; \tfrac{\pi}{4},\; \tfrac{\pi}{3},\; \tfrac{\pi}{2} \,\right\}
+\]
+\begin{center}
+\small
+\begin{tabular}{@{}cccccc@{}}
+\toprule
+$x$ & $0$ & $\tfrac{\pi}{6}$ & $\tfrac{\pi}{4}$ & $\tfrac{\pi}{3}$ & $\tfrac{\pi}{2}$ \\
+\midrule
+$\sin x$ & \rule{1.6cm}{0.4pt} & \rule{1.6cm}{0.4pt} & \rule{1.6cm}{0.4pt} & \rule{1.6cm}{0.4pt} & \rule{1.6cm}{0.4pt} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{2(b) \; $y=\cos x$}
+\[
+x \in \left\{\, 0,\; \tfrac{\pi}{6},\; \tfrac{\pi}{4},\; \tfrac{\pi}{3},\; \tfrac{\pi}{2} \,\right\}
+\]
+\begin{center}
+\small
+\begin{tabular}{@{}cccccc@{}}
+\toprule
+$x$ & $0$ & $\tfrac{\pi}{6}$ & $\tfrac{\pi}{4}$ & $\tfrac{\pi}{3}$ & $\tfrac{\pi}{2}$ \\
+\midrule
+$\cos x$ & \rule{1.6cm}{0.4pt} & \rule{1.6cm}{0.4pt} & \rule{1.6cm}{0.4pt} & \rule{1.6cm}{0.4pt} & \rule{1.6cm}{0.4pt} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{2(c) \; $y=2\sin x$}
+\[
+x \in \left\{\, 0,\; \tfrac{\pi}{2},\; \pi,\; \tfrac{3\pi}{2},\; 2\pi \,\right\}
+\]
+\begin{center}
+\small
+\begin{tabular}{@{}cccccc@{}}
+\toprule
+$x$ & $0$ & $\tfrac{\pi}{2}$ & $\pi$ & $\tfrac{3\pi}{2}$ & $2\pi$ \\
+\midrule
+$2\sin x$ & \rule{1.6cm}{0.4pt} & \rule{1.6cm}{0.4pt} & \rule{1.6cm}{0.4pt} & \rule{1.6cm}{0.4pt} & \rule{1.6cm}{0.4pt} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\bigskip
+
+\section*{Parte C — Crecimiento y decrecimiento}
+\noindent
+Indique los intervalos de \textbf{crecimiento} y \textbf{decrecimiento} en $[0,\,2\pi]$.
+
+\subsection*{3(a) \; $y=\sin x$}
+\noindent
+Creciente en: \rule{8cm}{0.4pt} \\
+Decreciente en: \rule{8cm}{0.4pt}
+
+\subsection*{3(b) \; $y=\cos x$}
+\noindent
+Creciente en: \rule{8cm}{0.4pt} \\
+Decreciente en: \rule{8cm}{0.4pt}
+
+\subsection*{3(c) \; $y=-\sin x$}
+\noindent
+Creciente en: \rule{8cm}{0.4pt} \\
+Decreciente en: \rule{8cm}{0.4pt}
+
+\bigskip
+
+\section*{Parte D — Representación gráfica}
+\noindent
+Trace a mano (o en GeoGebra) y marque:
+\[
+\text{(i) } y=\sin x,\qquad
+\text{(ii) } y=\cos x,\qquad
+\text{(iii) } y=2\sin x.
+\]
+\begin{itemize}
+  \item Señale los \textbf{cortes con el eje $x$} en un período.
+  \item Marque \textbf{máximos} y \textbf{mínimos} en un período.
+  \item Indique con flechas los \textbf{tramos crecientes} y \textbf{decrecientes}.
+\end{itemize}
+
+\vfill
+\hrule
+\small
+\noindent\textbf{Sugerencias para el docente (opcional):} Puede pedir aproximaciones con tres cifras decimales: 
+$\sin 30^\circ=0{,}500$, $\sin 45^\circ\approx 0{,}707$, $\sin 60^\circ\approx 0{,}866$, 
+$\cos 30^\circ\approx 0{,}866$, $\cos 45^\circ\approx 0{,}707$, $\cos 60^\circ=0{,}500$.
+
+\end{document}

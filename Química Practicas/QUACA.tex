@@ -1,0 +1,552 @@
+% =======================================
+% PRÁCTICA 1 - QUÍMICA GENERAL
+% =======================================
+\documentclass[12pt,a4paper]{article}
+
+% ------------------ Paquetes ------------------
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage[version=4]{mhchem}
+\usepackage{cancel}
+
+\sisetup{
+  locale=DE,
+  output-decimal-marker={,},
+  per-mode=symbol,
+  exponent-product=\cdot,
+  group-minimum-digits=4
+}
+
+% ------------------ Macros ------------------
+\newcommand{\datos}{\textbf{Datos: }}
+\newcommand{\formula}{\textbf{Fórmula: }}
+\newcommand{\sustitucion}{\textbf{Sustitución: }}
+\newcommand{\calculo}{\textbf{Cálculo: }}
+\newcommand{\interpretacion}{\textbf{Interpretación: }}
+
+% ------------------ Documento ------------------
+\begin{document}
+
+\section*{Práctica 1 – Química General}
+
+% ---------- 1 ----------
+\subsection*{1) Densidad del bromo}
+\datos $m=\SI{586}{g}$, $V=\SI{188}{mL}$ \\
+\formula $\rho=\dfrac{m}{V}$ \\
+\sustitucion $\rho=\dfrac{\SI{586}{g}}{\SI{188}{mL}}$ \\
+\calculo $\rho=\SI{3,1170}{g/mL} \approx \boxed{\SI{3,12}{g/mL}}$ \\
+\interpretacion Con 3 cifras significativas, la densidad del bromo es $3,12\ \si{g/mL}$.
+
+% ---------- 2 ----------
+\subsection*{2) Masa de etanol}
+\datos $\rho=\SI{0,798}{g/mL}$, $V=\SI{17,4}{mL}$ \\
+\formula $m=\rho\cdot V$ \\
+\sustitucion $m=(\SI{0,798}{g/mL})(\SI{17,4}{mL})$ \\
+\calculo $m=\SI{13,8852}{g} \approx \boxed{\SI{13,9}{g}}$ \\
+\interpretacion La masa de etanol es $13,9\ \si{g}$.
+
+% ---------- 3 ----------
+\subsection*{3) Conversiones de temperatura}
+\formula 
+\[
+T_{^\circ C}=\frac{5}{9}(T_{^\circ F}-32), \quad
+T_{^\circ F}=\frac{9}{5}T_{^\circ C}+32
+\]
+a) $95\,^\circ F \Rightarrow T_C=\boxed{35,0\,^\circ C}$ \\
+b) $12\,^\circ F \Rightarrow T_C=\boxed{-11,1\,^\circ C}$ \\
+c) $102\,^\circ F \Rightarrow T_C=\boxed{38,9\,^\circ C}$ \\
+d) $1852\,^\circ F \Rightarrow T_C=\boxed{1011,1\,^\circ C}$ \\
+e) $-273,15\,^\circ C \Rightarrow T_F=\boxed{-459,67\,^\circ F}$
+
+% ---------- 4 ----------
+\subsection*{4) Números a notación científica}
+a) $0,000000027=\boxed{2,7\times 10^{-8}}$ \\
+b) $356=\boxed{3,56\times 10^{2}}$ \\
+c) $47\,764=\boxed{4,7764\times 10^{4}}$ \\
+d) $0,096=\boxed{9,6\times 10^{-2}}$
+
+% ---------- 5 ----------
+\subsection*{5) Números a forma decimal}
+a) $1,52\times 10^{-2}=\boxed{0,0152}$ \\
+b) $7,78\times 10^{-8}=\boxed{0,0000000778}$
+
+% ---------- 6 ----------
+\subsection*{6) Operaciones en notación científica}
+a) $145,75+(2,3\times 10^{-1})=145,98=\boxed{1,4598\times 10^{2}}$ \\
+b) $\dfrac{79\,500}{2,5\times 10^{2}}=318=\boxed{3,18\times 10^{2}}$ \\
+c) $(7,0\times 10^{-3})-(8,0\times 10^{-4})=0,0062=\boxed{6,2\times 10^{-3}}$ \\
+d) $(1,0\times 10^{4})(9,9\times 10^{6})=9,9\times 10^{10}=\boxed{9,9\times 10^{10}}$
+
+% ---------- 7 ----------
+\subsection*{7) Cifras significativas}
+a) $0,006\ \mathrm{L}$ → 1 cifra significativa \\
+b) $0,0605\ \mathrm{dm}$ → 3 cifras significativas \\
+c) $60,5\ \mathrm{mg}$ → 3 cifras significativas \\
+d) $605,5\ \mathrm{cm^2}$ → 4 cifras significativas \\
+e) $960\times 10^{-3}\ \mathrm{g}$ → 2 cifras significativas \\
+f) $6\ \mathrm{kg}$ → 1 cifra significativa \\
+g) $60\ \mathrm{m}$ → 1 o 2 cifras (ambigüedad sin notación científica). \\
+
+\interpretacion El número de cifras depende de los ceros significativos y del uso de notación científica.
+
+% ---------- 8 ----------
+\subsection*{8) Conversiones}
+a) $22,6\ \mathrm{m}=226\ \mathrm{dm}$ \\
+b) $25,4\ \mathrm{mg}=2,54\times 10^{-5}\ \mathrm{kg}$ \\
+c) $556\ \mathrm{mL}=0,556\ \mathrm{L}$ \\
+d) $10,6\ \mathrm{kg/m^3}=0,0106\ \mathrm{g/cm^3}$
+
+% ---------- 9 ----------
+\subsection*{9) Conversiones adicionales}
+a) $242\ \mathrm{lb}$: 
+\[
+1\ \mathrm{lb}=453592,37\ \mathrm{mg}
+\]
+\[
+242\cdot 453592,37=\boxed{1,098\times 10^{8}\ \mathrm{mg}}
+\]
+
+b) $68,3\ \mathrm{cm^3}=6,83\times 10^{-5}\ \mathrm{m^3}$ \\
+c) $7,2\ \mathrm{m^3}=7200\ \mathrm{L}$ \\
+d) $28,3\ \mu g=6,24\times 10^{-8}\ \mathrm{lb}$
+
+% ---------- 10 ----------
+\subsection*{10) Cobre en calcopirita}
+\datos $M=\SI{5,11e3}{kg}$ de mineral, $x=31,63\%$ de Cu \\
+\formula $m_{Cu}=M\cdot \dfrac{x}{100}$ \\
+\sustitucion $m_{Cu}=(\SI{5,11e3}{kg})(0,3163)$ \\
+\calculo $m_{Cu}=\SI{1616,3}{kg}=\boxed{1,616\times 10^{6}\ \mathrm{g}}$ \\
+\interpretacion De la muestra se pueden obtener aproximadamente $1,62\times 10^{6}$ gramos de cobre.
+\section*{Unidad II — Nomenclatura}
+
+\subsection*{A) De fórmula a nombre y fórmula empírica}
+
+\begin{tabular}{lll}
+\toprule
+\textbf{Fórmula (dada)} & \textbf{Nombre (Stock)} & \textbf{Fórmula empírica} \\
+\midrule
+NaCl        & cloruro de sodio                                   & NaCl \\
+CuSO$_4$    & sulfato de cobre(II)                                & CuSO$_4$ \\
+KMnO$_4$    & permanganato de potasio                             & KMnO$_4$ \\
+PbI$_2$     & yoduro de plomo(II)                                 & PbI$_2$ \\
+KOH         & hidróxido de potasio                                & KOH \\
+Fe(NO$_2$)$_2$ & nitrito de hierro(II)                            & Fe(NO$_2$)$_2$ \\
+Hg$_2$(ClO)$_2$ & hipoclorito de mercurio(I)                      & HgClO \\
+Al$_3$AsO$_4$ & arsenato de aluminio                               & AlAsO$_4$ \\
+Si$_3$(AsO$_3$)$_4$ & arsenito de silicio(IV)                    & Si$_3$(AsO$_3$)$_4$ \\
+Ca(IO$_4$)$_2$ & periodato de calcio                              & Ca(IO$_4$)$_2$ \\
+BaMnO$_4$   & manganato de bario                                  & BaMnO$_4$ \\
+Na$_2$S$_2$O$_3$ & tiosulfato de sodio                            & Na$_2$S$_2$O$_3$ \\
+NO$_2$      & dióxido de nitrógeno                                & NO$_2$ \\
+N$_2$O$_4$  & tetróxido de dinitrógeno                            & NO$_2$ \\
+CO          & monóxido de carbono                                 & CO \\
+CO$_2$      & dióxido de carbono                                  & CO$_2$ \\
+Mg$_3$(PO$_3$)$_2$ & fosfito de magnesio                          & Mg$_3$(PO$_3$)$_2$ \\
+Al$_2$O$_3$ & óxido de aluminio                                    & Al$_2$O$_3$ \\
+HBr (g)     & bromuro de hidrógeno (g)                            & HBr \\
+HI (ac)     & ácido yodhídrico (ac)                               & HI (ac) \\
+NH$_4$Cl    & cloruro de amonio                                   & NH$_4$Cl \\
+NaClO       & hipoclorito de sodio                                & NaClO \\
+KI          & yoduro de potasio                                   & KI \\
+CaCl$_2$    & cloruro de calcio                                   & CaCl$_2$ \\
+KNO$_3$     & nitrato de potasio                                   & KNO$_3$ \\
+HNO$_3$     & ácido nítrico                                        & HNO$_3$ \\
+NH$_4$OH    & hidróxido de amonio                                  & NH$_4$OH \\
+AgNO$_3$    & nitrato de plata(I)                                  & AgNO$_3$ \\
+\bottomrule
+\end{tabular}
+
+\bigskip
+
+\subsection*{B) De nombre a fórmula (y estado ácido cuando aplica)}
+
+\begin{tabular}{ll}
+\toprule
+\textbf{Nombre} & \textbf{Fórmula} \\
+\midrule
+Oxalato de potasio                         & K$_2$C$_2$O$_4$ \\
+Hipobromito de yodo                        & IBrO \\
+Permanganato de calcio                     & Ca(MnO$_4$)$_2$ \\
+Silicato de sodio (metasilicato)           & Na$_2$SiO$_3$ \\
+Aluminato de litio                         & LiAlO$_2$ \\
+Carburo de calcio                          & CaC$_2$ \\
+Tiocianato de estroncio                    & Sr(SCN)$_2$ \\
+Óxido de mercurio(I)                       & Hg$_2$O \\
+Nitruro de boro                            & BN \\
+Fluoruro de calcio                         & CaF$_2$ \\
+Ácido perclórico                           & HClO$_4$ \\
+Ácido sulfúrico                            & H$_2$SO$_4$ \\
+Ácido hipobromoso                          & HBrO \\
+Ácido brómico                              & HBrO$_3$ \\
+\bottomrule
+\end{tabular}
+\newpage
+\section*{Unidad III – Reacciones químicas}
+
+\subsection*{1) Balanceo de ecuaciones}\
+
+a) $2C + O_2 \rightarrow 2CO$ \\
+b) $2CO + O_2 \rightarrow 2CO_2$ \\
+c) $H_2 + Br_2 \rightarrow 2HBr$ \\
+d) $2K + 2H_2O \rightarrow 2KOH + H_2$ \\
+e) $2Mg + O_2 \rightarrow 2MgO$ \\
+f) $2O_3 \rightarrow 3O_2$ \\
+g) $2H_2O_2 \rightarrow 2H_2O + O_2$ \\
+h) $N_2 + 3H_2 \rightarrow 2NH_3$ \\
+i) $Zn + 2AgCl \rightarrow ZnCl_2 + 2Ag$ \\
+j) $S_8 + 8O_2 \rightarrow 8SO_2$ \\
+k) $2NaOH + H_2SO_4 \rightarrow Na_2SO_4 + 2H_2O$ \\
+l) $Cl_2 + 2NaI \rightarrow 2NaCl + I_2$ \\
+m) $3KOH + H_3PO_4 \rightarrow K_3PO_4 + 3H_2O$ \\
+n) $CH_4 + 4Br_2 \rightarrow CBr_4 + 4HBr$
+
+% ==========================
+% Unidad III – Conversiones estequiométricas con factores
+% ==========================
+
+\subsection*{2) Moles de \ce{CO2} a partir de \SI{3,60}{mol} de \ce{CO}}
+\datos Ecuación balanceada: \ce{2CO(g) + O2(g) -> 2CO2(g)}; \; $n_{\ce{CO}}=\SI{3,60}{mol}$ \\
+\formula La razón estequiométrica es $\dfrac{2\ \text{mol }\ce{CO2}}{2\ \text{mol }\ce{CO}}=\dfrac{1}{1}$ \\
+\sustitucion
+\[
+n_{\ce{CO2}}
+=\SI{3,60}{mol}\ \ce{CO}\;
+\times\;
+\frac{\SI{2}{mol}\ \ce{CO2}}{\SI{2}{mol}\ \ce{CO}}
+=\SI{3,60}{mol}\ \cancel{\ce{CO}}\;
+\times\;
+\frac{\SI{2}{mol}\ \ce{CO2}}{\SI{2}{mol}\ \cancel{\ce{CO}}}
+\]
+\calculo Como $\dfrac{2}{2}=1$, queda
+\[
+\boxed{\,n_{\ce{CO2}}=\SI{3,60}{mol}\,}
+\]
+\interpretacion En proporción 1:1, cada mol de \ce{CO} produce un mol de \ce{CO2}.
+
+\bigskip
+
+\subsection*{3) Moles de \ce{Cl2} usados cuando se forman \SI{0,507}{mol} de \ce{SiCl4}}
+\datos Ecuación balanceada: \ce{Si(s) + 2Cl2(g) -> SiCl4(l)}; \; $n_{\ce{SiCl4}}=\SI{0,507}{mol}$ \\
+\formula Razón: $\dfrac{2\ \text{mol }\ce{Cl2}}{1\ \text{mol }\ce{SiCl4}}$ \\
+\sustitucion
+\[
+n_{\ce{Cl2}}
+=\SI{0,507}{mol}\ \ce{SiCl4}\;
+\times\;
+\frac{\SI{2}{mol}\ \ce{Cl2}}{\SI{1}{mol}\ \ce{SiCl4}}
+=\SI{0,507}{mol}\ \cancel{\ce{SiCl4}}\;
+\times\;
+\frac{\SI{2}{mol}\ \ce{Cl2}}{\SI{1}{mol}\ \cancel{\ce{SiCl4}}}
+\]
+\calculo
+\[
+n_{\ce{Cl2}}=0,507\times 2=\boxed{\SI{1,014}{mol}}
+\]
+\interpretacion Se requieren dos moles de \ce{Cl2} por cada mol de \ce{SiCl4} producido.
+
+\bigskip
+
+\subsection*{4) Moles de \ce{H2} y \ce{N2} para producir \SI{6,0}{mol} de \ce{NH3}}
+\datos Ecuación balanceada: \ce{N2 + 3H2 -> 2NH3}; \; $n_{\ce{NH3}}=\SI{6,0}{mol}$ \\
+\formula Razones: 
+\[
+\frac{3\ \text{mol }\ce{H2}}{2\ \text{mol }\ce{NH3}},\qquad
+\frac{1\ \text{mol }\ce{N2}}{2\ \text{mol }\ce{NH3}}
+\]
+\sustitucion (cálculo de \ce{H2})
+\[
+n_{\ce{H2}}
+=\SI{6,0}{mol}\ \ce{NH3}\;
+\times\;
+\frac{\SI{3}{mol}\ \ce{H2}}{\SI{2}{mol}\ \ce{NH3}}
+=\SI{6,0}{mol}\ \cancel{\ce{NH3}}\;
+\times\;
+\frac{\SI{3}{mol}\ \ce{H2}}{\SI{2}{mol}\ \cancel{\ce{NH3}}}
+\]
+\calculo
+\[
+n_{\ce{H2}}=6,0\times\frac{3}{2}=\boxed{\SI{9,0}{mol}}
+\]
+\sustitucion (cálculo de \ce{N2})
+\[
+n_{\ce{N2}}
+=\SI{6,0}{mol}\ \ce{NH3}\;
+\times\;
+\frac{\SI{1}{mol}\ \ce{N2}}{\SI{2}{mol}\ \ce{NH3}}
+=\SI{6,0}{mol}\ \cancel{\ce{NH3}}\;
+\times\;
+\frac{\SI{1}{mol}\ \ce{N2}}{\SI{2}{mol}\ \cancel{\ce{NH3}}}
+\]
+\calculo
+\[
+n_{\ce{N2}}=6,0\times\frac{1}{2}=\boxed{\SI{3,0}{mol}}
+\]
+\interpretacion Para obtener \SI{6,0}{mol} de \ce{NH3} se requieren \SI{9,0}{mol} de \ce{H2} y \SI{3,0}{mol} de \ce{N2}.
+% ==========================
+% Unidad III – Estequiometría (5–7) con factores de conversión
+% ==========================
+
+\subsection*{5) Reactivo limitante y moles de \ce{NO2}}
+\datos Ecuación balanceada: \ce{2NO(g) + O2(g) -> 2NO2(g)} \\
+$n_{\ce{NO}}=\SI{0,886}{mol}$, \; $n_{\ce{O2}}=\SI{0,503}{mol}$.
+
+\formula Comparamos el \textit{producto posible} desde cada reactivo:
+\[
+n_{\ce{NO2}}\ (\text{desde NO})=
+\SI{0,886}{mol}\ \ce{NO}\times\frac{\SI{2}{mol}\ \ce{NO2}}{\SI{2}{mol}\ \ce{NO}}
+=\boxed{\SI{0,886}{mol}}
+\]
+\[
+n_{\ce{NO2}}\ (\text{desde O2})=
+\SI{0,503}{mol}\ \ce{O2}\times\frac{\SI{2}{mol}\ \ce{NO2}}{\SI{1}{mol}\ \ce{O2}}
+=\boxed{\SI{1,006}{mol}}
+\]
+
+\calculo El menor valor lo determina el \textbf{reactivo limitante}: 
+\(\ce{NO}\) limita (\(0,886<1,006\)). \\
+Consumo de \ce{O2}:
+\[
+n_{\ce{O2,cons}}=\SI{0,886}{mol}\ \ce{NO}\times\frac{\SI{1}{mol}\ \ce{O2}}{\SI{2}{mol}\ \ce{NO}}
+=\SI{0,443}{mol}
+\]
+Exceso de \ce{O2}:
+\[
+n_{\ce{O2,exceso}}=\SI{0,503}{mol}-\SI{0,443}{mol}=\boxed{\SI{0,060}{mol}}
+\]
+
+\interpretacion Reactivo limitante: \(\ce{NO}\). \quad
+Moles producidos de \(\ce{NO2}\): \(\boxed{\SI{0,886}{mol}}\).
+
+\bigskip
+
+\subsection*{6) \ce{NH3} + \ce{H2SO4} $\rightarrow$ \ce{(NH4)2SO4}; masas iniciales}
+\textbf{a)} Ecuación balanceada:
+\[
+\ce{2NH3(aq) + H2SO4(aq) -> (NH4)2SO4(aq)}
+\]
+\textbf{b)} Datos: se forman \(\SI{20,3}{g}\) de \(\ce{(NH4)2SO4}\) y quedan \(\SI{5,89}{g}\) de \(\ce{H2SO4}\) sin reaccionar. \\
+Masas molares (g/mol): \(M_{\ce{NH3}}=17,031\), \(M_{\ce{H2SO4}}=98,079\), \(M_{\ce{(NH4)2SO4}}=132,14\).
+
+\formula Moles de sal formada (igual a moles de \ce{H2SO4} reaccionados):
+\[
+n_{\ce{(NH4)2SO4}}=\SI{20,3}{g}\times\frac{\SI{1}{mol}}{\SI{132,14}{g}}
+=\boxed{\SI{0,154}{mol}}
+\]
+Moles de \ce{H2SO4} \textit{iniciales}:
+\[
+\footnotesize
+n_{\ce{H2SO4,ini}}=n_{\ce{reacc}}+n_{\ce{reman}}
+=\SI{0,154}{mol}+\left(\SI{5,89}{g}\times\frac{\SI{1}{mol}}{\SI{98,079}{g}}\right)
+=\SI{0,154}{mol}+\SI{0,0600}{mol}
+=\boxed{\SI{0,214}{mol}}
+\]
+Masa inicial de \ce{H2SO4}:
+\[
+m_{\ce{H2SO4,ini}}=\SI{0,214}{mol}\times\SI{98,079}{g/mol}=\boxed{\SI{20,96}{g}}
+\]
+Moles (y masa) de \ce{NH3} consumidos (limitante; no se indica remanente):
+\[
+n_{\ce{NH3,ini}}=2\,n_{\ce{(NH4)2SO4}}=2\times\SI{0,154}{mol}=\SI{0,308}{mol}
+\]
+\[
+m_{\ce{NH3,ini}}=\SI{0,308}{mol}\times\SI{17,031}{g/mol}=\boxed{\SI{5,24}{g}}
+\]
+
+\interpretacion Inicialmente había \(\approx\)\(\SI{5,24}{g}\) de \ce{NH3} y \(\approx\)\(\SI{20,96}{g}\) de \ce{H2SO4}. 
+El ácido quedó en exceso con \(\SI{5,89}{g}\) sin reaccionar.
+
+\bigskip
+
+\subsection*{7) Combustión de propano: gramos de \ce{CO2}}
+Ecuación balanceada:
+\[
+\ce{C3H8 + 5O2 -> 3CO2 + 4H2O}
+\]
+\datos \(n_{\ce{C3H8}}=\SI{3,65}{mol}\) (oxígeno en exceso). \\
+\formula Razón: \(\dfrac{3\ \text{mol }\ce{CO2}}{1\ \text{mol }\ce{C3H8}}\).
+\[
+n_{\ce{CO2}}=\SI{3,65}{mol}\ \ce{C3H8}\times\frac{\SI{3}{mol}\ \ce{CO2}}{\SI{1}{mol}\ \ce{C3H8}}
+=\boxed{\SI{10,95}{mol}}
+\]
+\[
+m_{\ce{CO2}}=\SI{10,95}{mol}\times\SI{44,01}{g/mol}
+=\boxed{\SI{4.82e2}{g}} \ (\approx \SI{481.9}{g})
+\]
+\interpretacion De \(\SI{3,65}{mol}\) de propano se obtienen \(\approx \SI{482}{g}\) de \ce{CO2}.
+% ==========================
+% Unidad III – Problemas 8–12 (factores de conversión)
+% ==========================
+
+\subsection*{8) Reactivo limitante y masa de \ce{Cl2}}
+\datos Ecuación: \ce{MnO2 + 4HCl -> MnCl2 + Cl2 + 2H2O}.\\
+$n_{\ce{MnO2}}=\SI{0,86}{mol}$, \; $m_{\ce{HCl}}=\SI{48,2}{g}$, \;
+$M_{\ce{HCl}}=\SI{36,46094}{g/mol}$, \; $M_{\ce{Cl2}}=\SI{70,906}{g/mol}$.
+\[
+n_{\ce{HCl}}=\SI{48,2}{g}\times\frac{\SI{1}{mol}}{\SI{36,46094}{g}}=\SI{1,322}{mol}
+\]
+\formula Razones: 
+\(\dfrac{4\ \text{mol }\ce{HCl}}{1\ \text{mol }\ce{MnO2}}\),\quad
+\(\dfrac{1\ \text{mol }\ce{Cl2}}{4\ \text{mol }\ce{HCl}}\).
+\[
+n_{\ce{HCl,req}}=\SI{0,86}{mol}\ \ce{MnO2}\times\frac{\SI{4}{mol}\ \ce{HCl}}{\SI{1}{mol}\ \ce{MnO2}}
+=\SI{3,44}{mol}>\SI{1,322}{mol}
+\]
+\interpretacion \(\ce{HCl}\) es el \textbf{reactivo limitante}.\\
+\[
+n_{\ce{Cl2}}=\SI{1,322}{mol}\ \ce{HCl}\times
+\frac{\SI{1}{mol}\ \ce{Cl2}}{\SI{4}{mol}\ \ce{HCl}}=\SI{0,330}{mol}
+\]
+\[
+m_{\ce{Cl2}}=\SI{0,330}{mol}\times\SI{70,906}{g/mol}=\boxed{\SI{23,4}{g}}
+\]
+
+\subsection*{9) Rendimiento de \ce{HF}}
+\datos \ce{CaF2 + H2SO4 -> CaSO4 + 2HF}\ (ácido en exceso).\\
+$m_{\ce{CaF2}}=\SI{6,00}{kg}=\SI{6000}{g}$,
+$M_{\ce{CaF2}}=\SI{78,0748}{g/mol}$,
+$M_{\ce{HF}}=\SI{20,0063}{g/mol}$,
+$m_{\ce{HF,real}}=\SI{2,86}{kg}=\SI{2860}{g}$.
+\[
+n_{\ce{CaF2}}=\SI{6000}{g}\times\frac{\SI{1}{mol}}{\SI{78,0748}{g}}=\SI{76,85}{mol}
+\]
+\[
+n_{\ce{HF,teo}}=\SI{76,85}{mol}\times\frac{\SI{2}{mol}\ \ce{HF}}{\SI{1}{mol}\ \ce{CaF2}}
+=\SI{153,70}{mol}
+\]
+\[
+m_{\ce{HF,teo}}=\SI{153,70}{mol}\times\SI{20,0063}{g/mol}=\SI{3074,95}{g}
+\]
+\[
+\%\ \text{rend.}=\frac{\SI{2860}{g}}{\SI{3074,95}{g}}\times 100=\boxed{93,0\ \%}
+\]
+
+\subsection*{10) Rendimiento de \ce{O2} desde nitroglicerina}
+\datos \(\ce{4C3H5N3O9 -> 6N2 + 12CO2 + 10H2O + O2}\).\\
+$m_{\text{nitro}}=\SI{2,00e2}{g}$,
+$M_{\text{nitro}}=\SI{227,0865}{g/mol}$,
+$M_{\ce{O2}}=\SI{31,9988}{g/mol}$,
+$m_{\ce{O2,real}}=\SI{6,55}{g}$.
+\[
+n_{\text{nitro}}=\SI{200}{g}\times\frac{\SI{1}{mol}}{\SI{227,0865}{g}}=\SI{0,8807}{mol}
+\]
+\[
+n_{\ce{O2,teo}}=\SI{0,8807}{mol}\times\frac{\SI{1}{mol}\ \ce{O2}}{\SI{4}{mol}\ \text{nitro}}
+=\SI{0,2202}{mol}
+\]
+\[
+m_{\ce{O2,teo}}=\SI{0,2202}{mol}\times\SI{31,9988}{g/mol}
+=\SI{7,046}{g}
+\]
+\[
+\%\ \text{rend.}=\frac{\SI{6,55}{g}}{\SI{7,046}{g}}\times 100=\boxed{93,0\ \%}\ (\text{aprox.})
+\]
+
+\subsection*{11) Rendimiento de \ce{TiO2} desde \ce{FeTiO3}}
+\datos Proceso: \(\ce{FeTiO3 -> TiO2 + FeO}\) (\emph{1:1} en Ti).\\
+$m_{\ce{FeTiO3,base}}=\SI{8.00e3}{kg}$,\;
+ce{TiO2,real}
+$M_{\ce{FeTiO3}}=\SI{151,709}{g/mol}$,\;
+$M_{\ce{TiO2}}=\SI{79,865}{g/mol}$.
+\[
+m_{\ce{TiO2,teo}}=m_{\ce{FeTiO3}}\times
+\frac{M_{\ce{TiO2}}}{M_{\ce{FeTiO3}}}
+=\SI{8.00e3}{kg}\times\frac{79,865}{151,709}
+=\SI{4.211e3}{kg}
+\]
+\[
+\%\ \text{rend.}=
+\frac{\SI{3.67e3}{kg}}{\SI{4.211e3}{kg}}\times 100
+=\boxed{87,1\ \%}
+\]
+
+\subsection*{12) Masa de hexano para obtener \SI{481}{g} de etileno (rend. \SI{42,5}{\%})}
+\datos Supongamos craqueo ideal: \(\ce{C6H14 -> 3C2H4 + H2}\) (teórico).\\
+$M_{\ce{C2H4}}=\SI{28,0532}{g/mol}$,\;
+$M_{\ce{C6H14}}=\SI{86,1754}{g/mol}$,\;
+$m_{\ce{C2H4,real}}=\SI{481}{g}$,\;
+$\eta=\SI{42,5}{\%}=0,425$.
+\[
+n_{\ce{C2H4,real}}=\SI{481}{g}\times\frac{\SI{1}{mol}}{\SI{28,0532}{g}}
+=\SI{17,15}{mol}
+\]
+\formula \(n_{\ce{C2H4,real}}=\eta\cdot(3\,n_{\ce{C6H14}})\Rightarrow
+n_{\ce{C6H14}}=\dfrac{n_{\ce{C2H4,real}}}{3\eta}\)
+\[
+n_{\ce{C6H14}}=\frac{17,15}{3\times 0,425}=\SI{13,45}{mol}
+\]
+\[
+m_{\ce{C6H14}}=\SI{13,45}{mol}\times\SI{86,1754}{g/mol}
+=\boxed{\SI{1.159e3}{g}} \approx\boxed{\SI{1.16}{kg}}
+\]
+\interpretacion Con un rendimiento del \SI{42,5}{\%}, se requieren \(\approx\SI{1,16}{kg}\) de hexano para obtener \(\SI{481}{g}\) de etileno.
+% ==========================
+% Unidad V – Electroquímica y Redox
+% ==========================
+\newpage
+\section*{Unidad V – Electroquímica y Reacciones Redox}
+
+\subsection*{1) Clasificación de electrolitos}
+a) H$_2$O: no electrolito (muy débil conductor). \\
+b) KCl: electrolito fuerte (sal totalmente disociada). \\
+c) HNO$_3$: electrolito fuerte (ácido fuerte). \\
+d) CH$_3$COOH: electrolito débil (ácido débil). \\
+e) C$_{12}$H$_{22}$O$_{11}$ (sacarosa): no electrolito.
+
+\subsection*{2) Semirreacciones}
+a) \ce{2Sr + O2 -> 2SrO} \\
+Oxidación: \ce{Sr -> Sr^{2+} + 2e-} \\
+Reducción: \ce{O2 + 4e- -> 2O^{2-}} \\
+
+b) \ce{2Li + H2 -> 2LiH} \\
+Oxidación: \ce{Li -> Li+ + e-} \\
+Reducción: \ce{H2 + 2e- -> 2H-} \\
+
+c) \ce{2Cs + Br2 -> 2CsBr} \\
+Oxidación: \ce{Cs -> Cs+ + e-} \\
+Reducción: \ce{Br2 + 2e- -> 2Br-} \\
+
+d) \ce{3Mg + N2 -> Mg3N2} \\
+Oxidación: \ce{Mg -> Mg^{2+} + 2e-} \\
+Reducción: \ce{N2 + 6e- -> 2N^{3-}}
+
+\subsection*{3) Número de oxidación del fósforo en ácidos}
+a) HPO$_3$: +5 \\
+b) H$_3$PO$_2$: +1 \\
+c) H$_3$PO$_3$: +3 \\
+d) H$_3$PO$_4$: +5 \\
+e) H$_4$P$_2$O$_7$: +5 \\
+f) H$_5$P$_3$O$_{10}$: +5
+
+\subsection*{4) Números de oxidación (átomos subrayados)}
+a) ClF: Cl +1 \\
+b) IF$_7$: I +7 \\
+c) CH$_4$: C –4 \\
+d) C$_2$H$_2$: C –1 \\
+e) C$_2$H$_4$: C –2 \\
+f) K$_2$CrO$_4$: Cr +6 \\
+g) K$_2$Cr$_2$O$_7$: Cr +6 \\
+h) KMnO$_4$: Mn +7 \\
+i) NaHCO$_3$: C +4 \\
+j) Li$_2$: Li 0 \\
+k) NaIO$_3$: I +5 \\
+l) KO$_2$: O –1/2 \\
+m) PF$_6^-$: P +5 \\
+n) KAuCl$_4$: Au +3
+
+\subsection*{5) Reacciones con serie de actividad}
+a) \ce{Cu(s) + HCl(ac) ->} no hay reacción (Cu menos activo que H). \\
+b) \ce{I2(s) + NaBr(ac) ->} no hay reacción (I$_2$ menos reactivo que Br$_2$). \\
+c) \ce{Mg(s) + CuSO4(ac) -> MgSO4(ac) + Cu(s)} \\
+d) \ce{Cl2(g) + KBr(ac) -> 2KCl(ac) + Br2(l)}
+
+\subsection*{6) Clasificación de reacciones redox}
+a) \ce{P4 + 10Cl2 -> 4PCl5} \quad Sí es redox. \\
+b) \ce{2NO -> N2 + O2} \quad Sí es redox. \\
+c) \ce{Cl2 + 2KI -> 2KCl + I2} \quad Sí es redox. \\
+d) \ce{3HNO2 -> HNO3 + H2O + 2NO} \quad Sí es redox.
+
+\end{document}

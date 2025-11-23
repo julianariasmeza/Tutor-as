@@ -1,0 +1,381 @@
+\documentclass[12pt,a4paper]{article}
+
+% Paquetes básicos
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{array}
+
+% Márgenes
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+% Encabezado y pie de página
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small \textbf{Material de Décimo Año}\\Profesora: Gaudy Carpio Cordero}
+\fancyhead[R]{\small Análisis de gráficas y Composición de funciones}
+\fancyfoot[C]{\thepage}
+
+\begin{document}
+
+\section*{Ejercicios de Análisis de Gráficas}
+
+\subsection*{Ejercicio 1}
+Considere la siguiente información (empleo informal del 2014 al 2016).  
+
+Proposiciones:  
+\begin{enumerate}
+  \item En el primer trimestre del año 2016 se registra el porcentaje más bajo de empleo informal. \textbf{(Verdadero)}
+  \item En los últimos dos trimestres de 2014 el porcentaje estuvo entre 42\% y 46\%. \textbf{(Verdadero)}
+  \item En la mayoría de los trimestres el porcentaje supera el 43\%. \textbf{(Verdadero)}
+  \item En todo el periodo hubo una tendencia general a la baja. \textbf{(Falso)}
+\end{enumerate}
+
+---
+
+\subsection*{Ejercicio 2}
+Temperatura promedio por horas, un día de septiembre.  
+
+\begin{itemize}
+  \item Intervalo donde aumentó: $6$ a $10$ horas.  
+  \item Temperatura a las 6 h: $18^\circ$C.  
+  \item Temperatura a las 2 h: $20^\circ$C.  
+  \item Intervalo donde disminuyó: $4$ a $6$ horas.  
+  \item Hora de la máxima temperatura: $10$ h.  
+  \item Temperatura a las 4 h: $20^\circ$C.
+\end{itemize}
+
+---
+
+\subsection*{Ejercicio 3}
+Gráfica de medicamento en la sangre de Pedro.  
+
+\begin{enumerate}
+  \item Cantidad inicial: $80$ mg. \textbf{(Verdadero)}
+  \item Cantidad disminuye con los días. \textbf{(Verdadero)}
+\end{enumerate}
+
+---
+
+\subsection*{Ejercicio 4}
+Longitud de un pez con respecto a la edad.  
+
+\begin{enumerate}
+  \item Al nacer, longitud $<10$ cm. \textbf{(Verdadero)}  
+  \item A los 4 años: longitud entre 45 y 60 cm. \textbf{(Verdadero)}  
+  \item Un pez de 50 cm tiene a lo sumo 2 años. \textbf{(Falso)}  
+  \item El crecimiento de 0--1 año es menor al de 1--3 años. \textbf{(Verdadero)}  
+\end{enumerate}
+
+---
+
+\subsection*{Ejercicio 5}
+Número de viajeros en una línea de autobuses.  
+
+\begin{itemize}
+  \item Decrecimiento: $8$--$12$ h y $16$--$18$ h.  
+  \item Crecimiento: $6$--$8$ h y $14$--$16$ h.  
+  \item Constante: $12$--$14$ h.  
+\end{itemize}
+
+---
+
+\subsection*{Ejercicio 6}
+Monto a pagar por bicicleta según horas:  
+
+\[
+M(x)=
+\begin{cases}
+1500 & 0 < x \leq 1 \\
+3000 & 1 < x \leq 2 \\
+4500 & 2 < x \leq 3
+\end{cases}
+\]
+
+\[
+M(3) = 4500 \text{ colones.}
+\]
+\newpage
+
+
+\section*{Composición de Funciones}
+
+En algunas situaciones, una variable depende de otra y esta última, a su vez, depende de una tercera variable. Esto produce la \textbf{composición de funciones}.  
+
+La composición de dos funciones es el resultado de aplicar una función a la imagen de otra. Si $f$ y $g$ son funciones, se define la nueva función
+\[
+(f \circ g)(x) = f(g(x)),
+\]
+la cual se lee como ``$f$ compuesto con $g$''.  
+
+Para que $f: A \to B$ y $g: B \to C$ puedan componerse, el \textit{ámbito} de $g$ debe coincidir con el \textit{dominio} de $f$.
+
+---
+
+% --- Ejercicios resueltos: Composición de funciones (formato vertical) ---
+
+\subsection*{Ejercicios resueltos }
+
+%========================
+\textbf{Ejemplo 1.} \quad Sea \(f(x)=2x-1\), \(g(x)=3x+8\).
+
+\[
+\begin{aligned}
+\textbf{Datos:}\quad & f(x)=2x-1,\quad g(x)=3x+8.\\[2mm]
+\textbf{Definición:}\quad & (g\circ f)(x)=g(f(x)).\\[1mm]
+\textbf{Sustitución:}\quad & g(f(x))=g(2x-1)=3(2x-1)+8.\\[1mm]
+\textbf{Cálculo:}\quad & 3(2x-1)+8=6x-3+8=6x+5.\\[1mm]
+\textbf{Resultado:}\quad & \boxed{(g\circ f)(x)=6x+5.}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\textbf{Definición:}\quad & (f\circ g)(x)=f(g(x)).\\[1mm]
+\textbf{Sustitución:}\quad & f(g(x))=f(3x+8)=2(3x+8)-1.\\[1mm]
+\textbf{Cálculo:}\quad & 2(3x+8)-1=6x+16-1=6x+15.\\[1mm]
+\textbf{Resultado:}\quad & \boxed{(f\circ g)(x)=6x+15.}
+\end{aligned}
+\]
+
+\noindent\hrulefill
+
+%========================
+\textbf{Ejemplo 2.} \quad Sea \(f(x)=1-x\), \(g(x)=-x+6\).
+
+\[
+\begin{aligned}
+\textbf{Datos:}\quad & f(x)=1-x,\quad g(x)=-x+6.\\[2mm]
+\textbf{Definición:}\quad & (g\circ f)(x)=g(f(x)).\\[1mm]
+\textbf{Sustitución:}\quad & g(f(x))=g(1-x)=-(1-x)+6.\\[1mm]
+\textbf{Cálculo:}\quad & -(1-x)+6=-1+x+6=x+5.\\[1mm]
+\textbf{Resultado:}\quad & \boxed{(g\circ f)(x)=x+5.}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\textbf{Definición:}\quad & (f\circ g)(x)=f(g(x)).\\[1mm]
+\textbf{Sustitución:}\quad & f(g(x))=f(-x+6)=1-(-x+6).\\[1mm]
+\textbf{Cálculo:}\quad & 1-(-x+6)=1+x-6=x-5.\\[1mm]
+\textbf{Resultado:}\quad & \boxed{(f\circ g)(x)=x-5.}
+\end{aligned}
+\]
+
+\noindent\hrulefill
+
+%========================
+\newpage
+\textbf{Ejemplo 3.} \quad Sea \(f(x)=x-2\), \(g(x)=4-3x\).
+
+\[
+\begin{aligned}
+\textbf{Datos:}\quad & f(x)=x-2,\quad g(x)=4-3x.\\[2mm]
+\textbf{Definición:}\quad & (g\circ f)(x)=g(f(x)).\\[1mm]
+\textbf{Sustitución:}\quad & g(f(x))=g(x-2)=4-3(x-2).\\[1mm]
+\textbf{Cálculo:}\quad & 4-3(x-2)=4-3x+6=-3x+10.\\[1mm]
+\textbf{Resultado:}\quad & \boxed{(g\circ f)(x)=-3x+10.}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\textbf{Definición:}\quad & (f\circ g)(x)=f(g(x)).\\[1mm]
+\textbf{Sustitución:}\quad & f(g(x))=f(4-3x)=(4-3x)-2.\\[1mm]
+\textbf{Cálculo:}\quad & (4-3x)-2=2-3x.\\[1mm]
+\textbf{Resultado:}\quad & \boxed{(f\circ g)(x)=2-3x.}
+\end{aligned}
+\]
+
+\noindent\hrulefill
+
+%========================
+\textbf{Ejemplo 4.} \quad Sea \(f(x)=5x-4\), \(g(x)=3x-7\).
+
+\[
+\begin{aligned}
+\textbf{Datos:}\quad & f(x)=5x-4,\quad g(x)=3x-7.\\[2mm]
+\textbf{Definición:}\quad & (g\circ f)(x)=g(f(x)).\\[1mm]
+\textbf{Sustitución:}\quad & g(f(x))=g(5x-4)=3(5x-4)-7.\\[1mm]
+\textbf{Cálculo:}\quad & 3(5x-4)-7=15x-12-7=15x-19.\\[1mm]
+\textbf{Resultado:}\quad & \boxed{(g\circ f)(x)=15x-19.}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\textbf{Definición:}\quad & (f\circ g)(x)=f(g(x)).\\[1mm]
+\textbf{Sustitución:}\quad & f(g(x))=f(3x-7)=5(3x-7)-4.\\[1mm]
+\textbf{Cálculo:}\quad & 5(3x-7)-4=15x-35-4=15x-39.\\[1mm]
+\textbf{Resultado:}\quad & \boxed{(f\circ g)(x)=15x-39.}
+\end{aligned}
+\]
+\newpage
+\subsection*{Ejercicios extra}
+
+Resuelva las siguientes composiciones de funciones. Recuerde expresar el procedimiento paso a paso:
+
+\begin{enumerate}
+    \item Sean \(f(x) = 4x + 1\), \(g(x) = x^2 - 3\).  
+    Calcule \((g \circ f)(x)\) y \((f \circ g)(x)\).
+
+    \item Sean \(f(x) = \dfrac{1}{x}\), \(g(x) = x + 5\).  
+    Calcule \((g \circ f)(x)\) y \((f \circ g)(x)\).
+
+    \item Sean \(f(x) = 2x^2\), \(g(x) = \sqrt{x}\).  
+    Calcule \((g \circ f)(x)\) y \((f \circ g)(x)\).
+
+    \item Sean \(f(x) = x - 7\), \(g(x) = 3x^2\).  
+    Calcule \((g \circ f)(x)\) y \((f \circ g)(x)\).
+
+    \item Sean \(f(x) = \dfrac{x+2}{x-1}\), \(g(x) = 5x\).  
+    Calcule \((g \circ f)(x)\) y \((f \circ g)(x)\).
+\end{enumerate}
+\subsection*{Soluciones de los ejercicios extra }
+
+% ========================
+\textbf{1)} \; \(f(x)=4x+1\), \(\;g(x)=x^{2}-3\).
+
+%--- (g ∘ f)
+\[
+\begin{aligned}
+\textbf{Datos:}\;& f(x)=4x+1,\quad g(x)=x^{2}-3.\\[1mm]
+\textbf{Definición:}\;& (g\circ f)(x)=g\big(f(x)\big).\\[1mm]
+\textbf{Sustitución:}\;& g\big(f(x)\big)=g(4x+1)=(4x+1)^{2}-3.\\[1mm]
+\textbf{Cálculo:}\;& (4x+1)^{2}-3=16x^{2}+8x+1-3=16x^{2}+8x-2.\\[1mm]
+\textbf{Resultado:}\;& \boxed{(g\circ f)(x)=16x^{2}+8x-2.}
+\end{aligned}
+\]
+
+%--- (f ∘ g)
+\[
+\begin{aligned}
+\textbf{Definición:}\;& (f\circ g)(x)=f\big(g(x)\big).\\[1mm]
+\textbf{Sustitución:}\;& f\big(g(x)\big)=f(x^{2}-3)=4(x^{2}-3)+1.\\[1mm]
+\textbf{Cálculo:}\;& 4(x^{2}-3)+1=4x^{2}-12+1=4x^{2}-11.\\[1mm]
+\textbf{Resultado:}\;& \boxed{(f\circ g)(x)=4x^{2}-11.}
+\end{aligned}
+\]
+
+\textit{Dominios:} ambos polinomios, dominio \(\mathbb{R}\).
+
+\noindent\hrulefill
+
+% ========================
+\textbf{2)} \; \(f(x)=\dfrac{1}{x}\) (con \(x\neq 0\)), \(\;g(x)=x+5\).
+
+%--- (g ∘ f)
+\[
+\begin{aligned}
+\textbf{Datos:}\;& f(x)=\dfrac{1}{x},\quad g(x)=x+5.\\[1mm]
+\textbf{Definición:}\;& (g\circ f)(x)=g\big(f(x)\big).\\[1mm]
+\textbf{Sustitución:}\;& g\big(f(x)\big)=g\!\left(\dfrac{1}{x}\right)=\dfrac{1}{x}+5.\\[1mm]
+\textbf{Cálculo:}\;& \dfrac{1}{x}+5=\dfrac{1+5x}{x}.\\[1mm]
+\textbf{Resultado:}\;& \boxed{(g\circ f)(x)=\dfrac{1+5x}{x}},\quad x\neq 0.
+\end{aligned}
+\]
+
+%--- (f ∘ g)
+\[
+\begin{aligned}
+\textbf{Definición:}\;& (f\circ g)(x)=f\big(g(x)\big).\\[1mm]
+\textbf{Sustitución:}\;& f\big(g(x)\big)=f(x+5)=\dfrac{1}{x+5}.\\[1mm]
+\textbf{Cálculo:}\;& \text{(ya está simplificado)}\\[1mm]
+\textbf{Resultado:}\;& \boxed{(f\circ g)(x)=\dfrac{1}{x+5}},\quad x\neq -5.
+\end{aligned}
+\]
+
+\textit{Dominios:} \((g\circ f)\): \(x\neq 0\). \((f\circ g)\): \(x\neq -5\).
+
+\noindent\hrulefill
+
+% ========================
+\textbf{3)} \; \(f(x)=2x^{2}\), \(\;g(x)=\sqrt{x}\) (raíz principal).
+
+%--- (g ∘ f)
+\[
+\begin{aligned}
+\textbf{Datos:}\;& f(x)=2x^{2},\quad g(x)=\sqrt{x}.\\[1mm]
+\textbf{Definición:}\;& (g\circ f)(x)=g\big(f(x)\big).\\[1mm]
+\textbf{Sustitución:}\;& g\big(f(x)\big)=g(2x^{2})=\sqrt{2x^{2}}.\\[1mm]
+\textbf{Cálculo:}\;& \sqrt{2x^{2}}=\sqrt{2}\,|x|.\\[1mm]
+\textbf{Resultado:}\;& \boxed{(g\circ f)(x)=\sqrt{2}\,|x|},\quad \text{dominio: } \mathbb{R}.
+\end{aligned}
+\]
+
+%--- (f ∘ g)
+\[
+\begin{aligned}
+\textbf{Definición:}\;& (f\circ g)(x)=f\big(g(x)\big).\\[1mm]
+\textbf{Sustitución:}\;& f\big(g(x)\big)=f(\sqrt{x})=2(\sqrt{x})^{2}.\\[1mm]
+\textbf{Cálculo:}\;& 2(\sqrt{x})^{2}=2x.\\[1mm]
+\textbf{Resultado:}\;& \boxed{(f\circ g)(x)=2x},\quad \text{dominio: } x\ge 0.
+\end{aligned}
+\]
+
+\noindent\hrulefill
+
+% ========================
+\textbf{4)} \; \(f(x)=x-7\), \(\;g(x)=3x^{2}\).
+
+%--- (g ∘ f)
+\[
+\begin{aligned}
+\textbf{Datos:}\;& f(x)=x-7,\quad g(x)=3x^{2}.\\[1mm]
+\textbf{Definición:}\;& (g\circ f)(x)=g\big(f(x)\big).\\[1mm]
+\textbf{Sustitución:}\;& g\big(f(x)\big)=g(x-7)=3(x-7)^{2}.\\[1mm]
+\textbf{Cálculo:}\;& 3(x-7)^{2}=3(x^{2}-14x+49)=3x^{2}-42x+147.\\[1mm]
+\textbf{Resultado:}\;& \boxed{(g\circ f)(x)=3x^{2}-42x+147.}
+\end{aligned}
+\]
+
+%--- (f ∘ g)
+\[
+\begin{aligned}
+\textbf{Definición:}\;& (f\circ g)(x)=f\big(g(x)\big).\\[1mm]
+\textbf{Sustitución:}\;& f\big(g(x)\big)=f(3x^{2})=3x^{2}-7.\\[1mm]
+\textbf{Cálculo:}\;& \text{(ya está simplificado)}\\[1mm]
+\textbf{Resultado:}\;& \boxed{(f\circ g)(x)=3x^{2}-7.}
+\end{aligned}
+\]
+
+\textit{Dominios:} polinomiales, dominio \(\mathbb{R}\).
+
+\noindent\hrulefill
+
+% ========================
+\newpage
+\textbf{5)} \; \(f(x)=\dfrac{x+2}{\,x-1\,}\) (con \(x\neq 1\)), \(\;g(x)=5x\).
+
+%--- (g ∘ f)
+\[
+\begin{aligned}
+\textbf{Datos:}\;& f(x)=\dfrac{x+2}{x-1},\quad g(x)=5x.\\[1mm]
+\textbf{Definición:}\;& (g\circ f)(x)=g\big(f(x)\big).\\[1mm]
+\textbf{Sustitución:}\;& g\big(f(x)\big)=5\cdot \dfrac{x+2}{x-1}.\\[1mm]
+\textbf{Cálculo:}\;& 5\cdot \dfrac{x+2}{x-1}= \dfrac{5(x+2)}{x-1}= \dfrac{5x+10}{x-1}.\\[1mm]
+\textbf{Resultado:}\;& \boxed{(g\circ f)(x)=\dfrac{5x+10}{x-1}},\quad x\neq 1.
+\end{aligned}
+\]
+
+%--- (f ∘ g)
+\[
+\begin{aligned}
+\textbf{Definición:}\;& (f\circ g)(x)=f\big(g(x)\big).\\[1mm]
+\textbf{Sustitución:}\;& f\big(g(x)\big)=f(5x)=\dfrac{5x+2}{5x-1}.\\[1mm]
+\textbf{Cálculo:}\;& \text{(ya está simplificado)}\\[1mm]
+\textbf{Resultado:}\;& \boxed{(f\circ g)(x)=\dfrac{5x+2}{5x-1}},\quad x\neq \dfrac{1}{5}.
+\end{aligned}
+\]
+
+\textit{Dominios:} \((g\circ f)\): \(x\neq 1\). \((f\circ g)\): \(x\neq \dfrac{1}{5}\).
+
+---
+
+
+\end{document}

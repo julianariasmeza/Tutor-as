@@ -1,0 +1,643 @@
+\documentclass[11pt]{article}
+
+% ============================================================
+% PAQUETES Y CONFIGURACIÓN
+% ============================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+
+\sisetup{
+  locale = DE,
+  output-decimal-marker = {,},  % coma decimal
+  per-mode = symbol,
+  exponent-product = \cdot,
+  group-minimum-digits = 4
+}
+
+% ============================================================
+% DOCUMENTO
+% ============================================================
+\begin{document}
+
+\begin{center}
+{\Large \textbf{Práctica de ejercicios sobre equilibrio térmico y calorimetría}}\\[4pt]
+\textit{Física — Transferencia de calor y mezclas térmicas}\\[6pt]
+\end{center}
+
+% ============================================================
+\section*{Ejercicio 1}
+Una barra metálica de \SI{250}{g} a \SI{95,0}{\celsius} se introduce en un calorímetro con \SI{180}{g} de agua a \SI{22,0}{\celsius}.  
+Si la temperatura final del sistema es de \SI{27,0}{\celsius} y se desprecia el calor del calorímetro, determine el calor específico del metal.
+
+% ============================================================
+\section*{Ejercicio 2}
+Se mezclan \SI{20}{g} de leche a \SI{15,0}{\celsius} con \SI{180}{g} de café a \SI{85,0}{\celsius}.  
+Suponiendo que ambos líquidos tienen el mismo calor específico del agua (\(c = \SI{4186}{\joule\per\kilogram\per\celsius}\)) y que no hay pérdida de calor, determine la temperatura final de equilibrio.
+
+% ============================================================
+\section*{Ejercicio 3}
+Un recipiente de aluminio de \SI{25}{g} contiene \SI{60}{g} de agua a \SI{20,0}{\celsius}.  
+Se introduce un cuerpo de cobre de \SI{40}{g} a \SI{90,0}{\celsius}.  
+Determine la temperatura de equilibrio final del sistema.  
+Use \(c_\text{agua} = \SI{4186}{\joule\per\kilogram\per\celsius}\) y \(c_\text{Cu} = \SI{387}{\joule\per\kilogram\per\celsius}\), \(c_\text{Al} = \SI{900}{\joule\per\kilogram\per\celsius}\).
+
+% ============================================================
+\section*{Ejercicio 4}
+En un calorímetro de cobre de \SI{0,200}{kg} se vierten \SI{0,150}{kg} de agua a \SI{18,0}{\celsius}.  
+Se coloca una muestra desconocida de \SI{0,080}{kg} a \SI{100,0}{\celsius}.  
+Si la temperatura final es de \SI{24,0}{\celsius}, determine el calor específico del material.  
+Use \(c_\text{agua} = \SI{4186}{\joule\per\kilogram\per\celsius}\) y \(c_\text{Cu} = \SI{387}{\joule\per\kilogram\per\celsius}\).
+
+% ============================================================
+\section*{Ejercicio 5}
+Una taza contiene \SI{0,300}{kg} de agua a \SI{80,0}{\celsius}.  
+Se agregan cubos de hielo a \SI{-10,0}{\celsius}.  
+¿Cuántos kilogramos de hielo deben colocarse para que la temperatura final del sistema sea \SI{30,0}{\celsius}?  
+Use \(c_\text{hielo} = \SI{2090}{\joule\per\kilogram\per\celsius}\), \(c_\text{agua} = \SI{4186}{\joule\per\kilogram\per\celsius}\) y \(L_f = \SI{3,34e5}{\joule\per\kilogram}\).
+
+% ============================================================
+\section*{Ejercicio 6}
+Un bloque de aluminio de \SI{0,050}{kg} a \SI{150,0}{\celsius} se sumerge en \SI{0,200}{kg} de aceite a \SI{25,0}{\celsius}.  
+La temperatura final del sistema es de \SI{40,0}{\celsius}.  
+Determine el calor específico del aceite.  
+Use \(c_\text{Al} = \SI{900}{\joule\per\kilogram\per\celsius}\).
+
+% ============================================================
+\section*{Ejercicio 7}
+Se mezcla \SI{0,100}{kg} de vapor de agua a \SI{100,0}{\celsius} con \SI{0,400}{kg} de agua líquida a \SI{20,0}{\celsius}.  
+Determine la temperatura de equilibrio final y si todo el vapor se condensa.  
+Use \(c_\text{agua} = \SI{4186}{\joule\per\kilogram\per\celsius}\), \(L_v = \SI{2,26e6}{\joule\per\kilogram}\).
+
+% ============================================================
+\section*{Ejercicio 8}
+Una pieza de hierro de \SI{0,300}{kg} a \SI{180,0}{\celsius} se introduce en \SI{0,250}{kg} de agua a \SI{25,0}{\celsius}.  
+Determine la temperatura final del equilibrio térmico.  
+Use \(c_\text{Fe} = \SI{450}{\joule\per\kilogram\per\celsius}\) y \(c_\text{agua} = \SI{4186}{\joule\per\kilogram\per\celsius}\).
+
+% ============================================================
+\section*{Ejercicio 9}
+Una muestra desconocida de masa \SI{0,120}{kg} se calienta hasta \SI{95,0}{\celsius} y se introduce en \SI{0,200}{kg} de agua a \SI{20,0}{\celsius}.  
+Si la temperatura de equilibrio es \SI{25,4}{\celsius}, determine el calor específico del material.  
+Use \(c_\text{agua} = \SI{4186}{\joule\per\kilogram\per\celsius}\).
+
+% ============================================================
+\section*{Ejercicio 10}
+Se colocan \SI{0,150}{kg} de hielo a \SI{0,0}{\celsius} dentro de \SI{0,300}{kg} de agua a \SI{60,0}{\celsius}.  
+Determine la temperatura final del sistema y si todo el hielo se derrite.  
+Use \(c_\text{agua} = \SI{4186}{\joule\per\kilogram\per\celsius}\), \(L_f = \SI{3,34e5}{\joule\per\kilogram}\).
+\newpage
+\newpage
+\section*{Soluciones}
+
+% ============================================================
+\subsection*{Ejercicio 1}
+
+\textbf{Datos}
+\begin{align*}
+m_\text{metal} &= \SI{0,250}{\kilogram},\\
+m_\text{agua} &= \SI{0,180}{\kilogram},\\
+T_{i,\text{metal}} &= \SI{95,0}{\celsius},\\
+T_{i,\text{agua}} &= \SI{22,0}{\celsius},\\
+T_f &= \SI{27,0}{\celsius},\\
+c_\text{agua} &= \SI{4186}{\joule\per\kilogram\per\celsius}.
+\end{align*}
+
+\textbf{Fórmulas}
+\[
+m_\text{metal}c_\text{metal}(T_{i,\text{metal}} - T_f)
+= m_\text{agua}c_\text{agua}(T_f - T_{i,\text{agua}}).
+\]
+\[
+c_\text{metal} =
+\frac{m_\text{agua}c_\text{agua}(T_f - T_{i,\text{agua}})}
+{m_\text{metal}(T_{i,\text{metal}} - T_f)}.
+\]
+
+\textbf{Sustitución}
+\[
+c_\text{metal} =
+\frac{(0,180)(4186)(27,0 - 22,0)}
+{(0,250)(95,0 - 27,0)}.
+\]
+
+\textbf{Cálculo}
+\[
+\begin{aligned}
+c_\text{metal}
+&= \frac{(0,180)(4186)(5,0)}{(0,250)(68,0)}\\[4pt]
+&= \frac{(0,180)(20\,930)}{17,0}\\[4pt]
+&= \frac{3767,4}{17,0}\\[4pt]
+&\approx \SI{2,22e2}{\joule\per\kilogram\per\celsius}.
+\end{aligned}
+\]
+
+\textbf{Conclusión}
+\[
+\boxed{c_\text{metal} \approx \SI{2,22e2}{\joule\per\kilogram\per\celsius}}.
+\]
+
+
+% ============================================================
+\subsection*{Ejercicio 2}
+
+\textbf{Datos}
+\begin{align*}
+m_\text{leche} &= \SI{0,020}{\kilogram}, &
+T_{i,\text{leche}} &= \SI{15,0}{\celsius},\\
+m_\text{café} &= \SI{0,180}{\kilogram}, &
+T_{i,\text{café}} &= \SI{85,0}{\celsius},\\
+c &= \SI{4186}{\joule\per\kilogram\per\celsius}.
+\end{align*}
+
+\textbf{Fórmulas}
+\[
+m_\text{café}c(T_{i,\text{café}} - T_f)
+= m_\text{leche}c(T_f - T_{i,\text{leche}}).
+\]
+Se simplifica \(c\) y se despeja:
+\[
+m_\text{café}(T_{i,\text{café}} - T_f)
+= m_\text{leche}(T_f - T_{i,\text{leche}}).
+\]
+\[
+T_f = \frac{m_\text{café}T_{i,\text{café}} + m_\text{leche}T_{i,\text{leche}}}
+{m_\text{café} + m_\text{leche}}.
+\]
+
+\textbf{Sustitución}
+\[
+T_f = \frac{(0,180)(85,0) + (0,020)(15,0)}{0,180 + 0,020}.
+\]
+
+\textbf{Cálculo}
+\[
+\begin{aligned}
+T_f &= \frac{15,3 + 0,3}{0,200}\\[4pt]
+&= \frac{15,6}{0,200}\\[4pt]
+&= \SI{78,0}{\celsius}.
+\end{aligned}
+\]
+
+\textbf{Conclusión}
+\[
+\boxed{T_f = \SI{78,0}{\celsius}}.
+\]
+
+
+% ============================================================
+\subsection*{Ejercicio 3}
+
+\textbf{Datos}
+\begin{align*}
+m_\text{Al} &= \SI{0,025}{\kilogram}, &
+T_{i,\text{Al}} &= \SI{20,0}{\celsius},\\
+m_\text{agua} &= \SI{0,060}{\kilogram}, &
+T_{i,\text{agua}} &= \SI{20,0}{\celsius},\\
+m_\text{Cu} &= \SI{0,040}{\kilogram}, &
+T_{i,\text{Cu}} &= \SI{90,0}{\celsius},\\
+c_\text{Al} &= \SI{900}{\joule\per\kilogram\per\celsius},\\
+c_\text{Cu} &= \SI{387}{\joule\per\kilogram\per\celsius},\\
+c_\text{agua} &= \SI{4186}{\joule\per\kilogram\per\celsius}.
+\end{align*}
+
+\textbf{Fórmulas}
+\[
+m_\text{Cu}c_\text{Cu}(T_{i,\text{Cu}} - T_f)
+= m_\text{agua}c_\text{agua}(T_f - T_{i,\text{agua}})
++ m_\text{Al}c_\text{Al}(T_f - T_{i,\text{Al}}).
+\]
+
+\textbf{Sustitución}
+\[
+(0,040)(387)(90,0 - T_f)
+= (0,060)(4186)(T_f - 20,0)
++ (0,025)(900)(T_f - 20,0).
+\]
+
+\textbf{Cálculo}
+\[
+\begin{aligned}
+15,48(90,0 - T_f)
+&= 251,16(T_f - 20,0) + 22,50(T_f - 20,0)\\[4pt]
+15,48(90,0 - T_f)
+&= 273,66(T_f - 20,0).
+\end{aligned}
+\]
+
+Desarrollando:
+\[
+\begin{aligned}
+1393,2 - 15,48T_f &= 273,66T_f - 5473,2,\\[4pt]
+1393,2 + 5473,2 &= 273,66T_f + 15,48T_f,\\[4pt]
+6866,4 &= 289,14T_f,\\[4pt]
+T_f &= \frac{6866,4}{289,14}
+\approx \SI{23,7}{\celsius}.
+\end{aligned}
+\]
+
+\textbf{Conclusión}
+\[
+\boxed{T_f \approx \SI{23,7}{\celsius}}.
+\]
+
+
+% ============================================================
+\subsection*{Ejercicio 4}
+
+\textbf{Datos}
+\begin{align*}
+m_\text{muestra} &= \SI{0,080}{\kilogram}, &
+T_{i,\text{muestra}} &= \SI{100,0}{\celsius},\\
+m_\text{agua} &= \SI{0,150}{\kilogram}, &
+T_{i,\text{agua}} &= \SI{18,0}{\celsius},\\
+m_\text{Cu} &= \SI{0,200}{\kilogram}, &
+T_{i,\text{Cu}} &= \SI{18,0}{\celsius},\\
+T_f &= \SI{24,0}{\celsius},\\
+c_\text{agua} &= \SI{4186}{\joule\per\kilogram\per\celsius},\\
+c_\text{Cu} &= \SI{387}{\joule\per\kilogram\per\celsius}.
+\end{align*}
+
+\textbf{Fórmulas}
+\[
+m_\text{muestra}c_\text{muestra}(T_{i,\text{muestra}} - T_f)
+= m_\text{agua}c_\text{agua}(T_f - T_{i,\text{agua}})
++ m_\text{Cu}c_\text{Cu}(T_f - T_{i,\text{Cu}}).
+\]
+\[
+c_\text{muestra} =
+\frac{m_\text{agua}c_\text{agua}(T_f - T_{i,\text{agua}})
++ m_\text{Cu}c_\text{Cu}(T_f - T_{i,\text{Cu}})}
+{m_\text{muestra}(T_{i,\text{muestra}} - T_f)}.
+\]
+
+\textbf{Sustitución}
+\[
+c_\text{muestra} =
+\frac{(0,150)(4186)(24,0 - 18,0)
++ (0,200)(387)(24,0 - 18,0)}
+{(0,080)(100,0 - 24,0)}.
+\]
+
+\textbf{Cálculo}
+\[
+\begin{aligned}
+Q_\text{agua} &= (0,150)(4186)(6,0) = \SI{3770,4}{\joule},\\[2pt]
+Q_\text{Cu}   &= (0,200)(387)(6,0) = \SI{464,4}{\joule},\\[2pt]
+Q_\text{ganado} &= 3770,4 + 464,4 = \SI{4234,8}{\joule}.
+\end{aligned}
+\]
+Denominador:
+\[
+(0,080)(100,0 - 24,0) = (0,080)(76,0) = 6,08.
+\]
+Entonces:
+\[
+c_\text{muestra} = \frac{4234,8}{6,08}
+\approx \SI{6,96e2}{\joule\per\kilogram\per\celsius}.
+\]
+
+\textbf{Conclusión}
+\[
+\boxed{c_\text{muestra} \approx \SI{6,96e2}{\joule\per\kilogram\per\celsius}}.
+\]
+
+
+% ============================================================
+\subsection*{Ejercicio 5}
+
+\textbf{Datos}
+\begin{align*}
+m_\text{agua} &= \SI{0,300}{\kilogram}, &
+T_{i,\text{agua}} &= \SI{80,0}{\celsius},\\
+m_\text{hielo} &= m \quad (\text{incógnita}), &
+T_{i,\text{hielo}} &= \SI{-10,0}{\celsius},\\
+T_f &= \SI{30,0}{\celsius},\\
+c_\text{agua} &= \SI{4186}{\joule\per\kilogram\per\celsius},\\
+c_\text{hielo} &= \SI{2090}{\joule\per\kilogram\per\celsius},\\
+L_f &= \SI{3,34e5}{\joule\per\kilogram}.
+\end{align*}
+
+\textbf{Fórmulas}
+El agua pierde:
+\[
+Q_\text{perdido} = m_\text{agua}c_\text{agua}(T_{i,\text{agua}} - T_f).
+\]
+El hielo gana (tres etapas):
+\[
+Q_\text{ganado} = m\Big[c_\text{hielo}(0 - T_{i,\text{hielo}})
++ L_f + c_\text{agua}(T_f - 0)\Big].
+\]
+Balance:
+\[
+m_\text{agua}c_\text{agua}(T_{i,\text{agua}} - T_f)
+= m\Big[c_\text{hielo}(0 - T_{i,\text{hielo}})
++ L_f + c_\text{agua}(T_f - 0)\Big].
+\]
+
+\textbf{Sustitución}
+\[
+(0,300)(4186)(80,0 - 30,0)
+= m\Big[2090(10) + 3,34\cdot10^{5} + 4186(30)\Big].
+\]
+
+\textbf{Cálculo}
+\[
+\begin{aligned}
+Q_\text{perdido} &= (0,300)(4186)(50)
+= \SI{62790}{\joule},\\[4pt]
+\text{corchetes} &= 2090(10) + 3,34\cdot10^{5} + 4186(30)\\
+&= 20\,900 + 334\,000 + 125\,580\\
+&= \SI{4,8048e5}{\joule\per\kilogram}.
+\end{aligned}
+\]
+Entonces,
+\[
+m = \frac{62790}{4,8048\cdot10^{5}}
+\approx \SI{1,31e-1}{\kilogram}.
+\]
+
+\textbf{Conclusión}
+\[
+\boxed{m_\text{hielo} \approx \SI{1,31e-1}{\kilogram} \approx \SI{0,131}{\kilogram}}
+\]
+(es decir, aproximadamente \(\SI{131}{\gram}\) de hielo).
+
+
+% ============================================================
+\subsection*{Ejercicio 6}
+
+\textbf{Datos}
+\begin{align*}
+m_\text{Al} &= \SI{0,050}{\kilogram}, &
+T_{i,\text{Al}} &= \SI{150,0}{\celsius},\\
+m_\text{aceite} &= \SI{0,200}{\kilogram}, &
+T_{i,\text{aceite}} &= \SI{25,0}{\celsius},\\
+T_f &= \SI{40,0}{\celsius},\\
+c_\text{Al} &= \SI{900}{\joule\per\kilogram\per\celsius},\\
+c_\text{aceite} &= ? 
+\end{align*}
+
+\textbf{Fórmulas}
+\[
+m_\text{Al}c_\text{Al}(T_{i,\text{Al}} - T_f)
+= m_\text{aceite}c_\text{aceite}(T_f - T_{i,\text{aceite}}).
+\]
+\[
+c_\text{aceite} =
+\frac{m_\text{Al}c_\text{Al}(T_{i,\text{Al}} - T_f)}
+{m_\text{aceite}(T_f - T_{i,\text{aceite}})}.
+\]
+
+\textbf{Sustitución}
+\[
+c_\text{aceite} =
+\frac{(0,050)(900)(150,0 - 40,0)}
+{(0,200)(40,0 - 25,0)}.
+\]
+
+\textbf{Cálculo}
+\[
+\begin{aligned}
+\text{Numerador} &= (0,050)(900)(110)
+= 45(110) = 4950,\\[2pt]
+\text{Denominador} &= (0,200)(15) = 3,0,\\[2pt]
+c_\text{aceite} &= \frac{4950}{3,0}
+= \SI{1,65e3}{\joule\per\kilogram\per\celsius}.
+\end{aligned}
+\]
+
+\textbf{Conclusión}
+\[
+\boxed{c_\text{aceite} \approx \SI{1,65e3}{\joule\per\kilogram\per\celsius}}.
+\]
+
+
+% ============================================================
+\subsection*{Ejercicio 7}
+
+\textbf{Datos}
+\begin{align*}
+m_\text{vapor} &= \SI{0,100}{\kilogram}, &
+T_{i,\text{vapor}} &= \SI{100,0}{\celsius},\\
+m_\text{agua} &= \SI{0,400}{\kilogram}, &
+T_{i,\text{agua}} &= \SI{20,0}{\celsius},\\
+c_\text{agua} &= \SI{4186}{\joule\per\kilogram\per\celsius},\\
+L_v &= \SI{2,26e6}{\joule\per\kilogram}.
+\end{align*}
+
+\textbf{Análisis}
+
+1. \emph{Suposición:} todo el vapor se condensa y la temperatura final \(T_f < \SI{100}{\celsius}\).  
+   El vapor liberaría:
+   \[
+   Q_\text{vapor} = m_\text{vapor}L_v 
+   + m_\text{vapor}c_\text{agua}(100 - T_f).
+   \]
+   El agua absorbería:
+   \[
+   Q_\text{agua} = m_\text{agua}c_\text{agua}(T_f - 20).
+   \]
+   El balance con \(T_f\) como incógnita lleva a una solución
+   \(T_f \approx \SI{144}{\celsius}\), lo cual es imposible
+   (no puede superar \(\SI{100}{\celsius}\) en equilibrio con agua y vapor).
+
+2. \emph{Conclusión:} no todo el vapor se condensa.  
+   La temperatura final será \(T_f = \SI{100}{\celsius}\), con agua líquida
+   y vapor en equilibrio.
+
+\textbf{Cálculo de la masa que se condensa (opcional)}
+Calentar el agua de \(\SI{20}{\celsius}\) a \(\SI{100}{\celsius}\) requiere:
+\[
+Q_\text{agua} = (0,400)(4186)(100 - 20)
+= \SI{133952}{\joule}.
+\]
+Cada kilogramo de vapor que se condensa suministra \(L_v\), por lo que
+la masa condensada es:
+\[
+m_\text{cond} = \frac{133952}{2,26\cdot10^{6}}
+\approx \SI{5,93e-2}{\kilogram}.
+\]
+
+\textbf{Conclusión}
+\[
+\boxed{T_f = \SI{100}{\celsius}, \quad
+m_\text{cond} \approx \SI{5,9e-2}{\kilogram}\ \text{y no todo el vapor se condensa}.}
+\]
+
+
+% ============================================================
+\subsection*{Ejercicio 8}
+
+\textbf{Datos}
+\begin{align*}
+m_\text{Fe} &= \SI{0,300}{\kilogram}, &
+T_{i,\text{Fe}} &= \SI{180,0}{\celsius},\\
+m_\text{agua} &= \SI{0,250}{\kilogram}, &
+T_{i,\text{agua}} &= \SI{25,0}{\celsius},\\
+c_\text{Fe} &= \SI{450}{\joule\per\kilogram\per\celsius},\\
+c_\text{agua} &= \SI{4186}{\joule\per\kilogram\per\celsius}.
+\end{align*}
+
+\textbf{Fórmulas}
+\[
+m_\text{Fe}c_\text{Fe}(T_{i,\text{Fe}} - T_f)
+= m_\text{agua}c_\text{agua}(T_f - T_{i,\text{agua}}).
+\]
+
+\textbf{Sustitución}
+\[
+(0,300)(450)(180,0 - T_f)
+= (0,250)(4186)(T_f - 25,0).
+\]
+
+\textbf{Cálculo}
+\[
+\begin{aligned}
+135(180,0 - T_f)
+&= 1046,5(T_f - 25,0).
+\end{aligned}
+\]
+Desarrollando:
+\[
+\begin{aligned}
+24\,300 - 135T_f &= 1046,5T_f - 26\,162,5,\\[4pt]
+24\,300 + 26\,162,5 &= 1046,5T_f + 135T_f,\\[4pt]
+50\,462,5 &= 1181,5T_f,\\[4pt]
+T_f &= \frac{50\,462,5}{1181,5}
+\approx \SI{42,7}{\celsius}.
+\end{aligned}
+\]
+
+\textbf{Conclusión}
+\[
+\boxed{T_f \approx \SI{42,7}{\celsius}}.
+\]
+
+
+% ============================================================
+\subsection*{Ejercicio 9}
+
+\textbf{Datos}
+\begin{align*}
+m_\text{muestra} &= \SI{0,120}{\kilogram}, &
+T_{i,\text{muestra}} &= \SI{95,0}{\celsius},\\
+m_\text{agua} &= \SI{0,200}{\kilogram}, &
+T_{i,\text{agua}} &= \SI{20,0}{\celsius},\\
+T_f &= \SI{25,4}{\celsius},\\
+c_\text{agua} &= \SI{4186}{\joule\per\kilogram\per\celsius}.
+\end{align*}
+
+\textbf{Fórmulas}
+\[
+m_\text{muestra}c_\text{muestra}(T_{i,\text{muestra}} - T_f)
+= m_\text{agua}c_\text{agua}(T_f - T_{i,\text{agua}}).
+\]
+\[
+c_\text{muestra} =
+\frac{m_\text{agua}c_\text{agua}(T_f - T_{i,\text{agua}})}
+{m_\text{muestra}(T_{i,\text{muestra}} - T_f)}.
+\]
+
+\textbf{Sustitución}
+\[
+c_\text{muestra} =
+\frac{(0,200)(4186)(25,4 - 20,0)}
+{(0,120)(95,0 - 25,4)}.
+\]
+
+\textbf{Cálculo}
+\[
+\begin{aligned}
+\text{Numerador} &= (0,200)(4186)(5,4)
+= \SI{4520,88}{\joule},\\[2pt]
+\text{Denominador} &= (0,120)(69,6)
+= 8,352,\\[2pt]
+c_\text{muestra} &= \frac{4520,88}{8,352}
+\approx \SI{5,41e2}{\joule\per\kilogram\per\celsius}.
+\end{aligned}
+\]
+
+\textbf{Conclusión}
+\[
+\boxed{c_\text{muestra} \approx \SI{5,41e2}{\joule\per\kilogram\per\celsius}}.
+\]
+
+
+% ============================================================
+\subsection*{Ejercicio 10}
+
+\textbf{Datos}
+\begin{align*}
+m_\text{hielo} &= \SI{0,150}{\kilogram}, &
+T_{i,\text{hielo}} &= \SI{0,0}{\celsius},\\
+m_\text{agua} &= \SI{0,300}{\kilogram}, &
+T_{i,\text{agua}} &= \SI{60,0}{\celsius},\\
+c_\text{agua} &= \SI{4186}{\joule\per\kilogram\per\celsius},\\
+L_f &= \SI{3,34e5}{\joule\per\kilogram}.
+\end{align*}
+
+\textbf{Paso 1: Verificar si se derrite todo el hielo}
+
+Calor máximo que puede ceder el agua al enfriarse hasta \(\SI{0}{\celsius}\):
+\[
+Q_\text{agua,max} = m_\text{agua}c_\text{agua}(60,0 - 0,0)
+= (0,300)(4186)(60)
+= \SI{75348}{\joule}.
+\]
+
+Calor necesario para derretir todo el hielo:
+\[
+Q_\text{fusión} = m_\text{hielo}L_f
+= (0,150)(3,34\cdot 10^{5})
+= \SI{50100}{\joule}.
+\]
+
+Como \(Q_\text{agua,max} > Q_\text{fusión}\), el agua puede derretir todo el hielo y aún sobra calor para calentar el agua resultante por encima de \(\SI{0}{\celsius}\).
+
+\textbf{Paso 2: Temperatura final}
+
+Después de la fusión, la masa total de agua es:
+\[
+m_\text{total} = 0,300 + 0,150 = \SI{0,450}{\kilogram}.
+\]
+
+Calor sobrante luego de derretir el hielo:
+\[
+Q_\text{sobrante} = Q_\text{agua,max} - Q_\text{fusión}
+= 75348 - 50100
+= \SI{25248}{\joule}.
+\]
+
+Este calor eleva la temperatura de \(\SI{0,450}{\kilogram}\) de agua desde
+\(\SI{0}{\celsius}\) hasta \(T_f\):
+\[
+Q_\text{sobrante} = m_\text{total}c_\text{agua}T_f.
+\]
+
+\textbf{Sustitución}
+\[
+25248 = (0,450)(4186)T_f.
+\]
+
+\textbf{Cálculo}
+\[
+\begin{aligned}
+(0,450)(4186) &= 1883,7,\\[2pt]
+T_f &= \frac{25248}{1883,7}
+\approx \SI{13,4}{\celsius}.
+\end{aligned}
+\]
+
+\textbf{Conclusión}
+\[
+\boxed{T_f \approx \SI{13,4}{\celsius},\quad
+\text{todo el hielo se derrite}.}
+\]
+
+
+\end{document}

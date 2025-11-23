@@ -1,0 +1,286 @@
+% --------------------------------------------------------------------
+% Práctica de Habilidades Cuantitativas (Simulación 2)
+% Compilar con: pdflatex (dos pasadas)
+% --------------------------------------------------------------------
+\documentclass[11pt,a4paper]{article}
+
+% -------------------- Paquetes básicos ------------------------------
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue
+}
+
+% -------------------- Configuración numérica (coma decimal) ---------
+\sisetup{
+  locale=DE,                 % coma decimal
+  output-decimal-marker = {,},
+  per-mode=symbol,
+  exponent-product=\cdot
+}
+
+% -------------------- Estilos de listas ------------------------------
+\setlist[itemize]{left=1.2em}
+\setlist[enumerate]{itemsep=0.25em,topsep=0.4em}
+\newlist{opciones}{enumerate}{1}
+\setlist[opciones]{label=\Alph*), itemsep=0.2em, topsep=0.2em, left=1.6em}
+
+% -------------------- Título ----------------------------------------
+\title{\textbf{Práctica de Habilidades Cuantitativas (Simulación 2)}}
+\author{Sin calculadora \quad|\quad Tiempo sugerido: 2 horas}
+\date{}
+
+% ====================================================================
+\begin{document}
+\maketitle
+\hrule
+\vspace{0.6em}
+
+\section*{Instrucciones}
+\begin{itemize}
+  \item Esta práctica consta de 12 ítems de selección única, distribuidos por áreas: Aritmética, Geometría, Álgebra y Análisis de datos.
+  \item Marque una sola respuesta por ítem. No se permite el uso de calculadora.
+\end{itemize}
+
+% ========================= ARITMÉTICA ===============================
+\section*{Aritmética}
+
+\noindent\textbf{1.} Al dividir \(18\,437\) entre un número natural \(n\), el residuo es \(7\).
+¿Cuál de los siguientes valores podría ser \(n\)?
+\begin{opciones}
+  \item \(1\,820\)
+  \item \(1\,843\)
+  \item \(1\,850\)
+  \item \(2\,000\)
+\end{opciones}
+
+\noindent\textbf{2.} ¿Cuál de los siguientes números es un divisor de \(56^{2}+2\cdot 56\cdot 44+44^{2}\)?
+\begin{opciones}
+  \item \(25\)
+  \item \(64\)
+  \item \(125\)
+  \item \(256\)
+\end{opciones}
+
+\noindent\textbf{3.} Sea \(k\) un entero que satisface \(1<2k-3\le 7\). ¿Cuántos valores enteros puede tomar \(k\)?
+\begin{opciones}
+  \item \(2\)
+  \item \(3\)
+  \item \(4\)
+  \item \(5\)
+\end{opciones}
+\newpage
+% ========================= GEOMETRÍA ================================
+\section*{Geometría}
+
+\noindent\textbf{4.} En un cuadrado de lado \(x\), se trazan los puntos medios \(M\) y \(N\) en dos lados \emph{adyacentes}. ¿Cuál es el área del triángulo formado por \(M\), \(N\) y el vértice opuesto a ambos?
+\begin{opciones}
+  \item \(\dfrac{1}{4}x^{2}\)
+  \item \(\dfrac{3}{8}x^{2}\)
+  \item \(\dfrac{1}{2}x^{2}\)
+  \item \(\dfrac{5}{8}x^{2}\)
+\end{opciones}
+
+\noindent\textbf{5.} Sean \(P(1,2)\), \(Q(1,2k)\) y \(R(2k,1)\) con \(k>1\). ¿Cuál relación entre distancias es correcta?
+\begin{opciones}
+  \item \(PR=PQ\)
+  \item \(PR>PQ\)
+  \item \(PQ>PR\)
+  \item \(PR=2\,PQ\)
+\end{opciones}
+
+\noindent\textbf{6.} En un triángulo rectángulo isósceles de catetos \(a\), se construye un cuadrado sobre la \emph{hipotenusa}. ¿Cuál es el área de ese cuadrado?
+\begin{opciones}
+  \item \(a^{2}\)
+  \item \(2a^{2}\)
+  \item \(4a^{2}\)
+  \item \(\dfrac{a^{2}}{2}\)
+\end{opciones}
+
+% ========================= ÁLGEBRA ==================================
+\section*{Álgebra}
+
+\noindent\textbf{7.} Para \(y=mx-m^{2}-x\) y \(x=m-1\), ¿cuál es el valor de \(y\)?
+\begin{opciones}
+  \item \(y=1\)
+  \item \(y=-2m+1\)
+  \item \(y=m\)
+  \item \(y=2m+1\)
+\end{opciones}
+
+\noindent\textbf{8.} Si
+\[
+k(x+3)+k(x+4)+\cdots+k(x+12)=105\,k,\quad k\ne 0,
+\]
+¿cuál es el valor de \(x\)?
+\begin{opciones}
+  \item \(x=3\)
+  \item \(x=\dfrac{10}{3}\)
+  \item \(x=30\)
+  \item \(x=\dfrac{3}{k}\)
+\end{opciones}
+
+\noindent\textbf{9.} Sea \(z=x(x+2)(x-1)\). Si \(x\in[0,1]\), ¿qué condición cumple \(z\)?
+\begin{opciones}
+  \item Es estrictamente positivo.
+  \item Es positivo en algunos casos y cero en otros.
+  \item Es estrictamente negativo.
+  \item Es negativo en algunos casos y cero en otros.
+\end{opciones}
+
+% ========================= ANÁLISIS DE DATOS ========================
+\section*{Análisis de datos}
+
+\noindent\textbf{10.} En una fábrica hay \(25\) cajas que pesan en conjunto \(\SI{80,0}{kg}\).
+Si el peso de \emph{cada} caja se reduce en \(\SI{0,2}{kg}\), ¿cuál es el nuevo \emph{peso promedio} por caja?
+\begin{opciones}
+  \item \(\SI{3,0}{kg}\)
+  \item \(\SI{3,2}{kg}\)
+  \item \(\SI{3,5}{kg}\)
+  \item \(\SI{2,8}{kg}\)
+\end{opciones}
+
+\noindent\textbf{11.} En una bolsa hay \(3\) rojas, \(2\) azules y \(1\) verde. Si se extrae una al azar, la probabilidad de \emph{no} sacar roja es:
+\begin{opciones}
+  \item \(\dfrac{1}{2}\)
+  \item \(\dfrac{1}{3}\)
+  \item \(\dfrac{2}{3}\)
+  \item \(\dfrac{5}{6}\)
+\end{opciones}
+
+\noindent\textbf{12.} En una encuesta a \(200\) personas sobre transporte al trabajo se obtuvo:
+45\% vehículo particular, 35\% bus, 10\% taxi y 10\% bicicleta
+¿Cuál afirmación es \emph{verdadera con certeza}?
+\begin{opciones}
+  \item Exactamente \(90\) usan vehículo particular.
+  \item Más de \(100\) usan un medio \emph{no} particular.
+  \item La diferencia bus–particular es de \(20\) personas.
+  \item Menos de \(100\) usan medios no particulares.
+\end{opciones}
+
+% ========================= SOLUCIONES ===============================
+\newpage
+\section*{Soluciones}
+
+\subsection*{Aritmética}
+
+\textbf{1.} Residuo \(7\) al dividir \(18\,437\) entre \(n\).
+\[
+18\,437\equiv 7 \pmod n \iff 18\,437-7=18\,430 \text{ es múltiplo de } n.
+\]
+Factorización simple: \(18\,430=2\cdot 5\cdot 1\,843\).
+Así, \(n\) puede ser \(1\,843\). \\
+\textbf{Respuesta: B}.
+
+\vspace{0.4em}
+\textbf{2.} Sea \(E=56^{2}+2\cdot 56\cdot 44+44^{2}=(56+44)^{2}=100^{2}=10\,000\).
+Divisores de \(10\,000\) incluyen \(25\). \\
+\textbf{Respuesta: A}.
+
+\vspace{0.4em}
+\textbf{3.} \(1<2k-3\le 7\).
+\[
+1<2k-3 \Rightarrow 4<2k \Rightarrow k>2 \Rightarrow k\ge 3,\qquad
+2k-3\le 7 \Rightarrow 2k\le 10 \Rightarrow k\le 5.
+\]
+Valores posibles: \(k\in\{3,4,5\}\) \(\Rightarrow\) \(3\) valores. \\
+\textbf{Respuesta: B}.
+
+\subsection*{Geometría}
+
+\textbf{4.} Cuadrado de vértices \((0,0),(x,0),(x,x),(0,x)\).
+Sean \(M=(\tfrac{x}{2},0)\) y \(N=(0,\tfrac{x}{2})\). Tomando como tercer vértice \((x,x)\),
+\[
+\vec{v}_1=M-(x,x)=\Big(-\tfrac{x}{2},-x\Big),\quad
+\vec{v}_2=N-(x,x)=\Big(-x,-\tfrac{x}{2}\Big).
+\]
+Área del triángulo:
+\[
+A=\frac{1}{2}\left|\det\begin{pmatrix}-\tfrac{x}{2} & -x\\[2pt] -x & -\tfrac{x}{2}\end{pmatrix}\right|
+=\frac{1}{2}\left|\frac{x^{2}}{4}-x^{2}\right|
+=\frac{1}{2}\cdot \frac{3x^{2}}{4}
+=\frac{3}{8}x^{2}.
+\]
+\textbf{Respuesta: B}.
+
+\vspace{0.4em}
+\textbf{5.} \(PQ=|2k-2|=2(k-1)\).
+\[
+PR=\sqrt{(2k-1-1)^{2}+(1-2)^{2}}
+=\sqrt{(2k-1)^{2}+1}.
+\]
+Comparamos cuadrados:
+\[
+(2k-1)^{2}+1 \;\mathop{\gtrless}\; \bigl(2(k-1)\bigr)^{2}
+\iff 4k^{2}-4k+2 \;\mathop{\gtrless}\; 4k^{2}-8k+4
+\iff 4k-2 \;\mathop{\gtrless}\; 0.
+\]
+Para \(k>1\), \(4k-2>0\Rightarrow PR>PQ\). \\
+\textbf{Respuesta: B}.
+
+\vspace{0.4em}
+\textbf{6.} En triángulo rectángulo isósceles (catetos \(a\)), hipotenusa \(a\sqrt{2}\).
+Área del cuadrado sobre la hipotenusa:
+\[
+\bigl(a\sqrt{2}\bigr)^{2}=2a^{2}.
+\]
+\textbf{Respuesta: B}.
+
+\subsection*{Álgebra}
+
+\textbf{7.} Sustituyendo \(x=m-1\) en \(y=mx-m^{2}-x\):
+\[
+y=m(m-1)-m^{2}-(m-1)=\bigl(m^{2}-m\bigr)-m^{2}-m+1=-2m+1.
+\]
+\textbf{Respuesta: B}.
+
+\vspace{0.4em}
+\textbf{8.} Suma de \(10\) términos: \(x+3,\dots,x+12\).
+\[
+\sum_{j=3}^{12}(x+j)=10x+\sum_{j=3}^{12}j=10x+(3+12)\cdot\frac{10}{2}=10x+75.
+\]
+Multiplicando por \(k\) y igualando a \(105k\) (con \(k\ne 0\)):
+\[
+10x+75=105 \Rightarrow 10x=30 \Rightarrow x=3.
+\]
+\textbf{Respuesta: A}.
+
+\vspace{0.4em}
+\textbf{9.} Para \(x\in[0,1]\): \(x\ge 0\), \(x+2>0\), \(x-1\le 0\).
+Producto \(z=x(x+2)(x-1)\le 0\), y es \(0\) en \(x=0\) o \(x=1\). \\
+\textbf{Respuesta: D}.
+
+\subsection*{Análisis de datos}
+
+\textbf{10.} Promedio inicial: \(\dfrac{\SI{80,0}{kg}}{25}=\SI{3,2}{kg}\).
+Al reducir \(\SI{0,2}{kg}\) \emph{cada} caja, el nuevo promedio baja en \(\SI{0,2}{kg}\):
+\[
+\SI{3,2}{kg}-\SI{0,2}{kg}=\SI{3,0}{kg}.
+\]
+\textbf{Respuesta: A}.
+
+\vspace{0.4em}
+\textbf{11.} Total \(6\) bolas; no rojas \(=2+1=3\).
+\[
+P(\text{no roja})=\frac{3}{6}=\frac{1}{2}.
+\]
+\textbf{Respuesta: A}.
+
+\vspace{0.4em}
+\textbf{12.} No particular \(=\) bus + taxi + otros \(=35\%+10\%+10\%=55\%\) de \(200\Rightarrow 110\) personas \(>100\).
+\textbf{Respuesta: B}.
+
+% --------------------------------------------------------------------
+\end{document}

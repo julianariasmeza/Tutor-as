@@ -1,0 +1,147 @@
+\documentclass[11pt,a4paper]{article}
+
+%------------------------------------------------
+% PAQUETES
+%------------------------------------------------
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+
+\sisetup{
+  locale = DE,
+  output-decimal-marker = {,},
+  per-mode = symbol,
+  exponent-product = \cdot,
+  group-minimum-digits = 4
+}
+
+\begin{document}
+
+\section*{Ejercicio 1: Concentración de HCl mediante titulación}
+
+Calcule la concentración en mol/L de una disolución de HCl si, durante la titulación de 5 mL de este ácido, el punto final se alcanzó cuando se consumieron 10 mL de NaOH 0,20 mol/L.
+
+\subsection*{Datos}
+
+\[
+V_{\text{HCl}} = \SI{5,0}{mL} = \SI{0,0050}{L}
+\]
+
+\[
+V_{\text{NaOH}} = \SI{10,0}{mL} = \SI{0,0100}{L}
+\]
+
+\[
+C_{\text{NaOH}} = \SI{0,20}{mol/L}
+\]
+
+Reacción química:
+
+\[
+\mathrm{HCl + NaOH \rightarrow NaCl + H_2O}
+\]
+
+\subsection*{Cálculo de moles de NaOH}
+
+\[
+n_{\text{NaOH}} = C_{\text{NaOH}} \cdot V_{\text{NaOH}}
+\]
+
+\[
+n_{\text{NaOH}} = 0,20 \cdot 0,0100 = \SI{0,0020}{mol}
+\]
+
+\subsection*{Moles de HCl}
+
+\[
+n_{\text{HCl}} = \SI{0,0020}{mol}
+\]
+
+\subsection*{Cálculo de la concentración del HCl}
+
+\[
+C_{\text{HCl}} = \frac{n_{\text{HCl}}}{V_{\text{HCl}}}
+\]
+
+\[
+C_{\text{HCl}} = \frac{0,0020}{0,0050} = \SI{0,40}{mol/L}
+\]
+
+\subsection*{Conclusión}
+
+\[
+C_{\text{HCl}} = \SI{0,40}{mol/L}
+\]
+\newpage
+%=============================================================
+
+\section*{Ejercicio 2: Volumen de Ba(OH)\(_2\) necesario para neutralizar HCl}
+
+Calcule los mililitros que se consumirían de Ba(OH)\(_2\) 0,20 mol/L al titular 50 mL de una muestra de HCl 0,15 mol/L.
+
+\subsection*{Datos}
+
+\[
+V_{\text{HCl}} = \SI{50}{mL} = \SI{0,0500}{L}
+\]
+
+\[
+C_{\text{HCl}} = \SI{0,15}{mol/L}
+\]
+
+\[
+C_{\text{Ba(OH)\_2}} = \SI{0,20}{mol/L}
+\]
+
+Reacción química:
+
+\[
+\mathrm{Ba(OH)_2 + 2HCl \rightarrow BaCl_2 + 2H_2O}
+\]
+
+\subsection*{Moles de HCl}
+
+\[
+n_{\text{HCl}} = C_{\text{HCl}} \cdot V_{\text{HCl}}
+\]
+
+\[
+n_{\text{HCl}} = 0,15 \cdot 0,0500 = \SI{0,00750}{mol}
+\]
+
+\subsection*{Relación molar con Ba(OH)\(_2\)}
+
+\[
+n_{\text{Ba(OH)\_2}} = \frac{n_{\text{HCl}}}{2}
+\]
+
+\[
+n_{\text{Ba(OH)\_2}} = \frac{0,00750}{2} = \SI{0,00375}{mol}
+\]
+
+\subsection*{Cálculo del volumen requerido}
+
+\[
+V = \frac{n_{\text{Ba(OH)\_2}}}{C_{\text{Ba(OH)\_2}}}
+\]
+
+\[
+V = \frac{0,00375}{0,20} = \SI{0,01875}{L}
+\]
+
+Conversión a mililitros:
+
+\[
+V = 0,01875 \cdot 1000 = \SI{18,75}{mL}
+\]
+
+\subsection*{Conclusión}
+
+\[
+V_{\text{Ba(OH)\_2}} = \SI{18,75}{mL}
+\]
+
+\end{document}

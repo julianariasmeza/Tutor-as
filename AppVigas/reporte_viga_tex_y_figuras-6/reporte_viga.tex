@@ -1,0 +1,135 @@
+\documentclass[11pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage{geometry}
+\geometry{letterpaper, margin=2.3cm}
+\sisetup{
+  locale = DE,
+  output-decimal-marker = {,},
+  per-mode = symbol,
+  group-minimum-digits = 4
+}
+\DeclareSIUnit{\kip}{kip}
+\DeclareSIUnit{\foot}{ft}
+
+\begin{document}
+
+\section*{Análisis de viga AB}
+
+\subsection*{Datos generales}
+Longitud total: \( L = \SI{4,8}{\foot} \)
+
+\begin{center}
+\begin{tabular}{l c}
+\multicolumn{2}{l}{\textbf{Cargas puntuales}} \\ \hline
+\textbf{Carga} & \textbf{Posición} (\si{\foot}) \\ \hline
+\( P_1 = \SI{1,5}{\kip} \) & \( x = 0,0 \) \\
+\( P_2 = \SI{6,0}{\kip} \) & \( x = 2,4 \) \\
+\( P_3 = \SI{1,5}{\kip} \) & \( x = 4,8 \) \\
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{l c}
+\multicolumn{2}{l}{\textbf{Apoyos}} \\ \hline
+\textbf{Tipo} & \textbf{Posición} (\si{\foot}) \\ \hline
+Pasador (pinned) & \( x = 1,2 \) \\
+Pasador (pinned) & \( x = 3,6 \) \\
+\end{tabular}
+\end{center}
+
+---
+
+\subsection*{Modelado de los apoyos}
+
+En la figura original el apoyo situado en \(G\) aparece desplazado hacia abajo, lo que sugiere una reacción horizontal. Sin embargo, para poder trazar los diagramas de fuerza cortante \(V(x)\) y de momento flector \(M(x)\) de la viga horizontal \(AB\), se adopta el siguiente modelo equivalente:
+
+
+
+---
+
+\subsection*{Reacciones}
+
+Por equilibrio global:
+
+\[
+\sum F_y = 0 \quad \Rightarrow \quad R_D + R_G = 1{,}5 + 6{,}0 + 1{,}5 = 9{,}0~\si{\kip}.
+\]
+
+Debido a la simetría de las cargas respecto al punto medio, las reacciones son iguales:
+
+\[
+\boxed{R_D = R_G = \SI{4,5}{\kip}}
+\]
+
+\begin{center}
+\begin{tabular}{l c}
+\multicolumn{2}{l}{\textbf{Reacciones verticales}} \\ \hline
+\textbf{Posición} & \textbf{Magnitud (\si{\kip})} \\ \hline
+\( x = 1,2~\si{\foot} \) & \( 4,5 \) \\
+\( x = 3,6~\si{\foot} \) & \( 4,5 \) \\
+\end{tabular}
+\end{center}
+
+---
+
+\subsection*{Relaciones básicas}
+\[
+\frac{dV}{dx} = w(x), \qquad \frac{dM}{dx} = V(x)
+\]
+Los saltos en \(V(x)\) se producen por cargas puntuales o reacciones; los cambios de pendiente en \(M(x)\) corresponden a dichos saltos en el cortante.
+
+---
+
+\subsection*{Chequeo de equilibrio}
+\[
+\sum F_y = 4{,}5 + 4{,}5 - (1{,}5 + 6{,}0 + 1{,}5) = 0,
+\qquad
+\sum M_{(x=0)} = 0.
+\]
+El equilibrio global se cumple correctamente.
+
+---
+
+\subsection*{Valores extremos}
+
+\begin{center}
+\begin{tabular}{lccc}
+\hline
+ & \textbf{máx (+)} & \textbf{mín (–)} & \(|\cdot|\) \textbf{máx} \\
+\hline
+\(V(x)\) [\si{\kip}] & \(+3,0\) en \(x=1,2~\si{\foot}\) & \(-3,0\) en \(x=2,4~\si{\foot}\) & \(3,0\) \\
+\(M(x)\) [\si{\kip.\foot}] & \(+1,8\) en \(x=2,4~\si{\foot}\) & \(-1,8\) en \(x=1,2~\si{\foot}\) & \(1,8\) \\
+\hline
+\end{tabular}
+\end{center}
+
+---
+
+\subsection*{Conclusión}
+Con las reacciones \(R_D = R_G = \SI{4,5}{\kip}\), los diagramas de fuerza cortante y momento flector presentan los valores esperados para una viga simplemente apoyada con cargas puntuales simétricas. Los resultados son consistentes con el equilibrio estático y justifican el valor máximo de cortante de \(\SI{3,0}{\kip}\) y de momento flector de \(\SI{1,8}{\kip.\foot}\).
+
+
+\newpage
+%\subsection*{Diagramas}
+Los diagramas \(V(x)\) y \(M(x)\) se adjuntan a continuación.
+
+
+\section*{Diagramas}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{\detokenize{V_1e526040453f4161967685c639c3cbfb.png}}
+  \caption{Diagrama de cortante \(V(x)\) en \(\SI{}{kips }\).}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{\detokenize{M_fa61f9fe1f164efd95e4ff2665c4081f.png}}
+  \caption{Diagrama de momento \(M(x)\) en \(\SI{}{kips.ft}\).}
+\end{figure}
+
+\end{document}

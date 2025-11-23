@@ -1,0 +1,206 @@
+
+% === Folleto COVAO - Mini banco de práctica (v2 con mejoras) ===
+\documentclass[12pt]{article}
+
+% ===== Paquetes =====
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{siunitx}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage[most]{tcolorbox}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\setlength{\headheight}{14.5pt}
+
+\geometry{letterpaper, margin=2.5cm}
+\sisetup{output-decimal-marker = {,}}
+
+% ===== Interruptor para mostrar/ocultar soluciones =====
+\newif\ifshowsolutions
+\showsolutionstrue % <-- cambiá a \showsolutionsfalse para ocultar soluciones
+
+% ===== Estilos de cajas =====
+\tcbset{
+  colback=white,
+  colframe=black!70,
+  boxrule=0.6pt,
+  arc=2mm,
+  left=6pt,right=6pt,top=6pt,bottom=6pt
+}
+\newtcolorbox{ejercicio}[1][]{title=Ejercicio, #1}
+\newtcolorbox{solucion}[1][]{title=Solución, colframe=green!60!black, #1}
+\newtcolorbox{nota}[1][]{title=Nota, colframe=blue!60!black, #1}
+
+% ===== Encabezado/pie =====
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Folleto COVAO}
+\rhead{\today}
+\cfoot{\thepage}
+
+% ===== Encabezado simple =====
+\newcommand{\titulo}{
+  \begin{center}
+  {\Large \textbf{Folleto de preparación — Examen de admisión COVAO}}\\[2pt]
+  {\small Álgebra, aritmética y razonamiento cuantitativo}\\[6pt]
+  \end{center}\vspace{-0.3em}\hrule\vspace{0.8em}
+}
+
+\begin{document}
+\titulo
+
+\begin{nota}
+Este mini banco incluye \textbf{enunciados} primero y \textbf{soluciones} al final (con un interruptor para ocultarlas). 
+Usá cada ejercicio para modelar y practicar: identificá datos, aplicá propiedades y justificá el paso clave.
+\end{nota}
+
+% ==================== ENUNCIADOS ====================
+\section*{Enunciados}
+
+% 1
+\begin{ejercicio}
+\textbf{(Potencias y simetrías)} Analice las proposiciones (I) y (II) y determine cuáles son verdaderas:
+\[
+\text{I.}\ (2^{m}-2^{-m})^{2}=4^{m}-2+\frac{1}{4^{m}}
+\qquad
+\text{II.}\ (2^{m}-2^{-m})^{2}=2^{2m}-2+2^{-2m}.
+\]
+Marque: \textit{a)} Ambas \quad \textit{b)} Ninguna \quad \textit{c)} Solo II \quad \textit{d)} Solo I.
+\end{ejercicio}
+
+% 2
+\begin{ejercicio}
+\textbf{(Sucesiones)} Considere la sucesión
+\(2,\,3,\,5,\,8,\,13,\,p,\,q\).
+Calcule \(p+q\). \;
+\textit{a)} \(34\) \quad \textit{b)} \(144\) \quad \textit{c)} \(89\) \quad \textit{d)} \(55\).
+\end{ejercicio}
+
+% 3
+\begin{ejercicio}
+\textbf{(Edades y razones)} Cuando José Daniel nació, Mary Paz tenía \(9\) años. Actualmente, la edad de José Daniel es \(\tfrac{2}{5}\) de la edad de Mary Paz. ¿Qué edad tiene Mary Paz?
+\textit{a)} \(6\) \quad \textit{b)} \(18\) \quad \textit{c)} \(15\) \quad \textit{d)} \(12\).
+\end{ejercicio}
+
+% 4
+\begin{ejercicio}
+\textbf{(Leyes de exponentes)} Simplifique al máximo:
+\[
+(-3x^{4}y^{3})^{-4}\cdot(-3x^{3}y^{2})^{6}.
+\]
+\textit{a)} \(6x^{2}\) \quad \textit{b)} \(9x^{2}\) \quad \textit{c)} \(12x^{2}\) \quad \textit{d)} \(15x^{2}\).
+\end{ejercicio}
+
+% 5
+\begin{ejercicio}
+\textbf{(Trigonometría aplicada)} El Hospicio de Huérfanos de Cartago construye un edificio dentro del COVAO. Desde un punto a \(40\) m de la base se observa la parte superior con un ángulo de \(32^\circ\) respecto a la horizontal, formando un triángulo rectángulo con altura \(x\). Use:
+\(\tan 32^\circ \approx 0{,}6248\).
+¿Cuál es la altura aproximada del edificio?
+\textit{a)} \(25\) \quad \textit{b)} \(32\) \quad \textit{c)} \(16\) \quad \textit{d)} \(64\).
+\end{ejercicio}
+
+% 6
+\begin{ejercicio}
+\textbf{(Porcentajes)} Un comerciante tiene \(2000\) huevos, de los cuales el \(20\,\text{\%}\) están podridos. Luego vende el \(60\,\text{\%}\) de los que no están podridos. ¿Cuántos huevos \emph{no podridos} vendió?
+\textit{a)} \(1040\) \quad \textit{b)} \(1200\) \quad \textit{c)} \(720\) \quad \textit{d)} \(960\).
+\end{ejercicio}
+
+% 7
+\begin{ejercicio}
+\textbf{(Sistemas lineales)} En el COVAO, en la sección 10A hay \(7\) mujeres más que en la 10B. Si una mujer pasa de 10B a 10A, en 10A habrá el doble de mujeres que en 10B. ¿Cuántas mujeres hay entre las secciones 10A y 10B?
+\textit{a)} \(5\) \quad \textit{b)} \(17\) \quad \textit{c)} \(12\) \quad \textit{d)} \(10\).
+\end{ejercicio}
+
+% 8
+\begin{ejercicio}
+\textbf{(Problemas de edades)} Hace 8 años Julio era tres veces más viejo que su hijo Julián. Ahora, él es el doble de la edad de su hijo. Si solamente tiene un hijo, ¿cuál es la suma de las edades actuales de Julio y Julián?
+\textit{a)} \(16\) \quad \textit{b)} \(32\) \quad \textit{c)} \(48\) \quad \textit{d)} \(8\).
+\end{ejercicio}
+
+% 9
+\begin{ejercicio}
+\textbf{(Enteros consecutivos)} La suma de cuatro números enteros consecutivos es \(154\). La suma de los dígitos del número mayor es:
+\textit{a)} \(37\) \quad \textit{b)} \(40\) \quad \textit{c)} \(4\) \quad \textit{d)} \(10\).
+\end{ejercicio}
+
+% 10
+\begin{ejercicio}
+\textbf{(Álgebra)} Determine el resultado al simplificar al máximo
+\[
+2x-3(1-x)^{2}-\bigl[x(3-x)+4x\bigr].
+\]
+\textit{a)} \(-2x^{2}+x-3\) \quad
+\textit{b)} \(-x^{2}+10x+4\) \quad
+\textit{c)} \(2x^{2}+7x-14\) \quad
+\textit{d)} \(2x^{2}+3x+1\).
+\end{ejercicio}
+
+% 11
+\begin{ejercicio}
+\textbf{(Operación definida)} Si \(a*b*c=2a-(b-c)^{2}\), ¿cuál es el valor de \(3*5*(-2)\)?
+\textit{a)} \(3\) \quad \textit{b)} \(-3\) \quad \textit{c)} \(43\) \quad \textit{d)} \(-43\).
+\end{ejercicio}
+
+% 12
+\begin{ejercicio}
+\textbf{(Números primos)} Si \(p\) y \(q\) son primos divisores de \(54\) y \(p>q\), entonces con certeza:
+I) \(p+q=5\), II) \(pq=6\), III) \(q-p=2\).
+\textit{a)} Solo II y III \quad \textit{b)} Solo I \quad \textit{c)} Solo I y II \quad \textit{d)} Solo I y III.
+\end{ejercicio}
+
+% 13
+\begin{ejercicio}
+\textbf{(Expresiones)} Si \(A=-2x+2(x+1)\) y \(B=3x+1\), calcule \(4(A-B)+12\).
+\textit{a)} \(-12x\) \quad \textit{b)} \(4-12x\) \quad \textit{c)} \(12-2x\) \quad \textit{d)} \(16-12x\).
+\end{ejercicio}
+
+% 14
+\begin{ejercicio}
+\textbf{(Relojes)} Un reloj atrasa \(3\) min por hora. Se pone a funcionar con hora exacta y, \(6\) h después, marca \(8{:}47\,\mathrm{am}\). ¿Cuál es la hora exacta en ese momento?
+\textit{a)} \(3{:}47\,\mathrm{pm}\) \quad \textit{b)} \(9{:}05\,\mathrm{am}\) \quad \textit{c)} \(9{:}47\,\mathrm{am}\) \quad \textit{d)} \(2{:}05\,\mathrm{pm}\).
+\end{ejercicio}
+
+% 15
+\begin{ejercicio}
+\textbf{(Procesos periódicos)} Tres timbres suenan cada \(75\), \(80\) y \(90\) min, respectivamente. Si suenan juntos a las \(10{:}00\,\mathrm{am}\) del domingo, ¿cuándo volverán a coincidir?
+\textit{a)} 10{:}00\,pm del martes \quad \textit{b)} 10{:}00\,am del lunes \quad \textit{c)} 10{:}00\,am del martes \quad \textit{d)} 10{:}00\,pm del lunes.
+\end{ejercicio}
+
+% ==================== SOLUCIONES (con interruptor) ====================
+\ifshowsolutions
+\section*{Soluciones}
+
+% ... mismas soluciones que antes (abreviadas aquí por espacio) ...
+\begin{solucion}\textbf{1)} Ambas.\end{solucion}
+\begin{solucion}\textbf{2)} d.\end{solucion}
+\begin{solucion}\textbf{3)} c.\end{solucion}
+\begin{solucion}\textbf{4)} b.\end{solucion}
+\begin{solucion}\textbf{5)} a.\end{solucion}
+\begin{solucion}\textbf{6)} d.\end{solucion}
+\begin{solucion}\textbf{7)} d.\end{solucion}
+\begin{solucion}\textbf{8)} c.\end{solucion}
+\begin{solucion}\textbf{9)} c.\end{solucion}
+\begin{solucion}\textbf{10)} a.\end{solucion}
+\begin{solucion}\textbf{11)} d.\end{solucion}
+\begin{solucion}\textbf{12)} c.\end{solucion}
+\begin{solucion}\textbf{13)} d.\end{solucion}
+\begin{solucion}\textbf{14)} b.\end{solucion}
+\begin{solucion}\textbf{15)} a.\end{solucion}
+\fi
+
+% ==================== CLAVE DE RESPUESTAS ====================
+\begin{nota}
+\textbf{Clave rápida (1–15)}\vspace{0.3em}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15\\ \hline
+a & d & c & b & a & d & d & c & c & a & d & c & d & b & a\\ \hline
+\end{tabular}
+\end{center}
+\end{nota}
+
+\end{document}

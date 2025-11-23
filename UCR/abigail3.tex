@@ -1,0 +1,100 @@
+% ==========================================================
+% Sucesión: x_{n+1} = sqrt(3 x_n + 4),  x_1 = 7
+% Prueba: decreciente y acotada; convergencia y límite
+% ==========================================================
+\documentclass[11pt,letterpaper]{article}
+
+% Idioma y matemática
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, es-nodecimaldot]{babel}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\section*{Sucesión \(x_{1}=7,\; x_{n+1}=\sqrt{3x_{n}+4}\) para \(n\ge 1\)}
+
+\subsection*{(a) Inducción: \( (x_n) \) es decreciente y \(x_n \ge 3\) para todo \(n\)}
+
+\textbf{Datos.} \(x_{1}=7\), \quad \(x_{n+1}=f(x_n)\) con \(f(x)=\sqrt{3x+4}\).
+
+\textbf{Paso 1 — Cota inferior \(x_n\ge 3\).}
+\begin{itemize}
+  \item \textit{Base:} \(x_1=7\ge 3\).
+  \item \textit{Paso inductivo:} Suponga \(x_n\ge 3\). Entonces
+  \[
+  x_{n+1}=\sqrt{3x_n+4}\ \ge\ \sqrt{3\cdot 3+4}=\sqrt{13}>3.
+  \]
+  Por tanto, \(x_{n+1}\ge 3\).
+\end{itemize}
+Concluimos por inducción que \(\boxed{x_n\ge 3\ \forall n}\).
+(De hecho, incluso \(x_n\ge 4\), ver abajo.)
+
+\textbf{Paso 2 — Monotonía decreciente.}
+Notamos que, para \(x>0\),
+\[
+f(x)\le x \iff \sqrt{3x+4}\le x \iff 3x+4\le x^{2}
+\iff x^{2}-3x-4\ge 0 \iff (x-4)(x+1)\ge 0.
+\]
+Así, si \(x\ge 4\) entonces \(f(x)\le x\).
+
+\textit{Mostramos por inducción que \(x_n\ge 4\).}
+\begin{itemize}
+  \item \textit{Base:} \(x_1=7\ge 4\).
+  \item \textit{Paso inductivo:} Si \(x_n\ge 4\), entonces
+  \[
+  x_{n+1}=\sqrt{3x_n+4}\ \ge\ \sqrt{3\cdot 4+4}=\sqrt{16}=4.
+  \]
+\end{itemize}
+Luego \(x_n\ge 4\) para todo \(n\). En consecuencia, usando la implicación anterior,
+\[
+x_{n+1}=f(x_n)\le x_n \quad \text{para todo } n,
+\]
+es decir, \(\boxed{(x_n)\ \text{es decreciente}.}\)
+
+\textbf{Conclusión del (a).} La sucesión es \emph{decreciente} y está \emph{acotada inferiormente} por \(4\) (y, por tanto, por \(3\)).
+
+\subsection*{(b) Convergencia y límite}
+
+\textbf{Criterio de convergencia.}
+Una sucesión monótona y acotada converge. Como \((x_n)\) es decreciente y \(x_n\ge 4\), resulta \(\boxed{(x_n)\ \text{converge}.}\)
+
+\textbf{Cálculo del límite.}
+Si \(\displaystyle \lim_{n\to\infty} x_n = L\), pasando al límite en la relación recursiva:
+\[
+L=\sqrt{3L+4}
+\ \Longrightarrow\
+L^{2}=3L+4
+\ \Longrightarrow\
+L^{2}-3L-4=0
+\ \Longrightarrow\
+(L-4)(L+1)=0.
+\]
+Como \(x_n>0\), el único límite admisible es \(\boxed{L=4}\).
+
+\textbf{Interpretación.} La iteración \(f(x)=\sqrt{3x+4}\) deja invariante el punto \(x=4\) y, al iniciar en \(x_1=7\), la sucesión desciende de forma monótona y queda atrapada por debajo por \(4\), convergiendo precisamente a ese punto fijo.
+\section*{Análisis de \(a_n=\dfrac{n}{n+1}\cos(n\pi+1)\)}
+\[
+\cos(n\pi+1)=\cos(n\pi)\cos 1-\sin(n\pi)\sin 1=(-1)^n\cos 1,
+\]
+\[
+\Rightarrow\quad a_n=(-1)^n\cos 1\cdot\frac{n}{n+1}.
+\]
+
+\textbf{Acotación:}
+\[
+|a_n|=|\cos 1|\frac{n}{n+1}<|\cos 1|\quad\Rightarrow\quad -|\cos 1|<a_n<|\cos 1|.
+\]
+
+\textbf{Monotonía:} no es monótona (alterna de signo). Subsucesiones:
+\[
+a_{2k}=\cos 1\cdot\frac{2k}{2k+1}\nearrow \cos 1,\qquad
+a_{2k+1}=-\cos 1\cdot\frac{2k+1}{2k+2}\searrow -\cos 1.
+\]
+
+\textbf{Convergencia:} no converge, pues
+\[
+\lim_{k\to\infty} a_{2k}=\cos 1\neq -\cos 1=\lim_{k\to\infty} a_{2k+1}.
+\]
+
+\end{document}

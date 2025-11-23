@@ -1,0 +1,458 @@
+% ==========================================================
+% Problemas 3.1 y 3.2 — Momento de una fuerza (desarrollo vertical)
+% ==========================================================
+\documentclass[11pt,letterpaper]{article}
+
+% --- Idioma y formato ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, es-nodecimaldot]{babel}
+
+% --- Matemática y unidades ---
+\usepackage{amsmath, amssymb, siunitx}
+\sisetup{
+  locale = DE,
+  output-decimal-marker = {,},
+  per-mode = symbol,
+  exponent-product = \cdot,
+  group-minimum-digits = 4
+}
+
+% --- Página ---
+\usepackage[a4paper,margin=2.4cm]{geometry}
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{0pt}
+
+% ==========================================================
+\begin{document}
+
+\section*{Problema 3.1}
+\[
+\alpha = 28^\circ, \quad F = \SI{16}{N}, \quad AB = \SI{170}{mm} = \SI{0,17}{m}, \quad \beta = 20^\circ
+\]
+
+\subsection*{Determinación del ángulo efectivo}
+\[
+\theta = \alpha - \beta = 28^\circ - 20^\circ = 8^\circ
+\]
+
+\subsection*{Componentes de la fuerza}
+\[
+F_x = F \cos \theta = 16 \cos 8^\circ = \SI{15,8443}{N}
+\]
+\[
+F_y = F \sin \theta = 16 \sin 8^\circ = \SI{2,2268}{N}
+\]
+
+\subsection*{Componentes de la posición}
+\[
+x = (0,17) \cos 20^\circ = \SI{0,159748}{m}
+\]
+\[
+y = (0,17) \sin 20^\circ = \SI{0,058143}{m}
+\]
+
+\subsection*{Momento respecto a \( B \)}
+\[
+M_B = x F_y + y F_x
+\]
+\[
+M_B = (0,159748)(2,2268) + (0,058143)(15,8443)
+\]
+\[
+M_B = 0,3558 + 0,9213 = \SI{1,277}{N\cdot m}
+\]
+
+\[
+\boxed{M_B = 1,277\ \si{N\cdot m}}
+\]
+
+% ==========================================================
+\newpage
+\section*{Problema 3.2}
+\[
+\alpha = 28^\circ, \quad F = \SI{16}{N}, \quad AB = \SI{170}{mm} = \SI{0,17}{m}
+\]
+
+\subsection*{Descomposición de la fuerza}
+\[
+Q = F \sin \alpha = 16 \sin 28^\circ = \SI{7,5115}{N}
+\]
+\[
+P = F \cos \alpha = 16 \cos 28^\circ = \SI{14,147}{N}
+\]
+
+\subsection*{Momento respecto a \( B \)}
+\[
+M_B = r_{AB}\,Q = (0,17)(7,5115) = \SI{1,277}{N\cdot m}
+\]
+
+\[
+\boxed{M_B = 1,277\ \si{N\cdot m}}
+\]
+\newpage
+% ==========================================================
+\section*{Problema 3.3}
+
+\[
+F = \SI{300}{N}, \quad \text{ángulo con la horizontal } = 25^\circ
+\]
+\[
+DA_x = \SI{0,1}{m}, \quad DA_y = \SI{0,2}{m}
+\]
+
+\subsection*{(a) Momento de la fuerza de \SI{300}{N} alrededor de $D$}
+
+Componentes de la fuerza:
+\[
+F_x = F \cos 25^\circ = 300 \cos 25^\circ = \SI{271,89}{N}
+\]
+\[
+F_y = F \sin 25^\circ = 300 \sin 25^\circ = \SI{126,785}{N}
+\]
+
+
+\[
+\vec{F} = (271,89)\,\mathbf{i} + (126,785)\,\mathbf{j}\ \si{N}
+\]
+
+
+\[
+\vec{r} = \overrightarrow{DA} = (-0,1)\,\mathbf{i} + (-0,2)\,\mathbf{j}\ \si{m}
+\]
+
+Producto cruz:
+\[
+\vec{M}_D = \vec{r} \times \vec{F}
+\]
+
+Componente en \(\mathbf{k}\):
+\[
+M_D =
+\begin{vmatrix}
+\mathbf{i} & \mathbf{j} & \mathbf{k} \\
+-0,1 & -0,2 & 0 \\
+271,89 & 126,785 & 0
+\end{vmatrix}
+=
+\left[ (-0,1)(126,785) - (-0,2)(271,89) \right]\mathbf{k}
+\]
+
+
+\[
+(-0,1)(126,785) = -12,6785
+\]
+\[
+(-0,2)(271,89) = -54,378
+\]
+\[
+-(-0,2)(271,89) = +54,378
+\]
+\[
+-12,6785 + 54,378 = 41,6995
+\]
+
+\[
+M_D = 41,6995\ \mathbf{k}\ \si{N\cdot m}
+\]
+
+\[
+\boxed{M_D = 41,7\ \si{N\cdot m}}
+\]
+
+\subsection*{(b) Fuerza mínima en \(B\) que produce el mismo momento alrededor de \(D\)}
+
+
+\[
+DB = \SI{0,28284}{m} \quad (\text{dirección }45^\circ)
+\]
+
+Sea \(Q\) la magnitud de la fuerza aplicada en \(B\), perpendicular a \(DB\).
+
+\[
+M_D = Q \cdot DB
+\]
+
+\[
+41,700\ \si{N\cdot m} = Q \cdot 0,28284\ \si{m}
+\]
+
+\[
+Q = \frac{41,700}{0,28284} = \SI{147,4}{N}
+\]
+
+\[
+\boxed{Q = 147,4\ \si{N} \text{ a } 45^\circ}
+\]
+
+\newpage
+% ==========================================================
+\section*{Problema 3.4}
+
+\[
+F = \SI{300}{N}, \quad \text{ángulo con la horizontal } = 25^\circ
+\]
+\[
+DC_x = \SI{0,2}{m}, \quad DC_y = \SI{0,125}{m}
+\]
+
+\subsection*{(a) Momento de la fuerza de \SI{300}{N} alrededor de $D$}
+
+
+\[
+\boxed{M_D = 41,7\ \si{N\cdot m}}
+\]
+
+\subsection*{(b) Fuerza horizontal en $C$ que produce el mismo momento alrededor de $D$}
+
+
+\[
+\vec{C} = C\,\mathbf{i} \quad (\text{fuerza horizontal pura})
+\]
+
+
+\[
+\vec{r} = \overrightarrow{DC} = (0,2)\,\mathbf{i} - (0,125)\,\mathbf{j}\ \si{m}
+\]
+
+Momento:
+\[
+\vec{M}_D = \vec{r} \times \vec{C}
+=
+\begin{vmatrix}
+\mathbf{i} & \mathbf{j} & \mathbf{k} \\
+0,2 & -0,125 & 0 \\
+C & 0 & 0
+\end{vmatrix}
+=
+\left[(0,2)(0) - (-0,125)(C)\right]\mathbf{k}
+=
+(0,125\,C)\,\mathbf{k}
+\]
+
+
+\[
+M_D = 0,125\,C
+\]
+
+
+\[
+41,7 = 0,125\,C
+\]
+
+\[
+C = \frac{41,7}{0,125} = \SI{333,60}{N}
+\]
+
+
+\[
+\boxed{C \approx 334\ \si{N} \text{ hacia la derecha}}
+\]
+
+\subsection*{(c) Fuerza mínima en $C$ que produce el mismo momento alrededor de $D$}
+
+
+Ángulo de la línea \(DC\) respecto a la horizontal:
+\[
+\tan \alpha = \frac{0,125}{0,2}
+\quad\Longrightarrow\quad
+\alpha = 32,0^\circ
+\]
+
+Longitud de \(DC\):
+\[
+DC = \sqrt{(0,2)^2 + (0,125)^2}
+\]
+\[
+DC = \sqrt{0,04 + 0,015625}
+= \sqrt{0,055625}
+= \SI{0,23585}{m}
+\]
+
+
+\[
+M_D = C \cdot DC
+\]
+
+\[
+41,7\ \si{N\cdot m} = C \cdot 0,23585\ \si{m}
+\]
+
+\[
+C = \frac{41,7}{0,23585} = \SI{176,8}{N}
+\]
+
+Orientación:
+\[
+\text{dirección de la fuerza } = \alpha + 90^\circ = 32^\circ + 90^\circ = 122^\circ
+\]
+
+
+
+\[
+\boxed{C = 176,8\ \si{N} \text{ a } 58^\circ}
+\]
+\newpage
+% ==========================================================
+\section*{Problema 3.21}
+
+\[
+F = \SI{200}{N}
+\]
+
+
+\[
+r_{CA} = \overrightarrow{AC} \quad\Rightarrow\quad
+r_{CA} = (0,06)\,\mathbf{i} + (0,075)\,\mathbf{j} + 0\,\mathbf{k}\ \si{m}
+\]
+
+
+\[
+F_C = F_x\,\mathbf{i} + F_y\,\mathbf{j} + F_z\,\mathbf{k}
+\]
+
+
+\[
+F_x = 0
+\]
+\[
+F_y = -(200)\cos 30^\circ = -200\cos 30^\circ\ \si{N}
+\]
+\[
+F_z = (200)\sin 30^\circ = 200\sin 30^\circ\ \si{N}
+\]
+
+
+\[
+F_C = 0\,\mathbf{i} + \bigl[-200\cos 30^\circ\bigr]\mathbf{j}
+      + \bigl[200\sin 30^\circ\bigr]\mathbf{k}
+\]
+
+
+\[
+\vec{M}_A = \vec{r}_{CA} \times \vec{F}_C
+\]
+
+
+\[
+\vec{M}_A =
+\begin{vmatrix}
+\mathbf{i} & \mathbf{j} & \mathbf{k} \\
+0,06 & 0,075 & 0 \\
+0 & -200\cos 30^\circ & 200\sin 30^\circ
+\end{vmatrix}
+\]
+
+
+Componente \(\mathbf{i}\):
+\[
+M_{A,x} =
+\begin{vmatrix}
+0,075 & 0 \\
+-200\cos 30^\circ & 200\sin 30^\circ
+\end{vmatrix}
+=
+0,075(200\sin 30^\circ) - 0(-200\cos 30^\circ)
+\]
+\[
+M_{A,x} = 0,075 \cdot 200 \sin 30^\circ
+= 15 \sin 30^\circ
+= 15(0,5)
+= 7,50\ \si{N\cdot m}
+\]
+
+Componente \(\mathbf{j}\) :
+\[
+M_{A,y} = -
+\begin{vmatrix}
+0,06 & 0 \\
+0 & 200\sin 30^\circ
+\end{vmatrix}
+=
+-
+\left[
+0,06(200\sin 30^\circ) - 0\cdot 0
+\right]
+\]
+\[
+M_{A,y} = -\left[0,06 \cdot 200 \cdot 0,5\right]
+= -\left[0,06 \cdot 100\right]
+= -6,00\ \si{N\cdot m}
+\]
+
+Componente \(\mathbf{k}\):
+\[
+M_{A,z} =
+\begin{vmatrix}
+0,06 & 0,075 \\
+0 & -200\cos 30^\circ
+\end{vmatrix}
+=
+0,06(-200\cos 30^\circ) - 0,075(0)
+\]
+\[
+M_{A,z} = -12 \cos 30^\circ
+= -12 (0,8660)
+= -10,392 \ \si{N\cdot m}
+\]
+
+
+\[
+\vec{M}_A =
+(7,50)\,\mathbf{i}
++(-6,00)\,\mathbf{j}
++(-10,39)\,\mathbf{k}
+\ \si{N\cdot m}
+\]
+
+\[
+\boxed{\vec{M}_A =
+7,50\,\mathbf{i}
+-6,00\,\mathbf{j}
+-10,39\,\mathbf{k}
+\ \si{N\cdot m}}
+\]
+\newpage
+% ==========================================================
+\section*{Problema 3.22 — Momento respecto de \(O\)}
+
+\[
+\vec{r}_{BO} = (0)\,\mathbf{i} + (7)\,\mathbf{j} + (0)\,\mathbf{k}\ \si{m},
+\qquad
+\vec{F}_B = (295)\,\mathbf{i} + (980)\,\mathbf{j} + (440)\,\mathbf{k}\ \si{N}.
+\]
+
+\[
+\vec{M}_O = \vec{r}_{BO} \times \vec{F}_B
+=
+\begin{vmatrix}
+\mathbf{i} & \mathbf{j} & \mathbf{k} \\
+0 & 7 & 0 \\
+295 & 980 & 440
+\end{vmatrix}
+\]
+
+\[
+M_{O,x} = (7)(440) - (0)(980) = 3080
+\]
+\[
+M_{O,y} = -\bigl[(0)(440) - (0)(295)\bigr] = 0
+\]
+\[
+M_{O,z} = (0)(980) - (7)(295) = -2065 \approx -2070
+\]
+
+\[
+\boxed{
+\vec{M}_O =
+3080\,\mathbf{i}
++
+0\,\mathbf{j}
+-
+2070\,\mathbf{k}
+\ \si{N\cdot m}
+}
+\]
+
+
+\end{document}

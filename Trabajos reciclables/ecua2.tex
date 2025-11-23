@@ -1,0 +1,837 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{siunitx}
+\geometry{a4paper, margin=2.5cm}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Ecuaciones Diferenciales}
+\lhead{Tarea 2}
+\rfoot{Página \thepage}
+
+\title{Tarea 2 — Ecuaciones Diferenciales}
+\author{Nombre del estudiante \\ Curso: Ecuaciones Diferenciales}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Ejercicio 1 (5 puntos)}
+
+Resolver la siguiente ecuación diferencial:
+
+\[
+\frac{dy}{dx} = \frac{1}{x + y^2}
+\]
+
+\subsection*{Paso 1: Identificación del tipo de ecuación}
+
+Observamos que la ecuación no es de variables separables, ni es lineal.  
+Tampoco puede clasificarse como homogénea ni exacta.  
+Intentamos simplificarla mediante un cambio de variable.
+
+\subsection*{Paso 2: Intento de sustitución \( u = y^2 \)}
+
+\[
+u = y^2 \Rightarrow \frac{du}{dx} = 2y \frac{dy}{dx}
+\Rightarrow \frac{dy}{dx} = \frac{1}{2y} \frac{du}{dx}
+\]
+
+Sustituimos en la ecuación original:
+
+\[
+\frac{1}{2y} \frac{du}{dx} = \frac{1}{x + u}
+\Rightarrow \frac{du}{dx} = \frac{2y}{x + u}
+\]
+
+Esta forma aún depende de \( y \), por lo que no resulta útil.  
+Descartamos esta sustitución.
+
+\subsection*{Paso 3: Otra forma — Reescribir la ecuación}
+
+Multiplicamos ambos lados por el denominador:
+
+\[
+\left(x + y^2\right) \frac{dy}{dx} = 1
+\]
+
+Sigue siendo una ecuación implícita que mezcla variables.
+
+\subsection*{Paso 4: Conclusión}
+
+La ecuación:
+
+\[
+\frac{dy}{dx} = \frac{1}{x + y^2}
+\]
+
+no se puede resolver mediante funciones elementales.  
+No admite solución cerrada con los métodos básicos de primer orden (separación, lineales, exactas, homogéneas o sustituciones clásicas).  
+Su solución solo puede expresarse mediante funciones especiales o integrales no elementales.
+
+\subsection*{Resultado final}
+
+La solución general no puede escribirse en forma cerrada usando funciones elementales.  
+Se concluye que esta ecuación **no es integrable mediante métodos estándar**.
+
+
+\section*{Ejercicio 2 (5 puntos)}
+
+Resolver la siguiente ecuación diferencial:
+
+\[
+\frac{dy}{dx} = \frac{xy + 2y - x - 2}{xy - 3y + x - 3}
+\]
+
+\subsection*{Paso 1: Factorización del numerador y denominador}
+
+\textbf{Numerador:} \( xy + 2y - x - 2 \)
+
+Agrupamos los términos:
+
+\[
+xy + 2y - x - 2 = (xy + 2y) - (x + 2)
+\]
+
+Sacamos factor común en cada grupo:
+
+\[
+= y(x + 2) - 1(x + 2)
+\Rightarrow (y - 1)(x + 2)
+\]
+
+\vspace{1em}
+
+\textbf{Denominador:} \( xy - 3y + x - 3 \)
+
+Agrupamos:
+
+\[
+xy - 3y + x - 3 = (xy - 3y) + (x - 3)
+\]
+
+Factor común en cada grupo:
+
+\[
+= y(x - 3) + 1(x - 3)
+\Rightarrow (y + 1)(x - 3)
+\]
+
+\vspace{1em}
+
+\textbf{Sustituyendo en la ecuación:}
+
+\[
+\frac{dy}{dx} = \frac{(y - 1)(x + 2)}{(y + 1)(x - 3)}
+\]
+
+
+\subsection*{Paso 2: Separación de variables}
+
+\[
+\frac{dy}{dx} = \frac{y - 1}{y + 1} \cdot \frac{x + 2}{x - 3}
+\Rightarrow \frac{y + 1}{y - 1} \, dy = \frac{x + 2}{x - 3} \, dx
+\]
+
+\subsection*{Paso 3: Simplificar integrando}
+
+\[
+\frac{y + 1}{y - 1} = 1 + \frac{2}{y - 1}
+\Rightarrow \int \left(1 + \frac{2}{y - 1} \right) dy = y + 2 \ln|y - 1|
+\]
+
+\[
+\frac{x + 2}{x - 3} = 1 + \frac{5}{x - 3}
+\Rightarrow \int \left(1 + \frac{5}{x - 3} \right) dx = x + 5 \ln|x - 3|
+\]
+
+\subsection*{Paso 4: Solución general}
+
+\[
+\boxed{
+y + 2 \ln|y - 1| = x + 5 \ln|x - 3| + C
+}
+\]
+
+\section*{Ejercicio 3}
+
+Resolver la ecuación:
+
+\[
+2x^3 y\,dx + (x^4 + y^4)\,dy = 0
+\]
+
+\subsection*{Paso 1: Reorganizar y simplificar}
+
+Partimos de la ecuación:
+
+\[
+2x^3 y\,dx + (x^4 + y^4)\,dy = 0
+\]
+
+Restamos el primer término a ambos lados:
+
+\[
+(x^4 + y^4)\,dy = -2x^3 y\,dx
+\]
+
+Dividimos ambos lados entre \( dx \) para obtener la ecuación en forma explícita:
+
+\[
+\frac{dy}{dx} = \frac{-2x^3 y}{x^4 + y^4}
+\]
+
+Ahora analizamos la estructura del lado derecho. Observamos que tanto el numerador como el denominador son expresiones **homogéneas de grado 4**, ya que:
+
+- En el numerador: \( -2x^3 y \) tiene grado \( 3 + 1 = 4 \)
+- En el denominador: \( x^4 + y^4 \) tiene grado máximo \( 4 \)
+
+Esto nos permite aplicar un cambio de variable apropiado para ecuaciones homogéneas. Para confirmar, expresamos ambos términos en función de \( \frac{y}{x} \):
+
+Factorizamos \( x^4 \) del denominador:
+
+\[
+\frac{dy}{dx} = \frac{-2x^3 y}{x^4 (1 + \left(\frac{y}{x}\right)^4)} = \frac{-2y}{x \left(1 + \left(\frac{y}{x}\right)^4\right)}
+\]
+
+Esta forma confirma que es una ecuación homogénea, y está lista para aplicar el cambio de variable:
+
+\[
+v = \frac{y}{x}
+\]
+
+
+\subsection*{Paso 2: Homogeneidad}
+
+Reescribimos como:
+
+\[
+\frac{dy}{dx} = -\frac{2y}{x} \cdot \frac{1}{1 + \left( \frac{y}{x} \right)^4}
+\]
+
+La ecuación es homogénea, entonces hacemos el cambio:
+
+\[
+v = \frac{y}{x} \Rightarrow y = vx \Rightarrow \frac{dy}{dx} = v + x \frac{dv}{dx}
+\]
+
+Sustituimos en la ecuación:
+
+\[
+v + x \frac{dv}{dx} = -\frac{2v}{1 + v^4}
+\]
+
+\subsection*{Paso 3: Resolver para \( \frac{dv}{dx} \)}
+
+\[
+x \frac{dv}{dx} = -\frac{2v}{1 + v^4} - v = -v \left( \frac{2 + (1 + v^4)}{1 + v^4} \right)
+= -v \left( \frac{3 + v^4}{1 + v^4} \right)
+\]
+
+\[
+\frac{dv}{dx} = -\frac{v (3 + v^4)}{x (1 + v^4)}
+\]
+
+\subsection*{Paso 4: Separación de variables}
+
+\[
+\frac{1 + v^4}{v (3 + v^4)}\,dv = -\frac{dx}{x}
+\]
+
+\subsection*{Paso 5: Integración}
+
+\[
+\int \frac{1 + v^4}{v (3 + v^4)}\,dv = \int -\frac{1}{x} \, dx
+\]
+
+\subsection*{ Fracciones parciales}
+
+Observamos que:
+
+\[
+\frac{1 + v^4}{v (3 + v^4)} = \frac{1}{v} \cdot \frac{1 + v^4}{3 + v^4}
+\]
+
+Planteamos:
+
+\[
+\frac{1 + v^4}{v (3 + v^4)} = \frac{A}{v} + \frac{Bv^3 + Cv^2 + Dv + E}{3 + v^4}
+\]
+
+Multiplicamos por \( v(3 + v^4) \):
+
+\[
+1 + v^4 = A(3 + v^4) + v(Bv^3 + Cv^2 + Dv + E)
+\]
+\newpage
+Desarrollamos:
+
+\[
+1 + v^4 = 3A + Av^4 + Bv^4 + Cv^3 + Dv^2 + Ev
+\]
+
+Agrupamos por potencias de \( v \):
+
+\[
+1 + v^4 = 3A + (A + B)v^4 + Cv^3 + Dv^2 + Ev
+\]
+
+Igualamos coeficientes:
+
+\[
+\begin{cases}
+A + B = 1 \\
+C = 0 \\
+D = 0 \\
+E = 0 \\
+3A = 1 \Rightarrow A = \frac{1}{3}
+\Rightarrow B = \frac{2}{3}
+\end{cases}
+\]
+
+\subsection*{Paso 5: Integral}
+
+\[
+\int \frac{1 + v^4}{v(3 + v^4)}\,dv = \int \left( \frac{1}{3v} + \frac{2v^3}{3(3 + v^4)} \right) dv
+\]
+
+La segunda integral se resuelve con el cambio \( u = 3 + v^4 \Rightarrow du = 4v^3\,dv \)
+
+\[
+\int \frac{2v^3}{3(3 + v^4)}\,dv = \frac{1}{6} \int \frac{4v^3}{3 + v^4} dv = \frac{1}{6} \ln|3 + v^4|
+\]
+
+Entonces:
+
+\[
+\int \frac{1 + v^4}{v (3 + v^4)}\,dv = \frac{1}{3} \ln |v| + \frac{1}{6} \ln |3 + v^4| + C
+\]
+
+\subsection*{Paso 6: Sustituir \( v = \frac{y}{x} \)}
+
+\[
+\frac{1}{3} \ln \left| \frac{y}{x} \right| + \frac{1}{6} \ln \left| 3 + \left( \frac{y}{x} \right)^4 \right| = \ln|x| + C
+\]
+
+\subsection*{Paso 7: Solución general}
+
+\[
+\boxed{
+\frac{1}{3} \ln \left| \frac{y}{x} \right| + \frac{1}{6} \ln \left| \frac{y^4}{x^4} + 3 \right| = \ln |x| + C
+}
+\]
+
+
+
+\newpage
+\section*{Ejercicio 4}
+
+Resolver la ecuación diferencial:
+
+\[
+y\,dx + (xy + 2x - y e^y)\,dy = 0
+\]
+
+\subsection*{Paso 1: Verificar si es exacta}
+
+Sean:
+\[
+M(x,y) = y, \quad N(x,y) = xy + 2x - y e^y
+\]
+
+Derivamos:
+\[
+\frac{\partial M}{\partial y} = 1, \qquad \frac{\partial N}{\partial x} = y + 2
+\Rightarrow \frac{\partial M}{\partial y} \ne \frac{\partial N}{\partial x}
+\]
+
+Por tanto, no es exacta.
+
+\subsection*{Paso 2: Calcular factor integrante \( \mu(y) \)}
+
+Buscamos \( \mu(y) \) tal que:
+\[
+g(y) = \frac{N_x - M_y}{M} = \frac{y + 2 - 1}{y} = \frac{y + 1}{y} = 1 + \frac{1}{y}
+\]
+
+Entonces:
+\[
+\mu(y) = \exp\left(\int \left(1 + \frac{1}{y} \right) dy \right) = \exp(y + \ln|y|) = y e^y
+\]
+
+\subsection*{Paso 3: Multiplicar por el factor integrante}
+
+Multiplicamos toda la ecuación por \( \mu(y) = y e^y \):
+
+\[
+y^2 e^y\,dx + (x y^2 e^y + 2 x y e^y - y^2 e^{2y})\,dy = 0
+\]
+
+\[
+M(x,y) = y^2 e^y, \quad N(x,y) = x y^2 e^y + 2 x y e^y - y^2 e^{2y}
+\]
+
+Calculamos derivadas:
+
+\[
+\frac{\partial M}{\partial y} = 2 y e^y + y^2 e^y = e^y (2 y + y^2)
+\]
+\[
+\frac{\partial N}{\partial x} = y^2 e^y + 2 y e^y = e^y (2 y + y^2)
+\]
+
+\[
+\Rightarrow \frac{\partial M}{\partial y} = \frac{\partial N}{\partial x} \Rightarrow \text{¡Ahora sí es exacta!}
+\]
+
+\subsection*{Paso 4: Hallar la función potencial \( U(x,y) \)}
+
+Sabemos que:
+\[
+\frac{\partial U}{\partial x} = M = y^2 e^y
+\Rightarrow U(x,y) = \int y^2 e^y\,dx = x y^2 e^y + f(y)
+\]
+
+Derivamos con respecto a \( y \):
+
+\[
+\frac{\partial U}{\partial y} = 2 x y e^y + x y^2 e^y + f'(y)
+\]
+
+Queremos que:
+\[
+\frac{\partial U}{\partial y} = N = x y^2 e^y + 2 x y e^y - y^2 e^{2y}
+\]
+
+Comparando:
+\[
+2 x y e^y + x y^2 e^y + f'(y) = x y^2 e^y + 2 x y e^y - y^2 e^{2y}
+\Rightarrow f'(y) = - y^2 e^{2y}
+\]
+
+Entonces:
+\[
+f(y) = \int - y^2 e^{2y}\,dy
+\]
+
+
+\subsection*{ Identificación para integración por partes}
+
+Aplicamos la fórmula de integración por partes:
+
+\[
+\int u \, dv = uv - \int v \, du
+\]
+
+Sea:
+\[
+u = y^2 \quad \Rightarrow \quad du = 2y\,dy
+\]
+\[
+dv = e^{2y} dy \quad \Rightarrow \quad v = \frac{1}{2} e^{2y}
+\]
+
+\subsection*{Paso 2: Primera aplicación}
+
+\[
+\int y^2 e^{2y} \, dy = y^2 \cdot \frac{1}{2} e^{2y} - \int \frac{1}{2} \cdot 2y e^{2y} \, dy
+\]
+\[
+= \frac{1}{2} y^2 e^{2y} - \int y e^{2y} \, dy
+\]
+
+\subsection*{Paso 3: Segunda integración por partes}
+
+Ahora integramos:
+\[
+\int y e^{2y} \, dy
+\]
+
+Sea:
+\[
+u = y \quad \Rightarrow \quad du = dy
+\]
+\[
+dv = e^{2y} dy \quad \Rightarrow \quad v = \frac{1}{2} e^{2y}
+\]
+
+\[
+\int y e^{2y} \, dy = y \cdot \frac{1}{2} e^{2y} - \int \frac{1}{2} e^{2y} dy
+= \frac{1}{2} y e^{2y} - \frac{1}{4} e^{2y}
+\]
+
+\subsection*{Paso 4: Sustituimos en el resultado anterior}
+
+\[
+\int y^2 e^{2y} \, dy = \frac{1}{2} y^2 e^{2y} - \left( \frac{1}{2} y e^{2y} - \frac{1}{4} e^{2y} \right)
+\]
+\[
+= \frac{1}{2} y^2 e^{2y} - \frac{1}{2} y e^{2y} + \frac{1}{4} e^{2y}
+\]
+
+\subsection*{Paso 5: Consideramos el signo y la constante de integración}
+
+Como:
+\[
+f(y) = \int -y^2 e^{2y} dy
+\]
+
+Entonces:
+
+\[
+f(y) = -\left( \frac{1}{2} y^2 e^{2y} - \frac{1}{2} y e^{2y} + \frac{1}{4} e^{2y} \right) + C
+\]
+
+\[
+\boxed{
+f(y) = -\frac{1}{2} e^{2y} y^2 + \frac{1}{2} e^{2y} y - \frac{1}{4} e^{2y} + C
+}
+\]
+\subsection*{Paso 5: Solución general}
+
+\[
+U(x,y) = x y^2 e^y - \frac{1}{2} e^{2y} y^2 + \frac{1}{2} e^{2y} y - \frac{1}{4} e^{2y}
+\]
+
+Por tanto, la solución general es:
+
+\[
+\boxed{
+x y^2 e^y - \frac{1}{2} e^{2y} y^2 + \frac{1}{2} e^{2y} y - \frac{1}{4} e^{2y} = C
+}
+\]
+
+
+
+\newpage
+\section*{Ejercicio 5}
+
+\[
+\frac{dy}{dx} = a(b^2 - y^2)
+\]
+
+\subsection*{Paso 1: Separación de variables}
+
+\[
+\frac{1}{b^2 - y^2} \, dy = a \, dx
+\]
+
+Recordamos que:
+\[
+\frac{1}{b^2 - y^2} = \frac{1}{2b} \left( \frac{1}{b - y} + \frac{1}{b + y} \right)
+\]
+
+Entonces:
+
+\[
+\int \frac{1}{b^2 - y^2} \, dy = \int a \, dx
+\Rightarrow
+\int \frac{1}{2b} \left( \frac{1}{b - y} + \frac{1}{b + y} \right) dy = \int a \, dx
+\]
+
+\subsection*{Paso 2: Integración}
+
+\[
+\frac{1}{2b} \int \left( \frac{1}{b - y} + \frac{1}{b + y} \right) dy = ax + C
+\]
+
+Sustituimos:
+\[
+\int \frac{1}{b - y} \, dy = -\ln |b - y|, \quad
+\int \frac{1}{b + y} \, dy = \ln |b + y|
+\]
+
+Entonces:
+
+\[
+\frac{1}{2b} \left[ -\ln |b - y| + \ln |b + y| \right] = ax + C
+\]
+
+\subsection*{Paso 3: Simplificación}
+
+\[
+\frac{1}{2b} \ln \left| \frac{b + y}{b - y} \right| = ax + C
+\]
+
+Multiplicamos ambos lados por \( 2b \):
+
+\[
+\ln \left| \frac{b + y}{b - y} \right| = 2abx + C_1
+\quad \text{(donde } C_1 = 2bC \text{)}
+\]
+
+\subsection*{Paso 4: Solución general}
+
+Elevamos ambos lados como potencias de \( e \):
+
+\[
+\left| \frac{b + y}{b - y} \right| = e^{2abx + C_1} = C_2 e^{2abx}
+\]
+
+donde \( C_2 = e^{C_1} \) es una constante arbitraria positiva.
+
+\[
+\frac{b + y}{b - y} = C_2 e^{2abx}
+\]
+
+\subsection*{Paso 5: Despeje de \( y \)}
+
+Multiplicamos en cruz:
+
+\[
+b + y = C_2 e^{2abx} (b - y)
+\]
+
+\[
+b + y = b C_2 e^{2abx} - y C_2 e^{2abx}
+\]
+
+Llevamos los términos con \( y \) a un lado:
+
+\[
+y + y C_2 e^{2abx} = b C_2 e^{2abx} - b
+\]
+
+\[
+y (1 + C_2 e^{2abx}) = b (C_2 e^{2abx} - 1)
+\]
+
+\subsection*{Solución explícita}
+
+\[
+\boxed{
+y(x) = b \cdot \frac{C_2 e^{2abx} - 1}{C_2 e^{2abx} + 1}
+}
+\]
+\newpage
+\section*{Problema}
+Resolver la siguiente ecuación diferencial con condición inicial:
+
+\[
+xy(1 + x y^2) \frac{dy}{dx} = 1, \quad y(1) = 0
+\]
+
+\section*{Paso 1: Aislar la derivada}
+\[
+\frac{dy}{dx} = \frac{1}{xy(1 + x y^2)}
+\]
+
+Invertimos la derivada para obtener una forma más integrable:
+\[
+\frac{dx}{dy} = xy(1 + x y^2)
+\]
+
+\section*{Paso 2: Sustitución}
+Sea \( z = \frac{1}{x} \Rightarrow x = \frac{1}{z} \)
+
+Entonces:
+\[
+\frac{dx}{dy} = -\frac{1}{z^2} \cdot \frac{dz}{dy}
+\]
+
+Sustituyendo en la ecuación:
+\[
+- \frac{1}{z^2} \cdot \frac{dz}{dy} = \frac{1}{z} y \left( 1 + \frac{1}{z} y^2 \right)
+\]
+
+Multiplicamos ambos lados por \( z^2 \):
+\[
+- \frac{dz}{dy} = z y + y^3
+\]
+
+\section*{Paso 3: Forma estándar de ecuación lineal}
+\[
+\frac{dz}{dy} + y z = - y^3
+\]
+
+Esta es una ecuación lineal de primer orden. Usamos un factor integrante:
+
+\[
+\mu(y) = e^{\int y\, dy} = e^{\frac{y^2}{2}}
+\]
+
+Multiplicamos toda la ecuación por \( \mu(y) \):
+
+\[
+e^{\frac{y^2}{2}} \frac{dz}{dy} + y e^{\frac{y^2}{2}} z = - y^3 e^{\frac{y^2}{2}}
+\]
+
+Esto equivale a:
+\[
+\frac{d}{dy} \left( e^{\frac{y^2}{2}} z \right) = - y^3 e^{\frac{y^2}{2}}
+\]
+
+\section*{Paso 4: Integración}
+
+\[
+e^{\frac{y^2}{2}} z = \int - y^3 e^{\frac{y^2}{2}} \, dy
+\]
+\subsection*{Desarrollo de la integral}
+
+Queremos resolver:
+
+\[
+\int - y^3 e^{\frac{y^2}{2}} \, dy
+\]
+
+\noindent Hacemos el cambio de variable:
+
+\[
+u = \frac{y^2}{2} \quad \Rightarrow \quad du = y \, dy \quad \Rightarrow \quad y^3 \, dy = y^2 (y \, dy) = 2u \, du
+\]
+
+\noindent Entonces la integral se convierte en:
+
+\[
+\int - y^3 e^{\frac{y^2}{2}} \, dy = \int -2u e^u \, du
+\]
+
+\noindent Usamos integración por partes:
+
+\[
+\int u e^u \, du = u e^u - \int e^u \, du = u e^u - e^u + C
+\]
+
+\[
+\Rightarrow \int -2u e^u \, du = -2 (u e^u - e^u) + C = -2u e^u + 2e^u + C
+\]
+
+\noindent Volviendo a la variable \( y \):
+
+\[
+u = \frac{y^2}{2} \Rightarrow
+\int - y^3 e^{\frac{y^2}{2}} \, dy = -y^2 e^{\frac{y^2}{2}} + 2 e^{\frac{y^2}{2}} + C
+\]
+
+\[
+\boxed{
+\int - y^3 e^{\frac{y^2}{2}} \, dy = -y^2 e^{\frac{y^2}{2}} + 2 e^{\frac{y^2}{2}} + C
+}
+\]
+
+La integral resuelta da:
+\[
+e^{\frac{y^2}{2}} z = - e^{\frac{y^2}{2}} y^2 + 2 e^{\frac{y^2}{2}} + C
+\]
+
+Dividiendo entre \( e^{\frac{y^2}{2}} \):
+
+\[
+z = - y^2 + 2 + C e^{- \frac{y^2}{2}}
+\]
+
+Recordando que \( z = \frac{1}{x} \), entonces:
+
+\[
+\frac{1}{x} = - y^2 + 2 + C e^{- \frac{y^2}{2}}
+\quad \Rightarrow \quad
+x = \frac{1}{- y^2 + 2 + C e^{- \frac{y^2}{2}}}
+\]
+
+\section*{Paso 5: Aplicar condición inicial}
+
+Usamos la condición \( y(1) = 0 \Rightarrow x = 1 \)
+
+\[
+\frac{1}{1} = -0 + 2 + C \cdot e^{0}
+\quad \Rightarrow \quad 1 = 2 + C \Rightarrow C = -1
+\]
+
+\section*{Solución final}
+
+\[
+x = \frac{1}{- y^2 + 2 - e^{- \frac{y^2}{2}}}
+\]
+
+
+
+
+\newpage
+
+\section*{Ejercicio}
+
+Resolver la ecuación diferencial con condición inicial:
+
+\[
+x \frac{dy}{dx} + y = e^x, \qquad y(1) = 2
+\]
+
+\section*{Paso 1: Forma estándar}
+
+Dividimos toda la ecuación entre \( x \) (asumiendo \( x \neq 0 \)):
+
+\[
+\frac{dy}{dx} + \frac{1}{x} y = \frac{e^x}{x}
+\]
+
+Identificamos:
+
+\[
+P(x) = \frac{1}{x}, \qquad Q(x) = \frac{e^x}{x}
+\]
+
+\section*{Paso 2: Factor integrante}
+
+Calculamos el factor integrante:
+
+\[
+\mu(x) = e^{\int \frac{1}{x} \, dx} = e^{\ln |x|} = |x|
+\]
+
+Como trabajamos en \( x > 0 \), entonces:
+
+\[
+\mu(x) = x
+\]
+
+\section*{Paso 3: Multiplicamos por el factor integrante}
+
+\[
+x \cdot \frac{dy}{dx} + y = e^x
+\Rightarrow
+\frac{d}{dx} (x y) = e^x
+\]
+
+\section*{Paso 4: Integración}
+
+Integramos ambos lados:
+
+\[
+\int \frac{d}{dx} (x y) \, dx = \int e^x \, dx
+\Rightarrow
+x y = e^x + C
+\]
+
+Despejamos:
+
+\[
+y = \frac{e^x + C}{x}
+\]
+
+\section*{Paso 5: Condición inicial}
+
+Usamos \( y(1) = 2 \):
+
+\[
+2 = \frac{e^1 + C}{1}
+\Rightarrow
+2 = e + C
+\Rightarrow
+C = 2 - e
+\]
+
+\section*{Solución final}
+
+\[
+\boxed{
+y(x) = \frac{e^x + 2 - e}{x}
+}
+\]
+
+
+
+\end{document}

@@ -1,0 +1,568 @@
+% ==========================================================
+% Ondas mecánicas y sonoras - Ejemplos resueltos
+% Formato vertical, con explicación
+% ==========================================================
+\documentclass[11pt,letterpaper]{article}
+
+% --- Idioma y codificación ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, es-nodecimaldot]{babel}
+
+% --- Matemática y SI ---
+\usepackage{amsmath, amssymb, bm}
+\usepackage{siunitx}
+\sisetup{
+  locale = DE,                 % coma decimal
+  output-decimal-marker = {,}, % coma decimal
+  per-mode = symbol,
+  exponent-product = \cdot,
+  group-minimum-digits = 4
+}
+
+% --- Página ---
+\usepackage[a4paper,margin=2.4cm]{geometry}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% --- Inicio del documento ---
+\begin{document}
+
+\begin{center}
+{\Large \textbf{Ejemplos resueltos de ondas y sonido}}\\[2mm]
+Formato paso a paso, con interpretación física.
+\end{center}
+
+% ==========================================================
+\section*{Ejemplo 15.6 \quad Onda estacionaria en una cuerda de guitarra}
+% ==========================================================
+
+Una cuerda de una guitarra está en el eje \(x\) cuando se encuentra en equilibrio.
+El extremo en \(x = 0\) (el puente de la guitarra) está fijo.
+
+Una onda sinusoidal de amplitud \(A = \SI{0,750}{mm} = 7{,}50 \times 10^{-4}\ \si{m}\),
+frecuencia \(f = \SI{440}{Hz}\) y rapidez de propagación \(v = \SI{143}{m/s}\)
+viaja hacia la izquierda. La onda se refleja en el extremo fijo y la superposición entre
+la onda incidente y la reflejada forma una onda estacionaria.
+
+\begin{itemize}
+  \item[a)] Determine la ecuación del desplazamiento transversal \(y(x,t)\) en función de la posición y el tiempo.
+  \item[b)] Ubique los nodos.
+  \item[c)] Calcule la amplitud máxima en los vientres (antinodos), así como la velocidad y aceleración transversales máximas.
+\end{itemize}
+
+\subsection*{Solución}
+
+\textbf{Datos:}
+\[
+A = 7{,}50\times10^{-4}\ \si{m}, \quad
+f = \SI{440}{Hz}, \quad
+v = \SI{143}{m/s}
+\]
+
+La onda estacionaria que resulta de la interferencia de dos ondas de igual amplitud que viajan en sentidos opuestos se puede escribir como
+\[
+y(x,t) = A_0 \sin(kx)\,\sin(\omega t),
+\]
+donde:
+\[
+A_0 = 2A \quad (\text{la amplitud de la onda estacionaria es el doble}),
+\]
+\[
+\omega = 2\pi f, \qquad
+k = \frac{\omega}{v} = \frac{2\pi f}{v}.
+\]
+
+\textbf{1) Cálculo de \(\omega\):}
+\[
+\omega = 2\pi f
+       = 2\pi (440\ \si{s^{-1}})
+       \approx 2{,}760 \times 10^{0}\ \si{rad/s}
+       = \SI{2760}{rad/s}.
+\]
+
+\textbf{2) Cálculo de \(k\):}
+\[
+k = \frac{\omega}{v}
+  = \frac{2760\ \si{rad/s}}{143\ \si{m/s}}
+  = 19{,}3\ \si{rad/m}.
+\]
+
+\textbf{3) Amplitud de la onda estacionaria:}
+\[
+A_0 = 2A = 2(7{,}50\times10^{-4}\ \si{m})
+        = 1{,}50\times10^{-3}\ \si{m}
+        = \SI{1,50}{mm}.
+\]
+
+Entonces, la ecuación queda:
+
+\[
+\boxed{
+y(x,t)
+= \left(1{,}50\times10^{-3}\ \si{m}\right)
+\sin\!\bigl(19{,}3\ \si{rad/m}\, x\bigr)\,
+\sin\!\bigl(2760\ \si{rad/s}\, t\bigr)
+}
+\]
+
+Comentario didáctico:
+\begin{itemize}
+  \item \(\sin(kx)\) controla la forma espacial (nodos y vientres).
+  \item \(\sin(\omega t)\) describe la oscilación temporal de cada punto.
+\end{itemize}
+
+\vspace{4mm}
+\textbf{b) Posición de los nodos}
+
+Un nodo es un punto que no se mueve nunca, es decir:
+\[
+y(x,t)=0 \quad \forall t
+\quad\Longrightarrow\quad
+\sin(kx)=0.
+\]
+
+Esto ocurre cuando
+\[
+kx = n\pi
+\quad\Longrightarrow\quad
+x = \frac{n\pi}{k}
+= \frac{n\pi}{19{,}3\ \si{rad/m}},
+\quad n = 0,1,2,3,\dots
+\]
+
+Numéricamente:
+\[
+x_0 = 0,
+\quad
+x_1 \approx \frac{\pi}{19{,}3} = 0{,}163\ \si{m},
+\quad
+x_2 \approx 0{,}325\ \si{m},
+\quad
+x_3 \approx 0{,}488\ \si{m},
+\dots
+\]
+
+Estos son los \textbf{nodos}.
+
+\vspace{4mm}
+\textbf{c) Amplitud máxima, velocidad transversal máxima y aceleración transversal máxima}
+
+En un vientre (antinodo) la cuerda alcanza su máxima oscilación.
+Allí \(\sin(kx)=\pm1\), por lo que el desplazamiento máximo respecto al equilibrio es
+\[
+y_{\text{max}} = A_0 = 1{,}50\times10^{-3}\ \si{m}
+= \SI{1,50}{mm}.
+\]
+
+Para un punto fijo \(x\), la velocidad transversal es
+\[
+v_y(x,t) = \frac{\partial y(x,t)}{\partial t}
+= A_0 \sin(kx)\,\omega \cos(\omega t).
+\]
+
+La \textbf{velocidad máxima} (en magnitud) en un antinodo (\(\sin(kx)=\pm1\)) es:
+\[
+v_{y,\text{max}}
+= A_0\,\omega
+= \left(1{,}50\times10^{-3}\ \si{m}\right)
+  (2760\ \si{rad/s})
+\approx \SI{4,15}{m/s}.
+\]
+
+Interpretación: el punto de la cuerda en el antinodo puede moverse arriba/abajo tan rápido como \(\pm 4{,}15\ \si{m/s}\).
+
+Ahora derivamos otra vez para la aceleración transversal:
+\[
+a_y(x,t)
+= \frac{\partial^2 y(x,t)}{\partial t^2}
+= -A_0 \sin(kx)\,\omega^2 \sin(\omega t).
+\]
+
+En un antinodo (\(\sin(kx)=\pm1\)), el valor máximo (en magnitud) es
+\[
+a_{y,\text{max}}
+= A_0 \omega^2
+= \left(1{,}50\times10^{-3}\ \si{m}\right)
+  (2760\ \si{rad/s})^2
+\approx 1{,}15\times10^{4}\ \si{m/s^2}.
+\]
+
+Nota al estudiante: esta aceleración es enorme, muchísimo mayor que \(g \approx 9{,}8\ \si{m/s^2}\).
+Por eso las cuerdas vibran tan ``rápido'' aunque el desplazamiento sea pequeño.
+
+% ==========================================================
+\section*{Ejemplo 15.7 \quad Contrabajo gigante}
+% ==========================================================
+
+Se quiere construir un contrabajo con cuerdas de \SI{5,00}{m} de longitud entre dos puntos fijos.
+Cada cuerda tiene densidad lineal de masa \(\mu = \SI{40,0}{g/m} = 40,0 \times 10^{-3}\ \si{kg/m}\)
+y su frecuencia fundamental medida es \(f_1 = \SI{20,0}{Hz}\).
+
+\begin{itemize}
+  \item[a)] Calcular la tensión \(F\) en la cuerda.
+  \item[b)] Calcular la frecuencia y la longitud de onda del segundo armónico (\(n=2\)).
+  \item[c)] Calcular la frecuencia y la longitud de onda del segundo sobretono (que corresponde a \(n=3\)).
+\end{itemize}
+
+\subsection*{Solución}
+
+\textbf{a) Tensión en la cuerda}
+
+Para una cuerda fija en ambos extremos, la frecuencia fundamental es
+\[
+f_1 = \frac{1}{2L}\sqrt{\frac{F}{\mu}}.
+\]
+
+Despejando \(F\):
+\[
+F = 4 \mu L^2 f_1^2.
+\]
+
+Sustitución numérica:
+\[
+F = 4 \left(40{,}0\times10^{-3}\ \si{kg/m}\right)
+      \left(5{,}00\ \si{m}\right)^2
+      \left(20{,}0\ \si{s^{-1}}\right)^2.
+\]
+
+\[
+F = 4 \,(40{,}0\times10^{-3}) \,(25{,}0)\,(400)
+\ \si{kg\ m/s^2}.
+\]
+
+\[
+F \approx 1600\ \si{N}.
+\]
+
+Comentario: esto es una tensión bastante grande (del orden de centenares de newton).
+
+\vspace{4mm}
+\textbf{b) Segundo armónico \((n=2)\)}
+
+Para una cuerda fija en ambos extremos:
+\[
+f_n = n f_1,
+\qquad
+\lambda_n = \frac{2L}{n}.
+\]
+
+Entonces, para \(n=2\):
+\[
+f_2 = 2 f_1 = 2(20{,}0\ \si{Hz}) = \SI{40,0}{Hz},
+\]
+\[
+\lambda_2 = \frac{2L}{2}
+= L
+= \SI{5,00}{m}.
+\]
+
+\vspace{4mm}
+\textbf{c) Segundo sobretono}
+
+Ojo didáctico: el “primer sobretono’’ es \(n=2\), el “segundo sobretono’’ es \(n=3\).
+
+Para \(n=3\):
+\[
+f_3 = 3 f_1 = 3(20{,}0\ \si{Hz}) = \SI{60,0}{Hz},
+\]
+\[
+\lambda_3 = \frac{2L}{3}
+= \frac{2(5{,}00\ \si{m})}{3}
+= \SI{3,33}{m}\ (\text{aprox.}).
+\]
+
+Interpretación: al aumentar \(n\), sube la frecuencia y baja la longitud de onda. Eso da notas más agudas.
+
+% ==========================================================
+\section*{Ejemplo 16.3 \quad Longitud de onda de las ondas del sonar}
+% ==========================================================
+
+Un barco usa un sistema de sonar para detectar objetos bajo el agua.
+Se pide:
+
+\begin{itemize}
+  \item Determinar la rapidez \(v\) de las ondas sonoras en el agua usando
+        el módulo volumétrico \(B\) y la densidad \(\rho\) del agua.
+  \item Calcular la longitud de onda \(\lambda\) para una frecuencia
+        \(f = \SI{262}{Hz}\).
+\end{itemize}
+
+Datos:
+\[
+\rho = 1{,}00\times10^{3}\ \si{kg/m^3}, \qquad
+B = 2{,}18\times10^{9}\ \si{Pa}, \qquad
+f = \SI{262}{Hz}.
+\]
+
+\subsection*{Solución}
+
+\textbf{a) Rapidez del sonido en el agua}
+
+Para una onda sonora en un fluido:
+\[
+v = \sqrt{\frac{B}{\rho}},
+\]
+donde \(B\) es el módulo volumétrico (qué tan ``incompresible'' es el medio).
+
+Sustitución:
+\[
+v = \sqrt{\frac{2{,}18\times10^{9}\ \si{Pa}}
+                {1{,}00\times10^{3}\ \si{kg/m^3}} }.
+\]
+
+\[
+v \approx \SI{1480}{m/s}.
+\]
+
+Comentario: el sonido viaja más rápido en agua que en aire porque el agua es mucho menos compresible.
+
+\vspace{4mm}
+\textbf{b) Longitud de onda en el agua}
+
+Relación onda mecánica:
+\[
+v = \lambda f
+\quad\Longrightarrow\quad
+\lambda = \frac{v}{f}.
+\]
+
+Sustitución:
+\[
+\lambda
+= \frac{1480\ \si{m/s}}
+        {262\ \si{s^{-1}}}
+\approx \SI{5,65}{m}.
+\]
+
+Interpretación: para la misma frecuencia, la onda en agua tiene longitud de onda más grande que en aire.
+
+% ==========================================================
+\section*{Ejemplo 16.4 \quad Rapidez del sonido en el aire}
+% ==========================================================
+
+Calcule la rapidez del sonido en el aire a \(T = \SI{20}{^\circ C}\) y determine
+el intervalo de longitudes de onda audible para el oído humano
+(en el aire a esa temperatura), sabiendo que el oído típico escucha
+entre \(\SI{20}{Hz}\) y \(\SI{20000}{Hz}\).
+
+Datos:
+\[
+\gamma = 1{,}40, \quad
+R = \SI{8,314}{J/(mol\cdot K)}, \quad
+T = \SI{293}{K} \ (\text{equivale a } 20^\circ\text{C}), \quad
+M = 28{,}8\times10^{-3}\ \si{kg/mol}.
+\]
+
+\subsection*{Solución}
+
+Rapidez del sonido en un gas ideal (aprox):
+\[
+v = \sqrt{\frac{\gamma R T}{M}}.
+\]
+
+Sustitución:
+\[
+v
+= \sqrt{
+\frac{(1{,}40)(8{,}314\ \si{J/(mol\cdot K)})(293\ \si{K})}
+     {28{,}8\times10^{-3}\ \si{kg/mol}}
+}
+\approx \SI{344}{m/s}.
+\]
+
+Comentario: este valor coincide con la rapidez medida del sonido en el aire a temperatura ambiente.
+
+Ahora usamos \(v = \lambda f \Rightarrow \lambda = v/f\).
+
+\textbf{Frecuencia baja (20 Hz):}
+\[
+\lambda_{\text{baja}}
+= \frac{344\ \si{m/s}}{20\ \si{s^{-1}}}
+= \SI{17,2}{m}
+\approx \SI{17}{m}.
+\]
+
+\textbf{Frecuencia alta (20000 Hz):}
+\[
+\lambda_{\text{alta}}
+= \frac{344\ \si{m/s}}{20000\ \si{s^{-1}}}
+= \SI{1,72e-2}{m}
+\approx \SI{1,7}{cm}.
+\]
+
+Interpretación: sonidos graves tienen longitudes de onda muy grandes, sonidos agudos muy pequeñas.
+
+% ==========================================================
+\section*{Ejemplo 16.8 \quad Sordera temporal o permanente}
+% ==========================================================
+
+Una exposición de \SI{10}{min} a un sonido de \SI{120}{dB}
+desplaza temporalmente el umbral auditivo de \SI{0}{dB} a \SI{28}{dB}
+(en \SI{1000}{Hz}).
+
+Diez años de exposición al sonido de \SI{92}{dB}
+causan un desplazamiento permanente del umbral a \SI{28}{dB}.
+
+Pregunta: ¿qué intensidades \(I\) corresponden a \(\beta = \SI{28}{dB}\)
+y a \(\beta = \SI{92}{dB}\)?
+
+Sabemos que el nivel sonoro en decibelios es
+\[
+\beta = (10\ \si{dB}) \log_{10}\!\left(\frac{I}{I_0}\right),
+\quad
+I_0 = 1\times10^{-12}\ \si{W/m^2}.
+\]
+
+\subsection*{Solución}
+
+Despejamos la intensidad:
+\[
+I = I_0 \, 10^{\beta/(10\ \si{dB})}.
+\]
+
+\textbf{Para \(\beta = 28\ \si{dB}\):}
+\[
+I_{28\ \mathrm{dB}}
+= \left(1\times10^{-12}\ \si{W/m^2}\right)
+  10^{28/10}
+= 10^{-12}\cdot10^{2{,}8}\ \si{W/m^2}.
+\]
+
+\[
+10^{2{,}8} \approx 6{,}3\times10^{2}.
+\]
+
+\[
+I_{28\ \mathrm{dB}}
+\approx 6{,}3\times10^{-10}\ \si{W/m^2}.
+\]
+
+\textbf{Para \(\beta = 92\ \si{dB}\):}
+\[
+I_{92\ \mathrm{dB}}
+= \left(1\times10^{-12}\ \si{W/m^2}\right)
+  10^{92/10}
+= 10^{-12}\cdot10^{9{,}2}\ \si{W/m^2}.
+\]
+
+\[
+10^{9{,}2} \approx 1{,}6\times10^{9}.
+\]
+
+\[
+I_{92\ \mathrm{dB}}
+\approx 1{,}6\times10^{-3}\ \si{W/m^2}.
+\]
+
+Comentario para el estudiante:
+un aumento de pocos decibelios representa \textbf{un cambio enorme} en intensidad física (potencia por unidad de área).
+
+% ==========================================================
+\section*{Ejemplo 16.14 \quad Efecto Doppler I: longitudes de onda}
+% ==========================================================
+
+La sirena de una patrulla emite una onda sinusoidal con frecuencia
+\(f_s = \SI{300}{Hz}\).
+La rapidez del sonido en el aire es \(v = \SI{340}{m/s}\).
+El aire está en reposo.
+
+\begin{itemize}
+  \item[a)] Calcule la longitud de onda de la sirena si la fuente está en reposo.
+  \item[b)] Si la patrulla se mueve a \(v_s = \SI{30}{m/s}\),
+            calcule la longitud de onda delante de la patrulla
+            y la longitud de onda detrás de la patrulla.
+\end{itemize}
+
+\subsection*{Solución}
+
+\textbf{a) Fuente en reposo}
+
+Cuando fuente y aire están en reposo relativo, usamos
+\[
+\lambda = \frac{v}{f_s}.
+\]
+
+\[
+\lambda
+= \frac{340\ \si{m/s}}{300\ \si{s^{-1}}}
+= \SI{1,13}{m}.
+\]
+
+\textbf{b) Fuente moviéndose a \(v_s = \SI{30}{m/s}\)}
+
+Ahora hay \textbf{efecto Doppler en la onda misma}: las crestas se “aprietan” delante y se “estiran” detrás.
+
+\underline{Delante de la fuente (acercándose):}
+la velocidad efectiva de acercamiento entre crestas y aire es \(v - v_s\), de modo que
+\[
+\lambda_{\text{enfrente}}
+= \frac{v - v_s}{f_s}
+= \frac{340\ \si{m/s} - 30\ \si{m/s}}{300\ \si{s^{-1}}}
+= \SI{1,03}{m}.
+\]
+
+\underline{Detrás de la fuente (alejándose):}
+\[
+\lambda_{\text{detrás}}
+= \frac{v + v_s}{f_s}
+= \frac{340\ \si{m/s} + 30\ \si{m/s}}{300\ \si{s^{-1}}}
+= \SI{1,23}{m}.
+\]
+
+Interpretación: delante (hacia donde avanza la patrulla) la longitud de onda disminuye y por eso el sonido se oye más agudo; detrás aumenta y el sonido se oye más grave.
+
+% ==========================================================
+\section*{Ejemplo 16.15 \quad Efecto Doppler II: frecuencias}
+% ==========================================================
+
+Si un receptor \(L\) está en reposo y la sirena del ejemplo anterior
+se aleja de \(L\) con rapidez \(\SI{30}{m/s}\),
+¿qué frecuencia oye el receptor?
+
+Tenemos:
+\[
+v = \SI{340}{m/s}, \quad
+v_s = \SI{30}{m/s} \ (\text{fuente alejándose}), \quad
+v_L = 0, \quad
+f_s = \SI{300}{Hz}.
+\]
+
+\subsection*{Solución}
+
+Para una fuente que se aleja de un observador estacionario,
+la frecuencia observada es
+\[
+f_L
+= \frac{v}{v+v_s} f_s.
+\]
+
+Sustitución:
+\[
+f_L
+= \frac{340\ \si{m/s}}
+       {340\ \si{m/s} + 30\ \si{m/s}}
+  (300\ \si{s^{-1}}).
+\]
+
+\[
+f_L
+= \frac{340}{370} (300\ \si{Hz})
+\approx \SI{276}{Hz}.
+\]
+
+Comprobación alternativa:
+detrás de la patrulla (donde está el receptor) la onda tiene
+\(\lambda_{\text{detrás}} \approx \SI{1,23}{m}\) (del Ejemplo 16.14).
+Como el aire está en reposo, la onda viaja a \(v = \SI{340}{m/s}\), así:
+\[
+f_L = \frac{v}{\lambda_{\text{detrás}}}
+    = \frac{340\ \si{m/s}}{1{,}23\ \si{m}}
+    \approx \SI{276}{Hz}.
+\]
+
+Interpretación didáctica:
+Cuando la fuente se aleja, cada cresta tarda más en llegar $\Rightarrow$ frecuencia percibida disminuye.
+
+% ==========================================================
+\end{document}

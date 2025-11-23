@@ -1,0 +1,85 @@
+
+\documentclass[11pt]{article}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{siunitx}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{letterpaper, margin=2.3cm}
+\sisetup{output-decimal-marker={,}}
+\DeclareSIUnit{\inch}{in}
+\DeclareSIUnit{\pound}{lb}
+\DeclareSIUnit{\foot}{ft}
+
+\begin{document}
+
+\section*{Análisis de viga}
+
+\subsection*{Datos}
+Longitud: \(\SI{32.000}{\foot}\).
+
+\begin{center}
+\begin{tabular}{l c}
+\multicolumn{2}{l}{\textbf{Apoyos}} \\\hline
+Tipo & Posición \\\hline
+pinned & \SI{0.000}{\foot} \\
+roller & \SI{24.000}{\foot} \\
+\end{tabular}
+\end{center}
+
+\medskip
+\begin{center}
+\begin{tabular}{l c}
+\multicolumn{2}{l}{\textbf{Reacciones}} \\\hline
+Posición & Valor \\\hline
+\(\mathrm{R}(x=\SI{0.000}{\foot})\) & \SI{18.0000}{\text{kips}} \\
+\(\mathrm{R}(x=\SI{24.000}{\foot})\) & \SI{26.0000}{\text{kips}} \\
+\end{tabular}
+\end{center}
+
+\medskip
+
+\subsection*{Modelo y ecuaciones}
+\[
+\frac{dV}{dx} = w(x), \qquad \frac{dM}{dx} = V(x).
+\]
+Saltos: una fuerza puntual \(P\) o reacción \(R\) produce un salto en \(V\); un momento aplicado \(M_0\) (o de empotramiento) produce un salto en \(M\).
+
+\subsection*{Chequeo de equilibrio}
+\[
+\Sigma F_y = \SI{0.000000}{\text{kips}}, \qquad
+\Sigma M_{(x=0)} = \SI{0.000000}{\text{kips.ft}}.
+\]
+
+\subsection*{Extremos numéricos}
+\begin{tabular}{lccc}
+ & \textbf{máx (+)} & \textbf{mín (–)} & \(\lvert\cdot\rvert\) \textbf{máx} \\\hline
+\(V\) & \(\SI{18.0000}{\text{kips}}\) en \(x=\SI{0.000}{\foot}\) &
+\(\SI{-14.0201}{\text{kips}}\) en \(x=\SI{24.000}{\foot}\) &
+\(\SI{18.0000}{\text{kips}}\) en \(x=\SI{0.000}{\foot}\) \\
+\(M\) & \(\SI{108.0301}{\text{kips.ft}}\) en \(x=\SI{6.000}{\foot}\) &
+\(\SI{-47.8797}{\text{kips.ft}}\) en \(x=\SI{24.000}{\foot}\) &
+\(\SI{108.0301}{\text{kips.ft}}\) en \(x=\SI{6.000}{\foot}\) \\
+\end{tabular}
+\newpage
+%\subsection*{Diagramas}
+Los diagramas \(V(x)\) y \(M(x)\) se adjuntan a continuación.
+
+
+\section*{Diagramas}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{\detokenize{V_82f3667b9d584671bf012b6b7e7d16f0.png}}
+  \caption{Diagrama de cortante \(V(x)\) en \(\SI{}{kips}\).}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{\detokenize{M_32937e20f399475697efbbb119a17f7b.png}}
+  \caption{Diagrama de momento \(M(x)\) en \(\SI{}{kips.ft}\).}
+\end{figure}
+
+\end{document}

@@ -1,0 +1,117 @@
+\documentclass[11pt,a4paper]{article}
+
+%------------------------------------------------
+% PAQUETES
+%------------------------------------------------
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+
+\sisetup{
+  locale = DE,
+  output-decimal-marker = {,},
+  per-mode = symbol,
+  exponent-product = \cdot,
+  group-minimum-digits = 4
+}
+
+\begin{document}
+
+\section*{Problema 8.17 – Cantidad de movimiento de los gases}
+
+\subsection*{Datos}
+
+\begin{itemize}
+  \item Masa de la bala:
+  \[
+    m_b = \SI{0,00720}{kg}
+  \]
+  \item Rapidez de la bala respecto al cañón:
+  \[
+    v_{b/r} = \SI{601}{m/s}
+  \]
+  \item Masa del rifle:
+  \[
+    m_r = \SI{2,80}{kg}
+  \]
+  \item Velocidad del rifle respecto al suelo (retroceso):
+  \[
+    v_r = -\SI{1,85}{m/s}
+  \]
+  \item El sistema inicial (rifle + bala + gases) está en reposo:
+  \[
+    p_{\text{inicial}} = 0
+  \]
+\end{itemize}
+
+Tomando el eje \(x\) en la dirección del movimiento de la bala,  
+la rapidez de la bala respecto al suelo es
+\[
+v_b = v_{b/r} + v_r
+    = \SI{601}{m/s} - \SI{1,85}{m/s}
+    = \SI{599}{m/s}.
+\]
+
+\subsection*{Fórmula}
+
+Se aplica conservación de la cantidad de movimiento en el eje \(x\):
+\[
+p_r + p_b + p_g = 0,
+\]
+donde \(p_r\) es el momento del rifle, \(p_b\) el de la bala y
+\(p_g\) el de los gases.
+
+Despejando la cantidad de movimiento de los gases:
+\[
+p_g = -\left(p_r + p_b\right).
+\]
+
+\subsection*{Sustitución}
+
+Momento del rifle:
+\[
+p_r = m_r\,v_r = \left(\SI{2,80}{kg}\right)\left(-\SI{1,85}{m/s}\right).
+\]
+
+Momento de la bala:
+\[
+p_b = m_b\,v_b = \left(\SI{0,00720}{kg}\right)\left(\SI{599}{m/s}\right).
+\]
+
+Entonces:
+\[
+p_g = -\left[\,m_r\,v_r + m_b\,v_b\,\right].
+\]
+
+\subsection*{Cálculo}
+
+Primero se calculan los momentos del rifle y de la bala:
+\begin{align*}
+p_r &= \left(\SI{2,80}{kg}\right)\left(-\SI{1,85}{m/s}\right)
+     = -\SI{5,18}{kg\cdot m/s},\\[4pt]
+p_b &= \left(\SI{0,00720}{kg}\right)\left(\SI{599}{m/s}\right)
+     = \SI{4,31}{kg\cdot m/s}.
+\end{align*}
+
+Ahora la cantidad de movimiento de los gases:
+\begin{align*}
+p_g &= -\left(p_r + p_b\right) \\
+    &= -\left(-\SI{5,18}{kg\cdot m/s} + \SI{4,31}{kg\cdot m/s}\right) \\
+    &= -\left(-\SI{0,87}{kg\cdot m/s}\right) \\
+    &= \SI{0,87}{kg\cdot m/s}.
+\end{align*}
+
+\subsection*{Interpretación}
+
+La cantidad de movimiento de los gases al salir del cañón es
+\[
+\boxed{p_g = \SI{0,87}{kg\cdot m/s}},
+\]
+en la misma dirección en que se mueve la bala (sentido positivo del eje \(x\)).
+Esto contribuye al retroceso del rifle para que se conserve
+la cantidad de movimiento total del sistema.
+
+\end{document}

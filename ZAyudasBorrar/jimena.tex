@@ -1,0 +1,472 @@
+\documentclass[12pt]{article}
+
+% ---------------------------------------------------------------
+% PAQUETES
+% ---------------------------------------------------------------
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{siunitx}
+
+\sisetup{
+    locale = DE,                % coma como separador decimal
+    output-decimal-marker = {,}
+}
+
+\geometry{
+    a4paper,
+    left=2.5cm,
+    right=2.5cm,
+    top=2.5cm,
+    bottom=2.5cm
+}
+
+\onehalfspacing
+
+\title{Análisis de Optimización en una Función de Producción}
+\author{Ejemplo Aplicado para Cálculo Multivariable}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Introducción}
+
+El análisis de funciones de producción de dos variables permite identificar
+combinaciones de insumos que potencian la eficiencia en procesos industriales.
+Mediante derivadas parciales, puntos críticos y el uso de la matriz Hessiana
+es posible clasificar dichos puntos como máximos, mínimos o puntos de silla.
+En este documento se desarrolla, paso a paso, un ejemplo de aplicación en el
+contexto de la producción de galletas gourmet.
+
+\section*{Planteamiento del problema}
+
+Una empresa produce galletas gourmet utilizando dos insumos principales:
+\begin{itemize}
+    \item \(x\): cantidad de harina (en kg),
+    \item \(y\): cantidad de mantequilla (en kg).
+\end{itemize}
+
+La función de producción se modela mediante:
+\[
+P(x,y) = -2x^{2} - y^{2} + 4xy + 20x + 15y.
+\]
+
+El objetivo es:
+\begin{quote}
+    Determinar los puntos críticos de \(P(x,y)\) y clasificarlos
+    (máximo local, mínimo local o punto de silla) utilizando el criterio
+    de la matriz Hessiana.
+\end{quote}
+
+% ===============================================================
+\section*{Cálculo de derivadas parciales de primer orden}
+
+\subsection*{Derivada parcial respecto a \(x\)}
+
+Partimos de la función:
+\[
+P(x,y) = -2x^{2} - y^{2} + 4xy + 20x + 15y.
+\]
+
+Derivamos término a término respecto a \(x\), tratando \(y\) como constante:
+
+\begin{align*}
+\frac{\partial}{\partial x}(-2x^{2}) &= -4x,\\[4pt]
+\frac{\partial}{\partial x}(-y^{2})  &= 0 \quad (\text{no depende de } x),\\[4pt]
+\frac{\partial}{\partial x}(4xy)    &= 4y,\\[4pt]
+\frac{\partial}{\partial x}(20x)    &= 20,\\[4pt]
+\frac{\partial}{\partial x}(15y)    &= 0 \quad (\text{no depende de } x).
+\end{align*}
+
+Por lo tanto,
+\[
+P_x(x,y) = -4x + 4y + 20.
+\]
+
+\subsection*{Derivada parcial respecto a \(y\)}
+
+Nuevamente, partimos de:
+\[
+P(x,y) = -2x^{2} - y^{2} + 4xy + 20x + 15y.
+\]
+
+Derivamos término a término respecto a \(y\), tratando \(x\) como constante:
+
+\begin{align*}
+\frac{\partial}{\partial y}(-2x^{2}) &= 0 \quad (\text{no depende de } y),\\[4pt]
+\frac{\partial}{\partial y}(-y^{2})  &= -2y,\\[4pt]
+\frac{\partial}{\partial y}(4xy)    &= 4x,\\[4pt]
+\frac{\partial}{\partial y}(20x)    &= 0 \quad (\text{no depende de } y),\\[4pt]
+\frac{\partial}{\partial y}(15y)    &= 15.
+\end{align*}
+
+Entonces,
+\[
+P_y(x,y) = -2y + 4x + 15.
+\]
+
+% ===============================================================
+\section*{Determinación de puntos críticos}
+
+Los puntos críticos se obtienen resolviendo el sistema:
+\[
+P_x(x,y) = 0,
+\qquad
+P_y(x,y) = 0.
+\]
+
+Es decir:
+\[
+\begin{cases}
+-4x + 4y + 20 = 0,\\[4pt]
+-2y + 4x + 15 = 0.
+\end{cases}
+\]
+
+\subsection*{Resolución del sistema paso a paso}
+
+\textbf{Primera ecuación:}
+\[
+-4x + 4y + 20 = 0.
+\]
+
+Restamos \(20\) a ambos lados:
+\[
+-4x + 4y = -20.
+\]
+
+Podemos dividir toda la ecuación entre \(4\):
+\[
+-x + y = -5.
+\]
+
+Reordenando:
+\[
+y = x - 5.
+\]
+
+\medskip
+
+\textbf{Sustitución en la segunda ecuación:}
+
+La segunda ecuación es:
+\[
+-2y + 4x + 15 = 0.
+\]
+
+Sustituimos \(y = x - 5\):
+\begin{align*}
+-2(x - 5) + 4x + 15 &= 0,\\[4pt]
+-2x + 10 + 4x + 15 &= 0,\\[4pt]
+( -2x + 4x ) + (10 + 15) &= 0,\\[4pt]
+2x + 25 &= 0.
+\end{align*}
+
+Despejamos \(x\):
+\[
+2x = -25
+\quad\Rightarrow\quad
+x = -\frac{25}{2}.
+\]
+
+En forma decimal:
+\[
+x = -\num{12.5} \approx -\num{12,5}.
+\]
+
+Ahora sustituimos en \(y = x - 5\):
+\begin{align*}
+y &= -\frac{25}{2} - 5,\\[4pt]
+  &= -\frac{25}{2} - \frac{10}{2},\\[4pt]
+  &= -\frac{35}{2}.
+\end{align*}
+
+En forma decimal:
+\[
+y = -\num{17.5} \approx -\num{17,5}.
+\]
+
+\subsection*{Punto crítico encontrado}
+
+El sistema presenta un único punto crítico:
+\[
+(x^{\ast},y^{\ast}) = \left(-\frac{25}{2}, -\frac{35}{2}\right)
+\approx \left(\num{-12,5},\, \num{-17,5}\right).
+\]
+
+% ===============================================================
+\section*{Derivadas de segundo orden y matriz Hessiana}
+
+Calculamos ahora las derivadas de segundo orden.
+
+\subsection*{Segunda derivada respecto a \(x\)}
+
+Partimos de:
+\[
+P_x(x,y) = -4x + 4y + 20.
+\]
+
+Derivamos respecto a \(x\):
+\[
+P_{xx} = \frac{\partial}{\partial x}(-4x + 4y + 20) = -4.
+\]
+
+\subsection*{Segunda derivada respecto a \(y\)}
+
+Partimos de:
+\[
+P_y(x,y) = -2y + 4x + 15.
+\]
+
+Derivamos respecto a \(y\):
+\[
+P_{yy} = \frac{\partial}{\partial y}(-2y + 4x + 15) = -2.
+\]
+
+\subsection*{Derivada mixta}
+
+Podemos derivar \(P_x\) respecto a \(y\) o \(P_y\) respecto a \(x\).
+
+\[
+P_x(x,y) = -4x + 4y + 20
+\quad\Rightarrow\quad
+P_{xy} = \frac{\partial}{\partial y}(-4x + 4y + 20) = 4.
+\]
+
+De forma equivalente:
+\[
+P_y(x,y) = -2y + 4x + 15
+\quad\Rightarrow\quad
+P_{yx} = \frac{\partial}{\partial x}(-2y + 4x + 15) = 4.
+\]
+
+Por simetría en funciones suficientemente suaves,
+\[
+P_{xy} = P_{yx}.
+\]
+
+\subsection*{Matriz Hessiana}
+
+La matriz Hessiana \(H\) de \(P\) es:
+\[
+H(x,y) =
+\begin{pmatrix}
+P_{xx} & P_{xy} \\
+P_{yx} & P_{yy}
+\end{pmatrix}
+=
+\begin{pmatrix}
+-4 & 4 \\
+4  & -2
+\end{pmatrix}.
+\]
+
+El discriminante (determinante de la matriz Hessiana) se define como:
+\[
+D = P_{xx}P_{yy} - (P_{xy})^{2}.
+\]
+
+Sustituimos:
+\begin{align*}
+D &= (-4)(-2) - (4)^{2},\\[4pt]
+  &= 8 - 16,\\[4pt]
+  &= -8.
+\end{align*}
+
+% ===============================================================
+\section*{Clasificación del punto crítico}
+
+El criterio de la matriz Hessiana establece:
+
+\begin{itemize}
+    \item Si \(D > 0\) y \(P_{xx} < 0\), el punto crítico es un \textbf{máximo local}.
+    \item Si \(D > 0\) y \(P_{xx} > 0\), el punto crítico es un \textbf{mínimo local}.
+    \item Si \(D < 0\), el punto crítico es un \textbf{punto de silla}.
+    \item Si \(D = 0\), el criterio es inconcluso.
+\end{itemize}
+
+En nuestro caso:
+\[
+D = -8 < 0.
+\]
+
+Por lo tanto, el punto crítico
+\[
+\left(-\frac{25}{2}, -\frac{35}{2}\right)
+\]
+es un:
+\[
+\boxed{\text{punto de silla}}.
+\]
+
+Esto significa que la función \(P(x,y)\) tiene direcciones en las que aumenta
+y otras en las que disminuye alrededor del punto crítico; por ello, no se
+trata ni de un máximo ni de un mínimo local.
+
+% ===============================================================
+\section*{Valor de la función en el punto crítico}
+
+Aunque el punto crítico es de silla, podemos evaluar la función para
+completar el análisis.
+
+\[
+P(x,y) = -2x^{2} - y^{2} + 4xy + 20x + 15y.
+\]
+
+Sustituimos \(x = -\dfrac{25}{2}\) y \(y = -\dfrac{35}{2}\).
+
+\subsection*{Sustitución detallada}
+
+\begin{align*}
+P\left(-\frac{25}{2}, -\frac{35}{2}\right)
+&= -2\left(-\frac{25}{2}\right)^{2}
+   -\left(-\frac{35}{2}\right)^{2}
+   +4\left(-\frac{25}{2}\right)\left(-\frac{35}{2}\right)
+   +20\left(-\frac{25}{2}\right)
+   +15\left(-\frac{35}{2}\right).
+\end{align*}
+
+Calculamos cada término:
+
+\[
+\left(-\frac{25}{2}\right)^{2}
+= \frac{625}{4},
+\qquad
+\left(-\frac{35}{2}\right)^{2}
+= \frac{1225}{4}.
+\]
+
+Entonces:
+\begin{align*}
+-2\left(-\frac{25}{2}\right)^{2}
+&= -2 \cdot \frac{625}{4}
+= -\frac{1250}{4}
+= -\frac{625}{2},
+\\[6pt]
+-\left(-\frac{35}{2}\right)^{2}
+&= -\frac{1225}{4},
+\\[6pt]
+4\left(-\frac{25}{2}\right)\left(-\frac{35}{2}\right)
+&= 4 \cdot \frac{875}{4}
+= 875,
+\\[6pt]
+20\left(-\frac{25}{2}\right)
+&= -\frac{500}{2}
+= -250,
+\\[6pt]
+15\left(-\frac{35}{2}\right)
+&= -\frac{525}{2}.
+\end{align*}
+
+Agrupamos todos los términos:
+\begin{align*}
+P\left(-\frac{25}{2}, -\frac{35}{2}\right)
+&= \left(-\frac{625}{2}\right)
+   + \left(-\frac{1225}{4}\right)
+   + 875
+   - 250
+   - \frac{525}{2}.
+\end{align*}
+
+Llevamos todo a denominador común \(4\):
+
+\[
+-\frac{625}{2} = -\frac{1250}{4},
+\qquad
+-\frac{525}{2} = -\frac{1050}{4},
+\qquad
+875 = \frac{3500}{4},
+\qquad
+-250 = -\frac{1000}{4}.
+\]
+
+Entonces:
+\begin{align*}
+P\left(-\frac{25}{2}, -\frac{35}{2}\right)
+&= -\frac{1250}{4}
+   -\frac{1225}{4}
+   +\frac{3500}{4}
+   -\frac{1000}{4}
+   -\frac{1050}{4}.
+\end{align*}
+
+Sumamos numeradores:
+\[
+-1250 - 1225 + 3500 - 1000 - 1050
+= -3025 + 3500 - 2050
+= 475 - 2050
+= -1575.
+\]
+
+Por lo tanto:
+\[
+P\left(-\frac{25}{2}, -\frac{35}{2}\right)
+= -\frac{1575}{4}
+= -393{,}75.
+\]
+
+(En la práctica, el valor exacto es menos relevante que la clasificación
+del punto crítico como punto de silla.)
+
+% ===============================================================
+\section*{Interpretación y comentario económico}
+
+Desde un punto de vista económico, las cantidades de insumos
+\(x = \num{-12,5}\,\text{kg}\) y \(y = \num{-17,5}\,\text{kg}\) carecen de sentido físico,
+ya que representan valores negativos. Esto sugiere que, además del análisis
+matemático, es necesario imponer restricciones al modelo, por ejemplo:
+\[
+x \geq 0,
+\qquad
+y \geq 0.
+\]
+
+Bajo estas condiciones, el problema de optimización debería replantearse
+considerando también la frontera del dominio (métodos de optimización
+con restricciones), lo cual es habitual en modelos de producción reales.
+
+% ===============================================================
+\section*{Conclusión}
+
+El desarrollo detallado de la función de producción
+\[
+P(x,y) = -2x^{2} - y^{2} + 4xy + 20x + 15y
+\]
+permitió:
+\begin{enumerate}
+    \item Calcular de manera sistemática las derivadas parciales de primer
+          y segundo orden.
+    \item Determinar el punto crítico resolviendo un sistema lineal
+          de dos ecuaciones con dos incógnitas.
+    \item Construir la matriz Hessiana y evaluar su determinante
+          para aplicar el criterio de clasificación.
+    \item Concluir que el punto crítico encontrado es un
+          \textbf{punto de silla}, por lo que no corresponde a un máximo
+          ni a un mínimo local.
+    \item Discutir la importancia de considerar restricciones en el
+          dominio para obtener soluciones económicamente viables.
+\end{enumerate}
+
+Este ejemplo ilustra cómo las herramientas del cálculo multivariable
+son fundamentales para interpretar y tomar decisiones en modelos de
+producción y optimización de recursos.
+
+% ===============================================================
+\section*{Referencias bibliográficas}
+
+\begin{itemize}
+    \item Chiang, A., \& Wainwright, K. (2005).
+          \textit{Fundamentos de economía matemática}. McGraw-Hill.
+    \item Stewart, J. (2016).
+          \textit{Cálculo de varias variables}. Cengage Learning.
+    \item Lay, D. (2015).
+          \textit{Álgebra Lineal y sus aplicaciones}. Pearson.
+\end{itemize}
+
+\end{document}

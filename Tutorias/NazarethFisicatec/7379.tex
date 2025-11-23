@@ -1,0 +1,183 @@
+\documentclass[11pt,a4paper]{article}
+
+%------------------------------------------------
+% PAQUETES
+%------------------------------------------------
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+
+\sisetup{
+  locale = DE,
+  output-decimal-marker = {,},
+  per-mode = symbol,
+  exponent-product = \cdot,
+  group-minimum-digits = 4
+}
+
+\begin{document}
+
+%=================================================
+\section*{Problema 8.73 – Combinación de leyes de conservación}
+
+\subsection*{Datos}
+
+\begin{itemize}
+  \item Masa del bloque en movimiento:
+  \[
+    m_1 = \SI{5,00}{kg}
+  \]
+  \item Velocidad inicial:
+  \[
+    v_1 = \SI{12,0}{m/s}
+  \]
+  \item Masa del bloque en reposo:
+  \[
+    m_2 = \SI{5,00}{kg}
+  \]
+  \item Velocidad inicial del segundo bloque:
+  \[
+    v_2 = 0
+  \]
+  \item Choque completamente inelástico: se adhieren.
+\end{itemize}
+
+\subsection*{Fórmula}
+
+Conservación del momento lineal en el choque:
+\[
+m_1 v_1 = (m_1 + m_2) v_f.
+\]
+
+Después del choque, se conserva la energía mecánica porque no hay fricción:
+\[
+\frac{1}{2}(m_1+m_2) v_f^2 = (m_1+m_2) g h.
+\]
+
+\subsection*{Sustitución}
+
+\[
+(5,00)(12,0) = (10,0) v_f.
+\]
+
+\[
+v_f = \frac{60}{10} = \SI{6,0}{m/s}.
+\]
+
+Ahora para la altura:
+\[
+\frac{1}{2}(10,0)(6,0)^2 = (10,0)(9,8) h.
+\]
+
+\subsection*{Cálculo}
+
+\[
+\frac{1}{2}(10)(36) = 180~\text{J},
+\]
+
+\[
+180 = 98 h,
+\]
+
+\[
+h = \frac{180}{98} = \SI{1,84}{m}.
+\]
+
+\subsection*{Conclusión}
+
+Los bloques combinados alcanzan una altura:
+\[
+\boxed{h = \SI{1,8}{m}}
+\]
+
+%=================================================
+\newpage
+
+\section*{Problema 8.79 – Choque bala–bloque y resorte}
+
+\subsection*{Datos}
+
+\begin{itemize}
+  \item Masa de la bala:
+  \[
+    m_b = \SI{8,00e-3}{kg}
+  \]
+  \item Masa del bloque:
+  \[
+    m_c = \SI{0,992}{kg}
+  \]
+  \item Compresión del resorte:
+  \[
+    x = \SI{15,0}{cm} = \SI{0,150}{m}
+  \]
+  \item Constante del resorte:
+  \[
+    F = \SI{0,750}{N}, \quad x_0 = \SI{0,250}{cm} = 2,50\times 10^{-3}\,\text{m}
+  \]
+\end{itemize}
+
+Primero se calcula la constante elástica:
+\[
+k = \frac{F}{x_0}
+    = \frac{0,750}{2,50\times10^{-3}}
+    = \SI{300}{N/m}.
+\]
+
+\subsection*{(a) Velocidad del bloque después del impacto}
+
+Conservación de energía para el resorte:
+\[
+\frac12 (m_b + m_c) V^2 = \frac12 k x^2.
+\]
+
+\subsection*{Sustitución}
+
+\[
+\frac12 (1,00) V^2 = \frac12 (300)(0,150)^2.
+\]
+
+\subsection*{Cálculo}
+
+\[
+V = 0,150 \sqrt{\frac{300}{1,00}} = \SI{2,60}{m/s}.
+\]
+
+\[
+\boxed{V = \SI{2,60}{m/s}}
+\]
+
+\subsection*{(b) Velocidad inicial de la bala}
+
+Conservación del momento lineal en el choque:
+\[
+m_b v_b = (m_b + m_c) V.
+\]
+
+\subsection*{Sustitución}
+
+\[
+(8,00\times10^{-3}) v_b = (1,00)(2,60).
+\]
+
+\[
+v_b = \frac{2,60}{8,00\times 10^{-3}}
+\]
+
+\subsection*{Cálculo}
+
+\[
+v_b = \SI{325}{m/s}.
+\]
+
+\subsection*{Conclusión}
+
+\[
+\boxed{v_b = \SI{325}{m/s}}
+\]
+
+La bala inicialmente viajaba a aproximadamente \(\SI{325}{m/s}\).
+
+\end{document}

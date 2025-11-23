@@ -1,0 +1,424 @@
+% ==========================================================
+% Tabla de números de oxidación — Metales y No Metales
+% ==========================================================
+\documentclass[11pt,letterpaper]{article}
+\usepackage{amsmath}
+\DeclareUnicodeCharacter{2212}{\textminus}
+
+% --- Idioma y codificación ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, es-nodecimaldot]{babel}
+
+% --- Paquetes de tablas y color ---
+\usepackage{booktabs, colortbl, array, xcolor}
+\usepackage[a4paper,margin=2.4cm]{geometry}
+
+% --- Configuración de color ---
+\definecolor{azulTEC}{RGB}{0,70,140}
+\definecolor{grisClaro}{RGB}{240,240,240}
+
+% --- Estilo de tabla ---
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{10pt}
+
+\begin{document}
+
+\begin{center}
+\Large \textbf{Símbolos y números de oxidación de los principales elementos químicos}
+\end{center}
+
+% ==========================================================
+% METAL
+% ==========================================================
+\section*{Metales}
+
+\rowcolors{2}{grisClaro}{white}
+\begin{tabular}{|>{\bfseries}m{4cm}|c|m{6cm}|}
+\hline
+\rowcolor{azulTEC!30}
+\centering \textbf{Elemento} & \textbf{Símbolo} & \textbf{Número de oxidación} \\
+\hline
+Hidrógeno & H & 1+, 1− \\
+Potasio & K & 1+ \\
+Sodio & Na & 1+ \\
+Plata & Ag & 1+ \\
+Litio & Li & 1+ \\
+Cesio & Cs & 1+ \\
+Rubidio & Rb & 1+ \\
+Calcio & Ca & 2+ \\
+Estroncio & Sr & 2+ \\
+Escandio & Sc & 3+ \\
+Bario & Ba & 2+ \\
+Radio & Ra & 2+ \\
+Magnesio & Mg & 2+ \\
+Zinc & Zn & 2+ \\
+Cadmio & Cd & 2+ \\
+Aluminio & Al & 3+ \\
+Cobre & Cu & 1+, 2+ \\
+Mercurio & Hg & 1+, 2+ \\
+Oro & Au & 1+, 3+ \\
+Hierro & Fe & 2+, 3+ \\
+Cobalto & Co & 2+, 3+ \\
+Níquel & Ni & 2+, 3+ \\
+Cromo & Cr & 2+, 3+, 6+ \\
+Estaño & Sn & 2+, 4+ \\
+Platino & Pt & 2+, 4+ \\
+Bismuto & Bi & 3+, 5+ \\
+Uranio & U & 6+ \\
+Manganeso & Mn & 2+, 3+, 4+, 6+, 7+ \\
+\hline
+\end{tabular}
+
+\vspace{1cm}
+
+% ==========================================================
+% NO METALES
+% ==========================================================
+\section*{No metales}
+
+\rowcolors{2}{grisClaro}{white}
+\begin{tabular}{|>{\bfseries}m{4cm}|c|m{6cm}|}
+\hline
+\rowcolor{azulTEC!30}
+\centering \textbf{Elemento} & \textbf{Símbolo} & \textbf{Número de oxidación} \\
+\hline
+Flúor & F & 1− \\
+Cloro & Cl & 1−, 1+, 3+, 5+, 7+ \\
+Bromo & Br & 1−, 1+, 3+, 5+ \\
+Yodo & I & 1−, 1+, 5+, 7+ \\
+Oxígeno & O & 2−, 2− (peróxidos), 1− (superóxidos) \\
+Azufre & S & 2−, 4+, 6+ \\
+Boro & B & 3+ \\
+Carbono & C & 4−, 4+ \\
+Silicio & Si & 4+ \\
+Nitrógeno & N & 3−, 3+, 5+ \\
+Fósforo & P & 3−, 3+, 5+ \\
+Arsénico & As & 3−, 3+, 5+ \\
+Antimonio & Sb & 3−, 3+, 5+ \\
+\hline
+\end{tabular}
+
+\vspace{0.5cm}
+\begin{flushright}
+\small Fuente: \textit{Química para secundaria, pág. 255}
+\end{flushright}
+\newpage
+% ==========================================================
+% RADICALES SIMPLES
+% ==========================================================
+\section*{Radicales simples}
+
+\rowcolors{2}{grisClaro}{white}
+\begin{tabular}{|>{\bfseries}m{4cm}|c|m{4cm}|}
+\hline
+\rowcolor{azulTEC!30}
+\centering \textbf{Radical} & \textbf{Símbolo} & \textbf{Número de oxidación} \\
+\hline
+Fluoruro & F$^-$ & 1− \\
+Cloruro & Cl$^-$ & 1− \\
+Bromuro & Br$^-$ & 1− \\
+Yoduro & I$^-$ & 1− \\
+Cianuro & CN$^-$ & 1− \\
+Tiocianato & SCN$^-$ & 1− \\
+Sulfuro & S$^{2-}$ & 2− \\
+Nitruro & N$^{3-}$ & 3− \\
+\hline
+\end{tabular}
+
+\vspace{0.5cm}
+\begin{flushright}
+\small Fuente: \textit{Química para secundaria, pág. 256}
+\end{flushright}
+% ==========================================================
+% RADICALES COMPUESTOS (u oxigenados)
+% ==========================================================
+\section*{Radicales compuestos (oxigenados)}
+
+\rowcolors{2}{grisClaro}{white}
+\begin{tabular}{|>{\bfseries}m{4cm}|c|m{4cm}|}
+\hline
+\rowcolor{azulTEC!30}
+\centering \textbf{Radical} & \textbf{Símbolo} & \textbf{Número de oxidación} \\
+\hline
+Acetato & CH$_3$COO$^-$ & 1− \\
+Hipoclorito & ClO$^-$ & 1− \\
+Clorito & ClO$_2^-$ & 1− \\
+Clorato & ClO$_3^-$ & 1− \\
+Perclorato & ClO$_4^-$ & 1− \\
+Hipobromito & BrO$^-$ & 1− \\
+Bromito & BrO$_2^-$ & 1− \\
+Bromato & BrO$_3^-$ & 1− \\
+Hipoyodito & IO$^-$ & 1− \\
+Yodato & IO$_3^-$ & 1− \\
+Peryodato & IO$_4^-$ & 1− \\
+Nitrito & NO$_2^-$ & 1− \\
+Nitrato & NO$_3^-$ & 1− \\
+Permanganato & MnO$_4^-$ & 1− \\
+Manganato & MnO$_4^{2-}$ & 2− \\
+Carbonato & CO$_3^{2-}$ & 2− \\
+Hiposulfito & SO$_2^{2-}$ & 2− \\
+Sulfito & SO$_3^{2-}$ & 2− \\
+Sulfato & SO$_4^{2-}$ & 2− \\
+Cromato & CrO$_4^{2-}$ & 2− \\
+Dicromato & Cr$_2$O$_7^{2-}$ & 2− \\
+Silicato & SiO$_3^{2-}$ & 2− \\
+Arsenito & AsO$_3^{3-}$ & 3− \\
+Arsenato & AsO$_4^{3-}$ & 3− \\
+Aluminato & AlO$_3^{3-}$ & 3− \\
+Borato & BO$_3^{3-}$ & 3− \\
+Fosfito & PO$_3^{3-}$ & 3− \\
+Fosfato & PO$_4^{3-}$ & 3− \\
+Hidróxido & OH$^-$ & 1− \\
+\hline
+\end{tabular}
+
+\vspace{0.5cm}
+\begin{flushright}
+\small Fuente: \textit{Química para secundaria, pág. 256}
+\end{flushright}
+\newpage
+% ==========================================================
+% NOMENCLATURAS QUÍMICAS
+% ==========================================================
+\section*{Nomenclaturas químicas de los compuestos inorgánicos}
+
+\noindent
+En la química inorgánica existen tres sistemas principales de nomenclatura para nombrar compuestos: \textbf{tradicional}, \textbf{Stock} y \textbf{sistemática}.  
+Cada una sigue reglas distintas, pero todas buscan representar correctamente los elementos y sus números de oxidación.
+
+\vspace{0.5cm}
+
+% ----------------------------------------------------------
+\subsection*{1. Nomenclatura tradicional}
+Se basa en el uso de \textbf{prefijos y sufijos latinos} para indicar el número de oxidación del elemento metálico o no metálico.  
+Cuando un elemento presenta dos valencias posibles:
+\[
+\text{Terminación ``-oso''} \rightarrow \text{valencia menor}, \quad
+\text{Terminación ``-ico''} \rightarrow \text{valencia mayor}.
+\]
+
+\textbf{Ejemplos:}
+\[
+\begin{array}{ll}
+\text{FeCl}_2 & \rightarrow \text{Cloruro ferroso (Fe}^{2+}\text{)} \\
+\text{FeCl}_3 & \rightarrow \text{Cloruro férrico (Fe}^{3+}\text{)} \\
+\text{Cu}_2\text{O} & \rightarrow \text{Óxido cuproso (Cu}^{+}\text{)} \\
+\text{CuO} & \rightarrow \text{Óxido cúprico (Cu}^{2+}\text{)} \\
+\text{H}_2\text{SO}_4 & \rightarrow \text{Ácido sulfúrico (S}^{6+}\text{)} \\
+\text{H}_2\text{SO}_3 & \rightarrow \text{Ácido sulfuroso (S}^{4+}\text{)} \\
+\end{array}
+\]
+
+\vspace{0.5cm}
+
+% ----------------------------------------------------------
+\subsection*{2. Nomenclatura de Stock}
+Indica el \textbf{número de oxidación} del elemento en \textbf{números romanos entre paréntesis}, sin usar sufijos.  
+Es el sistema más utilizado actualmente en química moderna.
+
+\textbf{Ejemplos:}
+\[
+\begin{array}{ll}
+\text{FeCl}_2 & \rightarrow \text{Cloruro de hierro (II)} \\
+\text{FeCl}_3 & \rightarrow \text{Cloruro de hierro (III)} \\
+\text{CuO} & \rightarrow \text{Óxido de cobre (II)} \\
+\text{Cu}_2\text{O} & \rightarrow \text{Óxido de cobre (I)} \\
+\text{SO}_2 & \rightarrow \text{Óxido de azufre (IV)} \\
+\text{SO}_3 & \rightarrow \text{Óxido de azufre (VI)} \\
+\end{array}
+\]
+
+\vspace{0.5cm}
+
+% ----------------------------------------------------------
+\subsection*{3. Nomenclatura sistemática (IUPAC)}
+Emplea \textbf{prefijos numéricos griegos} (mono-, di-, tri-, tetra-, penta-, hexa-, etc.) para indicar la cantidad de átomos de cada elemento.  
+No se utiliza número romano.
+
+\textbf{Ejemplos:}
+\[
+\begin{array}{ll}
+\text{CO} & \rightarrow \text{Monóxido de carbono} \\
+\text{CO}_2 & \rightarrow \text{Dióxido de carbono} \\
+\text{N}_2\text{O}_3 & \rightarrow \text{Trióxido de dinitrógeno} \\
+\text{P}_2\text{O}_5 & \rightarrow \text{Pentóxido de difósforo} \\
+\text{SO}_2 & \rightarrow \text{Dióxido de azufre} \\
+\text{SO}_3 & \rightarrow \text{Trióxido de azufre} \\
+\end{array}
+\]
+
+\vspace{0.6cm}
+
+% ----------------------------------------------------------
+\subsection*{4. Comparación entre nomenclaturas}
+
+\begin{center}
+\rowcolors{2}{grisClaro}{white}
+\begin{tabular}{|>{\bfseries}m{3.5cm}|m{4cm}|m{4cm}|m{4cm}|}
+\hline
+\rowcolor{azulTEC!30}
+\textbf{Fórmula} & \textbf{Tradicional} & \textbf{Stock} & \textbf{Sistemática (IUPAC)} \\
+\hline
+FeCl$_2$ & Cloruro ferroso & Cloruro de hierro (II) & Dicloruro de hierro \\
+FeCl$_3$ & Cloruro férrico & Cloruro de hierro (III) & Tricloruro de hierro \\
+CuO & Óxido cúprico & Óxido de cobre (II) & Monóxido de cobre \\
+Cu$_2$O & Óxido cuproso & Óxido de cobre (I) & Monóxido de dicobre \\
+SO$_3$ & Anhídrido sulfúrico & Óxido de azufre (VI) & Trióxido de azufre \\
+CO$_2$ & Anhídrido carbónico & Óxido de carbono (IV) & Dióxido de carbono \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{0.4cm}
+\begin{flushright}
+\small Elaborado según la nomenclatura IUPAC y textos de química general.
+\end{flushright}
+\newpage
+% ==========================================================
+% CLASIFICACIÓN DE LOS COMPUESTOS INORGÁNICOS
+% ==========================================================
+\section*{Clasificación de los compuestos inorgánicos}
+
+\noindent
+Los compuestos inorgánicos se clasifican según los elementos que los forman. A continuación se presentan las principales familias con sus fórmulas generales, reglas de formación y ejemplos en las nomenclaturas tradicional, Stock y sistemática (IUPAC).
+
+% ----------------------------------------------------------
+\subsection*{1. Óxidos metálicos}
+
+\textbf{Fórmula general:} \quad M$_x$O$_y$
+
+\textbf{Formación:} Metal + Oxígeno → Óxido metálico  
+El oxígeno actúa con número de oxidación \(-2\).
+
+\textbf{Ejemplos:}
+\[
+\begin{array}{llll}
+\text{Fórmula} & \text{Tradicional} & \text{Stock} & \text{Sistemática} \\
+\hline
+\text{FeO} & \text{Óxido ferroso} & \text{Óxido de hierro (II)} & \text{Monóxido de hierro} \\
+\text{Fe}_2\text{O}_3 & \text{Óxido férrico} & \text{Óxido de hierro (III)} & \text{Trióxido de dihierro} \\
+\text{CuO} & \text{Óxido cúprico} & \text{Óxido de cobre (II)} & \text{Monóxido de cobre} \\
+\end{array}
+\]
+
+% ----------------------------------------------------------
+\subsection*{2. Óxidos no metálicos (anhídridos)}
+
+\textbf{Fórmula general:} \quad X$_x$O$_y$
+
+\textbf{Formación:} No metal + Oxígeno → Óxido no metálico (o anhídrido)
+
+\textbf{Ejemplos:}
+\[
+\begin{array}{llll}
+\text{SO}_2 & \text{Anhídrido sulfuroso} & \text{Óxido de azufre (IV)} & \text{Dióxido de azufre} \\
+\text{SO}_3 & \text{Anhídrido sulfúrico} & \text{Óxido de azufre (VI)} & \text{Trióxido de azufre} \\
+\text{CO}_2 & \text{Anhídrido carbónico} & \text{Óxido de carbono (IV)} & \text{Dióxido de carbono} \\
+\end{array}
+\]
+
+% ----------------------------------------------------------
+\subsection*{3. Hidróxidos (bases)}
+
+\textbf{Fórmula general:} \quad M(OH)$_n$
+
+\textbf{Formación:} Óxido metálico + Agua → Hidróxido
+
+\textbf{Ejemplos:}
+\[
+\begin{array}{llll}
+\text{NaOH} & \text{Hidróxido sódico} & \text{Hidróxido de sodio} & \text{Hidróxido de sodio} \\
+\text{Ca(OH)}_2 & \text{Hidróxido cálcico} & \text{Hidróxido de calcio} & \text{Dihidróxido de calcio} \\
+\text{Fe(OH)}_3 & \text{Hidróxido férrico} & \text{Hidróxido de hierro (III)} & \text{Trihidróxido de hierro} \\
+\end{array}
+\]
+
+% ----------------------------------------------------------
+\subsection*{4. Hidruros}
+
+\textbf{Fórmula general:} \quad M$_x$H$_y$
+
+\textbf{Formación:} Metal + Hidrógeno → Hidruro  
+El hidrógeno actúa con número de oxidación \(-1\) cuando está con metales.
+
+\textbf{Ejemplos:}
+\[
+\begin{array}{llll}
+\text{NaH} & \text{Hidruro sódico} & \text{Hidruro de sodio} & \text{Monohidruro de sodio} \\
+\text{CaH}_2 & \text{Hidruro cálcico} & \text{Hidruro de calcio} & \text{Dihidruro de calcio} \\
+\text{AlH}_3 & \text{Hidruro alumínico} & \text{Hidruro de aluminio} & \text{Trihidruro de aluminio} \\
+\end{array}
+\]
+
+% ----------------------------------------------------------
+\subsection*{5. Hidrácidos}
+
+\textbf{Fórmula general:} \quad H$_x$X  
+(\(X\) es un no metal del grupo 16 o 17)
+
+\textbf{Formación:} No metal + Hidrógeno → Hidrácido  
+En disolución acuosa se nombran como “ácidos”.
+
+\textbf{Ejemplos:}
+\[
+\begin{array}{llll}
+\text{HCl(ac)} & \text{Ácido clorhídrico} & \text{Cloruro de hidrógeno} & \text{Hidruro de cloro} \\
+\text{H}_2\text{S(ac)} & \text{Ácido sulfhídrico} & \text{Sulfuro de hidrógeno} & \text{Dihidruro de azufre} \\
+\text{HF(ac)} & \text{Ácido fluorhídrico} & \text{Fluoruro de hidrógeno} & \text{Hidruro de flúor} \\
+\end{array}
+\]
+
+% ----------------------------------------------------------
+\subsection*{6. Sales binarias}
+
+\textbf{Fórmula general:} \quad M$_x$X$_y$
+
+\textbf{Formación:} Metal + No metal → Sal binaria
+
+\textbf{Ejemplos:}
+\[
+\begin{array}{llll}
+\text{NaCl} & \text{Cloruro sódico} & \text{Cloruro de sodio} & \text{Monocloruro de sodio} \\
+\text{FeS} & \text{Sulfuro ferroso} & \text{Sulfuro de hierro (II)} & \text{Monosulfuro de hierro} \\
+\text{CuBr}_2 & \text{Bromuro cúprico} & \text{Bromuro de cobre (II)} & \text{Dibromuro de cobre} \\
+\end{array}
+\]
+
+% ----------------------------------------------------------
+\subsection*{7. Oxácidos (oxiácidos)}
+
+\textbf{Fórmula general:} \quad H$_x$X$_y$O$_z$
+
+\textbf{Formación:} Anhídrido + Agua → Oxácido
+
+\textbf{Ejemplos:}
+\[
+\begin{array}{llll}
+\text{H}_2\text{SO}_4 & \text{Ácido sulfúrico} & \text{Ácido tetraoxosulfúrico (VI)} & \text{Tetraoxosulfato (VI) de hidrógeno} \\
+\text{H}_2\text{SO}_3 & \text{Ácido sulfuroso} & \text{Ácido trioxosulfúrico (IV)} & \text{Trioxosulfato (IV) de hidrógeno} \\
+\text{HNO}_3 & \text{Ácido nítrico} & \text{Ácido trioxonítrico (V)} & \text{Trioxonitrato (V) de hidrógeno} \\
+\end{array}
+\]
+
+% ----------------------------------------------------------
+\subsection*{8. Sales ternarias (oxisales)}
+
+\textbf{Fórmula general:} \quad M$_x$X$_y$O$_z$
+
+\textbf{Formación:} Oxácido - Hidrógeno + Metal → Sal ternaria
+
+\textbf{Ejemplos:}
+\[
+\begin{array}{llll}
+\text{Na}_2\text{SO}_4 & \text{Sulfato sódico} & \text{Sulfato de sodio} & \text{Tetraoxosulfato (VI) de disodio} \\
+\text{KNO}_3 & \text{Nitrato potásico} & \text{Nitrato de potasio} & \text{Trioxonitrato (V) de potasio} \\
+\text{CaCO}_3 & \text{Carbonato cálcico} & \text{Carbonato de calcio} & \text{Trioxocarbonato (IV) de calcio} \\
+\end{array}
+\]
+
+\vspace{0.4cm}
+\begin{flushright}
+\small Elaborado según la clasificación inorgánica general y la nomenclatura IUPAC.
+\end{flushright}
+\end{document}

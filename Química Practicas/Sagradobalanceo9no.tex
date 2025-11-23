@@ -1,0 +1,102 @@
+% ==========================================================
+% PRÁCTICA: REACCIONES QUÍMICAS — TRANSCRIPCIÓN EN LaTeX
+% Compila con pdfLaTeX. Requiere el paquete mhchem.
+% ==========================================================
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{booktabs,tabularx,array}
+\usepackage{mhchem}   % para escribir fórmulas químicas
+\usepackage{siunitx}  % por si se ocupan unidades
+\sisetup{locale=DE,output-decimal-marker={,}} % coma decimal (preferencia del usuario)
+
+\newcommand{\linea}{\rule{2.6cm}{0.4pt}}   % línea para completar a mano
+\newcommand{\coef}{\rule{0.8cm}{0.4pt}}    % línea corta para coeficientes
+
+\begin{document}
+
+\begin{center}
+  {\Large \textbf{Práctica Reacciones Químicas}}\\[2mm]
+\end{center}
+
+\noindent\textbf{Respuesta corta.}\\
+\textbf{1}. Señale los \textbf{reactivos} y los \textbf{productos} en cada una de las siguientes ecuaciones químicas. Además, clasifíquelas en reacciones de \emph{combinación}, \emph{descomposición}, \emph{desplazamiento} y \emph{doble descomposición}, según corresponda.
+
+\vspace{4mm}
+
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X c@{}}
+\toprule
+\textbf{Ecuación} & \textbf{Clasificación} \\
+\midrule
+\ce{2 LiOH (ac) + Ca(NO3)2 (ac) -> 2 LiNO3 (ac) + Ca(OH)2 (s)} & \linea \\ 
+\ce{Sr(OH)2 + H2CO3 -> SrCO3 + 2 H2O} & \linea \\
+\ce{P4 + 3 O2 -> 2 P2O3} & \linea \\
+\ce{CH3CH2CH3 + 5 O2 -> 3 CO2 + 4 H2O} & \linea \\
+\ce{3 NiBr2 + 2 Al -> 2 AlBr3 + 3 Ni} & \linea \\
+\ce{2 KClO3 -> 2 KCl + 3 O2} & \linea \\
+\ce{Cl2O5 + O2 -> Cl2O7} % revisar en enunciado: parecía heptóxido
+& \linea \\
+\ce{HCl (ac) + RbOH (ac) -> H2O (l) + RbCl (ac)} & \linea \\
+\ce{GeH4 ->[\Delta] Ge + H2 ^} & \linea \\
+\ce{CuSO4 (ac) + 2 NaOH (ac) -> Cu(OH)2 (s) + Na2SO4 (ac)} & \linea \\
+\ce{3 HCl (ac) + Al(OH)3 (ac) -> AlCl3 (ac) + 3 H2O (l)} & \linea \\
+\ce{HCl + RbOH (ac) -> H2O (l) + RbCl (ac)} & \linea \\
+\ce{Mg + HCl -> MgCl2 + H2 ^} & \linea \\
+\bottomrule
+\end{tabularx}
+
+\vspace{6mm}
+
+\textbf{2}. Balancee las siguientes ecuaciones químicas utilizando los coeficientes mínimos enteros para cumplir la Ley de Conservación de la Masa. (Complete los espacios en blanco).
+
+\begin{flushleft}
+\begin{tabular}{@{}l@{}}
+\coef\ \ce{Mn} \,+\, \coef\ \ce{O2} \,$\rightarrow$\, \coef\ \ce{Mn2O3}\\[2mm]
+\coef\ \ce{As4} \,+\, \coef\ \ce{Cl2} \,$\rightarrow$\, \coef\ \ce{AsCl3}\\[2mm]
+\coef\ \ce{Sn} \,+\, \coef\ \ce{P4} \,$\rightarrow$\, \coef\ \ce{SnP2}\\[2mm]
+\coef\ \ce{As2O5} \,+\, \coef\ \ce{H2O} \,$\rightarrow$\, \coef\ \ce{H3AsO4}\\[2mm]
+\coef\ \ce{Bi2O5} \,+\, \coef\ \ce{H2O} \,$\rightarrow$\, \coef\ \ce{Bi(OH)5}\\[2mm]
+\coef\ \ce{U(OH)6} \,$\rightarrow$\, \coef\ \ce{UO3} \,+\, \coef\ \ce{H2O}\\
+\end{tabular}
+\end{flushleft}
+
+\newpage
+% ==========================================================
+% SEGUNDA HOJA (ecuaciones con espacios para balancear)
+% ==========================================================
+\begin{flushleft}
+\coef\ \ce{C5H12} \,+\, \coef\ \ce{O2} \,$\rightarrow$\, \coef\ \ce{CO2} \,+\, \coef\ \ce{H2O}\\[2mm]
+\coef\ \ce{Fe(NO3)3} \,+\, \coef\ \ce{Ca} \,$\rightarrow$\, \coef\ \ce{Ca(NO3)2} \,+\, \coef\ \ce{Fe}\\[2mm]
+\coef\ \ce{C6H18} \,+\, \coef\ \ce{O2} \,$\rightarrow$\, \coef\ \ce{CO2} \,+\, \coef\ \ce{H2O} \quad % revisar: quizá era C6H14
+\\[2mm]
+\coef\ \ce{C6H13OH} \,+\, \coef\ \ce{O2} \,$\rightarrow$\, \coef\ \ce{CO2} \,+\, \coef\ \ce{H2O}\\[2mm]
+\coef\ \ce{Mn2(SO4)3} \,+\, \coef\ \ce{LiOH} \,$\rightarrow$\, \coef\ \ce{Mn(OH)3} \,+\, \coef\ \ce{Li2SO4}\\[2mm]
+\coef\ \ce{Na3PO4} \,+\, \coef\ \ce{Li2SO4} \,$\rightarrow$\, \coef\ \ce{Na2SO4} \,+\, \coef\ \ce{Li3PO4}\\[2mm]
+\coef\ \ce{C7H14} \,+\, \coef\ \ce{O2} \,$\rightarrow$\, \coef\ \ce{CO2} \,+\, \coef\ \ce{H2O}\\[2mm]
+\coef\ \ce{C3H7OH} \,+\, \coef\ \ce{O2} \,$\rightarrow$\, \coef\ \ce{CO2} \,+\, \coef\ \ce{H2O}\\[2mm]
+\coef\ \ce{Mn(OH)4} \,+\, \coef\ \ce{AlPO4} \,$\rightarrow$\, \coef\ \ce{Al(OH)3} \,+\, \coef\ \ce{Mn3(PO4)4} \quad % revisar especies
+\\[2mm]
+\coef\ \ce{NiSO4} \,+\, \coef\ \ce{CuNO3} \,$\rightarrow$\, \coef\ \ce{Cu2SO4} \,+\, \coef\ \ce{Ni(NO3)2} \quad % revisar: CuNO3/Cu2SO4
+\\[2mm]
+\coef\ \ce{Mn2S3} \,+\, \coef\ \ce{Cr(PO4)2} \,$\rightarrow$\, \coef\ \ce{MnPO4} \,+\, \coef\ \ce{SrS3} \quad % revisar último producto
+\\[2mm]
+\coef\ \ce{V2O5} \,+\, \coef\ \ce{HCl} \,$\rightarrow$\, \coef\ \ce{VOCl3} \,+\, \coef\ \ce{H2O}\\[2mm]
+\coef\ \ce{As4} \,+\, \coef\ \ce{NaOH} \,$\rightarrow$\, \coef\ \ce{Na3AsO3} \,+\, \coef\ \ce{H2} \quad % revisar sal (NaAsO2/Na3AsO3?)
+\\[2mm]
+\coef\ \ce{KO2} \,+\, \coef\ \ce{CO2} \,$\rightarrow$\, \coef\ \ce{K2CO3} \,+\, \coef\ \ce{O2}\\[2mm]
+\coef\ \ce{AlCl3} \,+\, \coef\ \ce{H2O} \,$\rightarrow$\, \coef\ \ce{CH4} \,+\, \coef\ \ce{Al(OH)3} \quad % revisar: parece ajeno; transcrito literal
+\\[2mm]
+\coef\ \ce{Hg(CN)2} \,+\, \coef\ \ce{H3PO4} \,$\rightarrow$\, \coef\ \ce{Hg3(PO4)2} \,+\, \coef\ \ce{HCN}\\[2mm]
+\coef\ \ce{C4H8} \,+\, \coef\ \ce{O2} \,$\rightarrow$\, \coef\ \ce{CO2} \,+\, \coef\ \ce{H2O}\\[2mm]
+\coef\ \ce{C7H14} \,+\, \coef\ \ce{O2} \,$\rightarrow$\, \coef\ \ce{CO2} \,+\, \coef\ \ce{H2O}
+\end{flushleft}
+
+\vspace{4mm}
+\noindent\textit{Nota}: Las marcas ``\% revisar'' señalan lugares donde la imagen no fue totalmente nítida; por favor confirme la \emph{fórmula} exacta del enunciado físico antes de usar en evaluación.
+
+\end{document}

@@ -1,0 +1,652 @@
+% ==========================================================
+% Tutoría de Física - Ondas mecánicas y sonido
+% Formato con soluciones clickeables
+% ==========================================================
+
+\documentclass[11pt,letterpaper]{article}
+
+% ---------------- Paquetes básicos ----------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, es-nodecimaldot]{babel}
+
+% Matemática y SI
+\usepackage{amsmath, amssymb, bm}
+\usepackage{siunitx}
+\sisetup{
+  locale = DE,                 % coma decimal
+  output-decimal-marker = {,}, % coma decimal
+  per-mode = symbol,
+  exponent-product = \cdot,
+  group-minimum-digits = 4
+}
+
+% Diseño de página
+\usepackage[a4paper,margin=2.4cm]{geometry}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% Listas
+\usepackage{enumitem}
+
+% Cajas bonitas
+\usepackage[most]{tcolorbox}
+
+% Encabezado y pie
+\usepackage{fancyhdr}
+\setlength{\headheight}{14.5pt}
+
+% Botones / símbolos
+\usepackage{pifont}
+
+% Capas visibles/ocultas en PDF
+\usepackage{ocgx2}
+
+% Para permitir unicode tipo “⇒” o “✗”
+\usepackage{newunicodechar}
+\newunicodechar{✗}{\ding{55}}
+\newunicodechar{⇒}{\Rightarrow}
+
+% Hipervínculos
+\usepackage{hyperref}
+
+% ---------------- Estilo de cajas ----------------
+\tcbset{
+  colback=white,
+  colframe=black!70,
+  boxrule=0.6pt,
+  arc=2mm,
+  left=6pt,right=6pt,top=6pt,bottom=6pt
+}
+
+% Caja para enunciados / ejercicios
+\newtcolorbox{ejercicio}[1][]{title=Ejercicio, #1}
+
+% Caja para soluciones desarrolladas
+\newtcolorbox{solucionbox}[1][]{title=Solución, colframe=green!60!black, #1}
+
+% Caja tipo nota / advertencia / recordatorio teórico
+\newtcolorbox{nota}[1][]{title=Nota, colframe=blue!60!black, #1}
+
+% ---------------- Encabezado y pie ----------------
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Tutoría Física — Ondas y Sonido}
+\rhead{Julián Arias Meza — 2025}
+\cfoot{\thepage}
+
+% ---------------- Entorno de solución clickeable ----------------
+% Uso:
+% \begin{solucionclick}
+%   ... desarrollo paso a paso ...
+% \end{solucionclick}
+%
+% Esto crea un botón "Mostrar / ocultar solución" que funciona
+% en visores PDF compatibles con capas OCG (Adobe/XPdf, etc.).
+%
+\newcounter{solnum}
+\newcommand{\solbtn}{\fcolorbox{black}{gray!10}{\footnotesize Mostrar / ocultar solución}}
+\newenvironment{solucionclick}{%
+  \refstepcounter{solnum}%
+  \par\noindent\textbf{Solución \#\thesolnum}\;
+  \switchocg{sol:\thesolnum}{\solbtn}\\[2pt]%
+  \begin{ocg}{Solución \#\thesolnum}{sol:\thesolnum}{0}%
+  \begin{solucionbox}%
+}{%
+  \end{solucionbox}%
+  \end{ocg}\par\medskip
+}
+
+% ---------------- Título reutilizable ----------------
+\newcommand{\titulo}{
+  \begin{center}
+  {\Large \textbf{Tutoría de Física: Ondas mecánicas y sonido}}\\[4pt]
+  {\large \textbf{Onda estacionaria, armónicos, velocidad del sonido, dB y Doppler}}\\[6pt]
+  {\small Ejercicios tipo examen con soluciones ocultables}\\[6pt]
+  \end{center}
+  \vspace{-0.3em}\hrule\vspace{0.8em}
+}
+
+% ==========================================================
+% ===================== DOCUMENTO ==========================
+% ==========================================================
+\begin{document}
+
+\titulo
+
+\begin{nota}
+En todos los ejercicios:
+\begin{enumerate}[label=\arabic*.]
+  \item Identificamos datos físicos.
+  \item Escribimos la ecuación teórica relevante.
+  \item Sustituimos con unidades correctas del SI.
+  \item Hacemos el cálculo numérico con coma decimal.
+  \item Interpretamos físicamente el resultado.
+\end{enumerate}
+
+Para ver la solución paso a paso, hacé clic en el botón gris “Mostrar / ocultar solución”.
+\end{nota}
+
+% ==========================================================
+% 1. ONDA ESTACIONARIA EN UNA CUERDA
+% ==========================================================
+
+\section*{1. Onda estacionaria en una cuerda}
+
+\begin{ejercicio}
+Una cuerda vibrante está fija en \(x=0\).  
+En la cuerda viaja una onda sinusoidal que se refleja en el extremo fijo, formando una onda estacionaria.
+
+Se sabe que la onda original tenía:
+\[
+A = \SI{1,20}{mm} = 1{,}20\times10^{-3}\ \si{m}, \quad
+f = \SI{300}{Hz}, \quad
+v = \SI{120}{m/s}.
+\]
+
+a) Escriba la ecuación de la onda estacionaria \(y(x,t)\). \\
+b) Determine las posiciones de los nodos. \\
+c) Calcule la velocidad transversal máxima y la aceleración transversal máxima
+en un antinodo (vientre).
+\end{ejercicio}
+
+\begin{solucionclick}
+\textbf{Paso 1. Modelo de onda estacionaria}
+
+Cuando dos ondas iguales viajan en sentidos opuestos, la onda estacionaria se puede escribir como
+\[
+y(x,t)=A_0 \sin(kx)\,\sin(\omega t),
+\]
+donde:
+\[
+A_0=2A,\quad
+\omega = 2\pi f,\quad
+k=\frac{\omega}{v}=\frac{2\pi f}{v}.
+\]
+
+Datos:
+\[
+A = 1{,}20\times10^{-3}\ \si{m},\quad
+f = \SI{300}{Hz},\quad
+v = \SI{120}{m/s}.
+\]
+
+\textbf{Paso 2. Calculamos \(\omega\)}
+
+\[
+\omega = 2\pi f
+= 2\pi(300\ \si{s^{-1}})
+= 600\pi\ \si{rad/s}
+\approx 1{,}885\times 10^{3}\ \si{rad/s}
+= \SI{1885}{rad/s}.
+\]
+
+\textbf{Paso 3. Calculamos \(k\)}
+
+\[
+k = \frac{\omega}{v}
+= \frac{1885\ \si{rad/s}}{120\ \si{m/s}}
+\approx 15{,}7\ \si{rad/m}.
+\]
+
+\textbf{Paso 4. Amplitud estacionaria}
+
+\[
+A_0 = 2A = 2(1{,}20\times10^{-3}\ \si{m})
+= 2{,}40\times10^{-3}\ \si{m}
+= \SI{2,40}{mm}.
+\]
+
+Entonces la ecuación final es:
+\[
+\boxed{
+y(x,t)=
+\left(2{,}40\times10^{-3}\ \si{m}\right)
+\sin\!\bigl(15{,}7\ \si{rad/m}\, x\bigr)\,
+\sin\!\bigl(1885\ \si{rad/s}\, t\bigr)
+}
+\]
+
+\textbf{b) Nodos}
+
+Nodo = punto que nunca se mueve \(\Rightarrow y(x,t)=0\ \forall t\).
+De la forma \(y(x,t)=A_0\sin(kx)\sin(\omega t)\), eso pasa cuando \(\sin(kx)=0\).
+
+\[
+\sin(kx)=0
+\quad\Longrightarrow\quad
+kx=n\pi
+\quad\Longrightarrow\quad
+x_n = \frac{n\pi}{k}
+= \frac{n\pi}{15{,}7\ \si{rad/m}},
+\quad n=0,1,2,\dots
+\]
+
+Numéricamente:
+\[
+x_0=0,\quad
+x_1\approx \frac{\pi}{15{,}7}\approx \SI{0,200}{m},\quad
+x_2\approx \SI{0,400}{m}, \dots
+\]
+
+\textbf{c) Velocidad y aceleración máximas en un antinodo}
+
+En un antinodo, \(\sin(kx)=\pm 1\).
+
+Velocidad transversal:
+\[
+v_y(x,t)=\frac{\partial y}{\partial t}
+= A_0 \sin(kx)\,\omega \cos(\omega t).
+\]
+
+Máximo valor absoluto (en antinodo):
+\[
+v_{y,\text{max}} = A_0 \,\omega
+= (2{,}40\times10^{-3}\ \si{m})(1885\ \si{rad/s})
+\approx \SI{4,52}{m/s}.
+\]
+
+Aceleración transversal:
+\[
+a_y(x,t)=\frac{\partial^2 y}{\partial t^2}
+=-A_0 \sin(kx)\,\omega^2 \sin(\omega t).
+\]
+
+Máximo valor absoluto (en antinodo):
+\[
+a_{y,\text{max}}=A_0 \omega^2
+=(2{,}40\times10^{-3}\ \si{m})(1885\ \si{rad/s})^2.
+\]
+
+\((1885)^2 \approx 3{,}55\times10^{6}\).
+
+\[
+a_{y,\text{max}}
+\approx (2{,}40\times10^{-3})(3{,}55\times10^{6})\ \si{m/s^2}
+\approx 8{,}52\times10^{3}\ \si{m/s^2}.
+\]
+
+\textbf{Interpretación física:}  
+Aunque la cuerda sólo se desplaza milímetros, las partículas oscilan con velocidades \(\sim \SI{4}{m/s}\) y aceleraciones de miles de \(\si{m/s^2}\). Eso explica por qué la cuerda necesita tanta tensión.
+\end{solucionclick}
+
+% ==========================================================
+% 2. ARMÓNICOS EN UNA CUERDA FIJA EN AMBOS EXTREMOS
+% ==========================================================
+
+\section*{2. Armónicos y sobretonos en una cuerda}
+
+\begin{ejercicio}
+Una cuerda de longitud \(L = \SI{0,80}{m}\) está fija en ambos extremos.
+La densidad lineal de masa es
+\(\mu = \SI{5,00}{g/m} = 5,00\times10^{-3}\ \si{kg/m}\),
+y la tensión es \(F = \SI{120}{N}\).
+
+a) Calcule la rapidez de la onda transversal \(v\) en la cuerda. \\
+b) Calcule la frecuencia fundamental \(f_1\). \\
+c) Calcule la frecuencia \(f_2\) y la longitud de onda \(\lambda_2\) del segundo armónico. \\
+d) Calcule la frecuencia \(f_3\) y la longitud de onda \(\lambda_3\) del tercer armónico (que es el segundo sobretono).
+\end{ejercicio}
+
+\begin{solucionclick}
+\textbf{Paso 1. Rapidez de onda en una cuerda tensa}
+
+\[
+v = \sqrt{\frac{F}{\mu}}
+= \sqrt{\frac{120\ \si{N}}
+              {5{,}00\times10^{-3}\ \si{kg/m}}}.
+\]
+
+Numéricamente:
+\[
+\frac{120}{5{,}00\times10^{-3}}
+=120 \div 0{,}005
+=24000.
+\]
+
+\[
+v = \sqrt{24000\ \si{m^2/s^2}}
+\approx \SI{154,9}{m/s}
+\approx \SI{155}{m/s}.
+\]
+
+\textbf{Paso 2. Frecuencia fundamental (modo \(n=1\))}
+
+Para una cuerda con extremos fijos:
+\[
+f_n = \frac{n v}{2L}.
+\]
+
+Entonces:
+\[
+f_1=\frac{1\cdot v}{2L}
+= \frac{155\ \si{m/s}}{2(0{,}80\ \si{m})}
+= \frac{155}{1{,}60}\ \si{s^{-1}}
+\approx \SI{96,9}{Hz}.
+\]
+
+\textbf{Paso 3. Segundo armónico (\(n=2\))}
+
+\[
+f_2 = 2 f_1 \approx 2(96{,}9\ \si{Hz})
+\approx \SI{193,8}{Hz}.
+\]
+
+Longitud de onda del modo \(n\):
+\[
+\lambda_n = \frac{2L}{n}.
+\]
+
+Entonces:
+\[
+\lambda_2 = \frac{2(0{,}80\ \si{m})}{2}
+= \SI{0,80}{m}.
+\]
+
+\textbf{Paso 4. Tercer armónico (\(n=3\))}
+
+\[
+f_3 = 3 f_1 \approx 3(96{,}9\ \si{Hz})
+\approx \SI{291}{Hz}.
+\]
+
+\[
+\lambda_3 = \frac{2L}{3}
+= \frac{1{,}60\ \si{m}}{3}
+\approx \SI{0,533}{m}.
+\]
+
+\textbf{Interpretación física:}  
+A medida que subimos \(n\), aparecen más nodos y vientres en la cuerda. Eso genera frecuencias más altas (sonido más agudo) y longitudes de onda espaciales más cortas. El “segundo sobretono’’ corresponde a \(n=3\), no a \(n=2\).
+\end{solucionclick}
+
+% ==========================================================
+% 3. RAPIDEZ DEL SONIDO EN UN FLUIDO Y LONGITUD DE ONDA
+% ==========================================================
+
+\section*{3. Sonido en un fluido}
+
+\begin{ejercicio}
+En cierto líquido:
+\[
+\rho = 8{,}50\times10^{2}\ \si{kg/m^3}, \qquad
+B = 1{,}60\times10^{9}\ \si{Pa}.
+\]
+Una fuente acústica emite una frecuencia
+\[
+f = \SI{500}{Hz}.
+\]
+
+a) Calcule la rapidez \(v\) del sonido en el fluido usando \(v=\sqrt{B/\rho}\). \\
+b) Calcule la longitud de onda \(\lambda\) en ese medio.
+\end{ejercicio}
+
+\begin{solucionclick}
+\textbf{Paso 1. Rapidez del sonido en fluido}
+
+\[
+v = \sqrt{\frac{B}{\rho}}
+= \sqrt{\frac{1{,}60\times10^{9}\ \si{Pa}}
+              {8{,}50\times10^{2}\ \si{kg/m^3}} }.
+\]
+
+División dentro de la raíz:
+\[
+\frac{1{,}60\times10^{9}}{8{,}50\times10^{2}}
+= \frac{1{,}60}{8{,}50}\times10^{9-2}
+\approx 0{,}1882\times10^{7}
+=1{,}882\times10^{6}.
+\]
+
+Entonces:
+\[
+v \approx \sqrt{1{,}882\times10^{6}}\ \si{m/s}
+= \sqrt{1{,}882}\times10^{3}\ \si{m/s}.
+\]
+
+\(\sqrt{1{,}882}\approx 1{,}371\).
+
+\[
+v \approx 1{,}371\times10^{3}\ \si{m/s}
+\approx \SI{1370}{m/s}.
+\]
+
+\textbf{Paso 2. Longitud de onda}
+
+Relación onda mecánica:
+\[
+v = \lambda f
+\quad\Longrightarrow\quad
+\lambda = \frac{v}{f}.
+\]
+
+\[
+\lambda
+= \frac{1370\ \si{m/s}}{500\ \si{s^{-1}}}
+= \SI{2,74}{m}.
+\]
+
+\textbf{Interpretación física:}  
+En líquidos y sólidos el sonido suele viajar mucho más rápido que en aire. Para una misma frecuencia, eso significa longitudes de onda grandes dentro del líquido.
+\end{solucionclick}
+
+% ==========================================================
+% 4. RAPIDEZ DEL SONIDO EN AIRE Y RANGO AUDIBLE
+% ==========================================================
+
+\section*{4. Velocidad del sonido en aire y longitudes de onda audibles}
+
+\begin{ejercicio}
+Considere aire a temperatura ambiente \(T = \SI{293}{K}\).  
+Use:
+\[
+\gamma = 1{,}40, \quad
+R = \SI{8,314}{J/(mol\cdot K)}, \quad
+M = 28{,}9\times10^{-3}\ \si{kg/mol}.
+\]
+
+El oído humano típico detecta entre \(\SI{20}{Hz}\) y \(\SI{20000}{Hz}\).
+
+a) Calcule la rapidez del sonido en el aire con
+\[
+v = \sqrt{\frac{\gamma R T}{M}}.
+\]
+
+b) Calcule la longitud de onda \(\lambda\) asociada a \(\SI{20}{Hz}\).  
+c) Calcule la longitud de onda \(\lambda\) asociada a \(\SI{20000}{Hz}\).
+\end{ejercicio}
+
+\begin{solucionclick}
+\textbf{Paso 1. Rapidez del sonido en aire (gas ideal)}
+
+\[
+v
+= \sqrt{
+\frac{(1{,}40)(8{,}314\ \si{J/(mol\cdot K)})(293\ \si{K})}
+     {28{,}9\times10^{-3}\ \si{kg/mol}}
+}.
+\]
+
+Producto del numerador:
+\[
+1{,}40 \cdot 8{,}314 \cdot 293
+\approx 1{,}40 \cdot 2435
+\approx 3409.
+\]
+
+Dividimos entre \(0{,}0289\ \si{kg/mol}\):
+\[
+\frac{3409}{0{,}0289}
+\approx 1{,}18\times10^{5}.
+\]
+
+Raíz:
+\[
+v \approx \sqrt{1{,}18\times10^{5}}\ \si{m^2/s^2}
+\approx \SI{343}{m/s}.
+\]
+
+\textbf{Paso 2. Longitud de onda para \(\SI{20}{Hz}\)}
+
+Relación \(v=\lambda f \Rightarrow \lambda=v/f\):
+\[
+\lambda_{20}
+= \frac{343\ \si{m/s}}{20\ \si{s^{-1}}}
+\approx \SI{17,2}{m}.
+\]
+
+\textbf{Paso 3. Longitud de onda para \(\SI{20000}{Hz}\)}
+
+\[
+\lambda_{20000}
+= \frac{343\ \si{m/s}}{20000\ \si{s^{-1}}}
+= \SI{1,715e-2}{m}
+\approx \SI{1,7}{cm}.
+\]
+
+\textbf{Interpretación física:}  
+Las notas graves (baja frecuencia) tienen longitudes de onda enormes, del orden de decenas de metros en aire. Los sonidos muy agudos (frecuencias altas) tienen longitudes de onda de apenas centímetros.
+\end{solucionclick}
+
+% ==========================================================
+% 5. NIVEL SONORO Y DECIBELIOS
+% ==========================================================
+
+\section*{5. Nivel sonoro (dB) e intensidad acústica}
+
+\begin{ejercicio}
+El nivel sonoro se define como
+\[
+\beta = (10\ \si{dB}) \log_{10}\!\left(\frac{I}{I_0}\right),
+\quad
+I_0 = 1{,}0\times10^{-12}\ \si{W/m^2}.
+\]
+
+a) Calcule la intensidad \(I\) correspondiente a \(\beta = \SI{60}{dB}\). \\
+b) Calcule la intensidad \(I\) correspondiente a \(\beta = \SI{100}{dB}\). \\
+c) ¿Cuántas veces más intensa es la segunda que la primera?
+\end{ejercicio}
+
+\begin{solucionclick}
+\textbf{Paso 1. Despeje de la fórmula}
+
+\[
+I = I_0 \, 10^{\beta/(10\ \si{dB})}.
+\]
+
+\textbf{a) Para \(\beta = 60\ \si{dB}\):}
+\[
+I_{60}
+= (1{,}0\times10^{-12}\ \si{W/m^2}) \cdot 10^{60/10}
+= 10^{-12} \cdot 10^{6}
+= 10^{-6}\ \si{W/m^2}.
+\]
+
+\textbf{b) Para \(\beta = 100\ \si{dB}\):}
+\[
+I_{100}
+= (1{,}0\times10^{-12}\ \si{W/m^2}) \cdot 10^{100/10}
+= 10^{-12} \cdot 10^{10}
+= 10^{-2}\ \si{W/m^2}
+= 1{,}0\times10^{-2}\ \si{W/m^2}.
+\]
+
+\textbf{c) Comparación de intensidades}
+
+\[
+\frac{I_{100}}{I_{60}}
+= \frac{10^{-2}}{10^{-6}}
+= 10^{4}
+= 10000.
+\]
+
+\textbf{Interpretación física:}  
+Un aumento “solo’’ de 40 dB significa que la onda sonora transporta \(\sim 10000\) veces más potencia por metro cuadrado. Por eso la exposición prolongada a niveles altos causa daño auditivo permanente.
+\end{solucionclick}
+
+% ==========================================================
+% 6. EFECTO DOPPLER
+% ==========================================================
+
+\section*{6. Efecto Doppler (frecuencia percibida)}
+
+\begin{ejercicio}
+Una ambulancia emite un tono puro de frecuencia propia
+\[
+f_s = \SI{700}{Hz}.
+\]
+La rapidez del sonido en aire es
+\[
+v = \SI{340}{m/s}.
+\]
+
+a) Si la ambulancia se \textbf{acerca} a un observador estacionario con rapidez \(v_s = \SI{25}{m/s}\),
+calcule la frecuencia percibida \(f_{\text{aprox}}\). \\[4pt]
+b) Si la ambulancia se \textbf{aleja} del observador con la misma rapidez,
+calcule la frecuencia percibida \(f_{\text{lejos}}\). \\[4pt]
+c) Interprete las diferencias.
+\end{ejercicio}
+
+\begin{solucionclick}
+Para fuente en movimiento, receptor quieto:
+\[
+f_{\text{obs}}
+= \frac{v}{v \mp v_s} f_s,
+\]
+donde usamos “\(-\)” si la fuente se acerca (distancia disminuye)
+y “\(+\)” si se aleja.
+
+\textbf{a) Fuente se acerca}
+
+\[
+f_{\text{aprox}}
+= \frac{v}{v - v_s} f_s
+= \frac{340\ \si{m/s}}
+       {340\ \si{m/s} - 25\ \si{m/s}}
+  (700\ \si{s^{-1}}).
+\]
+
+\[
+f_{\text{aprox}}
+= \frac{340}{315} \cdot 700\ \si{Hz}
+\approx 1{,}079 \cdot 700\ \si{Hz}
+\approx \SI{755}{Hz}.
+\]
+
+\textbf{b) Fuente se aleja}
+
+\[
+f_{\text{lejos}}
+= \frac{v}{v + v_s} f_s
+= \frac{340\ \si{m/s}}
+       {340\ \si{m/s} + 25\ \si{m/s}}
+  (700\ \si{s^{-1}}).
+\]
+
+\[
+f_{\text{lejos}}
+= \frac{340}{365} \cdot 700\ \si{Hz}
+\approx 0{,}9329 \cdot 700\ \si{Hz}
+\approx \SI{653}{Hz}.
+\]
+
+\textbf{c) Interpretación física}
+
+Cuando la ambulancia se acerca, las crestas de la onda sonora se “comprimen’’ hacia adelante $\Rightarrow$ la frecuencia percibida sube $\Rightarrow$ sonido más agudo.  
+leja, las crestas se “estiran’’ $\Rightarrow$
+Esto es exactamente lo que escuchamos cuando una sirena pasa frente a nosotros.
+\end{solucionclick}
+
+
+% =================== FIN DE LA PRÁCTICA ===================
+
+\noindent\fbox{%
+\parbox{\linewidth}{%
+Integración del análisis físico con notación rigurosa del SI y
+uso de herramientas digitales / IA para generar prácticas,
+retroalimentación automática y simulacros tipo examen.
+
+\medskip
+\textbf{Contacto (WhatsApp):} \texttt{7076-9371}
+}}
+\end{document}

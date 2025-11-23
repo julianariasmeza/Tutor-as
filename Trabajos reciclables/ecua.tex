@@ -1,0 +1,571 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\setlength{\headheight}{14.5pt}
+\usepackage{graphicx}
+
+\geometry{a4paper, margin=2.5cm}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Ecuaciones Diferenciales}
+\lhead{Tarea 1}
+\rfoot{Página \thepage}
+
+
+
+
+\begin{document}
+
+
+
+\section*{Ejercicio 1: Enfriamiento de un Líquido}
+
+Una sustancia a \SI{90}{\degreeCelsius} se deja enfriar en una sala con temperatura constante de \SI{25}{\degreeCelsius}.  
+Después de 5 minutos, su temperatura es de \SI{70}{\degreeCelsius}.
+
+\begin{enumerate}
+    \item Plantee el modelo diferencial utilizando la ley de enfriamiento de Newton.
+    \item Resuelva la ecuación diferencial para encontrar la temperatura en función del tiempo.
+    \item Estime la temperatura después de 10 minutos.
+\end{enumerate}
+
+\section*{1. Modelo diferencial}
+
+Ley de enfriamiento de Newton:
+
+\[
+\frac{dT}{dt} = -k(T - T_a)
+\]
+
+Donde:
+\begin{itemize}
+    \item \( T(t) \): temperatura de la sustancia,
+    \item \( T_a = \SI{25}{\degreeCelsius} \): temperatura ambiente,
+    \item \( k \): constante de proporcionalidad.
+\end{itemize}
+
+Sustituimos:
+
+\[
+\frac{dT}{dt} = -k(T - 25)
+\]
+
+\section*{2. Resolución de la ecuación diferencial}
+
+Separación de variables:
+
+\[
+\frac{dT}{T - 25} = -k\,dt
+\]
+
+Integramos ambos lados:
+
+\[
+\int \frac{1}{T - 25} \, dT = \int -k \, dt
+\]
+
+\[
+\ln|T - 25| = -kt + C
+\]
+
+Aplicamos exponencial:
+
+\[
+|T - 25| = e^{-kt + C} = Ce^{-kt}
+\]
+
+Entonces:
+
+\[
+T(t) = 25 + Ce^{-kt}
+\]
+
+\subsection*{Condición inicial: \( T(0) = 90 \)}
+
+\[
+T(0) = 25 + Ce^{0} = 90 \Rightarrow C = 65
+\]
+
+Por lo tanto:
+
+\[
+T(t) = 25 + 65e^{-kt}
+\]
+
+\subsection*{Dato adicional: \( T(5) = 70 \)}
+
+\[
+70 = 25 + 65e^{-5k}
+\Rightarrow 45 = 65e^{-5k}
+\]
+
+\[
+e^{-5k} = \frac{45}{65} = \frac{9}{13}
+\]
+
+\[
+-5k = \ln\left(\frac{9}{13}\right)
+\Rightarrow k = -\frac{1}{5} \ln\left(\frac{9}{13}\right)
+\]
+
+\[
+\ln\left(\frac{9}{13}\right) \approx -0{,}3677
+\Rightarrow k \approx -\frac{1}{5}(-0{,}3677) = 0{,}0735~\si{min^{-1}}
+\]
+
+\subsection*{Ecuación final}
+
+\[
+T(t) = 25 + 65e^{-0{,}0735 t}
+\]
+
+\section*{3. Estimación a los 10 minutos}
+
+Sustituimos \( t = 10 \):
+
+\[
+T(10) = 25 + 65e^{-0{,}0735 \cdot 10} = 25 + 65e^{-0{,}735}
+\]
+
+\[
+e^{-0{,}735} \approx 0{,}4795
+\Rightarrow T(10) = 25 + 65 \cdot 0{,}4795 = 25 + 31{,}1679
+\]
+
+\[
+T(10) \approx \boxed{56{,}1679~\si{\degreeCelsius}}
+\]
+
+\section*{Conclusión}
+
+Después de 10 minutos, la temperatura de la sustancia ha descendido hasta aproximadamente \textbf{56,17~\si{\degreeCelsius}}.  
+Este resultado está acorde con la ley de enfriamiento de Newton, que modela la disminución exponencial de temperatura.
+\section*{Ejercicio 2 – Crecimiento poblacional (10 puntos)}
+
+Un cultivo bacteriano tiene inicialmente 500 bacterias. Después de 3 horas, se ha duplicado.
+
+\begin{enumerate}
+  \item \textbf{Plantee y resuelva la ecuación diferencial que modela el crecimiento.}
+
+  Se asume que el crecimiento es proporcional a la cantidad actual de bacterias. Por lo tanto, el modelo es:
+
+  \[
+  \frac{dP}{dt} = kP
+  \]
+
+  Se separan variables:
+
+  \[
+  \frac{1}{P} \, dP = k \, dt
+  \]
+
+  Integramos ambos lados:
+
+  \[
+  \int \frac{1}{P} \, dP = \int k \, dt
+  \Rightarrow \ln|P| = kt + C
+  \Rightarrow P(t) = Ce^{kt}
+  \]
+
+  Usamos la condición inicial \( P(0) = 500 \):
+
+  \[
+  P(0) = Ce^0 = 500 \Rightarrow C = 500
+  \]
+
+  Entonces, la solución es:
+
+  \[
+  P(t) = 500e^{kt}
+  \]
+
+  Ahora usamos el dato \( P(3) = 1000 \) para encontrar \( k \):
+
+  \[
+  1000 = 500e^{3k}
+  \Rightarrow 2 = e^{3k}
+  \Rightarrow \ln(2) = 3k
+  \Rightarrow k = \frac{\ln(2)}{3} \approx \frac{0{,}6931}{3} = 0{,}2310~\si{h^{-1}}
+  \]
+
+  Ecuación final:
+
+  \[
+  P(t) = 500e^{0{,}2310t}
+  \]
+
+  \item \textbf{¿Cuántas bacterias habrá después de 5 horas?}
+
+  Sustituimos \( t = 5 \) en la ecuación:
+
+  \[
+  P(5) = 500e^{0{,}2310 \cdot 5} = 500e^{1{,}155}
+  \]
+
+  \[
+  e^{1{,}155} \approx 3{,}17402
+  \Rightarrow P(5) = 500 \cdot 3{,}17402 = 1587{,}01
+  \]
+
+  Por lo tanto:
+
+  \[
+  \boxed{P(5) \approx 1588~\text{bacterias}}
+  \]
+
+  \item \textbf{¿Cuánto tiempo pasará para que se triplique la población inicial?}
+
+  Deseamos saber el tiempo \( t \) tal que \( P(t) = 3 \cdot 500 = 1500 \):
+
+  \[
+  1500 = 500e^{0{,}2310t}
+  \Rightarrow 3 = e^{0{,}2310t}
+  \Rightarrow \ln(3) = 0{,}2310t
+  \Rightarrow t = \frac{\ln(3)}{0{,}2310}
+  \]
+
+  \[
+  \ln(3) \approx 1{,}0986
+  \Rightarrow t = \frac{1{,}0986}{0{,}2310} = \boxed{4{,}756~\text{horas}}
+  \]
+
+\end{enumerate}
+\newpage
+\section*{Ejercicio 3 – Mezcla de sal (10 puntos)}
+
+Un tanque contiene \SI{100}{L} de agua pura. Se introduce una solución salina con una concentración de \( 0{,}5~\si{kg/L} \) a razón de \( 3~\si{L/min} \), mientras se retira la mezcla homogénea a la misma velocidad.
+
+\begin{enumerate}
+  \item \textbf{Plantee la ecuación diferencial que describe la cantidad de sal en el tanque en función del tiempo.}
+
+  Sea \( S(t) \) la cantidad de sal (en kilogramos) en el tanque al tiempo \( t \) (en minutos).  
+  El volumen total permanece constante: \( V = \SI{100}{L} \).
+
+  Aplicamos el principio de entrada menos salida:
+
+  \[
+  \frac{dS}{dt} = \text{entrada} - \text{salida}
+  \]
+
+  \textbf{Entrada:}
+
+  \[
+  0{,}5~\si{kg/L} \cdot 3~\si{L/min} = 1{,}5~\si{kg/min}
+  \]
+
+  \textbf{Salida:}
+
+  \[
+  \frac{S(t)}{100} \cdot 3 = \frac{3}{100} S(t)
+  \]
+
+  Por lo tanto, la ecuación diferencial es:
+
+  \[
+  \frac{dS}{dt} = 1{,}5 - \frac{3}{100} S(t)
+  \]
+
+  \item \textbf{Determine la función que describe la cantidad de sal en el tanque.}
+
+  Reescribimos:
+
+  \[
+  \frac{dS}{dt} + \frac{3}{100} S = 1{,}5
+  \]
+
+  Es una ecuación lineal de primer orden. Calculamos el factor integrante:
+
+  \[
+  \mu(t) = e^{\int \frac{3}{100} dt} = e^{\frac{3}{100} t}
+  \]
+
+  Multiplicamos ambos lados de la ecuación:
+
+  \[
+  e^{\frac{3}{100} t} \cdot \frac{dS}{dt} + \frac{3}{100} e^{\frac{3}{100} t} \cdot S = 1{,}5 e^{\frac{3}{100} t}
+  \]
+
+  Reconocemos la derivada del producto:
+
+  \[
+  \frac{d}{dt} \left(S \cdot e^{\frac{3}{100} t} \right) = 1{,}5 e^{\frac{3}{100} t}
+  \]
+
+  Integramos:
+
+  \[
+  S(t) \cdot e^{\frac{3}{100} t} = \int 1{,}5 e^{\frac{3}{100} t} dt = \frac{1{,}5}{\frac{3}{100}} e^{\frac{3}{100} t} + C = 50 e^{\frac{3}{100} t} + C
+  \]
+
+  \[
+  S(t) = 50 + C e^{-\frac{3}{100} t}
+  \]
+
+  Condición inicial: \( S(0) = 0 \)
+
+  \[
+  0 = 50 + C \Rightarrow C = -50
+  \]
+
+  Solución final:
+
+  \[
+  S(t) = 50 \left(1 - e^{-\frac{3}{100} t} \right)
+  \]
+
+  \item \textbf{¿Cuánta sal habrá después de 10 minutos?}
+
+  Sustituimos \( t = 10 \):
+
+  \[
+  S(10) = 50 \left(1 - e^{-0{,}3} \right)
+  \]
+
+  \[
+  e^{-0{,}3} \approx 0{,}7408
+  \Rightarrow S(10) = 50 \cdot (1 - 0{,}7408) = 50 \cdot 0{,}2592 = \boxed{12{,}96~\si{kg}}
+  \]
+
+\end{enumerate}
+\newpage
+\section*{Ejercicio 4 – Circuito eléctrico RL (Aplicación Industrial) (8 puntos)}
+
+En un circuito RL en serie con resistencia de \( R = \SI{20}{\ohm} \) y una inductancia de \( L = \SI{0,5}{H} \), se aplica una fuente de voltaje constante de \( V = \SI{100}{V} \).  
+Determine la corriente \( i(t) \) en el circuito si inicialmente no hay corriente.
+
+\begin{enumerate}
+  \item \textbf{Plantee y resuelva la ecuación diferencial que modela la corriente en el circuito.}
+
+  Usamos la ley de voltajes de Kirchhoff:
+
+  \[
+  V = L \frac{di}{dt} + R i(t)
+  \]
+
+  Sustituimos los valores:
+
+  \[
+  100 = 0{,}5 \frac{di}{dt} + 20 i(t)
+  \]
+
+  Multiplicamos por 2 para simplificar:
+
+  \[
+  200 = \frac{di}{dt} + 40i(t)
+  \]
+
+  Reescribimos:
+
+  \[
+  \frac{di}{dt} + 40i = 200
+  \]
+
+  Esta es una ecuación diferencial lineal de primer orden.
+
+  Calculamos el factor integrante:
+
+  \[
+  \mu(t) = e^{\int 40 dt} = e^{40t}
+  \]
+
+  Multiplicamos toda la ecuación por \( \mu(t) \):
+
+  \[
+  e^{40t} \frac{di}{dt} + 40e^{40t} i = 200e^{40t}
+  \]
+
+  Reconocemos la derivada del producto:
+
+  \[
+  \frac{d}{dt} \left( i(t) \cdot e^{40t} \right) = 200e^{40t}
+  \]
+
+  Integramos ambos lados:
+
+  \[
+  i(t) \cdot e^{40t} = \int 200e^{40t} dt = \frac{200}{40} e^{40t} + C = 5e^{40t} + C
+  \]
+
+  Despejamos \( i(t) \):
+
+  \[
+  i(t) = 5 + C e^{-40t}
+  \]
+
+  Aplicamos la condición inicial \( i(0) = 0 \):
+
+  \[
+  0 = 5 + C \Rightarrow C = -5
+  \]
+
+  Por lo tanto, la solución es:
+
+  \[
+  i(t) = 5 \left(1 - e^{-40t}\right)
+  \]
+
+  \item \textbf{Determine la corriente después de 0,1 segundos.}
+
+  Sustituimos \( t = 0{,}1~\text{s} \):
+
+  \[
+  i(0{,}1) = 5 \left(1 - e^{-40 \cdot 0{,}1} \right) = 5 \left(1 - e^{-4} \right)
+  \]
+
+  \[
+  e^{-4} \approx 0{,}0183
+  \Rightarrow i(0{,}1) = 5 \cdot (1 - 0{,}0183) = 5 \cdot 0{,}9817 = \boxed{4{,}9085~\si{A}}
+  \]
+
+\end{enumerate}
+\newpage
+\section*{Ejercicio 5 – Movimiento de una partícula en un medio viscoso (7 puntos)}
+
+Una partícula de masa \( m = \SI{2}{kg} \) se mueve en línea recta. Su velocidad \( v(t) \) satisface la ecuación:
+
+\[
+m \frac{dv}{dt} = -kv
+\quad \text{con} \quad k = \SI{3}{kg/s}
+\quad \text{y} \quad v(0) = \SI{10}{m/s}
+\]
+
+\begin{enumerate}
+  \item \textbf{Resuelva la ecuación para \( v(t) \).}
+
+  Dividimos ambos lados por \( m \):
+
+  \[
+  \frac{dv}{dt} = -\frac{k}{m} v = -\frac{3}{2}v
+  \]
+
+  Separación de variables:
+
+  \[
+  \frac{1}{v} dv = -\frac{3}{2} dt
+  \]
+
+  Integramos ambos lados:
+
+  \[
+  \int \frac{1}{v} dv = \int -\frac{3}{2} dt
+  \Rightarrow \ln|v| = -\frac{3}{2}t + C
+  \Rightarrow v(t) = Ce^{-\frac{3}{2}t}
+  \]
+
+  Usamos la condición inicial \( v(0) = 10 \):
+
+  \[
+  v(0) = C \Rightarrow C = 10
+  \Rightarrow \boxed{v(t) = 10 e^{-\frac{3}{2}t}}
+  \]
+
+  \item \textbf{¿Cuál es la velocidad después de 2 segundos?}
+
+  \[
+  v(2) = 10 e^{-\frac{3}{2} \cdot 2} = 10 e^{-3}
+  \]
+
+  \[
+  e^{-3} \approx 0{,}0498
+  \Rightarrow v(2) = 10 \cdot 0{,}0498 = \boxed{0{,}498~\si{m/s}}
+  \]
+
+\end{enumerate}
+\newpage
+\section*{Planteamiento de problemas (20 puntos)}
+
+A continuación, se plantean y resuelven dos problemas típicos de la Ingeniería Civil que se modelan mediante ecuaciones diferenciales ordinarias de primer orden.
+
+\subsection*{Problema 1: Drenaje de un tanque cilíndrico}
+
+Un tanque cilíndrico vertical con base circular contiene agua. El radio del tanque es \( r = \SI{0,5}{m} \) y se drena a través de un pequeño orificio en la base. La velocidad de salida del agua está dada por la ley de Torricelli:
+
+\[
+v = \sqrt{2gh}
+\]
+
+Donde:
+- \( h(t) \) es la altura del agua en el tiempo \( t \),
+- \( g = \SI{9,81}{m/s^2} \) es la aceleración debido a la gravedad.
+
+La ecuación diferencial que modela la variación de altura en el tiempo es:
+
+\[
+\frac{dh}{dt} = -k \sqrt{h}
+\]
+
+Para este caso, suponemos que \( k = 0{,}4 \) y la altura inicial del agua es \( h(0) = \SI{1,0}{m} \).
+
+\subsubsection*{Solución:}
+
+\[
+\frac{dh}{\sqrt{h}} = -k\,dt
+\Rightarrow \int h^{-1/2} \, dh = \int -k \, dt
+\]
+
+\[
+2\sqrt{h} = -kt + C
+\]
+
+Usamos la condición inicial \( h(0) = 1 \):
+
+\[
+2\sqrt{1} = -k(0) + C \Rightarrow C = 2
+\]
+
+Entonces:
+
+\[
+2\sqrt{h} = -kt + 2
+\Rightarrow \sqrt{h} = 1 - \frac{k}{2}t
+\Rightarrow h(t) = \left(1 - \frac{0{,}4}{2}t\right)^2 = (1 - 0{,}2t)^2
+\]
+
+\subsubsection*{Interpretación:}
+
+La altura del agua disminuye cuadráticamente hasta vaciarse completamente en \( t = \SI{5}{min} \).
+
+---
+\newpage
+\subsection*{Problema 2: Enfriamiento del concreto}
+
+Durante el curado del concreto, es importante controlar la temperatura para evitar agrietamientos. Supongamos que una losa de concreto recién vaciada tiene una temperatura de \( \SI{70}{\degreeCelsius} \), y se encuentra en una cámara de curado a \( \SI{25}{\degreeCelsius} \). Aplicamos la ley de enfriamiento de Newton para modelar la temperatura del concreto:
+
+\[
+\frac{dT}{dt} = -k(T - T_a)
+\]
+
+Donde:
+- \( T(t) \) es la temperatura del concreto,
+- \( T_a = \SI{25}{\degreeCelsius} \),
+- \( k = 0{,}1~\si{min^{-1}} \),
+- \( T(0) = \SI{70}{\degreeCelsius} \).
+
+\subsubsection*{Solución:}
+
+\[
+\frac{dT}{dt} = -0{,}1(T - 25)
+\Rightarrow \frac{dT}{T - 25} = -0{,}1 dt
+\Rightarrow \int \frac{1}{T - 25} dT = \int -0{,}1 dt
+\]
+
+\[
+\ln|T - 25| = -0{,}1 t + C
+\Rightarrow T(t) = 25 + Ce^{-0{,}1t}
+\]
+
+Usamos \( T(0) = 70 \Rightarrow C = 45 \)
+
+\[
+T(t) = 25 + 45e^{-0{,}1t}
+\]
+
+\subsubsection*{Respuesta:}
+
+Esta ecuación permite estimar la temperatura del concreto a cualquier instante \( t \), lo cual es útil para definir el tiempo óptimo de curado o aplicar medidas de enfriamiento.
+
+\end{document}

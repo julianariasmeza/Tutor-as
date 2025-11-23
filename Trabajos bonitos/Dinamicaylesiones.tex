@@ -1,0 +1,862 @@
+% ==========================
+% DOCUMENTO EN LATEX - DINÁMICA Y LESIONES DEPORTIVAS
+% ==========================
+\documentclass[12pt,a4paper]{article}
+
+% --- Paquetes ---
+\usepackage[spanish, es-nodecimaldot, shorthands=off]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{siunitx}
+\sisetup{locale=DE, output-decimal-marker={,}}
+
+% --- Título ---
+\title{Dinámica del movimiento de la pierna y su relación con lesiones deportivas}
+\author{Trabajo académico de biomecánica aplicada}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Fundamentos físicos y dinámicos}
+
+El movimiento de la pierna durante actividades deportivas como correr, saltar o cambiar de dirección
+puede modelarse mediante las leyes de la \textbf{dinámica de cuerpos rígidos}.
+En particular, la rodilla actúa como una articulación tipo bisagra que conecta el fémur con la tibia,
+y se encuentra sometida a fuerzas internas (músculos y ligamentos) y externas
+(peso corporal, reacción del suelo, fricción).
+
+\subsection{Segunda ley de Newton}
+En forma vectorial, para un punto material de masa $m$:
+\[
+\sum \vec{F} = m \cdot \vec{a}
+\]
+donde $\vec{F}$ son las fuerzas aplicadas y $\vec{a}$ la aceleración lineal.
+Este principio se aplica a cada segmento corporal (muslo, pierna, pie).
+
+\subsection{Movimiento relativo y velocidad}
+Si se considera la cadera como punto $A$ y el pie como punto $B$, la velocidad del pie se expresa como:
+\[
+\vec{v}_B = \vec{v}_A + \boldsymbol{\Omega}\times \vec{r}_{B/A} + \left(\vec{v}_{B/A}\right)_{xyz}
+\]
+donde:
+\begin{itemize}
+    \item $\vec{v}_A$: velocidad de la cadera,
+    \item $\boldsymbol{\Omega}$: velocidad angular de la pierna,
+    \item $\vec{r}_{B/A}$: vector desde la cadera al pie,
+    \item $(\vec{v}_{B/A})_{xyz}$: velocidad relativa adicional (por ejemplo, en movimientos del tobillo).
+\end{itemize}
+
+\subsection{Aceleración}
+La aceleración absoluta del pie $B$ se calcula como:
+\[
+\vec{a}_B = \vec{a}_A + \dot{\boldsymbol{\Omega}}\times \vec{r}_{B/A} + \boldsymbol{\Omega}\times(\boldsymbol{\Omega}\times \vec{r}_{B/A})
++ 2\boldsymbol{\Omega}\times(\vec{v}_{B/A})_{xyz} + (\vec{a}_{B/A})_{xyz}
+\]
+Los términos representan:
+\begin{itemize}
+    \item $\dot{\boldsymbol{\Omega}}\times \vec{r}_{B/A}$: aceleración tangencial (cambios rápidos de dirección).
+    \item $\boldsymbol{\Omega}\times(\boldsymbol{\Omega}\times \vec{r}_{B/A})$: aceleración centrípeta (compresión sobre meniscos).
+    \item $2\boldsymbol{\Omega}\times(\vec{v}_{B/A})$: aceleración de Coriolis (importante en movimientos combinados).
+\end{itemize}
+
+\subsection{Torque y palancas}
+El movimiento articular está gobernado por los torques musculares:
+\[
+\tau = F \cdot d
+\]
+donde $F$ es la fuerza muscular y $d$ el brazo de palanca.
+En la rodilla, la rótula actúa como polea que modifica el ángulo de aplicación de $F$,
+mejorando la eficiencia del cuádriceps.
+
+\subsection{Aspectos técnicos}
+\begin{itemize}
+    \item Un aumento excesivo en $\omega$ (velocidad angular de la pierna) o en $\alpha=\dot{\omega}$ (aceleración angular) puede generar fuerzas superiores a la resistencia de los ligamentos.
+    \item La reacción del suelo mal alineada con el eje de la pierna produce torques de torsión que pueden llevar a lesiones.
+    \item Los meniscos sufren cargas repetitivas por la componente centrípeta, y los ligamentos se sobrecargan en giros bruscos o aterrizajes mal ejecutados.
+\end{itemize}
+\section{Biomecánica y fisiología de las piernas en el deporte}
+
+El sistema musculoesquelético de las piernas combina huesos, articulaciones,
+músculos, tendones y ligamentos que actúan como un conjunto de palancas y ejes de rotación.
+Su función principal es permitir el desplazamiento eficiente, absorber impactos,
+y transmitir fuerzas entre el tronco y el suelo.
+
+\subsection{Componentes principales}
+\begin{itemize}
+    \item \textbf{Huesos}: el fémur, la tibia, el peroné y la rótula constituyen las estructuras rígidas que soportan cargas.
+    \item \textbf{Articulaciones}: la rodilla (bisagra modificada) y el tobillo (tipo tróclea) permiten el movimiento angular y la adaptación a diferentes superficies.
+    \item \textbf{Ligamentos y meniscos}: proporcionan estabilidad mecánica, limitan movimientos extremos y distribuyen cargas.
+    \item \textbf{Músculos}: 
+    \begin{itemize}
+        \item \emph{Cuádriceps}: responsables de la extensión de la rodilla.
+        \item \emph{Isquiotibiales}: controlan la flexión y estabilizan la rodilla en cambios de dirección.
+        \item \emph{Gemelos y sóleo}: participan en la propulsión durante la carrera o salto.
+        \item \emph{Glúteos}: estabilizan la pelvis y generan potencia en la extensión de cadera.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Principios biomecánicos}
+Desde el punto de vista mecánico:
+\begin{itemize}
+    \item Las piernas funcionan como \textbf{palancas de tercer género}, donde la fuerza muscular se aplica entre el eje articular y la resistencia externa.
+    \item Cada paso o salto implica un \textbf{ciclo de apoyo y vuelo}, donde las fuerzas de reacción del suelo se transmiten a lo largo de la cadena cinética.
+    \item La \textbf{absorción de impacto} se logra mediante la flexión de cadera, rodilla y tobillo, que convierten una fuerza externa en trabajo mecánico y calor.
+    \item El \textbf{gasto energético} depende de la eficiencia en la técnica de carrera o salto, directamente relacionado con la longitud de zancada, cadencia y economía de movimiento.
+\end{itemize}
+
+\subsection{Aspectos fisiológicos}
+La capacidad de un atleta de alto rendimiento depende de factores fisiológicos:
+\begin{itemize}
+    \item \textbf{Fibras musculares}: predominio de fibras rápidas (tipo II) favorece la explosividad, mientras que fibras lentas (tipo I) aumentan la resistencia aeróbica.
+    \item \textbf{Sistemas energéticos}: 
+    \begin{itemize}
+        \item anaeróbico aláctico (ATP–fosfocreatina) para esfuerzos explosivos de pocos segundos,
+        \item anaeróbico láctico (glucólisis) para esfuerzos de corta–media duración,
+        \item aeróbico (oxidativo) para esfuerzos prolongados.
+    \end{itemize}
+    \item \textbf{Adaptaciones neuromusculares}: en atletas se observa mayor coordinación intermuscular, reclutamiento eficiente de unidades motoras y mejor respuesta refleja para estabilizar la rodilla y el tobillo.
+    \item \textbf{Fatiga}: la disminución de la capacidad muscular o nerviosa compromete la estabilidad dinámica y aumenta el riesgo de lesiones.
+\end{itemize}
+
+\subsection{Importancia en el alto rendimiento}
+En deportes de élite:
+\begin{itemize}
+    \item Se generan fuerzas equivalentes a varias veces el peso corporal en cada zancada o aterrizaje.
+    \item La técnica eficiente minimiza la sobrecarga en ligamentos y meniscos.
+    \item La prevención de lesiones requiere integrar el conocimiento dinámico con programas de fortalecimiento, propiocepción y control motor.
+\end{itemize}
+
+En cualquier persona que practica deportes de manera recreativa,
+estos principios también aplican: aunque las intensidades sean menores,
+la repetición de gestos técnicos (correr, saltar, girar) sin una correcta preparación
+puede producir microlesiones acumulativas que llevan a problemas crónicos en rodilla, tobillo o cadera.
+\section{Lesiones frecuentes en la rodilla desde la biomecánica}
+
+La rodilla es una de las articulaciones más vulnerables en el deporte, pues combina
+movilidad y carga de peso corporal. Desde el punto de vista de la dinámica,
+las lesiones se producen cuando las fuerzas y torques que actúan en la articulación
+superan la capacidad de resistencia de los tejidos.
+
+\subsection{Ligamento cruzado anterior (LCA)}
+\begin{itemize}
+    \item \textbf{Función}: estabiliza la tibia evitando su desplazamiento anterior respecto al fémur.
+    \item \textbf{Mecanismo de lesión}: giros bruscos con el pie fijo en el suelo o aterrizajes con la rodilla extendida.
+    \item \textbf{Modelo dinámico}: el torque externo aplicado en la rodilla se puede expresar como:
+    \[
+    \tau = F \cdot d
+    \]
+    donde $F$ es la fuerza de reacción del suelo y $d$ el brazo de palanca lateral respecto al eje de la rodilla.
+    Si $\tau$ excede la capacidad tensil del LCA, ocurre la rotura.
+\end{itemize}
+
+\subsection{Lesiones de meniscos}
+\begin{itemize}
+    \item \textbf{Función}: los meniscos distribuyen la carga de compresión y estabilizan el contacto entre fémur y tibia.
+    \item \textbf{Mecanismo de lesión}: combinación de compresión y rotación rápida de la rodilla.
+    \item \textbf{Modelo dinámico}: el término centrípeto de la aceleración
+    \[
+    a_c = \omega^2 \cdot r
+    \]
+    produce fuerzas de compresión $F_c = m\cdot a_c$ que se concentran en la superficie meniscal.
+    En movimientos repetitivos o con alta velocidad angular $\omega$, aumenta el riesgo de desgarro.
+\end{itemize}
+
+\subsection{Lesiones de la rótula}
+\begin{itemize}
+    \item \textbf{Función}: la rótula actúa como polea, aumentando el brazo de palanca del cuádriceps.
+    \item \textbf{Mecanismo de lesión}: impactos directos o desequilibrios de fuerzas entre cuádriceps e isquiotibiales.
+    \item \textbf{Modelo dinámico}: el cuádriceps genera un torque:
+    \[
+    \tau_q = F_q \cdot d_r
+    \]
+    donde $F_q$ es la fuerza muscular y $d_r$ el brazo de palanca modificado por la rótula.
+    Si $F_q$ es excesivo o se aplica de forma desbalanceada, puede generar luxación o fractura de la rótula.
+\end{itemize}
+
+\subsection{Factores de riesgo biomecánicos}
+\begin{itemize}
+    \item \textbf{Aceleraciones elevadas}: incrementan las fuerzas centrípetas y tangenciales sobre los tejidos.
+    \item \textbf{Mala alineación articular}: aumenta el brazo de palanca y con ello el torque externo.
+    \item \textbf{Fatiga muscular}: reduce la capacidad de absorción de impactos, trasladando la carga a ligamentos y meniscos.
+    \item \textbf{Superficies de juego y calzado inadecuado}: alteran la fricción y la forma en que se transmite la reacción del suelo.
+\end{itemize}
+
+\subsection{Interpretación}
+Desde la dinámica, las lesiones se entienden como el resultado de:
+\begin{enumerate}
+    \item Un exceso de fuerza ($F$) aplicada en direcciones no fisiológicas.
+    \item Un torque ($\tau$) superior al que pueden resistir los ligamentos.
+    \item Una repetición de cargas centrípetas que degrada progresivamente los meniscos.
+\end{enumerate}
+
+Por tanto, el estudio de las ecuaciones de movimiento y la medición de variables
+como $\omega$ (velocidad angular), $\alpha$ (aceleración angular) y fuerzas de reacción,
+son fundamentales para diseñar entrenamientos y protocolos de prevención.
+\newpage
+\section{Factores de riesgo y medidas preventivas}
+
+El análisis dinámico y biomecánico permite identificar condiciones que incrementan
+el riesgo de lesión, así como estrategias para reducir su incidencia.
+La Tabla \ref{tabla:prevencion} resume los principales aspectos.
+
+\begin{table}[h!]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|p{6cm}|p{8cm}|}
+\hline
+\textbf{Factores de riesgo biomecánicos} & \textbf{Medidas preventivas y correctivas} \\ \hline
+
+Aceleraciones angulares elevadas en rodilla y tobillo (\(\omega, \alpha\) altas) &
+Fortalecimiento de cuádriceps, isquiotibiales y glúteos; entrenamiento excéntrico; control de técnica en aterrizajes. \\ \hline
+
+Mala alineación articular (valgo de rodilla, pronación excesiva del pie) &
+Entrenamiento de técnica de carrera y salto; uso de plantillas o calzado adecuado; corrección postural. \\ \hline
+
+Fatiga muscular durante entrenamientos intensos o partidos prolongados &
+Planificación de cargas, descanso suficiente, programas de recuperación y control de la fatiga. \\ \hline
+
+Impactos repetitivos y superficies duras (saltos y carreras prolongadas) &
+Uso de superficies con amortiguación adecuada, calzado deportivo específico, alternancia de tipos de entrenamiento. \\ \hline
+
+Cambios bruscos de dirección sin control neuromuscular &
+Ejercicios de propiocepción, agilidad y balance; programas de prevención (p. ej., FIFA 11+). \\ \hline
+
+Desequilibrio muscular entre cuádriceps e isquiotibiales &
+Rutinas de fortalecimiento equilibrado; pruebas periódicas de fuerza y flexibilidad. \\ \hline
+
+\end{tabular}
+\caption{Comparación entre factores de riesgo y medidas preventivas en lesiones de rodilla.}
+\label{tabla:prevencion}
+\end{table}
+
+En conclusión, la integración del conocimiento físico, biomecánico y fisiológico
+con programas de entrenamiento específicos permite reducir en forma significativa
+el porcentaje de lesiones en atletas de alto rendimiento y en personas que practican
+deporte recreativo.
+\newpage
+\section{Lesiones de tobillo y su análisis biomecánico}
+
+El tobillo es una articulación fundamental para la locomoción,
+pues transmite las fuerzas entre la pierna y el pie.
+En deportes de alto rendimiento, concentra cargas equivalentes a varias veces el peso corporal,
+especialmente en saltos, cambios de dirección y carreras de alta intensidad.
+
+\subsection{Estructura y función}
+\begin{itemize}
+    \item Formado principalmente por la tibia, el peroné y el astrágalo.
+    \item Ligamentos laterales (ligamento peroneoastragalino anterior y posterior, ligamento calcaneoperoneo) y ligamento deltoideo en la cara medial.
+    \item Función de estabilizar y permitir la flexo-extensión y movimientos limitados de inversión y eversión.
+\end{itemize}
+
+\subsection{Lesiones más frecuentes}
+\begin{itemize}
+    \item \textbf{Esguince de tobillo} (inversión): ocurre cuando el pie rota hacia adentro con exceso de torque.
+    \item \textbf{Roturas ligamentarias}: cuando el torque supera la resistencia del ligamento.
+    \item \textbf{Lesiones osteocondrales}: daños en el cartílago por compresión repetitiva.
+    \item \textbf{Fracturas por avulsión}: fragmentos óseos arrancados por tensión ligamentaria extrema.
+\end{itemize}
+
+\subsection{Modelo dinámico de la lesión}
+Cuando el pie se apoya en el suelo y el cuerpo rota, se generan torques:
+\[
+\tau = F \cdot d
+\]
+donde:
+\begin{itemize}
+    \item $F$: fuerza de reacción del suelo,
+    \item $d$: distancia lateral respecto al eje del tobillo.
+\end{itemize}
+Si $\tau$ es muy alto (por ejemplo en un mal aterrizaje), el ligamento peroneoastragalino puede sufrir rotura.
+
+Además, las aceleraciones angulares se relacionan con cargas internas:
+\[
+a_c = \omega^2 \cdot r
+\]
+donde un $\omega$ elevado (giro rápido del pie) multiplica las fuerzas sobre los ligamentos.
+
+\subsection{Factores de riesgo específicos}
+\begin{itemize}
+    \item Aterrizajes desbalanceados en un pie.
+    \item Superficies irregulares o muy rígidas.
+    \item Fatiga de músculos estabilizadores (peroneos).
+    \item Uso de calzado inadecuado para el tipo de deporte.
+\end{itemize}
+
+\subsection{Prevención}
+\begin{itemize}
+    \item Ejercicios de propiocepción y equilibrio para mejorar la respuesta neuromuscular.
+    \item Fortalecimiento de peroneos y músculos estabilizadores.
+    \item Vendajes funcionales o tobilleras en atletas con antecedentes de esguinces.
+    \item Técnica correcta de aterrizaje y cambios de dirección controlados.
+\end{itemize}
+
+En conclusión, el tobillo funciona como un eje de transmisión de fuerzas,
+y las lesiones se producen cuando los torques y aceleraciones superan
+la capacidad mecánica de ligamentos y estructuras óseas.
+La prevención requiere un enfoque conjunto entre biomecánica, fisiología
+y planificación deportiva.
+\section{Prevención desde la fisioterapia y la preparación física}
+
+La reducción del riesgo de lesión en rodilla y tobillo en atletas de alto rendimiento (y deportistas recreativos) requiere integrar fuerza, control neuromuscular, técnica, planificación de cargas y apoyo clínico. A continuación se organizan las líneas de intervención.
+
+\subsection{Fortalecimiento muscular específico}
+\begin{itemize}
+    \item \textbf{Trabajo excéntrico}: cuádriceps (aterrizajes controlados, sentadillas con énfasis en la fase de descenso), isquiotibiales (``Nordic hamstring''), gemelos y sóleo (descensos excéntricos en escalón).
+    \item \textbf{Estabilizadores clave}: 
+    peroneos (disminuyen esguinces por inversión), 
+    isquiotibiales y glúteos (reducen cizallamiento anterior tibial y protegen LCA), 
+    \textit{core} y cadera (alineación pélvica y control de valgo dinámico de rodilla).
+    \item \textbf{Progresión de cargas}: aumentar gradualmente volumen e intensidad; priorizar calidad técnica antes de sobrecarga.
+\end{itemize}
+
+\subsection{Entrenamiento neuromuscular y propioceptivo}
+\begin{itemize}
+    \item \textbf{Equilibrio dinámico}: tareas unipodales, cambios de apoyo, uso de superficies inestables (bosu) con progresión a perturbaciones externas.
+    \item \textbf{Pliometría controlada}: saltos con foco en aterrizajes suaves (triple flexión: cadera–rodilla–tobillo), amortiguación activa y alineación de rodilla sobre el pie.
+    \item \textbf{Ejercicios reactivos}: respuesta a estímulos impredecibles (visuales/sonoros) para mejorar reflejos estabilizadores.
+\end{itemize}
+
+\subsection{Mejora de la técnica deportiva}
+\begin{itemize}
+    \item \textbf{Aterrizajes}: enseñar flexión de cadera y rodilla al contactar el suelo; evitar rodilla en valgo y colapso pélvico.
+    \item \textbf{Cambios de dirección y frenadas}: realizar pasos de ajuste con tronco estable y mirada al frente; reducir giros con el pie ``anclado''.
+    \item \textbf{Carrera}: ajustar la longitud de la zancada y la cadencia para optimizar la economía de movimiento y disminuir los picos de carga en rodilla y tobillo.
+\end{itemize}
+
+\subsection{Planificación de cargas y recuperación}
+\begin{itemize}
+    \item \textbf{Monitoreo de carga externa e interna}: distancia, n.\ de saltos, aceleraciones (GPS/IMU) y esfuerzo percibido (RPE), frecuencia cardíaca.
+    \item \textbf{Regla de progresión}: evitar incrementos súbitos $>$10--15\% semanal en volumen o intensidad.
+    \item \textbf{Recuperación}: sueño, nutrición, sesiones de movilidad y flexibilidad; alternar sesiones de alta/baja demanda mecánica.
+\end{itemize}
+
+\subsection{Apoyo fisioterapéutico directo}
+\begin{itemize}
+    \item \textbf{Terapia manual y tejidos blandos}: liberación miofascial y manejo de puntos gatillo para reducir tensiones que alteran la mecánica.
+    \item \textbf{Vendajes funcionales y ortesis}: uso de tobilleras o taping en casos de inestabilidad crónica o durante el retorno progresivo post-lesión.
+    \item \textbf{Recuperación post-carga}: crioterapia, electroestimulación y terapia de contraste, aplicadas según protocolo y tolerancia individual.
+    \item \textbf{Screening funcional}: pruebas como Y-Balance Test, FMS y saltos unipodales, que permiten detectar asimetrías de fuerza o rango articular y corregirlas.
+\end{itemize}
+
+\subsection{Programas de prevención basados en evidencia}
+\begin{itemize}
+    \item \textbf{FIFA 11+} (fútbol) y \textbf{PEP} (LCA): combinan fuerza, pliometría, propiocepción y técnica de aterrizaje/cambio de dirección; reducen de manera significativa la incidencia de lesiones de rodilla y tobillo.
+    \item \textbf{Adaptación por deporte}: básquet/voleibol (alto volumen de saltos): énfasis en aterrizajes y control de valgo; atletismo: progresión de zancada/cadencia y superficies.
+\end{itemize}
+
+\subsection{Integración con medición y retroalimentación}
+\begin{itemize}
+    \item \textbf{Biofeedback y videoanálisis}: corrección de gestos en tiempo real (alineación rodilla–pie, control de tronco).
+    \item \textbf{Sensores portátiles (IMU)}: seguimiento de velocidades/aceleraciones angulares ($\omega$, $\alpha$) y conteo de saltos/impactos para mantener la exposición dentro de umbrales seguros.
+\end{itemize}
+
+\subsection{Conclusión operativa}
+La prevención efectiva no depende solo de ``más fuerza'', sino de enseñar al sistema neuromuscular a anticipar y responder a las fuerzas externas manteniendo alineación y control bajo alta demanda. La combinación de fortalecimiento dirigido, propiocepción, técnica eficiente, cargas bien planificadas y soporte fisioterapéutico reduce de forma significativa el riesgo de lesión en rodilla y tobillo.
+\section{Modelo matemático con sensores y medidas fisiológicas para la prevención de lesiones}
+
+\subsection{Señales, variables y preprocesamiento}
+En un atleta de alto rendimiento (p.\,ej., futbolista), se pueden adquirir:
+\begin{itemize}
+    \item \textbf{IMU} (cintura, muslo, tibia, pie): $\omega$ (velocidad angular, \si{rad/s}), $\alpha$ (aceleración angular, \si{rad/s^2}), $a$ (aceleración lineal, \si{m/s^2}).
+    \item \textbf{GPS/RTK}: distancia, velocidad, aceleraciones y cambios de dirección.
+    \item \textbf{Plataformas de fuerza/plantillas}: fuerza de reacción del suelo $\mathrm{FRS}$ (\si{N}), tiempos de contacto.
+    \item \textbf{Fisiología}: HRV (RMSSD), frecuencia cardíaca (FC), carga percibida (RPE), sueño (horas, calidad).
+\end{itemize}
+Se calculan \emph{features} por sesión: picos y promedios de $\omega$, $\alpha$, $a$, número de saltos, cambios de dirección $>30^{\circ}$, impulsos de fuerza, asimetrías (\%), y agregados fisiológicos (HRV normalizada, RPE).
+
+\subsection{Carga mecánica con promedio móvil exponencial (EWMA)}
+Definimos la \emph{carga externa} de la sesión $w_t$ como una combinación lineal de \emph{features} normalizadas (z-score):
+\[
+w_t \;=\; \sum_{k=1}^{K} \gamma_k\, z_{k,t},
+\quad
+z_{k,t} = \frac{x_{k,t}-\mu_k}{\sigma_k}.
+\]
+La \emph{carga elegida} (EWMA) se actualiza como:
+\[
+L_t \;=\; \lambda\, w_t \;+\; (1-\lambda)\, L_{t-1},
+\quad 0<\lambda\leq 1.
+\]
+Valores típicos: $\lambda=0{,}3$--$0{,}5$ para dar más peso a las sesiones recientes.
+
+\subsection{Índices biomecánicos y fisiológicos de riesgo}
+Construimos un vector de estado de riesgo instantáneo:
+\[
+\mathbf{x}_t = 
+\big[L_t,\; \omega_{p,\text{rod}},\; \alpha_{p,\text{rod}},\; \mathrm{FRS}_{p},\; \mathrm{Asim},\; \mathrm{HRV}_z,\; \mathrm{RPE}_z\big]^\top,
+\]
+donde los subíndices $p$ indican \emph{pico} o cuantil alto (p.\,ej., 95\,\%), 
+$\mathrm{Asim}$ es la asimetría (\%), y las variables con $\_z$ están normalizadas.
+
+\subsection{Modelo probabilístico de lesión (regresión logística)}
+La probabilidad diaria de evento lesivo se modela como:
+\[
+P(\text{lesión}_t \mid \mathbf{x}_t) \;=\; 
+\frac{1}{1+\exp\big(-(\beta_0 + \boldsymbol{\beta}^\top \mathbf{x}_t)\big)}.
+\]
+Interpretación: $\beta_i>0$ aumenta el riesgo; $\beta_i<0$ lo reduce (p.\,ej., mayor HRV suele ser protector).
+
+\subsection{Detección temprana con control estadístico}
+Se añade una regla de vigilancia:
+\[
+S_t \;=\; \alpha_c\, P(\text{lesión}_t) \;+\; (1-\alpha_c)\, S_{t-1}, 
+\qquad
+\text{alerta si } S_t > \tau,
+\]
+con $\alpha_c \in [0{,}2,0{,}5]$ y umbral $\tau \in [0{,}30,0{,}50]$ según la tolerancia al riesgo del cuerpo técnico.
+
+\subsection{Ejemplo numérico (pasos verticales)}
+%\datos
+\begin{itemize}
+\item Sesión actual: $w_t=1{,}8$ (adimensional, ya normalizado).
+\item Estado previo: $L_{t-1}=1{,}2$, $\lambda=0{,}4$.
+\item Picos: $\omega_{p,\text{rod}}=11{,}0\ \si{rad/s}$, $\alpha_{p,\text{rod}}=85{,}0\ \si{rad/s^2}$, $\mathrm{FRS}_p=2{,}8\,W$ (veces su peso).
+\item Asimetría: $\mathrm{Asim}=8{,}0\ \%$.
+\item Fisiología: $\mathrm{HRV}_z=+0{,}5$, $\mathrm{RPE}_z=+1{,}0$.
+\item Coeficientes (ejemplo): 
+$\beta_0=-2{,}0$;
+$\boldsymbol{\beta}=[0{,}8,\; 0{,}06,\; 0{,}015,\; 0{,}40,\; 0{,}05,\; -0{,}30,\; 0{,}25]$.
+\end{itemize}
+
+%\formula
+\[
+\text{(1) } L_t=\lambda w_t+(1-\lambda)L_{t-1}, 
+\quad
+\text{(2) } \eta_t=\beta_0 + \boldsymbol{\beta}^\top \mathbf{x}_t, 
+\quad
+\text{(3) } P=\frac{1}{1+\mathrm{e}^{-\eta_t}}.
+\]
+
+%\sustitucion
+\[
+\text{(1) } L_t=0{,}4\cdot 1{,}8 + 0{,}6\cdot 1{,}2 = 0{,}72 + 0{,}72 = 1{,}44.
+\]
+Vector $\mathbf{x}_t=[L_t,\ \omega_p,\ \alpha_p,\ \mathrm{FRS}_p,\ \mathrm{Asim},\ \mathrm{HRV}_z,\ \mathrm{RPE}_z]$:
+\[
+\mathbf{x}_t=[1{,}44,\ 11{,}0,\ 85{,}0,\ 2{,}8,\ 8{,}0,\ 0{,}5,\ 1{,}0].
+\]
+\[
+\text{(2) } \eta_t=-2{,}0 + (0{,}8)(1{,}44) + (0{,}06)(11{,}0) + (0{,}015)(85{,}0) + (0{,}40)(2{,}8) + (0{,}05)(8{,}0) + (-0{,}30)(0{,}5) + (0{,}25)(1{,}0).
+\]
+
+%\calculo
+\[
+\begin{aligned}
+(0{,}8)(1{,}44)&=1{,}152,\\
+(0{,}06)(11{,}0)&=0{,}66,\\
+(0{,}015)(85{,}0)&=1{,}275,\\
+(0{,}40)(2{,}8)&=1{,}12,\\
+(0{,}05)(8{,}0)&=0{,}40,\\
+(-0{,}30)(0{,}5)&=-0{,}15,\\
+(0{,}25)(1{,}0)&=0{,}25.
+\end{aligned}
+\]
+Suma parcial positiva: $1{,}152+0{,}66+1{,}275+1{,}12+0{,}40+0{,}25=4{,}857$.\\
+Con el término negativo: $4{,}857-0{,}15=4{,}707$.\\
+\[
+\eta_t=-2{,}0 + 4{,}707 = 2{,}707.
+\]
+\[
+\text{(3) } P=\frac{1}{1+\mathrm{e}^{-2{,}707}} \approx \frac{1}{1+0{,}0668} \approx 0{,}937.
+\]
+
+%\conclusion
+La sesión arroja $L_t=1{,}44$ y una probabilidad instantánea de lesión $P\approx 0{,}94$ (alto riesgo \emph{hipotético} con dichos coeficientes). Operativamente: activar alerta, reducir carga explosiva, enfatizar propiocepción y técnica de aterrizaje, y revaluar en 24\,h con HRV y dolor percibido.
+
+\subsection{Extensión: estado latente de fatiga (filtro de Kalman)}
+Se puede modelar la \emph{fatiga} como un estado latente $f_t$:
+\[
+\underbrace{f_t}_{\text{estado}} = \phi\, f_{t-1} + \kappa\, w_t + \varepsilon_t,\qquad
+\underbrace{y_t}_{\text{medida (p.\,ej., HRV}_z\text{)}} = c\, f_t + \nu_t,
+\]
+y estimarlo con un filtro de Kalman. Luego incluir $f_t$ en $\mathbf{x}_t$ para ajustar la probabilidad $P$ de forma más sensible a la recuperación.
+
+\subsection{Notas de implementación}
+\begin{itemize}
+\item Normalizar variables (z-score) por posición y deporte; recalibrar $\mu_k$, $\sigma_k$ por mesociclo.
+\item Ajustar $\lambda$ (EWMA) al perfil del calendario competitivo.
+\item Reajustar $\boldsymbol{\beta}$ con datos históricos del equipo (aprendizaje supervisado).
+\item Añadir reglas de negocio: si $\mathrm{Asim}>10\,\text{\%}$ o $\mathrm{FRS}_p>3{,}0\,W$, activar revisión técnica/fisioterapéutica aunque $P$ sea moderado.
+\end{itemize}
+% ==========================
+% SECCIÓN: EWMA Y RIESGO LOGÍSTICO PARA PREVENCIÓN DE LESIONES
+% ==========================
+\section{Carga con EWMA e índice de riesgo logístico}
+
+\subsection{Promedio móvil exponencial (EWMA) de la carga mecánica}
+Sea $w_t$ la \emph{carga externa} de la sesión $t$ (combinación lineal de variables normalizadas:
+picos de $\omega$ y $\alpha$ de rodilla, número de cambios de dirección, impulsos de fuerza, etc.).
+Definimos el estimador suavizado:
+\[
+L_t \;=\; \lambda\, w_t + (1-\lambda)\, L_{t-1}, \qquad 0<\lambda\leq 1,\quad L_0 \text{ dado.}
+\]
+\textbf{Notas técnicas.}
+\begin{itemize}
+  \item $\lambda$ controla la memoria: valores típicos $0{,}3$–$0{,}5$ priorizan las sesiones recientes.
+  \item Si se desea una ventana ``equivalente'' de $N$ sesiones: $\lambda \approx \dfrac{2}{N+1}$.
+  \item Conviene estandarizar $w_t$ (z-score) por posición/deporte y recalibrar cada mesociclo.
+\end{itemize}
+
+\subsection{Modelo de probabilidad de lesión (regresión logística)}
+Sea el vector de estado instantáneo
+\[
+\mathbf{x}_t=\big[L_t,\;\omega_{p,\text{rod}},\;\alpha_{p,\text{rod}},\;\mathrm{FRS}_{p},\;\mathrm{Asim},\;\mathrm{HRV}_z,\;\mathrm{RPE}_z\big]^\top.
+\]
+La probabilidad diaria de evento lesivo se modela como
+\[
+P(\text{lesión}_t\mid\mathbf{x}_t)\;=\;\frac{1}{1+\exp\!\big(-(\beta_0+\boldsymbol{\beta}^\top \mathbf{x}_t)\big)}.
+\]
+\textbf{Interpretación de coeficientes.} Si $\beta_i>0$ el predictor aumenta el riesgo; si $\beta_i<0$ lo reduce
+(p.\,ej., HRV mayor suele ser protector).
+
+\subsection{Regla operativa de alerta (suavizado de riesgo)}
+Para disminuir falsos positivos día a día, se suaviza la señal de riesgo:
+\[
+S_t \;=\; \alpha_c\, P_t + (1-\alpha_c)\, S_{t-1}, \qquad \text{alerta si } S_t>\tau,
+\]
+con $\alpha_c\in[0{,}2,0{,}5]$ y umbral $\tau\in[0{,}30,0{,}50]$ según tolerancia al riesgo.
+
+\subsection*{Ejemplo numérico (pasos verticales)}
+%\datos
+\[
+w_t=1{,}8,\quad L_{t-1}=1{,}2,\quad \lambda=0{,}4.
+\]
+\[
+\omega_{p,\text{rod}}=11{,}0\ \si{rad/s},\quad
+\alpha_{p,\text{rod}}=85{,}0\ \si{rad/s^2},\quad
+\mathrm{FRS}_p=2{,}8\ W,\quad
+\mathrm{Asim}=8{,}0\ \%,\quad
+\mathrm{HRV}_z=0{,}5,\quad
+\mathrm{RPE}_z=1{,}0.
+\]
+Coeficientes (ilustrativos):
+\[
+\beta_0=-2{,}0,\quad
+\boldsymbol{\beta}=[0{,}8,\;0{,}06,\;0{,}015,\;0{,}40,\;0{,}05,\;-0{,}30,\;0{,}25].
+\]
+
+%\formula
+\[
+\text{(1) } L_t=\lambda w_t+(1-\lambda)L_{t-1},\qquad
+\text{(2) } \eta_t=\beta_0+\boldsymbol{\beta}^\top \mathbf{x}_t,\qquad
+\text{(3) } P_t=\frac{1}{1+\mathrm{e}^{-\eta_t}}.
+\]
+
+%\sustitucion
+\[
+\text{(1) } L_t=0{,}4\cdot 1{,}8+0{,}6\cdot 1{,}2=0{,}72+0{,}72=1{,}44.
+\]
+\[
+\mathbf{x}_t=[1{,}44,\ 11{,}0,\ 85{,}0,\ 2{,}8,\ 8{,}0,\ 0{,}5,\ 1{,}0].
+\]
+\[
+\text{(2) } \eta_t=-2{,}0+(0{,}8)(1{,}44)+(0{,}06)(11{,}0)+(0{,}015)(85{,}0)
++(0{,}40)(2{,}8)+(0{,}05)(8{,}0)+(-0{,}30)(0{,}5)+(0{,}25)(1{,}0).
+\]
+
+%\calculo
+\[
+\begin{aligned}
+(0{,}8)(1{,}44)&=1{,}152,& (0{,}06)(11{,}0)&=0{,}66,& (0{,}015)(85{,}0)&=1{,}275,\\
+(0{,}40)(2{,}8)&=1{,}12,& (0{,}05)(8{,}0)&=0{,}40,& (-0{,}30)(0{,}5)&=-0{,}15,\\
+(0{,}25)(1{,}0)&=0{,}25.
+\end{aligned}
+\]
+Suma: $1{,}152+0{,}66+1{,}275+1{,}12+0{,}40+0{,}25-0{,}15=4{,}707$.\\
+\[
+\eta_t=-2{,}0+4{,}707=2{,}707,\qquad
+P_t=\frac{1}{1+\mathrm{e}^{-2{,}707}}\approx 0{,}937.
+\]
+
+%\conclusion
+La carga suavizada es $L_t=1{,}44$ y la probabilidad instantánea estimada de lesión es $P_t\approx 0{,}94$
+(escenario de alto riesgo con estos coeficientes de ejemplo). Operativamente, se sugiere reducir
+carga explosiva, enfatizar propiocepción y técnica de aterrizaje, y revaluar en 24\,h con HRV y dolor percibido.
+\section*{Nota de recordatorio: Aplicación en Python para prevención de lesiones}
+
+Este recordatorio resume la estructura y elementos clave para desarrollar una aplicación
+en Python orientada a la prevención de lesiones deportivas mediante
+promedios móviles exponenciales (EWMA) y un modelo logístico de riesgo.
+
+\subsection*{Estructura del proyecto}
+\begin{itemize}
+    \item \textbf{app.py}: aplicación principal en \emph{Streamlit}.
+    \item \textbf{core/features.py}: limpieza y construcción de variables (z-score, cargas).
+    \item \textbf{core/ewma.py}: cálculo del promedio móvil exponencial (EWMA).
+    \item \textbf{core/risk.py}: modelo logístico de riesgo, predicción y umbrales de alerta.
+    \item \textbf{core/io\_utils.py}: lectura/escritura de datos en CSV/Excel.
+    \item \textbf{models/logistic.pkl}: modelo entrenado (scikit-learn) con datos históricos.
+    \item \textbf{data/ejemplo\_sesiones.csv}: conjunto de datos de ejemplo.
+\end{itemize}
+
+\subsection*{Datos de entrada esperados}
+\begin{itemize}
+    \item \textbf{Externos}: picos de $\omega$ y $\alpha$ en rodilla, fuerza de reacción (FRS), número de cambios de dirección, saltos.
+    \item \textbf{Asimetrías}: porcentaje de diferencia entre miembros.
+    \item \textbf{Fisiológicos}: HRV (RMSSD), RPE, horas de sueño.
+    \item Opcional: columna \emph{injury} (0/1) para entrenar el modelo logístico.
+\end{itemize}
+
+\subsection*{Modelos y fórmulas}
+\begin{itemize}
+    \item \textbf{Carga suavizada (EWMA)}:
+    \[
+    L_t=\lambda w_t+(1-\lambda)L_{t-1}.
+    \]
+    \item \textbf{Modelo logístico de riesgo}:
+    \[
+    P(\text{lesión}_t)=\frac{1}{1+\exp\!\big(-(\beta_0+\boldsymbol{\beta}^\top \mathbf{x}_t)\big)}.
+    \]
+    \item \textbf{Suavizado de probabilidad (control)}:
+    \[
+    S_t=\alpha_c P_t+(1-\alpha_c)S_{t-1}, \qquad \text{alerta si } S_t>\tau.
+    \]
+\end{itemize}
+
+\subsection*{Implementación práctica}
+\begin{itemize}
+    \item \textbf{Lenguaje y librerías}: Python, pandas, numpy, scikit-learn, streamlit, matplotlib, openpyxl.
+    \item \textbf{Visualización}: gráficas interactivas en Streamlit; exportación a Excel o PDF/LaTeX.
+    \item \textbf{Entrenamiento}: opcional con históricos (si se dispone de columna \emph{injury}).
+    \item \textbf{Uso operativo}: carga de datos $\rightarrow$ cálculo de EWMA $\rightarrow$ probabilidad de lesión $\rightarrow$ alerta si $S_t>\tau$.
+\end{itemize}
+
+\subsection*{Notas finales}
+\begin{itemize}
+    \item Ajustar $\lambda$ (EWMA) y $\tau$ (umbral de alerta) según calendario competitivo.
+    \item Los coeficientes $\beta$ deben entrenarse con datos reales del equipo/deporte.
+    \item Este modelo se integra con informes en Excel o reportes técnicos en \LaTeX.
+\end{itemize}
+\section{Propuesta aplicada al contexto costarricense}
+
+La predicción exacta de lesiones deportivas es sumamente compleja, 
+pues influyen variables múltiples e impredecibles (condiciones del partido, contactos, estado mental, historial médico). 
+Sin embargo, es posible desarrollar \textbf{modelos de monitoreo de carga y riesgo} 
+que permitan reducir la probabilidad de lesiones, especialmente de rodilla, 
+una de las más frecuentes en jugadores de fútbol en Costa Rica.
+
+\subsection{Justificación}
+\begin{itemize}
+    \item Alta frecuencia de lesiones de ligamento cruzado anterior, meniscos y esguinces en el fútbol nacional.
+    \item Uso extendido de canchas sintéticas, donde se asocia mayor incidencia de torsiones y lesiones articulares.
+    \item Torneos con calendarios saturados, lo que favorece la acumulación de carga en cortos periodos.
+    \item Limitados recursos en equipos pequeños, que carecen de tecnología avanzada de monitoreo.
+\end{itemize}
+
+\subsection{Enfoque metodológico}
+\begin{enumerate}
+    \item \textbf{Recolección de datos:} variables de carga externa (distancia, aceleraciones, saltos) mediante sensores GPS o IMU accesibles, más variables internas (HRV, RPE, horas de sueño).
+    \item \textbf{Registro de lesiones:} documentación detallada de lesiones de rodilla y tobillo (tipo, contexto, tiempo de recuperación).
+    \item \textbf{Cálculo de carga suavizada:} aplicación del modelo EWMA:
+    \[
+    L_t=\lambda w_t+(1-\lambda)L_{t-1},
+    \]
+    donde $w_t$ es la carga de la sesión y $L_t$ la carga suavizada.
+    \item \textbf{Índice de riesgo logístico:} integración de variables fisiológicas y mecánicas en un modelo de regresión logística que estime la probabilidad de lesión.
+    \item \textbf{Alertas visuales:} implementación de un sistema de semáforo (verde, amarillo, rojo) según umbrales definidos para riesgo acumulado.
+\end{enumerate}
+
+\subsection{Valor agregado local}
+\begin{itemize}
+    \item Comparación entre césped natural y sintético en equipos costarricenses.
+    \item Diferencias por posición en el campo (defensas, mediocampistas, delanteros).
+    \item Análisis de carga acumulada en semanas con partidos frecuentes.
+    \item Desarrollo de una herramienta accesible para equipos con recursos limitados.
+\end{itemize}
+
+\subsection{Resultados esperados}
+\begin{itemize}
+    \item Identificación de patrones de riesgo asociados a picos de carga.
+    \item Generación de recomendaciones prácticas para entrenadores y fisioterapeutas.
+    \item Reducción de la incidencia de lesiones de rodilla mediante control de cargas.
+    \item Potencial publicación de resultados en congresos y revistas regionales de ciencias del deporte.
+\end{itemize}
+
+\subsection{Conclusión}
+Aunque no es viable predecir con exactitud cada lesión, 
+el desarrollo de un sistema de monitoreo basado en EWMA y modelos de riesgo logístico 
+puede aportar evidencia científica y práctica para reducir la probabilidad de lesiones en el fútbol costarricense. 
+Esta propuesta constituye una oportunidad de innovación aplicada en biomecánica deportiva en el contexto local.
+\section*{Propuesta de Trabajo Final de Graduación}
+
+\subsection*{Título tentativo}
+\textbf{Desarrollo de un modelo matemático y computacional basado en EWMA y riesgo logístico para el monitoreo de la carga y prevención de lesiones de rodilla en futbolistas costarricenses.}
+
+\subsection*{Introducción}
+Las lesiones de rodilla representan una de las principales causas de inactividad en futbolistas,
+afectando tanto el rendimiento deportivo como la trayectoria profesional de los atletas.
+En Costa Rica, la frecuencia de estas lesiones es elevada, especialmente en torneos con calendarios intensos
+y en superficies sintéticas que incrementan la incidencia de torsiones articulares.
+Si bien la predicción exacta de una lesión resulta inviable debido a la gran cantidad de variables implicadas,
+sí es posible desarrollar modelos matemáticos que permitan \textbf{monitorear la carga física del atleta
+e identificar momentos de mayor riesgo}.
+En este contexto, el uso de promedios móviles exponenciales (EWMA) y modelos de riesgo logístico
+ofrece un marco científico riguroso y aplicable al deporte nacional.
+
+\subsection*{Planteamiento del problema}
+La ausencia de sistemas accesibles y basados en evidencia para monitorear la carga de entrenamiento en equipos de fútbol costarricenses
+ha contribuido a una alta incidencia de lesiones de rodilla.
+Esto genera costos médicos elevados, disminución del rendimiento competitivo y menor desarrollo deportivo en la región.
+Se plantea entonces la necesidad de un sistema matemático-computacional
+que integre variables fisiológicas y de carga mecánica
+para estimar de forma dinámica el riesgo de lesión y brindar alertas preventivas.
+
+\subsection*{Objetivos}
+\textbf{Objetivo general}
+\begin{itemize}
+    \item Desarrollar un modelo matemático y computacional basado en EWMA y regresión logística
+    para monitorear la carga de entrenamiento y estimar el riesgo de lesiones de rodilla en futbolistas costarricenses.
+\end{itemize}
+
+\textbf{Objetivos específicos}
+\begin{enumerate}
+    \item Analizar los fundamentos físicos y biomecánicos relacionados con la dinámica de rodilla y tobillo en deportes de alto impacto.
+    \item Implementar el modelo de carga acumulada mediante promedios móviles exponenciales (EWMA).
+    \item Diseñar un modelo de regresión logística que integre variables fisiológicas y de carga externa.
+    \item Desarrollar una aplicación en Python que permita la entrada de datos y genere indicadores de riesgo y reportes en tiempo real.
+    \item Validar el modelo a partir de un conjunto de datos piloto de futbolistas costarricenses.
+\end{enumerate}
+
+\subsection*{Metodología}
+\begin{enumerate}
+    \item \textbf{Revisión bibliográfica}: estado del arte sobre modelos de carga, EWMA, ACWR y predicción de lesiones en fútbol.
+    \item \textbf{Modelado matemático}: definición de ecuaciones de carga acumulada y probabilidad de lesión (regresión logística).
+    \item \textbf{Desarrollo computacional}: implementación en Python (pandas, scikit-learn, streamlit) con interfaz interactiva.
+    \item \textbf{Validación}: pruebas con datos simulados y, de ser posible, datos reales de un equipo de fútbol local.
+    \item \textbf{Análisis}: evaluación del desempeño del modelo y comparación con hallazgos de literatura internacional.
+\end{enumerate}
+
+\subsection*{Resultados esperados}
+\begin{itemize}
+    \item Modelo matemático validado para el monitoreo de carga y riesgo de lesión.
+    \item Aplicación computacional funcional con interfaz gráfica y reportes exportables.
+    \item Identificación de patrones de carga y momentos críticos de riesgo en futbolistas.
+    \item Recomendaciones prácticas para entrenadores y fisioterapeutas de equipos costarricenses.
+\end{itemize}
+
+\subsection*{Conclusiones preliminares}
+El proyecto busca aportar una herramienta novedosa y de bajo costo,
+que permita traducir fundamentos de la ingeniería física y la biomecánica
+en beneficios prácticos para el deporte costarricense.
+Con ello, se pretende reducir la incidencia de lesiones de rodilla,
+mejorar la planificación de cargas y abrir un camino para investigaciones futuras
+en biomecánica deportiva aplicada a nivel nacional.
+\section{Bitácora de investigación: modelos para prevención de lesiones}
+
+Este apartado recopila notas preliminares para una futura investigación orientada 
+al desarrollo de modelos matemáticos y computacionales
+que permitan monitorear la carga de entrenamiento y el riesgo de lesión en futbolistas.
+El énfasis se encuentra en lesiones de rodilla, con aplicación en el contexto costarricense.
+
+\subsection{Revisión bibliográfica inicial}
+\begin{itemize}
+    \item \textbf{EWMA y ACWR}: comparar promedios móviles exponenciales con promedios simples para estimar riesgo de lesión.
+    \item \textbf{Modelos logísticos}: regresión logística aplicada a variables como carga, HRV, RPE y asimetrías.
+    \item \textbf{Biomecánica de rodilla}: estudios sobre torques, aceleraciones angulares y fuerzas de reacción del suelo en fútbol.
+\end{itemize}
+
+\textbf{Tareas pendientes:}
+\begin{enumerate}
+    \item Buscar artículos en PubMed, Google Scholar y ResearchGate.
+    \item Guardar resúmenes en Zotero/Mendeley.
+    \item Crear una tabla con los hallazgos principales de cada referencia.
+\end{enumerate}
+
+\subsection{Fundamentos técnicos a repasar}
+\begin{itemize}
+    \item Estadística aplicada: regresión logística, métricas AUC, sensibilidad y especificidad.
+    \item Series temporales: promedios móviles, EWMA, correlaciones cruzadas.
+    \item Biomecánica: dinámica de rodilla y tobillo, cargas en césped natural vs sintético.
+\end{itemize}
+
+\subsection{Mini-proyectos en Python}
+\begin{enumerate}
+    \item Simular datos de jugadores: distancia, saltos, HRV, RPE.
+    \item Calcular carga suavizada con EWMA:
+    \[
+    L_t = \lambda w_t + (1-\lambda) L_{t-1}.
+    \]
+    \item Construir un modelo logístico ficticio para estimar riesgo de lesión.
+    \item Visualizar los resultados en gráficas simples con Python o Streamlit.
+\end{enumerate}
+
+\subsection{Contexto costarricense}
+\begin{itemize}
+    \item Factores locales: canchas sintéticas, climas variables, calendarios cargados.
+    \item Problema: alta incidencia de lesiones de rodilla en equipos nacionales.
+    \item Oportunidad: generar un modelo accesible y de bajo costo aplicable a ligas menores y equipos profesionales.
+\end{itemize}
+
+\subsection{Plan a mediano plazo}
+\begin{enumerate}
+    \item Crear un repositorio en GitHub/GitLab para código y apuntes.
+    \item Redactar un marco teórico preliminar con lecturas revisadas.
+    \item Contactar un profesor o club local para evaluar posibilidad de recolección de datos piloto.
+\end{enumerate}
+
+\subsection{Resultados esperados a largo plazo}
+\begin{itemize}
+    \item Estado del arte sobre prevención de lesiones basado en carga.
+    \item Prototipo en Python (EWMA + riesgo logístico).
+    \item Reportes exportables en Excel y PDF/\LaTeX.
+    \item Posible propuesta formal de TFG en Ingeniería Física.
+\end{itemize}
+\section{Hipótesis y objetivo central de investigación}
+
+\subsection{Hipótesis}
+El monitoreo dinámico de variables biomecánicas (aceleraciones, impactos, torsiones, asimetrías)
+y fisiológicas (variabilidad de la frecuencia cardiaca, percepción subjetiva de esfuerzo, horas de sueño),
+integradas mediante un modelo matemático basado en promedios móviles exponenciales (EWMA)
+y regresión logística,
+permite estimar de forma probabilística el riesgo de lesión en futbolistas.
+La implementación de este modelo contribuiría a reducir la exposición a cargas excesivas
+y a mejorar las estrategias de prevención de lesiones de rodilla en el contexto costarricense.
+
+\subsection{Objetivo central}
+Desarrollar un sistema de monitoreo de riesgo de lesión para futbolistas costarricenses,
+que combine el análisis de cargas de entrenamiento mediante EWMA
+y un modelo logístico de predicción,
+con el fin de generar indicadores de probabilidad de lesión
+y proveer alertas preventivas útiles para entrenadores, fisioterapeutas y preparadores físicos.
+\section{Limitaciones del proyecto}
+
+Si bien la propuesta resulta innovadora y con gran potencial de aplicación en el contexto deportivo costarricense,
+es importante reconocer las limitaciones que pueden surgir durante su desarrollo e implementación:
+
+\begin{enumerate}
+    \item \textbf{Disponibilidad de datos reales:} la recolección de información confiable sobre carga externa,
+    variables fisiológicas y registros de lesiones en equipos de fútbol costarricenses
+    puede resultar difícil por la falta de bases de datos centralizadas
+    y la posible resistencia de clubes a compartir información sensible.
+
+    \item \textbf{Tamaño de muestra reducido:} trabajar únicamente con un equipo o un número limitado de jugadores
+    disminuye la robustez estadística del modelo,
+    dificultando la generalización de los resultados a otras poblaciones deportivas.
+
+    \item \textbf{Multifactorialidad de las lesiones:} las lesiones deportivas no dependen únicamente de la carga de entrenamiento,
+    sino también de factores genéticos, ambientales, psicológicos y de contacto.
+    En consecuencia, el modelo solo puede ofrecer una \emph{probabilidad relativa de riesgo},
+    mas no una predicción exacta de la ocurrencia de una lesión.
+
+    \item \textbf{Recursos limitados:} el acceso a sensores de alta precisión (GPS, IMU, plataformas de fuerza)
+    puede verse restringido por su costo.
+    Es posible que deba recurrirse a herramientas más accesibles
+    o a variables autoinformadas como la percepción subjetiva de esfuerzo (RPE).
+
+    \item \textbf{Aceptación en el ámbito deportivo:} entrenadores y jugadores pueden mostrar escepticismo
+    frente a modelos matemáticos o algoritmos predictivos,
+    por lo que será esencial presentar los resultados de manera clara y práctica
+    (por ejemplo, mediante un sistema de alerta tipo semáforo).
+
+    \item \textbf{Tiempo y alcance académico:} dado que se trata de un trabajo final de graduación,
+    el proyecto debe limitar su alcance a un prototipo validado con datos simulados o un piloto reducido.
+    Prometer una predicción exacta y exhaustiva de lesiones excedería el alcance realista del trabajo.
+\end{enumerate}
+
+En síntesis, el proyecto debe plantearse como un \textbf{sistema de monitoreo y estimación de riesgo},
+con valor preventivo y de apoyo a la toma de decisiones,
+más que como una herramienta de predicción absoluta de lesiones.
+\end{document}

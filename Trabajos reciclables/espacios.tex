@@ -1,0 +1,143 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{multicol}
+\geometry{margin=2cm}
+
+\title{\textbf{Propiedades de los Espacios Vectoriales y Combinaciones Lineales}}
+\author{Curso de Álgebra Lineal}
+\date{}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+%-----------------------------------------------
+\section{Definición de espacio vectorial}
+Un conjunto $V$ es un \textbf{espacio vectorial} sobre el cuerpo $\mathbb{R}$ si cumple:
+\begin{itemize}
+    \item Existe una \textbf{suma de vectores} $(\vec{u},\vec{v}) \mapsto \vec{u} + \vec{v}$.
+    \item Existe un \textbf{producto por un escalar} $(k, \vec{u}) \mapsto k \vec{u}$.
+\end{itemize}
+
+\bigskip
+Debe cumplir las propiedades de cerradura, conmutatividad, asociatividad, existencia de elemento neutro e inverso.
+
+%-----------------------------------------------
+\section{Propiedades de la suma de vectores}
+
+Sean $\vec{u},\vec{v},\vec{w} \in V$:
+
+\begin{enumerate}
+    \item \textbf{Cerradura:} $\vec{u} + \vec{v} \in V$.
+    \item \textbf{Conmutativa:} $\vec{u} + \vec{v} = \vec{v} + \vec{u}$.
+    \item \textbf{Asociativa:} $(\vec{u} + \vec{v}) + \vec{w} = \vec{u} + (\vec{v} + \vec{w})$.
+    \item \textbf{Neutro:} existe $\vec{0}$ tal que $\vec{u} + \vec{0} = \vec{u}$.
+    \item \textbf{Inverso:} existe $-\vec{u}$ tal que $\vec{u} + (-\vec{u}) = \vec{0}$.
+\end{enumerate}
+
+\textbf{Ejemplo:} 
+\[
+(2,-3) + (-2,3) = (0,0)
+\]
+
+
+
+%-----------------------------------------------
+\section{Propiedades del producto por un escalar}
+
+Sean $\vec{u} \in V$ y $k,r \in \mathbb{R}$:
+
+\begin{enumerate}
+    \item \textbf{Cerradura:} $k\vec{u} \in V$.
+    \item \textbf{Asociativa:} $(r k)\vec{u} = r (k\vec{u})$.
+    \item \textbf{Neutro:} $1 \cdot \vec{u} = \vec{u}$.
+    \item \textbf{Inverso:} $(-1) \vec{u} = -\vec{u}$.
+    \item \textbf{Conmutativa:} $k \vec{u} = \vec{u} k$.
+\end{enumerate}
+
+\textbf{Ejemplo:}
+\[
+k(4,0,1,5) = (4k,0,k,5k) \in \mathbb{R}^4
+\]
+
+%-----------------------------------------------
+\section{Combinaciones lineales}
+
+Un vector $\vec{v}$ es combinación lineal de $\vec{v}_1, \vec{v}_2, \dots, \vec{v}_n$ si:
+\[
+\vec{v} = k_1 \vec{v}_1 + k_2 \vec{v}_2 + \dots + k_n \vec{v}_n
+\]
+
+\subsection{Ejemplo con matrices}
+Determinar $a,b,c,d$ tal que:
+\[
+\begin{pmatrix} a & b \\ c & d \end{pmatrix}
+= k 
+\begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix}
++ \ell 
+\begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix}
++ m
+\begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix}
+\]
+
+De la igualdad se obtiene:
+\[
+a = k + \ell, \quad b = k + \ell, \quad c = k, \quad d = m
+\]
+
+%-----------------------------------------------
+\section{Subespacios vectoriales}
+
+Un subconjunto $S \subset V$ es un \textbf{subespacio vectorial} si:
+\begin{enumerate}
+    \item Contiene al vector nulo.
+    \item Es cerrado bajo suma y producto por escalar.
+\end{enumerate}
+
+\subsection{Ejemplo}
+Sea 
+\[
+S = \{ (x,y,z) \in \mathbb{R}^3 \;|\; x - y + 3z = 0 \}
+\]
+
+Tomamos $\alpha = y$ y $\beta = z$:
+\[
+(x,y,z) = (\alpha - 3\beta, \alpha, \beta)
+= \alpha (1,1,0) + \beta (-3,0,1)
+\]
+
+Esto muestra que $S$ está generado por $\{(1,1,0), (-3,0,1)\}$.
+
+%-----------------------------------------------
+\section{Ejemplo de comprobación}
+
+Probar que $(1,-1,2)$ es combinación lineal de
+$(1,1,1)$, $(1,1,0)$ y $(1,0,0)$:
+\[
+(1,-1,2) = a(1,1,1) + b(1,1,0) + c(1,0,0)
+\]
+
+\textbf{Sistema:}
+\[
+\begin{cases}
+1 = a+b+c \\
+-1 = a+b \\
+2 = a
+\end{cases}
+\quad \Rightarrow \quad
+a = 2, \; b = -3, \; c = 2
+\]
+
+\bigskip
+\[
+(1,-1,2) = 2(1,1,1) -3(1,1,0) + 2(1,0,0)
+\]
+
+\end{document}

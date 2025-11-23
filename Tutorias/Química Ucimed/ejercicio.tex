@@ -1,0 +1,113 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{hyperref}
+%------------------------------------------------
+% PAQUETES
+%------------------------------------------------
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+
+\sisetup{
+  locale = DE,
+  output-decimal-marker = {,},
+  per-mode=symbol,
+  exponent-product=\cdot,
+  group-minimum-digits=4
+}
+
+\begin{document}
+
+\section*{pH de un sistema buffer NH\(_3\)/NH\(_4^+\)}
+
+\subsection*{Datos}
+
+\begin{itemize}
+  \item Base débil: 
+  \[
+    [\mathrm{NH_3}] = \SI{0,30}{mol/L}
+  \]
+  \item Ácido conjugado (proveniente de NH\(_4\)Cl):
+  \[
+    [\mathrm{NH_4^+}] = \SI{0,36}{mol/L}
+  \]
+  \item Constante de basicidad del amoníaco (dato típico de tablas):
+  \[
+    K_b = 1{,}8\cdot 10^{-5}
+  \]
+\end{itemize}
+
+\subsection*{Conversión de \texorpdfstring{$K_b$}{Kb} a \texorpdfstring{$pK_a$}{pKa}}
+
+Para usar Henderson–Hasselbalch necesitamos \(pK_a\).  
+Se usa la relación:
+
+\[
+  K_a = \frac{K_w}{K_b}
+\]
+
+con:
+\[
+  K_w = 1{,}0\cdot 10^{-14}
+\]
+
+\[
+  K_a = \frac{1{,}0\cdot 10^{-14}}{1{,}8\cdot 10^{-5}}
+\]
+
+\[
+  K_a = 5{,}56\cdot 10^{-10}
+\]
+
+Ahora:
+
+\[
+  pK_a = -\log_{10}(K_a)
+\]
+
+\[
+  pK_a = -\log_{10}\bigl(5{,}56\cdot 10^{-10}\bigr)
+       \approx 9{,}25
+\]
+
+\subsection*{Ecuación de Henderson--Hasselbalch}
+
+Como se trata del sistema ácido conjugado NH\(_4^+\)/NH\(_3\):
+
+\[
+  \mathrm{pH} = pK_a + \log_{10}\!\left(
+    \frac{[\text{base}]}{[\text{ácido}]}
+  \right)
+\]
+
+\[
+  \mathrm{pH} = 9{,}25 + \log_{10}\!\left(
+    \frac{0{,}30}{0{,}36}
+  \right)
+\]
+
+\subsection*{Cálculo numérico}
+
+\[
+  \frac{0{,}30}{0{,}36} = 0{,}83
+\]
+
+\[
+  \log_{10}(0{,}83) \approx -0{,}08
+\]
+
+\[
+  \mathrm{pH} = 9{,}25 - 0{,}08
+\]
+
+\[
+  \boxed{\mathrm{pH} \approx 9{,}17}
+\]
+
+\subsection*{Interpretación}
+
+El sistema amortiguador formado por NH\(_3\) (base débil) y NH\(_4^+\) (ácido conjugado) produce un pH ligeramente básico, consistente con la química del amoníaco.
+
+\end{document}

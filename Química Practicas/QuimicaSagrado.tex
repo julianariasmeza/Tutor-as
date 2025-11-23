@@ -1,0 +1,1149 @@
+\documentclass[12pt]{article}
+
+% ===== Paquetes =====
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{mhchem}      % Fórmulas químicas
+\usepackage{booktabs}    % Tablas bonitas
+\usepackage{geometry}
+\usepackage{pdflscape} % o \usepackage{lscape}
+\geometry{letterpaper, margin=2.5cm}
+
+% ===== Encabezados y pies con numeración =====
+\usepackage{fancyhdr}
+% \usepackage{lastpage} % <-- Descomentar si querés "Página X de Y"
+
+\pagestyle{fancy}
+\fancyhf{} % Limpia encabezados y pies
+
+% Encabezado
+\fancyhead[L]{Julián Arias Meza}    % Esquina superior izquierda
+\fancyhead[R]{Práctica de Química}  % Esquina superior derecha
+
+% Pie de página con número
+\fancyfoot[C]{\thepage}             % Número de página centrado en el pie
+% --- Alternativa: "Página X de Y"
+% \fancyfoot[C]{Página \thepage\ de \pageref{LastPage}}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\headheight}{14pt}       % Evita warnings de fancyhdr
+\pagenumbering{arabic}              % Asegura numeración arábiga
+
+
+\begin{document}
+
+\begin{center}
+\Large \textbf{Práctica de Química}\\[0.3cm]
+
+\end{center}
+
+\section*{Formación de óxidos metálicos}
+
+{\small
+\begin{tabular}{@{}ll@{}}
+\toprule
+Elemento & Estados de oxidación comunes \\
+\midrule
+\(\mathrm{Ti}\) & \(+2,+3,+4\) \\
+\(\mathrm{V}\) & \(+2,+3,+5\) \\
+\(\mathrm{Cr}\) & \(+2,+3,+6\) \\
+\(\mathrm{Mn}\) & \(+2,+4,+7\) \\
+\(\mathrm{Fe}\) & \(+2,+3\) \\
+\(\mathrm{Co}\) & \(+2,+3\) \\
+\(\mathrm{Ni}\) & \(+2\) \\
+\(\mathrm{Cu}\) & \(+1,+2\) \\
+\(\mathrm{Zn}\) & \(+2\) \\
+\(\mathrm{Ag}\) & \(+1\) \\
+\(\mathrm{Cd}\) & \(+2\) \\
+\(\mathrm{Sn}\) & \(+2,+4\) \\
+\(\mathrm{Pb}\) & \(+2,+4\) \\
+\(\mathrm{Pt}\) & \(+2,+4\) \\
+\(\mathrm{Au}\) & \(+1,+3\) \\
+\(\mathrm{Hg}\) & \(+1~(\mathrm{Hg}_2^{2+}),+2\) \\
+\(\mathrm{Bi}\) & \(+3,+5\) \\
+\(\mathrm{Al},\mathrm{Ga},\mathrm{In}\) & \(+3\) \\
+\(\mathrm{Sc},\mathrm{Y},\mathrm{La}\) & \(+3\) \\
+\(\mathrm{Li},\mathrm{Na},\mathrm{K},\mathrm{Rb},\mathrm{Cs},\mathrm{Fr}\) & \(+1\) \\
+\(\mathrm{Be},\mathrm{Mg},\mathrm{Ca},\mathrm{Sr},\mathrm{Ba},\mathrm{Ra}\) & \(+2\) \\
+\bottomrule
+\end{tabular}
+} \\ \\
+
+Los \textbf{óxidos metálicos} son compuestos binarios formados por un elemento metálico y oxígeno. 
+En general, su fórmula química es:
+\[
+\ce{M_x O_y}
+\]
+donde \(\ce{M}\) representa el metal y \(\ce{O}\) el oxígeno. 
+
+\subsection*{Ejemplo de formación}
+Si el sodio (Na) reacciona con oxígeno (\(\ce{O2}\)), se obtiene óxido de sodio:
+\[
+\ce{4Na (s) + O2 (g) -> 2Na2O (s)}
+\]
+\newpage
+\section*{Sistema de Stock}
+El \textbf{sistema de Stock} se utiliza para nombrar óxidos metálicos cuando el metal puede presentar más de un número de oxidación. 
+Se coloca el nombre del compuesto seguido del número de oxidación del metal en números romanos y entre paréntesis.
+
+\subsection*{Ejemplos}
+\begin{itemize}
+  \item \ce{FeO}: óxido de hierro (II).
+  \item \ce{Fe2O3}: óxido de hierro (III).
+  \item \ce{Cu2O}: óxido de cobre (I).
+  \item \ce{CuO}: óxido de cobre (II).
+\end{itemize}
+
+\section*{¿Cuándo se usa el sistema de Stock?}
+El \textbf{sistema de Stock} se emplea únicamente cuando un elemento puede presentar \textbf{más de un número de oxidación}.  
+En esos casos, se indica con números romanos entre paréntesis después del nombre del metal.
+
+\subsection*{Ejemplos donde se usa Stock}
+\begin{itemize}
+  \item \ce{FeO}: óxido de hierro (II), ya que el hierro puede ser \(+2\) o \(+3\).
+  \item \ce{Fe2O3}: óxido de hierro (III).
+  \item \ce{Cu2O}: óxido de cobre (I).
+  \item \ce{CuO}: óxido de cobre (II).
+  \item \ce{SnO2}: óxido de estaño (IV), porque el estaño puede ser \(+2\) o \(+4\).
+\end{itemize}
+
+\subsection*{Ejemplos donde \underline{no} se usa Stock}
+Cuando el metal solo presenta un número de oxidación común, no es necesario aclararlo.  
+\begin{itemize}
+  \item \ce{Na2O}: óxido de sodio (\(Na\) siempre es \(+1\)).
+  \item \ce{MgO}: óxido de magnesio (\(Mg\) siempre es \(+2\)).
+  \item \ce{ZnO}: óxido de zinc (\(Zn\) siempre es \(+2\)).
+  \item \ce{Ag2O}: óxido de plata (\(Ag\) casi siempre \(+1\)).
+\end{itemize}
+\section*{Hidruros}
+
+Los \textbf{hidruros} son compuestos binarios entre el hidrógeno y otro elemento. En química inorgánica se distinguen, a grandes rasgos:
+\begin{itemize}
+  \item \textbf{Hidruros metálicos (iónicos)}: el hidrógeno actúa como anión \(\ce{H^-}\).
+  \item \textbf{Hidruros covalentes (no metálicos)}: el enlace es compartido; muchos corresponden a \(\ce{EH_n}\) (por ejemplo, \(\ce{CH4}\), \(\ce{NH3}\), \(\ce{SiH4}\)).
+\end{itemize}
+
+\subsection*{Formación (reacciones típicas)}
+\begin{align*}
+\ce{2Na (s) + H2 (g) &-> 2NaH (s)}\\
+\ce{Ca (s) + H2 (g) &-> CaH2 (s)}\\
+\ce{2Al (s) + 3H2 (g) &-> 2AlH3 (s)} \quad &\text{(simplificada, en la práctica forma hidruros complejos)}
+\end{align*}
+
+\subsection*{Nombrado}
+\textbf{Regla general (Stock):} \emph{hidruro de} \([\,\)metal\(\,]\) \((\mathrm{N\!O~en~romanos})\) cuando el metal presenta más de un estado de oxidación.\\
+Si el metal \textbf{solo} presenta un estado de oxidación común, \textbf{no} se indica número romano.
+
+\subsubsection*{Ejemplos (se usa Stock)}
+\begin{itemize}
+  \item \ce{FeH2}: hidruro de hierro (II).
+  \item \ce{FeH3}: hidruro de hierro (III).
+  \item \ce{CuH}: hidruro de cobre (I).
+  \item \ce{CuH2}: hidruro de cobre (II).
+\end{itemize}
+
+\subsubsection*{Ejemplos (no se usa Stock)}
+\begin{itemize}
+  \item \ce{NaH}: hidruro de sodio (\(Na\) es \(+1\)).
+  \item \ce{CaH2}: hidruro de calcio (\(Ca\) es \(+2\)).
+  \item \ce{KH}: hidruro de potasio (\(K\) es \(+1\)).
+\end{itemize}
+\newpage
+\section*{Hidróxidos}
+
+Los \textbf{hidróxidos} son compuestos iónicos que contienen el anión hidróxido \(\ce{OH^-}\), con fórmula general \(\ce{M(OH)_{n}}\), donde \(n\) coincide con la \textbf{valencia (número de oxidación)} del metal en el compuesto. Son bases típicas en disolución acuosa.
+
+\subsection*{Formación (rutas comunes)}
+\begin{align*}
+\ce{Na2O (s) + H2O (l) &-> 2NaOH (ac)} \quad &\text{(óxido básico + agua)}\\
+\ce{CaO (s) + H2O (l) &-> Ca(OH)2 (ac)} \\
+\ce{2Na (s) + 2H2O (l) &-> 2NaOH (ac) + H2 (g)} \quad &\text{(metal alcalino + agua)}
+\end{align*}
+
+\subsection*{Nombrado}
+\textbf{Regla general:} \emph{hidróxido de} \([\,\)metal\(\,]\) \((\mathrm{N\!O~en~romanos})\) si el metal puede tener varios estados de oxidación.\\
+Si el metal tiene \textbf{valencia única} (común), \textbf{no} se indica número romano.
+
+\subsubsection*{Ejemplos (se usa Stock)}
+\begin{itemize}
+  \item \(\ce{Fe(OH)2}\): hidróxido de hierro (II).
+  \item \(\ce{Fe(OH)3}\): hidróxido de hierro (III).
+  \item \(\ce{CuOH}\): hidróxido de cobre (I).
+  \item \(\ce{Cu(OH)2}\): hidróxido de cobre (II).
+  \item \(\ce{Sn(OH)2}\) y \(\ce{Sn(OH)4}\): hidróxido de estaño (II) y (IV).
+\end{itemize}
+
+\subsubsection*{Ejemplos (no se usa Stock)}
+\begin{itemize}
+  \item \(\ce{NaOH}\): hidróxido de sodio (\(Na\) es \(+1\)).
+  \item \(\ce{KOH}\): hidróxido de potasio (\(K\) es \(+1\)).
+  \item \(\ce{Ca(OH)2}\): hidróxido de calcio (\(Ca\) es \(+2\)).
+  \item \(\ce{Ba(OH)2}\): hidróxido de bario (\(Ba\) es \(+2\)).
+\end{itemize}
+
+\subsection*{Observaciones útiles}
+\begin{itemize}
+  \item El subíndice en \(\ce{(OH)_{n}}\) refleja la \textbf{carga} del catión metálico: p.ej. \(n=3\) en \(\ce{Al(OH)3}\) porque \(Al^{3+}\).
+  \item Al calentar, muchos hidróxidos metálicos se deshidratan: 
+  \(\;\ce{Fe(OH)3 (s) ->[\Delta] Fe2O3 (s) + 3H2O (g)}\) (global por 2 moles de \(\ce{Fe(OH)3}\)).
+\end{itemize}
+\section*{Radicales simples y formación de hidrácidos}
+\section*{Radicales simples más comunes}
+
+\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+Símbolo & Nombre del radical & Valencia (carga) \\
+\midrule
+\(\ce{H^-}\) & hidruro & \(-1\) \\
+\(\ce{F^-}\) & fluoruro & \(-1\) \\
+\(\ce{Cl^-}\) & cloruro & \(-1\) \\
+\(\ce{Br^-}\) & bromuro & \(-1\) \\
+\(\ce{I^-}\) & yoduro & \(-1\) \\
+\(\ce{O^{2-}}\) & óxido & \(-2\) \\
+\(\ce{S^{2-}}\) & sulfuro & \(-2\) \\
+\(\ce{Se^{2-}}\) & seleniuro & \(-2\) \\
+\(\ce{Te^{2-}}\) & telururo & \(-2\) \\
+\(\ce{N^{3-}}\) & nitruro & \(-3\) \\
+\(\ce{P^{3-}}\) & fosfuro & \(-3\) \\
+\bottomrule
+\end{tabular}
+
+\subsection*{Radicales simples}
+En química inorgánica se denomina \textbf{radical simple} al ion monoatómico con carga eléctrica, es decir, un solo átomo que ha ganado o perdido electrones. 
+
+\begin{itemize}
+  \item Los no metales de los grupos \(\ce{17}\) (halógenos), \(\ce{16}\) (calcógenos) y algunos del grupo \(\ce{15}\) forman con facilidad radicales aniónicos simples.
+  \item Ejemplos comunes:
+  \begin{itemize}
+    \item \(\ce{Cl^-}\): cloruro.
+    \item \(\ce{Br^-}\): bromuro.
+    \item \(\ce{I^-}\): yoduro.
+    \item \(\ce{S^{2-}}\): sulfuro.
+  \end{itemize}
+\end{itemize}
+
+Estos radicales simples son la base para formar \textbf{hidrácidos} al combinarse con el hidrógeno.
+
+\subsection*{Hidrácidos: definición}
+Los \textbf{hidrácidos} son compuestos binarios formados por hidrógeno y un no metal (generalmente de los grupos 16 o 17). 
+
+Su fórmula general es:
+\[
+\ce{H_n X}
+\]
+donde \(\ce{X}\) es un radical simple aniónico (halógeno, calcógeno, etc.).
+
+\subsection*{Formación y nomenclatura}
+Dependiendo del estado físico o la disolución, se nombran de forma distinta:
+
+\begin{enumerate}
+  \item \textbf{En fase gaseosa:} se nombran como \emph{halogenuros de hidrógeno} o \emph{sulfuros de hidrógeno}.  
+  Ejemplos:
+  \begin{itemize}
+    \item \(\ce{HCl (g)}\): cloruro de hidrógeno.
+    \item \(\ce{HBr (g)}\): bromuro de hidrógeno.
+    \item \(\ce{H2S (g)}\): sulfuro de hidrógeno.
+  \end{itemize}
+  
+  \item \textbf{En disolución acuosa (hidrácidos propiamente dichos):} se nombran como \emph{ácidos} + \emph{raíz del no metal} + \emph{-hídrico}.  
+  Ejemplos:
+  \begin{itemize}
+    \item \(\ce{HCl (ac)}\): ácido clorhídrico.
+    \item \(\ce{HBr (ac)}\): ácido bromhídrico.
+    \item \(\ce{HI (ac)}\): ácido yodhídrico.
+    \item \(\ce{H2S (ac)}\): ácido sulfhídrico.
+  \end{itemize}
+\end{enumerate}
+
+\subsection*{Reacciones de formación}
+\begin{align*}
+\ce{H2 (g) + Cl2 (g) &-> 2HCl (g)} \quad &\text{(hidrácido en fase gaseosa)}\\
+\ce{HCl (g) ->[agua] HCl (ac)} \quad &\text{(hidrácido en disolución acuosa)}
+\end{align*}
+
+\subsection*{Resumen}
+\begin{itemize}
+  \item En \textbf{fase gaseosa}: nombre de tipo \emph{halogenuro de hidrógeno}.  
+  \item En \textbf{fase acuosa}: nombre de tipo \emph{ácido hídrico}.  
+\end{itemize}
+\section*{Sales binarias con metales}
+
+Las \textbf{sales binarias} son compuestos iónicos formados por un metal y un no metal (radical simple). 
+Su fórmula general es:
+
+\[
+\ce{M_x X_y}
+\]
+
+donde \(\ce{M}\) representa el metal con carga positiva (catión) y \(\ce{X}\) el radical simple con carga negativa (anión).
+
+\subsection*{Formación}
+Ejemplos típicos de reacciones de formación:
+
+\begin{align*}
+\ce{2Na (s) + Cl2 (g) &-> 2NaCl (s)} \\
+\ce{Fe (s) + S (s) &-> FeS (s)} \\
+\ce{Ca (s) + Cl2 (g) &-> CaCl2 (s)} 
+\end{align*}
+
+\subsection*{Nombrado (sistema de Stock)}
+\begin{itemize}
+  \item Si el metal presenta \textbf{varias valencias}, se debe indicar con números romanos.
+  \item Si el metal presenta \textbf{una única valencia}, no se indica número romano.
+\end{itemize}
+
+\subsubsection*{Ejemplos donde se usa Stock}
+\begin{itemize}
+  \item \ce{FeCl2}: cloruro de hierro (II).
+  \item \ce{FeCl3}: cloruro de hierro (III).
+  \item \ce{CuCl}: cloruro de cobre (I).
+  \item \ce{CuCl2}: cloruro de cobre (II).
+  \item \ce{SnS2}: sulfuro de estaño (IV).
+\end{itemize}
+
+\subsubsection*{Ejemplos donde no se usa Stock}
+\begin{itemize}
+  \item \ce{NaCl}: cloruro de sodio (\(Na\) siempre \(+1\)).
+  \item \ce{KBr}: bromuro de potasio (\(K\) siempre \(+1\)).
+  \item \ce{CaCl2}: cloruro de calcio (\(Ca\) siempre \(+2\)).
+  \item \ce{MgO}: óxido de magnesio (\(Mg\) siempre \(+2\)).
+  \item \ce{AgCl}: cloruro de plata (\(Ag\) casi siempre \(+1\)).
+\end{itemize}
+
+\subsection*{Observaciones}
+\begin{itemize}
+  \item El subíndice en la fórmula se ajusta para que la suma de cargas positivas y negativas sea igual a cero.
+  \item Ejemplo: en \(\ce{CaCl2}\), el \(Ca^{2+}\) requiere 2 aniones \(Cl^-\) para neutralizar la carga.
+  \item Muchas sales binarias son \textbf{electrolitos} en disolución acuosa.
+\end{itemize}
+\newpage
+\section*{Óxidos no metálicos y sistema estequiométrico}
+
+Los \textbf{óxidos no metálicos}, también llamados \textbf{anhídridos}, son compuestos formados por un no metal y oxígeno.  
+Su fórmula general es:
+
+\[
+\ce{X_x O_y}
+\]
+
+donde \(\ce{X}\) es un no metal y \(\ce{O}\) el oxígeno.
+
+\subsection*{Formación (reacciones típicas)}
+\begin{align*}
+\ce{C (s) + O2 (g) &-> CO2 (g)} \\
+\ce{2N2 (g) + O2 (g) &-> 2N2O (g)} \\
+\ce{2SO2 (g) + O2 (g) &-> 2SO3 (g)}
+\end{align*}
+
+\subsection*{Nomenclatura: sistema estequiométrico}
+En el caso de los óxidos no metálicos se utiliza el \textbf{sistema estequiométrico}, que emplea \textbf{prefijos griegos} para indicar la proporción de átomos en la fórmula.
+
+\begin{itemize}
+  \item \textbf{Mono-} (1)
+  \item \textbf{Di-} (2)
+  \item \textbf{Tri-} (3)
+  \item \textbf{Tetra-} (4)
+  \item \textbf{Penta-} (5)
+  \item \textbf{Hexa-} (6)
+  \item \textbf{Hepta-} (7)
+  \item \textbf{Octa-} (8)
+\end{itemize}
+
+\textbf{Reglas:}
+\begin{enumerate}
+  \item Se nombran como \emph{óxido} seguido del prefijo y el nombre del no metal.
+  \item El prefijo \textbf{mono-} solo se utiliza en el segundo elemento (ejemplo: monóxido de carbono, no “monoóxido”).
+  \item Si el nombre resultante tiene dos vocales seguidas, se suele eliminar una (ejemplo: monóxido, no “monoóxido”).
+\end{enumerate}
+
+\subsection*{Ejemplos}
+\begin{itemize}
+  \item \(\ce{CO}\): monóxido de carbono.
+  \item \(\ce{CO2}\): dióxido de carbono.
+  \item \(\ce{SO2}\): dióxido de azufre.
+  \item \(\ce{SO3}\): trióxido de azufre.
+  \item \(\ce{N2O}\): monóxido de dinitrógeno (óxido nitroso).
+  \item \(\ce{N2O5}\): pentóxido de dinitrógeno.
+  \item \(\ce{P2O5}\): pentóxido de difósforo.
+  \item \(\ce{Cl2O7}\): heptóxido de dicloro.
+\end{itemize}
+
+\subsection*{Observaciones}
+\begin{itemize}
+  \item Muchos óxidos no metálicos reaccionan con agua para formar \textbf{oxácidos}.  
+  Ejemplo: \(\ce{SO3 + H2O -> H2SO4}\).
+  \item Algunos óxidos no metálicos son contaminantes atmosféricos importantes (\(\ce{SO2}\), \(\ce{NO2}\)).
+\end{itemize}
+\section*{Sales binarias entre no metales y radicales simples}
+
+Las \textbf{sales binarias entre no metales y radicales simples} son compuestos iónicos o covalentes en los cuales un \textbf{no metal} actúa como catión o anión, combinándose con otro no metal en forma de radical simple.
+
+\subsection*{Formación}
+\begin{align*}
+\ce{NH3 (g) + HCl (g) &-> NH4Cl (s)} \quad &\text{(cloruro de amonio)} \\
+\ce{N2 (g) + O2 (g) &-> 2NO (g)} \quad &\text{(monóxido de nitrógeno)} 
+\end{align*}
+
+\subsection*{Tipos principales}
+\begin{itemize}
+  \item \textbf{Sales de amonio:} el radical \(\ce{NH4^+}\) (amonio) se combina con haluros o sulfuros.  
+    Ejemplos:
+    \begin{itemize}
+      \item \(\ce{NH4Cl}\): cloruro de amonio.
+      \item \(\ce{(NH4)2S}\): sulfuro de amonio.
+    \end{itemize}
+
+  \item \textbf{Halogenuros de no metales:} un no metal se combina con radicales halógenos.  
+    Ejemplos:
+    \begin{itemize}
+      \item \(\ce{PCl3}\): tricloruro de fósforo.
+      \item \(\ce{PCl5}\): pentacloruro de fósforo.
+      \item \(\ce{SF6}\): hexafluoruro de azufre.
+    \end{itemize}
+
+  \item \textbf{Nitruros y sulfuros no metálicos:} el nitrógeno o azufre se enlaza directamente con otros no metales.  
+    Ejemplos:
+    \begin{itemize}
+      \item \(\ce{C3N4}\): tetranitruro de tricarbono.
+      \item \(\ce{CS2}\): disulfuro de carbono.
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Nomenclatura}
+En la mayoría de estos compuestos se aplica el \textbf{sistema estequiométrico}, indicando el número de átomos mediante prefijos griegos.
+
+\subsubsection*{Ejemplos}
+\begin{itemize}
+  \item \(\ce{NCl3}\): tricloruro de nitrógeno.
+  \item \(\ce{PBr3}\): tribromuro de fósforo.
+  \item \(\ce{AsF5}\): pentafluoruro de arsénico.
+\end{itemize}
+
+\subsection*{Observaciones}
+\begin{itemize}
+  \item En compuestos como \(\ce{NH4Cl}\), aunque el amonio contiene un no metal, el radical \(\ce{NH4^+}\) se comporta como un “metal” por su carácter catiónico.
+  \item Los halogenuros de no metales suelen ser volátiles y muchos son precursores de \textbf{oxácidos} al reaccionar con agua (ejemplo: \(\ce{PCl5 + H2O -> H3PO4 + HCl}\)).
+\end{itemize}
+\newpage
+\section*{Obtención de números de oxidación}
+
+El \textbf{número de oxidación} (N.O.) de un elemento en un compuesto indica la carga real o aparente que tendría si los electrones se asignaran siguiendo reglas de electronegatividad.  
+
+\subsection*{Regla general}
+La suma de todos los números de oxidación en una molécula o ion debe ser igual a:
+\[
+\text{Carga total del compuesto o ion}
+\]
+
+\begin{itemize}
+  \item En moléculas neutras: la suma de N.O. = \(0\).
+  \item En iones: la suma de N.O. = carga del ion.
+\end{itemize}
+
+\subsection*{Ejemplo 1: \(\ce{KMnO4}\)}
+Se sabe que:
+\begin{itemize}
+  \item El potasio (\(\ce{K}\)) siempre es \(+1\).
+  \item El oxígeno (\(\ce{O}\)) usualmente es \(-2\).
+\end{itemize}
+
+Planteamos la ecuación:
+\[
+(+1) + (x) + 4(-2) = 0
+\]
+\[
++1 + x - 8 = 0 \quad \Rightarrow \quad x = +7
+\]
+
+Por lo tanto:
+\[
+\ce{K^{+1}Mn^{+7}O4^{2-}}
+\]
+
+\subsection*{Ejemplo 2: \(\ce{Na2SO4}\)}
+Se sabe que:
+\begin{itemize}
+  \item El sodio (\(\ce{Na}\)) es \(+1\).
+  \item El oxígeno (\(\ce{O}\)) es \(-2\).
+\end{itemize}
+
+Planteamos:
+\[
+2(+1) + (x) + 4(-2) = 0
+\]
+\[
++2 + x - 8 = 0 \quad \Rightarrow \quad x = +6
+\]
+
+Por lo tanto:
+\[
+\ce{Na^{+1}2S^{+6}O4^{2-}}
+\]
+
+\subsection*{Ejemplo 3: \(\ce{SO4^{2-}}\)}
+\[
+(x) + 4(-2) = -2
+\]
+\[
+x - 8 = -2 \quad \Rightarrow \quad x = +6
+\]
+
+\(\therefore\) El azufre tiene N.O. \(+6\).
+
+\subsection*{Ejemplo 4: \(\ce{NH4^+}\)}
+Se sabe que:
+\begin{itemize}
+  \item El hidrógeno (\(\ce{H}\)) es \(+1\).
+\end{itemize}
+
+Planteamos:
+\[
+(x) + 4(+1) = +1
+\]
+\[
+x + 4 = +1 \quad \Rightarrow \quad x = -3
+\]
+
+Por lo tanto:
+\[
+\ce{N^{-3}H4^{+1}}
+\]
+
+\subsection*{Ejemplo 5: \(\ce{Cr2O7^{2-}}\)}
+\[
+2(x) + 7(-2) = -2
+\]
+\[
+2x - 14 = -2 \quad \Rightarrow \quad 2x = +12 \quad \Rightarrow \quad x = +6
+\]
+
+El cromo tiene N.O. \(+6\).
+
+\subsection*{Ejemplo 6: \(\ce{H2O2}\) (peróxido de hidrógeno)}
+\[
+2(+1) + 2(x) = 0
+\]
+\[
++2 + 2x = 0 \quad \Rightarrow \quad x = -1
+\]
+
+Aquí el oxígeno tiene N.O. \(-1\) (caso especial de los peróxidos).
+\newpage
+\section*{Tipos de reacciones químicas}
+
+Las reacciones químicas se pueden clasificar de diversas formas. Una de las clasificaciones más comunes es según el \textbf{proceso que ocurre entre los reactivos y productos}.  
+
+\subsection*{1. Reacciones de combinación o síntesis}
+Dos o más sustancias se combinan para formar un solo producto.  
+\[
+\ce{A + B -> AB}
+\]
+
+\textbf{Ejemplos:}
+\begin{align*}
+\ce{2H2 (g) + O2 (g) &-> 2H2O (l)} \\
+\ce{2Na (s) + Cl2 (g) &-> 2NaCl (s)}
+\end{align*}
+
+\subsection*{2. Reacciones de descomposición}
+Una sola sustancia se descompone en dos o más productos. Generalmente requieren energía (calor, electricidad o luz).  
+\[
+\ce{AB -> A + B}
+\]
+
+\textbf{Ejemplos:}
+\begin{align*}
+\ce{2H2O2 (ac) ->[MnO2] 2H2O (l) + O2 (g)} \\
+\ce{CaCO3 (s) ->[\Delta] CaO (s) + CO2 (g)}
+\end{align*}
+
+\subsection*{3. Reacciones de desplazamiento simple (sustitución)}
+Un elemento libre reemplaza a otro en un compuesto.  
+\[
+\ce{A + BC -> AC + B}
+\]
+
+\textbf{Ejemplos:}
+\begin{align*}
+\ce{Zn (s) + 2HCl (ac) -> ZnCl2 (ac) + H2 (g)} \\
+\ce{Cl2 (g) + 2NaBr (ac) -> 2NaCl (ac) + Br2 (l)}
+\end{align*}
+
+\subsection*{4. Reacciones de doble desplazamiento (metátesis)}
+Ocurre un intercambio de iones entre dos compuestos en disolución acuosa.  
+\[
+\ce{AB + CD -> AD + CB}
+\]
+
+\textbf{Ejemplos:}
+\begin{align*}
+\ce{AgNO3 (ac) + NaCl (ac) &-> AgCl (s) + NaNO3 (ac)} \\
+\ce{BaCl2 (ac) + Na2SO4 (ac) &-> BaSO4 (s) + 2NaCl (ac)}
+\end{align*}
+
+\subsection*{Observaciones}
+\begin{itemize}
+  \item En las reacciones de \textbf{doble desplazamiento}, muchas veces uno de los productos es insoluble y precipita.
+  \item Las de \textbf{desplazamiento simple} dependen de la serie de reactividad del metal o no metal.
+  \item Las de \textbf{descomposición} suelen requerir aporte de energía externa.
+\end{itemize}
+\section*{Clasificación energética y especial de reacciones químicas}
+
+Además de su clasificación estructural, las reacciones químicas se pueden dividir de acuerdo al \textbf{intercambio de energía} y a las \textbf{características del proceso}.
+
+\subsection*{1. Reacciones endotérmicas}
+Son aquellas que \textbf{absorben energía} del medio, generalmente en forma de calor.  
+\[
+\ce{A + B +   [\Delta]  -> C}
+\]
+
+\textbf{Ejemplos:}
+\begin{align*}
+\ce{N2 (g) + O2 (g) ->[ \Delta ] 2NO (g)} \\
+\ce{CaCO3 (s) ->[ \Delta ] CaO (s) + CO2 (g)}
+\end{align*}
+
+\subsection*{2. Reacciones exotérmicas}
+Son aquellas que \textbf{liberan energía} al medio, en forma de calor, luz o sonido.  
+\[
+\ce{A + B -> C + \Delta}
+\]
+
+\textbf{Ejemplos:}
+\begin{align*}
+\ce{2H2 (g) + O2 (g) -> 2H2O (l) + \Delta} \\
+\ce{CH4 (g) + 2O2 (g) -> CO2 (g) + 2H2O (g) + \Delta}
+\end{align*}
+
+\subsection*{3. Reacciones de combustión}
+Son reacciones de \textbf{oxidación rápida} en las que una sustancia (generalmente un hidrocarburo) reacciona con oxígeno, liberando una gran cantidad de energía.  
+
+\textbf{Ejemplos:}
+\begin{align*}
+\ce{CH4 (g) + 2O2 (g) -> CO2 (g) + 2H2O (g) + \Delta} \\
+\ce{C3H8 (g) + 5O2 (g) -> 3CO2 (g) + 4H2O (g) + \Delta}
+\end{align*}
+
+\subsection*{4. Reacciones de precipitación}
+Ocurren en disolución acuosa cuando la combinación de dos reactivos produce un \textbf{compuesto insoluble} que se separa como sólido (precipitado).  
+
+\textbf{Ejemplos:}
+\begin{align*}
+\ce{AgNO3 (ac) + NaCl (ac) -> AgCl (s) v + NaNO3 (ac)} \\
+\ce{BaCl2 (ac) + Na2SO4 (ac) -> BaSO4 (s) v + 2NaCl (ac)}
+\end{align*}
+
+\subsection*{Observaciones}
+\begin{itemize}
+  \item En las endotérmicas, el sistema \textbf{absorbe calor} y la temperatura del entorno puede disminuir.
+  \item En las exotérmicas, el sistema \textbf{libera calor} y la temperatura del entorno aumenta.
+  \item La combustión es un caso especial de reacción \textbf{altamente exotérmica}.
+  \item Las reacciones de precipitación son muy utilizadas en química analítica para identificar iones en solución.
+\end{itemize}
+\section*{Clasificación de compuestos binarios, ternarios y cuaternarios}
+
+Los compuestos químicos se pueden clasificar según el número de \textbf{elementos diferentes} que los forman.  
+Un truco práctico es contar las \textbf{mayúsculas} en la fórmula química (cada mayúscula representa el símbolo de un elemento nuevo).  
+
+\subsection*{1. Compuestos binarios}
+Están formados por \textbf{dos elementos diferentes}.  
+\[
+\ce{AB}
+\]
+
+\textbf{Ejemplos:}
+\begin{itemize}
+  \item \(\ce{NaCl}\) → sodio (Na) y cloro (Cl).
+  \item \(\ce{H2O}\) → hidrógeno (H) y oxígeno (O).
+  \item \(\ce{CO2}\) → carbono (C) y oxígeno (O).
+\end{itemize}
+
+\subsection*{2. Compuestos ternarios}
+Están formados por \textbf{tres elementos diferentes}.  
+\[
+\ce{ABC}
+\]
+
+\textbf{Ejemplos:}
+\begin{itemize}
+  \item \(\ce{Na2SO4}\) → sodio (Na), azufre (S) y oxígeno (O).
+  \item \(\ce{CaCO3}\) → calcio (Ca), carbono (C) y oxígeno (O).
+  \item \(\ce{H2SO4}\) → hidrógeno (H), azufre (S) y oxígeno (O).
+\end{itemize}
+
+\subsection*{3. Compuestos cuaternarios}
+Están formados por \textbf{cuatro elementos diferentes}.  
+\[
+\ce{ABCD}
+\]
+
+\textbf{Ejemplos:}
+\begin{itemize}
+  \item \(\ce{KClO3}\) → potasio (K), cloro (Cl) y oxígeno (O).  
+  Nota: aquí parecen tres, pero si la fórmula fuera \(\ce{NaHSO4}\), ya tendríamos cuatro: sodio (Na), hidrógeno (H), azufre (S) y oxígeno (O).
+  \item \(\ce{NaHCO3}\) → sodio (Na), hidrógeno (H), carbono (C) y oxígeno (O).
+\end{itemize}
+
+\subsection*{Excepciones y observaciones}
+\begin{itemize}
+  \item \textbf{Poliatómicos con subíndices}: aunque el oxígeno aparezca varias veces (\(\ce{O3}\), \(\ce{O4}\)), se cuenta una sola vez porque es el mismo elemento.
+  \item \textbf{Iones poliatómicos}: al ver un grupo como \(\ce{SO4^{2-}}\), ya hay 2 elementos: S y O.
+  \item \textbf{Compuestos mayores}: existen compuestos con 5 o más elementos (pentaelementales, etc.), pero son menos comunes en cursos introductorios.
+\end{itemize}
+\section*{Práctica de nomenclatura (I): De la \emph{fórmula} al \emph{nombre}}
+\textbf{Instrucciones.} Nombre cada compuesto. Use: (a) \textit{Stock} en compuestos con metales multivalentes, (b) \textit{estequiométrico} en óxidos no metálicos y halogenuros covalentes, (c) reglas de \textit{hidrácidos} según fase: \(\ce{(g)}\) = halogenuro de hidrógeno; \(\ce{(ac)}\) = ácido \dots hídrico.
+
+\subsection*{A. Óxidos metálicos}
+\begin{enumerate}
+  \item \ce{FeO}
+  \item \ce{Fe2O3}
+  \item \ce{Cu2O}
+  \item \ce{CuO}
+  \item \ce{SnO2}
+  \item \ce{PbO2}
+\end{enumerate}
+
+\subsection*{B. Óxidos no metálicos (anhídridos) — sistema estequiométrico}
+\begin{enumerate}\setcounter{enumi}{6}
+  \item \ce{CO}
+  \item \ce{CO2}
+  \item \ce{SO2}
+  \item \ce{SO3}
+  \item \ce{N2O5}
+  \item \ce{Cl2O7}
+\end{enumerate}
+
+\subsection*{C. Hidruros}
+\begin{enumerate}\setcounter{enumi}{12}
+  \item \ce{NaH}
+  \item \ce{CaH2}
+  \item \ce{FeH2}
+  \item \ce{CuH2}
+  \item \ce{AlH3}
+\end{enumerate}
+
+\subsection*{D. Hidróxidos}
+\begin{enumerate}\setcounter{enumi}{17}
+  \item \ce{NaOH}
+  \item \ce{Ca(OH)2}
+  \item \ce{Fe(OH)3}
+  \item \ce{Cu(OH)2}
+  \item \ce{Al(OH)3}
+\end{enumerate}
+
+\subsection*{E. Hidrácidos}
+\begin{enumerate}\setcounter{enumi}{22}
+  \item \ce{HCl (g)}
+  \item \ce{HCl (ac)}
+  \item \ce{HBr (ac)}
+  \item \ce{HF (ac)}
+  \item \ce{HI (ac)}
+  \item \ce{H2S (ac)}
+\end{enumerate}
+
+\subsection*{F. Sales binarias con metales}
+\begin{enumerate}\setcounter{enumi}{28}
+  \item \ce{FeCl2}
+  \item \ce{FeCl3}
+  \item \ce{CuCl}
+  \item \ce{CuCl2}
+  \item \ce{AgCl}
+  \item \ce{ZnS}
+  \item \ce{FeS}
+  \item \ce{PbS}
+  \item \ce{Ca3P2}
+  \item \ce{Mg3N2}
+  \item \ce{Hg2Cl2}
+  \item \ce{HgCl2}
+\end{enumerate}
+
+\subsection*{G. Sales / compuestos entre no metales y radicales simples}
+\begin{enumerate}\setcounter{enumi}{40}
+  \item \ce{NH4Cl}
+  \item \ce{(NH4)2S}
+  \item \ce{NCl3}
+  \item \ce{PCl5}
+  \item \ce{SF6}
+  \item \ce{CCl4}
+\end{enumerate}
+\section*{Práctica de nomenclatura (II): Del \emph{nombre} a la \emph{fórmula}}
+\textbf{Instrucciones.} Escriba la fórmula correcta. Indique estados \((g)\) o \((ac)\) en hidrácidos cuando corresponda.
+
+\subsection*{A. Óxidos metálicos}
+\begin{enumerate}
+  \item Óxido de hierro (II)
+  \item Óxido de hierro (III)
+  \item Óxido de cobre (I)
+  \item Óxido de cobre (II)
+  \item Óxido de estaño (IV)
+  \item Dióxido de manganeso
+\end{enumerate}
+
+\subsection*{B. Óxidos no metálicos (anhídridos) — sistema estequiométrico}
+\begin{enumerate}\setcounter{enumi}{6}
+  \item Monóxido de carbono
+  \item Dióxido de carbono
+  \item Dióxido de azufre
+  \item Trióxido de azufre
+  \item Pentóxido de dinitrógeno
+  \item Heptóxido de dicloro
+\end{enumerate}
+
+\subsection*{C. Hidruros}
+\begin{enumerate}\setcounter{enumi}{12}
+  \item Hidruro de sodio
+  \item Hidruro de calcio
+  \item Hidruro de hierro (II)
+  \item Hidruro de cobre (II)
+  \item Hidruro de aluminio
+\end{enumerate}
+
+\subsection*{D. Hidróxidos}
+\begin{enumerate}\setcounter{enumi}{17}
+  \item Hidróxido de sodio
+  \item Hidróxido de calcio
+  \item Hidróxido de hierro (III)
+  \item Hidróxido de cobre (II)
+  \item Hidróxido de aluminio
+\end{enumerate}
+
+\subsection*{E. Hidrácidos}
+\begin{enumerate}\setcounter{enumi}{22}
+  \item Cloruro de hidrógeno (g)
+  \item Ácido clorhídrico (ac)
+  \item Ácido fluorhídrico
+  \item Ácido bromhídrico
+  \item Ácido yodhídrico
+  \item Ácido sulfhídrico
+\end{enumerate}
+
+\subsection*{F. Sales binarias con metales}
+\begin{enumerate}\setcounter{enumi}{28}
+  \item Cloruro de hierro (II)
+  \item Cloruro de hierro (III)
+  \item Cloruro de cobre (I)
+  \item Cloruro de cobre (II)
+  \item Cloruro de plata
+  \item Sulfuro de zinc
+  \item Sulfuro de hierro (II)
+  \item Sulfuro de plomo (II)
+  \item Fosfuro de calcio
+  \item Nitruro de magnesio
+  \item Cloruro de mercurio (I)
+  \item Cloruro de mercurio (II)
+\end{enumerate}
+
+\subsection*{G. Sales / compuestos entre no metales y radicales simples}
+\begin{enumerate}\setcounter{enumi}{40}
+  \item Cloruro de amonio
+  \item Sulfuro de amonio
+  \item Tricloruro de nitrógeno
+  \item Pentacloruro de fósforo
+  \item Hexafluoruro de azufre
+  \item Tetracloruro de carbono
+\end{enumerate}
+\section*{Soluciones de la práctica de nomenclatura}
+
+\subsection*{Criterios rápidos}
+
+
+
+\begin{itemize}
+  \item \textbf{Stock} (número romano) $\Rightarrow$ metales con varias valencias: \ce{Fe, Cu, Sn, Pb, Hg}, \ldots
+  \item \textbf{Estequiométrico} (prefijos) $\Rightarrow$ óxidos no metálicos y halogenuros (haluros) covalentes: mono-, di-, tri-, tetra-, penta-, hexa-, hepta-, octa-.
+  \item \textbf{Hidrácidos:} \ce{HX(g)} = halogenuro de hidrógeno; \ce{HX(ac)} = ácido \textit{(raíz)}-hídrico \,(p.\,ej., \ce{HCl(ac)}: ácido clorhídrico).
+\end{itemize}
+
+
+% ============================
+% PARTE I: Fórmula -> Nombre
+% ============================
+\section*{Soluciones (I): De la \emph{fórmula} al \emph{nombre}}
+
+\subsection*{A. Óxidos metálicos}
+\begin{enumerate}
+  \item \ce{FeO} \quad \(\to\) \textbf{óxido de hierro (II)} \, [Stock]
+  \item \ce{Fe2O3} \quad \(\to\) \textbf{óxido de hierro (III)} \, [Stock]
+  \item \ce{Cu2O} \quad \(\to\) \textbf{óxido de cobre (I)} \, [Stock]
+  \item \ce{CuO} \quad \(\to\) \textbf{óxido de cobre (II)} \, [Stock]
+  \item \ce{SnO2} \quad \(\to\) \textbf{óxido de estaño (IV)} \, [Stock]
+  \item \ce{PbO2} \quad \(\to\) \textbf{óxido de plomo (IV)} \, [Stock]
+\end{enumerate}
+
+\subsection*{B. Óxidos no metálicos (anhídridos) — sistema estequiométrico}
+\begin{enumerate}\setcounter{enumi}{6}
+  \item \ce{CO} \quad \(\to\) \textbf{monóxido de carbono}
+  \item \ce{CO2} \quad \(\to\) \textbf{dióxido de carbono}
+  \item \ce{SO2} \quad \(\to\) \textbf{dióxido de azufre}
+  \item \ce{SO3} \quad \(\to\) \textbf{trióxido de azufre}
+  \item \ce{N2O5} \quad \(\to\) \textbf{pentóxido de dinitrógeno}
+  \item \ce{Cl2O7} \quad \(\to\) \textbf{heptóxido de dicloro}
+\end{enumerate}
+
+\subsection*{C. Hidruros}
+\begin{enumerate}\setcounter{enumi}{12}
+  \item \ce{NaH} \quad \(\to\) \textbf{hidruro de sodio} \, [única valencia]
+  \item \ce{CaH2} \quad \(\to\) \textbf{hidruro de calcio} \, [única valencia]
+  \item \ce{FeH2} \quad \(\to\) \textbf{hidruro de hierro (II)} \, [Stock]
+  \item \ce{CuH2} \quad \(\to\) \textbf{hidruro de cobre (II)} \, [Stock]
+  \item \ce{AlH3} \quad \(\to\) \textbf{hidruro de aluminio} \, [única valencia común]
+\end{enumerate}
+
+\subsection*{D. Hidróxidos}
+\begin{enumerate}\setcounter{enumi}{17}
+  \item \ce{NaOH} \quad \(\to\) \textbf{hidróxido de sodio}
+  \item \ce{Ca(OH)2} \quad \(\to\) \textbf{hidróxido de calcio}
+  \item \ce{Fe(OH)3} \quad \(\to\) \textbf{hidróxido de hierro (III)} \, [Stock]
+  \item \ce{Cu(OH)2} \quad \(\to\) \textbf{hidróxido de cobre (II)} \, [Stock]
+  \item \ce{Al(OH)3} \quad \(\to\) \textbf{hidróxido de aluminio}
+\end{enumerate}
+
+\subsection*{E. Hidrácidos}
+\begin{enumerate}\setcounter{enumi}{22}
+  \item \ce{HCl (g)} \quad \(\to\) \textbf{cloruro de hidrógeno} \, [fase gaseosa]
+  \item \ce{HCl (ac)} \quad \(\to\) \textbf{ácido clorhídrico} \, [disolución acuosa]
+  \item \ce{HBr (ac)} \quad \(\to\) \textbf{ácido bromhídrico}
+  \item \ce{HF (ac)} \quad \(\to\) \textbf{ácido fluorhídrico}
+  \item \ce{HI (ac)} \quad \(\to\) \textbf{ácido yodhídrico}
+  \item \ce{H2S (ac)} \quad \(\to\) \textbf{ácido sulfhídrico}
+\end{enumerate}
+
+\subsection*{F. Sales binarias con metales}
+\begin{enumerate}\setcounter{enumi}{28}
+  \item \ce{FeCl2} \(\to\) \textbf{cloruro de hierro (II)} \, [Stock]
+  \item \ce{FeCl3} \(\to\) \textbf{cloruro de hierro (III)} \, [Stock]
+  \item \ce{CuCl} \(\to\) \textbf{cloruro de cobre (I)} \, [Stock]
+  \item \ce{CuCl2} \(\to\) \textbf{cloruro de cobre (II)} \, [Stock]
+  \item \ce{AgCl} \(\to\) \textbf{cloruro de plata}
+  \item \ce{ZnS} \(\to\) \textbf{su\-lfuro de zinc}
+  \item \ce{FeS} \(\to\) \textbf{su\-lfuro de hierro (II)} \, [Stock]
+  \item \ce{PbS} \(\to\) \textbf{su\-lfuro de plomo (II)} \, [Stock]
+  \item \ce{Ca3P2} \(\to\) \textbf{fosfuro de calcio}
+  \item \ce{Mg3N2} \(\to\) \textbf{nitruro de magnesio}
+  \item \ce{Hg2Cl2} \(\to\) \textbf{cloruro de mercurio (I)} \, [Stock]
+  \item \ce{HgCl2} \(\to\) \textbf{cloruro de mercurio (II)} \, [Stock]
+\end{enumerate}
+
+\subsection*{G. Sales / compuestos entre no metales y radicales simples}
+\begin{enumerate}\setcounter{enumi}{40}
+  \item \ce{NH4Cl} \(\to\) \textbf{cloruro de amonio}
+  \item \ce{(NH4)2S} \(\to\) \textbf{su\-lfuro de amonio}
+  \item \ce{NCl3} \(\to\) \textbf{tricloruro de nitrógeno} \, [estequiométrico]
+  \item \ce{PCl5} \(\to\) \textbf{pentacloruro de fósforo} \, [estequiométrico]
+  \item \ce{SF6} \(\to\) \textbf{hexafluoruro de azufre} \, [estequiométrico]
+  \item \ce{CCl4} \(\to\) \textbf{tetracloruro de carbono} \, [estequiométrico]
+\end{enumerate}
+
+% ============================
+% PARTE II: Nombre -> Fórmula
+% ============================
+\section*{Soluciones (II): Del \emph{nombre} a la \emph{fórmula}}
+
+\subsection*{A. Óxidos metálicos}
+\begin{enumerate}
+  \item Óxido de hierro (II) \(\to\) \ce{FeO}
+  \item Óxido de hierro (III) \(\to\) \ce{Fe2O3}
+  \item Óxido de cobre (I) \(\to\) \ce{Cu2O}
+  \item Óxido de cobre (II) \(\to\) \ce{CuO}
+  \item Óxido de estaño (IV) \(\to\) \ce{SnO2}
+  \item Dióxido de manganeso \(\to\) \ce{MnO2}
+\end{enumerate}
+
+\subsection*{B. Óxidos no metálicos (anhídridos) — sistema estequiométrico}
+\begin{enumerate}\setcounter{enumi}{6}
+  \item Monóxido de carbono \(\to\) \ce{CO}
+  \item Dióxido de carbono \(\to\) \ce{CO2}
+  \item Dióxido de azufre \(\to\) \ce{SO2}
+  \item Trióxido de azufre \(\to\) \ce{SO3}
+  \item Pentóxido de dinitrógeno \(\to\) \ce{N2O5}
+  \item Heptóxido de dicloro \(\to\) \ce{Cl2O7}
+\end{enumerate}
+
+\subsection*{C. Hidruros}
+\begin{enumerate}\setcounter{enumi}{12}
+  \item Hidruro de sodio \(\to\) \ce{NaH}
+  \item Hidruro de calcio \(\to\) \ce{CaH2}
+  \item Hidruro de hierro (II) \(\to\) \ce{FeH2}
+  \item Hidruro de cobre (II) \(\to\) \ce{CuH2}
+  \item Hidruro de aluminio \(\to\) \ce{AlH3}
+\end{enumerate}
+
+\subsection*{D. Hidróxidos}
+\begin{enumerate}\setcounter{enumi}{17}
+  \item Hidróxido de sodio \(\to\) \ce{NaOH}
+  \item Hidróxido de calcio \(\to\) \ce{Ca(OH)2}
+  \item Hidróxido de hierro (III) \(\to\) \ce{Fe(OH)3}
+  \item Hidróxido de cobre (II) \(\to\) \ce{Cu(OH)2}
+  \item Hidróxido de aluminio \(\to\) \ce{Al(OH)3}
+\end{enumerate}
+
+\subsection*{E. Hidrácidos}
+\begin{enumerate}\setcounter{enumi}{22}
+  \item Cloruro de hidrógeno (g) \(\to\) \ce{HCl (g)}
+  \item Ácido clorhídrico (ac) \(\to\) \ce{HCl (ac)}
+  \item Ácido fluorhídrico \(\to\) \ce{HF (ac)}
+  \item Ácido bromhídrico \(\to\) \ce{HBr (ac)}
+  \item Ácido yodhídrico \(\to\) \ce{HI (ac)}
+  \item Ácido sulfhídrico \(\to\) \ce{H2S (ac)}
+\end{enumerate}
+
+\subsection*{F. Sales binarias con metales}
+\begin{enumerate}\setcounter{enumi}{28}
+  \item Cloruro de hierro (II) \(\to\) \ce{FeCl2}
+  \item Cloruro de hierro (III) \(\to\) \ce{FeCl3}
+  \item Cloruro de cobre (I) \(\to\) \ce{CuCl}
+  \item Cloruro de cobre (II) \(\to\) \ce{CuCl2}
+  \item Cloruro de plata \(\to\) \ce{AgCl}
+  \item Sulfuro de zinc \(\to\) \ce{ZnS}
+  \item Sulfuro de hierro (II) \(\to\) \ce{FeS}
+  \item Sulfuro de plomo (II) \(\to\) \ce{PbS}
+  \item Fosfuro de calcio \(\to\) \ce{Ca3P2}
+  \item Nitruro de magnesio \(\to\) \ce{Mg3N2}
+  \item Cloruro de mercurio (I) \(\to\) \ce{Hg2Cl2}
+  \item Cloruro de mercurio (II) \(\to\) \ce{HgCl2}
+\end{enumerate}
+
+\subsection*{G. Sales / compuestos entre no metales y radicales simples}
+\begin{enumerate}\setcounter{enumi}{40}
+  \item Cloruro de amonio \(\to\) \ce{NH4Cl}
+  \item Sulfuro de amonio \(\to\) \ce{(NH4)2S}
+  \item Tricloruro de nitrógeno \(\to\) \ce{NCl3}
+  \item Pentacloruro de fósforo \(\to\) \ce{PCl5}
+  \item Hexafluoruro de azufre \(\to\) \ce{SF6}
+  \item Tetracloruro de carbono \(\to\) \ce{CCl4}
+\end{enumerate}
+
+% ===== Mini-ejemplo con justificación detallada =====
+\subsection*{Ejemplos con justificación (modelo de solución paso a paso)}
+\textbf{Ejemplo: \ce{Fe2O3}.} El oxígeno es \(-2\) y hay 3 oxígenos: \(-6\). Para neutralidad total, el hierro suma \(+6\) en 2 átomos \(\Rightarrow\) cada Fe es \(+3\). Nombre: \emph{óxido de hierro (III)} [Stock].\\
+\textbf{Ejemplo: \ce{Cl2O7}.} Hay 2 cloros y 7 oxígenos. En óxidos no metálicos se usa \emph{estequiométrico}: \emph{heptóxido de dicloro}.
+\newpage
+\begin{landscape}
+\section*{Práctica: tipos de reacciones y clasificación \\ 
+(binario/ternario/cuaternario)}
+
+\textbf{Instrucciones.} Para cada ecuación:
+
+\begin{enumerate}
+  \item Identifique el \textbf{tipo de reacción}: \emph{combinación (síntesis), descomposición, desplazamiento simple, doble desplazamiento, combustión} o \emph{precipitación} (si corresponde).
+  \item Clasifique el \textbf{compuesto destacado} (\(\boxed{\phantom{XX}}\)) como \textbf{binario}, \textbf{ternario} o \textbf{cuaternario}, según la cantidad de \emph{elementos distintos} que contiene.
+\end{enumerate}
+
+\footnotesize
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{@{}cllccl@{}}
+\toprule
+\# & Ecuación & Compuesto destacado & Tipo de reacción & Clasif. & Nota \\
+\midrule
+1  & \(\ce{2H2 + O2 -> 2H2O}\) & \(\boxed{\ce{H2O}}\) & \rule{2.8cm}{0.15mm} & \rule{2.5cm}{0.15mm} & \\
+2  & \(\ce{CaCO3 -> CaO + CO2}\) & \(\boxed{\ce{CaCO3}}\) & \rule{2.8cm}{0.15mm} & \rule{2.5cm}{0.15mm} & \\
+3  & \(\ce{Zn + 2HCl -> ZnCl2 + H2}\) & \(\boxed{\ce{ZnCl2}}\) & \rule{2.8cm}{0.15mm} & \rule{2.5cm}{0.15mm} & \\
+4  & \(\ce{AgNO3 + NaCl -> AgCl v + NaNO3}\) & \(\boxed{\ce{AgCl}}\) & \rule{2.8cm}{0.15mm} & \rule{2.5cm}{0.15mm} & precipitado \\
+5  & \(\ce{BaCl2 + Na2SO4 -> BaSO4 v + 2NaCl}\) & \(\boxed{\ce{BaSO4}}\) & \rule{2.8cm}{0.15mm} & \rule{2.5cm}{0.15mm} & precipitado \\
+6  & \(\ce{2K + Cl2 -> 2KCl}\) & \(\boxed{\ce{KCl}}\) & \rule{2.8cm}{0.15mm} & \rule{2.5cm}{0.15mm} & \\
+7  & \(\ce{2H2O2 -> 2H2O + O2}\) & \(\boxed{\ce{H2O2}}\) & \rule{2.8cm}{0.15mm} & \rule{2.5cm}{0.15mm} & peróxido \\
+8  & \(\ce{C3H8 + 5O2 -> 3CO2 + 4H2O}\) & \(\boxed{\ce{CO2}}\) & \rule{2.8cm}{0.15mm} & \rule{2.5cm}{0.15mm} & combustión \\
+9  & \(\ce{NH4Cl -> NH3 + HCl}\) & \(\boxed{\ce{NH4Cl}}\) & \rule{2.8cm}{0.15mm} & \rule{2.5cm}{0.15mm} & \\
+10 & \(\ce{PCl3 + Cl2 -> PCl5}\) & \(\boxed{\ce{PCl5}}\) & \rule{2.8cm}{0.15mm} & \rule{2.5cm}{0.15mm} & \\
+11 & \(\ce{Fe + S -> FeS}\) & \(\boxed{\ce{FeS}}\) & \rule{2.8cm}{0.15mm} & \rule{2.5cm}{0.15mm} & \\
+12 & \(\ce{Cl2 + 2KI -> 2KCl + I2}\) & \(\boxed{\ce{KCl}}\) & \rule{2.8cm}{0.15mm} & \rule{2.5cm}{0.15mm} & halógeno desplaza \\
+13 & \(\ce{CaO + H2O -> Ca(OH)2}\) & \(\boxed{\ce{Ca(OH)2}}\) & \rule{2.8cm}{0.15mm} & \rule{2.5cm}{0.15mm} & \\
+14 & \(\ce{Na2O + CO2 -> Na2CO3}\) & \(\boxed{\ce{Na2CO3}}\) & \rule{2.8cm}{0.15mm} & \rule{2.5cm}{0.15mm} & \\
+15 & \(\ce{NaHCO3 -> Na2CO3 + CO2 + H2O}\) & \(\boxed{\ce{NaHCO3}}\) & \rule{2.8cm}{0.15mm} & \rule{2.5cm}{0.15mm} & \\
+16 & \(\ce{SO3 + H2O -> H2SO4}\) & \(\boxed{\ce{H2SO4}}\) & \rule{2.8cm}{0.15mm} & \rule{2.5cm}{0.15mm} & \\
+17 & \(\ce{Ca + 2H2O -> Ca(OH)2 + H2}\) & \(\boxed{\ce{Ca(OH)2}}\) & \rule{2.8cm}{0.15mm} & \rule{2.5cm}{0.15mm} & \\
+18 & \(\ce{CuSO4 + Zn -> ZnSO4 + Cu}\) & \(\boxed{\ce{ZnSO4}}\) & \rule{2.8cm}{0.15mm} & \rule{2.5cm}{0.15mm} & \\
+19 & \(\ce{Na2S + Cd(NO3)2 -> CdS v + 2NaNO3}\) & \(\boxed{\ce{CdS}}\) & \rule{2.8cm}{0.15mm} & \rule{2.5cm}{0.15mm} & precipitado \\
+20 & \(\ce{2KNO3 -> 2KNO2 + O2}\) & \(\boxed{\ce{KNO3}}\) & \rule{2.8cm}{0.15mm} & \rule{2.5cm}{0.15mm} & \\
+\bottomrule
+\end{tabular}
+\normalsize
+\end{landscape}
+\newpage
+\subsection*{Sugerencias rápidas (recordatorio)}
+\begin{itemize}
+  \item \textbf{Combinación (síntesis):} varios reactivos \(\rightarrow\) un solo producto global.
+  \item \textbf{Descomposición:} un reactivo \(\rightarrow\) varios productos.
+  \item \textbf{Desplazamiento simple:} elemento libre desplaza a otro en un compuesto (\(\ce{A + BC -> AC + B}\)).
+  \item \textbf{Doble desplazamiento:} intercambio iónico en solución (\(\ce{AB + CD -> AD + CB}\)); muchas veces forma \textbf{precipitado}.
+  \item \textbf{Combustión:} reacción con \(\ce{O2}\) (típicamente hidrocarburos), muy \textbf{exotérmica}.
+  \item \textbf{Clasificación del compuesto:} cuente \textbf{elementos distintos} (mayúsculas). \textit{Ej.:} \(\ce{KCl}\) binario; \(\ce{H2SO4}\) ternario; \(\ce{NaHCO3}\) cuaternario.
+\end{itemize}
+\newpage
+\begin{landscape}
+\section*{Soluciones: tipos de reacciones y clasificación }
+
+\small
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{@{}cllccl@{}}
+\toprule
+\# & Ecuación & Compuesto & Tipo de reacción & Clasif. & Nota \\
+\midrule
+1  & \ce{2H2 + O2 -> 2H2O}                 & \ce{H2O}       & Combinación (síntesis)         & Binario     & \\
+2  & \ce{CaCO3 -> CaO + CO2}               & \ce{CaCO3}     & Descomposición                 & Ternario    & \\
+3  & \ce{Zn + 2HCl -> ZnCl2 + H2}          & \ce{ZnCl2}     & Desplazamiento simple          & Binario     & \\
+4  & \ce{AgNO3 + NaCl -> AgCl v + NaNO3}   & \ce{AgCl}      & Doble desplazamiento           & Binario     & Precipitación \\
+5  & \ce{BaCl2 + Na2SO4 -> BaSO4 v + 2NaCl}& \ce{BaSO4}     & Doble desplazamiento           & Ternario    & Precipitación \\
+6  & \ce{2K + Cl2 -> 2KCl}                 & \ce{KCl}       & Combinación (síntesis)         & Binario     & \\
+7  & \ce{2H2O2 -> 2H2O + O2}               & \ce{H2O2}      & Descomposición                 & Binario     & Peróxido \\
+8  & \ce{C3H8 + 5O2 -> 3CO2 + 4H2O}        & \ce{CO2}       & Combustión (exotérmica)        & Binario     & \\
+9  & \ce{NH4Cl -> NH3 + HCl}               & \ce{NH4Cl}     & Descomposición                 & Ternario    & \\
+10 & \ce{PCl3 + Cl2 -> PCl5}               & \ce{PCl5}      & Combinación (síntesis)         & Binario     & Halogenación \\
+11 & \ce{Fe + S -> FeS}                    & \ce{FeS}       & Combinación (síntesis)         & Binario     & \\
+12 & \ce{Cl2 + 2KI -> 2KCl + I2}           & \ce{KCl}       & Desplazamiento simple          & Binario     & Halógeno desplaza \\
+13 & \ce{CaO + H2O -> Ca(OH)2}             & \ce{Ca(OH)2}   & Combinación (síntesis)         & Ternario    & Formación de base \\
+14 & \ce{Na2O + CO2 -> Na2CO3}             & \ce{Na2CO3}    & Combinación (síntesis)         & Ternario    & \\
+15 & \ce{NaHCO3 -> Na2CO3 + CO2 + H2O}     & \ce{NaHCO3}    & Descomposición                 & Cuaternario & \\
+16 & \ce{SO3 + H2O -> H2SO4}               & \ce{H2SO4}     & Combinación (síntesis)         & Ternario    & Formación de oxácido \\
+17 & \ce{Ca + 2H2O -> Ca(OH)2 + H2}        & \ce{Ca(OH)2}   & Desplazamiento simple          & Ternario    & Metal + agua \\
+18 & \ce{CuSO4 + Zn -> ZnSO4 + Cu}         & \ce{ZnSO4}     & Desplazamiento simple          & Ternario    & Serie de reactividad \\
+19 & \ce{Na2S + Cd(NO3)2 -> CdS v + 2NaNO3}& \ce{CdS}       & Doble desplazamiento           & Binario     & Precipitación \\
+20 & \ce{2KNO3 -> 2KNO2 + O2}              & \ce{KNO3}      & Descomposición                 & Ternario    & \\
+\bottomrule
+\end{tabular}
+\normalsize
+
+\subsection*{Criterio de clasificación (recordatorio breve)}
+\begin{itemize}
+  \item \textbf{Binario}: 2 elementos distintos (contar mayúsculas diferentes en la fórmula).
+  \item \textbf{Ternario}: 3 elementos distintos.
+  \item \textbf{Cuaternario}: 4 elementos distintos.
+\end{itemize}
+\end{landscape}
+
+
+\noindent\fbox{%
+\parbox{\linewidth}{%
+%\textbf{Julián Arias Meza} es profesor de Matemática graduado de la Universidad de Costa Rica. 
+%Cursó la carrera de Física en la misma universidad y actualmente cursa la licenciatura en 
+%Ingeniería Física en el Tecnológico de Costa Rica (TEC). 
+%Integra el uso de herramientas digitales y de inteligencia artificial (IA), 
+%enfocadas en la mejora de las capacidades pedagógicas: 
+%diseño de materiales adaptativos, retroalimentación automática y 
+%optimización de la evaluación formativa.
+
+
+\medskip
+\textbf{Áreas}
+\begin{itemize}
+  \item \textbf{Matemática:} aritmética, álgebra, trigonometría, geometría analítica, cálculo (diferencial e integral), probabilidad y estadística.
+  \item \textbf{Física:} mecánica, ondas, electricidad y magnetismo, termodinámica y óptica; con resolución de problemas, interpretación física y uso riguroso del SI.
+  \item \textbf{Química:} nomenclatura (Stock y sistemática), óxidos, hidruros, hidróxidos, hidrácidos, sales binarias, tipos de reacciones, balanceo y estequiometría.
+  \item \textbf{Formatos:} guías teóricas, bancos de ejercicios, prácticas con soluciones paso a paso, simulacros, rúbricas, presentaciones y resúmenes ejecutivos.
+\end{itemize}
+
+
+\textbf{Entrego en:} PDF listo para imprimir,  y \texttt{.docx} (Word).
+
+
+\medskip
+\textbf{Contacto (WhatsApp):} \texttt{7076-9371}
+}}
+
+\end{document}
+
+

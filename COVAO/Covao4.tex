@@ -1,0 +1,109 @@
+\documentclass[12pt]{article}
+
+% -------------------- Paquetes básicos --------------------
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{letterpaper, margin=2.5cm}
+
+% Matemática y unidades (SI con coma decimal)
+\usepackage{amsmath, amssymb}
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={,}, per-mode=symbol}
+
+% Formato sencillo
+\usepackage{enumitem}
+\setlist[enumerate]{label=\textbf{\arabic*.}, leftmargin=0.8cm}
+
+\begin{document}
+
+\section*{Ejercicios propuestos}
+
+\subsection*{Tipo Pregunta 37: Potencias y productos de monomios}
+
+\begin{enumerate}
+  \item Simplifique al máximo:
+  \[
+    \left(-2x^{3}y\right)^{2}\cdot\left(-2x^{-1}y^{3}\right)^{3}.
+  \]
+  \textbf{Opciones:}
+  \begin{itemize}
+    \item[a)] $-32x^{3}y^{11}$
+    \item[b)] $32x^{5}y^{7}$
+    \item[c)] $-8x^{9}y^{5}$
+    \item[d)] $32x^{3}y^{11}$
+  \end{itemize}
+
+  \item Simplifique al máximo:
+  \[
+    \left(5x^{2}y^{-3}\right)^{-2}\cdot\left(-5x^{-4}y\right)^{-1}.
+  \]
+  \textbf{Opciones:}
+  \begin{itemize}
+    \item[a)] $-\dfrac{1}{125}\,y^{5}$
+    \item[b)] $\dfrac{1}{25}\,x^{2}y^{-9}$
+    \item[c)] $-125\,y^{-5}$
+    \item[d)] $-\dfrac{1}{25}\,y^{5}$
+  \end{itemize}
+\end{enumerate}
+
+\subsection*{Tipo Pregunta 38: Trigonometría aplicada}
+
+\begin{enumerate}[resume]
+  \item Un poste proyecta una sombra de \SI{12}{m} sobre el suelo. Si el ángulo de elevación del Sol es de $40^\circ$ \big(\,$\tan 40^\circ \approx 0{,}8391$\,\big), \\
+  ¿cuál es la \textbf{altura} del poste?
+  \begin{itemize}
+    \item[a)] \SI{8,0}{m}
+    \item[b)] \SI{10,1}{m}
+    \item[c)] \SI{12,0}{m}
+    \item[d)] \SI{16,0}{m}
+  \end{itemize}
+
+  \item Un edificio proyecta una sombra de \SI{25}{m}. Si el ángulo de elevación del Sol es de $58^\circ$ \big(\,$\tan 58^\circ \approx 1{,}600$\,\big), \\
+  ¿cuál es la \textbf{altura} del edificio?
+  \begin{itemize}
+    \item[a)] \SI{30}{m}
+    \item[b)] \SI{40}{m}
+    \item[c)] \SI{50}{m}
+    \item[d)] \SI{60}{m}
+  \end{itemize}
+\end{enumerate}
+
+\subsection*{Tipo Pregunta 39: Porcentajes y proporciones}
+
+\begin{enumerate}[resume]
+  \item Un agricultor cosechó \num{1500} naranjas. El \SI{15}{\percent} estaban dañadas. Vende el \SI{70}{\percent} de las naranjas \emph{buenas}. \\
+  ¿Cuántas naranjas vendió?
+  \begin{itemize}
+    \item[a)] \num{892}
+    \item[b)] \num{892,5}
+    \item[c)] \num{900}
+    \item[d)] \num{875}
+  \end{itemize}
+
+  \item Un comerciante tiene \num{1200} manzanas. El \SI{25}{\percent} se estropeó. Vende el \SI{80}{\percent} de las manzanas \emph{en buen estado}. \\
+  ¿Cuántas manzanas vendió?
+  \begin{itemize}
+    \item[a)] \num{600}
+    \item[b)] \num{720}
+    \item[c)] \num{800}
+    \item[d)] \num{900}
+  \end{itemize}
+\end{enumerate}
+
+\bigskip
+\hrule
+\bigskip
+
+\section*{Respuestas}
+\begin{tabular}{ll}
+\textbf{1.} a) & (Cálculo: $(-2)^2\!=\!4$, $(-2)^3\!=\!-8$; $4\cdot(-8)=-32$, $x^{6}x^{-3}=x^{3}$, $y^{2}y^{9}=y^{11}$) \\
+\textbf{2.} a) & (Cálculo: $5^{-2}=\tfrac{1}{25}$, $(-5)^{-1}=-\tfrac{1}{5}$; producto $-\tfrac{1}{125}$, $x^{-4}x^{4}=x^{0}$, $y^{6}y^{-1}=y^{5}$) \\
+\textbf{3.} b) & Altura $= \tan 40^\circ \cdot 12 \approx 0{,}8391\cdot 12 = \SI{10,1}{m}$ \\
+\textbf{4.} b) & Altura $= \tan 58^\circ \cdot 25 \approx 1{,}600\cdot 25 = \SI{40}{m}$ \\
+\textbf{5.} b) & Buenas: $1500(1-0{,}15)=1275$; vendidas: $1275\cdot 0{,}70=\num{892,5}$ \\
+\textbf{6.} b) & Buenas: $1200(1-0{,}25)=900$; vendidas: $900\cdot 0{,}80=\num{720}$ \\
+\end{tabular}
+
+\end{document}

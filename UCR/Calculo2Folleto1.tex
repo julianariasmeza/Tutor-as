@@ -1,0 +1,430 @@
+\newcommand{\interp}{\textbf{Interpretación:}} 
+\newcommand{\formula}[1]{\[ #1 \]}
+
+
+\documentclass[a4paper]{article}
+\newcommand{\calc}{\textbf{Cálculo:}}
+
+% --- Paquetes ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish, es-nodecimaldot]{babel}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{calc}
+\geometry{margin=2.5cm}
+\usepackage{siunitx}
+\sisetup{locale=DE, output-decimal-marker={,}}
+
+% --- Títulos bonitos ---
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.5em}{}
+
+% --- Documento ---
+\newcommand{\datos}{\textbf{Datos:}}
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Criterios de convergencia para integrales impropias}} \\[0.3cm]
+    \textbf{Curso: Cálculo Integral} \\[0.2cm]
+    \textbf{Profesor: Julián Arias Meza}
+\end{center}
+
+\section{Introducción}
+Una \textbf{integral impropia} es aquella en la que:
+\begin{itemize}
+    \item El intervalo de integración es infinito.
+    \item El integrando presenta discontinuidades en el intervalo.
+\end{itemize}
+
+Para estudiar si dichas integrales \emph{convergen} o \emph{divergen}, se aplican varios criterios. A continuación se presentan los más importantes junto con ejemplos.
+
+\section{Criterio de comparación directa}
+Si $0 \leq f(x) \leq g(x)$ para todo $x \geq a$, entonces:
+\[
+\int_a^{\infty} g(x)\, dx \ \text{ converge } \ \Rightarrow \ \int_a^{\infty} f(x)\, dx \ \text{ converge.}
+\]
+\[
+\int_a^{\infty} f(x)\, dx \ \text{ diverge } \ \Rightarrow \ \int_a^{\infty} g(x)\, dx \ \text{ diverge.}
+\]
+
+\subsection*{Ejemplo 1}
+Determinar si 
+\[
+I = \int_1^{\infty} \frac{1}{x^2+1}\, dx
+\]
+converge o diverge.
+
+\textbf{Desarrollo:}
+\begin{align*}
+\text{Datos: } & f(x) = \frac{1}{x^2+1}, \quad g(x) = \frac{1}{x^2}. \\[0.2cm]
+\text{Fórmula: } & 0 \leq f(x) \leq g(x). \\[0.2cm]
+\text{Comparación: } & \frac{1}{x^2+1} \leq \frac{1}{x^2}, \quad x \geq 1. \\[0.2cm]
+\text{Integral mayor: } & \int_1^{\infty} \frac{1}{x^2}\, dx = \left[ -\frac{1}{x} \right]_1^{\infty} = 1. \\[0.2cm]
+\text{Conclusión: } & \text{Como la integral de } g(x) \text{ converge, también la de } f(x).
+\end{align*}
+
+\[
+I = \int_1^{\infty} \frac{1}{x^2+1}\, dx \ \text{ converge.}
+\]
+
+
+\section{Criterio de convergencia absoluta}
+Una integral impropia
+\[
+\int_a^{\infty} f(x)\, dx
+\]
+converge absolutamente si
+\[
+\int_a^{\infty} |f(x)|\, dx
+\]
+converge. Esto garantiza la convergencia de la integral original.
+
+\subsection*{Ejemplo 2}
+Analizar
+\[
+I = \int_1^{\infty} \frac{\sin(x)}{x^2}\, dx
+\]
+
+\textbf{Desarrollo:}
+\begin{align*}
+\text{Datos: } & f(x) = \frac{\sin(x)}{x^2}. \\[0.2cm]
+\text{Fórmula: } & \left| f(x) \right| \leq \frac{1}{x^2}. \\[0.2cm]
+\text{Comparación: } & \int_1^{\infty} \frac{1}{x^2}\, dx = 1 \quad \text{converge.} \\[0.2cm]
+\text{Interpretación: } & \text{La integral original converge absolutamente.}
+\end{align*}
+
+\section{Criterio de Dirichlet}
+Si $f(x)$ tiene integral impropia acotada y $g(x)$ es monótona decreciente tendiendo a 0, entonces:
+\[
+\int_a^{\infty} f(x)g(x)\, dx
+\]
+converge.
+
+\subsection*{Ejemplo 3}
+Analizar
+\[
+I = \int_1^{\infty} \frac{\sin(x)}{x}\, dx
+\]
+
+\textbf{Desarrollo:}
+\begin{align*}
+\text{Datos: } & f(x) = \sin(x), \quad g(x) = \frac{1}{x}. \\[0.2cm]
+\text{Propiedades: } & f(x) \ \text{tiene integral acotada.} \\[0.2cm]
+& g(x) \ \text{es decreciente y } \lim_{x\to\infty} g(x) = 0. \\[0.2cm]
+\text{Conclusión: } & \text{Por el criterio de Dirichlet, la integral converge.}
+\end{align*}
+
+\section{Criterio de Abel}
+Si $f(x)$ tiene integral impropia convergente y $g(x)$ es monótona y acotada, entonces:
+\[
+\int_a^{\infty} f(x)g(x)\, dx
+\]
+converge.
+
+\subsection*{Ejemplo 4}
+Analizar
+\[
+I = \int_0^{\infty} e^{-x} \cos(x)\, dx
+\]
+
+\textbf{Desarrollo:}
+\begin{align*}
+\text{Datos: } & f(x) = e^{-x}, \quad g(x) = \cos(x). \\[0.2cm]
+\text{Propiedades: } & \int_0^{\infty} e^{-x}\, dx = 1 \quad \text{converge.} \\[0.2cm]
+& g(x) = \cos(x) \quad \text{es acotada.} \\[0.2cm]
+\text{Conclusión: } & \text{Por el criterio de Abel, la integral converge.}
+\end{align*}
+
+\section{Conclusión general}
+Los criterios de comparación, convergencia absoluta, Dirichlet y Abel son herramientas fundamentales para determinar la convergencia de integrales impropias, especialmente cuando el integrando combina oscilaciones y decaimientos.
+
+
+\section{Aplicación: Simulacro UCR — Soluciones desarrolladas}
+
+\subsection*{1) Polinomio de Taylor de orden 3 en $a=-\pi$ para $f(x)=x\cos x+e^{x}$}
+\datos $f(x)=x\cos x+e^{x}$,\; $a=-\pi$.\\
+\formula{T_3(x)=\displaystyle \sum_{k=0}^{3}\frac{f^{(k)}(a)}{k!}(x-a)^k.}\\
+%\calc 
+\[
+\begin{aligned}
+&f'(x)=\cos x-x\sin x+e^x,\\
+&f''(x)=-2\sin x - x\cos x + e^x,\\
+&f^{(3)}(x)=-3\cos x + x\sin x + e^x.
+\end{aligned}
+\]
+En $a=-\pi$ (nótese $\cos(-\pi)=-1$, $\sin(-\pi)=0$):
+\[
+\begin{aligned}
+&f(a)=(-\pi)\cos(-\pi)+e^{-\pi}=-\pi+e^{-\pi},\\
+&f'(a)=\cos(-\pi)-(-\pi)\sin(-\pi)+e^{-\pi}=-1+e^{-\pi},\\
+&f''(a)=-2\sin(-\pi)-(-\pi)\cos(-\pi)+e^{-\pi}=-\pi+e^{-\pi},\\
+&f^{(3)}(a)=-3\cos(-\pi)+(-\pi)\sin(-\pi)+e^{-\pi}=3+e^{-\pi}.
+\end{aligned}
+\]
+Entonces
+\[
+\boxed{\,T_3(x)=(-\pi+e^{-\pi})+(-1+e^{-\pi})(x+\pi)+\tfrac{-\pi+e^{-\pi}}{2}(x+\pi)^2+\tfrac{3+e^{-\pi}}{6}(x+\pi)^3\,}\,.
+\]
+\interp Polinomio cúbico centrado en $-\pi$ con coeficientes exactos.
+
+\subsection*{2) Límite por desarrollos limitados}
+\[
+\lim_{x\to 0}\frac{\ln(1+x^{4})-5x\,\arctan(x)+5x^{2}}{\,1-\cos(x^{2})+4x^{4}\,}
+\]
+\datos Series de Maclaurin hasta el orden necesario.\\
+%\formula 
+\[
+\ln(1+u)=u-\tfrac{u^{2}}{2}+O(u^{3}),\quad
+\arctan x=x-\tfrac{x^{3}}{3}+O(x^{5}),\quad
+\cos u=1-\tfrac{u^{2}}{2}+O(u^{4}).
+\]
+Sustitución: Con $u=x^{4}$:
+\[
+\ln(1+x^{4})=x^{4}-\tfrac{x^{8}}{2}+O(x^{12}).
+\]
+Además,
+\[
+-5x\arctan x=-5x\Big(x-\tfrac{x^{3}}{3}+O(x^{5})\Big)=-5x^{2}+\tfrac{5}{3}x^{4}+O(x^{6}).
+\]
+Sumando el $+5x^{2}$:
+\[
+\text{Numerador}=\Big(1+\tfrac{5}{3}\Big)x^{4}+O(x^{6})=\tfrac{8}{3}x^{4}+O(x^{6}).
+\]
+Para el denominador, con $u=x^{2}$:
+\[
+1-\cos(x^{2})=\tfrac{x^{4}}{2}+O(x^{8}),\quad
+\Rightarrow \text{Denominador}=\tfrac{9}{2}x^{4}+O(x^{8}).
+\]
+\calc 
+\[
+\lim_{x\to 0}\frac{\tfrac{8}{3}x^{4}+O(x^{6})}{\tfrac{9}{2}x^{4}+O(x^{8})}
+=\frac{\tfrac{8}{3}}{\tfrac{9}{2}}=\boxed{\tfrac{16}{27}}.
+\]
+\interp El cociente de los términos líderes determina el valor del límite.
+
+\subsection*{3) Convergencia (y valor si converge) de integrales impropias}
+\paragraph{(a)} \(\displaystyle \int_{1/2}^{1}\frac{1}{x\,[\ln(x)]^{3}}\,dx\).\\[2mm]
+\datos Singularidad en $x=1$ por $\ln x\to 0$. Sustitución $u=\ln x$.\\
+\formula Con $u=\ln x$, $du=dx/x$, y $x\in[\tfrac12,1)$ da $u\in[\ln(1/2),0)$.\\
+\calc 
+\[
+\int_{\ln(1/2)}^{0} u^{-3}\,du=\Big[-\tfrac{1}{2u^{2}}\Big]_{\ln(1/2)}^{0^-}=-\infty.
+\]
+\interp La integral \textbf{diverge} (tipo $u^{-3}$ cerca de $0$).
+
+\paragraph{(b)} \(\displaystyle \int_{0}^{\infty}\frac{dx}{(x+2)(x+6)}\).\\[2mm]
+\datos Integrando positivo y decreciente como $x^{-2}$. Fracciones parciales.\\
+\(\tfrac{1}{(x+2)(x+6)}=\tfrac{1}{4}\Big(\tfrac{1}{x+2}-\tfrac{1}{x+6}\Big).\)
+
+\calc 
+\[
+\int_{0}^{b}\frac{dx}{(x+2)(x+6)}
+=\tfrac14\ln\!\Big(\tfrac{b+2}{b+6}\Big)-\tfrac14\ln\!\Big(\tfrac{2}{6}\Big).
+\]
+Al pasar $b\to\infty$, queda
+\[
+\boxed{\int_{0}^{\infty}\frac{dx}{(x+2)(x+6)}=\tfrac{1}{2}\ln 3}.
+\]
+\interp Converge (similar a $1/x^{2}$) y el valor es finito.
+
+\subsection*{4) Decidir convergencia/divergencia}
+\paragraph{(a)} \(\displaystyle \int_{0}^{2}\frac{2+x}{\sqrt{x+x^{5}}}\,dx\).\\[2mm]
+\datos Singularidad en $x=0^+$.\\
+\formula Para $0<x\le 1$, $\tfrac{2+x}{\sqrt{x+x^{5}}}\le \tfrac{3}{\sqrt{x}}$.\\
+\calc Como $\int_{0}^{1}x^{-1/2}\,dx=2$ converge, la integral converge.\\
+\interp \(\boxed{\text{Converge}}\).
+
+\paragraph{(b)} \(\displaystyle \int_{1}^{\infty}\frac{x+|\sin(3x)|}{x^{2}+5x}\,dx\).\\[2mm]
+\datos Comportamiento en infinito y \textbf{comparación por el límite} con \(\tfrac{1}{x}\).\\
+
+\begin{equation*}
+L \;=\; \lim_{x\to\infty}\frac{\dfrac{x+|\sin(3x)|}{x^{2}+5x}}{1/x}
+   \;=\; \lim_{x\to\infty}\frac{x+|\sin(3x)|}{x+5}
+   \;=\; 1,
+\end{equation*}
+pues \(|\sin(3x)|\le 1\).\\
+\interp Como \(\displaystyle \int_{1}^{\infty}\tfrac{1}{x}\,dx\) \textbf{diverge} y \(L=1\in(0,\infty)\),
+por el \emph{criterio de comparación por el límite} la integral dada también \textbf{diverge}.
+
+
+\subsection*{5) Opcional}
+\paragraph{(a) Aproximar \(\cos(1/9)\) con Maclaurin de orden 5 y acotar el residuo}
+\datos Serie de Maclaurin: \(\cos z=1-\tfrac{z^{2}}{2!}+\tfrac{z^{4}}{4!}-\tfrac{z^{6}}{6!}+\cdots\).\\
+
+%\formula 
+\(T_{5}(z)=1-\frac{z^{2}}{2}+\frac{z^{4}}{24}\)
+
+\[R_{5}(z)=\frac{f^{(6)}(\xi)}{6!}\,z^{6}=-\frac{\cos(\xi)}{6!}\,z^{6}\], con \(\xi\in(0,z)\).\\
+\calc 
+\[
+T_{5}\!\Big(\tfrac{1}{9}\Big)=1-\tfrac{1}{162}+\tfrac{1}{157464}, 
+\qquad
+|R_{5}|\le \frac{1}{6!}\Big(\tfrac{1}{9}\Big)^{6}
+= \frac{1}{720\cdot 9^{6}} \approx 2{,}6\times 10^{-9}.
+\]
+Como \(\xi\in(0,\tfrac{1}{9})\Rightarrow \cos(\xi)>0\), se tiene \(R_{5}<0\).\\
+\interp 
+\[
+\boxed{\cos\!\Big(\tfrac{1}{9}\Big)\approx 1-\tfrac{1}{162}+\tfrac{1}{157464}},
+\qquad 
+\boxed{0>R_{5}>-\,2{,}7\times 10^{-9}}.
+\]
+
+
+\paragraph{(b) Convergencia de \(\displaystyle \int_{0}^{\infty}\frac{x\sin(3x)}{x^{2}+5}\,dx\)}
+\datos Producto “oscilación \(\times\) decaimiento”. Queremos usar \textbf{Dirichlet}.\\
+\formula 
+Sea \(f(x)=\sin(3x)\) y \(g(x)=\dfrac{x}{x^{2}+5}\).
+Entonces 
+\(F(x)=\int_{0}^{x} f(t)\,dt=\dfrac{1-\cos(3x)}{3}\) es \textbf{acotada}; 
+además \(g\) es eventualmente monótona decreciente y \(g(x)\to 0\).\\
+\calc 
+\[
+F(x)=\frac{1-\cos(3x)}{3},\qquad
+g'(x)=\frac{5-x^{2}}{(x^{2}+5)^{2}}\le 0\ \text{para }x\ge \sqrt{5},\qquad
+\lim_{x\to\infty}g(x)=0.
+\]
+Dividimos la integral como \(\int_{0}^{\infty}=\int_{0}^{\sqrt{5}}+\int_{\sqrt{5}}^{\infty}\); la primera es propia y la segunda cumple las hipótesis de Dirichlet.\\
+\interp 
+\[
+\boxed{\text{La integral converge (condicionalmente) por el criterio de Dirichlet.}}
+\]
+\newpage
+\section*{Soluciones — Ejercicios 3 y 4}
+
+% =========================
+% EJERCICIO 3
+% =========================
+\subsection*{3) Mediante la definición, determine si cada integral impropia es convergente. Si converge, obtenga su valor.}
+
+\paragraph{(a)} \(\displaystyle \int_{0}^{2}\frac{x}{\sqrt{4-x^{2}}}\,dx\).
+
+\datos La impropiedad ocurre en \(x=2^{-}\) porque \(\sqrt{4-x^{2}}\to 0\).\\
+\formula Definición de integral impropia con sustitución trigonométrica \(x=2\sin\theta\).\\
+ Sea \(x=2\sin\theta\Rightarrow dx=2\cos\theta\,d\theta\) y \(\sqrt{4-x^{2}}=\sqrt{4-4\sin^{2}\theta}=2\cos\theta\).  
+Cuando \(x\to 0^{+}\), \(\theta\to 0^{+}\); cuando \(x\to 2^{-}\), \(\theta\to \tfrac{\pi}{2}^{-}\).\\
+\calc
+\[
+\int_{0}^{2}\frac{x}{\sqrt{4-x^{2}}}\,dx
+=\lim_{b\to 2^{-}}\int_{0}^{b}\frac{x}{\sqrt{4-x^{2}}}\,dx
+=\int_{0}^{\pi/2}\frac{2\sin\theta}{2\cos\theta}\,2\cos\theta\,d\theta
+=\int_{0}^{\pi/2}2\sin\theta\,d\theta.
+\]
+\[
+\int_{0}^{\pi/2}2\sin\theta\,d\theta=\Big[-2\cos\theta\Big]_{0}^{\pi/2}=(-2\cdot 0)-(-2\cdot 1)=2.
+\]
+\interp \(\boxed{\text{Converge y su valor es } 2}\).
+
+\paragraph{(b)} \(\displaystyle \int_{4}^{\infty}\frac{dx}{x(x^{2}+1)}\).
+
+\datos Impropia en \(+\infty\). El integrando es positivo y para \(x\) grande es \(\sim 1/x^{3}\) (sugiere convergencia).\\
+\formula Fracciones parciales: \(\displaystyle \frac{1}{x(x^{2}+1)}=\frac{1}{x}-\frac{x}{x^{2}+1}\).\\
+\calc
+\[
+\int\frac{dx}{x(x^{2}+1)}=\int\Big(\frac{1}{x}-\frac{x}{x^{2}+1}\Big)\,dx
+=\ln x-\tfrac{1}{2}\ln(x^{2}+1)+C.
+\]
+Como impropia:
+\[
+\int_{4}^{\infty}\frac{dx}{x(x^{2}+1)}
+=\lim_{b\to\infty}\Big[\ln x-\tfrac{1}{2}\ln(x^{2}+1)\Big]_{4}^{b}.
+\]
+Para \(b\to\infty\),
+\[
+\ln b-\tfrac{1}{2}\ln(b^{2}+1)
+=\tfrac{1}{2}\ln\!\Big(\frac{b^{2}}{b^{2}+1}\Big)\longrightarrow \tfrac{1}{2}\ln 1=0.
+\]
+Por tanto,
+\[
+\int_{4}^{\infty}\frac{dx}{x(x^{2}+1)}
+=0-\Big(\ln 4-\tfrac{1}{2}\ln 17\Big)
+=\boxed{\tfrac{1}{2}\ln\!\Big(\tfrac{17}{16}\Big)}.
+\]
+\interp \(\boxed{\text{Converge y vale } \tfrac{1}{2}\ln\!\big(\tfrac{17}{16}\big)}\).
+
+% =========================
+% EJERCICIO 4
+% =========================
+\subsection*{4) Utilizando criterios adecuados, determine convergencia o divergencia}
+
+\paragraph{(a)} \(\displaystyle \int_{0}^{1}\frac{x^{2}+3}{x+x^{2}}\,dx\).
+
+\datos Impropia en \(x=0^{+}\) (denominador \(x(1+x)\)).\\
+\formula Comparación directa cerca de \(0\). Para \(0<x\le 1\): \(x^{2}+3\ge 3\) y \(x+x^{2}\le 2x\).\\
+\calc
+\[
+0\le \frac{x^{2}+3}{x+x^{2}}=\frac{x^{2}+3}{x(1+x)}
+\;\ge\; \frac{3}{2x}\quad (0<x\le 1).
+\]
+Como \(\displaystyle \int_{0}^{1}\frac{1}{x}\,dx\) \emph{diverge}, entonces por comparación inferior la integral dada \emph{diverge}.  
+(Alternativamente, con fracciones parciales:
+\(\frac{x^{2}+3}{x+x^{2}}=1+\frac{3}{x}-\frac{4}{1+x}\) y
+\(\displaystyle \int_{\varepsilon}^{1}\big(1+\frac{3}{x}-\frac{4}{1+x}\big)dx\to +\infty\) cuando \(\varepsilon\to 0^{+}\)).\\
+\interp \(\boxed{\text{Diverge}}\).
+
+\paragraph{(b)} \(\displaystyle I=\int_{1}^{\infty}\frac{2^{x}+5x^{4}}{3^{x}+2^{x}}\,dx\).
+
+\datos Impropria en \(+\infty\). El denominador es positivo para \(x\ge 1\).
+Para \(x\) grande, \(3^{x}\) domina a \(2^{x}\) y a \(x^{4}\).
+
+\textbf{Comparación directa (cota superior):} para \(x\ge 1\),
+\[
+0\le \frac{2^{x}+5x^{4}}{3^{x}+2^{x}}
+\le \frac{2^{x}+5x^{4}}{3^{x}}
+=\Big(\frac{2}{3}\Big)^{x}+\frac{5x^{4}}{3^{x}}.
+\]
+Sea \(k=\ln\!\big(\tfrac{3}{2}\big)>0\) y \(m=\ln 3>0\). Entonces
+\[
+\Big(\frac{2}{3}\Big)^{x}=e^{-kx},\qquad 
+\frac{5x^{4}}{3^{x}}=5\,x^{4}e^{-mx}.
+\]
+Por tanto, 
+\[
+0\le \frac{2^{x}+5x^{4}}{3^{x}+2^{x}}\le e^{-kx}+5\,x^{4}e^{-mx},\quad x\ge 1.
+\]
+
+ \(k=\ln(3/2)\), \(m=\ln 3\).
+
+\calc 
+\[
+\int_{1}^{\infty} e^{-kx}\,dx=\frac{e^{-k}}{k}=\frac{\tfrac{2}{3}}{\ln(3/2)}
+\approx 1{,}6442.
+\]
+Para el segundo término usamos que, para \(n\in\mathbb{N}\) y \(a>0\),
+\[
+\int_{0}^{\infty} x^{n}e^{-ax}\,dx=\frac{n!}{a^{\,n+1}}
+\quad(\text{fórmula gamma}).
+\]
+Así,
+\[
+\int_{1}^{\infty} 5x^{4}e^{-mx}\,dx
+\;\le\; 5\int_{0}^{\infty} x^{4}e^{-mx}\,dx
+=5\,\frac{4!}{m^{5}}
+= \frac{120}{(\ln 3)^{5}}
+\approx 74{,}982.
+\]
+Por comparación con la suma de estas dos integrales (ambas finitas), \(I\) converge. Además, queda una cota numérica:
+\[
+0\le I \le \frac{\tfrac{2}{3}}{\ln(3/2)}+\frac{120}{(\ln 3)^{5}}
+\approx 1{,}6442+74{,}982 \approx 76{,}626.
+\]
+
+\interp \(\boxed{\text{Converge (absolutamente) por comparación directa}}\).
+
+% --- Alternativa breve: comparación por el límite ---
+\medskip
+\noindent\textit{Alternativa (comparación por el límite).}
+Como
+\[
+\lim_{x\to\infty}\frac{\dfrac{2^{x}+5x^{4}}{3^{x}+2^{x}}}{\left(\tfrac{2}{3}\right)^{x}}
+=\lim_{x\to\infty}\frac{2^{x}+5x^{4}}{3^{x}+2^{x}}\cdot\Big(\frac{3}{2}\Big)^{x}
+=\lim_{x\to\infty}\Bigg[\frac{(2/3)^{x}}{1+(2/3)^{x}}
++\frac{5x^{4}(3/2)^{x}}{3^{x}\!\left(1+(2/3)^{x}\right)}\Bigg]=1,
+\]
+(y el segundo término tiende a \(0\) porque \(3^{x}\) domina a cualquier potencia),
+y \(\displaystyle \int_{1}^{\infty}\!\!\left(\tfrac{2}{3}\right)^{x}dx\) converge, por el
+\emph{criterio de comparación por el límite} también concluye que \(I\) converge.
+
+\end{document}

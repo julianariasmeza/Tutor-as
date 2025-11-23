@@ -1,0 +1,1004 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+
+\title{Compendio de Ejercicios de Estadística}
+\author{Nombre del Estudiante \\ Curso de Estadística}
+\date{2025}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+% -------------------------------------------------------------------
+% -----------------------   TEMA 1   --------------------------------
+% -------------------------------------------------------------------
+
+\section{Población Infinita}
+
+\subsection*{Ejercicio 1}
+\textbf{Enunciado.}\\
+Se desea estimar la proporción de hogares que consumen café diariamente en una ciudad grande. 
+Su población es considerada \emph{prácticamente infinita}. 
+Calcule el tamaño mínimo de la muestra necesaria si se desea un nivel de confianza del 95\% y un margen de error de 5\%. 
+Suponga proporción esperada $p = 0.5$.
+
+\textbf{Desarrollo.}\\
+Para poblaciones infinitas, el tamaño de la muestra se obtiene mediante:
+\[
+n=\frac{Z^{2} p q}{E^{2}},
+\]
+donde:\\
+$Z = 1.96$ (95\%), $p = 0.5$, $q = 1-p = 0.5$, $E = 0.05$.\\[6pt]
+
+Sustitución:
+\[
+n=\frac{(1.96)^{2} (0.5)(0.5)}{(0.05)^{2}}.
+\]
+
+Cálculo:
+\[
+(1.96)^{2}=3.8416,
+\quad
+(0.5)(0.5)=0.25,
+\quad
+(0.05)^{2}=0.0025.
+\]
+\[
+n=\frac{3.8416 \times 0.25}{0.0025}
+= \frac{0.9604}{0.0025}
+= 384.16.
+\]
+
+\textbf{Resultado.}\\
+Se requiere una muestra de aproximadamente **385 personas**.
+
+\textbf{Fuente (APA):}\\
+Scribd. (2023). \textit{Ejercicios de cálculo de población finita e infinita}. Recuperado de https://es.scribd.com/document/621107138/Ejercicios-de-calculo-de-poblacion-finita-e-infinita
+
+
+\subsection*{Ejercicio 2}
+\textbf{Enunciado.}\\
+Una empresa desea estimar el porcentaje de clientes que estarían interesados en un nuevo servicio digital. 
+Dado que la población de usuarios supera ampliamente los 2 millones, se considera \emph{población infinita}. 
+Calcule el tamaño de muestra requerido con $95\%$ de confianza y $E = 3\%$; 
+suponga $p = 0.4$.
+
+\textbf{Desarrollo.}\\
+Fórmula para población infinita:
+\[
+n=\frac{Z^{2} p q}{E^{2}}.
+\]
+
+Datos: $Z = 1.96$, $p = 0.4$, $q = 0.6$, $E = 0.03$.\\[6pt]
+
+Sustitución:
+\[
+n=\frac{(1.96)^{2}(0.4)(0.6)}{(0.03)^{2}}.
+\]
+
+Cálculo:
+\[
+(1.96)^{2}=3.8416,
+\quad
+(0.4)(0.6)=0.24,
+\quad
+(0.03)^{2}=0.0009.
+\]
+\[
+n=\frac{3.8416 \times 0.24}{0.0009}
+= \frac{0.9220}{0.0009}
+\approx 1024.4.
+\]
+
+\textbf{Resultado.}\\
+La muestra necesaria es de aproximadamente **1025 personas**.
+
+\textbf{Fuente (APA):}\\
+Daniel, W. (2012). \textit{Bioestadística}. McGraw-Hill. (Método clásico para muestreo infinito)
+
+\newpage
+
+% -------------------------------------------------------------------
+% -----------------------   TEMA 2   --------------------------------
+% -------------------------------------------------------------------
+
+\section{Muestra Aleatoria}
+
+\subsection*{Ejercicio 1}
+\textbf{Enunciado.}\\
+En un colegio se desea seleccionar una muestra aleatoria simple de 10 estudiantes entre un total de 300 para aplicar una encuesta de salud. 
+Explique el procedimiento y seleccione una posible muestra utilizando números aleatorios.
+
+\textbf{Desarrollo.}\\
+Definición: en la \emph{muestra aleatoria simple}, todos los individuos tienen la misma probabilidad de ser elegidos.\\[6pt]
+
+Procedimiento:
+\begin{enumerate}
+    \item Numerar los 300 estudiantes del 1 al 300.
+    \item Usar una tabla de números aleatorios o un generador digital.
+    \item Seleccionar 10 números distintos dentro del rango.
+\end{enumerate}
+
+Ejemplo usando generador digital (valores simulados):
+\[
+\{12,\; 45,\; 88,\; 101,\; 134,\; 167,\; 199,\; 203,\; 244,\; 289\}.
+\]
+
+\textbf{Resultado.}\\
+Una muestra aleatoria simple válida es:  
+12, 45, 88, 101, 134, 167, 199, 203, 244 y 289.
+
+\textbf{Fuente (APA):}\\
+Lind, D., Marchal, W. \& Wathen, S. (2018). \textit{Estadística aplicada a los negocios y la economía}. McGraw-Hill.
+
+
+\subsection*{Ejercicio 2}
+\textbf{Enunciado.}\\
+Una empresa desea seleccionar una muestra aleatoria simple de 5 productos de una línea de producción compuesta por 120 unidades. 
+Explique cómo obtener la muestra usando una tabla de números aleatorios y muestre un posible resultado.
+
+\textbf{Desarrollo.}\\
+Procedimiento general:
+\begin{enumerate}
+    \item Enumerar las 120 unidades del 001 al 120.
+    \item Leer números de tres dígitos desde una tabla o generador.
+    \item Aceptar solo valores entre 001 y 120 sin repetir.
+\end{enumerate}
+
+Ejemplo de lectura (números simulados):
+\[
+\{004,\; 017,\; 056,\; 099,\; 113\}.
+\]
+
+\textbf{Resultado.}\\
+Una muestra aleatoria simple posible es: 4, 17, 56, 99 y 113.
+
+\textbf{Fuente (APA):}\\
+Wackerly, D., Mendenhall, W. \& Scheaffer, R. (2014). \textit{Matemáticas para la estadística}. Cengage Learning.
+
+\newpage
+
+% -------------------------------------------------------------------
+% -----------------------   TEMA 3   --------------------------------
+% -------------------------------------------------------------------
+
+\section{Frecuencia}
+
+\subsection*{Ejercicio 1}
+\textbf{Enunciado.}\\
+La siguiente tabla muestra el número de llamadas recibidas en un call center en intervalos de 10 minutos. Complete la columna de frecuencias absolutas según los datos registrados:  
+\[
+\{12,\; 15,\; 18,\; 22,\; 15,\; 19,\; 16,\; 20,\; 18,\; 22,\; 21,\; 19\}.
+\]
+
+\textbf{Desarrollo.}\\
+Se cuentan las repeticiones de cada valor:
+\[
+12(1),\; 15(2),\; 16(1),\; 18(2),\; 19(2),\; 20(1),\; 21(1),\; 22(2).
+\]
+
+\textbf{Resultado.}\\
+La frecuencia absoluta queda representada así:
+\[
+\{1,\;2,\;1,\;2,\;2,\;1,\;1,\;2\}.
+\]
+
+\textbf{Fuente (APA):}\\
+Matemóvil. (2022). \textit{Histogramas: ejemplos y ejercicios}. Recuperado de https://matemovil.com/histogramas-ejemplos-y-ejercicios/
+
+
+\subsection*{Ejercicio 2}
+\textbf{Enunciado.}\\
+En una muestra de ventas diarias de una tienda de chocolates se obtuvieron los siguientes valores (unidades):  
+\[
+\{15,\; 18,\; 19,\; 20,\; 18,\; 17,\; 16,\; 19,\; 20,\; 18\}.
+\]
+Determine las frecuencias absolutas.
+
+\textbf{Desarrollo.}\\
+Se agrupan las repeticiones:
+\[
+15(1),\; 16(1),\; 17(1),\; 18(3),\; 19(2),\; 20(2).
+\]
+
+\textbf{Resultado.}\\
+Frecuencias absolutas:
+\[
+\{1,\;1,\;1,\;3,\;2,\;2\}.
+\]
+
+\textbf{Fuente (APA):}\\
+Scribd. (2023). \textit{Histogramas: ejercicios resueltos}. Recuperado de https://es.scribd.com/document/703612592/Histogramas-Ejercicios-Resueltos
+
+\newpage
+
+% -------------------------------------------------------------------
+% -----------------------   TEMA 4   --------------------------------
+% -------------------------------------------------------------------
+
+\section{Frecuencia Relativa}
+
+\subsection*{Ejercicio 1}
+\textbf{Enunciado.}\\
+Con los datos:  
+\[
+\{10,\; 12,\; 12,\; 14,\; 16,\; 16,\; 16,\; 18\},
+\]
+determine la frecuencia relativa de cada valor.
+
+\textbf{Desarrollo.}\\
+Total de datos: $N = 8$.  
+Frecuencias:  
+10(1), 12(2), 14(1), 16(3), 18(1).
+
+Frecuencia relativa:
+\[
+f_r=\frac{f}{N}.
+\]
+
+\[
+10:\frac{1}{8}=0.125,\;
+12:\frac{2}{8}=0.25,\;
+14:\frac{1}{8}=0.125,\;
+16:\frac{3}{8}=0.375,\;
+18:\frac{1}{8}=0.125.
+\]
+
+\textbf{Resultado.}\\
+Frecuencias relativas:  
+\[
+\{0.125,\; 0.25,\; 0.125,\; 0.375,\; 0.125\}.
+\]
+
+\textbf{Fuente (APA):}\\
+Lind, D., Marchal, W. \& Wathen, S. (2018). \textit{Estadística aplicada a los negocios y la economía}. McGraw-Hill.
+
+
+\subsection*{Ejercicio 2}
+\textbf{Enunciado.}\\
+Los siguientes datos representan las ventas semanales de un producto:  
+\[
+\{5,\; 7,\; 7,\; 8,\; 10,\; 10,\; 10,\; 12\}.
+\]
+Calcule la frecuencia relativa para cada valor distinto.
+
+\textbf{Desarrollo.}\\
+\[
+N=8.
+\]
+Frecuencias:  
+5(1), 7(2), 8(1), 10(3), 12(1).
+
+\[
+f_r=\frac{f}{8}.
+\]
+
+Cálculos:
+\[
+5:0.125,\;
+7:0.25,\;
+8:0.125,\;
+10:0.375,\;
+12:0.125.
+\]
+
+\textbf{Resultado.}\\
+Frecuencias relativas:  
+\[
+0.125,\; 0.25,\; 0.125,\; 0.375,\; 0.125.
+\]
+
+\textbf{Fuente (APA):}\\
+Triola, M. (2014). \textit{Estadística}. Pearson Educación.
+
+
+\newpage
+
+% -------------------------------------------------------------------
+% -----------------------   TEMA 5   --------------------------------
+% -------------------------------------------------------------------
+
+\section{Clases Cerradas y Abiertas}
+
+\subsection*{Ejercicio 1}
+\textbf{Enunciado.}\\
+Un conjunto de datos registra la altura (cm) de 40 personas. Construya clases cerradas de amplitud 5 cm iniciando en 155 cm.
+
+\textbf{Desarrollo.}\\
+Clases cerradas incluyen ambos límites: \([a,b]\).  
+Amplitud = 5.
+
+Clases:
+\[
+[155,160],\;
+[160,165],\;
+[165,170],\;
+[170,175],\;
+[175,180].
+\]
+
+\textbf{Resultado.}\\
+Las clases cerradas válidas son las anteriores.
+
+\textbf{Fuente (APA):}\\
+Scribd. (2023). \textit{Histogramas: ejercicios resueltos}. Recuperado de https://es.scribd.com/document/703612592/Histogramas-Ejercicios-Resueltos
+
+
+\subsection*{Ejercicio 2}
+\textbf{Enunciado.}\\
+Una base de datos de tiempos de espera (min) debe organizarse en clases abiertas. Construya clases de amplitud 10 min desde 0 min.
+
+\textbf{Desarrollo.}\\
+Clases abiertas:  
+\[
+[0,10),\;
+[10,20),\;
+[20,30),\;
+[30,40),\;
+[40,50).
+\]
+
+\textbf{Resultado.}\\
+Clases abiertas definidas según amplitud 10 min.
+
+\textbf{Fuente (APA):}\\
+Triola, M. (2014). \textit{Estadística}. Pearson Educación.
+
+
+\newpage
+
+% -------------------------------------------------------------------
+% -----------------------   TEMA 6   --------------------------------
+% -------------------------------------------------------------------
+
+\section{Gráficos de Distribución de Frecuencia}
+
+\subsection*{Ejercicio 1}
+\textbf{Enunciado.}\\
+La siguiente tabla corresponde a los tiempos de llamadas recibidas (min). Construya el gráfico de distribución de frecuencias (histograma).
+
+\begin{center}
+\begin{tabular}{c c}
+\toprule
+Intervalo & Frecuencia \\
+\midrule
+0--10 & 3 \\
+10--20 & 8 \\
+20--30 & 12 \\
+30--40 & 6 \\
+40--50 & 3 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Desarrollo.}\\
+El histograma se construye colocando los intervalos en el eje horizontal y las frecuencias en el vertical.  
+Cada barra tiene amplitud 10 y altura igual a su frecuencia.
+
+\textbf{Resultado.}\\
+Se obtiene un histograma con barras de alturas:  
+3, 8, 12, 6, 3.
+
+\textbf{Fuente (APA):}\\
+Matemóvil. (2022). \textit{Histogramas: ejemplos y ejercicios}. Recuperado de https://matemovil.com/histogramas-ejemplos-y-ejercicios/
+
+
+\subsection*{Ejercicio 2}
+\textbf{Enunciado.}\\
+Los datos de ventas de chocolates mostrados en la tabla siguiente corresponden a un ejercicio clásico de distribución de frecuencias. Dibuje el gráfico correspondiente.
+
+\begin{center}
+\begin{tabular}{c c}
+\toprule
+Unidades & Frecuencia \\
+\midrule
+15 & 4 \\
+16 & 2 \\
+17 & 3 \\
+18 & 5 \\
+19 & 4 \\
+20 & 3 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Desarrollo.}\\
+El gráfico de barras se construye asignando cada valor de unidades a una barra cuya altura coincide con su frecuencia.
+
+\textbf{Resultado.}\\
+Barras con alturas:
+\[
+4,\;2,\;3,\;5,\;4,\;3.
+\]
+
+\textbf{Fuente (APA):}\\
+Scribd. (2023). \textit{Histogramas: ejercicios resueltos}. Recuperado de https://es.scribd.com/document/703612592/Histogramas-Ejercicios-Resueltos
+
+
+\newpage
+
+% -------------------------------------------------------------------
+% -----------------------   TEMA 7   --------------------------------
+% -------------------------------------------------------------------
+
+\section{Variable Continua}
+
+\subsection*{Ejercicio 1}
+\textbf{Enunciado.}\\
+La variable “tiempo de atención en ventanilla (minutos)” se midió para 20 clientes. Determine si esta variable es continua y justifique con base en la definición estadística.
+
+\textbf{Desarrollo.}\\
+Una variable es continua si puede tomar infinitos valores en un intervalo real.  
+El tiempo puede medirse con precisión arbitraria (min, s, ms), por lo que no se limita a valores discretos.
+
+\textbf{Resultado.}\\
+El tiempo de atención es una variable continua porque puede tomar cualquier valor real dentro de un intervalo.
+
+\textbf{Fuente (APA):}\\
+Triola, M. (2014). \textit{Estadística}. Pearson Educación.
+
+
+\subsection*{Ejercicio 2}
+\textbf{Enunciado.}\\
+Se registra la temperatura (°C) en una planta industrial cada 10 minutos durante una hora. Determine si la variable temperatura es continua y explique por qué.
+
+\textbf{Desarrollo.}\\
+La temperatura puede tomar infinitos valores reales, aunque la medición sea redondeada.  
+En estadística, cualquier variable que admita subdivisión indefinida pertenece a las variables continuas.
+
+\textbf{Resultado.}\\
+La temperatura es una variable continua, ya que admite infinitos valores posibles en un intervalo.
+
+\textbf{Fuente (APA):}\\
+Montgomery, D. (2013). \textit{Probabilidad y estadística aplicadas a la ingeniería}. Wiley.
+
+
+\newpage
+
+% -------------------------------------------------------------------
+% -----------------------   TEMA 8   --------------------------------
+% -------------------------------------------------------------------
+
+\section{Ojivas}
+
+\subsection*{Ejercicio 1}
+\textbf{Enunciado.}\\
+Dada la siguiente tabla de frecuencias acumuladas de tiempos de espera (min), construya la ojiva correspondiente.
+
+\begin{center}
+\begin{tabular}{c c}
+\toprule
+Intervalo & Frecuencia acumulada \\
+\midrule
+0--5 & 4 \\
+5--10 & 10 \\
+10--15 & 17 \\
+15--20 & 22 \\
+20--25 & 25 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Desarrollo.}\\
+La ojiva representa puntos en el extremo superior de cada clase contra su frecuencia acumulada y posteriormente se unen mediante líneas.
+
+Puntos:
+\[
+(5,4),\; (10,10),\; (15,17),\; (20,22),\; (25,25).
+\]
+
+\textbf{Resultado.}\\
+La ojiva se construye uniendo los puntos anteriores con líneas rectas.
+
+\textbf{Fuente (APA):}\\
+Scribd. (2023). \textit{Frecuencia acumulada: ejercicio en clase}. Recuperado de https://es.scribd.com/document/557677562/Frecuencia-Acumulada-Ejercicio-en-Clase
+
+
+\subsection*{Ejercicio 2}
+\textbf{Enunciado.}\\
+La tabla siguiente muestra frecuencias acumuladas de ventas semanales. Construya la ojiva.
+
+\begin{center}
+\begin{tabular}{c c}
+\toprule
+Unidades acumuladas & Frecuencia acumulada \\
+\midrule
+10 & 3 \\
+20 & 9 \\
+30 & 15 \\
+40 & 18 \\
+50 & 20 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Desarrollo.}\\
+Se grafican los puntos:
+\[
+(10,3),\; (20,9),\; (30,15),\; (40,18),\; (50,20).
+\]
+
+\textbf{Resultado.}\\
+La ojiva se obtiene uniendo los puntos de manera ascendente.
+
+\textbf{Fuente (APA):}\\
+Matemóvil. (2022). \textit{Histogramas y distribución acumulada}. Recuperado de https://matemovil.com/histogramas-ejemplos-y-ejercicios/
+
+
+\newpage
+
+% -------------------------------------------------------------------
+% -----------------------   TEMA 9   --------------------------------
+% -------------------------------------------------------------------
+
+\section{Medidas de Tendencia Central}
+
+\subsection*{Ejercicio 1}
+\textbf{Enunciado.}\\
+Los siguientes datos representan salarios semanales (en miles):  
+\[
+\{220,\; 240,\; 250,\; 260,\; 300\}.
+\]
+Calcule la media, mediana y moda.
+
+\textbf{Desarrollo.}\\
+Media:
+\[
+\bar{x}=\frac{220+240+250+260+300}{5}=\frac{1270}{5}=254.
+\]
+
+Mediana: dato central → 250.  
+
+Moda: no hay repeticiones, por lo tanto no existe una moda.
+
+\textbf{Resultado.}\\
+Media = 254  
+Mediana = 250  
+Moda = No existe
+
+\textbf{Fuente (APA):}\\
+Lind, D., Marchal, W. \& Wathen, S. (2018). \textit{Estadística aplicada a los negocios}. McGraw-Hill.
+
+
+\subsection*{Ejercicio 2}
+\textbf{Enunciado.}\\
+Encuentre la media, mediana y moda de los datos:  
+\[
+\{12,\; 15,\; 15,\; 18,\; 20,\; 21\}.
+\]
+
+\textbf{Desarrollo.}\\
+Media:
+\[
+\bar{x}=\frac{12+15+15+18+20+21}{6}
+=\frac{101}{6}
+\approx 16.83.
+\]
+
+Mediana:  
+Datos ordenados: ya ordenados.  
+Posición 3 y 4:
+\[
+\frac{15+18}{2}=16.5.
+\]
+
+Moda: 15.
+
+\textbf{Resultado.}\\
+Media $\approx$ 16.83  
+Mediana = 16.5  
+Moda = 15
+
+\textbf{Fuente (APA):}\\
+Triola, M. (2014). \textit{Estadística}. Pearson Educación.
+
+
+\newpage
+
+% -------------------------------------------------------------------
+% -----------------------   TEMA 10  --------------------------------
+% -------------------------------------------------------------------
+
+\section{Media Armónica}
+
+\subsection*{Ejercicio 1}
+\textbf{Enunciado.}\\
+Un vehículo recorrió la mitad del trayecto a 40 km/h y la otra mitad a 60 km/h. Calcule la media armónica de las velocidades.
+
+\textbf{Desarrollo.}\\
+Fórmula:
+\[
+H=\frac{n}{\sum_{i=1}^{n}\frac{1}{x_i}}.
+\]
+
+\[
+H=\frac{2}{\frac{1}{40}+\frac{1}{60}}
+=\frac{2}{0.025+0.01667}
+=\frac{2}{0.04167}
+\approx 48.
+\]
+
+\textbf{Resultado.}\\
+La media armónica es aproximadamente 48 km/h.
+
+\textbf{Fuente (APA):}\\
+Wackerly, D., Mendenhall, W. \& Scheaffer, R. (2014). \textit{Matemáticas para la estadística}. Cengage Learning.
+
+
+\subsection*{Ejercicio 2}
+\textbf{Enunciado.}\\
+Un trabajador produce 5 unidades por hora durante la primera mitad del turno y 8 unidades por hora en la segunda mitad. Calcule la media armónica de productividad.
+
+\textbf{Desarrollo.}\\
+\[
+H=\frac{2}{\frac{1}{5}+\frac{1}{8}}
+=\frac{2}{0.2+0.125}
+=\frac{2}{0.325}
+\approx 6.15.
+\]
+
+\textbf{Resultado.}\\
+La media armónica es aproximadamente 6.15 unidades por hora.
+
+\textbf{Fuente (APA):}\\
+Montgomery, D. (2013). \textit{Probabilidad y estadística para ingeniería}. Wiley.
+
+
+\newpage
+
+% -------------------------------------------------------------------
+% -----------------------   TEMA 11  --------------------------------
+% -------------------------------------------------------------------
+
+\section{Mediana}
+
+\subsection*{Ejercicio 1}
+\textbf{Enunciado.}\\
+Los siguientes tiempos de atención (min) fueron registrados en un centro de servicio:  
+\[
+\{4,\; 6,\; 8,\; 9,\; 10,\; 12,\; 15\}.
+\]
+Calcule la mediana.
+
+\textbf{Desarrollo.}\\
+Los datos ya están ordenados.  
+Número de datos: $n = 7$ (impar).  
+La mediana es el valor en la posición:
+\[
+\frac{n+1}{2} = \frac{7+1}{2} = 4.
+\]
+El cuarto dato es 9.
+
+\textbf{Resultado.}\\
+La mediana es **9 minutos**.
+
+\textbf{Fuente (APA):}\\
+Triola, M. (2014). \textit{Estadística}. Pearson Educación.
+
+
+\subsection*{Ejercicio 2}
+\textbf{Enunciado.}\\
+Calcule la mediana de los datos:  
+\[
+\{12,\; 14,\; 16,\; 18,\; 20,\; 22\}.
+\]
+
+\textbf{Desarrollo.}\\
+$n=6$ (par).  
+La mediana es el promedio entre las posiciones 3 y 4.
+
+\[
+\text{Mediana} = \frac{16 + 18}{2} = 17.
+\]
+
+\textbf{Resultado.}\\
+La mediana es **17**.
+
+\textbf{Fuente (APA):}\\
+Lind, D., Marchal, W. \& Wathen, S. (2018). \textit{Estadística aplicada a los negocios}. McGraw-Hill.
+
+
+\newpage
+
+% -------------------------------------------------------------------
+% -----------------------   TEMA 12  --------------------------------
+% -------------------------------------------------------------------
+
+\section{Desviación Estándar}
+
+\subsection*{Ejercicio 1}
+\textbf{Enunciado.}\\
+Calcule la desviación estándar para los datos:  
+\[
+\{5,\; 7,\; 7,\; 8,\; 10\}.
+\]
+
+\textbf{Desarrollo.}\\
+Media:
+\[
+\bar{x}=\frac{5+7+7+8+10}{5}=7.4.
+\]
+
+Fórmula:
+\[
+s=\sqrt{\frac{\sum (x_i - \bar{x})^2}{n-1}}.
+\]
+
+Cálculos:
+\[
+(5-7.4)^2 = 5.76,\;
+(7-7.4)^2 = 0.16,\;
+(7-7.4)^2=0.16,
+\]
+\[
+(8-7.4)^2 = 0.36,\;
+(10-7.4)^2 = 6.76.
+\]
+
+\[
+\sum = 13.2.
+\]
+
+\[
+s=\sqrt{\frac{13.2}{4}}= \sqrt{3.3} \approx 1.82.
+\]
+
+\textbf{Resultado.}\\
+La desviación estándar es aproximadamente **1.82**.
+
+\textbf{Fuente (APA):}\\
+Triola, M. (2014). \textit{Estadística}. Pearson Educación.
+
+
+\subsection*{Ejercicio 2}
+\textbf{Enunciado.}\\
+Calcule la desviación estándar de:  
+\[
+\{10,\; 12,\; 15,\; 18\}.
+\]
+
+\textbf{Desarrollo.}\\
+Media:
+\[
+\bar{x}=\frac{10+12+15+18}{4}=13.75.
+\]
+
+\[
+s=\sqrt{\frac{(10-13.75)^2+(12-13.75)^2+(15-13.75)^2+(18-13.75)^2}{3}}.
+\]
+
+Cálculos:
+\[
+(10-13.75)^2=14.06,\;
+(12-13.75)^2=3.06,
+\]
+\[
+(15-13.75)^2=1.56,\;
+(18-13.75)^2=18.06.
+\]
+
+\[
+\sum=36.74.
+\]
+
+\[
+s=\sqrt{\frac{36.74}{3}}=\sqrt{12.25}=3.5.
+\]
+
+\textbf{Resultado.}\\
+La desviación estándar es **3.5**.
+
+\textbf{Fuente (APA):}\\
+Montgomery, D. (2013). \textit{Probabilidad y estadística aplicada a la ingeniería}. Wiley.
+
+
+\newpage
+
+% -------------------------------------------------------------------
+% -----------------------   TEMA 13  --------------------------------
+% -------------------------------------------------------------------
+
+\section{Distribución No Nominal}
+
+\subsection*{Ejercicio 1}
+\textbf{Enunciado.}\\
+Una encuesta clasifica el nivel de satisfacción en:  
+1 = Muy bajo,  
+2 = Bajo,  
+3 = Medio,  
+4 = Alto,  
+5 = Muy alto.  
+Los resultados fueron:  
+\[
+\{3,\;4,\;4,\;5,\;2,\;3,\;4,\;5\}.
+\]
+Determine el tipo de variable y su distribución.
+
+\textbf{Desarrollo.}\\
+La variable tiene categorías ordenadas → es **ordinal (no nominal)**.  
+Frecuencias:
+\[
+2(1),\; 3(2),\; 4(3),\; 5(2).
+\]
+
+\textbf{Resultado.}\\
+Distribución ordinal con mayor frecuencia en la categoría 4 (alto).
+
+\textbf{Fuente (APA):}\\
+Triola, M. (2014). \textit{Estadística}. Pearson Educación.
+
+
+\subsection*{Ejercicio 2}
+\textbf{Enunciado.}\\
+Una evaluación académica clasifica el desempeño como:  
+1 = Insuficiente,  
+2 = Regular,  
+3 = Bueno,  
+4 = Excelente.  
+Datos:  
+\[
+\{2,\;3,\;3,\;4,\;3,\;2,\;1,\;3\}.
+\]
+
+\textbf{Desarrollo.}\\
+Variable categórica ordenada → ordinal.  
+
+Frecuencias:
+\[
+1(1),\; 2(2),\; 3(4),\; 4(1).
+\]
+
+\textbf{Resultado.}\\
+La categoría más frecuente es **3 (Bueno)**.
+
+\textbf{Fuente (APA):}\\
+Lind, D., Marchal, W. \& Wathen, S. (2018). \textit{Estadística aplicada a los negocios}. McGraw-Hill.
+
+
+\newpage
+
+% -------------------------------------------------------------------
+% -----------------------   TEMA 14  --------------------------------
+% -------------------------------------------------------------------
+
+\section{Distribución Hipergeométrica}
+
+\subsection*{Ejercicio 1}
+\textbf{Enunciado.}\\
+Una caja contiene 10 componentes buenos y 5 defectuosos.  
+Si se extraen 4 sin reemplazo, calcule la probabilidad de obtener exactamente 2 defectuosos.
+
+\textbf{Desarrollo.}\\
+Fórmula:
+\[
+P(X=k)=\frac{\binom{D}{k}\binom{B}{n-k}}{\binom{N}{n}}.
+\]
+
+Datos: $D=5$, $B=10$, $N=15$, $n=4$, $k=2$.
+
+\[
+P=\frac{\binom{5}{2}\binom{10}{2}}{\binom{15}{4}}
+=\frac{10 \times 45}{1365}
+=\frac{450}{1365}
+\approx 0.3296.
+\]
+
+\textbf{Resultado.}\\
+La probabilidad es aproximadamente **0.3296**.
+
+\textbf{Fuente (APA):}\\
+Wackerly, D., Mendenhall, W. \& Scheaffer, R. (2014). \textit{Matemáticas para la estadística}. Cengage Learning.
+
+
+\subsection*{Ejercicio 2}
+\textbf{Enunciado.}\\
+Una urna contiene 12 bolas azules y 8 rojas. Si se extraen 5 sin reemplazo, calcule la probabilidad de obtener 3 azules.
+
+\textbf{Desarrollo.}\\
+\[
+P=\frac{\binom{12}{3}\binom{8}{2}}{\binom{20}{5}}.
+\]
+
+\[
+\binom{12}{3}=220,\quad \binom{8}{2}=28,\quad \binom{20}{5}=15504.
+\]
+
+\[
+P=\frac{220 \times 28}{15504}=\frac{6160}{15504}\approx 0.397.
+\]
+
+\textbf{Resultado.}\\
+La probabilidad es **0.397**.
+
+\textbf{Fuente (APA):}\\
+Montgomery, D. (2013). \textit{Probabilidad y estadística para ingeniería}. Wiley.
+
+
+\newpage
+
+% -------------------------------------------------------------------
+% -----------------------   TEMA 15  --------------------------------
+% -------------------------------------------------------------------
+
+\section{Distribución Exponencial}
+
+\subsection*{Ejercicio 1}
+\textbf{Enunciado.}\\
+El tiempo entre llegadas de clientes a un banco sigue una distribución exponencial con $\lambda = 0.2$.  
+Calcule la probabilidad de que el siguiente cliente llegue después de 10 minutos.
+
+\textbf{Desarrollo.}\\
+\[
+P(X>t)=e^{-\lambda t}.
+\]
+
+\[
+P(X>10)=e^{-0.2(10)}=e^{-2}\approx 0.1353.
+\]
+
+\textbf{Resultado.}\\
+La probabilidad es **0.1353**.
+
+\textbf{Fuente (APA):}\\
+Ross, S. (2014). \textit{Introducción a la probabilidad y estadística}. Academic Press.
+
+
+\subsection*{Ejercicio 2}
+\textbf{Enunciado.}\\
+Si el tiempo de vida de un componente electrónico sigue una distribución exponencial con $\lambda=0.05$, calcule la probabilidad de que dure menos de 30 horas.
+
+\textbf{Desarrollo.}\\
+\[
+P(X<t)=1-e^{-\lambda t}.
+\]
+
+\[
+P(X<30)=1-e^{-0.05(30)}=1-e^{-1.5}\approx 1-0.2231=0.7769.
+\]
+
+\textbf{Resultado.}\\
+La probabilidad es **0.7769**.
+
+\textbf{Fuente (APA):}\\
+Rice, J. (2006). \textit{Mathematical statistics and data analysis}. Cengage Learning.
+
+
+\newpage
+
+% -------------------------------------------------------------------
+% --------------------   BIBLIOGRAFÍA   -----------------------------
+% -------------------------------------------------------------------
+
+\section*{Referencias}
+
+Daniel, W. (2012). \textit{Bioestadística}. McGraw-Hill.
+
+Lind, D., Marchal, W., \& Wathen, S. (2018). \textit{Estadística aplicada a los negocios y la economía}. McGraw-Hill.
+
+Matemóvil. (2022). \textit{Histogramas: ejemplos y ejercicios}. Recuperado de https://matemovil.com/histogramas-ejemplos-y-ejercicios/
+
+Montgomery, D. (2013). \textit{Probabilidad y estadística aplicadas a la ingeniería}. Wiley.
+
+Rice, J. (2006). \textit{Mathematical statistics and data analysis}. Cengage Learning.
+
+Ross, S. (2014). \textit{Introducción a la probabilidad y estadística}. Academic Press.
+
+Scribd. (2023). \textit{Ejercicios de cálculo de población finita e infinita}. Recuperado de https://es.scribd.com/document/621107138/Ejercicios-de-calculo-de-poblacion-finita-e-infinita
+
+Scribd. (2023). \textit{Frecuencia acumulada: ejercicio en clase}. Recuperado de https://es.scribd.com/document/557677562/Frecuencia-Acumulada-Ejercicio-en-Clase
+
+Scribd. (2023). \textit{Histogramas: ejercicios resueltos}. Recuperado de https://es.scribd.com/document/703612592/Histogramas-Ejercicios-Resueltos
+
+Triola, M. (2014). \textit{Estadística}. Pearson Educación.
+
+Wackerly, D., Mendenhall, W., \& Scheaffer, R. (2014). \textit{Matemáticas para la estadística}. Cengage Learning.
+
+
+\end{document}

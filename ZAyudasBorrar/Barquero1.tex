@@ -1,0 +1,872 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{siunitx}
+
+\begin{document}
+
+\section*{Problema 1}
+
+\subsection*{Datos}
+
+\[
+P = 600\ \text{lb},\qquad
+E = 29\times 10^{6}\ \text{psi},
+\qquad
+A = 0,125\ \text{pulg}^2
+\]
+
+\[
+L_{BC} = 5\ \text{pulg},\qquad
+L_{DE} = 5\ \text{pulg}
+\]
+
+\[
+S_C = 6\theta,\qquad
+S_D = 4\theta,\qquad
+S_A = 10\theta
+\]
+
+\subsection*{Fórmulas}
+
+\[
+F = \frac{EA\,S}{L}
+\]
+
+\[
+\sum M_F = 0
+\]
+
+\subsection*{Fuerza en BC}
+
+\[
+F_{BC} = \frac{EA(-6\theta)}{5}
+\]
+
+\[
+F_{BC} = \frac{(29\times 10^{6})(0,125)(-6\theta)}{5}
+\]
+
+\[
+F_{BC} = -4,35\times 10^{6}\theta
+\]
+
+\subsection*{Fuerza en ED}
+
+\[
+F_{ED} = \frac{EA(4\theta)}{5}
+\]
+
+\[
+F_{ED} = \frac{(29\times 10^{6})(0,125)(4\theta)}{5}
+\]
+
+\[
+F_{ED} = 2,90\times 10^{6}\theta
+\]
+
+\subsection*{Cálculo del ángulo $\theta$}
+
+\[
+10P - 6F_{BC} - 4F_{ED} = 0
+\]
+
+\[
+10(600)
+- 6(-4,35\times 10^{6}\theta)
+- 4(2,90\times 10^{6}\theta)
+= 0
+\]
+
+\[
+6000 + 26,1\times 10^{6}\theta - 11,6\times 10^{6}\theta = 0
+\]
+
+\[
+14,5\times 10^{6}\theta = -6000
+\]
+
+\[
+\theta = -4,14\times 10^{-4}\ \text{rad}
+\]
+
+\[
+\theta = 4,14\times 10^{-4}\ \text{rad}
+\]
+
+\subsection*{Fuerzas finales}
+
+\[
+F_{BC} = -4,35\times 10^{6}(4,14\times 10^{-4})
+\]
+
+\[
+F_{BC} = -1800\ \text{lb}
+\]
+
+\[
+F_{ED} = 2,90\times 10^{6}(4,14\times 10^{-4})
+\]
+
+\[
+F_{ED} = 1200\ \text{lb}
+\]
+
+\subsection*{Deflexión en A}
+
+\[
+S_A = 10\theta
+\]
+
+\[
+S_A = 10(4,14\times 10^{-4})
+\]
+
+\[
+S_A = 4,14\times 10^{-3}\ \text{pulg}
+\]
+
+\subsection*{Resultados}
+
+\[
+\boxed{F_{BC}=1800\ \text{lb}}
+\]
+
+\[
+\boxed{F_{ED}=1200\ \text{lb}}
+\]
+
+\[
+\boxed{\delta_A = 0,00414\ \text{pulg}}
+\]
+\newpage
+\section*{Problema 2}
+
+\subsection*{Datos}
+
+\[
+d_{AB}=0,6\ \text{in},\qquad
+d_{BC}=0,75\ \text{in},\qquad
+d_{CD}=0,9\ \text{in}
+\]
+
+\[
+d_h = 0,30\ \text{in},\qquad
+c_1 = \frac{d_h}{2} = 0,15\ \text{in}
+\]
+
+\[
+T_A = 400\ \text{lb·in},\qquad
+T_B = 1200\ \text{lb·in},\qquad
+T_C = 500\ \text{lb·in}
+\]
+
+\subsection*{Torques internos}
+
+\[
+T_{AB}=400\ \text{lb·in}
+\]
+
+\[
+T_{BC}=1200 - 400 = 800\ \text{lb·in}
+\]
+
+\[
+T_{CD}=1200 - 400 + 500 = 1300\ \text{lb·in}
+\]
+
+\subsection*{Momento polar de inercia}
+
+\[
+J=\frac{\pi}{32}(d_o^4 - d_i^4)
+\]
+
+\[
+d_i^4 = (0,30)^4 = 0,0081
+\]
+
+\subsubsection*{Tramo AB}
+
+\[
+d_o = 0,6,\qquad
+d_o^4 = (0,6)^4 = 0,1296
+\]
+
+\[
+J_{AB}=\frac{\pi}{32}(0,1296 - 0,0081)
+\]
+
+\[
+J_{AB}=\frac{3,1416}{32}(0,1215)
+\]
+
+\[
+J_{AB}=0,01193\ \text{in}^4
+\]
+
+\subsubsection*{Tramo BC}
+
+\[
+d_o = 0,75,\qquad
+d_o^4 = (0,75)^4 = 0,3164
+\]
+
+\[
+J_{BC}=\frac{\pi}{32}(0,3164 - 0,0081)
+\]
+
+\[
+J_{BC}=\frac{3,1416}{32}(0,3083)
+\]
+
+\[
+J_{BC}=0,03030\ \text{in}^4
+\]
+
+\subsubsection*{Tramo CD}
+
+\[
+d_o = 0,9,\qquad
+d_o^4 = (0,9)^4 = 0,6561
+\]
+
+\[
+J_{CD}=\frac{\pi}{32}(0,6561 - 0,0081)
+\]
+
+\[
+J_{CD}=\frac{3,1416}{32}(0,6480)
+\]
+
+\[
+J_{CD}=0,06360\ \text{in}^4
+\]
+
+\subsection*{Esfuerzo cortante máximo}
+
+\[
+\tau_{\max} = \frac{T\,c_2}{J}
+\]
+
+\textbf{Donde}
+
+\[
+c_2 = \frac{d_o}{2}
+\]
+
+\subsubsection*{Tramo AB}
+
+\[
+c_{AB} = 0,3\ \text{in}
+\]
+
+\[
+\tau_{AB} = \frac{400(0,3)}{0,01193}
+           = \frac{120}{0,01193}
+\]
+
+\[
+\tau_{AB} = 10060\ \text{psi}
+\]
+
+\[
+\tau_{AB} = 10,06\ \text{ksi}
+\]
+
+\subsubsection*{Tramo BC}
+
+\[
+c_{BC}=0,375\ \text{in}
+\]
+
+\[
+\tau_{BC} = \frac{800(0,375)}{0,03030}
+           = \frac{300}{0,03030}
+\]
+
+\[
+\tau_{BC}=9900\ \text{psi}
+\]
+
+\[
+\tau_{BC}=9,90\ \text{ksi}
+\]
+
+\subsubsection*{Tramo CD}
+
+\[
+c_{CD}=0,45\ \text{in}
+\]
+
+\[
+\tau_{CD}=\frac{1300(0,45)}{0,06360}
+         =\frac{585}{0,06360}
+\]
+
+\[
+\tau_{CD}=9198\ \text{psi}
+\]
+
+\[
+\tau_{CD}=9,20\ \text{ksi}
+\]
+
+\subsection*{Resultados}
+
+\[
+\boxed{\tau_{\max}\ \text{ocurre en el tramo AB}}
+\]
+
+\[
+\boxed{\tau_{\max} \approx 1,006\times 10^{4}\ \text{psi} = 10,06\ \text{ksi}}
+\]
+
+\newpage
+\section*{Problema 3}
+
+\subsection*{Datos}
+
+\[
+T_B = 400\ \text{N·m},\qquad
+T_C = 900\ \text{N·m},\qquad
+T_D = 500\ \text{N·m}
+\]
+
+\[
+G = 27\times 10^{9}\ \text{Pa}
+\]
+
+\[
+L_{AB} = 0,6\ \text{m},\quad
+L_{BC} = 0,8\ \text{m},\quad
+L_{CD} = 1,0\ \text{m},\quad
+L_{DE} = 0,5\ \text{m}
+\]
+
+\[
+d_{BC} = 30\ \text{mm} = 0,030\ \text{m},\qquad
+d_{CD} = 36\ \text{mm} = 0,036\ \text{m}
+\]
+
+\subsection*{Torques internos}
+
+\[
+T_{BC} = 400\ \text{N·m}
+\]
+
+\[
+T_{CD} = 400 - 900 = -500\ \text{N·m}
+\]
+
+\subsection*{Propiedades de sección}
+
+\[
+c_{BC} = \frac{d_{BC}}{2}
+       = \frac{0,030}{2}
+       = 0,015\ \text{m}
+\]
+
+\[
+J_{BC} = \frac{\pi}{2} c_{BC}^{4}
+       = \frac{\pi}{2} (0,015)^{4}
+       = \frac{\pi}{2} (5,0625\times 10^{-8})
+       = 79,522\times 10^{-9}\ \text{m}^{4}
+\]
+
+\[
+c_{CD} = \frac{d_{CD}}{2}
+       = \frac{0,036}{2}
+       = 0,018\ \text{m}
+\]
+
+\[
+J_{CD} = \frac{\pi}{2} c_{CD}^{4}
+       = \frac{\pi}{2} (0,018)^{4}
+       = \frac{\pi}{2} (1,04976\times 10^{-7})
+       = 164,896\times 10^{-9}\ \text{m}^{4}
+\]
+
+\subsection*{Ángulo de giro entre C y B}
+
+\[
+\varphi_{BC} = \frac{T_{BC} L_{BC}}{G J_{BC}}
+\]
+
+\[
+\varphi_{BC} =
+\frac{(400)(0,8)}
+     {(27\times 10^{9})(79,522\times 10^{-9})}
+\]
+
+\[
+\varphi_{BC} =
+\frac{320}
+     {2,147094\times 10^{3}}
+= 0,1499\ \text{rad}
+\]
+
+\[
+\varphi_{BC}\left( \frac{180^\circ}{\pi} \right)
+= 0,1499\left( \frac{180^\circ}{\pi} \right)
+= 8,54^\circ
+\]
+
+\[
+\boxed{\varphi_{CB} = 0,1499\ \text{rad} = 8,54^\circ}
+\]
+
+\subsection*{Ángulo de giro entre D y B}
+
+\[
+\varphi_{CD} = \frac{T_{CD} L_{CD}}{G J_{CD}}
+\]
+
+\[
+\varphi_{CD} =
+\frac{(-500)(1,0)}
+     {(27\times 10^{9})(164,896\times 10^{-9})}
+\]
+
+\[
+\varphi_{CD} =
+\frac{-500}
+     {4,452192\times 10^{3}}
+= -0,1123\ \text{rad}
+\]
+
+\[
+\varphi_{DB} = \varphi_{BC} + \varphi_{CD}
+\]
+
+\[
+\varphi_{DB} = 0,1499 - 0,1123
+             = 0,0370\ \text{rad}
+\]
+
+\[
+\varphi_{DB}\left( \frac{180^\circ}{\pi} \right)
+= 0,0370\left( \frac{180^\circ}{\pi} \right)
+= 2,12^\circ
+\]
+
+\[
+\boxed{\varphi_{DB} \approx 0,037\ \text{rad} \approx 2,12^\circ}
+\]
+\newpage
+\section*{Problema 4}
+
+\subsection*{Datos}
+
+\[
+T_A = 750\ \text{lb·in}
+\]
+
+\[
+d = \tfrac{3}{4}\ \text{in} = 0,75\ \text{in},\qquad
+c = \frac{d}{2} = 0,375\ \text{in}
+\]
+
+\[
+G = 11,2\times 10^{6}\ \text{psi}
+\]
+
+\[
+L_{FE} = 8\ \text{in},\qquad
+L_{BA} = 6 + 5 = 11\ \text{in}
+\]
+
+Relación de radios entre engranes:
+\[
+\frac{r_E}{r_B} = \frac{4}{3}
+\]
+
+\subsection*{Torque transmitido al eje FE}
+
+\[
+T_{FE} = \frac{r_E}{r_B}\,T_A
+       = \frac{4}{3}(750)
+       = 1000\ \text{lb·in}
+\]
+
+\subsection*{Momento polar de inercia de los ejes}
+
+\[
+J = \frac{\pi}{2}c^{4}
+\]
+
+\[
+c^{4} = (0,375)^{4} = 0,019775
+\]
+
+\[
+J = \frac{\pi}{2}(0,019775)
+  = 0,031063\ \text{in}^{4}
+\]
+
+\subsection*{Giro del eje FE}
+
+\[
+\varphi_{FE} = \frac{T_{FE} L_{FE}}{GJ}
+\]
+
+\[
+\varphi_{FE} =
+\frac{(1000)(8)}
+     {(11,2\times 10^{6})(0,031063)}
+\]
+
+\[
+\varphi_{FE} = 22,995\times 10^{-3}\ \text{rad}
+\]
+
+\[
+\varphi_E = \varphi_{FE} = 22,995\times 10^{-3}\ \text{rad}
+\]
+
+\subsection*{Rotación en B por efecto del engrane}
+
+Desplazamientos tangenciales:
+\[
+r_E \varphi_E = r_B \varphi_B
+\]
+
+\[
+\varphi_B = \frac{r_E}{r_B}\,\varphi_E
+          = \frac{4}{3}(22,995\times 10^{-3})
+\]
+
+\[
+\varphi_B = 30,660\times 10^{-3}\ \text{rad}
+\]
+
+\subsection*{Giro del eje BA}
+
+\[
+\varphi_{BA} = \frac{T_A L_{BA}}{GJ}
+\]
+
+\[
+\varphi_{BA} =
+\frac{(750)(11)}
+     {(11,2\times 10^{6})(0,031063)}
+\]
+
+\[
+\varphi_{BA} = 27,713\times 10^{-3}\ \text{rad}
+\]
+
+\subsection*{Rotación en A}
+
+\[
+\varphi_A = \varphi_B + \varphi_{BA}
+\]
+
+\[
+\varphi_A = 30,660\times 10^{-3}
+          + 27,713\times 10^{-3}
+\]
+
+\[
+\varphi_A = 54,373\times 10^{-3}\ \text{rad}
+\]
+
+\[
+\varphi_A = 0,05437\ \text{rad}
+\]
+
+\[
+\varphi_A(^\circ)
+= 0,05437\left(\frac{180^\circ}{\pi}\right)
+= 3,12^\circ
+\]
+
+\subsection*{Resultado}
+
+\[
+\boxed{\varphi_A \approx 0,0544\ \text{rad} \;\approx\ 3,12^\circ}
+\]
+\newpage
+\section*{Problema 5}
+
+\subsection*{Datos}
+
+\[
+\tau_{\text{adm}} = 8500\ \text{psi},\qquad
+G = 11,2\times 10^{6}\ \text{psi}
+\]
+
+\[
+L = 125\ \text{ft} = 1500\ \text{in}
+\]
+
+\[
+d_o = 16\ \text{in},\qquad
+d_i = 8\ \text{in}
+\]
+
+\[
+c_2 = \frac{d_o}{2} = 8\ \text{in},\qquad
+c_1 = \frac{d_i}{2} = 4\ \text{in}
+\]
+
+\[
+\text{rpm} = 165,\qquad
+f = \frac{165}{60} = 2,75\ \text{Hz}
+\]
+
+\subsection*{Momento polar}
+
+\[
+J=\frac{\pi}{2}(c_2^{4}-c_1^{4})
+\]
+
+\[
+c_2^{4} = 8^{4} = 4096,\qquad
+c_1^{4} = 4^{4} = 256
+\]
+
+\[
+c_2^{4}-c_1^{4} = 4096 - 256 = 3840
+\]
+
+\[
+J = \frac{\pi}{2}(3840)
+\]
+
+\[
+J = 6031,8579\ \text{in}^{4}
+\]
+
+\subsection*{Torque máximo}
+
+\[
+\tau = \frac{Tc}{J}
+\]
+
+\[
+T = \frac{\tau J}{c}
+\]
+
+\[
+T = \frac{(8500)(6031,8579)}{8}
+\]
+
+\[
+T = 6408844,0188\ \text{lb·in}
+\]
+
+\subsection*{Potencia máxima}
+
+\[
+P = 2\pi f T
+\]
+
+\[
+P = 2\pi(2,75)(6408844,0188)
+\]
+
+\[
+P = 110736961,47\ \frac{\text{lb·in}}{s}
+\]
+
+Conversión a HP:
+
+\[
+1\ \text{HP} = 6600\ \frac{\text{lb·in}}{s}
+\]
+
+\[
+P = \frac{110736961,47}{6600}
+\]
+
+\[
+P = 16778,3275\ \text{HP}
+\]
+
+\subsection*{Ángulo de giro}
+
+\[
+\varphi = \frac{T L}{G J}
+\]
+
+\[
+\varphi = 
+\frac{(6408844,0188)(1500)}
+     {(11,2\times 10^{6})(6031,8579)}
+\]
+
+\[
+\varphi = 0,1423\ \text{rad}
+\]
+
+\[
+\varphi =
+0,1423 \left(\frac{180^\circ}{\pi}\right)
+=
+8,1532^\circ
+\]
+
+\subsection*{Resultados}
+
+\[
+\boxed{
+P_{\max} = 1,678\times 10^{4}\ \text{HP}
+}
+\]
+
+\[
+\boxed{
+\varphi = 0,1423\ \text{rad} \;\; (8,1532^\circ)
+}
+\]
+\newpage
+\section*{Problema 6}
+
+\subsection*{Datos}
+
+\[
+w = 8\ \text{kN/m},\qquad
+P = 10\ \text{kN}
+\]
+
+\[
+x = 2\ \text{m}
+\]
+
+\[
+L = 6\ \text{m}
+\]
+
+\subsection*{Reacciones}
+
+\[
+\sum M_A = 0
+\]
+
+\[
+F_B(6) - 10(5) - 8(3)\left(1+\frac{3}{2}\right) = 0
+\]
+
+\[
+F_B = 18,3333\ \text{kN}
+\]
+
+\[
+\sum F_y = 0
+\]
+
+\[
+F_A + 8(3) - 10 - 18,3333 = 0
+\]
+
+\[
+F_A = 15,6667\ \text{kN}
+\]
+
+\subsection*{Momento flector a 2 m}
+
+\[
+\sum M = 0
+\]
+
+\[
+-15,6667(2) + 8(1)\left(\frac{1}{2}\right) + M = 0
+\]
+
+\[
+M = 27,3334\ \text{kN·m}
+\]
+
+\subsection*{Propiedades geométricas}
+
+\[
+b = 10\ \text{mm},\quad
+h = 50\ \text{mm}
+\]
+
+\[
+\bar y =
+\frac{(10)(50)(35)^2 + 50(10)(5)}{(10)(50)^3}
+\]
+
+\[
+\bar y = 25\ \text{mm}
+\]
+
+\[
+I_1 = \frac{1}{12}(10)(50)^3 + 50(10)(35-25)^2
+\]
+
+\[
+I_1 = 154166,6667\ \text{mm}^4
+\]
+
+\[
+I_2 = I_1
+\]
+
+\[
+I_3 = \frac{1}{12}(50)(10)^3 + 50(10)(25-5)^2
+\]
+
+\[
+I_3 = 204166,6667\ \text{mm}^4
+\]
+
+\[
+I_T = I_1 + I_2 + I_3
+\]
+
+\[
+I_T = 512500\ \text{mm}^4
+\]
+
+\subsection*{Esfuerzo máximo}
+
+\[
+\sigma = \frac{M c}{I}
+\]
+
+\subsection*{En compresión}
+
+\[
+c = 35\ \text{mm}
+\]
+
+\[
+\sigma_{\max} =
+\frac{(27,3334)(10^6)(35)}
+     {512500}
+\]
+
+\[
+\sigma_{\max} = 1,8667\ \text{GPa}
+\]
+
+\subsection*{En tensión}
+
+\[
+c = 25\ \text{mm}
+\]
+
+\[
+\sigma_{\max} =
+\frac{(27,3334)(10^6)(25)}
+     {512500}
+\]
+
+\[
+\sigma_{\max} = 1,3333\ \text{GPa}
+\]
+
+\subsection*{Resultados}
+
+\[
+\boxed{\sigma_{\text{comp}} = 1,8667\ \text{GPa}}
+\]
+
+\[
+\boxed{\sigma_{\text{tens}} = 1,3333\ \text{GPa}}
+\]
+
+\end{document}

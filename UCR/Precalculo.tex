@@ -1,0 +1,646 @@
+\documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\geometry{a4paper, margin=2.5cm}
+
+% Encabezado y pie de página
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{MA-0001 Precálculo}
+\rhead{Guía de ejercicios resueltos}
+\cfoot{\thepage}
+
+\title{Guía de Ejercicios Resueltos y Explicados\\\large Curso MA-0001 Precálculo}
+\author{Universidad de Costa Rica\\Escuela de Matemática\\Departamento de Matemática Aplicada}
+\date{I Ciclo 2024}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\section*{Introducción}
+Esta guía tiene como objetivo reforzar los contenidos del curso MA-0001 Precálculo mediante una serie de ejercicios resueltos y explicados paso a paso. Se abordan los temas más relevantes como funciones, factorización, gráficos, trigonometría, exponentes, logaritmos, entre otros. Cada ejercicio está diseñado para seguir una estructura lógica y didáctica, facilitando el aprendizaje autónomo del estudiantado.
+
+\section{Funciones y gráficos}
+
+\subsection*{Ejercicio 1: Dominio de una función racional}
+Determinar el dominio de la función:
+\[f(x) = \frac{x + 2}{x^2 - 9}\]
+\begin{itemize}
+  \item El denominador no puede ser cero: \( x^2 - 9 \neq 0 \Rightarrow x \neq \pm 3 \)
+  \item Por lo tanto, el dominio es: \( \mathbb{R} \setminus \{-3, 3\} \)
+\end{itemize}
+
+\subsection*{Ejercicio 2: Dominio de una función con raíz cuadrada}
+Determinar el dominio de:
+\[f(x) = \sqrt{2x - 4}\]
+\begin{itemize}
+  \item La expresión dentro de la raíz debe ser \( \geq 0 \): \( 2x - 4 \geq 0 \Rightarrow x \geq 2 \)
+  \item Dominio: \( [2, \infty) \)
+\end{itemize}
+
+\subsection*{Ejercicio 3: Dominio de función logarítmica}
+Determinar el dominio de:
+\[f(x) = \log(x^2 - 1)\]
+\begin{itemize}
+  \item La expresión dentro del logaritmo debe ser positiva: \( x^2 - 1 > 0 \Rightarrow x < -1 \text{ o } x > 1 \)
+  \item Dominio: \( (-\infty, -1) \cup (1, \infty) \)
+\end{itemize}
+
+\subsection*{Ejercicio 4: Imagen y dominio de función polinomial}
+Analizar el dominio e imagen de:
+\[f(x) = x^2 - 4x + 3\]
+\begin{itemize}
+  \item Polinomio definido en todo \( \mathbb{R} \). Dominio: \( \mathbb{R} \)
+  \item Vértice en \( x = 2 \), \( f(2) = -1 \Rightarrow \) Imagen: \( [-1, \infty) \)
+\end{itemize}
+
+\subsection*{Ejercicio 5: Análisis gráfico de función a trozos}
+\[f(x) = \begin{cases}
+x + 2, & x < 0 \\
+2x, & x \geq 0
+\end{cases}\]
+\begin{itemize}
+  \item Dominio: \( \mathbb{R} \)
+  \item Imagen: \( (-\infty, 0) \cup [0, \infty) \Rightarrow \mathbb{R} \)
+  \item Puntos importantes: continuidad en \( x = 0 \), donde \( f(0^-) = 2 \), \( f(0^+) = 0 \Rightarrow \) discontinua
+\end{itemize}
+
+
+\section{Factorización de expresiones algebraicas}
+
+\subsection*{Ejercicio 1: Factor común}
+\[
+3x^2 + 6x
+\]
+\begin{align*}
+&\text{Factor común: } 3x \\\\
+&3x^2 + 6x = 3x(x + 2)
+\end{align*}
+
+\subsection*{Ejercicio 2: Trinomio cuadrado perfecto}
+\[
+x^2 + 6x + 9
+\]
+\begin{align*}
+&x^2 = (x)^2, \quad 9 = (3)^2, \quad 6x = 2 \cdot x \cdot 3 \\\\
+&x^2 + 6x + 9 = (x + 3)^2
+\end{align*}
+
+\subsection*{Ejercicio 3: Trinomio general \( ax^2 + bx + c \)}
+\[
+2x^2 + 5x + 2
+\]
+\begin{align*}
+&a \cdot c = 4 \quad (2 \cdot 2) \\\\
+&1 \cdot 4 = 4, \quad 1 + 4 = 5 \\\\
+&2x^2 + 4x + x + 2 \\\\
+&2x(x + 2) + 1(x + 2) \\\\
+&= (2x + 1)(x + 2)
+\end{align*}
+
+\subsection*{Ejercicio 4: Diferencia de cuadrados}
+\[
+x^2 - 16
+\]
+\begin{align*}
+&x^2 = (x)^2, \quad 16 = (4)^2 \\\\
+&x^2 - 16 = (x - 4)(x + 4)
+\end{align*}
+
+\subsection*{Ejercicio 5: Trinomio complejo}
+\[
+6x^2 - 7x - 5
+\]
+\begin{align*}
+&a \cdot c = -30 \quad (6 \cdot -5) \\\\
+&-10 \cdot 3 = -30, \quad -10 + 3 = -7 \\\\
+&6x^2 - 10x + 3x - 5 \\\\
+&2x(3x - 5) + 1(3x - 5) \\\\
+&= (2x + 1)(3x - 5)
+\end{align*}
+\subsection*{Ejercicio 6: Factor común y orden descendente}
+Factorizar completamente:
+\[
+2x + 8x^2 - 3
+\]
+
+\begin{enumerate}
+  \item Reordenamos los términos en orden descendente:
+  \[
+  8x^2 + 2x - 3
+  \]
+  \item Buscamos dos números que multiplicados den \( 8 \cdot (-3) = -24 \) y sumen 2: \(6, -4)\)
+  \item Reescribimos:
+  \[
+  8x^2 + 6x - 4x - 3
+  \]
+  \item Agrupamos y factorizamos:
+  \[
+  2x(4x + 3) -1(4x + 3)
+  \]
+  \item Factor común:
+  \[
+  (2x - 1)(4x + 3)
+  \]
+\end{enumerate}
+
+\subsection*{Ejercicio 7: Expandir y simplificar primero}
+Factorizar completamente:
+\[
+(x - 2)(2x + 3) - (4x^2 - 9)
+\]
+
+\begin{enumerate}
+  \item Desarrollamos ambos productos:
+  \[
+  (x - 2)(2x + 3) = 2x^2 - x - 6
+  \quad\text{y}\quad
+  4x^2 - 9 = (2x - 3)(2x + 3)
+  \]
+  \item Sustituimos:
+  \[
+  2x^2 - x - 6 - 4x^2 + 9 = -2x^2 - x + 3
+  \]
+  \item Factorizamos:
+  \[
+  -2x^2 - x + 3 = -(2x^2 + x - 3)
+  \Rightarrow -((2x - 3)(x + 1))
+  \]
+\end{enumerate}
+
+\subsection*{Ejercicio 8: Factor común de polinomios}
+Factorizar:
+\[
+b^2 - x^2 (4a^2 - 4am + m^2)
+\]
+
+\begin{enumerate}
+  \item Reconocer un trinomio cuadrado perfecto:
+  \[
+  4a^2 - 4am + m^2 = (2a - m)^2
+  \]
+  \item Sustituir:
+  \[
+  b^2 - x^2(2a - m)^2 = b^2 - (x(2a - m))^2
+  \]
+  \item Aplicar diferencia de cuadrados:
+  \[
+  b^2 - (2ax - mx)^2 = (b - x(2a - m))(b + x(2a - m))
+  \]
+\end{enumerate}
+
+\subsection*{Ejercicio 9: Diferencia de cubos}
+Factorizar:
+\[
+(2x + 1)^3 - (3 - 2x)^3
+\]
+
+\begin{enumerate}
+  \item Aplicamos identidad de diferencia de cubos:
+  \[
+  a^3 - b^3 = (a - b)(a^2 + ab + b^2)
+  \]
+  \item Sea:
+  \[
+  a = 2x + 1, \quad b = 3 - 2x
+  \]
+  \item Entonces:
+  \[
+  (2x + 1)^3 - (3 - 2x)^3 = [(2x + 1) - (3 - 2x)]\cdot[(2x + 1)^2 + (2x + 1)(3 - 2x) + (3 - 2x)^2]
+  \]
+  \item Simplificamos el primer factor:
+  \[
+  2x + 1 - 3 + 2x = 4x - 2
+  \]
+\end{enumerate}
+
+\subsection*{Ejercicio 10: Determinar ceros}
+Sea:
+\[
+P(x) = (x - 3)(2x + 1)^3 + (x^2 - 9)(2x - 1)
+\]
+
+\begin{enumerate}
+  \item Sustituimos las opciones para ver cuál da \( P(x) = 0 \)
+  \item Probar con \( x = -\frac{1}{2} \):
+  \[ 
+  (x - 3)(2x + 1)^3 = (-\frac{1}{2} - 3)(0)^3 = 0 \\ 
+  (x^2 - 9)(2x - 1) = ((\frac{1}{4} - 9)(-2)) \neq 0
+  \]
+  \item Probar con \( x = \frac{1}{2} \):
+  \[
+  (x - 3)(2x + 1)^3 = (-\frac{5}{2})(2)^3 = -20 \\ 
+  (x^2 - 9)(2x - 1) = ((\frac{1}{4} - 9)(0)) = 0 \\ 
+  \Rightarrow P(\frac{1}{2}) = -20 \Rightarrow \text{No es cero}
+  \]
+  \item Probar con \( x = 3 \):
+  \[
+  (3 - 3)(7)^3 = 0, \quad (9 - 9)(5) = 0 \Rightarrow P(3) = 0
+  \]
+  \item \textbf{Respuesta correcta: } \( x = 3 \)
+\end{enumerate}
+
+\section{Simplificación y racionalización con raíces}
+
+\subsection*{Ejercicio 1: División de raíces cuadradas}
+\[
+\frac{\sqrt{50}}{\sqrt{2}} = \sqrt{\frac{50}{2}} = \sqrt{25} = 5
+\]
+
+\subsection*{Ejercicio 2: Racionalización de denominador simple}
+\[
+\frac{3}{\sqrt{5}} \cdot \frac{\sqrt{5}}{\sqrt{5}} = \frac{3\sqrt{5}}{5}
+\]
+
+\subsection*{Ejercicio 3: Racionalización de binomio}
+\[
+\frac{1}{\sqrt{2} + \sqrt{3}} \cdot \frac{\sqrt{2} - \sqrt{3}}{\sqrt{2} - \sqrt{3}} = \frac{\sqrt{2} - \sqrt{3}}{-1} = -\sqrt{2} + \sqrt{3}
+\]
+
+\subsection*{Ejercicio 4: Expresión con raíces múltiples}
+\[
+\frac{x^2 - 5x}{\sqrt[3]{x} \cdot (\sqrt{2x - \sqrt{5 + x}})} = \frac{x(x - 5)}{\sqrt[3]{x} \cdot \sqrt{2x - \sqrt{5 + x}}}
+\]
+
+\subsection*{Ejercicio 5: Suma de raíces}
+\[
+\sqrt{18} + \sqrt{8} = 3\sqrt{2} + 2\sqrt{2} = 5\sqrt{2}
+\]
+\section{Ecuaciones racionales y con valor absoluto}
+
+\subsection*{Ejercicio 1: Ecuación racional básica}
+\[
+\frac{x - 10}{x + 1} = 2
+\]
+\begin{align*}
+x - 10 &= 2(x + 1) \\\\
+x - 10 &= 2x + 2 \\\\
+-12 &= x \\\\
+&\Rightarrow \boxed{x = -12}
+\end{align*}
+
+\subsection*{Ejercicio 2: Ecuación con valor absoluto}
+\[
+|3x - 2| = 7
+\]
+\begin{align*}
+3x - 2 &= 7 \Rightarrow x = 3 \\\\
+3x - 2 &= -7 \Rightarrow x = -\frac{5}{3} \\\\
+&\Rightarrow \boxed{x = 3 \text{ ó } x = -\frac{5}{3}}
+\end{align*}
+
+\subsection*{Ejercicio 3: Valor absoluto igual a número negativo}
+\[
+|x| + |2x - 3| = -12
+\]
+\[
+\text{No tiene solución real } \Rightarrow \boxed{\varnothing}
+\]
+
+\subsection*{Ejercicio 4: Ecuación racional con factorización}
+\[
+\frac{1}{x - 2} = \frac{1}{x^2 - 4} = \frac{1}{(x - 2)(x + 2)}
+\]
+\begin{align*}
+1 &= \frac{1}{x + 2} \Rightarrow x + 2 = 1 \Rightarrow x = -1 \\\\
+&\Rightarrow \boxed{x = -1}
+\end{align*}
+
+\subsection*{Ejercicio 5: Combinación de fracciones algebraicas}
+\[
+\frac{x}{(x + 1)(x + 2)} - \frac{4}{(x + 2)(x + 3)} - \frac{x^2 + x + 4}{(x + 1)(x + 2)(x + 3)} = 0
+\]
+\[
+\text{(Este ejercicio será desarrollado paso a paso con el mismo denominador común)}.
+\]
+\section{Ecuaciones racionales y con valor absoluto}
+
+\subsection*{Ejercicio 1: Ecuación racional básica}
+\[
+\frac{x - 10}{x + 1} = 2
+\]
+\begin{align*}
+  x - 10 &= 2(x + 1) \\
+  x - 10 &= 2x + 2 \\
+  -12 &= x \\
+  &\Rightarrow \boxed{x = -12}
+\end{align*}
+
+\subsection*{Ejercicio 2: Ecuación con valor absoluto}
+\[
+|3x - 2| = 7
+\]
+\begin{align*}
+  3x - 2 &= 7 \Rightarrow x = 3 \\
+  3x - 2 &= -7 \Rightarrow x = -\frac{5}{3} \\
+  &\Rightarrow \boxed{x = 3 \text{ ó } x = -\frac{5}{3}}
+\end{align*}
+
+\subsection*{Ejercicio 3: Valor absoluto igual a número negativo}
+\[
+|x| + |2x - 3| = -12
+\]
+\[
+\text{No tiene solución real } \Rightarrow \boxed{\varnothing}
+\]
+
+\subsection*{Ejercicio 4: Ecuación racional con factorización}
+\[
+\frac{1}{x - 2} = \frac{1}{x^2 - 4} = \frac{1}{(x - 2)(x + 2)}
+\]
+\begin{align*}
+  1 &= \frac{1}{x + 2} \Rightarrow x + 2 = 1 \Rightarrow x = -1 \\
+  &\Rightarrow \boxed{x = -1}
+\end{align*}
+
+\subsection*{Ejercicio 5: Combinación de fracciones algebraicas}
+\[
+\frac{x}{(x + 1)(x + 2)} - \frac{4}{(x + 2)(x + 3)} - \frac{x^2 + x + 4}{(x + 1)(x + 2)(x + 3)} = 0
+\]
+\[
+\text{(Este ejercicio se desarrollará paso a paso con el mismo denominador común en futuras versiones)}.
+\]
+\section{Ecuaciones racionales y con valor absoluto}
+
+\subsection*{Ejercicio 1: Ecuación racional básica}
+\[
+\frac{x - 10}{x + 1} = 2
+\]
+\begin{align*}
+x - 10 &= 2(x + 1) \\
+x - 10 &= 2x + 2 \\
+-12 &= x \\
+&\Rightarrow \boxed{x = -12}
+\end{align*}
+
+\subsection*{Ejercicio 2: Ecuación con valor absoluto}
+\[
+|3x - 2| = 7
+\]
+\begin{align*}
+3x - 2 &= 7 \Rightarrow x = 3 \\
+3x - 2 &= -7 \Rightarrow x = -\frac{5}{3} \\
+&\Rightarrow \boxed{x = 3 \text{ ó } x = -\frac{5}{3}}
+\end{align*}
+
+\subsection*{Ejercicio 3: Valor absoluto igual a número negativo}
+\[
+|x| + |2x - 3| = -12
+\]
+\[
+\text{No tiene solución real } \Rightarrow \boxed{\varnothing}
+\]
+
+\subsection*{Ejercicio 4: Ecuación racional con factorización}
+\[
+\frac{1}{x - 2} = \frac{1}{x^2 - 4} = \frac{1}{(x - 2)(x + 2)}
+\]
+\begin{align*}
+1 &= \frac{1}{x + 2} \Rightarrow x + 2 = 1 \Rightarrow x = -1 \\
+&\Rightarrow \boxed{x = -1}
+\end{align*}
+
+\subsection*{Ejercicio 5: Combinación de fracciones algebraicas}
+\[
+\frac{x}{(x + 1)(x + 2)} - \frac{4}{(x + 2)(x + 3)} - \frac{x^2 + x + 4}{(x + 1)(x + 2)(x + 3)} = 0
+\]
+\[
+\text{(Este ejercicio se desarrollará paso a paso con el mismo denominador común en futuras versiones)}.
+\]
+\section{Sistemas de ecuaciones e inecuaciones}
+
+\subsection*{Ejercicio 1: Sistema de ecuaciones lineales}
+Resolver:
+\[
+\begin{cases}
+2x + y = 7 \\
+x - y = 1
+\end{cases}
+\]
+\begin{align*}
+&\text{Sumamos ambas ecuaciones:} \\
+&(2x + y) + (x - y) = 7 + 1 \Rightarrow 3x = 8 \Rightarrow x = \frac{8}{3} \\\\
+&\text{Sustituimos en la segunda:} \quad \frac{8}{3} - y = 1 \Rightarrow y = \frac{5}{3} \\\\
+&\Rightarrow \boxed{x = \frac{8}{3},\ y = \frac{5}{3}}
+\end{align*}
+
+\subsection*{Ejercicio 2: Inecuación cuadrática}
+Resolver:
+\[
+x^2 - 5x + 6 < 0
+\]
+\begin{align*}
+&\text{Factorizamos:} \quad (x - 2)(x - 3) < 0 \\\\
+&\text{Raíces: } x = 2,\ x = 3 \\\\
+&\text{La expresión es negativa entre las raíces:} \quad \boxed{2 < x < 3}
+\end{align*}
+
+\subsection*{Ejercicio 3: Sistema de inecuaciones}
+Resolver:
+\[
+\begin{cases}
+x - 3 < 5 \\
+2x + 1 > 3
+\end{cases}
+\]
+\begin{align*}
+&x < 8 \quad \text{(de la primera)} \\
+&2x > 2 \Rightarrow x > 1 \quad \text{(de la segunda)} \\\\
+&\text{Solución conjunta: } \boxed{1 < x < 8}
+\end{align*}
+
+\subsection*{Ejercicio 4: Ecuación racional con restricción}
+Resolver:
+\[
+\frac{x - 2}{x + 3} \geq 0
+\]
+\begin{align*}
+&\text{Ceros: } x = 2 \quad \text{(numerador)} \\
+&\text{Restricción: } x \neq -3 \quad \text{(denominador)} \\\\
+&\text{Puntos críticos: } x = -3,\ x = 2 \Rightarrow \text{Dividimos la recta en intervalos} \\\\
+&\text{Evaluamos signos en: } (-\infty, -3),\ (-3, 2),\ (2, \infty) \\\\
+&\text{Único intervalo con cociente positivo: } \boxed{x \in [2,\ \infty)}
+\end{align*}
+
+\subsection*{Ejercicio 5: Sistema no lineal}
+Resolver:
+\[
+\begin{cases}
+x^2 + y^2 = 25 \\
+x = 3
+\end{cases}
+\]
+\begin{align*}
+&\text{Sustituimos:} \quad 3^2 + y^2 = 25 \Rightarrow 9 + y^2 = 25 \Rightarrow y^2 = 16 \\\\
+&y = \pm 4 \Rightarrow \boxed{(3,\ 4),\ (3,\ -4)}
+\end{align*}
+\section{Funciones cuadráticas y gráficas}
+
+\subsection*{Ejercicio 1: Vértice y concavidad}
+Determinar el vértice y concavidad de:
+\[
+f(x) = x^2 - 6x + 8
+\]
+\begin{align*}
+a &= 1 > 0 \Rightarrow \text{Concavidad hacia arriba} \\
+x_v &= \frac{-b}{2a} = \frac{6}{2} = 3 \\
+y_v &= f(3) = 3^2 - 6\cdot 3 + 8 = 9 - 18 + 8 = -1 \\
+\Rightarrow \boxed{\text{Vértice: } (3,\ -1)}
+\end{align*}
+
+\subsection*{Ejercicio 2: Intersección con el eje y}
+Para:
+\[
+f(x) = -2x^2 + 5x + 3
+\]
+\begin{align*}
+\text{Intersección con eje } y: f(0) = 3 \Rightarrow \boxed{(0,\ 3)}
+\end{align*}
+
+\subsection*{Ejercicio 3: Raíces reales}
+Determinar las raíces de:
+\[
+f(x) = 2x^2 - 4x - 6
+\]
+\begin{align*}
+\Delta &= (-4)^2 - 4\cdot 2\cdot (-6) = 16 + 48 = 64 > 0 \\
+x_{1,2} &= \frac{4 \pm \sqrt{64}}{2\cdot 2} = \frac{4 \pm 8}{4} \Rightarrow x_1 = 3,\ x_2 = -1 \\
+\boxed{\text{Raíces reales: } x = -1 \text{ y } x = 3}
+\end{align*}
+
+\subsection*{Ejercicio 4: Rango de una función cuadrática}
+Determinar el rango de:
+\[
+f(x) = -x^2 + 4x - 1
+\]
+\begin{align*}
+a &= -1 < 0 \Rightarrow \text{Concavidad hacia abajo} \\
+x_v &= \frac{-4}{2(-1)} = 2,\quad y_v = f(2) = -4 + 8 - 1 = 3 \\
+\Rightarrow \boxed{\text{Rango: } (-\infty,\ 3]}
+\end{align*}
+
+\subsection*{Ejercicio 5: Expresión en forma canónica}
+Expresar:
+\[
+f(x) = x^2 + 4x + 5
+\]
+en forma:
+\[
+f(x) = a(x - h)^2 + k
+\]
+\begin{align*}
+x_v &= -\frac{4}{2} = -2,\quad y_v = f(-2) = 4 - 8 + 5 = 1 \\
+\Rightarrow f(x) = (x + 2)^2 + 1
+\end{align*}
+\[
+\boxed{f(x) = (x + 2)^2 + 1}
+\]
+\section{Funciones exponenciales y logarítmicas}
+
+\subsection*{Ejercicio 1: Evaluación de función exponencial}
+Evaluar:
+\[
+f(x) = 2^x \quad \text{para } x = -3
+\]
+\[
+f(-3) = 2^{-3} = \frac{1}{2^3} = \frac{1}{8} \Rightarrow \boxed{f(-3) = \frac{1}{8}}
+\]
+
+\subsection*{Ejercicio 2: Propiedades de logaritmos}
+Simplificar:
+\[
+\log(1000) + \log(10)
+\]
+\begin{align*}
+\log(1000) &= \log(10^3) = 3 \\
+\log(10) &= 1 \\
+\Rightarrow \boxed{\log(1000) + \log(10) = 4}
+\end{align*}
+
+\subsection*{Ejercicio 3: Cambio de base}
+Calcular:
+\[
+\log_2(8)
+\]
+\[
+\log_2(8) = \log_2(2^3) = 3 \Rightarrow \boxed{3}
+\]
+
+\subsection*{Ejercicio 4: Ecuación logarítmica}
+Resolver:
+\[
+\log(x) = 2
+\]
+\[
+\text{Pasamos a forma exponencial: } x = 10^2 = \boxed{100}
+\]
+
+\subsection*{Ejercicio 5: Ecuación exponencial}
+Resolver:
+\[
+3^{x + 1} = 81
+\]
+\begin{align*}
+81 &= 3^4 \Rightarrow 3^{x + 1} = 3^4 \Rightarrow x + 1 = 4 \Rightarrow \boxed{x = 3}
+\end{align*}
+\section{Circunferencias}
+
+\subsection*{Ejercicio 1: Centro y radio a partir de la ecuación general}
+Dada la circunferencia:
+\[
+x^2 + y^2 - 6x + 4y - 3 = 0
+\]
+\textbf{Paso 1:} Completamos cuadrados:
+\[
+(x^2 - 6x) + (y^2 + 4y) = 3
+\]
+\[
+(x - 3)^2 - 9 + (y + 2)^2 - 4 = 3 \Rightarrow (x - 3)^2 + (y + 2)^2 = 16
+\]
+\[
+\boxed{\text{Centro: } (3,\ -2),\quad \text{Radio: } 4}
+\]
+
+\subsection*{Ejercicio 2: Ecuación canónica con centro y radio dados}
+Centro \( C = (-2,\ 5) \), radio \( r = 3 \).  
+\[
+\text{Ecuación: } (x + 2)^2 + (y - 5)^2 = 9
+\]
+
+\subsection*{Ejercicio 3: Verificar si un punto pertenece a la circunferencia}
+¿El punto \( P = (4,\ -1) \) pertenece a la circunferencia \( (x - 2)^2 + (y + 1)^2 = 13 \)?
+
+\textbf{Paso 1:} Sustituimos:
+\[
+(4 - 2)^2 + (-1 + 1)^2 = 4 + 0 = 4 \neq 13
+\Rightarrow \boxed{\text{No pertenece}}
+\]
+
+\subsection*{Ejercicio 4: Hallar ecuación con centro en el origen y punto sobre la circunferencia}
+Punto \( P = (5,\ 12) \), centro \( (0, 0) \)
+
+\[
+r^2 = 5^2 + 12^2 = 25 + 144 = 169
+\Rightarrow \text{Ecuación: } x^2 + y^2 = 169
+\]
+
+\subsection*{Ejercicio 5: Determinar el área encerrada por una circunferencia}
+Dada la ecuación:
+\[
+(x + 1)^2 + (y - 2)^2 = 49
+\]
+\[
+\text{Radio: } \sqrt{49} = 7 \Rightarrow A = \pi r^2 = \pi \cdot 49 = \boxed{49\pi}
+\]
+
+\end{document}

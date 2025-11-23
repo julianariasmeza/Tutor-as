@@ -1,0 +1,82 @@
+
+\documentclass[11pt]{article}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{siunitx}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{letterpaper, margin=2.3cm}
+\sisetup{output-decimal-marker={,}}
+\DeclareSIUnit{\inch}{in}
+\DeclareSIUnit{\pound}{lb}
+\DeclareSIUnit{\foot}{ft}
+
+\begin{document}
+
+\section*{Análisis de viga}
+
+\subsection*{Datos}
+Longitud: \(\SI{10.000}{\metre}\).
+
+\begin{tabular}{l c}
+\multicolumn{2}{l}{\textbf{Apoyos}} \\\hline
+Tipo & Posición \\\hline
+pinned & \SI{0.000}{\metre} \\
+roller & \SI{10.000}{\metre} \\
+\end{tabular}
+
+\medskip
+
+\begin{tabular}{l c}
+\multicolumn{2}{l}{\textbf{Reacciones}} \\\hline
+Magnitud & Valor \\\hline
+\(\mathrm{R}(x=\SI{0.000}{\metre})\) & \SI{149.3000}{\newton} \\
+\(\mathrm{R}(x=\SI{10.000}{\metre})\) & \SI{64.7000}{\newton} \\
+\end{tabular}
+
+\medskip
+
+\subsection*{Modelo y ecuaciones}
+\[
+\frac{dV}{dx} = w(x), \qquad \frac{dM}{dx} = V(x).
+\]
+Saltos: una fuerza puntual \(P\) o reacción \(R\) produce un salto en \(V\); un momento aplicado \(M_0\) (o de empotramiento) produce un salto en \(M\).
+
+\subsection*{Chequeo de equilibrio}
+\[
+\Sigma F_y = \SI{0.000000}{\newton}, \qquad
+\Sigma M_{(x=0)} = \SI{0.000000}{\newton\metre}.
+\]
+
+\subsection*{Extremos numéricos}
+\begin{tabular}{lccc}
+ & \textbf{máx (+)} & \textbf{mín (–)} & \(\lvert\cdot\rvert\) \textbf{máx} \\\hline
+\(V\) & \(\SI{149.3000}{\newton}\) en \(x=\SI{0.000}{\metre}\) &
+\(\SI{-64.8421}{\newton}\) en \(x=\SI{7.000}{\metre}\) &
+\(\SI{149.3000}{\newton}\) en \(x=\SI{0.000}{\metre}\) \\
+\(M\) & \(\SI{320.7407}{\newton\metre}\) en \(x=\SI{4.000}{\metre}\) &
+\(\SI{0.0000}{\newton\metre}\) en \(x=\SI{0.000}{\metre}\) &
+\(\SI{320.7407}{\newton\metre}\) en \(x=\SI{4.000}{\metre}\) \\
+\end{tabular}
+\newpage
+%\subsection*{Diagramas}
+Los diagramas \(V(x)\) y \(M(x)\) se adjuntan a continuación.
+
+
+\section*{Diagramas}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{\detokenize{V_e4bd1f9298784e248989c2338ea8ccc4.png}}
+  \caption{Diagrama de cortante \(V(x)\) en \(\SI{}{N}\).}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{\detokenize{M_33792f141b3e45a68fdea2c89e4c0be4.png}}
+  \caption{Diagrama de momento \(M(x)\) en \(\SI{}{N.m}\).}
+\end{figure}
+
+\end{document}

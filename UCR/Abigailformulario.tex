@@ -1,0 +1,265 @@
+% ==========================================================
+% FORMULARIO DE LA ELIPSE — COMPLETO
+% ==========================================================
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, es-nodecimaldot]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{siunitx}
+\sisetup{
+  locale = DE,
+  output-decimal-marker = {,},
+  per-mode = symbol,
+  exponent-product = \cdot,
+  group-minimum-digits = 4
+}
+\usepackage[a4paper,margin=2.4cm]{geometry}
+
+\begin{document}
+
+\begin{center}
+{\Large \textbf{Formulario general }}\\[1ex]
+\end{center}
+
+% ----------------------------------------------------------
+\section*{1. Forma canónica de la elipse}
+\[
+\frac{(x-h)^{2}}{a^{2}}+\frac{(y-k)^{2}}{b^{2}}=1
+\]
+donde:
+\[
+a > b > 0
+\]
+
+\textbf{Centro:} \((h,k)\)
+
+\textbf{Ejes principales:}
+\[
+\text{Eje mayor: longitud } 2a, \qquad \text{Eje menor: longitud } 2b
+\]
+
+% ----------------------------------------------------------
+\section*{2. Casos según orientación}
+
+\subsection*{(a) Eje mayor horizontal}
+\[
+\frac{(x-h)^{2}}{a^{2}}+\frac{(y-k)^{2}}{b^{2}}=1
+\]
+
+\[
+\begin{aligned}
+\text{Vértices:} &\quad (h\pm a,\,k) \\
+\text{Covértices:} &\quad (h,\,k\pm b) \\
+\text{Focos:} &\quad (h\pm c,\,k)
+\end{aligned}
+\]
+donde:
+\[
+c=\sqrt{a^{2}-b^{2}}
+\]
+
+\textbf{Eccentricidad:}
+\[
+e=\frac{c}{a}
+\]
+
+\textbf{Relación fundamental:}
+\[
+a^{2}=b^{2}+c^{2}
+\]
+
+\textbf{Ecuaciones de las directrices:}
+\[
+x = h \pm \frac{a}{e}
+\]
+
+\textbf{Longitudes notables:}
+\[
+\text{Eje mayor: } 2a, \quad \text{Eje menor: } 2b, \quad \text{Focal: } 2c
+\]
+
+% ----------------------------------------------------------
+\subsection*{(b) Eje mayor vertical}
+\[
+\frac{(x-h)^{2}}{b^{2}}+\frac{(y-k)^{2}}{a^{2}}=1
+\]
+
+\[
+\begin{aligned}
+\text{Vértices:} &\quad (h,\,k\pm a) \\
+\text{Covértices:} &\quad (h\pm b,\,k) \\
+\text{Focos:} &\quad (h,\,k\pm c)
+\end{aligned}
+\]
+con \(c=\sqrt{a^{2}-b^{2}}\).
+
+\textbf{Eccentricidad:}
+\[
+e=\frac{c}{a}
+\]
+
+\textbf{Directrices:}
+\[
+y = k \pm \frac{a}{e}
+\]
+
+% ----------------------------------------------------------
+\section*{3. Propiedades geométricas}
+
+\begin{itemize}
+  \item La elipse es el \textbf{lugar geométrico de los puntos} \(P(x,y)\) cuya suma de distancias a los dos focos es constante:
+  \[
+  PF_{1}+PF_{2}=2a
+  \]
+  \item La excentricidad \(e\) cumple \(0<e<1\).
+  \item Si \(e\to 0\), la elipse tiende a un círculo.
+  \item Si \(e\to 1\), la elipse se aplana y se aproxima a una parábola.
+\end{itemize}
+
+% ----------------------------------------------------------
+\section*{4. Forma particular (centrada en el origen)}
+
+\subsection*{Eje mayor horizontal}
+\[
+\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=1
+\quad\Rightarrow\quad
+F_{1,2}=(\pm c,0),\;
+V_{1,2}=(\pm a,0),\;
+C_{1,2}=(0,\pm b)
+\]
+
+\subsection*{Eje mayor vertical}
+\[
+\frac{x^{2}}{b^{2}}+\frac{y^{2}}{a^{2}}=1
+\quad\Rightarrow\quad
+F_{1,2}=(0,\pm c),\;
+V_{1,2}=(0,\pm a),\;
+C_{1,2}=(\pm b,0)
+\]
+
+% ----------------------------------------------------------
+\section*{5. Área de la elipse}
+\[
+A=\pi a b
+\]
+
+% ----------------------------------------------------------
+\section*{6. Circunferencia como caso particular}
+Si \(a=b=r\), la elipse se convierte en una circunferencia:
+\[
+(x-h)^{2}+(y-k)^{2}=r^{2}
+\]
+% ==========================================================
+% 7. Identidades y fórmulas auxiliares usadas
+% ==========================================================
+\section*{7. Identidades y fórmulas auxiliares usadas}
+
+\subsection*{7.1 Trigonometría (reducción de potencias)}
+\[
+\sin^{2}\theta=\frac{1-\cos 2\theta}{2},\qquad
+\cos^{2}\theta=\frac{1+\cos 2\theta}{2},\qquad
+\cos(2\theta)=\cos^{2}\theta-\sin^{2}\theta.
+\]
+\[
+\cos^{3}t=\frac{3\cos t+\cos 3t}{4},\quad
+\cos(n\pi)=(-1)^{n},\quad \sin(n\pi)=0.
+\]
+
+\subsection*{7.2 Polares \(\leftrightarrow\) cartesianas}
+\[
+x=r\cos\theta,\quad y=r\sin\theta,\quad r=\sqrt{x^{2}+y^{2}},\quad
+\cos(2\theta)=\frac{x^{2}-y^{2}}{x^{2}+y^{2}},\quad
+\sin\theta=\frac{y}{r}.
+\]
+
+\subsection*{7.3 Serie geométrica}
+Si \(|r|<1\), entonces
+\[
+\sum_{n=0}^{\infty} r^{n}=\frac{1}{1-r},\qquad
+\sum_{n=1}^{\infty} r^{n}=\frac{r}{1-r}.
+\]
+
+\subsection*{7.4 Telescopía por fracciones parciales (plantilla)}
+\[
+\frac{1}{(an+b)(an+d)}=\frac{1}{d-b}\!\left(\frac{1}{an+b}-\frac{1}{an+d}\right),
+\]
+lo cual produce cancelaciones en la suma de parciales.
+
+% ==========================================================
+% 8. Criterios y teoremas usados (condiciones, por qué, uso)
+% ==========================================================
+\section*{8. Criterios y teoremas usados}
+
+\subsection*{8.1 Criterio de comparación \textit{directa} (series positivas)}
+\textbf{Condiciones.} \(a_n\ge 0,\ b_n\ge 0\) para \(n\) grande y \(a_n\le c\,b_n\) (con \(c>0\)).\\
+\textbf{Conclusiones.}
+Si \(\sum b_n\) converge \(\Rightarrow\) \(\sum a_n\) converge.
+Si \(\sum a_n\) diverge \(\Rightarrow\) \(\sum b_n\) diverge.\\
+\textbf{Por qué.} Acotar términos controla sumas parciales por comparación de cotas superiores/inferiores.\\
+\textbf{Uso.} Elegir \(b_n\) conocida (p-serie, geométrica, etc.) y verificar la desigualdad para \(n\) grande.
+
+\subsection*{8.2 Criterio de comparación \textit{por el límite}}
+\textbf{Condiciones.} \(a_n>0,\ b_n>0\) y existe
+\[
+L=\lim_{n\to\infty}\frac{a_n}{b_n}\in(0,\infty).
+\]
+\textbf{Conclusiones.} \(\sum a_n\) y \(\sum b_n\) tienen el mismo carácter (ambas convergen o ambas divergen).\\
+\textbf{Casos extremos.} Si \(L=0\) y \(\sum b_n\) converge \(\Rightarrow\) \(\sum a_n\) converge.  
+Si \(L=+\infty\) y \(\sum b_n\) diverge \(\Rightarrow\) \(\sum a_n\) diverge.\\
+\textbf{Por qué.} “Mismo orden de magnitud” de los términos implica mismo comportamiento de sumas parciales.\\
+\textbf{Uso.} Dividir por un modelo \(b_n\) (p. ej., \(1/n\), \(1/n^{p}\)) y calcular el límite.
+
+\subsection*{8.3 Criterio integral (series de términos positivos)}
+\textbf{Condiciones.} \(f(x)\) positiva, continua y decreciente en \([N,\infty)\), con \(a_n=f(n)\).\\
+\textbf{Conclusión.} \(\displaystyle\sum_{n=N}^{\infty} a_n\) y \(\displaystyle\int_{N}^{\infty} f(x)\,dx\) tienen el mismo carácter.\\
+\textbf{Por qué.} Comparación por áreas de rectángulos inscriptos/circunscriptos bajo la curva decreciente.\\
+\textbf{Uso.} Evaluar la integral impropia (definir por límite). Una convergente \(\Rightarrow\) serie convergente.
+
+\subsection*{8.4 Telescopía (series diferencias)}
+\textbf{Condiciones.} Escribir \(a_n=F(n)-F(n+1)\) (o forma equivalente por fracciones parciales).\\
+\textbf{Conclusión.} \(S_N=\sum_{n=p}^{N}a_n=F(p)-F(N+1)\), y \(\displaystyle \sum a_n\) converge si \(\lim_{N\to\infty}F(N)\) existe.\\
+\textbf{Por qué.} Cancelaciones sucesivas dejan sólo los “extremos”.\\
+\textbf{Uso.} Descomponer y sumar parciales para ver la cancelación explícita.
+
+\subsection*{8.5 Teorema de convergencia monótona (sucesiones)}
+\textbf{Condiciones.} \((x_n)\) monótona y acotada (creciente y acotada superiormente, o decreciente y acotada inferiormente).\\
+\textbf{Conclusión.} \((x_n)\) converge.\\
+\textbf{Por qué.} Toda sucesión monótona y acotada posee supremo/ínfimo que actúa como límite.\\
+\textbf{Uso.} Probar cota (por inducción, invariantes, etc.) y la monotonía (p. ej., \(x_{n+1}\le x_n\)).
+
+\subsection*{8.6 Punto fijo para recurrencias (versión elemental)}
+\textbf{Montaje.} \(x_{n+1}=f(x_n)\).\\
+\textbf{Condiciones típicas.}  
+(i) Existe intervalo \(I=[\alpha,\beta]\) tal que \(x_1\in I\) y \(f(I)\subseteq I\) (invarianza).  
+(ii) \(f\) es monótona en \(I\) y la iteración es monótona (se prueba con \(f(x)\le x\) o \(f(x)\ge x\)).\\
+\textbf{Conclusión.} \((x_n)\) converge y su límite \(L\) satisface \(L=f(L)\) (punto fijo).\\
+\textbf{Uso.} Hallar \(I\) invariante, mostrar monotonía y resolver \(L=f(L)\).
+
+\subsection*{8.7 Criterio de la razón (de D'Alembert) \;[por si se requiere]}
+\textbf{Condiciones.} \(a_n>0\) y existe \(L=\lim\limits_{n\to\infty}\dfrac{a_{n+1}}{a_n}\).\\
+\textbf{Conclusión.} Si \(L<1\) converge; si \(L>1\) diverge; si \(L=1\) es inconcluso.\\
+\textbf{Por qué.} Comparación asintótica con una geométrica.
+
+\subsection*{8.8 Criterio de la raíz (Cauchy) \;[por si se requiere]}
+\textbf{Condiciones.} \(a_n\ge 0\) y existe \(L=\lim\limits_{n\to\infty}\sqrt[n]{a_n}\).\\
+\textbf{Conclusión.} Si \(L<1\) converge; si \(L>1\) diverge; si \(L=1\) es inconcluso.\\
+\textbf{Por qué.} Equivalencia con comparar contra \(|r|=\limsup \sqrt[n]{a_n}\).
+
+% ==========================================================
+% 9. Notas rápidas de uso en el simulacro
+% ==========================================================
+\section*{9. Notas rápidas de uso en el simulacro}
+
+\begin{itemize}
+  \item \textbf{Elipse:} para \( \dfrac{(x-h)^{2}}{a^{2}}+\dfrac{(y-k)^{2}}{b^{2}}=1 \) con \(a>b>0\): 
+  \(c=\sqrt{a^{2}-b^{2}},\ e=\dfrac{c}{a},\) focos \( (h\pm c,k) \) (o \( (h,k\pm c) \) si es vertical).
+  \item \textbf{Geométrica:} identificar \(r\) (incluido el signo); si \(|r|<1\), usar \(S=\dfrac{1}{1-r}\).
+  \item \textbf{Telescópica:} intentar fracciones parciales y comprobar cancelación en \(S_N\).
+  \item \textbf{Comparación:} elegir \(b_n\) “modelo” (armónica, \(p\)-serie, geométrica) y usar directa o por el límite.
+  \item \textbf{Integral:} definir como límite \(\int_{N}^{\infty}=\lim\limits_{B\to\infty}\int_{N}^{B}\) y justificar \(f\) positiva, continua y decreciente.
+  \item \textbf{Recurrencias:} hallar intervalo invariante, mostrar monotonía y resolver el punto fijo \(L=f(L)\).
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,143 @@
+% ==========================================================
+% Secciones cónicas y coordenadas polares
+% ==========================================================
+\documentclass[11pt,letterpaper]{article}
+
+% --- Idioma y codificación ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, es-nodecimaldot]{babel}
+
+% --- Matemática, unidades y símbolos ---
+\usepackage{amsmath, amssymb, bm}
+\usepackage{siunitx}
+\sisetup{
+  locale = DE,                 % coma como separador decimal
+  output-decimal-marker = {,}, % coma decimal
+  per-mode = symbol,
+  exponent-product = \cdot,
+  group-minimum-digits = 4
+}
+
+% --- Diseño de página ---
+\usepackage[a4paper,margin=2.4cm]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{xcolor}
+
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Cuadro}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries Ejercicios de Secciones Cónicas y Coordenadas Polares}\\[2mm]
+\end{center}
+
+% ==========================================================
+\section*{1) Ecuación cónica \(x^{2}+12x+9y^{2}=0\)}
+
+\textbf{Datos.}
+\[
+x^{2}+12x+9y^{2}=0
+\]
+
+\textbf{Fórmula.}
+\[
+x^{2}+12x = (x+6)^{2}-36
+\]
+
+\textbf{Sustitución.}
+\[
+(x+6)^{2}-36+9y^{2}=0 \quad \Rightarrow \quad (x+6)^{2}+9y^{2}=36
+\]
+
+\textbf{Cálculo (forma canónica).}
+\[
+\frac{(x+6)^{2}}{36}+\frac{y^{2}}{4}=1
+\]
+\noindent
+Elipse con centro \((-6,0)\), semiejes:
+\[
+a=6,\quad b=2
+\]
+\[
+c=\sqrt{a^{2}-b^{2}}=\sqrt{36-4}=4\sqrt{2}
+\]
+\[
+F_{1,2}=(-6\mp4\sqrt{2},\,0)
+\]
+
+\textbf{Vértices y covértices.}
+\[
+V_{1}=(-12,0),\quad V_{2}=(0,0),\quad C_{1}=(-6,-2),\quad C_{2}=(-6,2)
+\]
+
+\textbf{Intersecciones con los ejes.}
+\begin{itemize}
+  \item Eje \(x\): \(y=0 \Rightarrow x(x+12)=0 \Rightarrow x=0,-12\)
+  \item Eje \(y\): \(x=0 \Rightarrow y=0\)
+\end{itemize}
+
+\textbf{Conclusión.}
+La elipse está centrada en \((-6,0)\), se extiende horizontalmente de \((-12,0)\) a \((0,0)\) y tiene altura total de \(4\) unidades (\(y=\pm2\)).
+
+\vspace{5mm}
+\hrule
+\vspace{5mm}
+
+% ==========================================================
+\section*{2) Ecuaciones en coordenadas polares}
+
+\[
+r=\cos(2\theta), \qquad r=\sen^{2}\theta
+\]
+
+\subsection*{a) Asociación con las figuras}
+\begin{itemize}
+  \item \(\boxed{r=\cos(2\theta)} \rightarrow\) Figura (b): rosa de 4 pétalos, simétrica respecto a los ejes.
+  \item \(\boxed{r=\sen^{2}\theta} \rightarrow\) Figura (a): curva tipo “gota” centrada sobre el eje \(y\), \(r\ge0\).
+\end{itemize}
+
+\subsection*{b) Expresión en coordenadas cartesianas}
+
+\textbf{Para \(r=\cos(2\theta)\):}
+\[
+\cos(2\theta)=\frac{x^{2}-y^{2}}{x^{2}+y^{2}},\qquad r=\sqrt{x^{2}+y^{2}}
+\]
+\[
+\sqrt{x^{2}+y^{2}}=\frac{x^{2}-y^{2}}{x^{2}+y^{2}}
+\quad\Rightarrow\quad
+(x^{2}+y^{2})^{3/2}=x^{2}-y^{2}
+\]
+\[
+\boxed{(x^{2}+y^{2})^{3}=(x^{2}-y^{2})^{2}}
+\]
+
+\textbf{Para \(r=\sen^{2}\theta\):}
+\[
+\sen\theta=\frac{y}{r}\Rightarrow\sen^{2}\theta=\frac{y^{2}}{r^{2}}
+\]
+\[
+r=\frac{y^{2}}{r^{2}}
+\Rightarrow r^{3}=y^{2}
+\Rightarrow (x^{2}+y^{2})^{3/2}=y^{2}
+\]
+\[
+\boxed{(x^{2}+y^{2})^{3}=y^{4}}
+\]
+
+\subsection*{c) Completar los dibujos}
+\begin{itemize}
+  \item Para \(r=\cos(2\theta)\): agregar el pétalo superior, completando la rosa de 4 pétalos.
+  \item Para \(r=\sen^{2}\theta\): lazo cerrado en la parte superior, simétrico respecto al eje \(y\), con extremos \((0,0)\) y \((0,1)\).
+\end{itemize}
+
+\vspace{5mm}
+\hrule
+\vspace{5mm}
+
+\textbf{Conclusión general.}
+Las ecuaciones polares permiten describir curvas cerradas o simétricas de forma compacta; su conversión a coordenadas cartesianas revela su estructura algebraica y facilita el análisis geométrico.
+
+\end{document}

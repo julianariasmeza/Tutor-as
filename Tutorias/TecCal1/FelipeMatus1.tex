@@ -1,0 +1,1072 @@
+% ==========================================================
+% Tutoría de Cálculo I - TEC
+% Tema: Máximos, mínimos, concavidad y optimización
+% Formato con soluciones clickeables
+% ==========================================================
+
+\documentclass[12pt]{article}
+
+% ---------------- Paquetes básicos ----------------
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Matemática y símbolos
+\usepackage{amsmath, amssymb}
+\usepackage{siunitx}
+
+% Diseño de página
+\usepackage{geometry}
+\geometry{letterpaper, margin=2.5cm}
+
+% Listas
+\usepackage{enumitem}
+
+% Cajas bonitas
+\usepackage[most]{tcolorbox}
+
+% Encabezado y pie
+\usepackage{fancyhdr}
+\setlength{\headheight}{14.5pt}
+
+% Botones / símbolos
+\usepackage{pifont}
+
+% Capas visibles/ocultas en PDF
+\usepackage{ocgx2}
+
+% Para permitir unicode tipo “⇒” o “✗”
+\usepackage{newunicodechar}
+\newunicodechar{✗}{\ding{55}}
+\newunicodechar{⇒}{\Rightarrow}
+
+% Hipervínculos (lo cargamos al final del preámbulo normalmente,
+% pero lo dejamos aquí para que el archivo compile de una vez)
+\usepackage{hyperref}
+
+% ---------------- Configuración siunitx ----------------
+\sisetup{
+  locale = DE,                 % coma decimal
+  output-decimal-marker = {,}, % forzar coma
+  per-mode = symbol,
+  exponent-product = \cdot,
+  group-minimum-digits = 4
+}
+
+% ---------------- Estilo de cajas ----------------
+\tcbset{
+  colback=white,
+  colframe=black!70,
+  boxrule=0.6pt,
+  arc=2mm,
+  left=6pt,right=6pt,top=6pt,bottom=6pt
+}
+
+% Caja para enunciados / ejemplos
+\newtcolorbox{ejercicio}[1][]{title=Ejercicio, #1}
+
+% Caja para soluciones desarrolladas
+\newtcolorbox{solucionbox}[1][]{title=Solución, colframe=green!60!black, #1}
+
+% Caja tipo nota / advertencia / recordatorio teórico
+\newtcolorbox{nota}[1][]{title=Nota, colframe=blue!60!black, #1}
+
+% ---------------- Encabezado y pie ----------------
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Tutoría Cálculo I — Máximos, mínimos y optimización}
+\rhead{Julián Arias Meza — 2025}
+\cfoot{\thepage}
+
+% ---------------- Entorno de solución clickeable ----------------
+% Uso:
+% \begin{solucionclick}
+%   ... desarrollo paso a paso ...
+% \end{solucionclick}
+%
+% Esto crea un botón "Mostrar / ocultar solución" que funciona en visores PDF compatibles.
+%
+\newcounter{solnum}
+\newcommand{\solbtn}{\fcolorbox{black}{gray!10}{\footnotesize Mostrar / ocultar solución}}
+\newenvironment{solucionclick}{%
+  \refstepcounter{solnum}%
+  \par\noindent\textbf{Solución \#\thesolnum}\;
+  \switchocg{sol:\thesolnum}{\solbtn}\\[2pt]%
+  \begin{ocg}{Solución \#\thesolnum}{sol:\thesolnum}{0}%
+  \begin{solucionbox}%
+}{%
+  \end{solucionbox}%
+  \end{ocg}\par\medskip
+}
+
+% ---------------- Título reutilizable ----------------
+\newcommand{\titulo}{
+  \begin{center}
+  {\Large \textbf{Tutoría de Cálculo I (TEC)}}\\[4pt]
+  {\large \textbf{Máximos, mínimos, concavidad y optimización}}\\[6pt]
+  {\small Análisis con derivadas y aplicaciones prácticas}\\[6pt]
+  \end{center}
+  \vspace{-0.3em}\hrule\vspace{0.8em}
+}
+
+% ==========================================================
+% ===================== DOCUMENTO ==========================
+% ==========================================================
+\begin{document}
+
+\titulo
+
+\begin{nota}
+Este material resume los puntos clave de Cálculo Diferencial en Cálculo I (TEC): \textbf{máximos y mínimos}, \textbf{concavidad} y \textbf{optimización}.  
+Luego se incluyen ejercicios con soluciones que se pueden \textbf{mostrar / ocultar} haciendo clic.  
+Para que el botón funcione, se debe abrir el PDF en un visor compatible con \textit{capas OCG} (por ejemplo \textbf{Adobe Acrobat Reader} o \textbf{PDF-XChange}). En visores del navegador o Vista Previa (macOS) puede no funcionar.
+\end{nota}
+
+% ----------------------------------------------------------
+\section*{1. Máximos y mínimos}
+
+El cálculo diferencial permite localizar dónde una función alcanza \textbf{puntos altos} (máximos) o \textbf{puntos bajos} (mínimos).  
+Estos valores son importantes tanto para graficar como para aplicaciones físicas, geométricas y económicas.
+
+\subsection*{1.1 Definiciones básicas}
+
+Sea \( f(x) \) una función.
+
+\begin{itemize}
+  \item \( f(x_0) \) es un \textbf{máximo local} si \( f(x_0) \geq f(x) \) para todo \( x \) suficientemente cercano a \( x_0 \).
+  \item \( f(x_0) \) es un \textbf{mínimo local} si \( f(x_0) \leq f(x) \) para todo \( x \) suficientemente cercano a \( x_0 \).
+\end{itemize}
+
+Un \textbf{máximo absoluto (global)} es el valor más grande que toma la función en todo el intervalo que estamos estudiando.  
+Un \textbf{mínimo absoluto (global)} es el valor más pequeño que toma la función en ese intervalo.
+
+En un intervalo cerrado \([a,b]\) y con \(f\) continua, los máximos/mínimos absolutos pueden ocurrir:
+\begin{itemize}
+  \item en puntos críticos interiores,
+  \item o en los extremos \(x=a\) y \(x=b\).
+\end{itemize}
+
+\subsection*{1.2 Puntos críticos}
+
+Un \textbf{punto crítico} de \( f \) es un valor \( x = c \) donde:
+\[
+f'(c) = 0
+\quad \text{o} \quad
+f'(c) \text{ no existe.}
+\]
+
+En esos puntos \emph{puede} haber máximo o mínimo local (pero no siempre; hay que clasificar).
+
+\subsection*{1.3 Prueba de la primera derivada}
+
+Para decidir si hay máximo o mínimo en un punto crítico \(x_0\), observamos el signo de \(f'(x)\) alrededor de \(x_0\):
+
+\begin{itemize}
+  \item Si \( f'(x) \) pasa de \(+\) a \(-\) (crecía y luego decrece), en \(x_0\) hay \textbf{máximo local}.
+  \item Si \( f'(x) \) pasa de \(-\) a \(+\) (decrecía y luego crece), en \(x_0\) hay \textbf{mínimo local}.
+  \item Si \( f'(x) \) no cambia de signo, no es extremo local (puede ser una meseta).
+\end{itemize}
+
+\subsection*{1.4 Prueba de la segunda derivada}
+
+Otra forma muy usada en exámenes del TEC:
+
+Calculamos la segunda derivada \( f''(x) \).  
+Sea \(x_0\) un punto crítico con \( f'(x_0)=0 \).
+
+\[
+\begin{array}{ll}
+f''(x_0) > 0 & \Rightarrow \text{cóncava hacia arriba en } x_0 \Rightarrow \text{mínimo local} \\
+f''(x_0) < 0 & \Rightarrow \text{cóncava hacia abajo en } x_0 \Rightarrow \text{máximo local}
+\end{array}
+\]
+
+Si \( f''(x_0) = 0 \), esta prueba no decide y se debe usar otra estrategia (por ejemplo, la prueba de la primera derivada).
+
+% ----------------------------------------------------------
+\section*{2. Concavidad y puntos de inflexión}
+
+\subsection*{2.1 Concavidad}
+
+La \textbf{concavidad} describe cómo se curva la gráfica.
+
+\[
+f''(x) > 0 \quad \Rightarrow \quad \text{La función es cóncava hacia arriba.}
+\]
+
+\[
+f''(x) < 0 \quad \Rightarrow \quad \text{La función es cóncava hacia abajo.}
+\]
+
+Interpretación geométrica:
+\begin{itemize}
+  \item Cóncava hacia arriba: la gráfica “abre hacia arriba”, como una sonrisa.
+  \item Cóncava hacia abajo: la gráfica “abre hacia abajo”, como una carpa invertida.
+\end{itemize}
+
+\subsection*{2.2 Punto de inflexión}
+
+Un \textbf{punto de inflexión} es un valor \(x = x_0\) donde la concavidad cambia:
+pasa de cóncava hacia arriba a cóncava hacia abajo, o viceversa.
+
+Típicamente, en un punto de inflexión:
+\[
+f''(x_0) = 0 \quad \text{o } f''(x_0) \text{ no existe,}
+\]
+\textbf{y además} el signo de \(f''(x)\) realmente cambia al cruzar \(x_0\).
+
+% ----------------------------------------------------------
+\section*{3. Problemas de optimización}
+
+Los problemas de optimización consisten en \textbf{maximizar} o \textbf{minimizar} alguna cantidad física, geométrica o económica (área, volumen, costo, distancia, ganancia, etc.).
+
+Ejemplos típicos:
+\begin{itemize}
+  \item Máxima área posible con cierta cantidad fija de cerca.
+  \item Mínimo costo de un envase con volumen fijo.
+  \item Distancia mínima entre un punto y una recta / curva.
+  \item Dimensiones que minimizan material.
+\end{itemize}
+
+\subsection*{3.1 Procedimiento general de optimización}
+
+Este es el flujo estándar que vamos a usar en los ejercicios:
+
+\begin{enumerate}[label=\arabic*.]
+  \item \textbf{Comprender el problema.}  
+    Lea con cuidado. ¿Qué se está pidiendo maximizar o minimizar?  
+    ¿Área? ¿Volumen? ¿Costo? ¿Distancia?
+  \item \textbf{Hacer un diagrama.}  
+    Dibujar ayuda muchísimo para identificar relaciones geométricas entre las variables.
+  \item \textbf{Definir las variables.}  
+    Ponga nombre a las longitudes, radios, alturas, etc.  
+    Señale claramente cuál es la \textbf{magnitud objetivo} (la que vamos a optimizar).
+  \item \textbf{Plantear la función objetivo.}  
+    Escriba la expresión matemática de esa magnitud objetivo.  
+    Ejemplo: área \(A(x)\), costo \(C(x)\), volumen \(V(x)\), distancia \(D(x)\).
+  \item \textbf{Usar las restricciones.}  
+    Normalmente hay una restricción física: “solo hay \SI{800}{m} de cerca”,  
+    “el volumen debe ser \SI{100}{cm^3}”, etc.  
+    Con esa restricción se debe \textbf{reducir la función a una sola variable}.
+  \item \textbf{Derivar e igualar a cero.}  
+    Calcular \(f'(x)=0\) para encontrar puntos críticos.
+  \item \textbf{Clasificar el extremo.}  
+    Verificar que ese punto crítico da máximo o mínimo (por ejemplo usando \(f''(x)\)).
+  \item \textbf{Interpretar la respuesta.}  
+    Responder con palabras y con unidades claras.  
+    Ejemplo: “El rectángulo de área máxima mide \(\SI{200}{m} \times \SI{400}{m}\)”.
+\end{enumerate}
+
+\begin{nota}
+En todos los problemas de optimización vamos a presentar primero el enunciado (caja tipo Ejercicio)  
+y luego la solución completa paso a paso dentro de un bloque ocultable con clic.
+\end{nota}
+
+% ----------------------------------------------------------
+\section*{4. Resumen rápido para el estudiante}
+
+\begin{tcolorbox}[
+  colback=green!5!white,
+  colframe=green!60!black,
+  title={Resumen de criterios},
+  boxrule=0.7pt,
+  arc=2mm
+]
+\textbf{Crecimiento y decrecimiento:}\\
+Si \( f'(x) > 0 \) en un intervalo, \(f\) es creciente allí.  
+Si \( f'(x) < 0 \) en un intervalo, \(f\) es decreciente allí.\\[6pt]
+
+\textbf{Máximo / mínimo local:}\\
+Punto crítico \(x_0\) con \(f'(x_0)=0\).  
+Si \( f''(x_0) < 0 \Rightarrow\) máximo local.  
+Si \( f''(x_0) > 0 \Rightarrow\) mínimo local.\\[6pt]
+
+\textbf{Concavidad:}\\
+\( f''(x) > 0 \Rightarrow\) cóncava hacia arriba.  
+\( f''(x) < 0 \Rightarrow\) cóncava hacia abajo.\\[6pt]
+
+\textbf{Punto de inflexión:}\\
+Lugar donde cambia la concavidad (el signo de \(f''(x)\) cambia).\\[6pt]
+
+\textbf{Optimización aplicada:}\\
+1) Plantee la función objetivo.  
+2) Reduzca a una sola variable.  
+3) Derive y halle críticos.  
+4) Concluya en el contexto físico/económico con unidades.
+\end{tcolorbox}
+
+\vspace{1cm}
+
+\begin{center}
+\textit{A continuación vienen los ejercicios tipo examen con soluciones clickeables.}
+\end{center}
+% ==========================================================
+% 5. MÁXIMOS Y MÍNIMOS
+% ==========================================================
+
+\section*{5. Máximos y mínimos (prueba de derivadas)}
+
+En los siguientes ejercicios se busca:
+\begin{itemize}
+  \item Encontrar puntos críticos (\(f'(x)=0\)).
+  \item Clasificar cada punto crítico como máximo local o mínimo local.
+  \item (Cuando aplique) dar el valor máximo o mínimo.
+\end{itemize}
+
+% ---------- EJERCICIO 5.1 ----------
+\begin{ejercicio}
+Considere la función
+\[
+f(x)=x^{3}-3x^{2}+2.
+\]
+a) Encuentre los puntos críticos. \\
+b) Determine cuáles son máximos locales y cuáles son mínimos locales. \\
+c) Indique el valor de la función en esos puntos.
+\end{ejercicio}
+
+\begin{solucionclick}
+\textbf{Paso 1. Derivada primera}
+
+\[
+f(x)=x^{3}-3x^{2}+2
+\quad\Longrightarrow\quad
+f'(x)=3x^{2}-6x=3x(x-2).
+\]
+
+\textbf{Paso 2. Puntos críticos}
+
+Resolvemos \(f'(x)=0\):
+\[
+3x(x-2)=0
+\quad\Longrightarrow\quad
+x=0 \quad\text{o}\quad x=2.
+\]
+
+Entonces los candidatos a extremos son \(x=0\) y \(x=2\).
+
+\textbf{Paso 3. Segunda derivada}
+
+\[
+f''(x)=\frac{d}{dx}\bigl(3x^{2}-6x\bigr)=6x-6.
+\]
+
+\textbf{Paso 4. Clasificación con \(f''(x)\)}
+
+Para \(x=0\):
+\[
+f''(0)=6\cdot 0-6=-6<0
+\quad\Rightarrow\quad
+\text{cóncava hacia abajo en }x=0,
+\text{ entonces }x=0\text{ es máximo local.}
+\]
+
+Para \(x=2\):
+\[
+f''(2)=6\cdot 2-6=12-6=6>0
+\quad\Rightarrow\quad
+\text{cóncava hacia arriba en }x=2,
+\text{ entonces }x=2\text{ es mínimo local.}
+\]
+
+\textbf{Paso 5. Valores de la función}
+
+\[
+f(0)=0^{3}-3\cdot 0^{2}+2=2.
+\]
+
+\[
+f(2)=2^{3}-3\cdot 2^{2}+2
+=8-12+2=-2.
+\]
+
+\textbf{Conclusión:}
+
+Máximo local en \((0,2)\). \\
+Mínimo local en \((2,-2)\).
+\end{solucionclick}
+
+
+% ---------- EJERCICIO 5.2 ----------
+\begin{ejercicio}
+Considere la función
+\[
+g(x)=x^{4}-4x^{2}+1.
+\]
+a) Encuentre todos los puntos críticos. \\
+b) Clasifique cada punto crítico usando la segunda derivada. \\
+c) Indique cuáles son máximos/mínimos locales y sus valores.
+\end{ejercicio}
+
+\begin{solucionclick}
+\textbf{Paso 1. Derivada primera}
+
+\[
+g'(x)=4x^{3}-8x=4x(x^{2}-2).
+\]
+
+\textbf{Paso 2. Puntos críticos}
+
+Resolvemos \(g'(x)=0\):
+\[
+4x(x^{2}-2)=0
+\quad\Longrightarrow\quad
+x=0
+\quad\text{o}\quad
+x^{2}-2=0\ \Longrightarrow\ x=\pm\sqrt{2}.
+\]
+
+Entonces candidatos: \(x=-\sqrt{2},\ 0,\ \sqrt{2}\).
+
+\textbf{Paso 3. Segunda derivada}
+
+\[
+g''(x)=\frac{d}{dx}(4x^{3}-8x)=12x^{2}-8.
+\]
+
+Evaluamos:
+
+Para \(x=0\):
+\[
+g''(0)=12\cdot 0^{2}-8=-8<0
+\quad\Rightarrow\quad
+\text{máximo local en }x=0.
+\]
+
+Para \(x=\sqrt{2}\):
+\[
+g''(\sqrt{2})=12(\sqrt{2})^{2}-8=12\cdot 2-8=24-8=16>0
+\quad\Rightarrow\quad
+\text{mínimo local en }x=\sqrt{2}.
+\]
+
+Para \(x=-\sqrt{2}\):
+\[
+g''(-\sqrt{2})=12(-\sqrt{2})^{2}-8=12\cdot 2-8=24-8=16>0
+\quad\Rightarrow\quad
+\text{mínimo local en }x=-\sqrt{2}.
+\]
+
+\textbf{Paso 4. Valores de la función}
+
+\[
+g(0)=0^{4}-4\cdot 0^{2}+1=1.
+\]
+
+\[
+g(\sqrt{2})=(\sqrt{2})^{4}-4(\sqrt{2})^{2}+1
+= (2^{2})-4\cdot 2+1
+=4-8+1=-3.
+\]
+
+\[
+g(-\sqrt{2})=\text{igual que }g(\sqrt{2})=-3.
+\]
+
+\textbf{Conclusión:}
+
+Máximo local en \((0,1)\). \\
+Mínimos locales en \(\bigl(-\sqrt{2},-3\bigr)\) y \(\bigl(\sqrt{2},-3\bigr)\).
+\end{solucionclick}
+
+
+% ---------- EJERCICIO 5.3 ----------
+\begin{ejercicio}
+Sea
+\[
+h(x)=x^{3}-9x.
+\]
+a) Determine los intervalos donde \(h(x)\) es creciente y decreciente. \\
+b) Determine los máximos y mínimos locales.
+\end{ejercicio}
+
+\begin{solucionclick}
+\textbf{Paso 1. Derivada primera}
+
+\[
+h'(x)=3x^{2}-9=3(x^{2}-3).
+\]
+
+\textbf{Paso 2. Zonas de crecimiento / decrecimiento}
+
+Analizamos el signo de \(h'(x)\).
+
+Resolvemos \(h'(x)=0\):
+\[
+3(x^{2}-3)=0
+\quad\Longrightarrow\quad
+x^{2}-3=0
+\quad\Longrightarrow\quad
+x=\pm\sqrt{3}.
+\]
+
+Tomamos intervalos:
+\[
+(-\infty,-\sqrt{3}),\quad (-\sqrt{3},\sqrt{3}),\quad (\sqrt{3},\infty).
+\]
+
+Escogemos un punto de prueba en cada intervalo:
+
+1. Si \(x<- \sqrt{3}\), por ejemplo \(x=-10\):
+\[
+h'(-10)=3(100-3)=3\cdot 97>0
+\quad\Rightarrow\quad
+h \text{ crece en }(-\infty,-\sqrt{3}).
+\]
+
+2. Si \(-\sqrt{3}<x<\sqrt{3}\), por ejemplo \(x=0\):
+\[
+h'(0)=3(0-3)=-9<0
+\quad\Rightarrow\quad
+h \text{ decrece en }(-\sqrt{3},\sqrt{3}).
+\]
+
+3. Si \(x>\sqrt{3}\), por ejemplo \(x=10\):
+\[
+h'(10)=3(100-3)=291>0
+\quad\Rightarrow\quad
+h \text{ crece en }(\sqrt{3},\infty).
+\]
+
+\textbf{Paso 3. Clasificación de los extremos}
+
+- En \(x=-\sqrt{3}\), la función pasa de creciente (\(+\)) a decreciente (\(-\)).  
+  Entonces \(x=-\sqrt{3}\) es \textbf{máximo local}.
+
+- En \(x=\sqrt{3}\), la función pasa de decreciente (\(-\)) a creciente (\(+\)).  
+  Entonces \(x=\sqrt{3}\) es \textbf{mínimo local}.
+
+\textbf{Conclusión:}
+
+\[
+\text{Creciente en }(-\infty,-\sqrt{3})\cup(\sqrt{3},\infty).
+\]
+
+\[
+\text{Decreciente en }(-\sqrt{3},\sqrt{3}).
+\]
+
+Máximo local en \(x=-\sqrt{3}\).  
+Mínimo local en \(x=\sqrt{3}\).
+\end{solucionclick}
+
+
+% ==========================================================
+% 6. CONCAVIDAD Y PUNTOS DE INFLEXIÓN
+% ==========================================================
+
+\section*{6. Concavidad y puntos de inflexión}
+
+En estos ejercicios se busca:
+\begin{itemize}
+  \item Calcular \(f''(x)\).
+  \item Determinar intervalos de concavidad hacia arriba / hacia abajo.
+  \item Localizar puntos de inflexión.
+\end{itemize}
+
+% ---------- EJERCICIO 6.1 ----------
+\begin{ejercicio}
+Considere
+\[
+f(x)=x^{3}-6x^{2}+9x.
+\]
+a) Calcule \(f'(x)\) y \(f''(x)\). \\
+b) Determine en qué intervalos la función es cóncava hacia arriba y hacia abajo. \\
+c) Encuentre los puntos de inflexión.
+\end{ejercicio}
+
+\begin{solucionclick}
+\textbf{Paso 1. Derivadas}
+
+\[
+f'(x)=3x^{2}-12x+9.
+\]
+
+\[
+f''(x)=6x-12.
+\]
+
+\textbf{Paso 2. Concavidad}
+
+Para saber dónde es cóncava hacia arriba o hacia abajo, analizamos el signo de \(f''(x)=6x-12\).
+
+Resolvemos \(f''(x)=0\):
+\[
+6x-12=0
+\quad\Longrightarrow\quad
+6x=12
+\quad\Longrightarrow\quad
+x=2.
+\]
+
+Tomamos intervalos:
+\[
+(-\infty,2)\quad\text{y}\quad (2,\infty).
+\]
+
+Escogemos un punto de prueba en cada intervalo:
+
+1. Si \(x<2\), por ejemplo \(x=0\):
+\[
+f''(0)=6\cdot 0-12=-12<0
+\quad\Rightarrow\quad
+\text{cóncava hacia abajo en }(-\infty,2).
+\]
+
+2. Si \(x>2\), por ejemplo \(x=5\):
+\[
+f''(5)=6\cdot 5-12=30-12=18>0
+\quad\Rightarrow\quad
+\text{cóncava hacia arriba en }(2,\infty).
+\]
+
+\textbf{Paso 3. Punto de inflexión}
+
+Como la concavidad cambia en \(x=2\), allí hay un punto de inflexión.
+
+Coordenada \(y\):
+\[
+f(2)=2^{3}-6\cdot 2^{2}+9\cdot 2
+=8-24+18=2.
+\]
+
+\textbf{Conclusión:}
+
+Cóncava hacia abajo en \((-\infty,2)\). \\
+Cóncava hacia arriba en \((2,\infty)\). \\
+Punto de inflexión en \((2,2)\).
+\end{solucionclick}
+
+
+% ---------- EJERCICIO 6.2 ----------
+\begin{ejercicio}
+Sea
+\[
+g(x)=x^{4}-4x^{3}.
+\]
+a) Determine \(g''(x)\). \\
+b) Determine los intervalos de concavidad. \\
+c) Determine los puntos de inflexión (si existen).
+\end{ejercicio}
+
+\begin{solucionclick}
+\textbf{Paso 1. Derivadas}
+
+\[
+g'(x)=4x^{3}-12x^{2}=4x^{2}(x-3).
+\]
+
+\[
+g''(x)=12x^{2}-24x=12x(x-2).
+\]
+
+\textbf{Paso 2. Zonas según el signo de \(g''(x)\)}
+
+Resolvemos \(g''(x)=0\):
+\[
+12x(x-2)=0
+\quad\Longrightarrow\quad
+x=0
+\quad\text{o}\quad
+x=2.
+\]
+
+Analizamos intervalos:
+\[
+(-\infty,0),\quad (0,2),\quad (2,\infty).
+\]
+
+Tomemos puntos de prueba:
+
+1. Para \(x<0\), por ejemplo \(x=-1\):
+\[
+g''(-1)=12(-1)(-1-2)=12(-1)(-3)=36>0
+\quad\Rightarrow\quad
+\text{cóncava hacia arriba en }(-\infty,0).
+\]
+
+2. Para \(0<x<2\), por ejemplo \(x=1\):
+\[
+g''(1)=12(1)(1-2)=12(-1)=-12<0
+\quad\Rightarrow\quad
+\text{cóncava hacia abajo en }(0,2).
+\]
+
+3. Para \(x>2\), por ejemplo \(x=3\):
+\[
+g''(3)=12(3)(3-2)=12\cdot 3\cdot 1=36>0
+\quad\Rightarrow\quad
+\text{cóncava hacia arriba en }(2,\infty).
+\]
+
+\textbf{Paso 3. Puntos de inflexión}
+
+Hay cambio de concavidad en \(x=0\) y en \(x=2\), así que ambos son puntos de inflexión.
+
+Coordenadas:
+
+\[
+g(0)=0^{4}-4\cdot 0^{3}=0.
+\]
+
+\[
+g(2)=2^{4}-4\cdot 2^{3}
+=16-32=-16.
+\]
+
+\textbf{Conclusión:}
+
+Cóncava hacia arriba en \((-\infty,0)\cup(2,\infty)\). \\
+Cóncava hacia abajo en \((0,2)\). \\
+Puntos de inflexión en \((0,0)\) y \((2,-16)\).
+\end{solucionclick}
+
+
+% ---------- EJERCICIO 6.3 ----------
+\begin{ejercicio}
+Para la función
+\[
+h(x)=x^{3}-3x,
+\]
+a) halle los puntos de inflexión; \\
+b) describa brevemente la forma cualitativa de la gráfica (sin dibujar con precisión).
+\end{ejercicio}
+
+\begin{solucionclick}
+\textbf{Paso 1. Derivadas}
+
+\[
+h'(x)=3x^{2}-3,
+\qquad
+h''(x)=6x.
+\]
+
+\textbf{Paso 2. Inflección}
+
+Resolvemos \(h''(x)=0\):
+\[
+6x=0
+\quad\Longrightarrow\quad
+x=0.
+\]
+
+Analizamos el signo de \(h''(x)=6x\):
+
+- Si \(x<0\), por ejemplo \(x=-1\):
+\[
+h''(-1)=6(-1)=-6<0
+\quad\Rightarrow\quad
+\text{cóncava hacia abajo a la izquierda de }0.
+\]
+
+- Si \(x>0\), por ejemplo \(x=1\):
+\[
+h''(1)=6(1)=6>0
+\quad\Rightarrow\quad
+\text{cóncava hacia arriba a la derecha de }0.
+\]
+
+Entonces en \(x=0\) cambia la concavidad \(\Rightarrow\) punto de inflexión.
+
+Coordenada \(y\):
+\[
+h(0)=0^{3}-3\cdot 0=0.
+\]
+
+\textbf{Paso 3. Forma cualitativa}
+
+- Para \(x \ll 0\): la función viene muy abajo y sube (\(h'(x)>0\) cuando \(|x|\) grande).  
+- Cerca de \(x=-\sqrt{1}\approx -1\) y \(x=\sqrt{1}\approx 1\), hay cambios de crecimiento/decrecimiento (de hecho máximos y mínimos locales).  
+- Cambia de concavidad en \((0,0)\).
+
+\textbf{Conclusión:}
+
+Punto de inflexión en \((0,0)\).  
+Gráfica en forma de “S”: baja, luego sube, con cambio de curvatura en el origen.
+\end{solucionclick}
+
+
+% ==========================================================
+% 7. OPTIMIZACIÓN
+% ==========================================================
+
+\section*{7. Problemas de optimización}
+
+En los siguientes ejercicios se debe:
+\begin{itemize}
+  \item Plantear la función que se quiere optimizar (área, costo, etc.).
+  \item Usar las restricciones físicas para escribir esa función con una sola variable.
+  \item Derivar, igualar a cero, y verificar máximo / mínimo.
+  \item Responder con interpretación física (unidades).
+\end{itemize}
+
+% ---------- EJERCICIO 7.1 (CERCA Y RÍO) ----------
+\begin{ejercicio}
+Un agricultor tiene \SI{800}{m} de cerca para cerrar un lote rectangular junto a un río recto.
+No necesita cercar el lado que colinda con el río.
+¿Cuáles deben ser las dimensiones del rectángulo para que el área sea máxima?
+\end{ejercicio}
+
+\begin{solucionclick}
+\textbf{Paso 1. Definición de variables}
+
+Sea \(x\) el ancho perpendicular al río, y \(y\) el lado paralelo al río.
+
+Como el lado que da al río no se cerca, la cerca se usa en:
+\[
+\text{perímetro cercado } = 2x + y = 800.
+\quad (1)
+\]
+
+Área del lote:
+\[
+A = x \cdot y.
+\quad (2)
+\]
+
+\textbf{Paso 2. Resolver la restricción para una sola variable}
+
+De (1):
+\[
+y = 800 - 2x.
+\]
+
+Sustituimos en (2):
+\[
+A(x)= x(800-2x)=800x-2x^{2}.
+\]
+
+Dominio físico: \(x>0\), \(y>0 \Rightarrow 800-2x>0 \Rightarrow x<400\).  
+Entonces \(0<x<400\).
+
+\textbf{Paso 3. Derivar e igualar a cero}
+
+\[
+A'(x)=800-4x.
+\]
+
+Punto crítico:
+\[
+800-4x=0
+\quad\Longrightarrow\quad
+4x=800
+\quad\Longrightarrow\quad
+x=200.
+\]
+
+\textbf{Paso 4. Verificar máximo}
+
+\[
+A''(x)= -4 <0,
+\]
+constante negativa. Entonces es un \textbf{máximo}.
+
+\textbf{Paso 5. Hallar \(y\)}
+
+\[
+y=800-2x=800-2\cdot 200=800-400=400.
+\]
+
+\textbf{Conclusión (con unidades):}
+
+El área máxima se logra con
+\[
+x=\SI{200}{m},\qquad y=\SI{400}{m}.
+\]
+
+Dimensiones óptimas: \(\SI{200}{m} \times \SI{400}{m}\).
+\end{solucionclick}
+
+
+% ---------- EJERCICIO 7.2 (LATA CILÍNDRICA) ----------
+\begin{ejercicio}
+Se desea fabricar una lata cilíndrica con volumen fijo de \(\SI{100}{cm^{3}}\).
+Encuentre el radio \(r\) y la altura \(h\) que minimizan el área de material usado (costo mínimo).
+Suponga que la lata tiene tapa y base circulares.
+\end{ejercicio}
+
+\begin{solucionclick}
+\textbf{Paso 1. Datos geométricos}
+
+Para un cilindro:
+\[
+V = \pi r^{2} h,
+\qquad
+S = 2\pi r^{2} + 2\pi r h,
+\]
+donde \(S\) es el área superficial total (costo de material).
+
+Tenemos el volumen fijo:
+\[
+V = \SI{100}{cm^{3}}.
+\]
+
+\textbf{Paso 2. Despejar \(h\) en función de \(r\)}
+
+\[
+V = \pi r^{2} h = 100
+\quad\Longrightarrow\quad
+h = \frac{100}{\pi r^{2}}.
+\]
+
+\textbf{Paso 3. Sustituir en el área}
+
+\[
+S(r) = 2\pi r^{2} + 2\pi r \left( \frac{100}{\pi r^{2}} \right)
+= 2\pi r^{2} + \frac{200}{r}.
+\]
+
+Dominio físico: \(r>0\).
+
+\textbf{Paso 4. Derivar e igualar a cero}
+
+\[
+S'(r)= 4\pi r - \frac{200}{r^{2}}.
+\]
+
+Buscamos \(S'(r)=0\):
+\[
+4\pi r - \frac{200}{r^{2}}=0
+\quad\Longrightarrow\quad
+4\pi r = \frac{200}{r^{2}}
+\quad\Longrightarrow\quad
+4\pi r^{3}=200
+\quad\Longrightarrow\quad
+r^{3}=\frac{200}{4\pi}=\frac{50}{\pi}.
+\]
+
+Entonces:
+\[
+r = \left(\frac{50}{\pi}\right)^{1/3}\ \text{cm}.
+\]
+
+\textbf{Paso 5. Altura correspondiente}
+
+\[
+h = \frac{100}{\pi r^{2}}
+= \frac{100}{\pi \left( \frac{50}{\pi} \right)^{2/3}}
+= \frac{100}{ \pi^{1/3} \, 50^{2/3} }.
+\]
+
+(Se puede dejar así; lo importante en la tutoría es el método.)
+
+\textbf{Paso 6. Clasificar (mínimo)}
+
+\[
+S''(r)=4\pi + \frac{400}{r^{3}} >0 \quad\text{para } r>0.
+\]
+
+Como \(S''(r)>0\), el punto crítico produce un \textbf{mínimo}.
+
+\textbf{Conclusión (con unidades):}
+
+El costo de material es mínimo cuando
+\[
+r = \left(\frac{50}{\pi}\right)^{1/3}\ \text{cm},
+\qquad
+h = \frac{100}{\pi r^{2}}\ \text{cm}.
+\]
+
+Ese par \((r,h)\) minimiza el área superficial (por tanto, el material usado).
+\end{solucionclick}
+
+
+% ---------- EJERCICIO 7.3 (DOS NÚMEROS) ----------
+\begin{ejercicio}
+Halle dos números reales \(x\) y \(y\) cuya diferencia sea \(100\) y cuyo producto sea mínimo.
+Es decir, encuentre \(x\) y \(y\) que minimicen \(P = x\cdot y\) bajo la condición \(x-y=100\).
+\end{ejercicio}
+
+\begin{solucionclick}
+\textbf{Paso 1. Restricción}
+
+Tenemos:
+\[
+x-y=100
+\quad\Longrightarrow\quad
+x = y+100.
+\]
+
+\textbf{Paso 2. Función a minimizar}
+
+Producto:
+\[
+P = x\cdot y = (y+100)\,y = y^{2}+100y.
+\]
+
+Entonces
+\[
+P(y)=y^{2}+100y.
+\]
+
+\textbf{Paso 3. Derivar e igualar a cero}
+
+\[
+P'(y)=2y+100.
+\]
+
+Punto crítico:
+\[
+2y+100=0
+\quad\Longrightarrow\quad
+2y=-100
+\quad\Longrightarrow\quad
+y=-50.
+\]
+
+Luego:
+\[
+x = y+100 = -50+100 = 50.
+\]
+
+\textbf{Paso 4. Clasificar el extremo}
+
+\[
+P''(y)=2>0,
+\]
+constante positiva, entonces el punto crítico da \textbf{mínimo}.
+
+\textbf{Paso 5. Conclusión}
+
+Los dos números son
+\[
+x=50,\qquad y=-50.
+\]
+
+El producto mínimo es
+\[
+P_{\min}=50\cdot(-50)=-2500.
+\]
+
+Interpretación:
+entre todos los pares \((x,y)\) con diferencia \(100\), el par simétrico respecto a \(0\), es decir
+\((50,-50)\), produce el producto más pequeño.
+\end{solucionclick}
+
+% =================== FIN DE EJERCICIOS ===================
+\noindent\fbox{%
+\parbox{\linewidth}{%
+%\textbf{Julián Arias Meza} es profesor de Matemática graduado de la Universidad de Costa Rica. 
+%Cursó la carrera de Física en la misma universidad y actualmente cursa la licenciatura en 
+%Ingeniería Física en el Tecnológico de Costa Rica (TEC). 
+Integración  del uso de herramientas digitales y de inteligencia artificial (IA), 
+enfocadas en la mejora de las capacidades pedagógicas: 
+diseño de materiales adaptativos, retroalimentación automática y 
+optimización de la evaluación formativa.
+
+\medskip
+\textbf{Áreas}
+\begin{itemize}
+  \item \textbf{Matemática:} aritmética, álgebra, trigonometría, geometría analítica, cálculo (diferencial e integral), probabilidad y estadística.
+  \item \textbf{Física:} mecánica, ondas, electricidad y magnetismo, termodinámica y óptica; con resolución de problemas, interpretación física y uso riguroso del SI.
+  \item \textbf{Química:} nomenclatura con sistema Stock y sistema estequiométrico, óxidos, hidruros, hidróxidos, hidrácidos, sales binarias, tipos de reacciones, balanceo y estequiometría.
+  \item \textbf{Admisión (universidades y colegios):} preparación integral para exámenes de ingreso (UCR, TEC, UNA, Colegios Científicos, COVAO, entre otros): diagnóstico inicial, plan de estudio, técnicas de resolución, simulacros cronometrados y análisis de errores.
+  \item \textbf{Formatos:} guías teóricas, bancos de ejercicios, prácticas con soluciones paso a paso, simulacros, rúbricas, presentaciones y resúmenes ejecutivos.
+\end{itemize}
+
+\text{Se entrega en:} formato PDF listo para imprimir, o \texttt{.docx} (Word).
+
+\medskip
+\textbf{Contacto (WhatsApp):} \texttt{7076-9371}
+
+}}
+\end{document}

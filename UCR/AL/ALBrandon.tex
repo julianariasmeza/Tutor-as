@@ -1,0 +1,284 @@
+% ==========================================================
+% Subespacio vectorial en M(2x2,R) — Desarrollo completo
+% ==========================================================
+\documentclass[11pt,letterpaper]{article}
+
+% --- Idioma y formato numérico ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, es-nodecimaldot]{babel}
+\usepackage{amsmath, amssymb, siunitx}
+
+\sisetup{
+  locale=DE,
+  output-decimal-marker={,},
+  per-mode=symbol,
+  exponent-product=\cdot,
+  group-minimum-digits=4
+}
+
+\usepackage[a4paper,margin=2.4cm]{geometry}
+
+% ----------------------------------------------------------
+\begin{document}
+
+\begin{center}
+  {\Large \textbf{Ejercicio — Subespacio vectorial en $M(2\times2,\mathbb{R})$}}\\[2mm]
+\end{center}
+
+Se define el subespacio:
+\[
+V = \left\{
+\begin{pmatrix}
+a & b \\[2pt]
+c & d
+\end{pmatrix}
+\in M(2\times2,\mathbb{R})
+\;:\;
+d = 2a - c,\; c = a + 2b
+\right\}.
+\]
+
+---
+
+\section*{(a) Escribir \(V\) como un conjunto generado}
+
+\textbf{Condiciones dadas:}
+\[
+c = a + 2b, \qquad d = 2a - c.
+\]
+
+\textbf{Sustitución de \(c\) en \(d\):}
+\[
+d = 2a - (a + 2b) = a - 2b.
+\]
+
+\textbf{Por tanto:}
+\[
+\begin{pmatrix}
+a & b \\[2pt]
+c & d
+\end{pmatrix}
+=
+\begin{pmatrix}
+a & b \\[2pt]
+a + 2b & a - 2b
+\end{pmatrix}.
+\]
+
+\textbf{Separando términos:}
+\[
+\begin{pmatrix}
+a & b \\[2pt]
+a + 2b & a - 2b
+\end{pmatrix}
+=
+a
+\begin{pmatrix}
+1 & 0 \\[2pt]
+1 & 1
+\end{pmatrix}
++
+b
+\begin{pmatrix}
+0 & 1 \\[2pt]
+2 & -2
+\end{pmatrix}.
+\]
+
+\textbf{Entonces:}
+\[
+V = \operatorname{gen}\left\{
+\begin{pmatrix}
+1 & 0 \\[2pt]
+1 & 1
+\end{pmatrix},
+\begin{pmatrix}
+0 & 1 \\[2pt]
+2 & -2
+\end{pmatrix}
+\right\}.
+\]
+
+---
+
+\section*{(b) Base de \(V\) y su dimensión}
+
+\textbf{Propuesta de base:}
+\[
+\mathcal{B} =
+\left\{
+A_1 =
+\begin{pmatrix}
+1 & 0 \\[2pt]
+1 & 1
+\end{pmatrix},
+\;
+A_2 =
+\begin{pmatrix}
+0 & 1 \\[2pt]
+2 & -2
+\end{pmatrix}
+\right\}.
+\]
+
+\textbf{Verificación de independencia lineal:}
+\[
+\alpha A_1 + \beta A_2 =
+\begin{pmatrix}
+0 & 0 \\[2pt]
+0 & 0
+\end{pmatrix}.
+\]
+
+\textbf{Sustituyendo:}
+\[
+\alpha
+\begin{pmatrix}
+1 & 0 \\[2pt]
+1 & 1
+\end{pmatrix}
++
+\beta
+\begin{pmatrix}
+0 & 1 \\[2pt]
+2 & -2
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 & 0 \\[2pt]
+0 & 0
+\end{pmatrix}.
+\]
+
+\textbf{Igualando componentes:}
+\[
+\begin{cases}
+\alpha = 0,\\[2pt]
+\beta = 0.
+\end{cases}
+\]
+
+\textbf{Conclusión:} \(\alpha = \beta = 0 \Rightarrow A_1, A_2\) son linealmente independientes.
+
+\[
+\boxed{
+\mathcal{B} =
+\left\{
+\begin{pmatrix}
+1 & 0 \\[2pt]
+1 & 1
+\end{pmatrix},
+\begin{pmatrix}
+0 & 1 \\[2pt]
+2 & -2
+\end{pmatrix}
+\right\},
+\qquad
+\dim(V) = 2.
+}
+\]
+
+---
+
+\section*{(c) Dos matrices linealmente independientes que no pertenezcan a \(V\)}
+
+\textbf{Sea:}
+\[
+M_1 =
+\begin{pmatrix}
+0 & 0 \\[2pt]
+1 & 0
+\end{pmatrix},
+\qquad
+M_2 =
+\begin{pmatrix}
+0 & 0 \\[2pt]
+0 & 1
+\end{pmatrix}.
+\]
+
+\textbf{Verificación de pertenencia:}
+
+Para \(M_1\):
+\[
+a=0,\; b=0,\; c=1,\; d=0.
+\]
+Se verifica \(c=a+2b \Rightarrow 1 \neq 0\), por lo tanto \(M_1 \notin V.\)
+
+Para \(M_2\):
+\[
+a=0,\; b=0,\; c=0,\; d=1.
+\]
+Se verifica \(d=2a-c \Rightarrow 1 \neq 0\), por lo tanto \(M_2 \notin V.\)
+
+\textbf{Verificación de independencia lineal:}
+\[
+\lambda M_1 + \mu M_2 = 0
+\quad\Rightarrow\quad
+\begin{cases}
+\lambda = 0,\\[2pt]
+\mu = 0.
+\end{cases}
+\]
+
+\textbf{Conclusión:} son linealmente independientes y no pertenecen a \(V\).
+
+\[
+\boxed{
+M_1 =
+\begin{pmatrix}
+0 & 0 \\[2pt]
+1 & 0
+\end{pmatrix},
+\quad
+M_2 =
+\begin{pmatrix}
+0 & 0 \\[2pt]
+0 & 1
+\end{pmatrix}.
+}
+\]
+
+---
+
+\textbf{Resumen final:}
+\[
+\begin{aligned}
+V &= \operatorname{gen}\left\{
+\begin{pmatrix}
+1 & 0 \\[2pt]
+1 & 1
+\end{pmatrix},
+\begin{pmatrix}
+0 & 1 \\[2pt]
+2 & -2
+\end{pmatrix}
+\right\}, \\[4pt]
+\mathcal{B} &= \left\{
+\begin{pmatrix}
+1 & 0 \\[2pt]
+1 & 1
+\end{pmatrix},
+\begin{pmatrix}
+0 & 1 \\[2pt]
+2 & -2
+\end{pmatrix}
+\right\},
+\qquad
+\dim(V) = 2,\\[4pt]
+M_1 &=
+\begin{pmatrix}
+0 & 0 \\[2pt]
+1 & 0
+\end{pmatrix},
+\quad
+M_2 =
+\begin{pmatrix}
+0 & 0 \\[2pt]
+0 & 1
+\end{pmatrix}.
+\end{aligned}
+\]
+
+\end{document}

@@ -1,0 +1,490 @@
+% ============================
+% Documento LaTeX - Solución
+% ============================
+\documentclass[12pt,a4paper]{article}
+
+% --- Idioma y codificación ---
+\usepackage[spanish, es-nodecimaldot]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% --- Paquetes matemáticos ---
+\usepackage{amsmath, amssymb}
+\usepackage{siunitx}
+\sisetup{
+  locale = DE,                   % coma decimal
+  per-mode = symbol,             % unidades con "/"
+  output-decimal-marker = {,},   % separador decimal coma
+  exponent-product = \cdot,
+  group-minimum-digits = 4
+}
+
+% --- Otros paquetes útiles ---
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{float}
+\geometry{margin=2.5cm}
+
+% --- Inicio del documento ---
+\begin{document}
+
+
+\section*{Ejercicio 2.1}
+Dos fuerzas \( \vec{P} \) y \( \vec{Q} \) se aplican en el punto \( A \) del gancho que se muestra en la Figura~\ref{fig:gancho}. Se sabe que:
+\begin{itemize}
+    \item \( P = \SI{75}{N} \)
+    \item \( Q = \SI{125}{N} \)
+    \item Ángulo entre fuerzas: \( 55^\circ \) (suma de \( 20^\circ \) y \( 35^\circ \))
+\end{itemize}
+
+Se pide determinar la magnitud y dirección de la fuerza resultante \( \vec{R} \) usando métodos gráficos y analíticos:
+
+\subsection*{a) Ley del paralelogramo}
+Este método consiste en construir un paralelogramo tomando los vectores \( \vec{P} \) y \( \vec{Q} \) como lados adyacentes. La diagonal que parte del punto de aplicación representa la fuerza resultante \( \vec{R} \).
+
+\textbf{Paso 1: Calcular la magnitud de la resultante}
+\[
+R = \sqrt{P^2 + Q^2 + 2PQ\cos\theta}
+\]
+\[
+R = \sqrt{75^2 + 125^2 + 2(75)(125)\cos(55^\circ)}
+\]
+\[
+R = \sqrt{5625 + 15625 + 18750\cos(55^\circ)}
+\]
+\[
+R = \sqrt{21250 + 10749,2} = \sqrt{31999,2} \approx \SI{179}{N}
+\]
+
+\textbf{Paso 2: Calcular la dirección de la resultante respecto a \( \vec{P} \)}
+\[
+\alpha = \tan^{-1}\left(\frac{Q\sin\theta}{P + Q\cos\theta}\right)
+\]
+\[
+\alpha = \tan^{-1}\left(\frac{125\sin(55^\circ)}{75 + 125\cos(55^\circ)}\right)
+\]
+\[
+\alpha = \tan^{-1}\left(\frac{102,5}{146,2}\right) \approx 75{,}1^\circ
+\]
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imagenes/Captura de Pantalla 2025-06-24 a la(s) 10.33.06.png}
+    \caption{Ley del paralelogramo.}
+    \label{fig:gancho}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imagenes/Captura de Pantalla 2025-06-24 a la(s) 10.33.31.png}
+    \caption{Solución gráfica usando Regla del triángulo}
+\end{figure}
+
+\subsection*{b) Regla del triángulo}
+Este método consiste en colocar los vectores \( \vec{P} \) y \( \vec{Q} \) de manera consecutiva, es decir, el extremo de \( \vec{P} \) conecta con el inicio de \( \vec{Q} \). La resultante \( \vec{R} \) se representa como el lado que cierra el triángulo, desde el inicio de \( \vec{P} \) hasta el extremo de \( \vec{Q} \).
+
+Se utiliza la ley del coseno para la magnitud:
+\[
+R = \sqrt{P^2 + Q^2 - 2PQ\cos(180^\circ - \theta)}
+\]
+\[
+R = \sqrt{75^2 + 125^2 - 2(75)(125)\cos(125^\circ)}
+\]
+\[
+\cos(125^\circ) = -\cos(55^\circ) \Rightarrow
+\]
+\[
+R = \sqrt{5625 + 15625 + 2(75)(125)\cos(55^\circ)} = \SI{179}{N}
+\]
+
+Y la ley del seno para el ángulo \( \alpha \):
+\[
+\frac{\sin(\alpha)}{Q} = \frac{\sin(\theta)}{R} \Rightarrow
+\]
+\[
+\alpha = \sin^{-1}\left(\frac{Q\sin(\theta)}{R}\right) = \sin^{-1}\left(\frac{125\sin(55^\circ)}{179}\right) \approx 75{,}1^\circ
+\]
+
+\newpage
+\section*{Problema 2.4}
+
+Se aplican dos fuerzas en el punto \(B\) de la viga \(AB\).  
+Se desea determinar la magnitud y dirección de la resultante \(R\) mediante:  
+\begin{enumerate}
+  \item[a)] la ley del paralelogramo,  
+  \item[b)] la regla del triángulo.  
+\end{enumerate}
+
+\subsection*{a) Ley del paralelogramo}
+Se trazan las fuerzas de \(\SI{2}{kN}\) y \(\SI{3}{kN}\), aplicadas en el punto \(B\), con ángulos de \(40^\circ\) y \(60^\circ\) respecto a la vertical.  
+Se construye el paralelogramo, y su diagonal representa la resultante \(R\).
+
+\subsection*{b) Regla del triángulo}
+Se colocan las fuerzas en forma consecutiva (la punta de la primera con la cola de la segunda).  
+La tercera arista del triángulo representa la resultante \(R\).
+
+\subsection*{Resultado}
+De la construcción gráfica, se obtiene:
+\[
+R \approx \SI{3,30}{kN}, 
+\qquad \alpha \approx 66,6^{\circ}
+\]
+
+\[
+\boxed{R = \SI{3,30}{kN} \;\;\angle 66,6^{\circ}}
+\]
+
+\subsection*{Problema 2.4 — Procedimiento matemático}
+
+\subsubsection*{Datos}
+\[
+P=\SI{2,00}{kN},\qquad Q=\SI{3,00}{kN},
+\]
+\[
+\text{ángulos respecto a la vertical: } 
+\widehat{(P,\ \downarrow)}=40^\circ\ \text{(hacia la izquierda)},\quad
+\widehat{(Q,\ \downarrow)}=60^\circ\ \text{(hacia la derecha)}.
+\]
+El ángulo entre las fuerzas es 
+\[
+\theta=\;40^\circ+60^\circ=100^\circ.
+\]
+
+% =========================================================
+\subsection*{A) Suma por componentes rectangulares}
+
+\textbf{Sistema de ejes:} \(+x\) a la derecha, \(+y\) hacia arriba.  
+Direcciones absolutas (medidas desde \(+x\), CCW):
+\[
+\theta_P=270^\circ-40^\circ=230^\circ,\qquad
+\theta_Q=270^\circ+60^\circ=330^\circ.
+\]
+
+\paragraph{Fórmulas}
+\[
+P_x=P\cos\theta_P,\quad P_y=P\sin\theta_P,\qquad
+Q_x=Q\cos\theta_Q,\quad Q_y=Q\sin\theta_Q,
+\]
+\[
+R_x=P_x+Q_x,\quad R_y=P_y+Q_y,\qquad
+R=\sqrt{R_x^{2}+R_y^{2}},\quad 
+\alpha=\operatorname{atan2}(R_y,R_x).
+\]
+
+\paragraph{Sustitución y cálculo}
+\[
+\begin{aligned}
+P_x&=2\cos 230^\circ=-1,2856\ \text{kN}, & 
+P_y&=2\sin 230^\circ=-1,5321\ \text{kN},\\
+Q_x&=3\cos 330^\circ=+2,5981\ \text{kN}, &
+Q_y&=3\sin 330^\circ=-1,5000\ \text{kN}.
+\end{aligned}
+\]
+\[
+R_x= -1,2856+2,5981=+1,3125\ \text{kN},\qquad
+R_y= -1,5321-1,5000=-3,0321\ \text{kN}.
+\]
+\[
+R=\sqrt{(1,3125)^2+(-3,0321)^2}=3,304\ \text{kN}\approx\boxed{\SI{3,30}{kN}}.
+\]
+\[
+\alpha=\operatorname{atan2}(-3,0321,\;1,3125)=-66,59^\circ.
+\]
+
+\paragraph{Interpretación de la dirección}
+\(\alpha=-66,59^\circ\) indica que \(R\) forma un ángulo de 
+\(\boxed{66,6^\circ}\) \textbf{por debajo de la horizontal hacia la derecha}
+(sentido horario).  
+Equivalente: \(\,R\) está a \(23,4^\circ\) a la derecha de la vertical hacia abajo.
+
+\vspace{0.6em}
+% =========================================================
+\subsection*{B) Ley del paralelogramo (cosenos y senos)}
+
+\paragraph{Fórmulas (paralelogramo / triángulo de fuerzas)}
+Con \(\theta=100^\circ\) entre \(P\) y \(Q\):
+\[
+R=\sqrt{P^{2}+Q^{2}+2PQ\cos\theta},
+\]
+y, por ley de senos en el triángulo \(P\)-\(Q\)-\(R\),
+\[
+\frac{\sin\beta_P}{P}=\frac{\sin\theta}{R},\qquad
+\frac{\sin\beta_Q}{Q}=\frac{\sin\theta}{R},
+\]
+donde \(\beta_P\) es el ángulo entre \(R\) y \(Q\), y \(\beta_Q\) el ángulo entre \(R\) y \(P\).
+
+\paragraph{Sustitución y cálculo}
+\[
+R=\sqrt{2^{2}+3^{2}+2(2)(3)\cos 100^\circ}=3,304\ \text{kN}\approx\boxed{\SI{3,30}{kN}}.
+\]
+\[
+\beta_P=\arcsin\!\left(\frac{P\sin 100^\circ}{R}\right)=36,59^\circ,
+\quad
+\beta_Q=\arcsin\!\left(\frac{Q\sin 100^\circ}{R}\right)=63,41^\circ.
+\]
+
+\paragraph{Dirección}
+La resultante queda más \emph{cercana} a \(Q\) (porque \(Q>P\)).  
+Ángulo de \(R\) respecto a la \textbf{vertical hacia abajo} del lado derecho:
+\[
+\theta_R=60^\circ-\beta_P=60^\circ-36,59^\circ=23,41^\circ.
+\]
+Respecto a la \textbf{horizontal}:
+\[
+\boxed{\alpha=90^\circ-\theta_R=66,59^\circ\approx 66,6^\circ}.
+\]
+
+\subsection*{Conclusión}
+\[
+\boxed{R=\SI{3,30}{kN}},\qquad 
+\boxed{\alpha\approx 66,6^\circ\ \text{(debajo de la horizontal hacia la derecha)}}.
+\]
+Equivalente: \(R\) está a \(23,4^\circ\) a la derecha de la vertical descendente.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{imagenes/Captura de Pantalla 2025-09-30 a la(s) 18.43.52.png}
+    \caption{Ley del .}
+    \label{fig:gancho}
+\end{figure}
+\newpage
+\section*{Ejercicio 2.7}
+Se aplican dos fuerzas en el gancho de apoyo que se muestra en la Figura~\ref{fig:gancho27}. Se sabe que:
+\begin{itemize}
+    \item \( P = \SI{35}{N} \)
+    \item \( Q = \SI{50}{N} \)
+    \item El ángulo entre las dos fuerzas es \( \alpha + 25^\circ \)
+    \item La resultante \( \vec{R} \) debe ser horizontal.
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imagenes/Captura de Pantalla 2025-06-24 a la(s) 10.58.48.png}
+    \caption{Fuerzas aplicadas sobre el gancho en el Ejercicio 2.7.}
+    \label{fig:gancho27}
+\end{figure}
+Se pide determinar por trigonometría:
+\begin{enumerate}
+    \item[a)] El ángulo \( \alpha \) requerido.
+    \item[b)] La magnitud correspondiente de \( \vec{R} \).
+\end{enumerate}
+
+\subsection*{a) Cálculo del ángulo \( \alpha \)}
+Aplicamos la ley de senos en el triángulo formado por las fuerzas:
+\[
+\frac{\sin(\alpha)}{50} = \frac{\sin(25^\circ)}{35}
+\]
+\[
+\sin(\alpha) = \frac{50\sin(25^\circ)}{35} \approx 0{,}60374
+\]
+\[
+\alpha = \sin^{-1}(0{,}60374) \approx 37{,}14^\circ
+\]
+
+\subsection*{b) Cálculo de la magnitud de \( \vec{R} \)}
+Primero calculamos el ángulo opuesto a \( \vec{R} \) en el triángulo:
+\[
+\beta = 180^\circ - 25^\circ - \alpha = 180^\circ - 25^\circ - 37{,}14^\circ = 117{,}86^\circ
+\]
+
+Ahora aplicamos la ley de senos:
+\[
+\frac{R}{\sin(117{,}86^\circ)} = \frac{35}{\sin(25^\circ)}
+\Rightarrow
+R = \frac{35\sin(117{,}86^\circ)}{\sin(25^\circ)} \approx \SI{73{,}2}{N}
+\]
+
+
+\newpage
+\section*{Problema 2.21 — Componentes en $x$ e $y$}
+
+\subsection*{Geometría de referencia}
+ Distancias desde \(O\) a los puntos de referencia:
+\[
+OA=\sqrt{600^{2}+800^{2}}=\SI{1000}{mm},\quad
+OB=\sqrt{560^{2}+900^{2}}=\SI{1060}{mm},\quad
+OC=\sqrt{480^{2}+900^{2}}=\SI{1020}{mm}.
+\]
+
+% ===========================
+\subsection*{Fuerza de \(\SI{800}{N}\) (cuadrante I)}
+ \(F=\SI{800}{N}\), proyecciones del vector-dirección: \((x,y)=(\SI{800}{mm},\SI{600}{mm})\), módulo del vector-dirección \(OA=\SI{1000}{mm}\).
+
+ Componentes rectangulares por semejanza de triángulos:
+\[
+F_x = F\,\frac{\Delta x}{\lVert \mathbf{d}\rVert},\qquad
+F_y = F\,\frac{\Delta y}{\lVert \mathbf{d}\rVert}.
+\]
+
+\(\Delta x=\SI{800}{mm}\), \(\Delta y=\SI{600}{mm}\), \(\lVert \mathbf{d}\rVert=\SI{1000}{mm}\).
+
+
+\[
+F_x=800\left(\frac{800}{1000}\right)=\SI{640}{N},\qquad
+F_y=800\left(\frac{600}{1000}\right)=\SI{480}{N}.
+\]
+
+
+\[
+\boxed{F_x=\SI{+640}{N}},\qquad
+\boxed{F_y=\SI{+480}{N}}.
+\]
+
+% ===========================
+\subsection*{Fuerza de \(\SI{424}{N}\) (cuadrante III)}
+ \(F=\SI{424}{N}\), proyecciones: \((x,y)=(\SI{-560}{mm},\SI{-900}{mm})\), módulo \(OB=\SI{1060}{mm}\).
+
+
+\[
+F_x=F\,\frac{\Delta x}{\lVert \mathbf{d}\rVert},\qquad
+F_y=F\,\frac{\Delta y}{\lVert \mathbf{d}\rVert}.
+\]
+ \(\Delta x=-\SI{560}{mm}\), \(\Delta y=-\SI{900}{mm}\), \(\lVert \mathbf{d}\rVert=\SI{1060}{mm}\).
+
+\[
+F_x=424\left(\frac{-560}{1060}\right)=424\left(-\frac{56}{106}\right)=-\SI{224}{N},
+\]
+\[
+F_y=424\left(\frac{-900}{1060}\right)=424\left(-\frac{90}{106}\right)=-\SI{360}{N}.
+\]
+
+
+\[
+\boxed{F_x=\SI{-224}{N}},\qquad
+\boxed{F_y=\SI{-360}{N}}.
+\]
+
+% ===========================
+\subsection*{Fuerza de \(\SI{408}{N}\) (cuadrante IV)}
+\(F=\SI{408}{N}\), proyecciones: \((x,y)=(\SI{+480}{mm},\SI{-900}{mm})\), módulo \(OC=\SI{1020}{mm}\).
+
+
+\[
+F_x=F\,\frac{\Delta x}{\lVert \mathbf{d}\rVert},\qquad
+F_y=F\,\frac{\Delta y}{\lVert \mathbf{d}\rVert}.
+\]
+
+ \(\Delta x=\SI{480}{mm}\), \(\Delta y=-\SI{900}{mm}\), \(\lVert \mathbf{d}\rVert=\SI{1020}{mm}\).
+
+
+\[
+F_x=408\left(\frac{480}{1020}\right)=408\left(\frac{48}{102}\right)=\SI{192}{N},
+\]
+\[
+F_y=408\left(\frac{-900}{1020}\right)=408\left(-\frac{90}{102}\right)=-\SI{360}{N}.
+\]
+
+
+\[
+\boxed{F_x=\SI{+192}{N}},\qquad
+\boxed{F_y=\SI{-360}{N}}.
+\]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imagenes/Captura de Pantalla 2025-09-30 a la(s) 18.59.29.png}
+    \caption{Fuerzas aplicadas  Ejercicio 2.21.}
+    \label{fig:gancho27}
+\end{figure}
+\newpage
+\section*{Ejercicio 2.23}
+Determine las componentes \( x \) y \( y \) de cada una de las fuerzas que se muestran en la Figura~\ref{fig:gancho223}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.55\textwidth]{imagenes/Captura de Pantalla 2025-06-24 a la(s) 11.21.42.png}
+    \caption{Diagrama del ejercicio 2.23.}
+    \label{fig:gancho223}
+\end{figure}
+\subsection*{Descomposición de fuerzas}
+Se tienen tres fuerzas aplicadas en diferentes direcciones, y se desea conocer sus componentes en los ejes cartesianos.
+
+\textbf{1) Fuerza de \( \SI{40}{lb} \)} con ángulo de \(60^\circ\) hacia abajo respecto al eje positivo \( x \):
+\begin{align*}
+F_x &= 40 \cos(60^\circ) = 20{,}0 \ \text{lb} \\
+F_y &= -40 \sin(60^\circ) = -34{,}6 \ \text{lb}
+\end{align*}
+
+\textbf{2) Fuerza de \( \SI{50}{lb} \)} con ángulo de \(50^\circ\) hacia abajo respecto al eje negativo \( x \):
+\begin{align*}
+F_x &= -50 \sin(50^\circ) = -38{,}3 \ \text{lb} \\
+F_y &= -50 \cos(50^\circ) = -32{,}1 \ \text{lb}
+\end{align*}
+
+\textbf{3) Fuerza de \( \SI{60}{lb} \)} con ángulo de \(25^\circ\) sobre el eje positivo \( x \):
+\begin{align*}
+F_x &= 60 \cos(25^\circ) = 54{,}4 \ \text{lb} \\
+F_y &= 60 \sin(25^\circ) = 25{,}4 \ \text{lb}
+\end{align*}
+\newpage
+\section*{Problema 2.37 — Resultante de tres fuerzas (\(\alpha=40^\circ\))}
+
+\subsection*{Esquema angular}
+El plano inclinado forma \(20^\circ\) con el eje \(x\). 
+Las fuerzas y sus direcciones absolutas respecto de \(+x\) son:
+\[
+\begin{aligned}
+&\text{Fuerza de }60\ \text{lb}: && \theta_{60}=20^\circ,\\
+&\text{Fuerza de }80\ \text{lb}: && \theta_{80}=20^\circ+\alpha=60^\circ,\\
+&\text{Fuerza de }120\ \text{lb}:&& \theta_{120}=-30^\circ \quad (\text{hacia la derecha y abajo}).
+\end{aligned}
+\]
+
+\subsection*{Componentes rectangulares}
+
+
+\[
+F_1=60\ \text{lb},\quad F_2=80\ \text{lb},\quad F_3=120\ \text{lb}.
+\]
+
+ Para cada fuerza \(F\) con ángulo \(\theta\) medido desde \(+x\):
+\[
+F_x=F\cos\theta,\qquad F_y=F\sin\theta.
+\]
+
+
+\[
+\begin{aligned}
+&\textbf{60 lb:} &&F_{1x}=60\cos20^\circ=56{,}38\ \text{lb}, &&F_{1y}=60\sin20^\circ=20{,}52\ \text{lb},\\[2mm]
+&\textbf{80 lb:} &&F_{2x}=80\cos60^\circ=40{,}00\ \text{lb}, &&F_{2y}=80\sin60^\circ=69{,}28\ \text{lb},\\[2mm]
+&\textbf{120 lb:}&&F_{3x}=120\cos(-30^\circ)=103{,}92\ \text{lb}, &&F_{3y}=120\sin(-30^\circ)=-60{,}00\ \text{lb}.
+\end{aligned}
+\]
+
+\subsection*{Suma vectorial}
+\(R_x=\sum F_x,\; R_y=\sum F_y\).
+
+
+\[
+R_x=56{,}38+40{,}00+103{,}92=200{,}30\ \text{lb},\qquad
+R_y=20{,}52+69{,}28-60{,}00=29{,}80\ \text{lb}.
+\]
+
+\subsection*{Magnitud y dirección}
+ \(
+R=\sqrt{R_x^2+R_y^2},\quad
+\tan\alpha_R=\dfrac{R_y}{R_x}.
+\)
+
+
+\[
+R=\sqrt{(200{,}30)^2+(29{,}80)^2}=202{,}50\ \text{lb}\approx \boxed{203\ \text{lb}},
+\]
+\[
+\alpha_R=\arctan\!\left(\frac{29{,}80}{200{,}30}\right)=8{,}46^\circ.
+\]
+
+
+La resultante es
+\[
+\boxed{R\approx 203\ \text{lb}\;\; \angle\; 8{,}46^\circ}
+\]
+medida \emph{sobre la horizontal hacia la derecha} (ligeramente inclinada hacia arriba).\\
+Como referencia en SI:
+\[
+R=202{,}50\ \text{lb}\times 4{,}448\,22\ \frac{\text{N}}{\text{lb}}
+\approx \boxed{\SI{902}{N}},\qquad \angle\,\boxed{8{,}46^\circ}.
+\]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.55\textwidth]{imagenes/Captura de Pantalla 2025-09-30 a la(s) 19.09.13.png}
+    \caption{Diagrama del ejercicio 2.23.}
+    \label{fig:gancho223}
+\end{figure}
+\end{document}

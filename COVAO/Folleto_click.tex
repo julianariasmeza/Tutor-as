@@ -1,0 +1,1357 @@
+
+% === Folleto COVAO - Click-to-reveal solutions ===
+\documentclass[12pt]{article}
+
+
+\usepackage{amssymb}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{siunitx}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage[most]{tcolorbox}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\setlength{\headheight}{14.5pt}
+\usepackage{pifont}
+\usepackage{ocgx2} % <--- para mostrar/ocultar por clic
+\usepackage{newunicodechar}
+\newunicodechar{✗}{\ding{55}}
+\newunicodechar{⇒}{\Rightarrow}
+\geometry{letterpaper, margin=2.5cm}
+\sisetup{output-decimal-marker = {,}}
+
+% ===== Cajas =====
+\tcbset{
+  colback=white,
+  colframe=black!70,
+  boxrule=0.6pt,
+  arc=2mm,
+  left=6pt,right=6pt,top=6pt,bottom=6pt
+}
+\newtcolorbox{ejercicio}[1][]{title=Ejercicio, #1}
+\newtcolorbox{solucionbox}[1][]{title=Solución, colframe=green!60!black, #1}
+\newtcolorbox{nota}[1][]{title=Nota, colframe=blue!60!black, #1}
+
+% ===== Encabezado/pie =====
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Folleto  admisión COVAO }
+\rhead{Julián Arias Meza - 2025}
+\cfoot{\thepage}
+
+% ===== Macro de solución clickeable =====
+\newcounter{solnum}
+\newcommand{\solbtn}{\fcolorbox{black}{gray!10}{\footnotesize Mostrar / ocultar solución}}
+\newenvironment{solucionclick}{%
+  \refstepcounter{solnum}%
+  \par\noindent\textbf{Solución \#\thesolnum}\;
+  \switchocg{sol:\thesolnum}{\solbtn}\\[2pt]%
+  \begin{ocg}{Solución \#\thesolnum}{sol:\thesolnum}{0}%
+  \begin{solucionbox}%
+}{%
+  \end{solucionbox}%
+  \end{ocg}\par\medskip
+}
+
+\newcommand{\titulo}{
+  \begin{center}
+  {\Large \textbf{Folleto de preparación — Examen de admisión COVAO}}\\[2pt]
+  {\small Álgebra, aritmética y razonamiento cuantitativo (con soluciones clickeables)}\\[6pt]
+  \end{center}\vspace{-0.3em}\hrule\vspace{0.8em}
+}
+
+\begin{document}
+\titulo
+
+\begin{nota}
+Hacé clic en el botón \emph{``Mostrar / ocultar solución''} de cada ejercicio para desplegar la respuesta. 
+\textbf{Importante:} la función clic requiere un visor compatible con \emph{OCG} (por ejemplo, Adobe Acrobat/Reader o PDF-XChange). 
+En algunos visores (p.\,ej., Vista Previa de macOS o navegadores) el botón puede no funcionar.
+\end{nota}
+
+% ==================== ENUNCIADOS ====================
+\section*{Enunciados}
+
+% 1
+\begin{ejercicio}
+\textbf{(Potencias y simetrías)} Analice las proposiciones (I) y (II) y determine cuáles son verdaderas:
+\[
+\text{I. }(2^{m}-2^{-m})^{2}=4^{m}-2+\frac{1}{4^{m}}
+\qquad
+\text{II. }(2^{m}-2^{-m})^{2}=2^{2m}-2+2^{-2m}.
+\]
+Marque: \textit{a)} Ambas \quad \textit{b)} Ninguna \quad \textit{c)} Solo II \quad \textit{d)} Solo I.
+\end{ejercicio}
+\begin{solucionclick}
+\((2^{m}-2^{-m})^{2}=2^{2m}-2\cdot 2^{m}2^{-m}+2^{-2m}=2^{2m}-2+2^{-2m}\). 
+Como \(4^{m}=2^{2m}\) y \(1/4^{m}=2^{-2m}\), ambas son idénticas. \(\Rightarrow\) \textbf{a)}.
+\end{solucionclick}
+
+% 2
+\begin{ejercicio}
+\textbf{(Sucesiones)} Considere \(2,3,5,8,13,p,q\). Calcule \(p+q\).
+\[
+\text{a) }34\qquad
+\text{b) }144\qquad
+\text{c) }89\qquad
+\text{d) }55
+\]
+\end{ejercicio}
+\begin{solucionclick}
+Tipo Fibonacci: \(p=8+13=21\), \(q=13+21=34\). Entonces \(p+q=21+34=55\). \(\Rightarrow\) \textbf{d)}.
+\end{solucionclick}
+
+\newpage
+% 3
+\begin{ejercicio}
+\textbf{(Edades y razones)} Cuando José Daniel nació, Mary Paz tenía \(9\) años. 
+Actualmente, la edad de José Daniel es \(\tfrac{2}{5}\) de la edad de Mary Paz. 
+¿Qué edad tiene Mary Paz?
+\[
+\text{a) }6\qquad \text{b) }18\qquad \text{c) }15\qquad \text{d) }12
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\(M-J=9\), \(J=\tfrac{2}{5}M\Rightarrow \tfrac{3}{5}M=9\Rightarrow M=15\). 
+\(\Rightarrow\) \textbf{c)}.
+\end{solucionclick}
+
+% 4
+\begin{ejercicio}
+\textbf{(Exponentes)} Simplifique \( (-3x^{4}y^{3})^{-4}\cdot(-3x^{3}y^{2})^{6}\).
+\[
+\text{a) }6x^{2}\qquad \text{b) }9x^{2}\qquad \text{c) }12x^{2}\qquad \text{d) }15x^{2}
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\((-3)^{-4}x^{-16}y^{-12}\cdot(-3)^{6}x^{18}y^{12}=(-3)^{2}x^{2}=9x^{2}\). 
+\(\Rightarrow\) \textbf{b)}.
+\end{solucionclick}
+
+% 5
+\begin{ejercicio}
+\textbf{(Trigonometría aplicada)} Punto a \(40\) m de la base, ángulo \(32^\circ\). 
+Altura \(x\approx?\)  Use \(\tan 32^\circ \approx 0{,}6248\).
+\[
+\text{a) }25\qquad \text{b) }32\qquad \text{c) }16\qquad \text{d) }64
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\(x=40\tan32^\circ\approx 40\cdot 0{,}6248=24{,}992\approx 25\ \mathrm{m}\). 
+\(\Rightarrow\) \textbf{a)}.
+\end{solucionclick}
+\newpage
+% 6
+\begin{ejercicio}
+\textbf{(Porcentajes)} 2000 huevos; \(20\,\text{\%}\) podridos. Vende \(60\,\text{\%}\) de los no podridos. ¿Cuántos vendió?
+\[
+\text{a) }1040\qquad
+\text{b) }1200\qquad
+\text{c) }720\qquad
+\text{d) }960
+\]
+\end{ejercicio}
+\begin{solucionclick}
+No podridos \(=2000-0{,}20\cdot 2000=1600\). Vendidos \(=0{,}60\cdot 1600=960\). \(\Rightarrow\) \textbf{d)}.
+\end{solucionclick}
+
+% 7
+\begin{ejercicio}
+\textbf{(Sistemas lineales)} 10A tiene 7 más que 10B. Si 1 pasa de 10B a 10A, 10A queda con el doble que 10B. ¿Cuántas mujeres hay en 10B?
+\[
+\text{a) }5\qquad
+\text{b) }17\qquad
+\text{c) }12\qquad
+\text{d) }10
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\(A=B+7,\ A+1=2(B-1)\Rightarrow B=10,\ A=17\). Preguntan por 10B \(\Rightarrow\) \(\boxed{10}\). \textbf{d)}.
+\end{solucionclick}
+
+% 8
+\begin{ejercicio}
+\textbf{(Edades)} Hace \(8\) años: \(J-8=3(S-8)\). Ahora: \(J=2S\). Suma actual \(J+S=?\)
+\[
+\text{a) }16\qquad
+\text{b) }32\qquad
+\text{c) }48\qquad
+\text{d) }8
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\(J=2S\Rightarrow 2S-8=3S-24\Rightarrow S=16,\ J=32\). Suma \(=48\). \(\Rightarrow\) \textbf{c)}.
+\end{solucionclick}
+\newpage
+% 9
+\begin{ejercicio}
+\textbf{(Enteros consecutivos)} Cuatro enteros consecutivos suman \(154\). La suma de los dígitos del mayor es:
+\[
+\text{a) }37\qquad
+\text{b) }40\qquad
+\text{c) }4\qquad
+\text{d) }10
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\(4n+6=154\Rightarrow n=37\). Mayor \(=n+3=40\). Suma de dígitos \(=4\). \(\Rightarrow\) \textbf{c)}.
+\end{solucionclick}
+
+% 10
+\begin{ejercicio}
+\textbf{(Álgebra)} Simplifique \(2x-3(1-x)^2-[x(3-x)+4x]\).
+\[
+\text{a) }-2x^{2}+x-3\qquad
+\text{b) }-x^{2}+10x+4\qquad
+\text{c) }2x^{2}+7x-14\qquad
+\text{d) }2x^{2}+3x+1
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\(2x-3(1-2x+x^2)-(3x-x^2+4x)= -2x^2+x-3\). \(\Rightarrow\) \textbf{a)}.
+\end{solucionclick}
+
+% 11
+\begin{ejercicio}
+\textbf{(Operación definida)} \(a*b*c=2a-(b-c)^2\). Calcule \(3*5*(-2)\).
+\[
+\text{a) }3\qquad
+\text{b) }-3\qquad
+\text{c) }43\qquad
+\text{d) }-43
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\(2(3)-(5-(-2))^2=6-7^2=-43\). \(\Rightarrow\) \textbf{d)}.
+\end{solucionclick}
+
+
+% 12
+\begin{ejercicio}
+\textbf{(Primos de 54)} Primos \(p,q\) de \(54\) con \(p>q\). Analice:
+\[
+\text{I) }p+q=5,\qquad \text{II) }pq=6,\qquad \text{III) }q-p=2.
+\]
+De las proposiciones anteriores, ¿cuáles son verdaderas?
+\[
+\text{a) Solo II y III}\qquad
+\text{b) Solo I}\qquad
+\text{c) Solo I y II}\qquad
+\text{d) Solo I y III}
+\]
+\end{ejercicio}
+
+\begin{solucionclick}
+Primos de \(54\): \(\{2,3\}\). Con \(p=3,\ q=2\):
+\[
+\text{I) }3+2=5\ \checkmark,\qquad
+\text{II) }3\cdot 2=6\ \checkmark,\qquad
+\text{III) }2-3=-1\ \text{\Large\(\times\)}.
+\]
+Verdaderas: \(\boxed{\text{I y II}}\). \(\Rightarrow\) opción \textbf{c)}.
+\end{solucionclick}
+
+
+% 13
+\begin{ejercicio}
+\textbf{(Expresiones)} Si \(A=-2x+2(x+1)\) y \(B=3x+1\), calcule \(4(A-B)+12\).
+\[
+\text{a) }-12x\qquad
+\text{b) }4-12x\qquad
+\text{c) }12-2x\qquad
+\text{d) }16-12x
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\(A=-2x+2x+2=2,\quad B=3x+1.\)
+\[
+4(A-B)+12=4\bigl(2-(3x+1)\bigr)+12=4(1-3x)+12=16-12x.
+\]
+\(\Rightarrow\) \textbf{d)}.
+\end{solucionclick}
+\newpage
+% 14
+\begin{ejercicio}
+\textbf{(Relojes)} Un reloj \emph{atrasa} \(3\) min/h. Se pone en hora y, \(6\) h después, marca \(8{:}47\,\mathrm{am}\).
+¿Cuál es la hora exacta?
+\[
+\text{a) }3{:}47\,\mathrm{pm}\qquad
+\text{b) }9{:}05\,\mathrm{am}\qquad
+\text{c) }9{:}47\,\mathrm{am}\qquad
+\text{d) }2{:}05\,\mathrm{pm}
+\]
+\end{ejercicio}
+\begin{solucionclick}
+Atraso total \(=3\ \text{min/h}\times 6\ \text{h}=18\ \text{min}\).  
+Hora exacta \(=8{:}47\,\mathrm{am}+18\ \text{min}=9{:}05\,\mathrm{am}\). \(\Rightarrow\) \textbf{b)}.
+\end{solucionclick}
+
+% 15
+\begin{ejercicio}
+\textbf{(Procesos periódicos)} Tres timbres suenan cada \(75\), \(80\) y \(90\) min. 
+Si suenan juntos el domingo a las \(10{:}00\,\mathrm{am}\), ¿cuándo vuelven a coincidir?
+\[
+\text{a) }10{:}00\,\mathrm{pm}\ \text{del martes}\qquad
+\text{b) }10{:}00\,\mathrm{am}\ \text{del lunes}\qquad
+\text{c) }10{:}00\,\mathrm{am}\ \text{del martes}\qquad
+\text{d) }10{:}00\,\mathrm{pm}\ \text{del lunes}
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\[
+\mathrm{mcm}(75,80,90)=2^{4}\cdot 3^{2}\cdot 5^{2}=3600\ \text{min}=60\ \text{h}.
+\]
+Domingo \(10{:}00\,\mathrm{am}+60\ \text{h}=\) martes \(10{:}00\,\mathrm{pm}\). \(\Rightarrow\) \textbf{a)}.
+\end{solucionclick}
+
+
+% ==================== CLAVE ====================
+%\begin{nota}
+%\textbf{Respuestas (1–15):}\; a, d, c, b, a, d, d, c, c, a, d, c, d, b, a.
+%\end{nota}
+%\newpage
+% --- 1. Fracciones ---
+\newpage
+\begin{ejercicio}
+\textbf{(Fracciones)} Calcule \( \dfrac{3}{4} + \dfrac{5}{6} - \dfrac{1}{3} \).
+\[
+\text{a) }\frac{5}{4}\quad
+\text{b) }\frac{15}{16}\quad
+\text{c) }\frac{7}{6}\quad
+\text{d) }1
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Datos:} \( \frac{3}{4}, \frac{5}{6}, \frac{1}{3}\). \quad
+\textbf{Fórmula:} Suma/resta con MCD \(=12\).\\
+\textbf{Sustitución:} \( \frac{3}{4}=\frac{9}{12},\; \frac{5}{6}=\frac{10}{12},\; \frac{1}{3}=\frac{4}{12}\).\\
+\textbf{Cálculo:} \( \frac{9}{12}+\frac{10}{12}-\frac{4}{12}=\frac{15}{12}=\frac{5}{4}=1{,}25.\)\\
+\textbf{Interpretación:} \(\boxed{\frac{5}{4}}\) → \textbf{a)}.
+\end{solucionclick}
+
+% --- 2. Descuento + IVA ---
+\begin{ejercicio}
+\textbf{(Porcentajes)} Un artículo cuesta \(50\,000\) colones. Se aplica un descuento del \(20\,\text{\%}\) y luego IVA del \(13\,\text{\%}\) sobre el precio descontado. ¿Precio final?
+\[
+\text{a) }44\,000\quad
+\text{b) }45\,200\quad
+\text{c) }50\,000\quad
+\text{d) }40\,000
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Datos:} \(P_0=50\,000\), desc.\ 20\%, IVA 13\%.\\
+\textbf{Fórmula:} \(P_f=P_0(1-0{,}20)\cdot(1+0{,}13)\).\\
+\textbf{Cálculo:} \(50\,000\cdot 0{,}80=40\,000\);\; \(40\,000\cdot 1{,}13=45\,200\).\\
+\textbf{Interpretación:} \(\boxed{45\,200}\) → \textbf{b)}.
+\end{solucionclick}
+\newpage
+% --- 3. Ecuación lineal ---
+\begin{ejercicio}
+\textbf{(Ecuaciones)} Resuelva \(3(2x-5)-4(x+1)=x+7\).
+\[
+\text{a) }26\quad \text{b) }19\quad \text{c) }-26\quad \text{d) }0
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Desarrollo:} \(6x-15-4x-4=x+7\Rightarrow 2x-19=x+7\Rightarrow x=26.\)\\
+\textbf{Respuesta:} \(\boxed{26}\) → \textbf{a)}.
+\end{solucionclick}
+\newpage
+% --- 4. Leyes de potencias (reemplaza "Sistema 2x+3y=13, x-y=2") ---
+\begin{ejercicio}
+\textbf{(Leyes de potencias)} Simplifique:
+\[
+\frac{\bigl(-3a^{2}b^{-1}\bigr)^{3}\cdot \bigl(9a^{-4}b^{2}\bigr)}{\bigl(-9a^{-1}b^{-2}\bigr)^{2}}.
+\]
+\[
+\text{a) }-3a^{4}b^{3}\qquad
+\text{b) }3a^{-4}b^{-3}\qquad
+\text{c) }-\dfrac{3b^{3}}{a^{4}}\qquad
+\text{d) }-\dfrac{a^{4}}{3b^{3}}
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Datos:} \(\displaystyle \frac{(-3a^{2}b^{-1})^{3}\cdot (9a^{-4}b^{2})}{(-9a^{-1}b^{-2})^{2}}\).\\
+\textbf{Propiedades:} \((ab)^{n}=a^{n}b^{n}\), \((a^{m})^{n}=a^{mn}\), \(a^{r}a^{s}=a^{r+s}\), \(\dfrac{a^{r}}{a^{s}}=a^{r-s}\).\\[2pt]
+\textbf{Paso 1 (numerador):}
+\[
+(-3a^{2}b^{-1})^{3}=(-3)^{3}a^{6}b^{-3}=-27a^{6}b^{-3}.
+\]
+Multiplicando por \(9a^{-4}b^{2}\):
+\[
+-27a^{6}b^{-3}\cdot 9a^{-4}b^{2}=-243\,a^{2}b^{-1}.
+\]
+\textbf{Paso 2 (denominador):}
+\[
+(-9a^{-1}b^{-2})^{2}=(-9)^{2}a^{-2}b^{-4}=81a^{-2}b^{-4}.
+\]
+\textbf{Paso 3 (cociente):}
+\[
+\frac{-243\,a^{2}b^{-1}}{81a^{-2}b^{-4}}
+=\frac{-243}{81}\,a^{\,2-(-2)}\,b^{-1-(-4)}
+=-3\,a^{4}b^{3}.
+\]
+\textbf{Interpretación:} \(\boxed{-3a^{4}b^{3}}\) \(\Rightarrow\) opción \textbf{a)}.
+\end{solucionclick}
+
+\newpage
+% --- 5. Razones trigonométricas ---
+\begin{ejercicio}
+\textbf{(Razones trigonométricas)} Desde un punto situado a \(30\ \mathrm{m}\) de la base de una torre, 
+la cima se observa con un ángulo de elevación de \(37^\circ\). 
+Use: \(\tan 37^\circ \approx 0{,}7536\), \(\sin 37^\circ \approx 0{,}6018\), \(\cos 37^\circ \approx 0{,}7986\).
+¿Cuál es la \emph{altura} aproximada \(h\) de la torre?
+\[
+\text{a) }18\ \mathrm{m}\qquad
+\text{b) }20\ \mathrm{m}\qquad
+\text{c) }22{,}6\ \mathrm{m}\qquad
+\text{d) }24\ \mathrm{m}
+\]
+\end{ejercicio}
+
+\begin{solucionclick}
+\textbf{Datos:} Distancia horizontal \(=30\ \mathrm{m}\), ángulo \(\theta=37^\circ\).\\
+\textbf{Fórmula:} En triángulo rectángulo, \(\tan\theta=\dfrac{\text{opuesto}}{\text{adyacente}}\Rightarrow h=\tan\theta\cdot(\text{adyacente})\).\\
+\textbf{Sustitución:} \(h= \tan 37^\circ \cdot 30\ \mathrm{m}\).\\
+\textbf{Cálculo:} \(h\approx 0{,}7536\times 30=22{,}608\ \mathrm{m}\approx 22{,}6\ \mathrm{m}\).\\
+\textbf{Interpretación:} \(\boxed{22{,}6\ \mathrm{m}}\) \(\Rightarrow\) opción \textbf{c)}.
+\end{solucionclick}
+
+
+% --- 6. Área triángulo rectángulo ---
+\begin{ejercicio}
+\textbf{(Geometría)} En un triángulo rectángulo con catetos \(6\ \text{cm}\) y \(8\ \text{cm}\), calcule el área.
+\[
+\text{a) }48\ \text{cm}^2\quad \text{b) }24\ \text{cm}^2\quad \text{c) }14\ \text{cm}^2\quad \text{d) }36\ \text{cm}^2
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Fórmula:} \(A=\frac{1}{2}ab\). \textbf{Cálculo:} \(A=\frac{1}{2}\cdot 6\cdot 8=24\ \text{cm}^2\). \textbf{Resp.:} \(\boxed{24}\) → \textbf{b)}.
+\end{solucionclick}
+
+% --- 7. Trabajo proporcional inverso ---
+\begin{ejercicio}
+\textbf{(Proporcionalidad inversa)} 6 obreros terminan una obra en 8 días. ¿Cuántos días tardan 10 obreros (misma productividad)?
+\[
+\text{a) }4\quad \text{b) }4{,}8\quad \text{c) }5\quad \text{d) }6
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Modelo:} \(d\propto \frac{1}{\text{obreros}}\Rightarrow d_2=d_1\frac{n_1}{n_2}=8\cdot\frac{6}{10}=4{,}8\ \text{días}.\) \textbf{Resp.:} \(\boxed{4{,}8}\) → \textbf{b)}.
+\end{solucionclick}
+
+% --- 8. Combinatoria de placas ---
+\begin{ejercicio}
+\textbf{(Conteo)} ¿Cuántas placas tipo \(\text{Letra Letra Número}\) se pueden formar con letras \(\{A,B,C\}\) \emph{sin repetir letras} y un dígito \(0\text{–}9\)?
+\[
+\text{a) }30\quad \text{b) }60\quad \text{c) }90\quad \text{d) }600
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Cómputo:} Primera letra \(3\) opciones, segunda \(2\), dígito \(10\). Total \(3\cdot 2\cdot 10=60.\) \textbf{Resp.:} \(\boxed{60}\) → \textbf{b)}.
+\end{solucionclick}
+
+% --- 9. Problemas de edades (reemplaza “Logaritmos y potencias”) ---
+\begin{ejercicio}
+\textbf{(Edades)} La \textit{suma} de las edades actuales de Ana y Bruno es \(44\) años. 
+Hace \(6\) años, la edad de Ana era el \textit{triple} de la de Bruno. 
+¿Cuáles son sus edades actuales?
+\[
+\text{a) }28\ y \ 16\qquad
+\text{b) }30\ y \ 14\qquad
+\text{c) }32\ y \ 12\qquad
+\text{d) }26\ y \ 18
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Datos:} \(A+B=44\). Hace \(6\) años: \(A-6=3(B-6)\).\\
+\textbf{Fórmula/Modelo:} Sistema lineal con dos ecuaciones.\\
+\textbf{Sustitución:} De \(A-6=3B-18\Rightarrow A=3B-12\). En la suma: \((3B-12)+B=44\).\\
+\textbf{Cálculo:} \(4B=56\Rightarrow B=14\). Entonces \(A=3(14)-12=42-12=30\).\\
+\textbf{Interpretación:} Ana \(30\) años y Bruno \(14\) años \(\Rightarrow\) \(\boxed{30\ y \ 14}\). Opción \textbf{b)}.
+\end{solucionclick}
+
+
+% --- 10. Cuadrática (producto de raíces) ---
+\begin{ejercicio}
+\textbf{(Cuadráticas)} Para \(x^{2}-5x+6=0\), calcule el \emph{producto} de las raíces.
+\[
+\text{a) }5\quad \text{b) }6\quad \text{c) }1\quad \text{d) }8
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Datos:} \(ax^{2}+bx+c=0\) con \(a=1,\ c=6\). \textbf{Fórmula:} \(r_1r_2=\frac{c}{a}=6\).\\
+\textbf{Comprobación:} Raíces \(2\) y \(3\Rightarrow 2\cdot 3=6.\) \textbf{Resp.:} \(\boxed{6}\) → \textbf{b)}.
+\end{solucionclick}
+
+% --- 11. Inecuación con valor absoluto ---
+\begin{ejercicio}
+\textbf{(Inecuaciones)} Resuelva \( |2x-5|<3 \).
+\[
+\text{a) }x<1\quad \text{b) }1<x<4\quad \text{c) }x>4\quad \text{d) }1\le x\le 4
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Desarrollo:} \(-3<2x-5<3\Rightarrow 2<2x<8\Rightarrow 1<x<4.\)\\
+\textbf{Resp.:} \(\boxed{1<x<4}\) → \textbf{b)}.
+\end{solucionclick}
+
+% --- 12. Leyes de potencias ---
+\begin{ejercicio}
+\textbf{(Leyes de potencias)} Simplifique al máximo:
+\[
+\bigl(-2x^{3}y^{-2}\bigr)^{-2}\cdot\bigl(-8x^{-1}y^{4}\bigr).
+\]
+Opciones:
+\[
+\text{a) }-\dfrac{2\,y^{8}}{x^{7}}\qquad
+\text{b) }2x^{7}y^{-8}\qquad
+\text{c) }-\dfrac{y^{8}}{2x^{7}}\qquad
+\text{d) }\dfrac{2x^{7}}{y^{8}}
+\]
+\end{ejercicio}
+
+\begin{solucionclick}
+\textbf{Datos:} \(\bigl(-2x^{3}y^{-2}\bigr)^{-2}\cdot\bigl(-8x^{-1}y^{4}\bigr)\).\\
+\textbf{Fórmulas:} \((ab)^n=a^n b^n\), \((a^m)^n=a^{mn}\), \(a^r a^s=a^{r+s}\).\\[2pt]
+\textbf{Sustitución y cálculo:}
+\[
+\bigl(-2x^{3}y^{-2}\bigr)^{-2}=(-2)^{-2}\,x^{3(-2)}\,y^{-2(-2)}
+=\frac{1}{4}\,x^{-6}\,y^{4}.
+\]
+Multiplicando por \(\bigl(-8x^{-1}y^{4}\bigr)\):
+\[
+\frac{1}{4}\,x^{-6}\,y^{4}\cdot(-8)\,x^{-1}\,y^{4}
+=\left(\frac{-8}{4}\right)\,x^{-6-1}\,y^{4+4}
+=-2\,x^{-7}\,y^{8}
+=-\frac{2\,y^{8}}{x^{7}}.
+\]
+\textbf{Interpretación:} \(\boxed{-\dfrac{2\,y^{8}}{x^{7}}}\) \(\Rightarrow\) opción \textbf{a)}.
+\end{solucionclick}
+
+
+% --- 13. Aumento y rebaja sucesivos ---
+\begin{ejercicio}
+\textbf{(Porcentajes)} Un precio de \(8\,000\) colones aumenta \(10\,\text{\%}\) y luego disminuye \(10\,\text{\%}\). ¿Precio final?
+\[
+\text{a) }8\,000\quad \text{b) }7\,920\quad \text{c) }8\,800\quad \text{d) }7\,200
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Cálculo:} \(8\,000\cdot 1{,}10\cdot 0{,}90=8\,000\cdot 0{,}99=7\,920.\)\\
+\textbf{Interpretación:} Disminuye \(1\,\text{\%}\). \textbf{Resp.:} \(\boxed{7\,920}\) → \textbf{b)}.
+\end{solucionclick}
+
+% --- 14. Media aritmética ---
+\begin{ejercicio}
+\textbf{(Promedios)} La media de 5 números es \(12\). Al quitar uno, la media de los 4 restantes es \(13\). ¿Cuál se eliminó?
+\[
+\text{a) }8\quad \text{b) }7\quad \text{c) }10\quad \text{d) }12
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Sumas:} Total de 5: \(5\cdot 12=60\). Total de 4: \(4\cdot 13=52\).\\
+\textbf{Eliminado:} \(60-52=8.\) \textbf{Resp.:} \(\boxed{8}\) → \textbf{a)}.
+\end{solucionclick}
+
+% --- 15. Probabilidad simple ---
+\begin{ejercicio}
+\textbf{(Probabilidad)} En una bolsa hay 5 rojas, 3 azules y 2 verdes. Se extrae 1 al azar. ¿Probabilidad de azul?
+\[
+\text{a) }\frac{1}{5}\quad \text{b) }\frac{3}{10}\quad \text{c) }\frac{2}{5}\quad \text{d) }\frac{1}{2}
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Total:} \(5+3+2=10\). Favorables (azules): \(3\).\\
+\textbf{Prob.:} \(P=\frac{3}{10}=0{,}3.\) \textbf{Resp.:} \(\boxed{\frac{3}{10}}\) → \textbf{b)}.
+\end{solucionclick}
+% ==================== Lote extra de ejercicios (con clic) ====================
+
+% 1) Regla de tres simple (inversa)
+\begin{ejercicio}
+\textbf{(Trabajo)} 5 obreros terminan una obra en 12 días. ¿Cuántos días tardan 8 obreros (misma productividad)?
+\[
+\text{a) }7{,}5\quad \text{b) }8\quad \text{c) }9{,}6\quad \text{d) }10
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Datos:} \(n_1=5,\ d_1=12,\ n_2=8\). \textbf{Modelo:} \(d\propto \tfrac{1}{n}\Rightarrow d_2=d_1\frac{n_1}{n_2}\).\\
+\textbf{Cálculo:} \(d_2=12\cdot \frac{5}{8}=7{,}5\ \text{días}\). \textbf{Resp.:} \(\boxed{7{,}5}\) → a).
+\end{solucionclick}
+
+% 2) Mezclas (concentración)
+\begin{ejercicio}
+\textbf{(Mezclas)} Se tienen \(20\ \text{L}\) de solución salina al \(30\,\text{\%}\). ¿Cuántos litros de agua (pura) hay que agregar para quedar al \(20\,\text{\%}\)?
+\[
+\text{a) }5\ \text{L}\quad \text{b) }8\ \text{L}\quad \text{c) }10\ \text{L}\quad \text{d) }12\ \text{L}
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Sal inicial:} \(0{,}30\cdot 20=6\ \text{L}\). \textbf{Ecuación:} \(\frac{6}{20+x}=0{,}20\).\\
+\textbf{Cálculo:} \(6=0{,}20(20+x)\Rightarrow 6=4+0{,}2x\Rightarrow x=10\ \text{L}\). \textbf{Resp.:} \(\boxed{10}\) → c).
+\end{solucionclick}
+
+% 3) Cuadrática: suma de soluciones
+\begin{ejercicio}
+\textbf{(Cuadráticas)} Para \(x^{2}-7x+12=0\), calcule la \emph{suma} de sus soluciones.
+\[
+\text{a) }7\quad \text{b) }12\quad \text{c) }-7\quad \text{d) }-12
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Fórmula de Viète:} \(r_1+r_2=\frac{7}{1}=7\). (Comprobación: raíces \(3\) y \(4\)). \textbf{Resp.:} \(\boxed{7}\) → a).
+\end{solucionclick}
+
+% 4) Leyes de potencias (reemplaza "Pendiente de la recta...")
+\begin{ejercicio}
+\textbf{(Leyes de potencias)} Simplifique:
+\[
+\frac{\bigl(-2x^{-3}y^{2}\bigr)^{3}\cdot \bigl(8x^{2}y^{-1}\bigr)}{\bigl(-4x^{-1}y\bigr)^{2}}.
+\]
+\[
+\text{a) }-\dfrac{4\,y^{3}}{x^{5}}\qquad
+\text{b) }\dfrac{4x^{5}}{y^{3}}\qquad
+\text{c) }-\dfrac{y^{3}}{4x^{5}}\qquad
+\text{d) }-\dfrac{4x^{5}}{y^{3}}
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Paso 1.} \((ab)^{n}=a^{n}b^{n},\ (a^{m})^{n}=a^{mn}\).  
+\(( -2x^{-3}y^{2})^{3}=(-2)^{3}x^{-9}y^{6}=-8x^{-9}y^{6}\).\\
+\textbf{Paso 2.} Numerador: \(-8x^{-9}y^{6}\cdot 8x^{2}y^{-1}=-64\,x^{-7}y^{5}\).\\
+\textbf{Paso 3.} Denominador: \((-4x^{-1}y)^{2}=16x^{-2}y^{2}\).\\
+\textbf{Paso 4.} Cociente: 
+\[
+\frac{-64\,x^{-7}y^{5}}{16x^{-2}y^{2}}
+=-4\,x^{-7-(-2)}y^{5-2}
+=-4\,x^{-5}y^{3}
+=-\frac{4\,y^{3}}{x^{5}}.
+\]
+\textbf{Respuesta:} \(\boxed{-\dfrac{4\,y^{3}}{x^{5}}}\) → \textbf{a)}.
+\end{solucionclick}
+
+% 5) Fórmulas notables (reemplaza "Sistema 2x2")
+\begin{ejercicio}
+\textbf{(Fórmulas notables)} Simplifique:
+\[
+(x-4)^{2}-\bigl(x-2\bigr)\bigl(x+2\bigr)+3x-5.
+\]
+\[
+\text{a) }5x+15\qquad
+\text{b) }-5x+15\qquad
+\text{c) }x-11\qquad
+\text{d) }-x-11
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Paso 1.} \((a-b)^{2}=a^{2}-2ab+b^{2}\Rightarrow (x-4)^{2}=x^{2}-8x+16\).\\
+\textbf{Paso 2.} \((a-b)(a+b)=a^{2}-b^{2}\Rightarrow (x-2)(x+2)=x^{2}-4\).\\
+\textbf{Paso 3.} Restar: 
+\(x^{2}-8x+16-(x^{2}-4)=-8x+20\).\\
+\textbf{Paso 4.} Sumar \(3x-5\): \((-8x+20)+(3x-5)=-5x+15\).\\
+\textbf{Respuesta:} \(\boxed{-5x+15}\) → \textbf{b)}.
+\end{solucionclick}
+
+
+% 6) Sucesiones (diferencias impares)
+\begin{ejercicio}
+\textbf{(Sucesiones)} Considere la sucesión
+\[
+2,\ 5,\ 10,\ 17,\ 26,\ p,\ q.
+\]
+Calcule \(p+q\).
+\[
+\text{a) }81\qquad
+\text{b) }85\qquad
+\text{c) }87\qquad
+\text{d) }89
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Patrón (diferencias):} \(5-2=3\), \(10-5=5\), \(17-10=7\), \(26-17=9\).  
+Las diferencias son impares consecutivos: \(3,5,7,9,\ldots\)  
+\textbf{Siguientes diferencias:} \(11\) y \(13\).  
+\textbf{Cálculo:} \(p=26+11=37\), \quad \(q=37+13=50\).  
+Entonces \(p+q=37+50=\boxed{87}\Rightarrow\) opción \textbf{c)}.
+\end{solucionclick}
+
+
+% 7) Potencias y radicales
+\begin{ejercicio}
+\textbf{(Radicales)} Simplifique \(\dfrac{\sqrt[3]{27x^{6}}}{3x}\) (con \(x>0\)).
+\[
+\text{a) }x\quad \text{b) }3x\quad \text{c) }x^{2}\quad \text{d) }1
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\(\sqrt[3]{27x^{6}}=3x^{2}\). Dividiendo por \(3x\) da \(x\). \textbf{Resp.:} \(\boxed{x}\) → a).
+\end{solucionclick}
+\newpage
+% 8) Sucesiones
+\begin{ejercicio}
+\textbf{(Sucesiones)} Considere la sucesión
+\[
+3,\ 7,\ 13,\ 21,\ 31,\ p,\ q.
+\]
+Calcule \(p+q\).
+\[
+\text{a) }86\qquad
+\text{b) }90\qquad
+\text{c) }98\qquad
+\text{d) }100
+\]
+\end{ejercicio}
+
+\begin{solucionclick}
+\textbf{Datos:} Términos conocidos \(3,7,13,21,31\).\\
+\textbf{Patrón (diferencias):} \(7-3=4\), \(13-7=6\), \(21-13=8\), \(31-21=10\).
+Las diferencias forman una progresión aritmética: \(4,6,8,10,\dots\) (aumenta de \(+2\) en cada paso).\\
+\textbf{Sustitución:} Siguientes diferencias \(\Rightarrow 12\) y \(14\).\\
+\textbf{Cálculo:} \(p=31+12=43\), \quad \(q=43+14=57\). \quad Entonces \(p+q=43+57=\boxed{100}\).\\
+\textbf{Interpretación:} Opción \textbf{d)}.
+\end{solucionclick}
+
+
+% 9) Problemas de edades (reemplaza PA: suma)
+\begin{ejercicio}
+\textbf{(Edades)} La \emph{suma} de las edades actuales de Carla y Diego es \(48\) años.
+Dentro de \(6\) años, la edad de Carla será el \emph{doble} de la de Diego.
+¿Cuáles son sus edades actuales?
+\[
+\text{a) }30\ y \ 18\qquad
+\text{b) }34\ y \ 14\qquad
+\text{c) }32\ y \ 16\qquad
+\text{d) }36\ y \ 12
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Datos:} \(C+D=48\), y \(C+6=2(D+6)\).\\
+\textbf{Modelo:} Sistema lineal. De \(C+6=2D+12\Rightarrow C=2D+6\).\\
+\textbf{Sustitución:} \((2D+6)+D=48\Rightarrow 3D=42\Rightarrow D=14\).\\
+\textbf{Cálculo:} \(C=2(14)+6=34\).\\
+\textbf{Interpretación:} \(\boxed{34\ y \ 14}\) \(\Rightarrow\) opción \textbf{b)}.
+\end{solucionclick}
+\newpage
+% 10) Mínimo común múltiplo (reemplaza PG: término)
+\begin{ejercicio}
+\textbf{(Divisibilidad)} Calcule \(\operatorname{mcm}(36,\,48,\,60)\).
+\[
+\text{a) }360\qquad
+\text{b) }480\qquad
+\text{c) }720\qquad
+\text{d) }960
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Factorización:} \(36=2^{2}\cdot 3^{2}\), \(\;48=2^{4}\cdot 3\), \(\;60=2^{2}\cdot 3\cdot 5\).\\
+\textbf{mcm:} tomar potencias máximas \(\Rightarrow 2^{4}\cdot 3^{2}\cdot 5=16\cdot 9\cdot 5= \boxed{720}\).\\
+\textbf{Interpretación:} Opción \textbf{c)}.
+\end{solucionclick}
+
+% 11) Ecuación lineal 1
+\begin{ejercicio}
+\textbf{(Ecuaciones)} Resuelva \(5(x-2)+3=2(x+7)\).
+\[
+\text{a) }5\qquad \text{b) }6\qquad \text{c) }7\qquad \text{d) }8
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Datos:} \(5(x-2)+3=2(x+7)\).\\
+\textbf{Fórmula:} Distribución y despeje.\\
+\textbf{Sustitución:} \(5x-10+3=2x+14\Rightarrow 5x-7=2x+14\).\\
+\textbf{Cálculo:} \(3x=21\Rightarrow x=\boxed{7}\).\\
+\textbf{Interpretación:} Opción \textbf{c)}.
+\end{solucionclick}
+\newpage
+% 12) Ecuación lineal 2 (con fracciones)
+\begin{ejercicio}
+\textbf{(Ecuaciones)} Resuelva \(\dfrac{2x-3}{5}-\dfrac{x+1}{3}=\dfrac{1}{15}\).
+\[
+\text{a) }9\qquad \text{b) }12\qquad \text{c) }15\qquad \text{d) }18
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Datos:} \(\frac{2x-3}{5}-\frac{x+1}{3}=\frac{1}{15}\). \quad
+\textbf{Fórmula:} Multiplicar por el MCM \(15\).\\
+\textbf{Sustitución:} \(15\Big(\frac{2x-3}{5}\Big)-15\Big(\frac{x+1}{3}\Big)=15\Big(\frac{1}{15}\Big)\).\\
+\textbf{Cálculo:} \(3(2x-3)-5(x+1)=1\Rightarrow 6x-9-5x-5=1\Rightarrow x-14=1\Rightarrow x=\boxed{15}\).\\
+\textbf{Interpretación:} Opción \textbf{c)}.
+\end{solucionclick}
+
+% 13) Ecuación lineal 3 (con decimales)
+\begin{ejercicio}
+\textbf{(Ecuaciones)} Resuelva \(0{,}4(3x-5)-0{,}2(x-1)=2{,}2\).
+\[
+\text{a) }2{,}5\qquad \text{b) }3{,}5\qquad \text{c) }4\qquad \text{d) }4{,}5
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Datos:} \(0{,}4(3x-5)-0{,}2(x-1)=2{,}2\).\\
+\textbf{Fórmula:} Distribución y combinación de términos semejantes.\\
+\textbf{Sustitución:} \(1{,}2x-2{,}0 - (0{,}2x-0{,}2)=2{,}2\Rightarrow 1{,}2x-2{,}0-0{,}2x+0{,}2=2{,}2\).\\
+\textbf{Cálculo:} \(1{,}0x-1{,}8=2{,}2\Rightarrow x=2{,}2+1{,}8= \boxed{4}\).\\
+\textbf{Interpretación:} Opción \textbf{c)}.
+\end{solucionclick}
+\newpage
+% 14) Regla de tres compuesta (máquinas-tiempo)
+\begin{ejercicio}
+\textbf{(Proporcionalidad)} 4 máquinas producen 240 piezas en 3 horas. ¿Cuántas producirán 6 máquinas en 5 horas (misma tasa)?
+\[
+\text{a) }360\quad \text{b) }480\quad \text{c) }540\quad \text{d) }600
+\]
+\end{ejercicio}
+\begin{solucionclick}
+Producción \(\propto\) máquinas\(\times\)tiempo. \(N_2=240\cdot \frac{6}{4}\cdot \frac{5}{3}=240\cdot 2{,}5=600.\) \textbf{Resp.:} \(\boxed{600}\) → d).
+\end{solucionclick}
+
+% 15) Mediana
+\begin{ejercicio}
+\textbf{(Estadística)} La mediana del conjunto \(3,7,9,12,15,18,21\) es:
+\[
+\text{a) }9\quad \text{b) }12\quad \text{c) }13{,}5\quad \text{d) }15
+\]
+\end{ejercicio}
+\begin{solucionclick}
+Hay \(7\) datos (impar) \(\Rightarrow\)la mediana es el \(4^\circ\) valor: \(12\). \textbf{Resp.:} \(\boxed{12}\) → b).
+\end{solucionclick}
+% ==================== Lote adicional (para pegar) ====================
+
+% 1) Porcentajes — descuento y luego incremento
+\begin{ejercicio}
+\textbf{(Porcentajes)} Un artículo cuesta \(120\,000\) colones. 
+Primero se aplica un \(25\,\text{\%}\) de descuento y luego un incremento del \(8\,\text{\%}\) sobre el precio ya rebajado. 
+¿Precio final?
+\[
+\text{a) }96\,000\qquad
+\text{b) }97\,200\qquad
+\text{c) }98\,400\qquad
+\text{d) }99\,600
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Datos:} \(P_0=120\,000\), desc. 25\,\%, incremento 8\,\%.\\
+\textbf{Fórmula:} \(P_f=P_0(1-0{,}25)\cdot(1+0{,}08)\).\\
+\textbf{Sustitución:} \(P_f=120\,000\cdot 0{,}75\cdot 1{,}08\).\\
+\textbf{Cálculo:} \(120\,000\cdot 0{,}75=90\,000\);\; \(90\,000\cdot 1{,}08= \boxed{97\,200}\).\\
+\textbf{Interpretación:} Opción \textbf{b)}.
+\end{solucionclick}
+
+% 2) Porcentajes — precio original (porcentaje inverso)
+\begin{ejercicio}
+\textbf{(Porcentajes)} Después de una rebaja del \(15\,\text{\%}\), el precio final de una bicicleta es \(255\,000\) colones. 
+¿Cuál era el precio \emph{original}?
+\[
+\text{a) }300\,000\qquad
+\text{b) }280\,000\qquad
+\text{c) }265\,000\qquad
+\text{d) }270\,000
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Modelo:} \(P_f=(1-0{,}15)P_0=0{,}85\,P_0\).\\
+\textbf{Sustitución:} \(255\,000=0{,}85\,P_0\).\\
+\textbf{Cálculo:} \(P_0=\dfrac{255\,000}{0{,}85}= \boxed{300\,000}\).\\
+\textbf{Interpretación:} Opción \textbf{a)}.
+\end{solucionclick}
+
+
+% 3) Regla de tres (recetas)
+\begin{ejercicio}
+\textbf{(Proporcionalidad)} Para \(8\) personas se usan \(600\ \text{g}\) de arroz. ¿Cuánto para \(14\) personas?
+\[
+\text{a) }900\ \text{g}\quad \text{b) }1\,050\ \text{g}\quad \text{c) }1\,100\ \text{g}\quad \text{d) }1\,200\ \text{g}
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\(\displaystyle x=600\cdot \frac{14}{8}=600\cdot 1{,}75= \boxed{1\,050\ \text{g}}\). → \textbf{b)}.
+\end{solucionclick}
+
+% 4) Parámetro en cuadrática
+\begin{ejercicio}
+\textbf{(Cuadráticas)} Halle \(k\) para que \(x=2\) sea raíz de \(x^{2}+kx-8=0\).
+\[
+\text{a) }2\quad \text{b) }-2\quad \text{c) }4\quad \text{d) }-4
+\]
+\end{ejercicio}
+\begin{solucionclick}
+Sustituir \(x=2\): \(4+2k-8=0\Rightarrow 2k=4\Rightarrow \boxed{k=2}\). → \textbf{a)}.
+\end{solucionclick}
+
+% 5) Ecuación lineal (reemplaza "Recta: ordenada al origen")
+\begin{ejercicio}
+\textbf{(Ecuaciones)} Resuelva \(\dfrac{2}{3}x-\dfrac{3}{4}=\dfrac{5}{6}\).
+\[
+\text{a) }2{,}25\qquad
+\text{b) }2{,}375\qquad
+\text{c) }2{,}5\qquad
+\text{d) }2
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Datos:} \(\dfrac{2}{3}x-\dfrac{3}{4}=\dfrac{5}{6}\).\\
+\textbf{Fórmula/Modelo:} Ecuación lineal; despeje de \(x\).\\
+\textbf{Sustitución:} \(\dfrac{2}{3}x=\dfrac{5}{6}+\dfrac{3}{4}=\dfrac{10}{12}+\dfrac{9}{12}=\dfrac{19}{12}\).\\
+\textbf{Cálculo:} \(x=\dfrac{19}{12}\cdot\dfrac{3}{2}=\dfrac{57}{24}=\dfrac{19}{8}=2{,}375\).\\
+\textbf{Interpretación:} \(\boxed{2{,}375}\) \(\Rightarrow\) opción \textbf{b)}.
+\end{solucionclick}
+
+% 6) Trigonometría (reemplaza "Ángulo de reloj")
+\begin{ejercicio}
+\textbf{(Trigonometría)} Desde un punto a \(25\ \mathrm{m}\) del pie de un poste, 
+la cima se observa con un ángulo de elevación de \(35^\circ\).
+Use: \(\tan 35^\circ \approx 0{,}700\). 
+¿Cuál es la altura aproximada \(h\) del poste?
+\[
+\text{a) }16\ \mathrm{m}\qquad
+\text{b) }17{,}5\ \mathrm{m}\qquad
+\text{c) }18\ \mathrm{m}\qquad
+\text{d) }14{,}3\ \mathrm{m}
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Datos:} Distancia horizontal \(=25\ \mathrm{m}\), \(\theta=35^\circ\).\\
+\textbf{Fórmula:} \(\tan\theta=\dfrac{\text{opuesto}}{\text{adyacente}}\Rightarrow h=\tan\theta\cdot(\text{adyacente})\).\\
+\textbf{Sustitución:} \(h=25\cdot \tan 35^\circ\).\\
+\textbf{Cálculo:} \(h\approx 25\cdot 0{,}700=17{,}5\ \mathrm{m}\).\\
+\textbf{Interpretación:} \(\boxed{17{,}5\ \mathrm{m}}\) \(\Rightarrow\) opción \textbf{b)}.
+\end{solucionclick}
+\newpage
+
+% 7) Pitágoras
+\begin{ejercicio}
+\textbf{(Geometría)} En un triángulo rectángulo con catetos \(9\ \text{cm}\) y \(12\ \text{cm}\), la hipotenusa mide:
+\[
+\text{a) }14\ \text{cm}\quad \text{b) }15\ \text{cm}\quad \text{c) }16\ \text{cm}\quad \text{d) }18\ \text{cm}
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\(c=\sqrt{9^{2}+12^{2}}=\sqrt{81+144}=\sqrt{225}= \boxed{15\ \text{cm}}\). → \textbf{b)}.
+\end{solucionclick}
+
+% 8) Perímetro y altura de rectángulo
+\begin{ejercicio}
+\textbf{(Geometría)} Un rectángulo tiene perímetro \(50\ \text{cm}\) y base \(18\ \text{cm}\). ¿Altura?
+\[
+\text{a) }6\ \text{cm}\quad \text{b) }7\ \text{cm}\quad \text{c) }8\ \text{cm}\quad \text{d) }9\ \text{cm}
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\(2(b+h)=50\Rightarrow b+h=25\Rightarrow h=25-18= \boxed{7\ \text{cm}}\). → \textbf{b)}.
+\end{solucionclick}
+
+% 9) Porcentaje inverso (precio original)
+\begin{ejercicio}
+\textbf{(Porcentajes)} Tras un descuento del \(20\,\text{\%}\), el precio es \(5\,600\) colones. ¿Precio original?
+\[
+\text{a) }6\,800\quad \text{b) }7\,000\quad \text{c) }7\,200\quad \text{d) }7\,500
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\(P_{\text{final}}=0{,}80\,P_0\Rightarrow P_0=\frac{5\,600}{0{,}80}= \boxed{7\,000}\). → \textbf{b)}.
+\end{solucionclick}
+\newpage
+% 10) Media ponderada
+\begin{ejercicio}
+\textbf{(Promedios)} Nota final: examen \(70\) (40\%), tareas \(80\) (30\%), proyecto \(90\) (30\%). Calcule la media ponderada.
+\[
+\text{a) }78\quad \text{b) }79\quad \text{c) }80\quad \text{d) }81
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\(0{,}40\cdot 70=28\), \(0{,}30\cdot 80=24\), \(0{,}30\cdot 90=27\). Total \(= \boxed{79}\). → \textbf{b)}.
+\end{solucionclick}
+
+% 11) MCM
+\begin{ejercicio}
+\textbf{(Divisibilidad)} \(\operatorname{mcm}(84,120)=\)
+\[
+\text{a) }420\quad \text{b) }840\quad \text{c) }1\,260\quad \text{d) }1\,680
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\(84=2^{2}\cdot 3\cdot 7\), \(120=2^{3}\cdot 3\cdot 5\Rightarrow \text{mcm}=2^{3}\cdot 3\cdot 5\cdot 7= \boxed{840}\). → \textbf{b)}.
+\end{solucionclick}
+\newpage
+% 12) Leyes de potencias (reemplaza MRU: distancia)
+\begin{ejercicio}
+\textbf{(Leyes de potencias)} Simplifique al máximo:
+\[
+\frac{\bigl(-3\,a^{-2}b^{3}\bigr)^{2}\cdot\bigl(9\,a\,b^{-4}\bigr)}{\bigl(-3\,a^{-1}b\bigr)^{3}}.
+\]
+Opciones:
+\[
+\text{a) }-\dfrac{3}{b}\qquad
+\text{b) }-\dfrac{1}{3b}\qquad
+\text{c) }3b\qquad
+\text{d) }-\dfrac{b}{3}
+\]
+\end{ejercicio}
+
+\begin{solucionclick}
+\textbf{Datos:} \(\displaystyle \frac{(-3a^{-2}b^{3})^{2}\cdot(9ab^{-4})}{(-3a^{-1}b)^{3}}\).\\
+\textbf{Fórmulas:} \((ab)^{n}=a^{n}b^{n}\), \((a^{m})^{n}=a^{mn}\), \(a^{r}a^{s}=a^{r+s}\), \(\dfrac{a^{r}}{a^{s}}=a^{r-s}\).\\[2pt]
+\textbf{Sustitución y cálculo:}
+\[
+(-3a^{-2}b^{3})^{2}=(-3)^{2}a^{-4}b^{6}=9\,a^{-4}b^{6}.
+\]
+Multiplicando por \(9ab^{-4}\):
+\[
+9\,a^{-4}b^{6}\cdot 9ab^{-4}=81\,a^{-3}b^{2}.
+\]
+Denominador:
+\[
+(-3a^{-1}b)^{3}=(-3)^{3}a^{-3}b^{3}=-27\,a^{-3}b^{3}.
+\]
+Dividiendo:
+\[
+\frac{81\,a^{-3}b^{2}}{-27\,a^{-3}b^{3}}
+=\frac{81}{-27}\,a^{-3-(-3)}\,b^{2-3}
+=-3\,b^{-1}
+=-\frac{3}{b}.
+\]
+\textbf{Interpretación:} \(\boxed{-\dfrac{3}{b}}\) \(\Rightarrow\) opción \textbf{a)}.
+\end{solucionclick}
+
+\newpage
+% 13) Probabilidad con reemplazo
+\begin{ejercicio}
+\textbf{(Probabilidad)} Bolsa con 4 rojas y 6 azules. Se extraen 2 con reemplazo. Probabilidad de “azul y azul”:
+\[
+\text{a) }\tfrac{3}{25}\quad \text{b) }\tfrac{9}{25}\quad \text{c) }\tfrac{2}{5}\quad \text{d) }\tfrac{12}{25}
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\(P(\text{A})=\tfrac{6}{10}\). Con reemplazo: \(P(\text{A y A})=(\tfrac{6}{10})^{2}= \boxed{\tfrac{9}{25}}\). → \textbf{b)}.
+\end{solucionclick}
+
+% 14) Media y rango (rápido)
+\begin{ejercicio}
+\textbf{(Estadística)} Para \(6,8,10,3,13\), la media aritmética es:
+\[
+\text{a) }7\quad \text{b) }8\quad \text{c) }9\quad \text{d) }10
+\]
+\end{ejercicio}
+\begin{solucionclick}
+Suma \(=40\). Media \(=40/5= \boxed{8}\). → \textbf{b)}. (Rango \(=13-3=10\), por si se consulta).
+\end{solucionclick}
+\newpage
+% 15) Álgebra — expandir y simplificar
+\begin{ejercicio}
+\textbf{(Álgebra)} Simplifique al máximo:
+\[
+(x-2)(x+5)\;-\;\bigl[\,2x(x+1)\;-\;(x^{2}-1)\,\bigr].
+\]
+Opciones:
+\[
+\text{a) }x-11\qquad
+\text{b) }x+11\qquad
+\text{c) }-x-11\qquad
+\text{d) }x^{2}-11
+\]
+\end{ejercicio}
+
+\begin{solucionclick}
+\textbf{Datos:} \((x-2)(x+5)\) y \(2x(x+1)-(x^{2}-1)\).\\
+\textbf{Fórmulas:} \((a+b)(a+c)=a^{2}+a(b+c)+bc\);\quad distribuir y combinar términos semejantes.\\[2pt]
+\textbf{Sustitución y cálculo:}
+\[
+(x-2)(x+5)=x^{2}+3x-10.
+\]
+Dentro del corchete:
+\[
+2x(x+1)-(x^{2}-1)=2x^{2}+2x-x^{2}+1=x^{2}+2x+1.
+\]
+Ahora restamos:
+\[
+(x^{2}+3x-10)-\bigl(x^{2}+2x+1\bigr)
+=x^{2}-x^{2}+3x-2x-10-1=x-11.
+\]
+\textbf{Interpretación:} \(\boxed{x-11}\) \(\Rightarrow\) opción \textbf{a)}.
+\end{solucionclick}
+% ==================== Lote adicional (15 ítems, estilo similar) ====================
+
+% (N1) Enteros consecutivos (4 números)
+\begin{ejercicio}
+\textbf{(Enteros consecutivos)} La suma de cuatro enteros consecutivos es \(206\). ¿Cuál es el menor?
+\[
+\text{a) }49\qquad
+\text{b) }50\qquad
+\text{c) }51\qquad
+\text{d) }52
+\]
+\end{ejercicio}
+\begin{solucionclick}
+Sea \(n,n+1,n+2,n+3\). Entonces \(4n+6=206\Rightarrow 4n=200\Rightarrow n=\boxed{50}\).  
+Menor: \(\boxed{50}\). \(\Rightarrow\) \textbf{b)}.
+\end{solucionclick}
+
+% (N2) Álgebra: expandir y simplificar
+\begin{ejercicio}
+\textbf{(Álgebra)} Simplifique:
+\[
+(x+4)^{2} - \bigl(x-2\bigr)\bigl(x+6\bigr) + 3x - 10.
+\]
+\[
+\text{a) }7x+18\qquad
+\text{b) }7x+14\qquad
+\text{c) }4x+18\qquad
+\text{d) }7x+20
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\((x+4)^{2}=x^{2}+8x+16\). \((x-2)(x+6)=x^{2}+4x-12\).  
+Diferencia: \(x^{2}+8x+16-(x^{2}+4x-12)=4x+28\).  
+Sumar \(3x-10\): \(4x+28+3x-10= \boxed{7x+18}\). \(\Rightarrow\) \textbf{a)}.
+\end{solucionclick}
+
+% (N3) Operación definida
+\begin{ejercicio}
+\textbf{(Operación definida)} Defina \(a\diamond b=(a-b)(a+b)\). Calcule \(9\diamond 5\).
+\[
+\text{a) }45\qquad
+\text{b) }56\qquad
+\text{c) }60\qquad
+\text{d) }64
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\((a-b)(a+b)=a^{2}-b^{2}\).  
+\(9\diamond 5=9^{2}-5^{2}=81-25=\boxed{56}\). \(\Rightarrow\) \textbf{b)}.
+\end{solucionclick}
+
+% (N4) Primos divisores de 63
+\begin{ejercicio}
+\textbf{(Números primos)} Si \(p,q\) son primos divisores de \(63\) con \(p>q\), analice:  
+I) \(p+q=10\), \quad II) \(pq=21\), \quad III) \(p-q=4\). Indique cuáles son verdaderas.
+\[
+\text{a) Solo I}\qquad
+\text{b) Solo I y II}\qquad
+\text{c) I, II y III}\qquad
+\text{d) Solo II y III}
+\]
+\end{ejercicio}
+\begin{solucionclick}
+Primos de \(63\): \(\{3,7\}\). Con \(p=7,q=3\): I) \(10\) \checkmark, II) \(21\) \checkmark, III) \(4\) \checkmark.  
+Verdaderas: \(\boxed{\text{I, II y III}}\). \(\Rightarrow\) \textbf{c)}.
+\end{solucionclick}
+
+% (N5) Expresiones con parámetros
+\begin{ejercicio}
+\textbf{(Expresiones)} Sean \(A=3x-2(1-x)\) y \(B=2x^{2}-x+3\). Calcule \(2A-B\).
+\[
+\text{a) }-2x^{2}+11x-7\qquad
+\text{b) }-2x^{2}+9x-7\qquad
+\text{c) }2x^{2}+11x-7\qquad
+\text{d) }-2x^{2}+11x+7
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\(A=3x-2+2x=5x-2\Rightarrow 2A=10x-4\).  
+\(2A-B=(10x-4)-(2x^{2}-x+3)=-2x^{2}+11x-7\).  
+Respuesta: \(\boxed{-2x^{2}+11x-7}\). \(\Rightarrow\) \textbf{a)}.
+\end{solucionclick}
+
+% (N6) Relojes: atrasa
+\begin{ejercicio}
+\textbf{(Relojes)} Un reloj \emph{atrasa} \(4\) min por hora. Se ajusta con la hora exacta y, \(5\) h después, marca \(11{:}20\). ¿Cuál es la hora exacta?
+\[
+\text{a) }10{:}40\qquad
+\text{b) }11{:}00\qquad
+\text{c) }11{:}40\qquad
+\text{d) }12{:}00
+\]
+\end{ejercicio}
+\begin{solucionclick}
+Atraso total \(=4\,\text{min/h}\times 5\,\text{h}=20\,\text{min}\).  
+Hora exacta \(=11{:}20 + 20\,\text{min}= \boxed{11{:}40}\). \(\Rightarrow\) \textbf{c)}.
+\end{solucionclick}
+
+% (N7) Procesos periódicos (MCM)
+\begin{ejercicio}
+\textbf{(Procesos periódicos)} Tres timbres suenan cada \(50\), \(75\) y \(100\) min. 
+Si suenan juntos a las \(9{:}00\), ¿cuándo vuelven a coincidir?
+\[
+\text{a) }13{:}00\qquad
+\text{b) }14{:}00\qquad
+\text{c) }14{:}30\qquad
+\text{d) }15{:}00
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\(\mathrm{mcm}(50,75,100)=2^{2}\cdot 3\cdot 5^{2}=300\ \text{min}=5\ \text{h}\).  
+\(9{:}00+5\ \text{h}= \boxed{14{:}00}\). \(\Rightarrow\) \textbf{b)}.
+\end{solucionclick}
+
+% (N8) Ecuación lineal con fracciones
+\begin{ejercicio}
+\textbf{(Ecuaciones)} Resuelva:
+\[
+\frac{x-1}{4}+\frac{x+3}{6}=\frac{5}{3}.
+\]
+\[
+\text{a) }3\qquad
+\text{b) }3{,}2\qquad
+\text{c) }3{,}4\qquad
+\text{d) }3{,}6
+\]
+\end{ejercicio}
+\begin{solucionclick}
+MCM \(=12\): \(3(x-1)+2(x+3)=20\Rightarrow 3x-3+2x+6=20\Rightarrow 5x+3=20\Rightarrow x=\frac{17}{5}= \boxed{3{,}4}\). \(\Rightarrow\) \textbf{c)}.
+\end{solucionclick}
+
+% (N9) Ecuaciones — secciones 10A y 10B (reemplaza el Sistema 2x2)
+\begin{ejercicio}
+\textbf{(Ecuaciones)} En un colegio, la sección \(10\text{A}\) tiene \(5\) estudiantes más que \(10\text{B}\).
+Si \(3\) estudiantes pasan de \(10\text{B}\) a \(10\text{A}\), entonces \(10\text{A}\) queda con el \emph{doble}
+de estudiantes que \(10\text{B}\).
+¿Cuántos estudiantes hay en \(10\text{A}\) \emph{actualmente}?
+\[
+\text{a) }12\qquad
+\text{b) }14\qquad
+\text{c) }17\qquad
+\text{d) }19
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Datos:} Sea \(A\) = estudiantes en \(10\text{A}\), \(B\) = estudiantes en \(10\text{B}\).\\
+\(A=B+5\) (tiene 5 más). Si 3 pasan de \(10\text{B}\) a \(10\text{A}\): \(A+3=2(B-3)\).\\[2pt]
+\textbf{Modelo:} Sistema lineal en \(A,B\).\\
+\textbf{Sustitución:} De \(A=B+5\) en la segunda: \((B+5)+3=2(B-3)\).\\
+\textbf{Cálculo:} \(B+8=2B-6\Rightarrow 14=B\Rightarrow A=B+5=14+5=19\).\\
+\textbf{Interpretación:} En \(10\text{A}\) hay \(\boxed{19}\) estudiantes. \(\Rightarrow\) opción \textbf{d)}.
+\end{solucionclick}
+
+\newpage
+% (N10) Exponentes y potencias
+\begin{ejercicio}
+\textbf{(Exponentes)} Simplifique:
+\[
+\frac{\bigl(2a^{-1}b^{2}\bigr)^{3}}{\bigl(4a^{-2}b\bigr)^{2}}.
+\]
+\[
+\text{a) }\dfrac{ab^{4}}{2}\qquad
+\text{b) }\dfrac{a^{2}b^{4}}{4}\qquad
+\text{c) }2ab^{4}\qquad
+\text{d) }\dfrac{b^{4}}{2a}
+\]
+\end{ejercicio}
+\begin{solucionclick}
+Arriba: \(2^{3}a^{-3}b^{6}=8a^{-3}b^{6}\). Abajo: \(4^{2}a^{-4}b^{2}=16a^{-4}b^{2}\).  
+Cociente: \(\frac{8}{16}a^{-3-(-4)}b^{6-2}=\tfrac{1}{2}a^{1}b^{4}=\boxed{\frac{ab^{4}}{2}}\). \(\Rightarrow\) \textbf{a)}.
+\end{solucionclick}
+
+% (N11) Cuadrática: número de raíces reales
+\begin{ejercicio}
+\textbf{(Cuadráticas)} ¿Cuántas soluciones reales tiene \(x^{2}+6x+10=0\)?
+\[
+\text{a) }0\qquad
+\text{b) }1\qquad
+\text{c) }2\qquad
+\text{d) }\text{infinitas}
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\(\Delta=b^{2}-4ac=36-40=-4<0\Rightarrow\) no hay soluciones reales. \(\boxed{0}\). \(\Rightarrow\) \textbf{a)}.
+\end{solucionclick}
+\newpage
+
+% (N12) Inecuación con valor absoluto — con opciones
+\begin{ejercicio}
+\textbf{(Inecuaciones)} Resuelva \( |3x+1|\le 7 \).
+\[
+\text{a) }(-\infty,\,-\tfrac{8}{3}]\,\cup\,[2,\,\infty)\qquad
+\text{b) }[-\tfrac{8}{3},\,2]\qquad
+\text{c) }(-\tfrac{8}{3},\,2)\qquad
+\text{d) }x\le -\tfrac{8}{3}
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Modelo:} \(|u|\le k \iff -k\le u\le k\) (con \(k>0\)).\\
+\textbf{Sustitución:} \(-7\le 3x+1\le 7\).\\
+\textbf{Cálculo:} Restando \(1\): \(-8\le 3x\le 6\). Dividiendo entre \(3\): \(\boxed{-\tfrac{8}{3}\le x\le 2}\).\\
+\textbf{Interpretación:} Intervalo \(\boxed{[-\tfrac{8}{3},\,2]}\) → opción \textbf{b)}.
+\end{solucionclick}
+
+% (N13) Problemas de edades — reemplaza "Unidades SI"
+\begin{ejercicio}
+\textbf{(Edades)} La suma de las edades actuales de Alicia y Benjamín es \(50\) años. 
+Hace \(4\) años, la edad de Alicia era el doble de la de Benjamín. ¿Cuáles son sus edades actuales?
+\[
+\text{a) }28\ y \ 22\qquad
+\text{b) }32\ y \ 18\qquad
+\text{c) }30\ y \ 20\qquad
+\text{d) }34\ y \ 16
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Datos:} \(A+B=50\), \quad \(A-4=2(B-4)\).\\
+\textbf{Modelo:} Sistema lineal.\\
+\textbf{Sustitución:} \(A-4=2B-8\Rightarrow A=2B-4\). En la suma: \((2B-4)+B=50\).\\
+\textbf{Cálculo:} \(3B=54\Rightarrow B=18\). Entonces \(A=2(18)-4=32\).\\
+\textbf{Interpretación:} \(\boxed{(32\ y \ 18)}\) → opción \textbf{b)}.
+\end{solucionclick}
+\newpage
+% (N14) Probabilidad (al menos una roja) — con opciones
+\begin{ejercicio}
+\textbf{(Probabilidad)} En una urna hay \(4\) rojas y \(6\) azules. 
+Se extraen \(2\) sin reemplazo. Probabilidad de \emph{al menos una roja}:
+\[
+\text{a) }\tfrac{1}{3}\qquad
+\text{b) }\tfrac{2}{3}\qquad
+\text{c) }\tfrac{3}{5}\qquad
+\text{d) }\tfrac{4}{5}
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Complemento:} \(P(\ge 1\,\text{roja})=1-P(\text{ninguna roja})\).\\
+\(P(\text{ninguna roja})=\dfrac{6}{10}\cdot\dfrac{5}{9}=\dfrac{30}{90}=\dfrac{1}{3}\).\\
+\textbf{Cálculo:} \(1-\dfrac{1}{3}=\boxed{\dfrac{2}{3}}\). \(\Rightarrow\) opción \textbf{b)}.
+\end{solucionclick}
+
+% (N15) Ecuación lineal — reemplaza "Sector circular"
+\begin{ejercicio}
+\textbf{(Ecuaciones)} Resuelva \(3(x-2)+2(2x+1)=5-(x-3)\).
+\[
+\text{a) }1\qquad
+\text{b) }1{,}5\qquad
+\text{c) }2\qquad
+\text{d) }2{,}5
+\]
+\end{ejercicio}
+\begin{solucionclick}
+\textbf{Distribución:} \(3x-6+4x+2=7x-4\) a la izquierda; a la derecha \(5-(x-3)=5-x+3=8-x\).\\
+\textbf{Ecuación:} \(7x-4=8-x\Rightarrow 8x=12\Rightarrow x=\boxed{\tfrac{3}{2}=1{,}5}\).\\
+\textbf{Interpretación:} Opción \textbf{b)}.
+\end{solucionclick}
+
+\noindent\fbox{%
+\parbox{\linewidth}{%
+%\textbf{Julián Arias Meza} es profesor de Matemática graduado de la Universidad de Costa Rica. 
+%Cursó la carrera de Física en la misma universidad y actualmente cursa la licenciatura en 
+%Ingeniería Física en el Tecnológico de Costa Rica (TEC). 
+Integración  del uso de herramientas digitales y de inteligencia artificial (IA), 
+enfocadas en la mejora de las capacidades pedagógicas: 
+diseño de materiales adaptativos, retroalimentación automática y 
+optimización de la evaluación formativa.
+
+\medskip
+\textbf{Áreas}
+\begin{itemize}
+  \item \textbf{Matemática:} aritmética, álgebra, trigonometría, geometría analítica, cálculo (diferencial e integral), probabilidad y estadística.
+  \item \textbf{Física:} mecánica, ondas, electricidad y magnetismo, termodinámica y óptica; con resolución de problemas, interpretación física y uso riguroso del SI.
+  \item \textbf{Química:} nomenclatura con sistema Stock y sistema estequiométrico, óxidos, hidruros, hidróxidos, hidrácidos, sales binarias, tipos de reacciones, balanceo y estequiometría.
+  \item \textbf{Admisión (universidades y colegios):} preparación integral para exámenes de ingreso (UCR, TEC, UNA, Colegios Científicos, COVAO, entre otros): diagnóstico inicial, plan de estudio, técnicas de resolución, simulacros cronometrados y análisis de errores.
+  \item \textbf{Formatos:} guías teóricas, bancos de ejercicios, prácticas con soluciones paso a paso, simulacros, rúbricas, presentaciones y resúmenes ejecutivos.
+\end{itemize}
+
+\text{Se entrega en:} formato PDF listo para imprimir, o \texttt{.docx} (Word).
+
+\medskip
+\textbf{Contacto (WhatsApp):} \texttt{7076-9371}
+
+}}
+\end{document}
